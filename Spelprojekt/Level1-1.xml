@@ -1,0 +1,40 @@
+
+<Layer_1>
+	<Layer>static</Layer>
+	<Images>
+		<Image_1>fisk.jpg<Image_1>
+	</Images>
+	<Stats speed="0.5"/>
+
+
+</Layer_1>
+
+<Layer_2>
+	<Layer>static</Layer>
+	<Images>
+		<Image_1>fisk.jpg<Image_1>
+	</Images>
+	<Stats speed="0"/>
+
+
+
+</Layer_2>
+
+<Layer_3>
+	<Layer>active</Layer>
+	
+
+
+</Layer_3>
+
+<Layer_4>
+	<Layer>static</Layer>
+	<Images>
+		<Image_1>fisk.jpg<Image_1>
+	</Images>
+	<Stats speed="1.2"/>
+
+
+</Layer_4>
+
+
