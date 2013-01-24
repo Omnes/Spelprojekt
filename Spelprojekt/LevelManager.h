@@ -17,7 +17,6 @@ public:
 	static LevelManager& getInst();
 
 private:
-	//LevelManagerImp* mImp;
 	//std::vector<Layer*> layers;
 	std::string mFilePath;
 	std::vector<Entity*> placedAnimals;

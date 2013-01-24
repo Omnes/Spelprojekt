@@ -81,6 +81,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ActiveLayer.cpp" />
+    <ClCompile Include="Animal.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="EventManager.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -96,6 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ActiveLayer.h" />
+    <ClInclude Include="Animal.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Event.h" />
@@ -106,6 +108,7 @@
     <ClInclude Include="LayerManager.h" />
     <ClInclude Include="LevelManager.h" />
     <ClInclude Include="ResourceManager.h" />
+    <ClInclude Include="SpeedMod.h" />
     <ClInclude Include="StateManager.h" />
     <ClInclude Include="States.h" />
     <ClInclude Include="StaticLayer.h" />
