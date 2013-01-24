@@ -1,0 +1,13 @@
+<Animal>
+
+
+	<Images>Kanin.png</Images>
+
+	<Speed ground="3" middle="1" tree="3"/>
+	
+	<AnimalType>växt</Djurtyp>
+
+	<ImageAttr fTick="200" frames="4"/>
+
+
+</Animal>
