@@ -2,7 +2,9 @@
 #define ANIMALPROTOTYPE
 
 #include <SFML\System\Vector2.hpp>
+#include <SFML\Graphics\Texture.hpp>
 #include "tinyxml2.h"
+#include <string>
 
 class Animal;
 class ResourceManager;
@@ -28,6 +30,6 @@ private:
 
 	Animation* mAnimation;
 
-}
+};
 
 #endif
