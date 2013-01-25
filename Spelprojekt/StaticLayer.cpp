@@ -21,7 +21,7 @@ void StaticLayer::move(float cameraVelocity){
 
 	//exception för första bilden. 
 	for(SpriteVector::size_type i = 0; i < mSpriteVector.size(); i++){
-		mSpriteVector[i]->move(mConstVelocity * cameraVelocity, 0);
+		mSpriteVector[i]->move(mConstVelocity * -cameraVelocity, 0);
 	}
 }
 
