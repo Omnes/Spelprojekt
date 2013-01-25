@@ -2,7 +2,7 @@
 #include "Animation.h"
 
 
-Animal::Animal(std::vector<Animation*> animation, sf::Vector2f position, float speed)
+Animal::Animal(Animation* animation, sf::Vector2f position, float speed)
 	: mAnimation(animation)
 	, currentAnimation(0)
 	, mPosition(position)
