@@ -1,5 +1,6 @@
 #ifndef STARTMENY
 #define STARTMENY
+#include "Button.h"
 
 class StartMeny: public States{
 public:
