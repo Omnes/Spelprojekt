@@ -6,7 +6,7 @@
 		<Image_2>Katt.jpg</Image_2>
 		<Image_3>Katt.jpg</Image_3>
 	</Images>
-	<Stats speed="0.3"/>
+	<Stats speed="10"/>
 
 
 </Layer_1>
@@ -14,10 +14,10 @@
 <Layer_2>
 	<Layer>static</Layer>
 	<Images>
-		<Image_1>Katt.jpg</Image_1>
-		<Image_2>Katt.jpg</Image_2>
+		<Image_1>Katt2.jpg</Image_1>
+		<Image_2>Katt2.jpg</Image_2>
 	</Images>
-	<Stats speed=".8"/>
+	<Stats speed="50"/>
 
 
 
@@ -27,13 +27,10 @@
 <Layer_4>
 	<Layer>static</Layer>
 	<Images>
-		<Image_1>Katt.jpg</Image_1>
-		<Image_2>Katt.jpg</Image_2>
-		<Image_3>Katt.jpg</Image_3>
-		<Image_4>Katt.jpg</Image_4>
+		<Image_1>Katt3.jpg</Image_1>
 		
 	</Images>
-	<Stats speed="5.2"/>
+	<Stats speed="100"/>
 
 
 </Layer_4>

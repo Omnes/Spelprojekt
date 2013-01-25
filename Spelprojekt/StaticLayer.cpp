@@ -10,6 +10,9 @@ StaticLayer::StaticLayer(std::vector <sf::Sprite*> spriteVector ,float layerVelo
 	}
 	//om inget funkar! testa detta ;)
 	//mSpriteVector.at(0)->setPosition(0,0);
+	for(SpriteVector::size_type i = 1; i < mSpriteVector.size(); i++){
+		mSpriteVector.at(i)->setPosition((mSpriteVector.at(i-1)->getPosition().x + mSpriteVector.at(i-1)->getGlobalBounds().width), 0);
+	}
 }
 
 StaticLayer::~StaticLayer(){}
@@ -17,8 +20,8 @@ StaticLayer::~StaticLayer(){}
 void StaticLayer::move(float cameraVelocity){
 
 	//exception för första bilden. 
-	for(SpriteVector::size_type i = 1; i < mSpriteVector.size(); i++){
-		mSpriteVector.at(i)->setPosition((mSpriteVector.at(i-1)->getPosition().x + mSpriteVector.at(i-1)->getGlobalBounds().width) + mConstVelocity * cameraVelocity, 0);
+	for(SpriteVector::size_type i = 0; i < mSpriteVector.size(); i++){
+		mSpriteVector[i]->move(mConstVelocity * cameraVelocity, 0);
 	}
 }
 
