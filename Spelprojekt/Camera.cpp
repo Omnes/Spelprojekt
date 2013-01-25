@@ -27,7 +27,7 @@ void Camera::update(){
 
 	mPosition+=mVelocity;
 
-	mView.setCenter(mPosition, 0);
+	mView.setCenter(mPosition, mWindow->getSize().y/2);
 
 	mWindow->setView(mView);
 
