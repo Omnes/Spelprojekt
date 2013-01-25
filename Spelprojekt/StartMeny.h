@@ -6,7 +6,7 @@
 class StartMeny: public States{
 public:
 	virtual void update();
-	virtual void render();'
+	virtual void render();
 	StartMeny();
 	~StartMeny();
 
