@@ -13,7 +13,7 @@ public:
 
 	Button(sf::Vector2f pos, std::string evt, std::string img);
 	~Button();
-	void pressButton(sf::RenderWindow window);
+	void pressButton();
 
 private:
 
