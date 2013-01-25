@@ -5,7 +5,7 @@
 
 	<Speed ground="3" middle="1" tree="3"/>
 	
-	<AnimalType>växt</Djurtyp>
+	<AnimalType>växt</AnimalType>
 
 	<ImageAttr fTick="200" frames="4"/>
 

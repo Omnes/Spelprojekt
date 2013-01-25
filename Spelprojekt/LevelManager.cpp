@@ -4,6 +4,7 @@
 #include "ResourceManager.h"
 #include "StaticLayer.h"
 #include "ActiveLayer.h"
+#include <iostream>
 
 
 
@@ -39,21 +40,25 @@ std::vector<Layer*> LevelManager::loadLayers(){
 	std::vector<Layer*> layers;
 	
 	tinyxml2::XMLDocument doc;
-	doc.LoadFile("Level1-1.xml"); // den vill ha en const char *, lös skiten.
+	doc.LoadFile("Level1.xml"); // den vill ha en const char *, lös skiten.
 
 	tinyxml2::XMLElement *elm = doc.FirstChildElement();
 	while (elm != 0){
+		std::cout << elm->Name() << std::endl;
 		Layer *layer;
 
 		ResourceManager* resourceManager = &ResourceManager::getInst();
-
-		if(elm->FirstChildElement("Layer")->GetText() == "static"){
+		
+		std::string layerType = elm->FirstChildElement("Layer")->GetText();
+		std::cout << layerType << std::endl;
+		if(layerType == "static"){
 			const tinyxml2::XMLElement *img = elm->FirstChildElement("Images")->FirstChildElement();
 			std::vector<sf::Sprite*> spriteVector;
 			
 			while(img != 0){
 
 				sf::Texture* tex = resourceManager->getTexture(img->GetText());
+				std::cout << img->GetText()<< std::endl;
 				sf::Sprite *sprite = new sf::Sprite();
 				sprite->setTexture(*tex);
 				spriteVector.push_back(sprite);
@@ -62,9 +67,10 @@ std::vector<Layer*> LevelManager::loadLayers(){
 			}
 
 			float speed = elm->FirstChildElement("Stats")->FirstAttribute()->FloatValue();
+			std::cout << speed << std::endl;
 			layer = new StaticLayer(spriteVector, speed);
 		}
-		if(elm->FirstChildElement("Layer")->GetText() == "active"){
+		if(layerType == "active"){
 
 			std::vector<Entity*> entityVector(placedAnimals);
 
@@ -77,7 +83,9 @@ std::vector<Layer*> LevelManager::loadLayers(){
 		}
 
 		layers.push_back(layer);
-		elm->NextSiblingElement();
+
+		elm = elm->NextSiblingElement();
+	 	
 
 	}
 

@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<Layer_1>
+	<Layer>static</Layer>
+	<Images>
+		<Image_1>Katt.jpg</Image_1>
+		<Image_2>Katt.jpg</Image_2>
+		<Image_3>Katt.jpg</Image_3>
+	</Images>
+	<Stats speed="0.3"/>
+
+
+</Layer_1>
+
+<Layer_2>
+	<Layer>static</Layer>
+	<Images>
+		<Image_1>Katt.jpg</Image_1>
+		<Image_2>Katt.jpg</Image_2>
+	</Images>
+	<Stats speed=".8"/>
+
+
+
+</Layer_2>
+
+
+<Layer_4>
+	<Layer>static</Layer>
+	<Images>
+		<Image_1>Katt.jpg</Image_1>
+		<Image_2>Katt.jpg</Image_2>
+		<Image_3>Katt.jpg</Image_3>
+		<Image_4>Katt.jpg</Image_4>
+		
+	</Images>
+	<Stats speed="5.2"/>
+
+
+</Layer_4>
+
+

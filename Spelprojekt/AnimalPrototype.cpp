@@ -49,10 +49,15 @@ void AnimalPrototype::loadAnimal(){
 	mFrames = imageAttr->FloatValue();
 }
 
-Animal* AnimalPrototype::createAnimal(){
+//Animal* AnimalPrototype::createAnimal(){
+//	
+//};
 
-};
+sf::Vector2f AnimalPrototype::getPos(){
+	return mPosition;
+}
 
-sf::Vector2f AnimalPrototype::getPos(){}
+void AnimalPrototype::setPos(sf::Vector2f position){
 
-void AnimalPrototype::setPos(sf::Vector2f position){}
+	mPosition = position;
+}

@@ -16,7 +16,7 @@ public:
 	~AnimalPrototype();
 	
 	void loadAnimal();
-	Animal* createAnimal(); // position, 
+	//Animal* createAnimal(); // position, 
 	void setPos(sf::Vector2f position);
 	sf::Vector2f getPos();
 
@@ -24,6 +24,7 @@ public:
 private:
 
 	float mTreeSpeed, mMiddleSpeed, mGroundSpeed;
+	sf::Vector2f mPosition;
 	sf::Texture* mTex;
 	std::string mAnimalType;
 	float mFrameTick, mFrames;
