@@ -14,7 +14,7 @@ Button::~Button(){
 }
 
 
-void Button::pressButton(){
+void Button::update(){
 
 	if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
 		sf::RenderWindow* window = WindowManager::getInst().getWindow();
@@ -23,4 +23,9 @@ void Button::pressButton(){
 			EventManager::getInst().addEvent(mEvent);
 		}
 	}
+}
+
+sf::Sprite& Button::getSprite(){
+
+	return mSprite;
 }
