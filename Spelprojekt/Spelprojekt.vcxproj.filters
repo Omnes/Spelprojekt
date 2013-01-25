@@ -63,6 +63,15 @@
     <ClCompile Include="AnimalPrototype.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StartMeny.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Takitikmeny.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ActiveLayer.h">
@@ -123,6 +132,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AnimalPrototype.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StartMeny.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Taktikmeny.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

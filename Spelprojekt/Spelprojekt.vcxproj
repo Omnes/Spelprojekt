@@ -84,6 +84,7 @@
     <ClCompile Include="Animal.cpp" />
     <ClCompile Include="AnimalPrototype.cpp" />
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="EventManager.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -92,8 +93,10 @@
     <ClCompile Include="LevelManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
+    <ClCompile Include="StartMeny.cpp" />
     <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="StaticLayer.cpp" />
+    <ClCompile Include="Takitikmeny.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="WindowManager.cpp" />
   </ItemGroup>
@@ -102,6 +105,7 @@
     <ClInclude Include="Animal.h" />
     <ClInclude Include="AnimalPrototype.h" />
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="Button.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Event.h" />
@@ -113,9 +117,11 @@
     <ClInclude Include="LevelManager.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="SpeedMod.h" />
+    <ClInclude Include="StartMeny.h" />
     <ClInclude Include="StateManager.h" />
     <ClInclude Include="States.h" />
     <ClInclude Include="StaticLayer.h" />
+    <ClInclude Include="Taktikmeny.h" />
     <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="WindowManager.h" />
   </ItemGroup>
