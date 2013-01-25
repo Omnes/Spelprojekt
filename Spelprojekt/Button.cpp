@@ -17,8 +17,8 @@ Button::~Button(){
 void Button::pressButton(){
 
 	if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
-
-		if(mSprite.getGlobalBounds().contains(sf::Mouse::getPosition(*WindowManager::getInst().getWindow()).x, sf::Mouse::getPosition(*WindowManager.getInst().getWindow()).y)){		
+		sf::RenderWindow* window = WindowManager::getInst().getWindow();
+		if(mSprite.getGlobalBounds().contains((sf::Vector2f)sf::Mouse::getPosition(*window))){		
 	
 			EventManager::getInst().addEvent(mEvent);
 		}
