@@ -39,7 +39,7 @@ std::vector<Layer*> LevelManager::loadLayers(){
 	std::vector<Layer*> layers;
 	
 	tinyxml2::XMLDocument doc;
-	doc.LoadFile(/*mFilePath*/ "Fisk.xml"); // den vill ha en const char *, lös skiten.
+	doc.LoadFile("Level1-1.xml"); // den vill ha en const char *, lös skiten.
 
 	tinyxml2::XMLElement *elm = doc.FirstChildElement();
 	while (elm != 0){
