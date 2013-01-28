@@ -2,6 +2,7 @@
 #define ENTITY
 #include <SFML\Graphics\Sprite.hpp>
 #include "SpeedMod.h"
+#include <string>
 
 class Entity{
 public:
@@ -13,6 +14,7 @@ public:
 	virtual bool getAlive()=0;
 	virtual void collide(Entity* entity)=0;
 	virtual void setMod(SpeedMod* speedMod)=0;
+	virtual std::string getID()=0;
 
 	//animation
 	//etc...
