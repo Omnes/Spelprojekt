@@ -11,8 +11,11 @@ AnimalPrototype::~AnimalPrototype(){}
 
 void AnimalPrototype::loadAnimal(){
 
+	std::string a = "Kanin.xml";
+
 	tinyxml2::XMLDocument doc;
-	doc.LoadFile("Kanin.xml"); //variabel här
+
+	doc.LoadFile(a.c_str()); //variabel här
 
 	//skapar dokument
 	tinyxml2::XMLElement *elm = doc.FirstChildElement("Animal");
@@ -47,11 +50,16 @@ void AnimalPrototype::loadAnimal(){
 	mFrameTick = imageAttr->FloatValue();
 	imageAttr->Next();
 	mFrames = imageAttr->FloatValue();
+	
 }
 
-//Animal* AnimalPrototype::createAnimal(){
-//	
-//};
+Animal* AnimalPrototype::createAnimal(){
+
+	mAnimation =  new Animation(mTex, mFrameTick, mFrames);
+
+	return new Animal(mAnimation, sf::Vector2f(2,2), 0);
+	//return new Animal(mAnimation, vilken position nn  , räkna ut speed här);
+};
 
 sf::Vector2f AnimalPrototype::getPos(){
 	return mPosition;

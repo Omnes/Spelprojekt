@@ -16,7 +16,7 @@ public:
 	~AnimalPrototype();
 	
 	void loadAnimal();
-	//Animal* createAnimal(); // position, 
+	Animal* createAnimal(); // position, 
 	void setPos(sf::Vector2f position);
 	sf::Vector2f getPos();
 
