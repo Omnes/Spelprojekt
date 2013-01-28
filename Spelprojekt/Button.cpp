@@ -25,7 +25,7 @@ void Button::update(){
 	
 		mCurrentImage=1;
 
-		if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
+		if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){ 
 	
 			mCurrentImage=2;
 			EventManager::getInst().addEvent(mEvent);
