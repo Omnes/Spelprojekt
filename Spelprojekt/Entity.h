@@ -5,11 +5,14 @@
 
 class Entity{
 public:
-	virtual void update();
-	virtual void render();
-	virtual sf::FloatRect getRect();
-	virtual sf::Sprite getSprite();
-	virtual bool getAlive();
+	virtual ~Entity(){};
+	virtual void update()=0;
+	virtual void render()=0;
+
+	virtual sf::FloatRect* getRect()=0;
+	virtual sf::Sprite* getSprite()=0;
+	virtual bool getAlive()=0;
+	virtual void collide(Entity* entity)=0;
 
 	//animation
 	//etc...
