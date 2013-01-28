@@ -38,7 +38,7 @@ void Animal::collide(Entity* entity){
 
 }
 
-void Animal::render(){}
+//void Animal::render(){}
 
 sf::FloatRect* Animal::getRect(){
 	return nullptr;  // <--------------------------------------------nullptr. denna ska vara en floatrect

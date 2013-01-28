@@ -15,7 +15,7 @@ public:
 	Animal(Animation* animation, sf::Vector2f position, float speed);
 	~Animal();
 	void update();
-	void render();
+	//void render();
 
 	sf::FloatRect* getRect();
 	sf::Sprite* getSprite();
