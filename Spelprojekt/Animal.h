@@ -21,6 +21,7 @@ public:
 	sf::Sprite* getSprite();
 	bool getAlive(); // <----------------------------kanske ta bort denna funktion !??!
 	void collide(Entity* entity);
+	void setMod(SpeedMod* speedMod);
 
 
 private:

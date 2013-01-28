@@ -35,7 +35,9 @@ sf::Sprite* Animal::getSprite(){
 }
 
 void Animal::collide(Entity* entity){
-
+	if(entity->getID() == "Animal" && mPos < entity->getPos().x){
+		//nersaktad !
+	}
 }
 
 //void Animal::render(){}
@@ -47,3 +49,5 @@ sf::FloatRect* Animal::getRect(){
 bool Animal::getAlive(){
 	return nullptr; // <--------------------------------------------variabel som returnerar true eller false beroende på om gubben är vid liv. detta kan sättas i collide annars ? ?
 }
+
+void Animal::setMod(SpeedMod* speedModv ){}
