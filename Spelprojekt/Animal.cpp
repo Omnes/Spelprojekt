@@ -12,7 +12,7 @@ Animal::Animal(Animation* animation, sf::Vector2f position, float speed)
 
 Animal::~Animal(){
 
-}
+} 
 
 void Animal::update(){
 
