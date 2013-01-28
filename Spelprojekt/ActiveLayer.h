@@ -16,6 +16,8 @@ class WindowManager;
 class ActiveLayer : public Layer{
 public:
 	ActiveLayer(std::vector <Entity*> entityVector);
+	~ActiveLayer();
+	
 	void move(float velocity);
 	void update();
 	void render();
@@ -24,7 +26,6 @@ public:
 	//fungerar som EntityManager
 	void collision();
 	void checkAlive();
-	~ActiveLayer();
 private:
 	typedef std::vector<Entity*> EntityVector;
 	EntityVector mEntityVector;

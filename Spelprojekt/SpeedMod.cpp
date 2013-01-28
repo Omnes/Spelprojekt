@@ -1,7 +1,7 @@
 #include "SpeedMod.h"
 
 
-SpeedMod::SpeedMod(float time, float mod): mAliveTime(time), mMod(mod){
+SpeedMod::SpeedMod(float time, float mod /*sppeeeed*/): mAliveTime(time), mMod(mod){
 	clock.restart();
 }
 

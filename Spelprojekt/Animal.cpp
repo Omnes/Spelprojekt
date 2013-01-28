@@ -33,3 +33,17 @@ float Animal::calculateSpeed(float speed){
 sf::Sprite* Animal::getSprite(){
 	return mAnimation->getSprite();
 }
+
+void Animal::collide(Entity* entity){
+
+}
+
+void Animal::render(){}
+
+sf::FloatRect* Animal::getRect(){
+	return nullptr;  // <--------------------------------------------nullptr. denna ska vara en floatrect
+}
+
+bool Animal::getAlive(){
+	return nullptr; // <--------------------------------------------variabel som returnerar true eller false beroende på om gubben är vid liv. detta kan sättas i collide annars ? ?
+}
