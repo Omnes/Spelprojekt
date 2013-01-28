@@ -5,6 +5,7 @@
 #include "StateManager.h"
 #include <SFML\Window\Event.hpp>
 #include <SFML\Graphics\CircleShape.hpp>
+#include "EventManager.h"
 
 
 
@@ -16,9 +17,7 @@ void Game::run(){
 	WindowManager* windowManager = &WindowManager::getInst();
 	sf::RenderWindow* window = windowManager->getWindow();
 	StateManager* stateManager = &StateManager::getInst();
-
-	sf::Clock clock;
-	elipsedTime = clock.restart().asMilliseconds();
+	EventManager* eventManager = &EventManager::getInst();
 
 	stateManager->addState("gameplay");
 
@@ -29,15 +28,15 @@ void Game::run(){
 			if(evt.type == sf::Event::Closed){
 				window->close();
 			}
-		
+		 
 		}
 		
 
-		elipsedTime += clock.restart().asMilliseconds();
-		//while(elipsedTime > 1.0f/60){
-			elipsedTime -= 1.0f/60;
-			stateManager->update();
-		//}
+
+		stateManager->update();
+
+
+		eventManager->update();
 		
 		window->clear();
 		window->draw(sf::CircleShape(30));

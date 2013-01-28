@@ -96,6 +96,9 @@
     <ClCompile Include="StaticLayer.cpp">
       <Filter>Source Files\Layer</Filter>
     </ClCompile>
+    <ClCompile Include="SpeedMod.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Event.h">
