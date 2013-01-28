@@ -16,9 +16,18 @@ Animal::~Animal(){
 
 void Animal::update(){
 
-	mPosition.x += mSpeed;
+	mPosition.x += calculateSpeed(mSpeed);
 	mAnimation->setPosition(mPosition);
 
+}
+
+float Animal::calculateSpeed(float speed){
+
+	for(std::set<SpeedMod*>::iterator i = mModSet.begin(); i != mModSet.end(); i++){
+		speed *= (*i)->getMod();
+	}
+
+	return speed;
 }
 
 sf::Sprite* Animal::getSprite(){

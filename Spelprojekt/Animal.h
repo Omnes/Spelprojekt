@@ -4,6 +4,7 @@
 #include <vector>
 #include <set>
 #include <SFML\Graphics\Sprite.hpp>
+#include "SpeedMod.h"
 
 class Animation;
 
@@ -20,8 +21,9 @@ private:
 	int currentAnimation;
 	float mSpeed;
 	sf::Vector2f mPosition;
-	//std::set<SpeedMod*> modVector;
+	std::set<SpeedMod*> mModSet;
 
+	float calculateSpeed(float speed);
 };
 
 

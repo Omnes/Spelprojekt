@@ -1,23 +1,25 @@
-//#ifndef SPEEDMOD
-//#define SPEEDMOD
-//
-//#include <SFML\Window\
-//
-//class SpeedMod{
-//public:
-//	SpeedMod(float time);
-//	~SpeedMod();
-//
-//private:
-//	float mAliveTime;
-//	sf::Clock
-//
-//
-//
-//};
-//
-//
-//
-//#endif
+#ifndef SPEEDMOD
+#define SPEEDMOD
 
-//kanske bäst att skippa denna...
+#include <SFML\System\Clock.hpp>
+
+class SpeedMod{
+public:
+	SpeedMod(float time, float mod);
+	~SpeedMod();
+
+	float getMod();
+	bool getAlive();
+
+private:
+	float mAliveTime;
+	float mMod;
+	sf::Clock clock;
+
+
+
+};
+
+
+
+#endif

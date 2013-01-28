@@ -93,6 +93,7 @@
     <ClCompile Include="LevelManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
+    <ClCompile Include="SpeedMod.cpp" />
     <ClCompile Include="StartMeny.cpp" />
     <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="StaticLayer.cpp" />
