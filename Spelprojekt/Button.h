@@ -6,6 +6,7 @@
 #include <SFML\Graphics\RenderWindow.hpp>
 #include <SFML\Window\Mouse.hpp>
 #include <SFML\Graphics\Sprite.hpp>
+#include <SFML\Graphics\Rect.hpp>
 
 class Button{
 
@@ -22,6 +23,10 @@ private:
 	std::string mEvent;
 	std::string mImage;
 	sf::Sprite mSprite;
+	sf::IntRect mRectangle;
+	sf::Texture mTexture;
+	int mCurrentImage;
+
 };
 
 
