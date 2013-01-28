@@ -5,13 +5,13 @@
 
 class Layer;
 //class LevelManagerImp;
-class Place_Animal;
+class AnimalPrototype;
 class Entity;
 
 class LevelManager{
 public:
 	void setFilePath(std::string filePath);
-	/*std::vector<Place_Animal*> getAnimalsOnLevel();*/
+	std::vector<std::string> getAnimalsOnLevel();
 	void setAnimalPosition(std::vector<Entity*>);
 	std::vector<Layer*> loadLayers();
 	static LevelManager& getInst();
