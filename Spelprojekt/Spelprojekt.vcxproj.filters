@@ -99,6 +99,9 @@
     <ClCompile Include="SpeedMod.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Obstacle.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Event.h">
@@ -169,6 +172,9 @@
     </ClInclude>
     <ClInclude Include="ActiveLayer.h">
       <Filter>Header Files\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="Obstacle.h">
+      <Filter>Header Files\Entities</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
