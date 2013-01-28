@@ -6,13 +6,13 @@
 #include "ActiveLayer.h"
 #include <iostream>
 #include "AnimalPrototype.h"
+#include "Obstacle.h"
 
 
 
 LevelManager::LevelManager(){
 	mFilePath = "Level1.xml";
 }
-
 
 
 LevelManager::~LevelManager(){
@@ -38,7 +38,7 @@ std::vector<std::string> LevelManager::getAnimalsOnLevel(){
 
 	while (elm !=0){
 		animalsOnLevel.push_back(elm->GetText());
-		elm->NextSiblingElement();
+		elm = elm->NextSiblingElement();
 
 	}
 
@@ -88,10 +88,64 @@ std::vector<Layer*> LevelManager::loadLayers(){
 
 			std::vector<Entity*> entityVector(placedAnimals);
 
+			
 
-			//lägg in hinder
-			//och eld
+			int minDistance = doc.FirstChildElement("Obstacles")->FirstAttribute()->IntValue();
+			int maxDistance = doc.FirstChildElement("Obstacles")->FirstAttribute()->Next()->IntValue();
 
+			std::map<int,std::string> mChanceMap;
+
+			tinyxml2::XMLElement *obst = doc.FirstChildElement("Obstacles")->FirstChildElement();
+
+			while(obst != 0){
+				const tinyxml2::XMLAttribute *atr = obst->FirstAttribute();
+
+				mChanceMap[atr->IntValue()] = obst->Name();
+				obst = obst->NextSiblingElement();
+			}
+
+			int levelLength = doc.FirstChildElement("Level")->FirstAttribute()->IntValue();
+
+			float x = 0;
+
+
+			while(x < levelLength){
+				std::string name = "Stone";
+
+				int randNumber = rand()*100;
+				int currentNumber = 0;
+
+				for(std::map<int,std::string>::iterator i = mChanceMap.begin(); i != mChanceMap.end(); i++){
+					currentNumber += i->first;
+
+					if (currentNumber > randNumber){
+						name = i->second;
+						break;
+					}
+				
+				}
+
+				obst = doc.FirstChildElement("Obstacles")->FirstChildElement(name.c_str());
+				const tinyxml2::XMLAttribute *atr = obst->FirstAttribute()->Next();
+
+				float speedMod = atr->FloatValue();
+				atr->Next();
+				float y = atr->FloatValue();
+			
+			
+				std::string id = obst->GetText();
+				sf::Vector2f pos = sf::Vector2f(x,y);
+				sf::Texture* tex = ResourceManager::getInst().getTexture(obst->GetText());
+				Obstacle* obstacle = new Obstacle(tex, pos, speedMod, id);
+				entityVector.push_back(obstacle);
+
+				x += minDistance + rand()*(maxDistance - minDistance);
+			
+			}
+
+			
+
+			
 
 			layer = new ActiveLayer(entityVector);
 		}
