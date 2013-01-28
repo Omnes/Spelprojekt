@@ -1,5 +1,6 @@
 #include "Animal.h"
 #include "Animation.h"
+#include <iostream>
 
 
 Animal::Animal(Animation* animation, sf::Vector2f position, float speed) : 
@@ -37,23 +38,28 @@ sf::Sprite* Animal::getSprite(){
 }
 
 void Animal::collide(Entity* entity){
-	//if(entity->getID() == "Animal" /*&& mPos < entity->getPos().x*/){
-	//	//nersaktad !
-	//}
+	if(entity->getID() == "Animal" && mPosition.x < entity->getPos().x){
+		mModSet.insert(new SpeedMod(1, 0));
+		std::cout<<"kollision mellan djur"<<std::endl;
+	}
 }
 
-//void Animal::render(){}
-
 sf::FloatRect* Animal::getRect(){
-	return &mSprite->getGlobalBounds();  // <--------------------------------------------nullptr. denna ska vara en floatrect
+	return &mSprite->getGlobalBounds();
 }
 
 bool Animal::getAlive(){
-	return 0; // <--------------------------------------------variabel som returnerar true eller false beroende på om gubben är vid liv. detta kan sättas i collide annars ? ?
+	return 0; // <--------------------------------------------OSÄKER OPÅ OM FUNKTIONEN BEHÖVSVSV
 }
 
-void Animal::setMod(SpeedMod* speedModv ){}
+void Animal::setMod(SpeedMod* speedModv){
+	mModSet.insert(speedModv);
+}
 
 std::string Animal::getID(){
 	return mID;
+}
+
+sf::Vector2f Animal::getPos(){
+	return mPosition;
 }

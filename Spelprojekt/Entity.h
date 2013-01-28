@@ -15,6 +15,7 @@ public:
 	virtual void collide(Entity* entity)=0;
 	virtual void setMod(SpeedMod* speedMod)=0;
 	virtual std::string getID()=0;
+	virtual sf::Vector2f getPos()=0;
 
 	//animation
 	//etc...

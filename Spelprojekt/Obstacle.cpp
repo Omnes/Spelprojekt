@@ -37,12 +37,14 @@ std::string Obstacle::getID(){
 }
 
 void Obstacle::collide(Entity* entity){
-
 	entity->setMod(new SpeedMod(1, mSpeed));
 }
 
+//gör ingenting
 void Obstacle::setMod(SpeedMod* speedMod){
-
-	//f-disk
+	//fel
 }
 
+sf::Vector2f Obstacle::getPos(){
+	return mPosition;
+}

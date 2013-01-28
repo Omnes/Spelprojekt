@@ -17,6 +17,7 @@ public:
 	virtual void collide(Entity* entity);
 	std::string getID();
 	virtual void setMod(SpeedMod* speedMod);
+	virtual sf::Vector2f getPos();
 
 private:
 

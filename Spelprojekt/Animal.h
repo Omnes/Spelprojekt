@@ -23,6 +23,7 @@ public:
 	void collide(Entity* entity);
 	void setMod(SpeedMod* speedMod);
 	std::string getID();
+	sf::Vector2f getPos();
 
 private:
 	Animation* mAnimation;

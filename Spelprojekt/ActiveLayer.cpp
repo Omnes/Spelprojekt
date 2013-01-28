@@ -14,10 +14,12 @@ ActiveLayer::ActiveLayer(std::vector <Entity*> entityVector):
 ActiveLayer::~ActiveLayer(){}
 
 void ActiveLayer::move(float cameraVelocity){
+
+	//ska denna användas ?? <----------------------------------------------------'******
+
 }
 
 void ActiveLayer::update(){
-	std::cout << "heuuhe";
 	for(EntityVector::iterator i = mEntityVector.begin(); i != mEntityVector.end(); i++){
 		(*i)->update();
 	}
@@ -37,7 +39,7 @@ void ActiveLayer::collision(){
 		for(EntityVector::iterator j = mEntityVector.begin(); j != mEntityVector.end(); j++){
 		sf::FloatRect jRect = *(*j)->getRect(); // <-----------------------------------------------------ta bort sen ???
 	
-			if(/*(*i)->getID() != (*j)->getID() &&*/ iRect.intersects(jRect)){
+			if(iRect.intersects(jRect)){
 				(*i)->collide((*j));
 				(*j)->collide((*i));
 			}	
@@ -50,8 +52,8 @@ void ActiveLayer::checkAlive(){
 	for(EntityVector::iterator i = mEntityVector.begin(); i != mEntityVector.end();){
 
 		if((*i)->getAlive() == false){
-			delete (*i);
-			i = mEntityVector.erase(i);
+			//delete (*i);    <<----------------------------------- TA BORT SAKER MED DE HÄR RADERNA 
+			//i = mEntityVector.erase(i);
 		}else{
 			i++;
 		}
