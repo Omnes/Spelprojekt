@@ -3,6 +3,7 @@
 Obstacle::Obstacle(sf::Texture texture, sf::Vector2f position, float speed) : mTexture(texture), mPosition(position), mSpeed(speed){
 
 	mSprite.setTexture(mTexture);
+	
 }
 
 Obstacle::~Obstacle(){
@@ -11,7 +12,7 @@ Obstacle::~Obstacle(){
 
 sf::Sprite* Obstacle::getSprite(){
 
-	return mSprite;
+	return &mSprite;
 }
 
 void Obstacle::update(){
@@ -19,15 +20,11 @@ void Obstacle::update(){
 	mSprite.setPosition(mPosition);
 	
 }
-
-
-void Obstacle::render(){
-
-}
 	
 
 sf::FloatRect* Obstacle::getRect(){
 
+	return 0;
 
 }
 

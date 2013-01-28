@@ -2,6 +2,8 @@
 #define OBSTACLE
 #include "Entity.h"
 #include <SFML\Graphics\Texture.hpp>
+#include "SpeedMod.h"
+
 
 class Obstacle : public Entity{
 
@@ -11,7 +13,6 @@ public:
 	~Obstacle();
 	virtual void update();
 	virtual sf::Sprite* getSprite();
-	virtual void render();
 	virtual sf::FloatRect* getRect();
 	virtual bool getAlive();
 
@@ -22,7 +23,6 @@ private:
 	sf::Vector2f mPosition;
 	float mSpeed;
 	sf::Sprite mSprite;
-	SpeedMod *mSpeedmod;
 };
 
 #endif
