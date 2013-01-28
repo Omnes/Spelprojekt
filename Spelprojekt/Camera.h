@@ -18,7 +18,7 @@ private:
 
 	sf::View mView;
 	sf::RenderWindow* mWindow;
-	float mVelocity, mPosition, mMaxVelocity;
+	float mVelocity, mPosition, mMaxVelocity, mMinVelocity;
 	LayerManager* mLayerManager;
 };
 

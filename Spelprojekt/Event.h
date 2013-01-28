@@ -3,7 +3,7 @@
 
 class Event{
 public:
-	~Event();
+	virtual ~Event(){};
 	virtual void update();
 };
 

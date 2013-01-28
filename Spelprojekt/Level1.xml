@@ -2,11 +2,11 @@
 <Layer_1>
 	<Layer>static</Layer>
 	<Images>
-		<Image_1>Katt.jpg</Image_1>
-		<Image_2>Katt.jpg</Image_2>
-		<Image_3>Katt.jpg</Image_3>
+		<Image_1>bak2.png</Image_1>
+		<Image_2>bak2.png</Image_2>
+		<Image_3>bak2.png</Image_3>
 	</Images>
-	<Stats speed="10"/>
+	<Stats speed="1"/>
 
 
 </Layer_1>
@@ -14,23 +14,38 @@
 <Layer_2>
 	<Layer>static</Layer>
 	<Images>
-		<Image_1>Katt2.jpg</Image_1>
-		<Image_2>Katt2.jpg</Image_2>
+		<Image_1>bak1.png</Image_1>
+		<Image_2>bak1.png</Image_2>
+		<Image_3>bak1.png</Image_3>
 	</Images>
-	<Stats speed="50"/>
+	<Stats speed="10"/>
 
 
 
 </Layer_2>
 
+<Layer_3>
+	<Layer>static</Layer>
+	<Images>
+		<Image_1>middle.png</Image_1>
+		<Image_2>middle.png</Image_2>
+		<Image_3>middle.png</Image_3>
+		
+	</Images>
+	<Stats speed="0"/>
+
+
+</Layer_3>
+
 
 <Layer_4>
 	<Layer>static</Layer>
 	<Images>
-		<Image_1>Katt3.jpg</Image_1>
-		
+		<Image_1>front.png</Image_1>
+		<Image_2>front.png</Image_2>
+		<Image_3>front.png</Image_3>
 	</Images>
-	<Stats speed="100"/>
+	<Stats speed="30"/>
 
 
 </Layer_4>

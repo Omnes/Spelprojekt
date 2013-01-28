@@ -2,7 +2,7 @@
 #include "WindowManager.h"
 
 
-Camera::Camera(LayerManager* layermanager) : mLayerManager(layermanager), mWindow(WindowManager::getInst().getWindow()), mVelocity(0.0), mView(sf::FloatRect(0,0,600,600)), mPosition(300), mMaxVelocity(1){
+Camera::Camera(LayerManager* layermanager) : mLayerManager(layermanager), mWindow(WindowManager::getInst().getWindow()), mVelocity(0.0), mView(sf::FloatRect(0,0,800,800)), mPosition(mView.getSize().x/2), mMaxVelocity(1), mMinVelocity(1){
 
 	
 }
@@ -13,14 +13,14 @@ Camera::~Camera(){
 
 void Camera::update(){
 
-	float panSpeed = 0.001;
+	float panSpeed = 0.01;
 
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && mVelocity<mMaxVelocity){
 
 		mVelocity+=panSpeed;
 	}
 
-	else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && mVelocity>-1){
+	else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && mVelocity>-mMinVelocity){
 
 		mVelocity-=panSpeed;
 	}
