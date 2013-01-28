@@ -40,8 +40,8 @@ void ActiveLayer::collision(){
 //	sf::FloatRect jRect = (*j)->getRect();
 //	
 //		if((*i)->getCat() != (*j)->getCat() && iRect.intersects(jRect)){
-//			(*i)->setHealth((*j)->getDamage());
-//			(*j)->setHealth((*i)->getDamage());
+//			(*i)->collide((*j));
+//			(*j)->collide((*i));
 //			}	
 //		}
 //	}
