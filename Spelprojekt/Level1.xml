@@ -1,53 +1,62 @@
 <?xml version="1.0" ?>
-<Layer_1>
-	<Layer>static</Layer>
-	<Images>
-		<Image_1>bak2.png</Image_1>
-		<Image_2>bak2.png</Image_2>
-		<Image_3>bak2.png</Image_3>
-	</Images>
-	<Stats speed="1"/>
+<Layers>
+	<Layer_1>
+		<Layer>static</Layer>
+		<Images>
+			<Image_1>bak2.png</Image_1>
+			<Image_2>bak2.png</Image_2>
+			<Image_3>bak2.png</Image_3>
+		</Images>
+		<Stats speed=".2"/>
 
 
-</Layer_1>
+	</Layer_1>
 
-<Layer_2>
-	<Layer>static</Layer>
-	<Images>
-		<Image_1>bak1.png</Image_1>
-		<Image_2>bak1.png</Image_2>
-		<Image_3>bak1.png</Image_3>
-	</Images>
-	<Stats speed="10"/>
+	<Layer_2>
+		<Layer>static</Layer>
+		<Images>
+			<Image_1>bak1.png</Image_1>
+			<Image_2>bak1.png</Image_2>
+			<Image_3>bak1.png</Image_3>
+		</Images>
+		<Stats speed="0.5"/>
 
 
 
-</Layer_2>
+	</Layer_2>
 
-<Layer_3>
-	<Layer>static</Layer>
-	<Images>
-		<Image_1>middle.png</Image_1>
-		<Image_2>middle.png</Image_2>
-		<Image_3>middle.png</Image_3>
+	<Layer_3>
+		<Layer>static</Layer>
+		<Images>
+			<Image_1>middle.png</Image_1>
+			<Image_2>middle.png</Image_2>
+			<Image_3>middle.png</Image_3>
 		
-	</Images>
-	<Stats speed="0"/>
+		</Images>
+		<Stats speed="0"/>
 
 
-</Layer_3>
+	</Layer_3>
 
 
-<Layer_4>
-	<Layer>static</Layer>
-	<Images>
-		<Image_1>front.png</Image_1>
-		<Image_2>front.png</Image_2>
-		<Image_3>front.png</Image_3>
-	</Images>
-	<Stats speed="30"/>
+	<Layer_4>
+		<Layer>static</Layer>
+		<Images>
+			<Image_1>front.png</Image_1>
+			<Image_2>front.png</Image_2>
+			<Image_3>front.png</Image_3>
+		</Images>
+		<Stats speed="3"/>
 
 
-</Layer_4>
+	</Layer_4>
+</Layers>
+
+<AnimalsOnLevel>
+	<Animal_1>GoliathSpider</Animal_1>
+	<Animal_2>Monkey</Animal_2>
+	<Animal_3>Raptor</Animal_3>
+
+</AnimalsOnLevel>
 
 

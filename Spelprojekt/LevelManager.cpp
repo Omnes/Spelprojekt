@@ -5,11 +5,12 @@
 #include "StaticLayer.h"
 #include "ActiveLayer.h"
 #include <iostream>
+#include "AnimalPrototype.h"
 
 
 
 LevelManager::LevelManager(){
-
+	mFilePath = "Level1.xml";
 }
 
 
@@ -27,9 +28,22 @@ void LevelManager::setFilePath(std::string filePath){
 	mFilePath = filePath;
 }
 
-//std::vector<Place_Animal*> LevelManager::getAnimalsOnLevel(){
-//	return std::vector<Place_Animal*>;
-//}
+std::vector<std::string> LevelManager::getAnimalsOnLevel(){
+	std::vector<std::string> animalsOnLevel;
+
+	tinyxml2::XMLDocument doc;
+	doc.LoadFile(mFilePath.c_str());
+
+	tinyxml2::XMLElement *elm = doc.FirstChildElement("AnimalsOnLevel")->FirstChildElement();
+
+	while (elm !=0){
+		animalsOnLevel.push_back(elm->GetText());
+		elm->NextSiblingElement();
+
+	}
+
+	return animalsOnLevel;
+}
 
 void LevelManager::setAnimalPosition(std::vector<Entity*> entityVector){
 	placedAnimals = entityVector;
@@ -40,9 +54,9 @@ std::vector<Layer*> LevelManager::loadLayers(){
 	std::vector<Layer*> layers;
 	
 	tinyxml2::XMLDocument doc;
-	doc.LoadFile("Level1.xml"); // den vill ha en const char *, lös skiten.
+	doc.LoadFile(mFilePath.c_str()); // den vill ha en const char *, lös skiten.  skiten är nu löst.
 
-	tinyxml2::XMLElement *elm = doc.FirstChildElement();
+	tinyxml2::XMLElement *elm = doc.FirstChildElement("Layers")->FirstChildElement();
 	while (elm != 0){
 		std::cout << elm->Name() << std::endl;
 		Layer *layer;
