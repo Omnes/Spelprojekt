@@ -92,6 +92,7 @@
     <ClCompile Include="LayerManager.cpp" />
     <ClCompile Include="LevelManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Obstacle.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="SpeedMod.cpp" />
     <ClCompile Include="StartMeny.cpp" />
@@ -116,6 +117,7 @@
     <ClInclude Include="Layer.h" />
     <ClInclude Include="LayerManager.h" />
     <ClInclude Include="LevelManager.h" />
+    <ClInclude Include="Obstacle.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="SpeedMod.h" />
     <ClInclude Include="StartMeny.h" />
