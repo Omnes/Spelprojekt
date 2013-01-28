@@ -1,9 +1,9 @@
 #include "Obstacle.h"
 
-Obstacle::Obstacle(sf::Texture texture, sf::Vector2f position, float speed) : mTexture(texture), mPosition(position), mSpeed(speed){
+Obstacle::Obstacle(sf::Texture* texture, sf::Vector2f position, float speed, std::string ID) : mTexture(texture), mPosition(position), mSpeed(speed), mID(ID), mAlive(true){
 
-	mSprite.setTexture(mTexture);
-	
+	mSprite.setTexture(*mTexture);
+
 }
 
 Obstacle::~Obstacle(){
@@ -18,18 +18,31 @@ sf::Sprite* Obstacle::getSprite(){
 void Obstacle::update(){
 
 	mSprite.setPosition(mPosition);
-	
 }
 	
 
 sf::FloatRect* Obstacle::getRect(){
 
-	return 0;
-
+	return &mSprite.getGlobalBounds();
 }
 
 bool Obstacle::getAlive(){
 
-	return 0;
+	return mAlive;
+}
+
+std::string Obstacle::getID(){
+
+	return mID;
+}
+
+void Obstacle::collide(Entity* entity){
+
+	entity->setMod(new SpeedMod(1, mSpeed));
+}
+
+void Obstacle::setMod(SpeedMod* speedMod){
+
+	//f-disk
 }
 
