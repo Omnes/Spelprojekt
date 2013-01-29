@@ -34,7 +34,7 @@ void Game::run(){
 
 		eventManager->update(); // process events
 		
-		window->clear(sf::Color::Green);
+		window->clear(sf::Color::Black);
 		stateManager->render(); //rendrering
 		window->display();
 	
