@@ -33,8 +33,6 @@ private:
 	typedef std::set<SpeedMod*> ModSet;
 	ModSet mModSet;
 
-	sf::Sprite* mSprite;
-
 	std::string mID;
 
 	float calculateSpeed(float speed);

@@ -20,6 +20,7 @@ Animal::~Animal(){
 void Animal::update(){
 
 	mPosition.x += calculateSpeed(mSpeed);
+	mAnimation->update();
 	mAnimation->setPosition(mPosition);
 
 }
@@ -56,7 +57,7 @@ void Animal::collide(Entity* entity){
 }
 
 sf::FloatRect* Animal::getRect(){
-	return &mSprite->getGlobalBounds();
+	return &mAnimation->getSprite()->getGlobalBounds();
 }
 
 bool Animal::getAlive(){

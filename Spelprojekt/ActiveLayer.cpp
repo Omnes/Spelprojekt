@@ -20,6 +20,7 @@ void ActiveLayer::move(float cameraVelocity){
 }
 
 void ActiveLayer::update(){
+	collision();
 	for(EntityVector::iterator i = mEntityVector.begin(); i != mEntityVector.end(); i++){
 		(*i)->update();
 	}

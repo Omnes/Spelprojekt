@@ -7,6 +7,8 @@
 #include <iostream>
 #include "AnimalPrototype.h"
 #include "Obstacle.h"
+#include "Animal.h"
+#include "Animation.h"
 
 
 
@@ -140,6 +142,8 @@ std::vector<Layer*> LevelManager::loadLayers(){
 				x += minDistance + rand()%(maxDistance - minDistance);
 			
 			}
+
+			entityVector.push_back(new Animal(new Animation(resourceManager->getTexture("katt.jpg"),300,3),sf::Vector2f(0,400),1));
 
 			layer = new ActiveLayer(entityVector);
 		}

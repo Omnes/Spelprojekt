@@ -14,13 +14,13 @@ Animation::~Animation(){
 
 void Animation::update(){
 
-	if(mTimer.getElapsedTime().asMilliseconds()>mFrametime){
+	if(mTimer.getElapsedTime().asMilliseconds() > mFrametime){
 		
 		mCurrentframe+=1;
 		mTimer.restart();
 	}
 
-	if(mCurrentframe>mFrames){
+	if(mCurrentframe > mFrames-1){
 		
 		mCurrentframe=0;
 	}
