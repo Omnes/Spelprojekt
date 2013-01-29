@@ -1,9 +1,13 @@
 #include "EventManager.h"
 #include "ExitGame.h"
+#include "AddMap.h"
+#include "AddOptions.h"
 
 EventManager::EventManager(){
 
 	mEventMap["exitGame"]= new ExitGame();
+	mEventMap["addMap"]= new AddMap();
+	mEventMap["addOptions"]= new AddOptions();
 }
 
 EventManager::~EventManager(){}

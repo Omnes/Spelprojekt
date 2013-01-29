@@ -1,11 +1,15 @@
 #include "StateManager.h"
 #include "Gameplay.h"
 #include "StartMeny.h"
+#include "WorldMap.h"
+#include "OptionsMeny.h"
 #include <iostream>
 
 StateManager::StateManager(){
 	mStateMap["gameplay"] = new Gameplay();
 	mStateMap["startmenu"] = new StartMeny();
+	mStateMap["worldmap"] = new WorldMap();
+	mStateMap["optionsmenu"] = new OptionsMeny(); 
 }
 
 StateManager::~StateManager(){

@@ -18,7 +18,7 @@ void Game::run(){
 	StateManager* stateManager = &StateManager::getInst();
 	EventManager* eventManager = &EventManager::getInst();
 
-	stateManager->addState("startmenu");
+	stateManager->addState("gameplay");
 
 	while(window->isOpen()){
 

@@ -93,6 +93,7 @@
     <ClCompile Include="LevelManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Obstacle.cpp" />
+    <ClCompile Include="OptionsMeny.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="SpeedMod.cpp" />
     <ClCompile Include="StartMeny.cpp" />
@@ -101,9 +102,11 @@
     <ClCompile Include="Takitikmeny.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="WindowManager.cpp" />
+    <ClCompile Include="WorldMap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ActiveLayer.h" />
+    <ClInclude Include="AddOptions.h" />
     <ClInclude Include="Animal.h" />
     <ClInclude Include="AnimalPrototype.h" />
     <ClInclude Include="Animation.h" />
@@ -119,8 +122,10 @@
     <ClInclude Include="LayerManager.h" />
     <ClInclude Include="LevelManager.h" />
     <ClInclude Include="Obstacle.h" />
+    <ClInclude Include="OptionsMeny.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="SpeedMod.h" />
+    <ClInclude Include="AddMap.h" />
     <ClInclude Include="StartMeny.h" />
     <ClInclude Include="StateManager.h" />
     <ClInclude Include="States.h" />
@@ -128,6 +133,7 @@
     <ClInclude Include="Taktikmeny.h" />
     <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="WindowManager.h" />
+    <ClInclude Include="WorldMap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

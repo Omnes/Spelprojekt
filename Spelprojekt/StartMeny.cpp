@@ -2,8 +2,8 @@
 #include "WindowManager.h"
 StartMeny::StartMeny(){
 	mButtons.push_back(new Button(sf::Vector2f(100,100), "exitGame","knapp1.jpg"));
-	/*mButtons.push_back(new Button(sf::Vector2f(100,200), "event2","knapp2.png"));
-	mButtons.push_back(new Button(sf::Vector2f(100,300), "event3","knapp3.png"));*/
+	mButtons.push_back(new Button(sf::Vector2f(100,200), "addMap","knapp2.jpg"));
+	mButtons.push_back(new Button(sf::Vector2f(100,300), "addOptions","knapp3.jpg"));
 }
 
 StartMeny::~StartMeny(){}
