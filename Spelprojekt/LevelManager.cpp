@@ -133,7 +133,7 @@ std::vector<Layer*> LevelManager::loadLayers(){
 				float y = atr->FloatValue();
 			
 			
-				std::string id = obst->GetText();
+				std::string id = obst->Name();
 				sf::Vector2f pos = sf::Vector2f(x,y);
 				sf::Texture* tex = ResourceManager::getInst().getTexture(obst->GetText());
 				Obstacle* obstacle = new Obstacle(tex, pos, speedMod, id);
@@ -143,7 +143,7 @@ std::vector<Layer*> LevelManager::loadLayers(){
 			
 			}
 
-			entityVector.push_back(new Animal(new Animation(resourceManager->getTexture("katt.jpg"),300,3),sf::Vector2f(0,400),1));
+			entityVector.push_back(new Animal(new Animation(resourceManager->getTexture("djur.png"),300,3),sf::Vector2f(0,400),1));
 
 			layer = new ActiveLayer(entityVector);
 		}
