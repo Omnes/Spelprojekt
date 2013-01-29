@@ -4,7 +4,7 @@
 class Event{
 public:
 	virtual ~Event(){};
-	virtual void update();
+	virtual void update()=0;
 };
 
 #endif
