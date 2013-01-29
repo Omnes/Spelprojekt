@@ -2,7 +2,14 @@
 #include "WindowManager.h"
 
 
-Camera::Camera(LayerManager* layermanager) : mLayerManager(layermanager), mWindow(WindowManager::getInst().getWindow()), mVelocity(0.0), mView(sf::FloatRect(0,0,800,800)), mPosition(mView.getSize().x/2), mMaxVelocity(1), mMinVelocity(1){
+Camera::Camera(LayerManager* layermanager) : 
+	mLayerManager(layermanager), 
+	mWindow(WindowManager::getInst().getWindow()), 
+	mVelocity(0.0), 
+	mView(sf::FloatRect(0,0,800,600)),
+	mPosition(mView.getSize().x/2), 
+	mMaxVelocity(1), 
+	mMinVelocity(1){
 
 	
 }
