@@ -2,6 +2,7 @@
 #define TAKTIKMENY
 
 #include "States.h"
+#include "AnimalPrototype.h"
 
 class TaktikMeny: States{
 public:
@@ -9,6 +10,14 @@ public:
 	virtual void render();
 	~TaktikMeny();
 	TaktikMeny();
+
+private:
+
+	AnimalPrototype* mCurrentDragAnimal;
+	typedef std::vector<AnimalPrototype*> FakeAnimals;
+	FakeAnimals mFakeAnimals;
+
+	bool mDown;
 
 };
 

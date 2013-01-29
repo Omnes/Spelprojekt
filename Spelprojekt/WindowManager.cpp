@@ -1,7 +1,7 @@
 #include "WindowManager.h"
 
 WindowManager::WindowManager(){
-	mWindow = new sf::RenderWindow(sf::VideoMode(1600,900),"Flykten",sf::Style::Default);
+	mWindow = new sf::RenderWindow(sf::VideoMode(1280,720),"Flykten",sf::Style::Default);
 	mWindow->setFramerateLimit(60);
 }
 

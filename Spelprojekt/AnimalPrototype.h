@@ -5,6 +5,7 @@
 #include <SFML\Graphics\Texture.hpp>
 #include "tinyxml2.h"
 #include <string>
+#include <SFML\Graphics\Sprite.hpp>
 
 class Animal;
 class ResourceManager;
@@ -12,13 +13,14 @@ class Animation;
 
 class AnimalPrototype{
 public:
-	AnimalPrototype();
+	AnimalPrototype(std::string filePath);
 	~AnimalPrototype();
 	
-	void loadAnimal();
+	void loadAnimal(std::string filePath);
 	Animal* createAnimal(); // position, 
 	void setPos(sf::Vector2f position);
 	sf::Vector2f getPos();
+	sf::FloatRect& getGlobalBounds(); 
 
 
 private:
@@ -26,6 +28,7 @@ private:
 	float mTreeSpeed, mMiddleSpeed, mGroundSpeed;
 	sf::Vector2f mPosition;
 	sf::Texture* mTex;
+	sf::Sprite mSprite;
 	std::string mAnimalType;
 	float mFrameTick, mFrames;
 
