@@ -44,7 +44,7 @@ void Animal::collide(Entity* entity){
 
 	for(ModSet::iterator i = mModSet.begin(); i != mModSet.end(); i++){
 		for(ModSet::iterator j = mModSet.begin(); j != mModSet.end(); j++){
-			if((*i)->getID() != (*i)->getID()){
+			if((*i)->getID() != (*j)->getID()){
 				if(entity->getID() == "Animal" && mPosition.x < entity->getPos().x){
 					int time = 1;//<--------------------------------------ändra
 					int speed = 0;//<--------------------------------------ändra
@@ -69,7 +69,7 @@ void Animal::setMod(SpeedMod* speedModv){
 
 	for(ModSet::iterator i = mModSet.begin(); i != mModSet.end(); i++){
 		for(ModSet::iterator j = mModSet.begin(); j != mModSet.end(); j++){
-			if((*i)->getID() != (*i)->getID()){
+			if((*i)->getID() != (*j)->getID()){
 				mModSet.insert(speedModv);
 			}
 		}

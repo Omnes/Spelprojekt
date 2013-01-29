@@ -1,6 +1,7 @@
 #include "Obstacle.h"
 
-Obstacle::Obstacle(sf::Texture* texture, sf::Vector2f position, float speed, std::string ID) : mTexture(texture), mPosition(position), mSpeed(speed), mID(ID), mAlive(true){
+Obstacle::Obstacle(sf::Texture* texture, sf::Vector2f position, float speed, std::string ID) : 
+mTexture(texture), mPosition(position), mSpeed(speed), mID(ID), mAlive(true){
 
 	mSprite.setTexture(*mTexture);
 
@@ -32,13 +33,14 @@ bool Obstacle::getAlive(){
 }
 
 std::string Obstacle::getID(){
-
 	return mID;
 }
 
 void Obstacle::collide(Entity* entity){
 	int tid = 1;//<--------------------------------------ändra
-	entity->setMod(new SpeedMod(tid, mSpeed, mID));
+	if(entity->getID() == "Animal"){
+		entity->setMod(new SpeedMod(200, 0, mID));
+	}
 }
 
 //gör ingenting

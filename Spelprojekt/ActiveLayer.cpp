@@ -40,7 +40,7 @@ void ActiveLayer::collision(){
 		for(EntityVector::iterator j = mEntityVector.begin(); j != mEntityVector.end(); j++){
 		sf::FloatRect jRect = *(*j)->getRect(); // <-----------------------------------------------------ta bort sen ???
 	
-			if(iRect.intersects(jRect)){
+			if(iRect.intersects(jRect) && (*i)->getID() != (*j)->getID()){
 				(*i)->collide((*j));
 				(*j)->collide((*i));
 			}	
