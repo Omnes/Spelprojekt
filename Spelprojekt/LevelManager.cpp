@@ -88,8 +88,6 @@ std::vector<Layer*> LevelManager::loadLayers(){
 
 			std::vector<Entity*> entityVector(placedAnimals);
 
-			
-
 			int minDistance = doc.FirstChildElement("Obstacles")->FirstAttribute()->IntValue();
 			int maxDistance = doc.FirstChildElement("Obstacles")->FirstAttribute()->Next()->IntValue();
 
@@ -106,13 +104,13 @@ std::vector<Layer*> LevelManager::loadLayers(){
 
 			int levelLength = doc.FirstChildElement("Level")->FirstAttribute()->IntValue();
 
-			float x = 0;
+			float x = 500 + rand()%200;
 
 
 			while(x < levelLength){
 				std::string name = "Stone";
 
-				int randNumber = rand()*100;
+				int randNumber = rand()%100;
 				int currentNumber = 0;
 
 				for(std::map<int,std::string>::iterator i = mChanceMap.begin(); i != mChanceMap.end(); i++){
@@ -139,13 +137,9 @@ std::vector<Layer*> LevelManager::loadLayers(){
 				Obstacle* obstacle = new Obstacle(tex, pos, speedMod, id);
 				entityVector.push_back(obstacle);
 
-				x += minDistance + rand()*(maxDistance - minDistance);
+				x += minDistance + rand()%(maxDistance - minDistance);
 			
 			}
-
-			
-
-			
 
 			layer = new ActiveLayer(entityVector);
 		}

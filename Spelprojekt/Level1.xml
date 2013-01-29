@@ -7,7 +7,7 @@
 			<Image_2>bak2.png</Image_2>
 			<Image_3>bak2.png</Image_3>
 		</Images>
-		<Stats speed=".2"/>
+		<Stats speed="-0.95"/>
 
 
 	</Layer_1>
@@ -19,7 +19,7 @@
 			<Image_2>bak1.png</Image_2>
 			<Image_3>bak1.png</Image_3>
 		</Images>
-		<Stats speed="0.5"/>
+		<Stats speed="-0.8"/>
 
 
 
@@ -38,18 +38,25 @@
 
 	</Layer_3>
 
-
 	<Layer_4>
+		<Layer>active</Layer>
+
+	</Layer_4>
+
+
+	<Layer_5>
 		<Layer>static</Layer>
 		<Images>
 			<Image_1>front.png</Image_1>
 			<Image_2>front.png</Image_2>
 			<Image_3>front.png</Image_3>
 		</Images>
-		<Stats speed="3"/>
+		<Stats speed="1.3"/>
 
 
-	</Layer_4>
+	</Layer_5>
+
+
 </Layers>
 
 <AnimalsOnLevel>
@@ -59,13 +66,14 @@
 
 </AnimalsOnLevel>
 
-<Level length = "1000">
+<Level length = "10000">
 	
 </Level>
 
 
-<Obstacles minDistance="20" maxDistance="40">
-	<Stone chance = "100" speedMod = "0" y="200" numberOfFrames="2">stone.png</Stone>
+<Obstacles minDistance="300" maxDistance="1000">
+	<Stone chance = "75" speedMod = "0" y="200" numberOfFrames="2">Katt.jpg</Stone>
+	<Gren chance = "25" speedMod = "0" y="500" numberOfFrames="2">katt2.jpg</Gren>
 
 
 

@@ -13,7 +13,6 @@ float Game::elipsedTime = 0;
 
 void Game::run(){
 
-	
 	WindowManager* windowManager = &WindowManager::getInst();
 	sf::RenderWindow* window = windowManager->getWindow();
 	StateManager* stateManager = &StateManager::getInst();
@@ -30,17 +29,13 @@ void Game::run(){
 			}
 		 
 		}
+
+		stateManager->update(); // main update
+
+		eventManager->update(); // process events
 		
-
-
-		stateManager->update();
-
-
-		eventManager->update();
-		
-		window->clear();
-		window->draw(sf::CircleShape(30));
-		stateManager->render();
+		window->clear(sf::Color::Green);
+		stateManager->render(); //rendrering
 		window->display();
 	
 	}
