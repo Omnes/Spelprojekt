@@ -3,19 +3,20 @@
 #include "ResourceManager.h"
 #include "Animation.h"
 
-AnimalPrototype::AnimalPrototype(/*kanin.xml variabel*/){
-	loadAnimal();
+
+AnimalPrototype::AnimalPrototype(std::string filePath){
+	loadAnimal(filePath);
+	mSprite.setTexture(*mTex);
+	mSprite.setTextureRect(sf::IntRect(0,0,mTex->getSize().x,mTex->getSize().y));
 }
 
 AnimalPrototype::~AnimalPrototype(){}
 
-void AnimalPrototype::loadAnimal(){
-
-	std::string a = "Kanin.xml";
+void AnimalPrototype::loadAnimal(std::string filePath){
 
 	tinyxml2::XMLDocument doc;
 
-	doc.LoadFile(a.c_str()); //variabel här
+	doc.LoadFile(filePath.c_str()); //variabel här
 
 	//skapar dokument
 	tinyxml2::XMLElement *elm = doc.FirstChildElement("Animal");
@@ -68,4 +69,8 @@ sf::Vector2f AnimalPrototype::getPos(){
 void AnimalPrototype::setPos(sf::Vector2f position){
 
 	mPosition = position;
+}
+
+sf::FloatRect& AnimalPrototype::getGlobalBounds(){
+	return mSprite.getGlobalBounds();
 }
