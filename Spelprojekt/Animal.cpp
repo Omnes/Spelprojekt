@@ -38,9 +38,20 @@ sf::Sprite* Animal::getSprite(){
 }
 
 void Animal::collide(Entity* entity){
-	if(entity->getID() == "Animal" && mPosition.x < entity->getPos().x){
-		mModSet.insert(new SpeedMod(1, 0));
-		std::cout<<"kollision mellan djur"<<std::endl;
+	// clock
+	//kolöllllla om dennna funkar  <------------------------------
+
+	for(ModSet::iterator i = mModSet.begin(); i != mModSet.end(); i++){
+		for(ModSet::iterator j = mModSet.begin(); j != mModSet.end(); j++){
+			if((*i)->getID() != (*i)->getID()){
+				if(entity->getID() == "Animal" && mPosition.x < entity->getPos().x){
+					int time = 1;//<--------------------------------------ändra
+					int speed = 0;//<--------------------------------------ändra
+					mModSet.insert(new SpeedMod(time, speed, "AnimalMod"));
+					std::cout<<"kollision mellan djur"<<std::endl;
+				}
+			}
+		}
 	}
 }
 
@@ -53,7 +64,15 @@ bool Animal::getAlive(){
 }
 
 void Animal::setMod(SpeedMod* speedModv){
-	mModSet.insert(speedModv);
+	// clock
+
+	for(ModSet::iterator i = mModSet.begin(); i != mModSet.end(); i++){
+		for(ModSet::iterator j = mModSet.begin(); j != mModSet.end(); j++){
+			if((*i)->getID() != (*i)->getID()){
+				mModSet.insert(speedModv);
+			}
+		}
+	}
 }
 
 std::string Animal::getID(){

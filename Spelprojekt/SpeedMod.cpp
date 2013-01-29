@@ -1,14 +1,18 @@
 #include "SpeedMod.h"
 
 
-SpeedMod::SpeedMod(float time, float mod /*sppeeeed*/): mAliveTime(time), mMod(mod){
-	clock.restart();
+SpeedMod::SpeedMod(float time, float mod, std::string ID) : 
+	mAliveTime(time),
+	mMod(mod),
+	mID(ID)
+{
+	mclock.restart();
 }
 
 SpeedMod::~SpeedMod(){}
 
 bool SpeedMod::getAlive(){
-	return clock.getElapsedTime().asSeconds() > mAliveTime;
+	return mclock.getElapsedTime().asSeconds() > mAliveTime;
 }
 
 float SpeedMod::getMod(){
@@ -16,4 +20,6 @@ float SpeedMod::getMod(){
 	return mMod;
 }
 
-
+std::string SpeedMod::getID(){
+	return mID;
+}

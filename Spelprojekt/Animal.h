@@ -30,7 +30,8 @@ private:
 	int currentAnimation;
 	float mSpeed;
 	sf::Vector2f mPosition;
-	std::set<SpeedMod*> mModSet;
+	typedef std::set<SpeedMod*> ModSet;
+	ModSet mModSet;
 
 	sf::Sprite* mSprite;
 
