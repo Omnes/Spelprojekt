@@ -37,7 +37,8 @@ std::string Obstacle::getID(){
 }
 
 void Obstacle::collide(Entity* entity){
-	entity->setMod(new SpeedMod(1, mSpeed));
+	int tid = 1;//<--------------------------------------ändra
+	entity->setMod(new SpeedMod(tid, mSpeed, mID));
 }
 
 //gör ingenting
