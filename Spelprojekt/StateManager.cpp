@@ -1,9 +1,11 @@
 #include "StateManager.h"
 #include "Gameplay.h"
+#include "StartMeny.h"
 #include <iostream>
 
 StateManager::StateManager(){
 	mStateMap["gameplay"] = new Gameplay();
+	mStateMap["startmenu"] = new StartMeny();
 }
 
 StateManager::~StateManager(){

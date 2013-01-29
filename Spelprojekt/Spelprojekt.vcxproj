@@ -112,6 +112,7 @@
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Event.h" />
     <ClInclude Include="EventManager.h" />
+    <ClInclude Include="ExitGame.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Gameplay.h" />
     <ClInclude Include="Layer.h" />

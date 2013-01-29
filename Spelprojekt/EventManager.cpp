@@ -1,6 +1,10 @@
 #include "EventManager.h"
+#include "ExitGame.h"
 
-EventManager::EventManager(){}
+EventManager::EventManager(){
+
+	mEventMap["exitGame"]= new ExitGame();
+}
 
 EventManager::~EventManager(){}
 

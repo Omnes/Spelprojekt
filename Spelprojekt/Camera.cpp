@@ -40,5 +40,6 @@ void Camera::update(){
 
 	mLayerManager->move(mVelocity);
 	
+	
 }
 

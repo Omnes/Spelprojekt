@@ -146,7 +146,7 @@ std::vector<Layer*> LevelManager::loadLayers(){
 			entityVector.push_back(new Animal(new Animation(resourceManager->getTexture("katt.jpg"),300,3),sf::Vector2f(0,400),1));
 
 			layer = new ActiveLayer(entityVector);
-		}
+		}  
 
 		layers.push_back(layer);
 
