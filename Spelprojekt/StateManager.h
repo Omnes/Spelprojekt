@@ -14,7 +14,7 @@ public:
 	void update();
 	void popState();
 	void render();
-
+	States* getTop();
 
 
 private:

@@ -102,6 +102,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Obstacle.cpp" />
     <ClCompile Include="OptionsMeny.cpp" />
+    <ClCompile Include="PauseMeny.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="SpeedMod.cpp" />
     <ClCompile Include="Spot.cpp" />
@@ -137,6 +138,7 @@
     <ClInclude Include="LevelManager.h" />
     <ClInclude Include="Obstacle.h" />
     <ClInclude Include="OptionsMeny.h" />
+    <ClInclude Include="PauseMeny.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="SpeedMod.h" />
     <ClInclude Include="AddMap.h" />

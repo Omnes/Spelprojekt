@@ -19,3 +19,7 @@ void OptionsMeny::render(){
 	}
 }
 
+States* OptionsMeny::createNew(){
+	return new OptionsMeny;
+}
+

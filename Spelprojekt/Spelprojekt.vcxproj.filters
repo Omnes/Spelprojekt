@@ -120,6 +120,9 @@
     <ClCompile Include="Spot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PauseMeny.cpp">
+      <Filter>Source Files\States</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -226,6 +229,9 @@
     </ClInclude>
     <ClInclude Include="AddGameplay.h">
       <Filter>Header Files\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="PauseMeny.h">
+      <Filter>Header Files\States</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

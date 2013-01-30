@@ -18,3 +18,7 @@ void Gameplay::render(){
 
 	mLayerManager.render();
 }
+
+States* Gameplay::createNew(){
+	return new Gameplay;
+}
