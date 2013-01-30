@@ -11,14 +11,9 @@ EventManager::EventManager(){
 	mEventMap["addMap"]= new AddMap();
 	mEventMap["addOptions"]= new AddOptions();
 	mEventMap["addTaktik"]= new AddTaktik();
-<<<<<<< HEAD
-
-}
-=======
 	mEventMap["addStart"]= new AddStartMeny();
 }
 
->>>>>>> Jessica
 EventManager::~EventManager(){}
 
 EventManager& EventManager::getInst(){
