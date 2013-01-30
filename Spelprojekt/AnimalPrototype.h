@@ -33,7 +33,7 @@ private:
 	typedef std::vector <float> SpeedVector;
 	SpeedVector mSpeedVector;
 
-	float mHighSpeed;
+	int mHighSpeed;
 	sf::Vector2f mPosition;
 	sf::Texture* mTex;
 	sf::Sprite mSprite;

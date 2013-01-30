@@ -25,8 +25,13 @@ private:
 	typedef std::vector <Spot*> SpotVector;
 	SpotVector mSpotVector;
 
-	typedef std::vector <float> LevelVector;
-	LevelVector mLevelVector;
+	typedef std::vector <int> AllLevelVector;
+	AllLevelVector mAllLevelVector;
+
+	//typedef std::vector <int> LevelVector;
+	//LevelVector mLevelVector;
+
+	int mLevelTop, mLevelMiddle, mLevelGround;
 
 	bool mDown;
 
