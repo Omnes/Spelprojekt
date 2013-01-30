@@ -9,6 +9,7 @@
 #include "Obstacle.h"
 #include "Animal.h"
 #include "Animation.h"
+#include "Fire.h"
 
 
 
@@ -145,7 +146,8 @@ std::vector<Layer*> LevelManager::loadLayers(){
 			
 			}
 
-			entityVector.push_back(new Animal(new Animation(resourceManager->getTexture("djur.png"),300,3),sf::Vector2f(0,400),1));
+			entityVector.push_back(new Animal(new Animation(resourceManager->getTexture("djur.png"),300,3),sf::Vector2f(100,400),1));
+			entityVector.push_back(new Fire(sf::Vector2f(0,0),0.3));
 
 			layer = new ActiveLayer(entityVector);
 		}  

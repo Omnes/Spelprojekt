@@ -1,11 +1,11 @@
 <Animal>
 
 
-	<Images>Kanin.png</Images>
+	<Images>katt.jpg</Images>
 
 	<Speed ground="3" middle="1" tree="3"/>
 	
-	<AnimalType>växt</AnimalType>
+	<AnimalType>plant</AnimalType>
 
 	<ImageAttr fTick="200" frames="4"/>
 

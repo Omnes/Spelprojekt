@@ -24,13 +24,13 @@ void AnimalPrototype::loadAnimal(std::string filePath){
 	ResourceManager* resourceManager = &ResourceManager::getInst();
 
 	//kollar första elementet i xml-filen
-	const tinyxml2::XMLElement *img = elm->FirstChildElement("Images")->FirstChildElement();
+	const tinyxml2::XMLElement *img = elm->FirstChildElement("Images");
 
 	//sätter textur
 	mTex = resourceManager->getTexture(img->GetText()); // kan nog inte vara lokal
 
 	//kollar andra elemntet som har flera attribut
-	const tinyxml2::XMLAttribute *speed = elm->FirstChildElement("Speed")->FirstChildElement()->FirstAttribute();
+	const tinyxml2::XMLAttribute *speed = elm->FirstChildElement("Speed")->FirstAttribute();
 
 	//sätter attribut
 	mGroundSpeed = speed->FloatValue();
@@ -40,12 +40,12 @@ void AnimalPrototype::loadAnimal(std::string filePath){
 	mTreeSpeed = speed->FloatValue();
 
 	//kollar tredje elemntet
-	const tinyxml2::XMLElement *animalType = elm->FirstChildElement("AnimalType")->FirstChildElement();
+	const tinyxml2::XMLElement *animalType = elm->FirstChildElement("AnimalType");
 
 	//sätter animaltype till vilken typ av djur det är rovdjur/växtätare
 	mAnimalType = animalType->GetText();
 
-	const tinyxml2::XMLAttribute *imageAttr = elm->FirstChildElement("ImageAttr")->FirstChildElement()->FirstAttribute();
+	const tinyxml2::XMLAttribute *imageAttr = elm->FirstChildElement("ImageAttr")->FirstAttribute();
 
 	//sätter attribut
 	mFrameTick = imageAttr->FloatValue();

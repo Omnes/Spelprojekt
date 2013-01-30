@@ -11,7 +11,7 @@ EventManager::EventManager(){
 	mEventMap["addOptions"]= new AddOptions();
 	mEventMap["addTaktik"]= new AddTaktik();
 
-
+}
 EventManager::~EventManager(){}
 
 EventManager& EventManager::getInst(){

@@ -10,20 +10,16 @@
 
 
 void Game::run(){
+	srand ( time(NULL) );
 
 	WindowManager* windowManager = &WindowManager::getInst();
 	sf::RenderWindow* window = windowManager->getWindow();
 	StateManager* stateManager = &StateManager::getInst();
 	EventManager* eventManager = &EventManager::getInst();
 
-<<<<<<< HEAD
-	srand(time(NULL));
-	stateManager->addState("gameplay");
 	
+	stateManager->addState("gameplay");
 
-=======
-	stateManager->addState("worldmap");
->>>>>>> Jessica
 
 	while(window->isOpen()){
 

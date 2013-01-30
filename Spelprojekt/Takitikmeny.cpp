@@ -4,7 +4,7 @@
 #include "LevelManager.h"
 
 TaktikMeny::TaktikMeny(): mCurrentDragAnimal(0){
-	mFakeAnimals.push_back(new AnimalPrototype("GoliathSpider"));//<--- ta bort?
+	mFakeAnimals.push_back(new AnimalPrototype("GoliathSpider.xml"));//<--- ta bort?
 
 	//mSpotVector = LevelManager::getInst().// hämta spotvector från levelnmaanager
 
@@ -51,9 +51,9 @@ void TaktikMeny::render(){
 
 //tar emot och placerar ut animaler innan de kan placeras
 void TaktikMeny::receiveAnimals(){
-	mFakeAnimals = LevelManager::getInst().getAnimalsOnLevel();
-	for(FakeAnimals::size_type i = 0; i < mFakeAnimals.size(); i++){
-		//<---------------------------------det finns ingen startposition !!!!!!!!!!
-		mFakeAnimals[i]->setPos(sf::Vector2f(mFakeAnimals[i-1]->getPos().x + 30, mFakeAnimals[i-1]->getPos().y));
-	}
+	//mFakeAnimals = LevelManager::getInst().getAnimalsOnLevel();
+	//for(FakeAnimals::size_type i = 0; i < mFakeAnimals.size(); i++){
+	//	//<---------------------------------det finns ingen startposition !!!!!!!!!!
+	//	mFakeAnimals[i]->setPos(sf::Vector2f(mFakeAnimals[i-1]->getPos().x + 30, mFakeAnimals[i-1]->getPos().y));
+	//}
 }
