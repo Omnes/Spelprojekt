@@ -1,16 +1,19 @@
-#ifndef OPTIONSMENU
-#define OPTIONSMENU
+#ifndef OPTIONSMENY
+#define OPTIONSMENY
+#include "Button.h"
 #include "States.h"
 
-class OptionsMeny : public States{
-
+class OptionsMeny: public States{
 public:
-
-	OptionsMeny();
-	~OptionsMeny();
 	virtual void update();
 	virtual void render();
+	OptionsMeny();
+	~OptionsMeny();
 
+private:
+	std::vector<Button*> mButtons;
+	
 };
+
 
 #endif

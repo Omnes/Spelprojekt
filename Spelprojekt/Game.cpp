@@ -17,9 +17,17 @@ void Game::run(){
 	StateManager* stateManager = &StateManager::getInst();
 	EventManager* eventManager = &EventManager::getInst();
 
+<<<<<<< HEAD
 	
 	stateManager->addState("gameplay");
 
+=======
+
+	srand(time(NULL));
+
+	stateManager->addState("startmenu");
+
+>>>>>>> Jessica
 
 	while(window->isOpen()){
 
