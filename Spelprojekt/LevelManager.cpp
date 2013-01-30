@@ -133,7 +133,7 @@ std::vector<Layer*> LevelManager::loadLayers(){
 				float y = atr->FloatValue();
 			
 			
-				std::string id = obst->Name();
+				std::string id = "Obstacle";
 				sf::Vector2f pos = sf::Vector2f(x,y);
 				sf::Texture* tex = ResourceManager::getInst().getTexture(obst->GetText());
 				Obstacle* obstacle = new Obstacle(tex, pos, speedMod, id);

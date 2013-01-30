@@ -19,7 +19,7 @@ Animal::~Animal(){
 
 void Animal::update(){
 
-	mPosition.x += calculateSpeed(mSpeed);
+	mPosition.x ;//+= calculateSpeed(mSpeed);
 	mAnimation->update();
 	mAnimation->setPosition(mPosition);
 
