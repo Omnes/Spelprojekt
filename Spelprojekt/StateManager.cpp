@@ -3,6 +3,7 @@
 #include "StartMeny.h"
 #include "WorldMap.h"
 #include "OptionsMeny.h"
+#include "Taktikmeny.h"
 #include <iostream>
 
 StateManager::StateManager(){
@@ -10,6 +11,8 @@ StateManager::StateManager(){
 	mStateMap["startmenu"] = new StartMeny();
 	mStateMap["worldmap"] = new WorldMap();
 	mStateMap["optionsmenu"] = new OptionsMeny(); 
+	mStateMap["taktikmenu"]= new TaktikMeny();
+	
 }
 
 StateManager::~StateManager(){

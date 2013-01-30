@@ -1,15 +1,23 @@
 #include "WorldMap.h"
-#include <SFML\Graphics\CircleShape.hpp>
 #include "WindowManager.h"
-
-WorldMap::WorldMap(){}
+WorldMap::WorldMap(){
+	mButtons.push_back(new LevelButton(sf::Vector2f(200,100), "addTaktik","knapp1.jpg", "Level1.xml"));
+	mButtons.push_back(new LevelButton(sf::Vector2f(200,200), "addTaktik","knapp2.jpg","Level1.xml"));
+	mButtons.push_back(new LevelButton(sf::Vector2f(200,300), "addTaktik","knapp3.jpg","Level1.xml"));
+}
 
 WorldMap::~WorldMap(){}
 
-void WorldMap::update(){}
+void WorldMap::update(){
+	for (std::vector<LevelButton*>::iterator i = mButtons.begin(); i != mButtons.end(); i++){
+		(*i)->update();
+	}
+}
 
 void WorldMap::render(){
-
-	sf::CircleShape circle(10.0);
-	WindowManager::getInst().getWindow()->draw(circle);
+	sf::RenderWindow* window = WindowManager::getInst().getWindow();
+	for (std::vector<LevelButton*>::iterator i = mButtons.begin(); i != mButtons.end(); i++){
+		window->draw((*i)->getSprite());
+	}
 }
+
