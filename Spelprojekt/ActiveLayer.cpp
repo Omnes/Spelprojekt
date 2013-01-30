@@ -16,14 +16,16 @@ ActiveLayer::~ActiveLayer(){}
 void ActiveLayer::move(float cameraVelocity){
 
 	//ska denna användas ?? <----------------------------------------------------'******
+	//inte för tillfället men det skadar inte att den finns ett tag
 
 }
 
 void ActiveLayer::update(){
-	collision();
+
 	for(EntityVector::iterator i = mEntityVector.begin(); i != mEntityVector.end(); i++){
 		(*i)->update();
 	}
+	collision();
 }
 
 void ActiveLayer::render(){

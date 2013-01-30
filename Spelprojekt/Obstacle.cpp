@@ -37,15 +37,14 @@ std::string Obstacle::getID(){
 }
 
 void Obstacle::collide(Entity* entity){
-	int tid = 1;//<--------------------------------------ändra
+	int tid = 1;
 	if(entity->getID() == "Animal"){
-		entity->setMod(new SpeedMod(200, 0, mID));
+		entity->setMod(new SpeedMod(tid, 0, mID));
 	}
 }
 
-//gör ingenting
 void Obstacle::setMod(SpeedMod* speedMod){
-	//fel
+	//denna ska inte göra något.
 }
 
 sf::Vector2f Obstacle::getPos(){
