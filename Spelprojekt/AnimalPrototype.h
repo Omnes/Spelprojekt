@@ -6,6 +6,7 @@
 #include "tinyxml2.h"
 #include <string>
 #include <SFML\Graphics\Sprite.hpp>
+#include <vector>
 
 class Animal;
 class ResourceManager;
@@ -22,11 +23,17 @@ public:
 	sf::Vector2f getPos();
 	sf::FloatRect& getGlobalBounds(); //<--------------ta bort denna
 	sf::Sprite* getSprite();
+	int getLevel();
 
 
 private:
 
-	float mTreeSpeed, mMiddleSpeed, mGroundSpeed;
+	//float mTreeSpeed, mMiddleSpeed, mGroundSpeed;
+	
+	typedef std::vector <float> SpeedVector;
+	SpeedVector mSpeedVector;
+
+	float mHighSpeed;
 	sf::Vector2f mPosition;
 	sf::Texture* mTex;
 	sf::Sprite mSprite;
