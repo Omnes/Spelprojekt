@@ -5,13 +5,15 @@
 #include "OptionsMeny.h"
 #include "Taktikmeny.h"
 #include <iostream>
+#include "PauseMeny.h"
 
 StateManager::StateManager(){
 	mStateMap["gameplay"] = new Gameplay();
 	mStateMap["startmenu"] = new StartMeny();
 	mStateMap["worldmap"] = new WorldMap();
 	mStateMap["optionsmenu"] = new OptionsMeny(); 
-	mStateMap["taktikmenu"]= new TaktikMeny();
+	mStateMap["taktikmenu"] = new TaktikMeny();
+	mStateMap["pausemenu"] = new PauseMeny();
 	
 }
 
@@ -53,5 +55,11 @@ void StateManager::addState(std::string state){
 		return;
 	}
 	
-	mStates.push(i->second);
+	mStates.push(i->second->createNew());
+}
+
+States* StateManager::getTop(){
+	if(!mStates.empty())
+		return mStates.top();
+	return 0;
 }

@@ -11,6 +11,7 @@ class TaktikMeny: public States{
 public:
 	virtual void update();
 	virtual void render();
+	States* createNew();
 	void receiveAnimals();
 	void placeSpots();
 	~TaktikMeny();

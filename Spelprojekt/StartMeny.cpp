@@ -21,3 +21,7 @@ void StartMeny::render(){
 	}
 }
 
+States* StartMeny::createNew(){
+	return new StartMeny;
+}
+

@@ -21,3 +21,8 @@ void WorldMap::render(){
 	}
 }
 
+
+States* WorldMap::createNew(){
+	return new WorldMap;
+}
+

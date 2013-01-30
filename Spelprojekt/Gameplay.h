@@ -13,6 +13,7 @@ public:
 	~Gameplay();
 	virtual void update();
 	virtual void render();
+	States* createNew();
 
 private:
 

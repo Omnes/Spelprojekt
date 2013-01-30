@@ -10,18 +10,15 @@
 
 
 void Game::run(){
-	srand ( time(NULL) );
+
+	srand(time(NULL));
 
 	WindowManager* windowManager = &WindowManager::getInst();
 	sf::RenderWindow* window = windowManager->getWindow();
 	StateManager* stateManager = &StateManager::getInst();
 	EventManager* eventManager = &EventManager::getInst();
 
-
-	srand(time(NULL));
-
-	stateManager->addState("worldmap");
-
+	stateManager->addState("gameplay");
 
 
 	while(window->isOpen()){
@@ -31,7 +28,6 @@ void Game::run(){
 			if(evt.type == sf::Event::Closed){
 				window->close();
 			}
-		 
 		}
 
 		stateManager->update(); // main update
