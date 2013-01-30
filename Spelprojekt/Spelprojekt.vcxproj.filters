@@ -221,5 +221,8 @@
     <ClInclude Include="Spot.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="AddStartMeny.h">
+      <Filter>Header Files\Events</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,16 +1,21 @@
 #include "OptionsMeny.h"
-#include <SFML\Graphics\CircleShape.hpp>
 #include "WindowManager.h"
-
-OptionsMeny::OptionsMeny(){}
+OptionsMeny::OptionsMeny(){
+	mButtons.push_back(new Button(sf::Vector2f(100,100), "addStart","knapp1.jpg"));
+}
 
 OptionsMeny::~OptionsMeny(){}
 
-void OptionsMeny::update(){}
+void OptionsMeny::update(){
+	for (std::vector<Button*>::iterator i = mButtons.begin(); i != mButtons.end(); i++){
+		(*i)->update();
+	}
+}
 
 void OptionsMeny::render(){
-
-	sf::CircleShape circle(10.0);
-	circle.setFillColor(sf::Color::Blue);
-	WindowManager::getInst().getWindow()->draw(circle);
+	sf::RenderWindow* window = WindowManager::getInst().getWindow();
+	for (std::vector<Button*>::iterator i = mButtons.begin(); i != mButtons.end(); i++){
+		window->draw((*i)->getSprite());
+	}
 }
+

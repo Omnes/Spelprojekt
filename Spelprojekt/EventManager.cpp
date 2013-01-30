@@ -3,6 +3,7 @@
 #include "AddMap.h"
 #include "AddOptions.h"
 #include "AddTaktik.h"
+#include "AddStartMeny.h"
 
 EventManager::EventManager(){
 
@@ -10,7 +11,8 @@ EventManager::EventManager(){
 	mEventMap["addMap"]= new AddMap();
 	mEventMap["addOptions"]= new AddOptions();
 	mEventMap["addTaktik"]= new AddTaktik();
-
+	mEventMap["addStart"]= new AddStartMeny();
+}
 
 EventManager::~EventManager(){}
 

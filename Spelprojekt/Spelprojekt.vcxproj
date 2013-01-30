@@ -110,6 +110,7 @@
   <ItemGroup>
     <ClInclude Include="ActiveLayer.h" />
     <ClInclude Include="AddOptions.h" />
+    <ClInclude Include="AddStartMeny.h" />
     <ClInclude Include="AddTaktik.h" />
     <ClInclude Include="Animal.h" />
     <ClInclude Include="AnimalPrototype.h" />
