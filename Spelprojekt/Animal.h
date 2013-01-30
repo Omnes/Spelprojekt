@@ -15,7 +15,6 @@ public:
 	Animal(Animation* animation, sf::Vector2f position, float speed);
 	~Animal();
 	void update();
-	//void render();
 
 	sf::FloatRect* getRect();
 	sf::Sprite* getSprite();
@@ -32,6 +31,7 @@ private:
 	sf::Vector2f mPosition;
 	typedef std::set<SpeedMod*> ModSet;
 	ModSet mModSet;
+	bool mAlive;
 
 	std::string mID;
 

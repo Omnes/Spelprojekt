@@ -4,6 +4,7 @@
 
 
 Animal::Animal(Animation* animation, sf::Vector2f position, float speed) : 
+	mAlive(true),
 	mAnimation(animation),
 	currentAnimation(0), 
 	mPosition(position),

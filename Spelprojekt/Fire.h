@@ -22,6 +22,7 @@ private:
 	sf::Vector2f mPosition;
 	sf::Sprite mSprite;
 	std::string mID;
+	bool mAlive;
 
 };
 
