@@ -41,12 +41,6 @@ void ActiveLayer::collision(){
 		for(EntityVector::iterator j = mEntityVector.begin(); j != mEntityVector.end(); j++){
 	
 			if((*i)->getSprite()->getGlobalBounds().intersects((*j)->getSprite()->getGlobalBounds()) && (*i)->getID() != (*j)->getID()){
-				
-				std::cout<<(*i)->getID()<<"X  "<<(*i)->getPos().x<<std::endl;
-				std::cout<<(*i)->getID()<<"Y  "<<(*i)->getPos().y<<std::endl<<std::endl;
-
-				std::cout<<(*j)->getID()<<"X  "<<(*j)->getPos().x<<std::endl;
-				std::cout<<(*j)->getID()<<"Y  "<<(*j)->getPos().y<<std::endl<<std::endl;
 
 				(*i)->collide((*j));
 				(*j)->collide((*i));
