@@ -6,10 +6,8 @@
 #include <SFML\Window\Event.hpp>
 #include <SFML\Graphics\CircleShape.hpp>
 #include "EventManager.h"
+#include <time.h>
 
-
-
-float Game::elipsedTime = 0;
 
 void Game::run(){
 
@@ -18,7 +16,10 @@ void Game::run(){
 	StateManager* stateManager = &StateManager::getInst();
 	EventManager* eventManager = &EventManager::getInst();
 
+	srand(time(NULL));
 	stateManager->addState("gameplay");
+	
+
 
 	while(window->isOpen()){
 
