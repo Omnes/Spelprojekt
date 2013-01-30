@@ -2,13 +2,14 @@
 #include "WindowManager.h"
 #include <SFML\Window\Mouse.hpp>
 #include "LevelManager.h"
+#include "Spot.h"
 
 TaktikMeny::TaktikMeny(): mCurrentDragAnimal(0){
 	mFakeAnimals.push_back(new AnimalPrototype("GoliathSpider.xml"));//<--- ta bort?
 
-	//mSpotVector = LevelManager::getInst().// hämta spotvector från levelnmaanager
+	//mSpotVector = LevelManager::getInst().getSpotsOnLevel();// hämta spotvector från levelnmaanager
 
-	receiveAnimals();
+	//receiveAnimals();
 }
 
 TaktikMeny::~TaktikMeny(){}
@@ -21,7 +22,9 @@ void TaktikMeny::update(){
 	if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
 		if(mCurrentDragAnimal==0){
 			for(FakeAnimals::iterator i = mFakeAnimals.begin(); i != mFakeAnimals.end(); ++i){
-				if((*i) -> getGlobalBounds().contains(position)){
+				sf::FloatRect rect = (*i) -> getGlobalBounds();
+				if(rect.contains(position)){
+					//tänd ljus <-----------------------------------------
 					mCurrentDragAnimal = (*i);
 				}
 			}
@@ -32,10 +35,12 @@ void TaktikMeny::update(){
 	}else{
 		//if över en plats osv..
 		if(mCurrentDragAnimal !=0){
+			//sluta lys <-------------------------------
 			mCurrentDragAnimal = 0;
 		}
 	}
 
+	
 }
 
 void TaktikMeny::render(){
@@ -56,4 +61,12 @@ void TaktikMeny::receiveAnimals(){
 	//	//<---------------------------------det finns ingen startposition !!!!!!!!!!
 	//	mFakeAnimals[i]->setPos(sf::Vector2f(mFakeAnimals[i-1]->getPos().x + 30, mFakeAnimals[i-1]->getPos().y));
 	//}
+}
+
+void TaktikMeny::placeSpots(){
+	for(FakeAnimals::iterator i = mFakeAnimals.begin(); i != mFakeAnimals.end(); i++){
+		//if(){
+		//	mSpotVector.push_back(Spot());
+		//}
+	}
 }

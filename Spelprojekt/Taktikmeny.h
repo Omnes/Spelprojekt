@@ -5,12 +5,14 @@
 #include "AnimalPrototype.h"
 
 class LevelManager;
+class Spot;
 
 class TaktikMeny: public States{
 public:
 	virtual void update();
 	virtual void render();
 	void receiveAnimals();
+	void placeSpots();
 	~TaktikMeny();
 	TaktikMeny();
 
@@ -20,8 +22,8 @@ private:
 	typedef std::vector<AnimalPrototype*> FakeAnimals;
 	FakeAnimals mFakeAnimals;
 
-	//typedef std::vector <Spot*> SpotVector;
-	//SpotVector mSpotVector;
+	typedef std::vector <Spot*> SpotVector;
+	SpotVector mSpotVector;
 
 	bool mDown;
 

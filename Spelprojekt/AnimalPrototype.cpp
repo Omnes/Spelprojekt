@@ -67,7 +67,7 @@ sf::Vector2f AnimalPrototype::getPos(){
 }
 
 void AnimalPrototype::setPos(sf::Vector2f position){
-
+	mSprite.setPosition(position);
 	mPosition = position;
 }
 

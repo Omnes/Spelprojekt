@@ -20,7 +20,7 @@ public:
 	Animal* createAnimal(); // position, 
 	void setPos(sf::Vector2f position);
 	sf::Vector2f getPos();
-	sf::FloatRect& getGlobalBounds();
+	sf::FloatRect& getGlobalBounds(); //<--------------ta bort denna
 	sf::Sprite* getSprite();
 
 
