@@ -25,7 +25,7 @@ public:
 	//extra funktioner utanför basklassen layer
 	//fungerar som EntityManager
 	void collision();
-	void checkAlive();
+	void killDead();
 private:
 	typedef std::vector<Entity*> EntityVector;
 	EntityVector mEntityVector;

@@ -53,7 +53,11 @@ sf::FloatRect* Animal::getRect(){
 }
 
 bool Animal::getAlive(){
-	return 0; // <--------------------------------------------OSÄKER OPÅ OM FUNKTIONEN BEHÖVSVSV
+	return mAlive; // <--------------------------------------------OSÄKER OPÅ OM FUNKTIONEN BEHÖVSVSV
+}
+
+void Animal::setAlive(bool alive){
+	mAlive = alive;
 }
 
 void Animal::setMod(SpeedMod* speedMod){

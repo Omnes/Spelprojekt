@@ -26,6 +26,7 @@ void ActiveLayer::update(){
 		(*i)->update();
 	}
 	collision();
+	killDead();
 }
 
 void ActiveLayer::render(){
@@ -49,13 +50,13 @@ void ActiveLayer::collision(){
 	}
 }
 
-void ActiveLayer::checkAlive(){
+void ActiveLayer::killDead(){
 
 	for(EntityVector::iterator i = mEntityVector.begin(); i != mEntityVector.end();){
 
 		if((*i)->getAlive() == false){
-			//delete (*i);    <<----------------------------------- TA BORT SAKER MED DE HÄR RADERNA 
-			//i = mEntityVector.erase(i);
+			delete (*i);
+			i = mEntityVector.erase(i);
 		}else{
 			i++;
 		}

@@ -14,6 +14,7 @@ public:
 	virtual sf::Sprite* getSprite();
 	virtual sf::FloatRect* getRect();
 	virtual bool getAlive();
+	virtual void setAlive(bool alive);
 	virtual void collide(Entity* entity);
 	std::string getID();
 	virtual void setMod(SpeedMod* speedMod);
