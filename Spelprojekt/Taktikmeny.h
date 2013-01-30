@@ -25,6 +25,9 @@ private:
 	typedef std::vector <Spot*> SpotVector;
 	SpotVector mSpotVector;
 
+	typedef std::vector <float> LevelVector;
+	LevelVector mLevelVector;
+
 	bool mDown;
 
 };

@@ -65,8 +65,9 @@ void TaktikMeny::receiveAnimals(){
 
 void TaktikMeny::placeSpots(){
 	for(FakeAnimals::iterator i = mFakeAnimals.begin(); i != mFakeAnimals.end(); i++){
-		//if(){
-		//	mSpotVector.push_back(Spot());
-		//}
+		//hämtar var alla olika prototypeanimals ska ligga. och lägger de i en vektor
+		//ska sedan kolla igenom vektorn och räkna hur många olika platser det är på varje.
+		mLevelVector.push_back((*i)->getLevel());
+
 	}
 }

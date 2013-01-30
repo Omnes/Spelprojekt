@@ -33,11 +33,15 @@ void AnimalPrototype::loadAnimal(std::string filePath){
 	const tinyxml2::XMLAttribute *speed = elm->FirstChildElement("Speed")->FirstAttribute();
 
 	//sätter attribut
-	mGroundSpeed = speed->FloatValue();
+	//ground
+	mSpeedVector.push_back(speed->FloatValue());
 	speed->Next();
-	mMiddleSpeed = speed->FloatValue();
+	//middle
+	mSpeedVector.push_back(speed->FloatValue());
 	speed->Next();
-	mTreeSpeed = speed->FloatValue();
+	//air
+	mSpeedVector.push_back(speed->FloatValue());
+	
 
 	//kollar tredje elemntet
 	const tinyxml2::XMLElement *animalType = elm->FirstChildElement("AnimalType");
@@ -77,4 +81,15 @@ sf::FloatRect& AnimalPrototype::getGlobalBounds(){
 
 sf::Sprite* AnimalPrototype::getSprite(){
 	return &mSprite;
+}
+
+int AnimalPrototype::getLevel(){
+	float temp = 0;
+	for(SpeedVector::size_type i = 0 ; i < mSpeedVector.size(); i++){
+		if(mSpeedVector[i] > temp){
+			temp = mSpeedVector[i];
+			mHighSpeed = i;
+		}
+	}
+	return mHighSpeed;
 }
