@@ -74,3 +74,7 @@ void AnimalPrototype::setPos(sf::Vector2f position){
 sf::FloatRect& AnimalPrototype::getGlobalBounds(){
 	return mSprite.getGlobalBounds();
 }
+
+sf::Sprite* AnimalPrototype::getSprite(){
+	return &mSprite;
+}

@@ -11,7 +11,7 @@ class Entity;
 class LevelManager{
 public:
 	void setFilePath(std::string filePath);
-	std::vector<std::string> getAnimalsOnLevel();
+	std::vector<AnimalPrototype*> getAnimalsOnLevel();
 	void setAnimalPosition(std::vector<Entity*>);
 	std::vector<Layer*> loadLayers();
 	static LevelManager& getInst();
