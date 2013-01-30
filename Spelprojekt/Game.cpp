@@ -18,7 +18,7 @@ void Game::run(){
 	StateManager* stateManager = &StateManager::getInst();
 	EventManager* eventManager = &EventManager::getInst();
 
-	stateManager->addState("gameplay");
+	stateManager->addState("worldmap");
 
 	while(window->isOpen()){
 
