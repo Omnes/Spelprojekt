@@ -32,6 +32,10 @@ bool Obstacle::getAlive(){
 	return mAlive;
 }
 
+void Obstacle::setAlive(bool alive){
+	mAlive = alive;
+}
+
 std::string Obstacle::getID(){
 	return mID;
 }

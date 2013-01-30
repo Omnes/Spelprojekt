@@ -19,6 +19,7 @@ public:
 	sf::FloatRect* getRect();
 	sf::Sprite* getSprite();
 	bool getAlive(); // <----------------------------kanske ta bort denna funktion !??!
+	void setAlive(bool alive);
 	void collide(Entity* entity);
 	void setMod(SpeedMod* speedMod);
 	std::string getID();

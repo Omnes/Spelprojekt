@@ -2,8 +2,8 @@
 #include "WindowManager.h"
 WorldMap::WorldMap(){
 	mButtons.push_back(new LevelButton(sf::Vector2f(200,100), "addTaktik","knapp1.jpg", "Level1.xml"));
-	mButtons.push_back(new LevelButton(sf::Vector2f(200,200), "addTaktik","knapp2.jpg","Level1.xml"));
-	mButtons.push_back(new LevelButton(sf::Vector2f(200,300), "addTaktik","knapp3.jpg","Level1.xml"));
+
+	mButtons.push_back(new LevelButton(sf::Vector2f(200,300), "addGameplay","knapp3.jpg","Level1.xml"));
 }
 
 WorldMap::~WorldMap(){}

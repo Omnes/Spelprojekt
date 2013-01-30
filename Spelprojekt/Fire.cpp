@@ -1,5 +1,6 @@
 #include "Fire.h"
 #include "ResourceManager.h"
+#include <iostream>
 
 Fire::Fire(sf::Vector2f position,float speed): mID("Fire"), mPosition(position), mSpeed(speed), mAlive(true){
 	mSprite.setTexture(*ResourceManager::getInst().getTexture("eld.png"));
@@ -19,11 +20,17 @@ sf::Sprite* Fire::getSprite(){
 }
 
 bool Fire::getAlive(){
-	return true;
+	return mAlive;
+}
+
+void Fire::setAlive(bool alive){
+	if (alive == false)
+		std::cout << "du dödade just elden! är du säker ÅP att det var det du ville göra?" << std::endl;
+	mAlive = alive;
 }
 
 void Fire::collide(Entity* entity){
-	
+	entity->setAlive(false);
 }
 
 void Fire::setMod(SpeedMod* speedMod){
