@@ -25,9 +25,10 @@ private:
 	std::string mID;
 	sf::Texture* mTexture;
 	sf::Vector2f mPosition;
-	float mSpeed;
+	float mSpeedMod;
 	sf::Sprite mSprite;
 	bool mAlive;
+	sf::Clock collideCooldown;
 };
 
 #endif

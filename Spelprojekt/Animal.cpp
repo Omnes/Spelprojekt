@@ -23,6 +23,15 @@ void Animal::update(){
 	mAnimation->update();
 	mAnimation->setPosition(mPosition);
 
+
+	for(ModSet::iterator i = mModSet.begin(); i != mModSet.end();){
+		if(!(*i)->getAlive()){
+			i = mModSet.erase(i);
+
+		}else{
+			i++;
+		}
+	}
 }
 
 float Animal::calculateSpeed(float speed){
@@ -39,9 +48,10 @@ sf::Sprite* Animal::getSprite(){
 }
 
 void Animal::collide(Entity* entity){
+	int time = 20;
 
-	if(entity->getID() == "Animal" && mPosition.x < entity->getPos().x){
-		int time = 1;
+	if(entity->getID() == "Animal" && mPosition.x < entity->getPos().x && collideCooldown.getElapsedTime().asMilliseconds()>time){
+		collideCooldown.restart();
 		int speed = 0;
 		setMod(new SpeedMod(time, speed, "AnimalMod"));
 	}
@@ -53,7 +63,7 @@ sf::FloatRect* Animal::getRect(){
 }
 
 bool Animal::getAlive(){
-	return mAlive; // <--------------------------------------------OSÄKER OPÅ OM FUNKTIONEN BEHÖVSVSV
+	return mAlive; // <--------------------------------------------OSÄKER OPÅ OM FUNKTIONEN BEHÖVSVSV, jepp det gör den används redan flitigt
 }
 
 void Animal::setAlive(bool alive){
@@ -71,6 +81,8 @@ void Animal::setMod(SpeedMod* speedMod){
 
 	if(!found){
 		mModSet.insert(speedMod);
+	}else{
+		delete speedMod;
 	}
 }
 
