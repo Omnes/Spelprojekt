@@ -4,7 +4,7 @@
 #include <SFML\Graphics\RenderWindow.hpp>
 #include <SFML\Window\Event.hpp>
 #include "LayerManager.h"
-
+#include "Entity.h"
 
 class Camera{
 
@@ -13,12 +13,14 @@ public:
 	Camera(LayerManager* layermanager);
 	~Camera();
 	void update();
+	void namnsenare();
+
 
 private:
-
+	
 	sf::View mView;
 	sf::RenderWindow* mWindow;
-	float mVelocity, mPosition, mMaxVelocity, mMinVelocity;
+	float mVelocity, mPosition, mMaxVelocity, mMinVelocity, mMaxPos, mMinPos;
 	LayerManager* mLayerManager;
 };
 
