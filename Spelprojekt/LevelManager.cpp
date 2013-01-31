@@ -130,7 +130,7 @@ std::vector<Layer*> LevelManager::loadLayers(){
 				const tinyxml2::XMLAttribute *atr = obst->FirstAttribute()->Next();
 
 				float speedMod = atr->FloatValue();
-				atr->Next();
+				atr = atr->Next();
 				float y = atr->FloatValue();
 			
 			
