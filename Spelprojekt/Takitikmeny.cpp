@@ -40,7 +40,6 @@ void TaktikMeny::update(){
 		}
 	}
 
-	
 }
 
 void TaktikMeny::render(){
@@ -69,7 +68,7 @@ void TaktikMeny::placeSpots(){
 		//ska sedan kolla igenom vektorn och räkna hur många olika platser det är på varje.
 		mAllLevelVector.push_back((*i)->getLevel());
 	}
-<<<<<<< HEAD
+
 	for(AllLevelVector::iterator i = mAllLevelVector.begin(); i != mAllLevelVector.end(); i++){
 		if((*i) == 0){
 			mLevelTop++;
@@ -81,13 +80,10 @@ void TaktikMeny::placeSpots(){
 
 		mLevelGround += mLevelTop / 2; //robin hjälp fixa denna funkation <------------
 		mLevelTop = mLevelTop / 2;
-
 	}
 
-=======
 }
 
 States* TaktikMeny::createNew(){
 	return new TaktikMeny;
->>>>>>> robin
 }
