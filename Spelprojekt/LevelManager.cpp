@@ -34,16 +34,16 @@ void LevelManager::setFilePath(std::string filePath){
 std::vector<AnimalPrototype*> LevelManager::getAnimalsOnLevel(){
 	std::vector<AnimalPrototype*> animalsOnLevel;
 
-	//tinyxml2::XMLDocument doc;
-	//doc.LoadFile(mFilePath.c_str());
+	tinyxml2::XMLDocument doc;
+	doc.LoadFile(mFilePath.c_str());
 
-	//tinyxml2::XMLElement *elm = doc.FirstChildElement("AnimalsOnLevel")->FirstChildElement();
+	tinyxml2::XMLElement *elm = doc.FirstChildElement("AnimalsOnLevel")->FirstChildElement();
 
-	//while (elm !=0){
-	//	animalsOnLevel.push_back(elm->GetText());
-	//	elm = elm->NextSiblingElement();
+	while (elm !=0){
+		animalsOnLevel.push_back(new AnimalPrototype(elm->GetText()));
+		elm = elm->NextSiblingElement();
 
-	//}
+	}
 
 	return animalsOnLevel;
 }
@@ -147,8 +147,9 @@ std::vector<Layer*> LevelManager::loadLayers(){
 			entityVector.push_back(new Animal(new Animation(resourceManager->getTexture("djur.png"),300,3),sf::Vector2f(100,400),1));
 			entityVector.push_back(new Fire(sf::Vector2f(0,0),0.3));
 
-			layer = new ActiveLayer(entityVector);
-			mActiveLayer = layer;
+			ActiveLayer* activeLayer = new ActiveLayer(entityVector);
+			layer = activeLayer;
+			mActiveLayer = activeLayer;
 		}  
 
 		layers.push_back(layer);
@@ -162,19 +163,8 @@ std::vector<Layer*> LevelManager::loadLayers(){
 	
 }
 
-Layer* LevelManager::getActiveLayer(){
+ActiveLayer* LevelManager::getActiveLayer(){
 	return mActiveLayer;
 }
 
 
-/*
-ladda till taktikmenyn
-
-
-längd på bana
-inga hinder på varandra
-min distans
-min och max antal för varje hinder
-eldens fart
-
-*/

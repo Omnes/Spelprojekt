@@ -60,9 +60,9 @@
 </Layers>
 
 <AnimalsOnLevel>
-	<Animal_1>GoliathSpider</Animal_1>
-	<Animal_2>Monkey</Animal_2>
-	<Animal_3>Raptor</Animal_3>
+	<Animal_1>GoliathSpider.xml</Animal_1>
+	<Animal_2>Monkey.xml</Animal_2>  
+	<Animal_3>Raptor.xml</Animal_3>
 
 </AnimalsOnLevel>
 
