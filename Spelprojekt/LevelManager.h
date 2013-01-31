@@ -15,11 +15,13 @@ public:
 	void setAnimalPosition(std::vector<Entity*>);
 	std::vector<Layer*> loadLayers();
 	static LevelManager& getInst();
+	Layer* getActiveLayer();
 
 private:
 	//std::vector<Layer*> layers;
 	std::string mFilePath;
 	std::vector<Entity*> placedAnimals;
+	Layer* mActiveLayer;
 
 	LevelManager& operator=(const LevelManager&);
 	LevelManager(const LevelManager&);

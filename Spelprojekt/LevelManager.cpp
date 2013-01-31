@@ -32,7 +32,7 @@ void LevelManager::setFilePath(std::string filePath){
 }
 
 std::vector<AnimalPrototype*> LevelManager::getAnimalsOnLevel(){
-	//std::vector<std::string> animalsOnLevel;
+	std::vector<AnimalPrototype*> animalsOnLevel;
 
 	//tinyxml2::XMLDocument doc;
 	//doc.LoadFile(mFilePath.c_str());
@@ -45,9 +45,7 @@ std::vector<AnimalPrototype*> LevelManager::getAnimalsOnLevel(){
 
 	//}
 
-	std::vector<AnimalPrototype*> a;
-
-	return a/*animalsOnLevel*/;
+	return animalsOnLevel;
 }
 
 void LevelManager::setAnimalPosition(std::vector<Entity*> entityVector){
@@ -150,10 +148,11 @@ std::vector<Layer*> LevelManager::loadLayers(){
 			entityVector.push_back(new Fire(sf::Vector2f(0,0),0.3));
 
 			layer = new ActiveLayer(entityVector);
+			mActiveLayer = layer;
 		}  
 
 		layers.push_back(layer);
-
+		
 		elm = elm->NextSiblingElement();
 	 	
 
@@ -163,7 +162,9 @@ std::vector<Layer*> LevelManager::loadLayers(){
 	
 }
 
-
+Layer* LevelManager::getActiveLayer(){
+	return mActiveLayer;
+}
 
 
 /*

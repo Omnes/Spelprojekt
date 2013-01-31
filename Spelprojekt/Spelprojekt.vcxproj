@@ -139,6 +139,7 @@
     <ClInclude Include="Obstacle.h" />
     <ClInclude Include="OptionsMeny.h" />
     <ClInclude Include="PauseMeny.h" />
+    <ClInclude Include="PopState.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="SpeedMod.h" />
     <ClInclude Include="AddMap.h" />

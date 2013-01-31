@@ -61,8 +61,8 @@ void AnimalPrototype::loadAnimal(std::string filePath){
 Animal* AnimalPrototype::createAnimal(){
 
 	mAnimation =  new Animation(mTex, mFrameTick, mFrames);
-
-	return new Animal(mAnimation, sf::Vector2f(2,2), 0);
+	float speed = 0;
+	return new Animal(mAnimation, sf::Vector2f(2,2), speed);
 	//return new Animal(mAnimation, vilken position nn  , räkna ut speed här);
 };
 

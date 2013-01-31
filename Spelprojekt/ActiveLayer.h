@@ -26,6 +26,8 @@ public:
 	//fungerar som EntityManager
 	void collision();
 	void killDead();
+	std::vector<Entity*>* getEntityVector();
+
 private:
 	typedef std::vector<Entity*> EntityVector;
 	EntityVector mEntityVector;

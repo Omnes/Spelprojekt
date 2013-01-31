@@ -233,5 +233,8 @@
     <ClInclude Include="PauseMeny.h">
       <Filter>Header Files\States</Filter>
     </ClInclude>
+    <ClInclude Include="PopState.h">
+      <Filter>Header Files\Events</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -64,3 +64,7 @@ void ActiveLayer::killDead(){
 	}
 
 }
+
+std::vector<Entity*>* ActiveLayer::getEntityVector(){
+	return &mEntityVector;
+}
