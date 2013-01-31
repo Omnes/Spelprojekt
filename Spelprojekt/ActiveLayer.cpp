@@ -25,6 +25,7 @@ void ActiveLayer::update(){
 	for(EntityVector::iterator i = mEntityVector.begin(); i != mEntityVector.end(); i++){
 		(*i)->update();
 	}
+	
 	collision();
 	killDead();
 }

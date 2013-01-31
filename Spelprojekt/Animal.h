@@ -6,6 +6,7 @@
 #include <SFML\Graphics\Sprite.hpp>
 #include "SpeedMod.h"
 #include "Entity.h"
+#include <SFML\System\Clock.hpp>
 
 class Animation;
 
@@ -33,6 +34,7 @@ private:
 	typedef std::set<SpeedMod*> ModSet;
 	ModSet mModSet;
 	bool mAlive;
+	sf::Clock collideCooldown;
 
 	std::string mID;
 

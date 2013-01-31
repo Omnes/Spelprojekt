@@ -12,7 +12,7 @@ SpeedMod::SpeedMod(float time, float mod, std::string ID) :
 SpeedMod::~SpeedMod(){}
 
 bool SpeedMod::getAlive(){
-	return mclock.getElapsedTime().asSeconds() > mAliveTime;
+	return mclock.getElapsedTime().asMilliseconds() < mAliveTime;
 }
 
 float SpeedMod::getMod(){
