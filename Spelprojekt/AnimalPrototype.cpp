@@ -93,3 +93,7 @@ int AnimalPrototype::getLevel(){
 	}
 	return mHighSpeed;
 }
+
+std::vector <float> AnimalPrototype::getSpeedVector(){
+	return mSpeedVector;
+}

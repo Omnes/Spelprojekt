@@ -32,6 +32,9 @@ private:
 	typedef std::vector <int> PosVector;
 	PosVector mPosVector;
 
+	typedef std::vector <float> SpeedVector;
+	SpeedVector mSpeedVector;
+
 	int mLevelTop, mLevelMiddle, mLevelGround;
 
 	bool mDown;

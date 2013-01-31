@@ -30,18 +30,48 @@ void TaktikMeny::update(){
 			for(FakeAnimals::iterator i = mFakeAnimals.begin(); i != mFakeAnimals.end(); ++i){
 				sf::FloatRect rect = (*i) -> getGlobalBounds();
 				if(rect.contains(position)){
-					//tänd ljus <-----------------------------------------
 					mCurrentDragAnimal = (*i);
+				}
+			}
+
+			if(mCurrentDragAnimal !=0){
+				mSpeedVector = mCurrentDragAnimal->getSpeedVector();
+				//går igenom animal speedvector som innehåller tre olika hastigheteter
+				for(SpeedVector::size_type j = 0; j < mSpeedVector.size(); j++){
+					//om speedvector inte har ngn nolla i sig
+					if(mSpeedVector[j] != 0){
+						//går igenom de olika spotsen
+						for(SpotVector::iterator k = mSpotVector.begin(); k != mSpotVector.end(); k++){
+							int level = (*k)->getLevel();
+							//om positionen på nummret i speedvectorn är detsamma som spottens position
+							if(level == j){
+								//aktiviera ljus
+								(*k)->activateSpot(true);
+							}
+						}
+					//inte tänd <-----------------------------------------
+					}else{
+						for(SpotVector::iterator k = mSpotVector.begin(); k != mSpotVector.end(); k++){
+							int level = (*k)->getLevel();
+							if(level == j){
+								(*k)->activateSpot(false);
+							}
+						}
+					}
 				}
 			}
 		}
 		if(mCurrentDragAnimal !=0){
+
 			mCurrentDragAnimal -> setPos(position);
 		}
 	}else{
 		//if över en plats osv..
 		if(mCurrentDragAnimal !=0){
 			//sluta lys <-------------------------------
+			for(SpotVector::iterator i = mSpotVector.begin(); i != mSpotVector.end(); i++){
+				(*i)->activateSpot(false);
+			}
 			mCurrentDragAnimal = 0;
 		}
 	}
@@ -53,7 +83,7 @@ void TaktikMeny::render(){
 		WindowManager::getInst().getWindow()->draw(*(*i)->getSprite());
 	}
 	for(SpotVector::iterator i = mSpotVector.begin(); i != mSpotVector.end(); i++){
-//		WindowManager::getInst().getWindow()->draw(*(*i)->getSprite()); <-------------AVKOMMENTERA
+		WindowManager::getInst().getWindow()->draw(*(*i)->getSprite()); 
 	}
 
 }
@@ -75,9 +105,6 @@ void TaktikMeny::placeSpots(){
 		mLevelVector.push_back((*i)->getLevel());
 	}
 
-
-
-
 	//sätter hur många platser det finns per nivå ground/middle/top
 	for(LevelVector::iterator i = mLevelVector.begin(); i != mLevelVector.end(); i++){
 		if((*i) == 0){
@@ -91,7 +118,7 @@ void TaktikMeny::placeSpots(){
 
 	//flyttar ner spots från toppen till ground
 	mLevelGround += mLevelTop / 2;
-	//mLevelTop = (mLevelTop / 2) + 0.5; <----------------------------fixa denna
+	mLevelTop = ((float)mLevelTop / 2) + 0.5;
 
 	mPosVector.push_back(mLevelTop);
 	mPosVector.push_back(mLevelMiddle);

@@ -24,6 +24,7 @@ public:
 	sf::FloatRect& getGlobalBounds(); //<--------------ta bort denna
 	sf::Sprite* getSprite();
 	int getLevel();
+	std::vector <float> getSpeedVector();
 
 
 private:

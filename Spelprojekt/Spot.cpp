@@ -5,15 +5,16 @@
 Spot::Spot(int level, sf::Vector2f position):
 	mLevel(level)
 {
-//	ResourceManager* r = &ResourceManager::getInst();
+	ResourceManager* r = &ResourceManager::getInst();
 
-//	mTexture = *r->getTexture("eld.png");
-//	std::cout<<&mTexture<<std::endl;
-//	mSprite->setTexture(mTexture);
-//	mSprite->setPosition(position);
+	mTexture = *r->getTexture("spot.png");
+
+	mSprite = new sf::Sprite;
+	mSprite->setTexture(mTexture);
+	mSprite->setPosition(position);
 	
-//	mRect = sf::IntRect(0,0, mTexture.getSize().x/2, mTexture.getSize().y);
-//	mSprite->setTextureRect(mRect);
+	mRect = sf::IntRect(0,0, mTexture.getSize().x/2, mTexture.getSize().y);
+	mSprite->setTextureRect(mRect);
 }
 
 Spot::~Spot(){}
@@ -21,11 +22,11 @@ Spot::~Spot(){}
 
 void Spot::activateSpot(bool dragAnimal){
 	if(dragAnimal){
-//		mRect.left = mRect.width;//<-------------------statiska siffor
-//		mSprite->setTextureRect(mRect);
+		mRect.left = mRect.width;//<-------------------statiska siffor
+		mSprite->setTextureRect(mRect);
 	}else{
-//		mRect.left = 0; //<-------------------statiska siffor
-//		mSprite->setTextureRect(mRect);
+		mRect.left = 0; //<-------------------statiska siffor
+		mSprite->setTextureRect(mRect);
 	}
 }
 
