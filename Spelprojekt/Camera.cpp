@@ -26,7 +26,7 @@ void Camera::update(){
 
 		mVelocity+=panSpeed;
 	}
-
+	 
 	else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && mVelocity>-mMinVelocity){
 
 		mVelocity-=panSpeed;
