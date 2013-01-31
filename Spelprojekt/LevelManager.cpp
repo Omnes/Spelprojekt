@@ -130,7 +130,7 @@ std::vector<Layer*> LevelManager::loadLayers(){
 				const tinyxml2::XMLAttribute *atr = obst->FirstAttribute()->Next();
 
 				float speedMod = atr->FloatValue();
-				atr->Next();
+				atr = atr->Next();
 				float y = atr->FloatValue();
 			
 			
@@ -140,12 +140,15 @@ std::vector<Layer*> LevelManager::loadLayers(){
 				Obstacle* obstacle = new Obstacle(tex, pos, speedMod, id);
 				entityVector.push_back(obstacle);
 
-				x += minDistance + rand()%(maxDistance - minDistance);
+				x += minDistance + rand() % (maxDistance - minDistance);
 			
 			}
 
+			float fireSpeed = doc.FirstChildElement("Fire")->FirstAttribute()->FloatValue();
+			entityVector.push_back(new Fire(sf::Vector2f(0,0),fireSpeed));
+
 			entityVector.push_back(new Animal(new Animation(resourceManager->getTexture("djur.png"),300,3),sf::Vector2f(100,400),1));
-			entityVector.push_back(new Fire(sf::Vector2f(0,0),0.3));
+			
 
 			ActiveLayer* activeLayer = new ActiveLayer(entityVector);
 			layer = activeLayer;

@@ -35,10 +35,10 @@ void AnimalPrototype::loadAnimal(std::string filePath){
 	//sätter attribut
 	//ground
 	mSpeedVector.push_back(speed->FloatValue());
-	speed->Next();
+	speed = speed->Next();
 	//middle
 	mSpeedVector.push_back(speed->FloatValue());
-	speed->Next();
+	speed = speed->Next();
 	//air
 	mSpeedVector.push_back(speed->FloatValue());
 	
@@ -53,7 +53,7 @@ void AnimalPrototype::loadAnimal(std::string filePath){
 
 	//sätter attribut
 	mFrameTick = imageAttr->FloatValue();
-	imageAttr->Next();
+	imageAttr = imageAttr->Next();
 	mFrames = imageAttr->FloatValue();
 	
 }

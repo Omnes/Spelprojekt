@@ -26,11 +26,11 @@ private:
 	typedef std::vector <Spot*> SpotVector;
 	SpotVector mSpotVector;
 
-	typedef std::vector <int> AllLevelVector;
-	AllLevelVector mAllLevelVector;
+	typedef std::vector <int> LevelVector;
+	LevelVector mLevelVector;
 
-	//typedef std::vector <int> LevelVector;
-	//LevelVector mLevelVector;
+	typedef std::vector <int> PosVector;
+	PosVector mPosVector;
 
 	int mLevelTop, mLevelMiddle, mLevelGround;
 
