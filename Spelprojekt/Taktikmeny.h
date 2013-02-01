@@ -39,6 +39,8 @@ private:
 
 	bool mDown;
 
+	sf::Vector2f mGrabOffset;
+
 };
 
 

@@ -60,10 +60,9 @@
 </Layers>
 
 <AnimalsOnLevel>
-	<Animal_1>GoliathSpider.xml</Animal_1>
-	<Animal_1>GoliathSpider.xml</Animal_1>
-	<Animal_1>GoliathSpider.xml</Animal_1>
-	<Animal_1>GoliathSpider.xml</Animal_1>
+	<Animal_1>Scorpion.xml</Animal_1>
+	<Animal_1>Ocelot.xml</Animal_1>
+
 
 
 
@@ -75,8 +74,8 @@
 
 
 <Obstacles minDistance="300" maxDistance="600">
-	<Stone chance = "75" speedMod = ".2" y="200" numberOfFrames="2">Katt.jpg</Stone>
-	<Gren chance = "25" speedMod = ".1" y="500" numberOfFrames="2">katt2.jpg</Gren>
+	<Stone chance = "75" speedMod = "0" y="200" numberOfFrames="2">Katt.jpg</Stone>
+	<Gren chance = "25" speedMod = "0" y="500" numberOfFrames="2">katt2.jpg</Gren>
 
 
 
