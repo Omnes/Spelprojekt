@@ -41,8 +41,14 @@ void Game::run(){
 		eventManager->update(); // process events
 		
 		window->clear(sf::Color::Black);
+		
 		stateManager->render(); //rendrering
+
+		sf::View view = window->getView();
+		window->setView(window->getDefaultView());
 		window->draw(text);
+		window->setView(view);
+
 		window->display();
 	
 	}
