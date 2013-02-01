@@ -1,6 +1,9 @@
 #include "ActiveLayer.h"
 #include "Entity.h"
 #include "WindowManager.h"
+#include "LevelManager.h"
+#include "Camera.h"
+
 #include <iostream>
 
 ActiveLayer::ActiveLayer(std::vector <Entity*> entityVector):
@@ -9,6 +12,7 @@ ActiveLayer::ActiveLayer(std::vector <Entity*> entityVector):
 	if(mEntityVector.empty()){
 		std::cout<<"EntityVector is empty";
 	}
+	mThisCamera = 0;
 }
 
 ActiveLayer::~ActiveLayer(){}
@@ -38,15 +42,25 @@ void ActiveLayer::render(){
 
 void ActiveLayer::collision(){
 
+	float AnimalMax = 0;
+
+	if(LevelManager::getInst().getCamera() != nullptr && mThisCamera == 0){
+		mThisCamera = LevelManager::getInst().getCamera();
+	}else if(mThisCamera != 0){
+		AnimalMax = mThisCamera->getMax();
+	}
+
 	for(EntityVector::iterator i = mEntityVector.begin(); i != mEntityVector.end(); i++){
 		
 		for(EntityVector::iterator j = mEntityVector.begin(); j != mEntityVector.end(); j++){
-	
-			if((*i)->getSprite()->getGlobalBounds().intersects((*j)->getSprite()->getGlobalBounds()) && (*i)->getID() != (*j)->getID()){
+			//animalmax kan vara noll i början. kolla detta.
+			if((AnimalMax + 70) > (*i)->getPos().x && (AnimalMax + 70) > (*j)->getPos().x){
+				if((*i)->getSprite()->getGlobalBounds().intersects((*j)->getSprite()->getGlobalBounds()) && (*i)->getID() != (*j)->getID()){
 
-				(*i)->collide((*j));
-				(*j)->collide((*i));
-			}	
+					(*i)->collide((*j));
+					(*j)->collide((*i));
+				}	
+			}
 		}
 	}
 }

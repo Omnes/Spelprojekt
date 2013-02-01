@@ -12,6 +12,7 @@ class Entity;
 
 //utritning
 class WindowManager;
+class Camera;
 
 class ActiveLayer : public Layer{
 public:
@@ -32,6 +33,7 @@ private:
 	typedef std::vector<Entity*> EntityVector;
 	EntityVector mEntityVector;
 
+	Camera* mThisCamera;
 };
 
 #endif

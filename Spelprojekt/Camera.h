@@ -14,6 +14,7 @@ public:
 	~Camera();
 	void update();
 	void namnsenare();
+	float getMax();
 
 
 private:

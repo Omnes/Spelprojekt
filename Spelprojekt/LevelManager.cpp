@@ -170,4 +170,10 @@ ActiveLayer* LevelManager::getActiveLayer(){
 	return mActiveLayer;
 }
 
+void LevelManager::setCamera(Camera* levelCamera){
+	mThisCamera = levelCamera;
+}
 
+Camera* LevelManager::getCamera(){
+	return mThisCamera;
+}

@@ -1,6 +1,9 @@
 #include "Gameplay.h"
 
-Gameplay::Gameplay(): mLayerManager(), mCamera(&mLayerManager){
+Gameplay::Gameplay() : 
+	mLayerManager(), 
+	mCamera(&mLayerManager)
+{
 
 }
 

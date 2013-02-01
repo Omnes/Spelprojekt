@@ -74,5 +74,10 @@ void Camera::update(){
 	mView.setCenter(mPosition, mWindow->getSize().y/2);
 
 	mWindow->setView(mView);
+
+	LevelManager::getInst().setCamera(this);
 }
 
+float Camera::getMax(){
+	return mMaxPos;
+}
