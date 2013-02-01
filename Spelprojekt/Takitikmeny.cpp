@@ -10,17 +10,7 @@ TaktikMeny::TaktikMeny() :
 	mLevelMiddle(0),
 	mLevelGround(0)
 {
-<<<<<<< HEAD
-	//mFakeAnimals.push_back(new AnimalPrototype("GoliathSpider.xml"));//<--- ta bort?
-=======
-	mFakeAnimals.push_back(new AnimalPrototype("GoliathSpider.xml"));//<--- ta bort?
-	mFakeAnimals.push_back(new AnimalPrototype("GoliathSpider.xml"));//<--- ta bort?
 
-	mFakeAnimals.push_back(new AnimalPrototype("GoliathSpider.xml"));//<--- ta bort?
-	mFakeAnimals.push_back(new AnimalPrototype("GoliathSpider.xml"));//<--- ta bort?
->>>>>>> master
-
-	//mSpotVector = LevelManager::getInst().getSpotsOnLevel();// hämta spotvector från levelnmaanager
 	receiveAnimals();
 	placeSpots();
 }
