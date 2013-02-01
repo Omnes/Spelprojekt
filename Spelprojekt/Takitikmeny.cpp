@@ -10,11 +10,10 @@ TaktikMeny::TaktikMeny() :
 	mLevelMiddle(0),
 	mLevelGround(0)
 {
-	mFakeAnimals.push_back(new AnimalPrototype("GoliathSpider.xml"));//<--- ta bort?
+	//mFakeAnimals.push_back(new AnimalPrototype("GoliathSpider.xml"));//<--- ta bort?
 
 	//mSpotVector = LevelManager::getInst().getSpotsOnLevel();// hämta spotvector från levelnmaanager
-
-	//receiveAnimals();
+	receiveAnimals();
 	placeSpots();
 }
 
@@ -91,11 +90,12 @@ void TaktikMeny::render(){
 
 //tar emot och placerar ut animaler innan de kan placeras
 void TaktikMeny::receiveAnimals(){
-	//mFakeAnimals = LevelManager::getInst().getAnimalsOnLevel();
-	//for(FakeAnimals::size_type i = 0; i < mFakeAnimals.size(); i++){
-	//	//<---------------------------------det finns ingen startposition !!!!!!!!!!
-	//	mFakeAnimals[i]->setPos(sf::Vector2f(mFakeAnimals[i-1]->getPos().x + 30, mFakeAnimals[i-1]->getPos().y));
-	//}
+	sf::Vector2f startPos = sf::Vector2f(300,0);
+	sf::Vector2f distance = sf::Vector2f(50,0);
+	mFakeAnimals = LevelManager::getInst().getAnimalsOnLevel();
+	for(FakeAnimals::size_type i = 0; i < mFakeAnimals.size(); i++){
+		mFakeAnimals[i]->setPos(startPos + sf::Vector2f(distance.x*i,distance.y*i));
+	}
 }
 
 void TaktikMeny::placeSpots(){

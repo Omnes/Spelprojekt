@@ -4,7 +4,7 @@
 
 	<Images>katt.jpg</Images>
 
-	<Speed ground="3" middle="1" tree="3"/>
+	<Speed ground="1" middle="0" tree="0"/>
 	
 	<AnimalType>plant</AnimalType>
 

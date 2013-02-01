@@ -61,8 +61,11 @@
 
 <AnimalsOnLevel>
 	<Animal_1>GoliathSpider.xml</Animal_1>
-	<Animal_2>Monkey.xml</Animal_2>  
-	<Animal_3>Raptor.xml</Animal_3>
+	<Animal_1>GoliathSpider.xml</Animal_1>
+	<Animal_1>GoliathSpider.xml</Animal_1>
+	<Animal_1>GoliathSpider.xml</Animal_1>
+
+
 
 </AnimalsOnLevel>
 
@@ -79,7 +82,7 @@
 
 </Obstacles>
 
-<Fire speed = "0.1"/>
+<Fire speed = "0.3"/>
 
 
 
