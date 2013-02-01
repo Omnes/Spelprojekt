@@ -10,7 +10,15 @@ TaktikMeny::TaktikMeny() :
 	mLevelMiddle(0),
 	mLevelGround(0)
 {
+<<<<<<< HEAD
 	//mFakeAnimals.push_back(new AnimalPrototype("GoliathSpider.xml"));//<--- ta bort?
+=======
+	mFakeAnimals.push_back(new AnimalPrototype("GoliathSpider.xml"));//<--- ta bort?
+	mFakeAnimals.push_back(new AnimalPrototype("GoliathSpider.xml"));//<--- ta bort?
+
+	mFakeAnimals.push_back(new AnimalPrototype("GoliathSpider.xml"));//<--- ta bort?
+	mFakeAnimals.push_back(new AnimalPrototype("GoliathSpider.xml"));//<--- ta bort?
+>>>>>>> master
 
 	//mSpotVector = LevelManager::getInst().getSpotsOnLevel();// hämta spotvector från levelnmaanager
 	receiveAnimals();
@@ -82,6 +90,7 @@ void TaktikMeny::render(){
 		WindowManager::getInst().getWindow()->draw(*(*i)->getSprite());
 	}
 	for(SpotVector::iterator i = mSpotVector.begin(); i != mSpotVector.end(); i++){
+		std::cout<<mSpotVector.size()<<std::endl;
 		WindowManager::getInst().getWindow()->draw(*(*i)->getSprite()); 
 	}
 
@@ -124,15 +133,13 @@ void TaktikMeny::placeSpots(){
 	mPosVector.push_back(mLevelMiddle);
 	mPosVector.push_back(mLevelGround); // värdelöst ???
 
-	int temp = 30;
-	int temp2 = 30; // fixa detta snyggare sen ??
+	int xDistance = 250;
+	int yDistance = 200;
 	
 	//placerar ut spots 
-	for(int i = 0; i < 2; i++){
-		temp *= (i + 1);
+	for(int i = 0; i < 3/* == antal level på en bana*/; i++){
 		for(int j = 0; j < mPosVector[i]; j++){
-			temp2 *= (j + 1);
-			mSpotVector.push_back(new Spot(i, sf::Vector2f(temp, temp2)));
+			mSpotVector.push_back(new Spot(i, sf::Vector2f(j*xDistance, i*yDistance))); //sean jag fixa det åt dig :D:D:D
 		}
 	}
 }
