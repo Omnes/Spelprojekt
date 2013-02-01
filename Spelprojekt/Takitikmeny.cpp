@@ -3,6 +3,7 @@
 #include <SFML\Window\Mouse.hpp>
 #include "LevelManager.h"
 #include "Spot.h"
+#include "AnimalPrototype.h"
 
 TaktikMeny::TaktikMeny() : 
 	mCurrentDragAnimal(0),
@@ -28,10 +29,12 @@ void TaktikMeny::update(){
 				sf::FloatRect rect = (*i) -> getGlobalBounds();
 				if(rect.contains(position)){
 					mCurrentDragAnimal = (*i);
+					mGrabOffset = mCurrentDragAnimal->getPos() - position;
 				}
 			}
 
 			if(mCurrentDragAnimal !=0){
+
 				mSpeedVector = mCurrentDragAnimal->getSpeedVector();
 				//går igenom animal speedvector som innehåller tre olika hastigheteter
 				for(SpeedVector::size_type j = 0; j < mSpeedVector.size(); j++){
@@ -60,7 +63,7 @@ void TaktikMeny::update(){
 		}
 		if(mCurrentDragAnimal !=0){
 
-			mCurrentDragAnimal -> setPos(position);
+			mCurrentDragAnimal -> setPos(position + mGrabOffset);
 		}
 	}else{
 		//if över en plats osv..
@@ -68,6 +71,12 @@ void TaktikMeny::update(){
 			//sluta lys <-------------------------------
 			for(SpotVector::iterator i = mSpotVector.begin(); i != mSpotVector.end(); i++){
 				(*i)->activateSpot(false);
+				bool intersects = (*i)->getSprite()->getGlobalBounds().intersects(mCurrentDragAnimal->getGlobalBounds());
+				AnimalPrototype* placedID = (*i)->getPlacedAnimal();
+				if(intersects){
+					(*i)->setPlacedAnimal(mCurrentDragAnimal);
+					mCurrentDragAnimal->setPos((*i)->getSprite()->getPosition());
+				}
 			}
 			mCurrentDragAnimal = 0;
 		}
@@ -76,12 +85,13 @@ void TaktikMeny::update(){
 }
 
 void TaktikMeny::render(){
-	for(FakeAnimals::iterator i = mFakeAnimals.begin(); i != mFakeAnimals.end(); i++){
-		WindowManager::getInst().getWindow()->draw(*(*i)->getSprite());
-	}
+
 	for(SpotVector::iterator i = mSpotVector.begin(); i != mSpotVector.end(); i++){
 		std::cout<<mSpotVector.size()<<std::endl;
 		WindowManager::getInst().getWindow()->draw(*(*i)->getSprite()); 
+	}
+	for(FakeAnimals::iterator i = mFakeAnimals.begin(); i != mFakeAnimals.end(); i++){
+		WindowManager::getInst().getWindow()->draw(*(*i)->getSprite());
 	}
 
 }

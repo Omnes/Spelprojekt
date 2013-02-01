@@ -4,8 +4,9 @@
 #include "SFML\Graphics\Sprite.hpp"
 #include "SFML\Graphics\Texture.hpp"
 #include <iostream>
+#include "AnimalPrototype.h"
 
-class ResourceManager;
+class AnimalPrototype;
 
 class Spot{
 public:
@@ -15,12 +16,16 @@ public:
 	void activateSpot(bool dragAnimal);
 	int getLevel();
 	sf::Sprite* getSprite();
+	AnimalPrototype* getPlacedAnimal();
+	void setPlacedAnimal(AnimalPrototype* prototype);
 	
 private:
 
 	sf::Texture mTexture;
 	sf::Sprite *mSprite;
 	sf::IntRect mRect;
+	AnimalPrototype* mPlacedAnimal;
+	
 
 	int mLevel;
 };

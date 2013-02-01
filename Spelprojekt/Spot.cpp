@@ -2,12 +2,14 @@
 #include "ResourceManager.h"
 
 
+
 Spot::Spot(int level, sf::Vector2f position):
-	mLevel(level)
+	mLevel(level),
+	mPlacedAnimal(0)
 {
 	ResourceManager* r = &ResourceManager::getInst();
 
-	mTexture = *r->getTexture("spot.png");
+	mTexture = *r->getTexture("spot2.png");
 
 	mSprite = new sf::Sprite;
 	mSprite->setTexture(mTexture);
@@ -15,6 +17,7 @@ Spot::Spot(int level, sf::Vector2f position):
 	
 	mRect = sf::IntRect(0,0, mTexture.getSize().x/2, mTexture.getSize().y);
 	mSprite->setTextureRect(mRect);
+	
 }
 
 Spot::~Spot(){}
@@ -22,10 +25,14 @@ Spot::~Spot(){}
 
 void Spot::activateSpot(bool dragAnimal){
 	if(dragAnimal){
-		mRect.left = mRect.width;//<-------------------statiska siffor
+		mRect.left = mRect.width/3;//<-------------------statiska siffor
 		mSprite->setTextureRect(mRect);
-	}else{
+	}else {
 		mRect.left = 0; //<-------------------statiska siffor
+		mSprite->setTextureRect(mRect);
+	}
+	if(mPlacedAnimal!=0){
+		mRect.left = mRect.width/3*2;
 		mSprite->setTextureRect(mRect);
 	}
 }
@@ -36,4 +43,12 @@ int Spot::getLevel(){
 
 sf::Sprite* Spot::getSprite(){
 	return mSprite;
+}
+
+AnimalPrototype* Spot::getPlacedAnimal(){
+	return mPlacedAnimal;
+}
+
+void Spot::setPlacedAnimal(AnimalPrototype* prototype){
+	mPlacedAnimal = prototype;
 }

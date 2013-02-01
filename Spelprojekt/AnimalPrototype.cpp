@@ -7,7 +7,8 @@
 AnimalPrototype::AnimalPrototype(std::string filePath){
 	loadAnimal(filePath);
 	mSprite.setTexture(*mTex);
-	mSprite.setTextureRect(sf::IntRect(0,0,mTex->getSize().x,mTex->getSize().y));
+	mSprite.setTextureRect(sf::IntRect(0,0,mTex->getSize().x/3,mTex->getSize().y));
+	mSprite.setOrigin(64,64); // kom ihåg att fixa orgin när vi fått grafik
 }
 
 AnimalPrototype::~AnimalPrototype(){}
@@ -63,7 +64,7 @@ Animal* AnimalPrototype::createAnimal(){
 	mAnimation =  new Animation(mTex, mFrameTick, mFrames);
 	float speed = 0;
 	return new Animal(mAnimation, sf::Vector2f(2,2), speed);
-	//return new Animal(mAnimation, vilken position nn  , räkna ut speed här);
+
 };
 
 sf::Vector2f AnimalPrototype::getPos(){

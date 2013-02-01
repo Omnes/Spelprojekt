@@ -1,0 +1,14 @@
+<Animal>
+
+	<Name>Ocelot</Name>
+
+	<Images>ocelot.png</Images>
+
+	<Speed ground="1" middle="2" tree="0"/>
+	
+	<AnimalType>plant</AnimalType>
+
+	<ImageAttr fTick="200" frames="4"/>
+
+
+</Animal>

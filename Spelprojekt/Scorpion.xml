@@ -1,0 +1,14 @@
+<Animal>
+
+	<Name>Scorpion</Name>
+
+	<Images>scorpion.png</Images>
+
+	<Speed ground="0" middle="0" tree="2"/>
+	
+	<AnimalType>plant</AnimalType>
+
+	<ImageAttr fTick="200" frames="3"/>
+
+
+</Animal>
