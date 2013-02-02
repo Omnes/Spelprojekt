@@ -21,6 +21,8 @@ void Game::run(){
 	sf::RenderWindow* window = windowManager->getWindow();
 	StateManager* stateManager = &StateManager::getInst();                                                      
 	EventManager* eventManager = &EventManager::getInst();
+	sf::Font FPSFont;
+	FPSFont.getDefaultFont();
 
 	stateManager->addState("gameplay");
 
@@ -28,6 +30,7 @@ void Game::run(){
 	while(window->isOpen()){
 
 		sf::Text text;
+		text.setFont(FPSFont);
 		text.setString(setStringStream(mCurrentFPS));
 		sf::Event evt;
 		while(window->pollEvent(evt)){
