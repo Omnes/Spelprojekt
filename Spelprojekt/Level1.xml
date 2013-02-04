@@ -3,13 +3,8 @@
 	<Layer_1>
 		<Layer>static</Layer>
 		<Images>
-<<<<<<< HEAD
-			
-=======
-			<Image_1>1.png</Image_1>
-			<Image_2>1.png</Image_2>
-			<Image_3>1.png</Image_3>
->>>>>>> robin
+	
+
 		</Images>
 		<Stats speed="-0.95"/>
 
@@ -19,16 +14,8 @@
 	<Layer_2>
 		<Layer>static</Layer>
 		<Images>
-<<<<<<< HEAD
-			
-=======
-			<Image_1>2.png</Image_1>
-			<Image_2>2.png</Image_2>
-			<Image_3>2.png</Image_3>
-			<Image_3>2.png</Image_3>
-			<Image_3>2.png</Image_3>
-			<Image_3>2.png</Image_3>
->>>>>>> robin
+
+
 		</Images>
 		<Stats speed="-0.8"/>
 
@@ -39,19 +26,12 @@
 	<Layer_3>
 		<Layer>static</Layer>
 		<Images>
-<<<<<<< HEAD
-			<Image_1>djungel1.1.png</Image_1>
-			<Image_2>djungel1.2.png</Image_2>
-			<Image_3>djungel1.3.png</Image_3>
-			<Image_4>djungel1.4.png</Image_4>
-=======
-			<Image_1>3.png</Image_1>
-			<Image_2>3.png</Image_2>
-			<Image_3>3.png</Image_3>
-			<Image_3>3.png</Image_3>
-			<Image_3>3.png</Image_3>
-			<Image_3>3.png</Image_3>
->>>>>>> robin
+
+			<Image_1>Fuckingklardjungel1.png</Image_1>
+			<Image_2>Fuckningklar2.png</Image_2>
+			<Image_3>Fuckingklar3.png</Image_3>
+			<Image_4>fuckingKlar4.png</Image_4>
+
 		
 		</Images>
 		<Stats speed="0"/>
@@ -68,17 +48,8 @@
 	<Layer_5>
 		<Layer>static</Layer>
 		<Images>
-<<<<<<< HEAD
+
 			
-=======
-			<Image_1>4.png</Image_1>
-			<Image_2>4.png</Image_2>
-			<Image_3>4.png</Image_3>
-			<Image_3>4.png</Image_3>
-			<Image_3>4.png</Image_3>
-			<Image_3>4.png</Image_3>
-			<Image_3>4.png</Image_3>
->>>>>>> robin
 		</Images>
 		<Stats speed="1.3"/>
 
