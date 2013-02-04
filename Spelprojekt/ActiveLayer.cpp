@@ -6,8 +6,10 @@
 
 #include <iostream>
 
-ActiveLayer::ActiveLayer(std::vector <Entity*> entityVector):
-	mEntityVector(entityVector)
+ActiveLayer::ActiveLayer(std::vector <Entity*> entityVector, int levellength):
+	mEntityVector(entityVector),
+	mLevellength(levellength),
+	mAllAnimalsPassed(false)
 {
 	if(mEntityVector.empty()){
 		std::cout<<"EntityVector is empty";
@@ -82,4 +84,22 @@ void ActiveLayer::killDead(){
 
 std::vector<Entity*>* ActiveLayer::getEntityVector(){
 	return &mEntityVector;
+}
+
+void ActiveLayer::finishLine(){
+
+	mAllAnimalsPassed = true;
+
+	for(EntityVector::iterator i = mEntityVector.begin(); i != mEntityVector.end();){
+
+		if((*i)->getID() == "Animal"){
+			if((*i)->getPos().x<mLevellength){
+				mAllAnimalsPassed = false;
+			}
+		}
+	}
+
+	if(mAllAnimalsPassed == true){
+		//addstate, finished;
+	}
 }

@@ -16,7 +16,7 @@ class Camera;
 
 class ActiveLayer : public Layer{
 public:
-	ActiveLayer(std::vector <Entity*> entityVector);
+	ActiveLayer(std::vector <Entity*> entityVector, int levellength);
 	~ActiveLayer();
 	
 	void move(float velocity);
@@ -27,11 +27,14 @@ public:
 	//fungerar som EntityManager
 	void collision();
 	void killDead();
+	void finishLine();
 	std::vector<Entity*>* getEntityVector();
 
 private:
 	typedef std::vector<Entity*> EntityVector;
 	EntityVector mEntityVector;
+	bool mAllAnimalsPassed;
+	int mLevellength;
 
 	Camera* mThisCamera;
 };

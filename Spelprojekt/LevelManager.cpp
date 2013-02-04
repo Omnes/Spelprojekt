@@ -150,7 +150,7 @@ std::vector<Layer*> LevelManager::loadLayers(){
 			entityVector.push_back(new Animal(new Animation(resourceManager->getTexture("djur.png"),300,3),sf::Vector2f(100,400),2));
 			
 
-			ActiveLayer* activeLayer = new ActiveLayer(entityVector);
+			ActiveLayer* activeLayer = new ActiveLayer(entityVector, levelLength);
 			layer = activeLayer;
 			mActiveLayer = activeLayer;
 		}  
