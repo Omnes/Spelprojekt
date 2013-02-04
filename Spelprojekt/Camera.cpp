@@ -12,7 +12,7 @@ Camera::Camera(LayerManager* layermanager) :
 	mVelocity(0.0), 
 	mView(sf::FloatRect(0,0,1280,720)),
 	mPosition(mView.getSize().x/2), 
-	mMaxVelocity(1), 
+	mMaxVelocity(2.5), 
 	mMinVelocity(1),
 	mMaxPos(1),
 	mMinPos(2000){
@@ -47,7 +47,7 @@ void Camera::update(){
 
 	namnsenare();
 
-	float panSpeed = 0.01;
+	float panSpeed = 0.1;
 	float lastPosition = mPosition;
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && mVelocity<mMaxVelocity){
 

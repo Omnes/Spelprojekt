@@ -3,9 +3,9 @@
 	<Layer_1>
 		<Layer>static</Layer>
 		<Images>
-			<Image_1>bak2.png</Image_1>
-			<Image_2>bak2.png</Image_2>
-			<Image_3>bak2.png</Image_3>
+			<Image_1>1.png</Image_1>
+			<Image_2>1.png</Image_2>
+			<Image_3>1.png</Image_3>
 		</Images>
 		<Stats speed="-0.95"/>
 
@@ -15,9 +15,12 @@
 	<Layer_2>
 		<Layer>static</Layer>
 		<Images>
-			<Image_1>bak1.png</Image_1>
-			<Image_2>bak1.png</Image_2>
-			<Image_3>bak1.png</Image_3>
+			<Image_1>2.png</Image_1>
+			<Image_2>2.png</Image_2>
+			<Image_3>2.png</Image_3>
+			<Image_3>2.png</Image_3>
+			<Image_3>2.png</Image_3>
+			<Image_3>2.png</Image_3>
 		</Images>
 		<Stats speed="-0.8"/>
 
@@ -28,9 +31,12 @@
 	<Layer_3>
 		<Layer>static</Layer>
 		<Images>
-			<Image_1>middle.png</Image_1>
-			<Image_2>middle.png</Image_2>
-			<Image_3>middle.png</Image_3>
+			<Image_1>3.png</Image_1>
+			<Image_2>3.png</Image_2>
+			<Image_3>3.png</Image_3>
+			<Image_3>3.png</Image_3>
+			<Image_3>3.png</Image_3>
+			<Image_3>3.png</Image_3>
 		
 		</Images>
 		<Stats speed="0"/>
@@ -43,13 +49,17 @@
 
 	</Layer_4>
 
-
+                                         
 	<Layer_5>
 		<Layer>static</Layer>
 		<Images>
-			<Image_1>front.png</Image_1>
-			<Image_2>front.png</Image_2>
-			<Image_3>front.png</Image_3>
+			<Image_1>4.png</Image_1>
+			<Image_2>4.png</Image_2>
+			<Image_3>4.png</Image_3>
+			<Image_3>4.png</Image_3>
+			<Image_3>4.png</Image_3>
+			<Image_3>4.png</Image_3>
+			<Image_3>4.png</Image_3>
 		</Images>
 		<Stats speed="1.3"/>
 
@@ -74,14 +84,14 @@
 
 
 <Obstacles minDistance="300" maxDistance="600">
-	<Stone chance = "75" speedMod = "0" y="200" numberOfFrames="2">Katt.jpg</Stone>
-	<Gren chance = "25" speedMod = "0" y="500" numberOfFrames="2">katt2.jpg</Gren>
+	<Stone chance = "75" speedMod = "0" y="200" numberOfFrames="2">sten.png</Stone>
+	<Gren chance = "25" speedMod = "0" y="500" numberOfFrames="2">gren.png</Gren>
 
 
 
 </Obstacles>
 
-<Fire speed = "0.3"/>
+<Fire speed = "1"/>
 
 
 
