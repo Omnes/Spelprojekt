@@ -1,27 +1,27 @@
 #include "Endline.h"
 
 
-Endline::Endline(sf::Vector2f position) : mPosition(position){
+Endline::Endline(sf::Vector2f position, sf::Texture *texture) : mTexture(texture), mID("Endline"){
+
+	mSprite->setTexture(*mTexture);
+	mSprite->setPosition(position);
 }
 
 Endline::~Endline(){
 }
 
 void Endline::update(){
-}
 
+}
 
 sf::FloatRect* Endline::getRect(){
 
-	sf::FloatRect derp;
-
-	return &derp;
+	return &mSprite->getGlobalBounds();
 }
 
 sf::Sprite* Endline::getSprite(){
-	sf::Sprite herp;
 
-	return &herp;
+	return mSprite;
 }
 
 bool Endline::getAlive(){
@@ -34,6 +34,7 @@ void Endline::setAlive(bool alive){
 	
 void Endline::collide(Entity* entity){
 
+
 }
 
 void Endline::setMod(SpeedMod* speedMod){
@@ -42,12 +43,10 @@ void Endline::setMod(SpeedMod* speedMod){
 
 std::string Endline::getID(){
 
-	std::string mhm;
-	return mhm;
+	return mID;
 }
 
 sf::Vector2f Endline::getPos(){
 
-	sf::Vector2f mmhm;
-	return mmhm;
+	return mSprite->getPosition();
 }
