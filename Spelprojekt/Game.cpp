@@ -24,7 +24,7 @@ void Game::run(){
 	sf::Font FPSFont;
 	FPSFont.getDefaultFont();
 
-	stateManager->addState("gameplay");
+	stateManager->addState("taktikmenu");
 
 
 	while(window->isOpen()){

@@ -72,13 +72,19 @@ void TaktikMeny::update(){
 		if(mCurrentDragAnimal !=0){
 			//sluta lys <-------------------------------
 			for(SpotVector::iterator i = mSpotVector.begin(); i != mSpotVector.end(); i++){
-				(*i)->activateSpot(false);
-				bool intersects = mCurrentDragAnimal->getSprite()->getGlobalBounds().intersects((*i)->getSprite()->getGlobalBounds());
-				AnimalPrototype* placedID = (*i)->getPlacedAnimal();
-				if(intersects){
-					(*i)->setPlacedAnimal(mCurrentDragAnimal);
-					(*i)->activateSpot(true);
-					mCurrentDragAnimal->setPos((*i)->getSprite()->getPosition());
+				for(FakeAnimals::iterator j = mFakeAnimals.begin(); j != mFakeAnimals.end(); j++){
+					(*i)->activateSpot(false);
+					bool intersects = mCurrentDragAnimal->getSprite()->getGlobalBounds().intersects((*i)->getSprite()->getGlobalBounds());
+					AnimalPrototype* placedID = (*i)->getPlacedAnimal();
+					if(intersects && (*i)->getSprite()->getGlobalBounds().intersects((*j)->getSprite()->getGlobalBounds())){
+						(*i)->setPlacedAnimal(mCurrentDragAnimal);
+						(*i)->activateSpot(true);
+						mCurrentDragAnimal->setPos((*i)->getSprite()->getPosition());
+					}/*else if((*i)->getSprite()->getGlobalBounds().intersects((*j)->getSprite()->getGlobalBounds())){
+						(*i)->setPlacedAnimal(mCurrentDragAnimal);
+					}else{
+						(*i)->setPlacedAnimal(0);
+					}*/
 				}
 			}
 			mCurrentDragAnimal = 0;
