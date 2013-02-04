@@ -17,7 +17,7 @@ Spot::Spot(int level, sf::Vector2f position):
 	
 	mRect = sf::IntRect(0,0, mTexture.getSize().x/2, mTexture.getSize().y);
 	mSprite->setTextureRect(mRect);
-	
+	mSprite->setOrigin(64,64); // kom ihåg att fixa orgin när vi fått grafik
 }
 
 Spot::~Spot(){}
@@ -31,7 +31,7 @@ void Spot::activateSpot(bool dragAnimal){
 		mRect.left = 0; //<-------------------statiska siffor
 		mSprite->setTextureRect(mRect);
 	}
-	if(mPlacedAnimal!=0){
+	if(mPlacedAnimal != 0){
 		mRect.left = mRect.width/3*2;
 		mSprite->setTextureRect(mRect);
 	}

@@ -5,6 +5,8 @@
 #include "Spot.h"
 #include "AnimalPrototype.h"
 
+#include <SFML\Graphics\RectangleShape.hpp>
+
 TaktikMeny::TaktikMeny() : 
 	mCurrentDragAnimal(0),
 	mLevelTop(0),
@@ -71,25 +73,26 @@ void TaktikMeny::update(){
 			//sluta lys <-------------------------------
 			for(SpotVector::iterator i = mSpotVector.begin(); i != mSpotVector.end(); i++){
 				(*i)->activateSpot(false);
-				bool intersects = (*i)->getSprite()->getGlobalBounds().intersects(mCurrentDragAnimal->getGlobalBounds());
+				bool intersects = mCurrentDragAnimal->getSprite()->getGlobalBounds().intersects((*i)->getSprite()->getGlobalBounds());
 				AnimalPrototype* placedID = (*i)->getPlacedAnimal();
 				if(intersects){
 					(*i)->setPlacedAnimal(mCurrentDragAnimal);
+					(*i)->activateSpot(true);
 					mCurrentDragAnimal->setPos((*i)->getSprite()->getPosition());
 				}
 			}
 			mCurrentDragAnimal = 0;
 		}
 	}
-
 }
 
 void TaktikMeny::render(){
 
 	for(SpotVector::iterator i = mSpotVector.begin(); i != mSpotVector.end(); i++){
 		std::cout<<mSpotVector.size()<<std::endl;
-		WindowManager::getInst().getWindow()->draw(*(*i)->getSprite()); 
+		WindowManager::getInst().getWindow()->draw(*(*i)->getSprite());
 	}
+
 	for(FakeAnimals::iterator i = mFakeAnimals.begin(); i != mFakeAnimals.end(); i++){
 		WindowManager::getInst().getWindow()->draw(*(*i)->getSprite());
 	}
@@ -136,10 +139,12 @@ void TaktikMeny::placeSpots(){
 	int xDistance = 250;
 	int yDistance = 200;
 	
+	int startX = 80;
+
 	//placerar ut spots 
 	for(int i = 0; i < 3/* == antal level på en bana*/; i++){
 		for(int j = 0; j < mPosVector[i]; j++){
-			mSpotVector.push_back(new Spot(i, sf::Vector2f(j*xDistance, i*yDistance))); //sean jag fixa det åt dig :D:D:D
+			mSpotVector.push_back(new Spot(i, sf::Vector2f(startX + j*xDistance, i*yDistance))); //sean jag fixa det åt dig :D:D:D
 		}
 	}
 }
