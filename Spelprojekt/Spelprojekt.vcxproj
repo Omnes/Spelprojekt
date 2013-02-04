@@ -86,6 +86,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AbilityButton.cpp" />
     <ClCompile Include="ActiveLayer.cpp" />
     <ClCompile Include="Animal.cpp" />
     <ClCompile Include="AnimalPrototype.cpp" />
@@ -97,6 +98,7 @@
     <ClCompile Include="Fire.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Gameplay.cpp" />
+    <ClCompile Include="InnerBeastButton.cpp" />
     <ClCompile Include="LayerManager.cpp" />
     <ClCompile Include="LevelButton.cpp" />
     <ClCompile Include="LevelManager.cpp" />
@@ -104,18 +106,21 @@
     <ClCompile Include="Obstacle.cpp" />
     <ClCompile Include="OptionsMeny.cpp" />
     <ClCompile Include="PauseMeny.cpp" />
+    <ClCompile Include="RemoveObstacleButton.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="SpeedMod.cpp" />
     <ClCompile Include="Spot.cpp" />
     <ClCompile Include="StartMeny.cpp" />
     <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="StaticLayer.cpp" />
+    <ClCompile Include="TacticalVisionButton.cpp" />
     <ClCompile Include="Takitikmeny.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="WindowManager.cpp" />
     <ClCompile Include="WorldMap.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AbilityButton.h" />
     <ClInclude Include="ActiveLayer.h" />
     <ClInclude Include="AddGameplay.h" />
     <ClInclude Include="AddOptions.h" />
@@ -134,6 +139,7 @@
     <ClInclude Include="Fire.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Gameplay.h" />
+    <ClInclude Include="InnerBeastButton.h" />
     <ClInclude Include="Layer.h" />
     <ClInclude Include="LayerManager.h" />
     <ClInclude Include="LevelButton.h" />
@@ -142,6 +148,7 @@
     <ClInclude Include="OptionsMeny.h" />
     <ClInclude Include="PauseMeny.h" />
     <ClInclude Include="PopState.h" />
+    <ClInclude Include="RemoveObstacleButton.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="SpeedMod.h" />
     <ClInclude Include="AddMap.h" />
@@ -150,6 +157,7 @@
     <ClInclude Include="StateManager.h" />
     <ClInclude Include="States.h" />
     <ClInclude Include="StaticLayer.h" />
+    <ClInclude Include="TacticalVisionButton.h" />
     <ClInclude Include="Taktikmeny.h" />
     <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="WindowManager.h" />
