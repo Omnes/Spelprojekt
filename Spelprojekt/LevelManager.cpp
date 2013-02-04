@@ -147,7 +147,7 @@ std::vector<Layer*> LevelManager::loadLayers(){
 			float fireSpeed = doc.FirstChildElement("Fire")->FirstAttribute()->FloatValue();
 			entityVector.push_back(new Fire(sf::Vector2f(0,0),fireSpeed));
 
-			entityVector.push_back(new Animal(new Animation(resourceManager->getTexture("djur.png"),300,3),sf::Vector2f(100,400),1));
+			entityVector.push_back(new Animal(new Animation(resourceManager->getTexture("djur.png"),300,3),sf::Vector2f(100,400),2));
 			
 
 			ActiveLayer* activeLayer = new ActiveLayer(entityVector);

@@ -11,7 +11,7 @@ StaticLayer::StaticLayer(std::vector <sf::Sprite*> spriteVector ,float layerVelo
 	//om inget funkar! testa detta ;)
 	//mSpriteVector.at(0)->setPosition(0,0);
 	for(SpriteVector::size_type i = 1; i < mSpriteVector.size(); i++){
-		mSpriteVector.at(i)->setPosition((mSpriteVector.at(i-1)->getPosition().x + mSpriteVector.at(i-1)->getGlobalBounds().width), 0);
+		mSpriteVector.at(i)->setPosition((mSpriteVector.at(i-1)->getPosition().x-2 + mSpriteVector.at(i-1)->getGlobalBounds().width), 0);
 	}
 }
 
