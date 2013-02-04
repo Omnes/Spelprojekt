@@ -23,8 +23,15 @@ void RemoveObstacleButton::update(){
 		//byt rekt
 		if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
 			setClicked(true);
+			//vi behöver nån timer här
 		}
 	}
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && mClicked){
+		//loopa igenom entity vector
+		//om getID() == mObstacle och getSprite()->getGlobalBounds->contains(mousePosition)
+		//förstör hindret
+	}
+	//om mClicked byt rekt
 }
 
 sf::Sprite* RemoveObstacleButton::getSprite(){

@@ -40,6 +40,12 @@
     <Filter Include="Header Files\Events">
       <UniqueIdentifier>{308d09ee-f3e3-45ab-8dbf-8fe383b84948}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Abilites">
+      <UniqueIdentifier>{5ebb48c8-0766-4b91-b931-df06e96d5f41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Abilities">
+      <UniqueIdentifier>{ea9f475d-24c1-40ea-9a8c-3ca85de5c18a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -123,6 +129,24 @@
     <ClCompile Include="PauseMeny.cpp">
       <Filter>Source Files\States</Filter>
     </ClCompile>
+<<<<<<< HEAD
+=======
+    <ClCompile Include="Endline.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="AbilityButton.cpp">
+      <Filter>Source Files\Abilities</Filter>
+    </ClCompile>
+    <ClCompile Include="InnerBeastButton.cpp">
+      <Filter>Source Files\Abilities</Filter>
+    </ClCompile>
+    <ClCompile Include="RemoveObstacleButton.cpp">
+      <Filter>Source Files\Abilities</Filter>
+    </ClCompile>
+    <ClCompile Include="TacticalVisionButton.cpp">
+      <Filter>Source Files\Abilities</Filter>
+    </ClCompile>
+>>>>>>> cd90143fc3dfd6b5cb8bc36b17d2b944a5c7804f
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -236,5 +260,23 @@
     <ClInclude Include="PopState.h">
       <Filter>Header Files\Events</Filter>
     </ClInclude>
+<<<<<<< HEAD
+=======
+    <ClInclude Include="Endline.h">
+      <Filter>Header Files\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="AbilityButton.h">
+      <Filter>Header Files\Abilites</Filter>
+    </ClInclude>
+    <ClInclude Include="TacticalVisionButton.h">
+      <Filter>Header Files\Abilites</Filter>
+    </ClInclude>
+    <ClInclude Include="InnerBeastButton.h">
+      <Filter>Header Files\Abilites</Filter>
+    </ClInclude>
+    <ClInclude Include="RemoveObstacleButton.h">
+      <Filter>Header Files\Abilites</Filter>
+    </ClInclude>
+>>>>>>> cd90143fc3dfd6b5cb8bc36b17d2b944a5c7804f
   </ItemGroup>
 </Project>
