@@ -60,11 +60,11 @@ void Camera::update(){
 	}
 
 	if(mPosition>mMaxPos){ 
-		mPosition=mMaxPos;
+	//	mPosition=mMaxPos;
 	}
 	
 	if(mPosition<mMinPos){
-		mPosition=mMinPos;
+	//	mPosition=mMinPos;
 	}
 	
 	mPosition+=mVelocity;

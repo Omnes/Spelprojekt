@@ -3,9 +3,7 @@
 	<Layer_1>
 		<Layer>static</Layer>
 		<Images>
-			<Image_1>bak2.png</Image_1>
-			<Image_2>bak2.png</Image_2>
-			<Image_3>bak2.png</Image_3>
+			
 		</Images>
 		<Stats speed="-0.95"/>
 
@@ -15,9 +13,7 @@
 	<Layer_2>
 		<Layer>static</Layer>
 		<Images>
-			<Image_1>bak1.png</Image_1>
-			<Image_2>bak1.png</Image_2>
-			<Image_3>bak1.png</Image_3>
+			
 		</Images>
 		<Stats speed="-0.8"/>
 
@@ -28,9 +24,10 @@
 	<Layer_3>
 		<Layer>static</Layer>
 		<Images>
-			<Image_1>middle.png</Image_1>
-			<Image_2>middle.png</Image_2>
-			<Image_3>middle.png</Image_3>
+			<Image_1>djungel1.1.png</Image_1>
+			<Image_2>djungel1.2.png</Image_2>
+			<Image_3>djungel1.3.png</Image_3>
+			<Image_4>djungel1.4.png</Image_4>
 		
 		</Images>
 		<Stats speed="0"/>
@@ -47,9 +44,7 @@
 	<Layer_5>
 		<Layer>static</Layer>
 		<Images>
-			<Image_1>front.png</Image_1>
-			<Image_2>front.png</Image_2>
-			<Image_3>front.png</Image_3>
+			
 		</Images>
 		<Stats speed="1.3"/>
 
