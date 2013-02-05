@@ -12,13 +12,20 @@ PauseMeny::~PauseMeny(){
 
 }
 
-//se till att den är relativ till view!
+//se till att den är relativ till view! GJORT!!!!!
 void PauseMeny::render(){
 	if(mRenderState != 0){
 		mRenderState->render();
 	}
+
+	sf::RenderWindow* window = WindowManager::getInst().getWindow();
+	sf::View view = window->getView();
+	window->setView(window->getDefaultView());
+	
 	WindowManager::getInst().getWindow()->draw(mSprite);
 	WindowManager::getInst().getWindow()->draw(mResumeButton.getSprite());
+
+	window->setView(view);
 	
 }
 
