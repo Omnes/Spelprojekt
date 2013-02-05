@@ -97,6 +97,7 @@
     <ClCompile Include="Fire.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Gameplay.cpp" />
+    <ClCompile Include="Gui.cpp" />
     <ClCompile Include="InnerBeastButton.cpp" />
     <ClCompile Include="LayerManager.cpp" />
     <ClCompile Include="LevelButton.cpp" />
@@ -137,6 +138,7 @@
     <ClInclude Include="Fire.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Gameplay.h" />
+    <ClInclude Include="Gui.h" />
     <ClInclude Include="InnerBeastButton.h" />
     <ClInclude Include="Layer.h" />
     <ClInclude Include="LayerManager.h" />

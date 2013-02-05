@@ -129,9 +129,6 @@
     <ClCompile Include="PauseMeny.cpp">
       <Filter>Source Files\States</Filter>
     </ClCompile>
-    <ClCompile Include="Endline.cpp">
-      <Filter>Source Files\Entities</Filter>
-    </ClCompile>
     <ClCompile Include="AbilityButton.cpp">
       <Filter>Source Files\Abilities</Filter>
     </ClCompile>
@@ -143,6 +140,9 @@
     </ClCompile>
     <ClCompile Include="TacticalVisionButton.cpp">
       <Filter>Source Files\Abilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -257,9 +257,6 @@
     <ClInclude Include="PopState.h">
       <Filter>Header Files\Events</Filter>
     </ClInclude>
-    <ClInclude Include="Endline.h">
-      <Filter>Header Files\Events</Filter>
-    </ClInclude>
     <ClInclude Include="AbilityButton.h">
       <Filter>Header Files\Abilites</Filter>
     </ClInclude>
@@ -271,6 +268,9 @@
     </ClInclude>
     <ClInclude Include="RemoveObstacleButton.h">
       <Filter>Header Files\Abilites</Filter>
+    </ClInclude>
+    <ClInclude Include="Gui.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
