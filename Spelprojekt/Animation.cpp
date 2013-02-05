@@ -3,9 +3,9 @@
 Animation::Animation(sf::Texture *texture, int frametime, int frames): mTexture(texture), mFrametime(frametime), mFrames(frames), mCurrentframe(0), mCurrentanimation(0){
 
 	mSprite.setTexture(*mTexture);
-	mRectangle = sf::IntRect(0,0,mTexture->getSize().x/mFrames,mTexture->getSize().y/3);
+	mRectangle = sf::IntRect(0,0,mTexture->getSize().x/mFrames,mTexture->getSize().y);
 	mSprite.setTextureRect(mRectangle);
-	setCurrentAnimation(1);
+	setCurrentAnimation(0);
 
 }
 

@@ -43,7 +43,7 @@ void Game::run(){
 		countFrames();
 		eventManager->update(); // process events
 		
-		window->clear(sf::Color::Black);
+		window->clear(sf::Color::White);
 		
 		stateManager->render(); //rendrering
 
