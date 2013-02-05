@@ -5,7 +5,8 @@
 
 Spot::Spot(int level, sf::Vector2f position):
 	mLevel(level),
-	mPlacedAnimal(0)
+	mPlacedAnimal(0),
+	mActSpot(false)
 {
 	ResourceManager* r = &ResourceManager::getInst();
 
@@ -18,13 +19,15 @@ Spot::Spot(int level, sf::Vector2f position):
 	mRect = sf::IntRect(0,0, mTexture.getSize().x/2, mTexture.getSize().y);
 	mSprite->setTextureRect(mRect);
 	mSprite->setOrigin(64,64); // kom ihåg att fixa orgin när vi fått grafik
+
 }
 
 Spot::~Spot(){}
 
 
-void Spot::activateSpot(bool dragAnimal){
-	if(dragAnimal){
+void Spot::setActSpot(bool dragAnimal){
+	mActSpot = dragAnimal;
+	if(mActSpot){
 		mRect.left = mRect.width/3;//<-------------------statiska siffor
 		mSprite->setTextureRect(mRect);
 	}else {
@@ -51,4 +54,8 @@ AnimalPrototype* Spot::getPlacedAnimal(){
 
 void Spot::setPlacedAnimal(AnimalPrototype* prototype){
 	mPlacedAnimal = prototype;
+}
+
+bool Spot::getActSpot(){
+	return mActSpot;
 }

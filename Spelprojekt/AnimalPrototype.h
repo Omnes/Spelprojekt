@@ -20,6 +20,10 @@ public:
 	void loadAnimal(std::string filePath);
 	Animal* createAnimal(); // position, 
 	void setPos(sf::Vector2f position);
+	void setStartPos(sf::Vector2f startPos);
+
+	sf::Vector2f getStartPos();
+
 	sf::Vector2f getPos();
 	sf::FloatRect& getGlobalBounds(); //<--------------ta bort denna
 	sf::Sprite* getSprite();
@@ -40,6 +44,8 @@ private:
 	sf::Sprite mSprite;
 	std::string mAnimalType;
 	float mFrameTick, mFrames;
+
+	sf::Vector2f mStartPos;
 
 	Animation* mAnimation;
 

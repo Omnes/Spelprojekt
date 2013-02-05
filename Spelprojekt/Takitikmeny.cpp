@@ -48,17 +48,17 @@ void TaktikMeny::update(){
 							//om positionen på nummret i speedvectorn är detsamma som spottens position
 							if(level == j){
 								//aktiviera ljus
-								(*k)->activateSpot(true);
+								(*k)->setActSpot(true);
 							}
 						}
-					//inte tänd <-----------------------------------------
+					//inte tänd
 					}else{
-						for(SpotVector::iterator k = mSpotVector.begin(); k != mSpotVector.end(); k++){
-							int level = (*k)->getLevel();
-							if(level == j){
-								(*k)->activateSpot(false);
-							}
-						}
+						//for(SpotVector::iterator k = mSpotVector.begin(); k != mSpotVector.end(); k++){
+						//	int level = (*k)->getLevel();
+						//	if(level == j){
+						//		//(*k)->setActSpot(false);
+						//	}
+						//}
 					}
 				}
 			}
@@ -73,18 +73,21 @@ void TaktikMeny::update(){
 			//sluta lys <-------------------------------
 			for(SpotVector::iterator i = mSpotVector.begin(); i != mSpotVector.end(); i++){
 				for(FakeAnimals::iterator j = mFakeAnimals.begin(); j != mFakeAnimals.end(); j++){
-					(*i)->activateSpot(false);
+
+					////för att kolla om djuret kan snappa rätt djur
+					bool actSpot = (*i)->getActSpot();
+
+
 					bool intersects = mCurrentDragAnimal->getSprite()->getGlobalBounds().intersects((*i)->getSprite()->getGlobalBounds());
 					AnimalPrototype* placedID = (*i)->getPlacedAnimal();
-					if(intersects && (*i)->getSprite()->getGlobalBounds().intersects((*j)->getSprite()->getGlobalBounds())){
-						(*i)->setPlacedAnimal(mCurrentDragAnimal);
-						(*i)->activateSpot(true);
+					if(intersects && actSpot == true){
+						//(*i)->setPlacedAnimal(mCurrentDragAnimal);
+						//(*i)->activateSpot(true);
 						mCurrentDragAnimal->setPos((*i)->getSprite()->getPosition());
-					}/*else if((*i)->getSprite()->getGlobalBounds().intersects((*j)->getSprite()->getGlobalBounds())){
-						(*i)->setPlacedAnimal(mCurrentDragAnimal);
-					}else{
-						(*i)->setPlacedAnimal(0);
-					}*/
+					}else if(!actSpot){
+						mCurrentDragAnimal->setPos(mCurrentDragAnimal->getStartPos());
+					}
+					(*i)->setActSpot(false);
 				}
 			}
 			mCurrentDragAnimal = 0;
@@ -108,11 +111,12 @@ void TaktikMeny::render(){
 
 //tar emot och placerar ut animaler innan de kan placeras
 void TaktikMeny::receiveAnimals(){
-	sf::Vector2f startPos = sf::Vector2f(300,0);
-	sf::Vector2f distance = sf::Vector2f(50,0);
+	sf::Vector2f startPos = sf::Vector2f(500,300);
+	sf::Vector2f distance = sf::Vector2f(128,0);
 	mFakeAnimals = LevelManager::getInst().getAnimalsOnLevel();
 	for(FakeAnimals::size_type i = 0; i < mFakeAnimals.size(); i++){
 		mFakeAnimals[i]->setPos(startPos + sf::Vector2f(distance.x*i,distance.y*i));
+		mFakeAnimals[i]->setStartPos(startPos + sf::Vector2f(distance.x*i,distance.y*i));
 	}
 }
 

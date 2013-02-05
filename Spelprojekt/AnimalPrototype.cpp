@@ -76,6 +76,14 @@ void AnimalPrototype::setPos(sf::Vector2f position){
 	mPosition = position;
 }
 
+void AnimalPrototype::setStartPos(sf::Vector2f	startPos){
+	mStartPos = startPos;
+}
+
+sf::Vector2f AnimalPrototype::getStartPos(){
+	return mStartPos;
+}
+
 sf::FloatRect& AnimalPrototype::getGlobalBounds(){
 	return mSprite.getGlobalBounds();
 }
@@ -98,3 +106,4 @@ int AnimalPrototype::getLevel(){
 std::vector <float> AnimalPrototype::getSpeedVector(){
 	return mSpeedVector;
 }
+

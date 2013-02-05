@@ -13,7 +13,8 @@ public:
 	Spot(int level, sf::Vector2f position);
 	~Spot();
 	
-	void activateSpot(bool dragAnimal);
+	void setActSpot(bool dragAnimal);
+	bool getActSpot();
 	int getLevel();
 	sf::Sprite* getSprite();
 	AnimalPrototype* getPlacedAnimal();
@@ -25,6 +26,8 @@ private:
 	sf::Sprite *mSprite;
 	sf::IntRect mRect;
 	AnimalPrototype* mPlacedAnimal;
+
+	bool mActSpot;
 	
 
 	int mLevel;
