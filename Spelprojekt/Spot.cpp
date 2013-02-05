@@ -6,7 +6,8 @@
 Spot::Spot(int level, sf::Vector2f position):
 	mLevel(level),
 	mPlacedAnimal(0),
-	mActSpot(false)
+	mActSpot(false),
+	mTaken(false)
 {
 	ResourceManager* r = &ResourceManager::getInst();
 
@@ -27,18 +28,6 @@ Spot::~Spot(){}
 
 void Spot::setActSpot(bool dragAnimal){
 	mActSpot = dragAnimal;
-	if(mActSpot){
-		mRect.left = mRect.width/3;//<-------------------statiska siffor
-		mSprite->setTextureRect(mRect);
-	}else {
-		mRect.left = 0; //<-------------------statiska siffor
-		mSprite->setTextureRect(mRect);
-	}
-
-	if(mPlacedAnimal != 0){
-		mRect.left = mRect.width/3*2;
-		mSprite->setTextureRect(mRect);
-	}
 }
 
 int Spot::getLevel(){
@@ -49,15 +38,26 @@ sf::Sprite* Spot::getSprite(){
 	return mSprite;
 }
 
-AnimalPrototype* Spot::getPlacedAnimal(){
-	return mPlacedAnimal;
-}
-
-//används nog inte
-void Spot::setPlacedAnimal(AnimalPrototype* prototype){
-	mPlacedAnimal = prototype;
-}
-
 bool Spot::getActSpot(){
 	return mActSpot;
+}
+
+void Spot::setTakenSpot(bool taken){
+	mTaken = taken;
+}
+
+bool Spot::getTakenSpot(){
+	return mTaken;
+}
+
+void Spot::setColorSpot(bool colorGreen){
+
+	if(colorGreen){
+		mRect.left = mRect.width/3;//<-------------------statiska siffor
+		mSprite->setTextureRect(mRect);
+	}else{
+		mRect.left = 0; //<-------------------statiska siffor
+		mSprite->setTextureRect(mRect);
+	}
+
 }

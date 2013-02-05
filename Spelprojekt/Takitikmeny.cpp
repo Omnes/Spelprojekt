@@ -109,6 +109,14 @@ void TaktikMeny::isClicked(){
 				}
 			}
 
+
+			//kan fucka ur om man tar djur utanför spotboxen
+			for(SpotVector::iterator i = mSpotVector.begin(); i != mSpotVector.end(); i++){
+				if((*i)->getSprite()->getGlobalBounds().contains(musPosition)){
+					(*i)->setTakenSpot(false);
+				}
+			}
+
 			if(mCurrentDragAnimal != 0){
 				mSpeedVector = mCurrentDragAnimal->getSpeedVector();
 				//går igenom animal speedvector som innehåller tre olika hastigheteter
@@ -122,6 +130,7 @@ void TaktikMeny::isClicked(){
 							if(level == j){
 								//aktiviera ljus
 								(*k)->setActSpot(true);
+								(*k)->setColorSpot(true);
 							}
 						}
 					}
@@ -140,6 +149,7 @@ void TaktikMeny::isNotClicked(){
 
 	//om mCurrentAnimal är över en spot
 	if(mCurrentDragAnimal != 0){
+
 		mSpeedVector = mCurrentDragAnimal->getSpeedVector();
 
 		for(SpeedVector::size_type i = 0; i < mSpeedVector.size(); i++){
@@ -149,13 +159,12 @@ void TaktikMeny::isNotClicked(){
 				for(SpotVector::iterator j = mSpotVector.begin(); j != mSpotVector.end(); j++){
 					int level = (*j)->getLevel();
 					//om positionen på nummret i speedvectorn är detsamma som spottens position
-					if(level == i){
-						if((*j)->getActSpot() == true && mCurrentDragAnimal->getSprite()->getGlobalBounds().intersects((*j)->getSprite()->getGlobalBounds())){
+					if(level == i && mCurrentDragAnimal != 0){
+						if((*j)->getActSpot() == true && (*j)->getTakenSpot() == false && mCurrentDragAnimal->getSprite()->getGlobalBounds().intersects((*j)->getSprite()->getGlobalBounds())){
 							mCurrentDragAnimal->setPos((*j)->getSprite()->getPosition());
 							mCurrentDragAnimal = 0;
-						}else{
-
-							(*j)->setActSpot(false);
+							(*j)->setTakenSpot(true);
+							(*j)->setColorSpot(true);
 						}
 					}
 				}
@@ -165,6 +174,14 @@ void TaktikMeny::isNotClicked(){
 			mCurrentDragAnimal->setPos(mCurrentDragAnimal->getStartPos());
 		}
 		mCurrentDragAnimal = 0;
+
+		for(SpotVector::iterator i = mSpotVector.begin(); i != mSpotVector.end(); i++){
+			if((*i)->getTakenSpot() == false){
+				(*i)->setActSpot(false);
+				(*i)->setColorSpot(false);
+			}
+		}
+
 	}
 
 }
