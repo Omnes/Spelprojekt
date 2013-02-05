@@ -8,13 +8,16 @@
 #include <SFML\Graphics\Sprite.hpp>
 #include <SFML\System\Clock.hpp>
 
+class Gui;
+
 class RemoveObstacleButton: public AbilityButton{
 public:
-	RemoveObstacleButton(std::string obstacle,sf::Vector2f position, std::string texture);
+	RemoveObstacleButton(std::string obstacle,sf::Vector2f position, std::string texture, Gui* gui);
 
 	virtual void update();
 	virtual sf::Sprite* getSprite();
 	virtual void setClicked(bool boolean);
+	void killRelativePositionEntity(sf::Vector2f mousePosition);
 	
 	~RemoveObstacleButton();
 
@@ -28,6 +31,7 @@ private:
 	float mClickCooldown;
 	sf::Clock mClickCooldownTimer;
 	sf::Clock mCooldownTimer;
+	Gui* mGui;
 
 
 

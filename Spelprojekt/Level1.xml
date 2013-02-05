@@ -3,7 +3,9 @@
 	<Layer_1>
 		<Layer>static</Layer>
 		<Images>
-	
+			<Image_1>Resources/Night/BakNATT.png</Image_1>
+			<Image_1>Resources/Night/BakNATT.png</Image_1>
+			<Image_1>Resources/Night/BakNATT.png</Image_1>
 
 		</Images>
 		<Stats speed="-0.95"/>
@@ -14,7 +16,10 @@
 	<Layer_2>
 		<Layer>static</Layer>
 		<Images>
-
+			<Image_1>Resources/Night/BakG1.png</Image_1>
+			<Image_1>Resources/Night/BakG2.png</Image_1>
+			<Image_1>Resources/Night/BakG3.png</Image_1>
+			<Image_1>Resources/Night/BakG4.png</Image_1>
 
 		</Images>
 		<Stats speed="-0.8"/>
@@ -27,11 +32,10 @@
 		<Layer>static</Layer>
 		<Images>
 
-			<Image_1>TRÄSK1.png</Image_1>
-			<Image_2>TRÄSK2.png</Image_2>
-			<Image_3>TRÄSK3.png</Image_3>
-			<Image_4>TRÄSK4.png</Image_4>
-			<Image_4>TRÄSK1.png</Image_4>
+			<Image_1>Resources/Night/BanS1.png</Image_1>
+			<Image_1>Resources/Night/BanS2.png</Image_1>
+			<Image_1>Resources/Night/BanS3.png</Image_1>
+			<Image_1>Resources/Night/BanS4.png</Image_1>
 
 		
 		</Images>
@@ -49,7 +53,10 @@
 	<Layer_5>
 		<Layer>static</Layer>
 		<Images>
-
+			<Image_1>Resources/Night/FörG1.png</Image_1>
+			<Image_1>Resources/Night/FörG2.png</Image_1>
+			<Image_1>Resources/Night/FörG3.png</Image_1>
+			<Image_1>Resources/Night/FörG4.png</Image_1>
 			
 		</Images>
 		<Stats speed="1.3"/>

@@ -32,7 +32,7 @@ void Camera::namnsenare(){
 
 	for(std::vector<Entity*>::iterator i = entityVector->begin(); i != entityVector->end(); i++){
 		
-		if((*i)->getID() != "Obstacle"){
+		if((*i)->getID() == "Animal" ||(*i)->getID() == "Fire"){
 			if((*i)->getPos().x > mMaxPos){
 				mMaxPos=(*i)->getPos().x;
 			}

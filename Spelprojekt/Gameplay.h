@@ -3,7 +3,7 @@
 #include "States.h"
 #include "Camera.h"
 #include "LayerManager.h"
-//#include "GUI.h"
+#include "Gui.h"
 
 class Gameplay : public States{
 	 
@@ -16,7 +16,7 @@ public:
 	States* createNew();
 
 private:
-
+	Gui mGui;
 	Camera mCamera;
 	LayerManager mLayerManager;
 

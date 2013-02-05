@@ -141,8 +141,13 @@
     <ClCompile Include="TacticalVisionButton.cpp">
       <Filter>Source Files\Abilities</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="LevelFinished.cpp">
       <Filter>Source Files\States</Filter>
+=======
+    <ClCompile Include="Gui.cpp">
+      <Filter>Source Files</Filter>
+>>>>>>> robin
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -269,11 +274,16 @@
     <ClInclude Include="RemoveObstacleButton.h">
       <Filter>Header Files\Abilites</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="LevelFinished.h">
       <Filter>Header Files\States</Filter>
     </ClInclude>
     <ClInclude Include="AddLevelFinished.h">
       <Filter>Header Files\Events</Filter>
+=======
+    <ClInclude Include="Gui.h">
+      <Filter>Header Files</Filter>
+>>>>>>> robin
     </ClInclude>
   </ItemGroup>
 </Project>
