@@ -100,6 +100,7 @@
     <ClCompile Include="InnerBeastButton.cpp" />
     <ClCompile Include="LayerManager.cpp" />
     <ClCompile Include="LevelButton.cpp" />
+    <ClCompile Include="LevelFinished.cpp" />
     <ClCompile Include="LevelManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Obstacle.cpp" />
@@ -122,6 +123,7 @@
     <ClInclude Include="AbilityButton.h" />
     <ClInclude Include="ActiveLayer.h" />
     <ClInclude Include="AddGameplay.h" />
+    <ClInclude Include="AddLevelFinished.h" />
     <ClInclude Include="AddOptions.h" />
     <ClInclude Include="AddStartMeny.h" />
     <ClInclude Include="AddTaktik.h" />
@@ -141,6 +143,7 @@
     <ClInclude Include="Layer.h" />
     <ClInclude Include="LayerManager.h" />
     <ClInclude Include="LevelButton.h" />
+    <ClInclude Include="LevelFinished.h" />
     <ClInclude Include="LevelManager.h" />
     <ClInclude Include="Obstacle.h" />
     <ClInclude Include="OptionsMeny.h" />
