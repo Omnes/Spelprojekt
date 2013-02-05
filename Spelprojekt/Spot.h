@@ -15,10 +15,15 @@ public:
 	
 	void setActSpot(bool dragAnimal);
 	bool getActSpot();
+
 	int getLevel();
+
+	void setTakenSpot(bool taken);
+	bool getTakenSpot();
+
+	void setColorSpot(bool taken);
+
 	sf::Sprite* getSprite();
-	AnimalPrototype* getPlacedAnimal();
-	void setPlacedAnimal(AnimalPrototype* prototype);
 	
 private:
 
@@ -28,6 +33,7 @@ private:
 	AnimalPrototype* mPlacedAnimal;
 
 	bool mActSpot;
+	bool mTaken;
 	
 
 	int mLevel;

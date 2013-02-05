@@ -68,6 +68,9 @@
 </Layers>
 
 <AnimalsOnLevel>
+
+	<Animal_1>Scorpion.xml</Animal_1>
+	<Animal_1>Scorpion.xml</Animal_1>
 	<Animal_1>Scorpion.xml</Animal_1>
 	<Animal_1>Ocelot.xml</Animal_1>
 
