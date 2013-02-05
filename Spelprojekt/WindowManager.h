@@ -3,7 +3,6 @@
 #include <SFML\Graphics\RenderWindow.hpp>
 
 class WindowManager{
-
 public:
 
 	static WindowManager& getInst();

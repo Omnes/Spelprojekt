@@ -3,7 +3,7 @@
 #include "WindowManager.h"
 #include "LevelManager.h"
 #include "Camera.h"
-#include "StateManager.h"
+#include "EventManager.h"
 
 #include <iostream>
 
@@ -32,6 +32,7 @@ void ActiveLayer::update(){
 	for(EntityVector::iterator i = mEntityVector.begin(); i != mEntityVector.end(); i++){
 		(*i)->update();
 	}
+	finishLine();
 	
 	collision();
 	killDead();
@@ -91,25 +92,22 @@ void ActiveLayer::finishLine(){
 
 	mAllAnimalsPassed = true;
 
-	for(EntityVector::iterator i = mEntityVector.begin(); i != mEntityVector.end();){
+	for(EntityVector::iterator i = mEntityVector.begin(); i != mEntityVector.end(); i++){
 
 		if((*i)->getID() == "Animal"){
-			if((*i)->getPos().x<mLevellength){
+			if((*i)->getPos().x < mLevellength){
 				mAllAnimalsPassed = false;
 			}
 		}
 	}
 
-	if(mAllAnimalsPassed == true){
-
-		for(EntityVector::iterator i = mEntityVector.begin(); i != mEntityVector.end();){
+	if(mAllAnimalsPassed){
+		for(EntityVector::iterator i = mEntityVector.begin(); i != mEntityVector.end(); i++){
 			if((*i)->getID() == "Animal"){
-				if((*i)->getPos().x>mLevellength){
-					mAliveEntityVector.push_back(*i);
-				}
+				mAliveEntityVector.push_back(*i);
 			}
 		}
-		StateManager::getInst().addState("levelfinished");
+		EventManager::getInst().addEvent("addPause");
 	}
 }
 

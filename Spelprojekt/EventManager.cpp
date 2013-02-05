@@ -5,6 +5,9 @@
 #include "AddTaktik.h"
 #include "AddGameplay.h"
 #include "AddStartMeny.h"
+#include "AddPause.h"
+#include "PopState.h"
+#include "AddLevelFinished.h"
 
 EventManager::EventManager(){
 
@@ -14,6 +17,9 @@ EventManager::EventManager(){
 	mEventMap["addTaktik"]= new AddTaktik();
 	mEventMap["addStart"]= new AddStartMeny();
 	mEventMap["addGameplay"]= new AddGameplay();
+	mEventMap["popState"] = new PopState();
+	mEventMap["addPause"] = new AddPause();
+	mEventMap["addLevelFinished"] = new AddLevelFinished();
 
 }
 
