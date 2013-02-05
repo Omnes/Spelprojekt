@@ -2,7 +2,7 @@
 
 WindowManager::WindowManager(){
 	mWindow = new sf::RenderWindow(sf::VideoMode(1280,720),"Flykten",sf::Style::Default);
-	mWindow->setFramerateLimit(60);
+	mWindow->setVerticalSyncEnabled(true);
 }
 
 WindowManager::~WindowManager(){

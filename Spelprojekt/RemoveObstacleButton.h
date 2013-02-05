@@ -6,6 +6,7 @@
 #include <SFML\System\Vector2.hpp>
 #include <SFML\Graphics\Texture.hpp>
 #include <SFML\Graphics\Sprite.hpp>
+#include <SFML\System\Clock.hpp>
 
 class RemoveObstacleButton: public AbilityButton{
 public:
@@ -22,6 +23,12 @@ private:
 	bool mClicked;
 	sf::Texture* mTexture;
 	sf::Sprite mSprite;
+	int mFrames;
+	float mCooldown;
+	float mClickCooldown;
+	sf::Clock mClickCooldownTimer;
+	sf::Clock mCooldownTimer;
+
 
 
 };
