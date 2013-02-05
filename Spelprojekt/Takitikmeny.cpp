@@ -23,82 +23,16 @@ TaktikMeny::~TaktikMeny(){}
 
 void TaktikMeny::update(){
 
-	sf::Vector2f position = sf::Vector2f(sf::Mouse::getPosition(*WindowManager::getInst().getWindow()));
-
 	if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
-		if(mCurrentDragAnimal==0){
-			for(FakeAnimals::iterator i = mFakeAnimals.begin(); i != mFakeAnimals.end(); ++i){
-				sf::FloatRect rect = (*i) -> getGlobalBounds();
-				if(rect.contains(position)){
-					mCurrentDragAnimal = (*i);
-					mGrabOffset = mCurrentDragAnimal->getPos() - position;
-				}
-			}
-
-			if(mCurrentDragAnimal !=0){
-
-				mSpeedVector = mCurrentDragAnimal->getSpeedVector();
-				//går igenom animal speedvector som innehåller tre olika hastigheteter
-				for(SpeedVector::size_type j = 0; j < mSpeedVector.size(); j++){
-					//om speedvector inte har ngn nolla i sig
-					if(mSpeedVector[j] != 0){
-						//går igenom de olika spotsen
-						for(SpotVector::iterator k = mSpotVector.begin(); k != mSpotVector.end(); k++){
-							int level = (*k)->getLevel();
-							//om positionen på nummret i speedvectorn är detsamma som spottens position
-							if(level == j){
-								//aktiviera ljus
-								(*k)->setActSpot(true);
-							}
-						}
-					//inte tänd
-					}else{
-						//for(SpotVector::iterator k = mSpotVector.begin(); k != mSpotVector.end(); k++){
-						//	int level = (*k)->getLevel();
-						//	if(level == j){
-						//		//(*k)->setActSpot(false);
-						//	}
-						//}
-					}
-				}
-			}
-		}
-		if(mCurrentDragAnimal !=0){
-
-			mCurrentDragAnimal -> setPos(position + mGrabOffset);
-		}
+		isClicked();
 	}else{
-		//if över en plats osv..
-		if(mCurrentDragAnimal !=0){
-			//sluta lys <-------------------------------
-			for(SpotVector::iterator i = mSpotVector.begin(); i != mSpotVector.end(); i++){
-				for(FakeAnimals::iterator j = mFakeAnimals.begin(); j != mFakeAnimals.end(); j++){
-
-					////för att kolla om djuret kan snappa rätt djur
-					bool actSpot = (*i)->getActSpot();
-
-
-					bool intersects = mCurrentDragAnimal->getSprite()->getGlobalBounds().intersects((*i)->getSprite()->getGlobalBounds());
-					AnimalPrototype* placedID = (*i)->getPlacedAnimal();
-					if(intersects && actSpot == true){
-						//(*i)->setPlacedAnimal(mCurrentDragAnimal);
-						//(*i)->activateSpot(true);
-						mCurrentDragAnimal->setPos((*i)->getSprite()->getPosition());
-					}else if(!actSpot){
-						mCurrentDragAnimal->setPos(mCurrentDragAnimal->getStartPos());
-					}
-					(*i)->setActSpot(false);
-				}
-			}
-			mCurrentDragAnimal = 0;
-		}
+		isNotClicked();
 	}
 }
 
 void TaktikMeny::render(){
 
 	for(SpotVector::iterator i = mSpotVector.begin(); i != mSpotVector.end(); i++){
-		std::cout<<mSpotVector.size()<<std::endl;
 		WindowManager::getInst().getWindow()->draw(*(*i)->getSprite());
 	}
 
@@ -154,11 +88,83 @@ void TaktikMeny::placeSpots(){
 	//placerar ut spots 
 	for(int i = 0; i < 3/* == antal level på en bana*/; i++){
 		for(int j = 0; j < mPosVector[i]; j++){
-			mSpotVector.push_back(new Spot(i, sf::Vector2f(startX + j*xDistance, i*yDistance))); //sean jag fixa det åt dig :D:D:D
+			mSpotVector.push_back(new Spot(i, sf::Vector2f(startX + j*xDistance, i*yDistance)));
 		}
 	}
 }
 
 States* TaktikMeny::createNew(){
 	return new TaktikMeny;
+}
+
+void TaktikMeny::isClicked(){
+	sf::Vector2f musPosition = sf::Vector2f(sf::Mouse::getPosition(*WindowManager::getInst().getWindow()));
+
+		if(mCurrentDragAnimal == 0){
+
+			for(FakeAnimals::iterator i = mFakeAnimals.begin(); i != mFakeAnimals.end(); ++i){
+				if((*i)->getSprite()->getGlobalBounds().contains(musPosition)){
+					mCurrentDragAnimal = (*i);
+					mGrabOffset = mCurrentDragAnimal->getPos() - musPosition;
+				}
+			}
+
+			if(mCurrentDragAnimal != 0){
+				mSpeedVector = mCurrentDragAnimal->getSpeedVector();
+				//går igenom animal speedvector som innehåller tre olika hastigheteter
+				for(SpeedVector::size_type j = 0; j < mSpeedVector.size(); j++){
+					//om speedvector inte har ngn nolla i sig
+					if(mSpeedVector[j] != 0){
+						//går igenom de olika spotsen
+						for(SpotVector::iterator k = mSpotVector.begin(); k != mSpotVector.end(); k++){
+							int level = (*k)->getLevel();
+							//om positionen på nummret i speedvectorn är detsamma som spottens position
+							if(level == j){
+								//aktiviera ljus
+								(*k)->setActSpot(true);
+							}
+						}
+					}
+				}
+			}
+
+		}
+
+		if(mCurrentDragAnimal !=0){
+			mCurrentDragAnimal -> setPos(musPosition + mGrabOffset);
+		}
+
+}
+
+void TaktikMeny::isNotClicked(){
+
+	//om mCurrentAnimal är över en spot
+	if(mCurrentDragAnimal != 0){
+		mSpeedVector = mCurrentDragAnimal->getSpeedVector();
+
+		for(SpeedVector::size_type i = 0; i < mSpeedVector.size(); i++){
+			//om speedvector inte har ngn nolla i sig
+			if(mSpeedVector[i] != 0){
+				//går igenom de olika spotsen
+				for(SpotVector::iterator j = mSpotVector.begin(); j != mSpotVector.end(); j++){
+					int level = (*j)->getLevel();
+					//om positionen på nummret i speedvectorn är detsamma som spottens position
+					if(level == i){
+						if((*j)->getActSpot() == true && mCurrentDragAnimal->getSprite()->getGlobalBounds().intersects((*j)->getSprite()->getGlobalBounds())){
+							mCurrentDragAnimal->setPos((*j)->getSprite()->getPosition());
+							mCurrentDragAnimal = 0;
+						}else{
+
+							(*j)->setActSpot(false);
+						}
+					}
+				}
+			}
+		}
+		if(mCurrentDragAnimal != 0){
+			mCurrentDragAnimal->setPos(mCurrentDragAnimal->getStartPos());
+		}
+		mCurrentDragAnimal = 0;
+	}
+
 }

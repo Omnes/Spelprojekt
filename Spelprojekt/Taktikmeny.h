@@ -14,6 +14,10 @@ public:
 	States* createNew();
 	void receiveAnimals();
 	void placeSpots();
+
+	void isClicked();
+	void isNotClicked();
+
 	~TaktikMeny();
 	TaktikMeny();
 

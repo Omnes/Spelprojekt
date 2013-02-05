@@ -34,6 +34,7 @@ void Spot::setActSpot(bool dragAnimal){
 		mRect.left = 0; //<-------------------statiska siffor
 		mSprite->setTextureRect(mRect);
 	}
+
 	if(mPlacedAnimal != 0){
 		mRect.left = mRect.width/3*2;
 		mSprite->setTextureRect(mRect);
@@ -52,6 +53,7 @@ AnimalPrototype* Spot::getPlacedAnimal(){
 	return mPlacedAnimal;
 }
 
+//används nog inte
 void Spot::setPlacedAnimal(AnimalPrototype* prototype){
 	mPlacedAnimal = prototype;
 }
