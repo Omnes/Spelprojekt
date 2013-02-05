@@ -13,7 +13,8 @@
 
 
 
-LevelManager::LevelManager(){
+LevelManager::LevelManager() : 
+	mLevellength(0){
 	mFilePath = "Level1.xml";
 }
 
@@ -105,12 +106,12 @@ std::vector<Layer*> LevelManager::loadLayers(){
 				obst = obst->NextSiblingElement();
 			}
 
-			int levelLength = doc.FirstChildElement("Level")->FirstAttribute()->IntValue();
+			mLevellength = doc.FirstChildElement("Level")->FirstAttribute()->IntValue();
 
 			float x = 500 + rand()%200;
 
 
-			while(x < levelLength){
+			while(x < mLevellength){
 				std::string name = "Stone";
 
 				int randNumber = rand()%100;
@@ -150,7 +151,7 @@ std::vector<Layer*> LevelManager::loadLayers(){
 			entityVector.push_back(new Animal(new Animation(resourceManager->getTexture("djur.png"),300,3),sf::Vector2f(100,400),2));
 			
 
-			ActiveLayer* activeLayer = new ActiveLayer(entityVector, levelLength);
+			ActiveLayer* activeLayer = new ActiveLayer(entityVector, mLevellength);
 			layer = activeLayer;
 			mActiveLayer = activeLayer;
 		}  
@@ -176,4 +177,9 @@ void LevelManager::setCamera(Camera* levelCamera){
 
 Camera* LevelManager::getCamera(){
 	return mThisCamera;
+}
+
+int LevelManager::getLevelLength(){
+
+	return mLevellength;
 }

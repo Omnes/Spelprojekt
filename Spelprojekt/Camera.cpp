@@ -9,7 +9,7 @@
 Camera::Camera(LayerManager* layermanager) : 
 	mLayerManager(layermanager), 
 	mWindow(WindowManager::getInst().getWindow()), 
-	mVelocity(0.0), 
+	mVelocity(0.0),
 	mView(sf::FloatRect(0,0,1280,720)),
 	mPosition(mView.getSize().x/2), 
 	mMaxVelocity(2.5), 
@@ -17,6 +17,7 @@ Camera::Camera(LayerManager* layermanager) :
 	mMaxPos(1),
 	mMinPos(2000){
 
+		mLevellength=LevelManager::getInst().getLevelLength();
 		
 }
 
@@ -59,18 +60,29 @@ void Camera::update(){
 		mVelocity-=panSpeed;
 	}
 
+	
 	if(mPosition>mMaxPos){ 
-	//	mPosition=mMaxPos;
+		mPosition=mMaxPos;
 	}
 	
 	if(mPosition<mMinPos){
-	//	mPosition=mMinPos;
+		mPosition=mMinPos;
 	}
 	
+	if(mPosition<mView.getSize().x-mView.getSize().x/2){
+		
+		mPosition=mView.getSize().x-mView.getSize().x/2;
+	}
+	
+	if(mPosition>mLevellength-(mView.getSize().x-mView.getSize().x/2)){
+		
+		mPosition=mLevellength-(mView.getSize().x-mView.getSize().x/2);
+	}
+
 	mPosition+=mVelocity;
 
 	mLayerManager->move(mPosition-lastPosition);
-	
+
 	mView.setCenter(mPosition, mWindow->getSize().y/2);
 
 	mWindow->setView(mView);

@@ -19,6 +19,7 @@ public:
 
 private:
 	
+	int mLevellength;
 	sf::View mView;
 	sf::RenderWindow* mWindow;
 	float mVelocity, mPosition, mMaxVelocity, mMinVelocity, mMaxPos, mMinPos;

@@ -20,6 +20,7 @@ public:
 	ActiveLayer* getActiveLayer();
 	void setCamera(Camera* camera);
 	Camera* getCamera();
+	int getLevelLength();
 
 private:
 	//std::vector<Layer*> layers;
@@ -27,6 +28,7 @@ private:
 	std::vector<Entity*> placedAnimals;
 	ActiveLayer* mActiveLayer;
 	Camera* mThisCamera;
+	int mLevellength;
 
 	LevelManager& operator=(const LevelManager&);
 	LevelManager(const LevelManager&);
