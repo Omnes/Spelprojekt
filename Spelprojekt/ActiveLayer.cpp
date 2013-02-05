@@ -3,6 +3,7 @@
 #include "WindowManager.h"
 #include "LevelManager.h"
 #include "Camera.h"
+#include "StateManager.h"
 
 #include <iostream>
 
@@ -100,6 +101,19 @@ void ActiveLayer::finishLine(){
 	}
 
 	if(mAllAnimalsPassed == true){
-		//addstate, finished;
+
+		for(EntityVector::iterator i = mEntityVector.begin(); i != mEntityVector.end();){
+			if((*i)->getID() == "Animal"){
+				if((*i)->getPos().x>mLevellength){
+					mAliveEntityVector.push_back(*i);
+				}
+			}
+		}
+		StateManager::getInst().addState("levelfinished");
 	}
+}
+
+std::vector<Entity*>* ActiveLayer::getAliveAnimals(){
+
+	return &mAliveEntityVector;
 }

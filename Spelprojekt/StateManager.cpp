@@ -6,9 +6,11 @@
 #include "Taktikmeny.h"
 #include <iostream>
 #include "PauseMeny.h"
+#include "LevelFinished.h"
 
 StateManager::StateManager(){
 	mStateMap["gameplay"] = new Gameplay();
+	mStateMap["levelfinished"] = new LevelFinished();
 	mStateMap["startmenu"] = new StartMeny();
 	mStateMap["worldmap"] = new WorldMap();
 	mStateMap["optionsmenu"] = new OptionsMeny(); 
