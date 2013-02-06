@@ -15,6 +15,8 @@ public:
 	void receiveAnimals();
 	void placeSpots();
 
+	void createAnimals(); 
+
 	void isClicked();
 	void isNotClicked();
 
@@ -26,6 +28,9 @@ private:
 	AnimalPrototype* mCurrentDragAnimal;
 	typedef std::vector<AnimalPrototype*> FakeAnimals;
 	FakeAnimals mFakeAnimals;
+
+	typedef std::vector <Animal*> AnimalVector;
+	AnimalVector mAnimalVector;
 
 	typedef std::vector <Spot*> SpotVector;
 	SpotVector mSpotVector;

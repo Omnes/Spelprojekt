@@ -59,11 +59,11 @@ void AnimalPrototype::loadAnimal(std::string filePath){
 	
 }
 
-Animal* AnimalPrototype::createAnimal(){
+Animal* AnimalPrototype::createAnimal(float standardSpeed){
 
 	mAnimation =  new Animation(mTex, mFrameTick, mFrames);
-	float speed = 0;
-	return new Animal(mAnimation, sf::Vector2f(2,2), speed);
+	//mStandardSpeed = 0; //denna ska vara med. inte noll
+	return new Animal(mAnimation, mPosition, standardSpeed); // animal tar en sträng också
 
 };
 
