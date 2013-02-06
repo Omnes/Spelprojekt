@@ -34,6 +34,7 @@ void TaktikMeny::update(){
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return)){
 		createAnimals();
 		EventManager::getInst().addEvent("addGameplay");
+		EventManager::getInst().addEvent("popState");
 	}
 }
 
