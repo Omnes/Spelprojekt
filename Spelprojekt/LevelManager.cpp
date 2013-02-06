@@ -43,7 +43,6 @@ std::vector<AnimalPrototype*> LevelManager::getAnimalsOnLevel(){
 	while (elm !=0){
 		animalsOnLevel.push_back(new AnimalPrototype(elm->GetText()));
 		elm = elm->NextSiblingElement();
-
 	}
 
 	for (std::vector<std::string>::iterator i = mAliveAnimals.begin();i != mAliveAnimals.end();i++){
