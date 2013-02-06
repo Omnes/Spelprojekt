@@ -26,7 +26,7 @@ public:
 	void setStandardSpeed(float stdSpeed);
 
 	sf::Vector2f getPos();
-	sf::FloatRect& getGlobalBounds(); //<--------------ta bort denna
+	sf::FloatRect getGlobalBounds(); //<--------------ta bort denna
 	sf::Sprite* getSprite();
 	int getLevel();
 	std::vector <float> getSpeedVector();

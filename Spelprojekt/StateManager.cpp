@@ -25,7 +25,7 @@ StateManager& StateManager::getInst(){
 void StateManager::popState(){
 
 	if(!mStates.empty()){
-
+		delete mStates.top();
 		mStates.pop();
 	}
 }

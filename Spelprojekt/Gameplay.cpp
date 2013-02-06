@@ -10,7 +10,8 @@ Gameplay::Gameplay(){
 }
 
 Gameplay::~Gameplay(){
-
+	delete mCamera;
+	delete mLayerManager;
 }
 
 void Gameplay::update(){

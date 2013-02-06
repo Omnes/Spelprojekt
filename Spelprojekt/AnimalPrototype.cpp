@@ -88,7 +88,7 @@ void AnimalPrototype::setStandardSpeed(float stdSpeed){
 	mStandardSpeed = stdSpeed;
 }
 
-sf::FloatRect& AnimalPrototype::getGlobalBounds(){
+sf::FloatRect AnimalPrototype::getGlobalBounds(){
 	return mSprite.getGlobalBounds();
 }
 

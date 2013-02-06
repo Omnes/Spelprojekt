@@ -27,17 +27,7 @@ void Game::run(){
 	FPSFont.getDefaultFont();
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-	stateManager->addState("startmenu");
-=======
-	stateManager->addState("taktikmenu");
-
->>>>>>> sean
-
-=======
-	stateManager->addState(new Gameplay);
->>>>>>> robin
+	stateManager->addState(new StartMeny);
 
 	while(window->isOpen()){
 

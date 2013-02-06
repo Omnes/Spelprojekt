@@ -15,7 +15,7 @@ Animal::Animal(Animation* animation, sf::Vector2f position, float speed, std::st
 }
 
 Animal::~Animal(){
-
+	delete mAnimation;
 } 
 
 void Animal::update(){
