@@ -24,6 +24,7 @@ void Game::run(){
 	sf::Font FPSFont;
 	FPSFont.getDefaultFont();
 
+
 	stateManager->addState("gameplay");
 
 
