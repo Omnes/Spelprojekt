@@ -14,7 +14,10 @@ public:
 	void setFilePath(std::string filePath);
 	std::vector<AnimalPrototype*> getAnimalsOnLevel();
 	void setAliveAnimals(std::vector<std::string>& aliveVector);
+	void setDeadAnimals(std::vector<std::string>& deadVector);
 	void setAnimalPosition(std::vector<Entity*>);
+	std::vector<std::string> getAliveAnimals();
+	std::vector<std::string> getDeadAnimals();
 	std::vector<Layer*> loadLayers();
 	static LevelManager& getInst();
 	ActiveLayer* getActiveLayer();
@@ -26,7 +29,7 @@ private:
 	//std::vector<Layer*> layers;
 	std::string mFilePath;
 	std::vector<Entity*> placedAnimals;
-	std::vector<std::string> mAliveAnimals;
+	std::vector<std::string> mAliveAnimals, mDeadAnimals;
 	ActiveLayer* mActiveLayer;
 	Camera* mThisCamera;
 	int mLevellength;

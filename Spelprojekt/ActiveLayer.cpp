@@ -74,9 +74,14 @@ void ActiveLayer::killDead(){
 	for(EntityVector::iterator i = mEntityVector.begin(); i != mEntityVector.end();){
 
 		if((*i)->getAlive() == false){
+			if((*i)->getID() == "Animal"){
+				mDeadAnimalsVector.push_back((*i)->getFilePath());
+			}
 			delete (*i);
 			i = mEntityVector.erase(i);
-		}else{
+	
+		}
+		else{
 			i++;
 		}
 
@@ -108,9 +113,14 @@ void ActiveLayer::finishLine(){
 			}
 		}
 		LevelManager::getInst().setAliveAnimals(mAliveAnimalsVector);
+<<<<<<< HEAD
 		std::cout<<mAliveAnimalsVector.size()<<std::endl;
 		EventManager::getInst().addEvent("addPause");
+=======
+		LevelManager::getInst().setDeadAnimals(mDeadAnimalsVector);
+		EventManager::getInst().addEvent("addLevelFinished");
+>>>>>>> Jessica
 	}
 
-}
+} 
 

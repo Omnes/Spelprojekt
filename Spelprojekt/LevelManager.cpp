@@ -191,3 +191,17 @@ int LevelManager::getLevelLength(){
 void LevelManager::setAliveAnimals(std::vector<std::string>& aliveVector){
 	mAliveAnimals = aliveVector;
 }
+
+void LevelManager::setDeadAnimals(std::vector<std::string>& deadVector){
+	mDeadAnimals = deadVector;
+}
+
+std::vector<std::string> LevelManager::getAliveAnimals(){
+
+	return mAliveAnimals;
+}
+
+std::vector<std::string> LevelManager::getDeadAnimals(){
+
+	return mDeadAnimals;
+}
