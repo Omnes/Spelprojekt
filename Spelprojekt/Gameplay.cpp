@@ -12,6 +12,7 @@ Gameplay::Gameplay(){
 Gameplay::~Gameplay(){
 	delete mCamera;
 	delete mLayerManager;
+	WindowManager::getInst().getWindow()->setView(WindowManager::getInst().getWindow()->getDefaultView());
 }
 
 void Gameplay::update(){

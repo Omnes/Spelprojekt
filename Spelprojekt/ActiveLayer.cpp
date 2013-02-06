@@ -108,6 +108,7 @@ void ActiveLayer::finishLine(){
 			}
 		}
 		LevelManager::getInst().setAliveAnimals(mAliveAnimalsVector);
+		std::cout<<mAliveAnimalsVector.size()<<std::endl;
 		EventManager::getInst().addEvent("addPause");
 	}
 
