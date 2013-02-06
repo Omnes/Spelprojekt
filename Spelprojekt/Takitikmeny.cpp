@@ -97,6 +97,14 @@ States* TaktikMeny::createNew(){
 	return new TaktikMeny;
 }
 
+
+void TaktikMeny::createAnimals(){
+	for(FakeAnimals::iterator i = mFakeAnimals.begin(); i != mFakeAnimals.end(); ++i){
+		mAnimalVector.push_back((*i)->createAnimal());
+	}
+
+}
+
 void TaktikMeny::isClicked(){
 	sf::Vector2f musPosition = sf::Vector2f(sf::Mouse::getPosition(*WindowManager::getInst().getWindow()));
 
