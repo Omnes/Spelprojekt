@@ -24,12 +24,7 @@ void Game::run(){
 	sf::Font FPSFont;
 	FPSFont.getDefaultFont();
 
-<<<<<<< HEAD
-	stateManager->addState("taktikmenu");
-=======
-
-	stateManager->addState("gameplay");
->>>>>>> Jessica
+	stateManager->addState("startmenu");
 
 
 	while(window->isOpen()){
