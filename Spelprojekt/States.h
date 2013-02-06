@@ -7,7 +7,6 @@ public:
 
 	virtual void update()=0;
 	virtual void render()=0;
-	virtual States* createNew()=0;
 	virtual ~States(){};
 
 };

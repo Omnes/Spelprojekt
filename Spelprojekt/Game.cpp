@@ -8,6 +8,8 @@
 #include "EventManager.h"
 #include <time.h>
 #include <sstream>
+#include "StartMeny.h"
+#include "Gameplay.h"
 
 Game::Game(): mFrames(0), mCurrentFPS(0) {
 	mClock.restart();
@@ -26,12 +28,16 @@ void Game::run(){
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	stateManager->addState("startmenu");
 =======
 	stateManager->addState("taktikmenu");
 
 >>>>>>> sean
 
+=======
+	stateManager->addState(new Gameplay);
+>>>>>>> robin
 
 	while(window->isOpen()){
 

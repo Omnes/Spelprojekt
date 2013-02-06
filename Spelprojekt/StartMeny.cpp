@@ -20,8 +20,3 @@ void StartMeny::render(){
 		window->draw((*i)->getSprite());
 	}
 }
-
-States* StartMeny::createNew(){
-	return new StartMeny;
-}
-

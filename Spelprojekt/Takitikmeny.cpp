@@ -93,10 +93,6 @@ void TaktikMeny::placeSpots(){
 	}
 }
 
-States* TaktikMeny::createNew(){
-	return new TaktikMeny;
-}
-
 
 void TaktikMeny::createAnimals(){
 

@@ -18,8 +18,3 @@ void OptionsMeny::render(){
 		window->draw((*i)->getSprite());
 	}
 }
-
-States* OptionsMeny::createNew(){
-	return new OptionsMeny;
-}
-

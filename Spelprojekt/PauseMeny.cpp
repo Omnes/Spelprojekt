@@ -33,7 +33,3 @@ void PauseMeny::update(){
 	mResumeButton.update();
 
 }
-
-States* PauseMeny::createNew(){
-	return new PauseMeny;
-}

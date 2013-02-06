@@ -9,13 +9,6 @@
 #include "LevelFinished.h"
 
 StateManager::StateManager(){
-	mStateMap["gameplay"] = new Gameplay();
-	mStateMap["levelfinished"] = new LevelFinished();
-	mStateMap["startmenu"] = new StartMeny();
-	mStateMap["worldmap"] = new WorldMap();
-	mStateMap["optionsmenu"] = new OptionsMeny(); 
-	mStateMap["taktikmenu"] = new TaktikMeny();
-	mStateMap["pausemenu"] = new PauseMeny();
 	
 }
 
@@ -47,17 +40,9 @@ void StateManager::render(){
 	mStates.top()->render();
 }
 
-void StateManager::addState(std::string state){
+void StateManager::addState(States* state){
 	
-	StateMap::iterator i;
-	i = mStateMap.find(state);
-	
-	if(i == mStateMap.end()){
-		std::cout << std::endl << "Denna state hittades inte: " << state;
-		return;
-	}
-	
-	mStates.push(i->second->createNew());
+	mStates.push(state);
 }
 
 States* StateManager::getTop(){

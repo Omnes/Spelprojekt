@@ -8,7 +8,6 @@ public:
 	virtual void update();
 	virtual void render();
 	StartMeny();
-	States* createNew();
 	~StartMeny();
 
 private:

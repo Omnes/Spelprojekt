@@ -18,9 +18,3 @@ void LevelFinished::update(){
 
 
 }
-
-States* LevelFinished::createNew(){
-
-	return new LevelFinished;
-}
-

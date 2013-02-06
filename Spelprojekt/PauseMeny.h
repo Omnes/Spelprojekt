@@ -12,7 +12,6 @@ public:
 
 	void render();
 	void update();
-	States* createNew();
 
 
 private:

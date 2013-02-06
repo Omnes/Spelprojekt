@@ -9,7 +9,6 @@ public:
 	~LevelFinished();
 	virtual void update();
 	virtual void render();
-	virtual States* createNew();
 };
 
 #endif
