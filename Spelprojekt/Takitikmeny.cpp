@@ -1,11 +1,13 @@
 #include "Taktikmeny.h"
 #include "WindowManager.h"
-#include <SFML\Window\Mouse.hpp>
 #include "LevelManager.h"
 #include "Spot.h"
 #include "AnimalPrototype.h"
+#include "EventManager.h"
 
+#include <SFML\Window\Mouse.hpp>
 #include <SFML\Graphics\RectangleShape.hpp>
+#include <SFML\Window\Keyboard.hpp>
 
 TaktikMeny::TaktikMeny() : 
 	mCurrentDragAnimal(0),
@@ -27,6 +29,11 @@ void TaktikMeny::update(){
 		isClicked();
 	}else{
 		isNotClicked();
+	}
+
+	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return)){
+		createAnimals();
+		EventManager::getInst().addEvent("addGameplay");
 	}
 }
 
