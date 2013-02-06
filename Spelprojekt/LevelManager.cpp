@@ -114,8 +114,10 @@ std::vector<Layer*> LevelManager::loadLayers(){
 
 			float x = 500 + rand()%200;
 
+			int minDistanceFromGoal = 250;
 
-			while(x < mLevellength){
+
+			while(x < mLevellength - minDistanceFromGoal){
 				std::string name = "Stone";
 
 				int randNumber = rand()%100;
@@ -151,8 +153,6 @@ std::vector<Layer*> LevelManager::loadLayers(){
 
 			float fireSpeed = doc.FirstChildElement("Fire")->FirstAttribute()->FloatValue();
 			entityVector.push_back(new Fire(sf::Vector2f(0,0),fireSpeed));
-
-			entityVector.push_back(new Animal(new Animation(resourceManager->getTexture("groda.png"),100,10),sf::Vector2f(100,400),2, "scorpion.xml"));
 			
 
 			ActiveLayer* activeLayer = new ActiveLayer(entityVector, mLevellength);
