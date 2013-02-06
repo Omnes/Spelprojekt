@@ -53,7 +53,7 @@ std::vector<AnimalPrototype*> LevelManager::getAnimalsOnLevel(){
 	return animalsOnLevel;
 }
 
-void LevelManager::setAnimalPosition(std::vector<Entity*> entityVector){
+void LevelManager::setAnimalPosition(std::vector <Entity*> entityVector){
 	placedAnimals = entityVector;
 
 }

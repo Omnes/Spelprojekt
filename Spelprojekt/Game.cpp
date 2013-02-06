@@ -25,7 +25,12 @@ void Game::run(){
 	FPSFont.getDefaultFont();
 
 
+<<<<<<< HEAD
 	stateManager->addState("startmenu");
+=======
+	stateManager->addState("taktikmenu");
+
+>>>>>>> sean
 
 
 	while(window->isOpen()){

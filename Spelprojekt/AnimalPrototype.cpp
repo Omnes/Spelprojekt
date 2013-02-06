@@ -62,8 +62,7 @@ void AnimalPrototype::loadAnimal(std::string filePath){
 
 Animal* AnimalPrototype::createAnimal(){
 
-	mAnimation =  new Animation(mTex, mFrameTick, mFrames);
-	//mStandardSpeed = 0; //denna ska vara med. inte noll
+	mAnimation =  new Animation(mTex, mFrameTick, mFrames);// funkar alla parametrar ?
 	return new Animal(mAnimation, mPosition, mStandardSpeed, mFilePath); // animal tar en sträng också
 
 };

@@ -99,10 +99,12 @@ States* TaktikMeny::createNew(){
 
 
 void TaktikMeny::createAnimals(){
+
 	for(FakeAnimals::iterator i = mFakeAnimals.begin(); i != mFakeAnimals.end(); ++i){
-		//mAnimalVector.push_back((*i)->createAnimal());
+		mAnimalVector.push_back((Entity*)(*i)->createAnimal());
 	}
 
+	LevelManager::getInst().setAnimalPosition(mAnimalVector);
 }
 
 void TaktikMeny::isClicked(){
@@ -170,6 +172,7 @@ void TaktikMeny::isNotClicked(){
 					if(level == i && mCurrentDragAnimal != 0){
 						if((*j)->getActSpot() == true && (*j)->getTakenSpot() == false && mCurrentDragAnimal->getSprite()->getGlobalBounds().intersects((*j)->getSprite()->getGlobalBounds())){
 							mCurrentDragAnimal->setPos((*j)->getSprite()->getPosition());
+							mCurrentDragAnimal->setStandardSpeed(mSpeedVector[i]);
 							mCurrentDragAnimal = 0;
 							(*j)->setTakenSpot(true);
 							(*j)->setColorSpot(true);
