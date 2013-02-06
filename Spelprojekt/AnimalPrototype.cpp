@@ -60,11 +60,11 @@ void AnimalPrototype::loadAnimal(std::string filePath){
 	
 }
 
-Animal* AnimalPrototype::createAnimal(float standardSpeed){
+Animal* AnimalPrototype::createAnimal(){
 
 	mAnimation =  new Animation(mTex, mFrameTick, mFrames);
 	//mStandardSpeed = 0; //denna ska vara med. inte noll
-	return new Animal(mAnimation, mPosition, standardSpeed); // animal tar en sträng också
+	return new Animal(mAnimation, mPosition, mStandardSpeed, mFilePath); // animal tar en sträng också
 
 };
 
@@ -83,6 +83,10 @@ void AnimalPrototype::setStartPos(sf::Vector2f	startPos){
 
 sf::Vector2f AnimalPrototype::getStartPos(){
 	return mStartPos;
+}
+
+void AnimalPrototype::setStandardSpeed(float stdSpeed){
+	mStandardSpeed = stdSpeed;
 }
 
 sf::FloatRect& AnimalPrototype::getGlobalBounds(){

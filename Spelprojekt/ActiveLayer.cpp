@@ -104,7 +104,7 @@ void ActiveLayer::finishLine(){
 	if(mAllAnimalsPassed){
 		for(EntityVector::iterator i = mEntityVector.begin(); i != mEntityVector.end(); i++){
 			if((*i)->getID() == "Animal"){
-				mAliveAnimalsVector.push_back((*i)->getFilePath());
+//				mAliveAnimalsVector.push_back((*i)->getFilePath());
 			}
 		}
 		LevelManager::getInst().setAliveAnimals(mAliveAnimalsVector);

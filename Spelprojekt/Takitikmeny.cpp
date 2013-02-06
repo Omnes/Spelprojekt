@@ -100,7 +100,7 @@ States* TaktikMeny::createNew(){
 
 void TaktikMeny::createAnimals(){
 	for(FakeAnimals::iterator i = mFakeAnimals.begin(); i != mFakeAnimals.end(); ++i){
-		mAnimalVector.push_back((*i)->createAnimal());
+		//mAnimalVector.push_back((*i)->createAnimal());
 	}
 
 }
@@ -173,6 +173,7 @@ void TaktikMeny::isNotClicked(){
 							mCurrentDragAnimal = 0;
 							(*j)->setTakenSpot(true);
 							(*j)->setColorSpot(true);
+
 						}
 					}
 				}

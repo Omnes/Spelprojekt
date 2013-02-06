@@ -18,12 +18,12 @@ public:
 	~AnimalPrototype();
 	
 	void loadAnimal(std::string filePath);
-	Animal* createAnimal(float standardSpeed); 
+	Animal* createAnimal(); 
 	void setPos(sf::Vector2f position);
 	void setStartPos(sf::Vector2f startPos);
 
 	sf::Vector2f getStartPos();
-	//void setStandardSpeed(sf::Vector2f standardSpeed);
+	void setStandardSpeed(float stdSpeed);
 
 	sf::Vector2f getPos();
 	sf::FloatRect& getGlobalBounds(); //<--------------ta bort denna
@@ -42,7 +42,7 @@ private:
 
 	int mHighSpeed;
 	//farten den får
-	//float mStandardSpeed;
+	float mStandardSpeed;
 
 	sf::Vector2f mPosition;
 	sf::Texture* mTex;
