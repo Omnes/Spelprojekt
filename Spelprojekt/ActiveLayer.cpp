@@ -104,14 +104,12 @@ void ActiveLayer::finishLine(){
 	if(mAllAnimalsPassed){
 		for(EntityVector::iterator i = mEntityVector.begin(); i != mEntityVector.end(); i++){
 			if((*i)->getID() == "Animal"){
-				mAliveEntityVector.push_back(*i);
+				mAliveAnimalsVector.push_back((*i)->getFilePath());
 			}
 		}
+		LevelManager::getInst().setAliveAnimals(mAliveAnimalsVector);
 		EventManager::getInst().addEvent("addPause");
 	}
+
 }
 
-std::vector<Entity*>* ActiveLayer::getAliveAnimals(){
-
-	return &mAliveEntityVector;
-}

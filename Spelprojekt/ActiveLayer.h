@@ -29,14 +29,13 @@ public:
 	void killDead();
 	void finishLine();
 	std::vector<Entity*>* getEntityVector();
-	std::vector<Entity*>* getAliveAnimals();
 
 private:
 	typedef std::vector<Entity*> EntityVector;
-	EntityVector mEntityVector, mAliveEntityVector;
+	EntityVector mEntityVector;
 	bool mAllAnimalsPassed;
 	int mLevellength;
-
+	std::vector<std::string>mAliveAnimalsVector;
 	Camera* mThisCamera;
 };
 
