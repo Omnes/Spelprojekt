@@ -113,13 +113,10 @@ void ActiveLayer::finishLine(){
 			}
 		}
 		LevelManager::getInst().setAliveAnimals(mAliveAnimalsVector);
-<<<<<<< HEAD
-		std::cout<<mAliveAnimalsVector.size()<<std::endl;
-		EventManager::getInst().addEvent("addPause");
-=======
+
 		LevelManager::getInst().setDeadAnimals(mDeadAnimalsVector);
 		EventManager::getInst().addEvent("addLevelFinished");
->>>>>>> Jessica
+
 	}
 
 } 
