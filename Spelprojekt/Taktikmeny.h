@@ -3,6 +3,7 @@
 
 #include "States.h"
 #include "AnimalPrototype.h"
+#include "Entity.h"
 
 class LevelManager;
 class Spot;
@@ -29,7 +30,7 @@ private:
 	typedef std::vector<AnimalPrototype*> FakeAnimals;
 	FakeAnimals mFakeAnimals;
 
-	typedef std::vector <Animal*> AnimalVector;
+	typedef std::vector <Entity*> AnimalVector;
 	AnimalVector mAnimalVector;
 
 	typedef std::vector <Spot*> SpotVector;
