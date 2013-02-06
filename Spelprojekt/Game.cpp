@@ -8,6 +8,8 @@
 #include "EventManager.h"
 #include <time.h>
 #include <sstream>
+#include "StartMeny.h"
+#include "Gameplay.h"
 
 Game::Game(): mFrames(0), mCurrentFPS(0) {
 	mClock.restart();
@@ -25,8 +27,7 @@ void Game::run(){
 	FPSFont.getDefaultFont();
 
 
-	stateManager->addState("startmenu");
-
+	stateManager->addState(new Gameplay);
 
 	while(window->isOpen()){
 

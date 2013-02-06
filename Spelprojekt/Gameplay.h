@@ -13,12 +13,11 @@ public:
 	~Gameplay();
 	virtual void update();
 	virtual void render();
-	States* createNew();
 
 private:
 	Gui mGui;
-	Camera mCamera;
-	LayerManager mLayerManager;
+	Camera *mCamera;
+	LayerManager *mLayerManager;
 
 };
 

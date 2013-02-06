@@ -10,7 +10,7 @@ class StateManager{
 public:
 
 	static StateManager& getInst();
-	void addState(std::string state);
+	void addState(States* state);
 	void update();
 	void popState();
 	void render();

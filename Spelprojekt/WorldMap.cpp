@@ -20,9 +20,3 @@ void WorldMap::render(){
 		window->draw((*i)->getSprite());
 	}
 }
-
-
-States* WorldMap::createNew(){
-	return new WorldMap;
-}
-
