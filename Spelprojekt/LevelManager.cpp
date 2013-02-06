@@ -32,7 +32,7 @@ void LevelManager::setFilePath(std::string filePath){
 	mFilePath = filePath;
 }
 
-std::vector<AnimalPrototype*> LevelManager::getAnimalsOnLevel(){
+std::vector <AnimalPrototype*> LevelManager::getAnimalsOnLevel(){
 	std::vector<AnimalPrototype*> animalsOnLevel;
 
 	tinyxml2::XMLDocument doc;

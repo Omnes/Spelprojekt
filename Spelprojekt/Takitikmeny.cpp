@@ -34,18 +34,28 @@ void TaktikMeny::update(){
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return)){
 		createAnimals();
 		EventManager::getInst().addEvent("addGameplay");
+		EventManager::getInst().addEvent("popState");
 	}
 }
 
 void TaktikMeny::render(){
 
+	sf::RenderWindow *window = WindowManager::getInst().getWindow();
+
+	sf::View view = window->getView();
+	window->setView(window->getDefaultView());
+
+	std::cout<<mFakeAnimals.size()<<std::endl;
+
 	for(SpotVector::iterator i = mSpotVector.begin(); i != mSpotVector.end(); i++){
-		WindowManager::getInst().getWindow()->draw(*(*i)->getSprite());
+		window->draw(*(*i)->getSprite());
 	}
 
 	for(FakeAnimals::iterator i = mFakeAnimals.begin(); i != mFakeAnimals.end(); i++){
-		WindowManager::getInst().getWindow()->draw(*(*i)->getSprite());
+		window->draw(*(*i)->getSprite());
 	}
+
+	window->setView(view);
 
 }
 
