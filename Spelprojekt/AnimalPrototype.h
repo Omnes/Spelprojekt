@@ -37,6 +37,7 @@ private:
 	
 	typedef std::vector <float> SpeedVector;
 	SpeedVector mSpeedVector;
+	std::string mFilePath;
 
 	int mHighSpeed;
 	sf::Vector2f mPosition;

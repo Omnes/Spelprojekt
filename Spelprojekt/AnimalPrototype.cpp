@@ -9,6 +9,7 @@ AnimalPrototype::AnimalPrototype(std::string filePath){
 	mSprite.setTexture(*mTex);
 	mSprite.setTextureRect(sf::IntRect(0,0,mTex->getSize().x/3,mTex->getSize().y));
 	mSprite.setOrigin(64,64); // kom ihåg att fixa orgin när vi fått grafik
+	mFilePath = filePath;
 }
 
 AnimalPrototype::~AnimalPrototype(){}

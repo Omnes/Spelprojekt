@@ -46,6 +46,11 @@ std::vector<AnimalPrototype*> LevelManager::getAnimalsOnLevel(){
 
 	}
 
+	for (std::vector<std::string>::iterator i = mAliveAnimals.begin();i != mAliveAnimals.end();i++){
+		animalsOnLevel.push_back(new AnimalPrototype(*i));
+	}
+
+
 	return animalsOnLevel;
 }
 
@@ -182,4 +187,8 @@ Camera* LevelManager::getCamera(){
 int LevelManager::getLevelLength(){
 
 	return mLevellength;
+}
+
+void LevelManager::setAliveAnimals(std::vector<std::string>& aliveVector){
+	mAliveAnimals = aliveVector;
 }

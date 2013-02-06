@@ -7,13 +7,14 @@
 #include "SpeedMod.h"
 #include "Entity.h"
 #include <SFML\System\Clock.hpp>
+#include <string>
 
 class Animation;
 
 class Animal : public Entity{
 
 public:
-	Animal(Animation* animation, sf::Vector2f position, float speed);
+	Animal(Animation* animation, sf::Vector2f position, float speed, std::string filePath);
 	~Animal();
 	void update();
 
@@ -25,6 +26,7 @@ public:
 	void setMod(SpeedMod* speedMod);
 	std::string getID();
 	sf::Vector2f getPos();
+	std::string getFilePath();
 
 private:
 	Animation* mAnimation;
@@ -35,6 +37,8 @@ private:
 	ModSet mModSet;
 	bool mAlive;
 	sf::Clock collideCooldown;
+
+	std::string mFilePath;
 
 	std::string mID;
 

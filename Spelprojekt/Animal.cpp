@@ -3,13 +3,14 @@
 #include <iostream>
 
 
-Animal::Animal(Animation* animation, sf::Vector2f position, float speed) : 
+Animal::Animal(Animation* animation, sf::Vector2f position, float speed, std::string filePath) : 
 	mAlive(true),
 	mAnimation(animation),
 	currentAnimation(0), 
 	mPosition(position),
 	mSpeed(speed),
-	mID("Animal"){
+	mID("Animal"),
+	mFilePath(filePath){
 	
 }
 
@@ -92,4 +93,8 @@ std::string Animal::getID(){
 
 sf::Vector2f Animal::getPos(){
 	return mPosition;
+}
+
+std::string Animal::getFilePath(){
+	return mFilePath;
 }
