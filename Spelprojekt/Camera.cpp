@@ -50,36 +50,42 @@ void Camera::update(){
 
 	float panSpeed = 0.1;
 	float lastPosition = mPosition;
-	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && mVelocity<mMaxVelocity){
+	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && mVelocity < mMaxVelocity){
 
-		mVelocity+=panSpeed;
+		mVelocity += panSpeed;
 	}
 	 
-	else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && mVelocity>-mMinVelocity){
+	else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && mVelocity > -mMinVelocity){
 
-		mVelocity-=panSpeed;
+		mVelocity -= panSpeed;
 	}
 
 	
-	if(mPosition>mMaxPos){ 
-		mPosition=mMaxPos;
-	}
+	if(mPosition > mMaxPos){ 
+		mPosition -= 1;
+		if (mVelocity > .5){
+			mVelocity-= panSpeed*2;
+		}
+	}	
 	
 	if(mPosition<mMinPos){
-		mPosition=mMinPos;
+		if (mVelocity < 0){
+			mVelocity = 0;
+		}
+		mPosition = mMinPos;
 	}
 	
-	if(mPosition<mView.getSize().x-mView.getSize().x/2){
+	if(mPosition<mView.getSize().x - mView.getSize().x/2){
 		
-		mPosition=mView.getSize().x-mView.getSize().x/2;
+		mPosition = mView.getSize().x - mView.getSize().x/2;
 	}
 	
-	if(mPosition>mLevellength-(mView.getSize().x-mView.getSize().x/2)){
+	if(mPosition > mLevellength - (mView.getSize().x - mView.getSize().x/2)){
 		
-		mPosition=mLevellength-(mView.getSize().x-mView.getSize().x/2);
+		mPosition = mLevellength - (mView.getSize().x - mView.getSize().x/2);
 	}
 
-	mPosition+=mVelocity;
+	mPosition += mVelocity;
 
 	mLayerManager->move(mPosition-lastPosition);
 
