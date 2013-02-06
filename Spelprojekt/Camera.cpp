@@ -68,11 +68,11 @@ void Camera::update(){
 		}
 	}	
 	
-	if(mPosition<mMinPos){
+	if(mPosition < mMinPos + 440){
 		if (mVelocity < 0){
 			mVelocity = 0;
 		}
-		mPosition = mMinPos;
+		mPosition = mMinPos + 440;
 	}
 	
 	if(mPosition<mView.getSize().x - mView.getSize().x/2){
