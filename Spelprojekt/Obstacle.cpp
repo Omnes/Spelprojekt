@@ -42,10 +42,13 @@ std::string Obstacle::getID(){
 }
 
 void Obstacle::collide(Entity* entity){
-	int tid = 1;
+	int tid = 75;
 	
 	if(entity->getID() == "Animal"){
-		entity->setMod(new SpeedMod(tid, mSpeedMod, mID));
+
+		if (!entity->checkMod(mID)){
+			entity->setMod(new SpeedMod(tid, mSpeedMod, mID));
+		}
 	}
 }
 

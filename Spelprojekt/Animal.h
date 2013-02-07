@@ -20,13 +20,14 @@ public:
 
 	sf::FloatRect* getRect();
 	sf::Sprite* getSprite();
-	bool getAlive(); // <----------------------------kanske ta bort denna funktion !??!
+	bool getAlive();
 	void setAlive(bool alive);
 	void collide(Entity* entity);
 	void setMod(SpeedMod* speedMod);
 	std::string getID();
 	sf::Vector2f getPos();
 	std::string getFilePath();
+	bool checkMod(std::string name);
 
 private:
 	Animation* mAnimation;
