@@ -42,10 +42,9 @@ std::string Obstacle::getID(){
 }
 
 void Obstacle::collide(Entity* entity){
-	int tid = 20;
+	int tid = 1;
 	
-	if(collideCooldown.getElapsedTime().asMilliseconds()>tid && entity->getID() == "Animal"){
-		collideCooldown.restart();
+	if(entity->getID() == "Animal"){
 		entity->setMod(new SpeedMod(tid, mSpeedMod, mID));
 	}
 }

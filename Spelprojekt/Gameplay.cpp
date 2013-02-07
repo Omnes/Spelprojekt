@@ -16,10 +16,15 @@ Gameplay::~Gameplay(){
 }
 
 void Gameplay::update(){
+	sf::RenderWindow* window = WindowManager::getInst().getWindow();
+
+	window->setView(*mCamera->getView());
 
 	mLayerManager->update();
 	mGui.update();
 	mCamera->update();
+
+	window->setView(window->getDefaultView());
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
 		EventManager::getInst().addEvent("addPause");
@@ -30,10 +35,11 @@ void Gameplay::render(){
 
 	sf::RenderWindow* window = WindowManager::getInst().getWindow();
 
+	window->setView(*mCamera->getView());
 	mLayerManager->render();
-	sf::View view = window->getView();
 	window->setView(window->getDefaultView());
 	mGui.render();
-	window->setView(view);
+	
+	
 
 }

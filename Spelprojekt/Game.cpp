@@ -33,13 +33,18 @@ void Game::run(){
 
 		sf::Text text;
 		text.setFont(FPSFont);
+		text.setColor(sf::Color::Green);
 		text.setString(setStringStream(mCurrentFPS));
+		text.setPosition(sf::Vector2f(100,100));
+
 		sf::Event evt;
 		while(window->pollEvent(evt)){
 			if(evt.type == sf::Event::Closed){
 				window->close();
 			}
 		}
+
+		window->setView(window->getDefaultView());
 
 		stateManager->update(); // main update
 		countFrames();
@@ -49,10 +54,8 @@ void Game::run(){
 		
 		stateManager->render(); //rendrering
 
-		sf::View view = window->getView();
 		window->setView(window->getDefaultView());
 		window->draw(text);
-		window->setView(view);
 
 		window->display();
 	

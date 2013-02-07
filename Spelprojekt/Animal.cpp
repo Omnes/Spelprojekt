@@ -49,10 +49,9 @@ sf::Sprite* Animal::getSprite(){
 }
 
 void Animal::collide(Entity* entity){
-	int time = 20;
+	int time = 1;
 
-	if(entity->getID() == "Animal" && mPosition.x < entity->getPos().x && collideCooldown.getElapsedTime().asMilliseconds()>time){
-		collideCooldown.restart();
+	if(entity->getID() == "Animal" && mPosition.x < entity->getPos().x){
 		int speed = 0;
 		setMod(new SpeedMod(time, speed, "AnimalMod"));
 	}

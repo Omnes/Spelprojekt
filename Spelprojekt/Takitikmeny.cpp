@@ -42,10 +42,6 @@ void TaktikMeny::render(){
 
 	sf::RenderWindow *window = WindowManager::getInst().getWindow();
 
-	sf::View view = window->getView();
-	window->setView(window->getDefaultView());
-
-	std::cout<<mFakeAnimals.size()<<std::endl;
 
 	for(SpotVector::iterator i = mSpotVector.begin(); i != mSpotVector.end(); i++){
 		window->draw(*(*i)->getSprite());
@@ -55,7 +51,6 @@ void TaktikMeny::render(){
 		window->draw(*(*i)->getSprite());
 	}
 
-	window->setView(view);
 
 }
 

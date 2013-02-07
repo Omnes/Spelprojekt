@@ -19,13 +19,10 @@ void PauseMeny::render(){
 	}
 
 	sf::RenderWindow* window = WindowManager::getInst().getWindow();
-	sf::View view = window->getView();
-	window->setView(window->getDefaultView());
 	
 	WindowManager::getInst().getWindow()->draw(mSprite);
 	WindowManager::getInst().getWindow()->draw(mResumeButton.getSprite());
 
-	window->setView(view);
 	
 }
 
