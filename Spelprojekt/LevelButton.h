@@ -7,6 +7,8 @@
 #include <SFML\Graphics\RenderWindow.hpp>
 #include <SFML\Window\Mouse.hpp>
 
+#include <string>
+
 class LevelButton{
 
 public:
@@ -15,6 +17,10 @@ public:
 	~LevelButton();
 	void update();
 	sf::Sprite& getSprite();
+	std::string getLevel();
+
+	bool getAlive(); //tror denna behövs <----
+	void setAlive(bool alive);
 
 private:
 	
@@ -25,6 +31,9 @@ private:
 	sf::IntRect mRectangle;
 	sf::Texture mTexture;
 	std::string mLevel;
+
+	bool mAlive;
+
 	int mCurrentImage;
 };
 

@@ -3,6 +3,8 @@
 #include "States.h"
 #include "LevelButton.h"
 
+#include "tinyxml2.h"
+
 class WorldMap : public States{
 
 public:
@@ -11,10 +13,16 @@ public:
 	~WorldMap();
 	virtual void update();
 	virtual void render();
+	void readFromFile();
 
 private:
 
-	std::vector<LevelButton*> mButtons;
+	typedef std::vector <LevelButton*> ButtonVector;
+	ButtonVector mButtonVector;
+
+	typedef std::vector <std::string> PlayedLevels;
+	PlayedLevels mPlayedLevels;
+
 };
 
 #endif
