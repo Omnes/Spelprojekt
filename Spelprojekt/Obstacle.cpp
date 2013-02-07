@@ -42,7 +42,7 @@ std::string Obstacle::getID(){
 }
 
 void Obstacle::collide(Entity* entity){
-	int tid = 75;
+	int tid = 50;
 	
 	if(entity->getID() == "Animal"){
 

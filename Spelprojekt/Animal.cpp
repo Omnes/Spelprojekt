@@ -49,7 +49,7 @@ sf::Sprite* Animal::getSprite(){
 }
 
 void Animal::collide(Entity* entity){
-	int time = 75;
+	int time = 50;
 
 	if(entity->getID() == "Animal" && mPosition.x < entity->getPos().x - entity->getSprite()->getLocalBounds().width/2){
 		int speed = 0;
