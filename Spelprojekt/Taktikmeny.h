@@ -35,7 +35,7 @@ private:
 	typedef std::vector <Spot*> SpotVector;
 	SpotVector mSpotVector;
 
-	typedef std::vector <int> LevelVector;
+	typedef std::vector <int> LevelVector;  // kanske kan göras lokalt
 	LevelVector mLevelVector;
 
 	typedef std::vector <int> PosVector;
