@@ -49,11 +49,13 @@ sf::Sprite* Animal::getSprite(){
 }
 
 void Animal::collide(Entity* entity){
-	int time = 1;
+	int time = 75;
 
-	if(entity->getID() == "Animal" && mPosition.x < entity->getPos().x){
+	if(entity->getID() == "Animal" && mPosition.x < entity->getPos().x - entity->getSprite()->getLocalBounds().width/2){
 		int speed = 0;
-		setMod(new SpeedMod(time, speed, "AnimalMod"));
+		if(!checkMod(mID)){
+			setMod(new SpeedMod(time, speed, mID));
+		}
 	}
 
 }
@@ -63,7 +65,7 @@ sf::FloatRect* Animal::getRect(){
 }
 
 bool Animal::getAlive(){
-	return mAlive; // <--------------------------------------------OSÄKER OPÅ OM FUNKTIONEN BEHÖVSVSV, jepp det gör den används redan flitigt
+	return mAlive; 
 }
 
 void Animal::setAlive(bool alive){
@@ -71,19 +73,19 @@ void Animal::setAlive(bool alive){
 }
 
 void Animal::setMod(SpeedMod* speedMod){
-	// clock
-	bool found = false;
-	for(ModSet::iterator i = mModSet.begin(); i != mModSet.end(); i++){
-		if((*i)->getID() == speedMod->getID()){
-			found = true;
-		}
-	}
+	//// clock
+	//bool found = false;
+	//for(ModSet::iterator i = mModSet.begin(); i != mModSet.end(); i++){
+	//	if((*i)->getID() == speedMod->getID()){
+	//		found = true;
+	//	}
+	//}
 
-	if(!found){
-		mModSet.insert(speedMod);
-	}else{
-		delete speedMod;
-	}
+	//if(!found){
+	mModSet.insert(speedMod);
+	//}else{
+	//	delete speedMod;
+	//}
 }
 
 std::string Animal::getID(){
@@ -96,4 +98,15 @@ sf::Vector2f Animal::getPos(){
 
 std::string Animal::getFilePath(){
 	return mFilePath;
+}
+
+bool Animal::checkMod(std::string name){
+
+	bool found = false;
+	for(ModSet::iterator i = mModSet.begin(); i != mModSet.end(); i++){
+		if((*i)->getID() == name){
+			found = true;
+		}
+	}
+	return found;
 }
