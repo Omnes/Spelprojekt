@@ -2,8 +2,10 @@
 #define LEVELFINISHED
 #include "States.h"
 #include <SFML\Graphics\Sprite.hpp>
+#include <SFML\Graphics\Rect.hpp>
 #include <vector>
 #include "Button.h"
+
 
 class LevelFinished : public States{
 

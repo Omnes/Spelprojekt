@@ -5,7 +5,7 @@
 #include "WindowManager.h"
 
 
-LevelFinished::LevelFinished() : mButton(sf::Vector2f(500, 500), "addStart", "knapp1.jpg"){
+LevelFinished::LevelFinished() : mButton(sf::Vector2f(500, 500), "addStart", "knapp1.jpg", "Resources/Sound/test.wav"){
 	
 	std::vector<std::string> Alive = LevelManager::getInst().getAliveAnimals();
 	std::vector<std::string> Dead = LevelManager::getInst().getDeadAnimals();
@@ -51,11 +51,13 @@ std::vector<sf::Sprite*> LevelFinished::loadAnimals(std::vector<std::string> ani
 		doc.LoadFile((*i).c_str());
 
 		tinyxml2::XMLElement *elm = doc.FirstChildElement("Animal")->FirstChildElement("Images");
+		tinyxml2::XMLElement *elmf = doc.FirstChildElement("Animal")->FirstChildElement("ImageAttr");
 
 
 		sf::Texture* tex = resourceManager->getTexture(elm->GetText());
 		sf::Sprite *sprite = new sf::Sprite();
 		sprite->setTexture(*tex);
+		sprite->setTextureRect(sf::IntRect(0,0, tex->getSize().x/elmf->FirstAttribute()->Next()->FloatValue(), tex->getSize().y));
 		spriteVector.push_back(sprite);
 	}
 
