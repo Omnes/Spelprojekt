@@ -7,12 +7,14 @@
 #include <SFML\Window\Mouse.hpp>
 #include <SFML\Graphics\Sprite.hpp>
 #include <SFML\Graphics\Rect.hpp>
+#include <SFML\Audio\Sound.hpp>
+#include <SFML\Audio\SoundBuffer.hpp>
 
 class Button{
 
 public:
 
-	Button(sf::Vector2f pos, std::string evt, std::string img);
+	Button(sf::Vector2f pos, std::string evt, std::string img, std::string sound);
 	~Button();
 	void update();
 	sf::Sprite& getSprite();
@@ -21,10 +23,11 @@ private:
 
 	sf::Vector2f mPosition;
 	std::string mEvent;
-	std::string mImage;
 	sf::Sprite mSprite;
 	sf::IntRect mRectangle;
-	sf::Texture mTexture;
+	sf::Texture *mTexture;
+	sf::Sound mSound;
+	sf::SoundBuffer *mSoundBuffer;
 	int mCurrentImage;
 
 };
