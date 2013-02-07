@@ -3,7 +3,7 @@
 StartMeny::StartMeny(){
 	mButtons.push_back(new Button(sf::Vector2f(100,100), "addGameplay","knapp1.jpg"));
 	mButtons.push_back(new Button(sf::Vector2f(100,300), "addTaktik","knapp2.jpg"));
-	mButtons.push_back(new Button(sf::Vector2f(100,500), "addOptions","knapp3.jpg"));
+	mButtons.push_back(new Button(sf::Vector2f(100,500), "addMap","knapp3.jpg"));
 }
 
 StartMeny::~StartMeny(){}

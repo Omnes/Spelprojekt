@@ -4,7 +4,7 @@
 #include "WindowManager.h"
 #include "LevelManager.h"
 
-LevelButton::LevelButton(sf::Vector2f pos, std::string evt, std::string img, std::string level) : mPosition(pos), mEvent(evt), mImage(img), mCurrentImage(0), mLevel(level){
+LevelButton::LevelButton(sf::Vector2f pos, std::string evt, std::string img, std::string level) : mPosition(pos), mEvent(evt), mImage(img), mCurrentImage(0), mLevel(level), mAlive(true){
 	mTexture = *(ResourceManager::getInst().getTexture(img));
 	mSprite.setTexture(mTexture);
 	mSprite.setPosition(mPosition);
@@ -27,10 +27,14 @@ void LevelButton::update(){
 		mCurrentImage=1;
 
 		if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){ 
-	
-			mCurrentImage=2;
-			LevelManager::getInst().setFilePath(mLevel);
-			EventManager::getInst().addEvent(mEvent);
+			
+			if(mAlive){
+				mCurrentImage=2;
+				LevelManager::getInst().setFilePath(mLevel);
+				EventManager::getInst().addEvent(mEvent);
+			}else{
+				//här finns inget för tillfället. hej
+			}
 			
 		}		
 	}
@@ -49,3 +53,17 @@ sf::Sprite& LevelButton::getSprite(){
 	return mSprite;
 }
 
+std::string LevelButton::getLevel(){
+	return mLevel;
+}
+
+bool LevelButton::getAlive(){
+	return mAlive;
+}
+
+void LevelButton::setAlive(bool alive){
+	mAlive = alive;
+
+	//ändra bild här <------------------------------
+
+}
