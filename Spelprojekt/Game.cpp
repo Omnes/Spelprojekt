@@ -10,6 +10,7 @@
 #include <sstream>
 #include "StartMeny.h"
 #include "Gameplay.h"
+#include "ResourceManager.h"
 
 Game::Game(): mFrames(0), mCurrentFPS(0) {
 	mClock.restart();
@@ -25,6 +26,8 @@ void Game::run(){
 	EventManager* eventManager = &EventManager::getInst();
 	sf::Font FPSFont;
 	FPSFont.getDefaultFont();
+
+	//sf::Sprite aim = sf::Sprite(*ResourceManager::getInst().getTexture("Resources/Misc/pointer.png"));
 
 
 	stateManager->addState(new StartMeny);
@@ -56,6 +59,10 @@ void Game::run(){
 
 		window->setView(window->getDefaultView());
 		window->draw(text);
+
+		//aim.setPosition((sf::Vector2f)sf::Mouse::getPosition(*window));
+
+		//window->draw(aim);
 
 		window->display();
 	
