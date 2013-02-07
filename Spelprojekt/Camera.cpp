@@ -25,7 +25,7 @@ Camera::~Camera(){
 
 }
 
-void Camera::namnsenare(){
+void Camera::getMinMax(){
 	std::vector<Entity*>* entityVector = LevelManager::getInst().getActiveLayer()->getEntityVector();
 	mMaxPos = INT_MIN;
 	mMinPos = INT_MAX;
@@ -46,7 +46,7 @@ void Camera::namnsenare(){
 
 void Camera::update(){
 
-	namnsenare();
+	getMinMax();
 
 	float panSpeed = 0.1;
 	float lastPosition = mPosition;
@@ -98,4 +98,8 @@ void Camera::update(){
 
 float Camera::getMax(){
 	return mMaxPos;
+}
+
+sf::View* Camera::getView(){
+	return &mView;
 }

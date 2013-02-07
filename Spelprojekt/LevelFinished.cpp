@@ -20,15 +20,17 @@ LevelFinished::~LevelFinished(){
 
 void LevelFinished::render(){
 
+	sf::RenderWindow* window = WindowManager::getInst().getWindow();
+
 
 	for(std::vector<sf::Sprite*>::iterator i = mAliveVector.begin(); i != mAliveVector.end(); i++){
-		WindowManager::getInst().getWindow()->draw(*(*i));
+		window->draw(*(*i));
 	}
 	for(std::vector<sf::Sprite*>::iterator i = mDeadVector.begin(); i != mDeadVector.end(); i++){
-		WindowManager::getInst().getWindow()->draw(*(*i));
+		window->draw(*(*i));
 	}
 
-	WindowManager::getInst().getWindow()->draw(mButton.getSprite());
+	window->draw(mButton.getSprite());
 
 }
 

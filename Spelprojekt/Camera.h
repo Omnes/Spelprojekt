@@ -13,8 +13,9 @@ public:
 	Camera(LayerManager* layermanager);
 	~Camera();
 	void update();
-	void namnsenare();
+	void getMinMax();
 	float getMax();
+	sf::View* getView();
 
 
 private:
