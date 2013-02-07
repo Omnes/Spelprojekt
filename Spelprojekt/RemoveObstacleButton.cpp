@@ -88,16 +88,6 @@ void RemoveObstacleButton::update(){
 
 sf::Sprite* RemoveObstacleButton::getSprite(){
 
-	sf::Vector2f mousePosition = (sf::Vector2f) sf::Mouse::getPosition(*WindowManager::getInst().getWindow());
-
-	//KORTA NER DEN
-	const sf::View* view = &WindowManager::getInst().getWindow()->getView();
-	sf::Vector2f relativeMousePosition = mousePosition + view->getCenter() - sf::Vector2f(view->getSize().x/2,view->getSize().y/2);
-	sf::CircleShape mousecircle(10);
-	mousecircle.setOrigin(5,5);
-	mousecircle.setPosition(relativeMousePosition);
-	WindowManager::getInst().getWindow()->draw(mousecircle);
-
 	return &mSprite;
 }
 
