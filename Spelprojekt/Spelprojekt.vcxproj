@@ -86,7 +86,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AbilityButton.cpp" />
     <ClCompile Include="ActiveLayer.cpp" />
     <ClCompile Include="Animal.cpp" />
     <ClCompile Include="AnimalPrototype.cpp" />
@@ -119,6 +118,7 @@
     <ClCompile Include="StartMeny.cpp" />
     <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="StaticLayer.cpp" />
+    <ClCompile Include="TacticalVision.cpp" />
     <ClCompile Include="TacticalVisionButton.cpp" />
     <ClCompile Include="Takitikmeny.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
@@ -173,6 +173,7 @@
     <ClInclude Include="StateManager.h" />
     <ClInclude Include="States.h" />
     <ClInclude Include="StaticLayer.h" />
+    <ClInclude Include="TacticalVision.h" />
     <ClInclude Include="TacticalVisionButton.h" />
     <ClInclude Include="Taktikmeny.h" />
     <ClInclude Include="tinyxml2.h" />

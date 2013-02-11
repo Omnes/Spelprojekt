@@ -86,6 +86,7 @@ void RemoveObstacleButton::update(){
 	}
 }
 
+
 sf::Sprite* RemoveObstacleButton::getSprite(){
 
 	return &mSprite;

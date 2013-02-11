@@ -1,0 +1,14 @@
+<Animal>
+
+	<Name>Jaguar</Name>
+
+	<Images>Resources/Animals/jaguar.png</Images>
+
+	<Speed ground="1" middle="2" tree="0"/>
+	
+	<AnimalType>plant</AnimalType>
+
+	<ImageAttr fTick="100" frames="10"/>
+
+
+</Animal>

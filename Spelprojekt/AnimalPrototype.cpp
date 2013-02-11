@@ -7,7 +7,7 @@
 AnimalPrototype::AnimalPrototype(std::string filePath){
 	loadAnimal(filePath);
 	mSprite.setTexture(*mTex);
-	mSprite.setTextureRect(sf::IntRect(0,0,mTex->getSize().x/3,mTex->getSize().y));
+	mSprite.setTextureRect(sf::IntRect(0,mTex->getSize().y/2,mTex->getSize().x/10,mTex->getSize().y/2));
 	mSprite.setOrigin(64,64); // kom ihåg att fixa orgin när vi fått grafik
 	mFilePath = filePath;
 }
