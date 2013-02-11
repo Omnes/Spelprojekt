@@ -15,7 +15,7 @@
 
 LevelManager::LevelManager() : 
 	mLevellength(0){
-	mFilePath = "Jungle_Level1.xml";
+	mFilePath = "Resources/Data/Jungle_Level1.xml";
 }
 
 

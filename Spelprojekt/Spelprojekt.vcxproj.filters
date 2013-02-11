@@ -129,9 +129,6 @@
     <ClCompile Include="PauseMeny.cpp">
       <Filter>Source Files\States</Filter>
     </ClCompile>
-    <ClCompile Include="AbilityButton.cpp">
-      <Filter>Source Files\Abilities</Filter>
-    </ClCompile>
     <ClCompile Include="InnerBeastButton.cpp">
       <Filter>Source Files\Abilities</Filter>
     </ClCompile>
@@ -146,6 +143,9 @@
     </ClCompile>
     <ClCompile Include="Gui.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TacticalVision.cpp">
+      <Filter>Source Files\States</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -283,6 +283,9 @@
     </ClInclude>
     <ClInclude Include="AddPause.h">
       <Filter>Header Files\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="TacticalVision.h">
+      <Filter>Header Files\States</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
