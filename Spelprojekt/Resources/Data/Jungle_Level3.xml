@@ -69,9 +69,8 @@
 
 <AnimalsOnLevel>
 
-	<Animal_1>Scorpion.xml</Animal_1>
-	<Animal_1>Scorpion.xml</Animal_1>
-	<Animal_1>Scorpion.xml</Animal_1>
+	<Animal_1>Ocelot.xml</Animal_1>
+	<Animal_1>Ocelot.xml</Animal_1>
 	<Animal_1>Ocelot.xml</Animal_1>
 
 
@@ -79,20 +78,20 @@
 
 </AnimalsOnLevel>
 
-<Level length = "3000">
+<Level length = "6000">
 	
 </Level>
 
 
 <Obstacles minDistance="64" maxDistance="128">
 	<Stone chance = "25" speedMod = "0" y="200" numberOfFrames="2">sten.png</Stone>
-	<Gren chance = "75" speedMod = "0.5" y="500" numberOfFrames="2">gren.png</Gren>
+	<Gren chance = "25" speedMod = "0" y="500" numberOfFrames="2">gren.png</Gren>
 
 
 
 </Obstacles>
 
-<Fire speed = "0.5"/>
+<Fire speed = "1"/>
 
 
 

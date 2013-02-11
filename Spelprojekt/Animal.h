@@ -23,16 +23,19 @@ public:
 	bool getAlive();
 	void setAlive(bool alive);
 	void collide(Entity* entity);
-	void setMod(SpeedMod* speedMod);
+	
 	std::string getID();
 	sf::Vector2f getPos();
 	std::string getFilePath();
-	bool checkMod(std::string name);
+	
+	float doDamage();
 
 private:
 	Animation* mAnimation;
 	int currentAnimation;
 	float mSpeed;
+
+	float mCalcSpeed;
 	sf::Vector2f mPosition;
 	typedef std::set<SpeedMod*> ModSet;
 	ModSet mModSet;
@@ -43,7 +46,7 @@ private:
 
 	std::string mID;
 
-	float calculateSpeed(float speed);
+	
 };
 
 

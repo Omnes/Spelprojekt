@@ -4,7 +4,7 @@
 
 	<Images>ocelot.png</Images>
 
-	<Speed ground="1" middle="2" tree="0"/>
+	<Speed ground="0" middle="1" tree="0"/>
 	
 	<AnimalType>plant</AnimalType>
 
