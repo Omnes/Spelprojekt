@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 
+
 class Layer;
 class AnimalPrototype;
 class Entity;

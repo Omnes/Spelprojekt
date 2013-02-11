@@ -11,19 +11,23 @@
 #include "StartMeny.h"
 #include "Gameplay.h"
 #include "ResourceManager.h"
+#include "ParticleManager.h"
+
 
 Game::Game(): mFrames(0), mCurrentFPS(0) {
 	mClock.restart();
 }
 
 void Game::run(){
-
+	
 	srand(time(NULL));
 
 	WindowManager* windowManager = &WindowManager::getInst();
 	sf::RenderWindow* window = windowManager->getWindow();
 	StateManager* stateManager = &StateManager::getInst();                                                      
 	EventManager* eventManager = &EventManager::getInst();
+	ParticleManager* particleManager = &ParticleManager::getInst();
+	particleManager->loadPrototype("Resources/buttonParticle.xml");
 	sf::Font FPSFont;
 	FPSFont.getDefaultFont();
 
@@ -50,12 +54,15 @@ void Game::run(){
 		window->setView(window->getDefaultView());
 
 		stateManager->update(); // main update
+		particleManager->update();
+
 		countFrames();
 		eventManager->update(); // process events
 		
 		window->clear(sf::Color::Black);
 		
 		stateManager->render(); //rendrering
+		particleManager->render(*window); // denna ska nog ligga i varje states update (tex i activeLayer vid rätt lager)
 
 		window->setView(window->getDefaultView());
 		window->draw(text);

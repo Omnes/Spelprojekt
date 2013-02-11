@@ -3,7 +3,8 @@
 #include "EventManager.h"
 #include "WindowManager.h"
 
-Button::Button(sf::Vector2f pos, std::string evt, std::string img, std::string sound) : mPosition(pos), mEvent(evt), mCurrentImage(0){
+
+Button::Button(sf::Vector2f pos, std::string evt, std::string img, std::string sound) : mPosition(pos), mEvent(evt), mCurrentImage(0), mPartSystem("ButtonEffekt",100){
 	mTexture = (ResourceManager::getInst().getTexture(img));
 	mSprite.setTexture(*mTexture);
 	mSprite.setPosition(mPosition);
@@ -12,6 +13,8 @@ Button::Button(sf::Vector2f pos, std::string evt, std::string img, std::string s
 	mSoundBuffer = (ResourceManager::getInst().getSoundBuffer(sound));
 	mSound.setBuffer(*mSoundBuffer);
 	mSound.setLoop(false);
+	mEmitter.setPosition(mPosition);
+
 }
 
 Button::~Button(){
@@ -25,7 +28,7 @@ void Button::update(){
 	
 	if(mSprite.getGlobalBounds().contains((sf::Vector2f)sf::Mouse::getPosition(*window))){		
 	
-
+		mEmitter.burst(mPartSystem,sf::FloatRect(0,0,66,150),1);
 		mCurrentImage=1;
 
 		if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){ 

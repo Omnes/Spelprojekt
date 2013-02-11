@@ -9,6 +9,10 @@
 #include <SFML\Graphics\Rect.hpp>
 #include <SFML\Audio\Sound.hpp>
 #include <SFML\Audio\SoundBuffer.hpp>
+#include "Emitter.h"
+#include "ParticleSystem.h"
+
+
 
 class Button{
 
@@ -29,6 +33,9 @@ private:
 	sf::Sound mSound;
 	sf::SoundBuffer *mSoundBuffer;
 	int mCurrentImage;
+	Emitter mEmitter;
+	ParticleSystem mPartSystem;
+
 
 };
 
