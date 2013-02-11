@@ -150,7 +150,6 @@
     <ClCompile Include="Gui.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="ParticleSystem.cpp">
       <Filter>Source Files\Particles</Filter>
     </ClCompile>
@@ -165,10 +164,9 @@
     </ClCompile>
     <ClCompile Include="Emitter.cpp">
       <Filter>Source Files\Particles</Filter>
-=======
+    </ClCompile>
     <ClCompile Include="TacticalVision.cpp">
       <Filter>Source Files\States</Filter>
->>>>>>> Jessica
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -307,7 +305,6 @@
     <ClInclude Include="AddPause.h">
       <Filter>Header Files\Events</Filter>
     </ClInclude>
-<<<<<<< HEAD
     <ClInclude Include="AvoidMouse.h">
       <Filter>Header Files\Particles</Filter>
     </ClInclude>
@@ -328,10 +325,9 @@
     </ClInclude>
     <ClInclude Include="Emitter.h">
       <Filter>Header Files\Particles</Filter>
-=======
+     </ClInclude>
     <ClInclude Include="TacticalVision.h">
       <Filter>Header Files\States</Filter>
->>>>>>> Jessica
     </ClInclude>
   </ItemGroup>
 </Project>
