@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <SFML\Graphics\RenderWindow.hpp>
+#include <SFML\Graphics\Sprite.hpp>
 
 class AbilityButton;
 
@@ -19,6 +20,7 @@ private:
 	typedef std::vector<AbilityButton*> AbilityButtons;
 	AbilityButtons mButtons;
 	sf::RenderWindow* mWindow;
+	sf::Sprite mGuiSprite;
 
 };
 

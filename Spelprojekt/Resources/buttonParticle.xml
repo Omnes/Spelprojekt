@@ -5,10 +5,10 @@
 	<Direction min ="0" max="180"/>
 	<Speed min=".1" max=".2" increase=".01"/>
 	<Rotation min="0" max="359" increaseMin="-3" increaseMax="3"/>
-	<Scale min=".1" max=".2" increase="0.03"/>
+	<Scale min=".1" max=".2" increase="0"/>
 	<Color>
-		<Start r="255" g="255" b="255" a="255"/>
-		<End r="255" g="255" b="255" a="0"/>
+		<Start r="255" g="255" b="255" a="0"/>
+		<End r="255" g="255" b="255" a="125"/>
 	</Color>
 
 </Particle>
