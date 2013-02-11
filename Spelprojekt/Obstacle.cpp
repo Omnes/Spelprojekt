@@ -2,7 +2,12 @@
 #include <SFML\System\Clock.hpp>
 
 Obstacle::Obstacle(sf::Texture* texture, sf::Vector2f position, float speed, std::string ID) : 
-mTexture(texture), mPosition(position), mSpeedMod(speed), mID(ID), mAlive(true){
+	mTexture(texture),
+	mPosition(position),
+	mSpeedEffect(speed),
+	mID(ID),
+	mAlive(true)
+{
 
 	mSprite.setTexture(*mTexture);
 
@@ -42,20 +47,14 @@ std::string Obstacle::getID(){
 }
 
 void Obstacle::collide(Entity* entity){
-	int tid = 50;
-	
-	if(entity->getID() == "Animal"){
 
-		if (!entity->checkMod(mID)){
-			entity->setMod(new SpeedMod(tid, mSpeedMod, mID));
-		}
-	}
 }
 
-void Obstacle::setMod(SpeedMod* speedMod){
-	//denna ska inte göra något.
-}
 
 sf::Vector2f Obstacle::getPos(){
 	return mPosition;
+}
+
+float Obstacle::doDamage(){
+	return mSpeedEffect;
 }

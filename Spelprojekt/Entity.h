@@ -14,11 +14,12 @@ public:
 	virtual bool getAlive()=0;
 	virtual void setAlive(bool alive)=0;
 	virtual void collide(Entity* entity)=0;
-	virtual void setMod(SpeedMod* speedMod)=0;
+	
 	virtual std::string getID()=0;
 	virtual sf::Vector2f getPos()=0;
 	virtual std::string getFilePath(){return "hej";}
-	virtual bool checkMod(std::string name){return true;}
+	
+	virtual float doDamage()=0;
 
 	//animation
 	//etc...

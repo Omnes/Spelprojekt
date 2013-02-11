@@ -21,20 +21,20 @@ LevelButton::~LevelButton(){
 void LevelButton::update(){
 
 	sf::RenderWindow* window = WindowManager::getInst().getWindow();
-	
-	if(mSprite.getGlobalBounds().contains((sf::Vector2f)sf::Mouse::getPosition(*window))){		
+
+
+	//mAlive står här. ändra om du behöver
+	if(mAlive  && mSprite.getGlobalBounds().contains((sf::Vector2f)sf::Mouse::getPosition(*window))){		
 	
 		mCurrentImage=1;
 
 		if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){ 
 			
-			if(mAlive){
+			
 				mCurrentImage=2;
 				LevelManager::getInst().setFilePath(mLevel);
 				EventManager::getInst().addEvent(mEvent);
-			}else{
-				//här finns inget för tillfället. hej
-			}
+
 			
 		}		
 	}

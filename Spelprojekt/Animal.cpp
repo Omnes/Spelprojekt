@@ -9,6 +9,7 @@ Animal::Animal(Animation* animation, sf::Vector2f position, float speed, std::st
 	currentAnimation(0), 
 	mPosition(position),
 	mSpeed(speed),
+	mCalcSpeed(speed),
 	mID("Animal"),
 	mFilePath(filePath){
 	
@@ -20,29 +21,14 @@ Animal::~Animal(){
 
 void Animal::update(){
 
-	mPosition.x += calculateSpeed(mSpeed);
 	mAnimation->setCurrentAnimation(currentAnimation);
+
+	mPosition.x += mSpeed * mCalcSpeed;
+
 	mAnimation->update();
 	mAnimation->setPosition(mPosition);
 
-
-	for(ModSet::iterator i = mModSet.begin(); i != mModSet.end();){
-		if(!(*i)->getAlive()){
-			i = mModSet.erase(i);
-
-		}else{
-			i++;
-		}
-	}
-}
-
-float Animal::calculateSpeed(float speed){
-
-	for(std::set<SpeedMod*>::iterator i = mModSet.begin(); i != mModSet.end(); i++){
-		speed *= (*i)->getMod();
-	}
-
-	return speed;
+	mCalcSpeed = mSpeed;
 }
 
 sf::Sprite* Animal::getSprite(){
@@ -51,13 +37,22 @@ sf::Sprite* Animal::getSprite(){
 
 void Animal::collide(Entity* entity){
 	int time = 50;
+	float aCol = 1;
+	float oCol = 1;
 
-	if(entity->getID() == "Animal" && mPosition.x < entity->getPos().x - entity->getSprite()->getLocalBounds().width/2){
-		int speed = 0;
-		if(!checkMod(mID)){
-			setMod(new SpeedMod(time, speed, mID));
-		}
+	if(entity->getID() == "Animal" && mPosition.x < entity->getPos().x/* - entity->getSprite()->getLocalBounds().width*/){
+		aCol = 0;
 	}
+
+	//sktriv om id som id
+	if(entity->getID() == "Stone" /*|| entity->getID() == "Gren"*/){
+		oCol = entity->doDamage();
+	}else if(/*entity->getID() == "Sten" ||*/ entity->getID() == "Gren"){
+		oCol = entity->doDamage();
+	}
+
+
+	mCalcSpeed = mCalcSpeed * aCol * oCol;
 
 }
 
@@ -73,22 +68,6 @@ void Animal::setAlive(bool alive){
 	mAlive = alive;
 }
 
-void Animal::setMod(SpeedMod* speedMod){
-	//// clock
-	//bool found = false;
-	//for(ModSet::iterator i = mModSet.begin(); i != mModSet.end(); i++){
-	//	if((*i)->getID() == speedMod->getID()){
-	//		found = true;
-	//	}
-	//}
-
-	//if(!found){
-	mModSet.insert(speedMod);
-	//}else{
-	//	delete speedMod;
-	//}
-}
-
 std::string Animal::getID(){
 	return mID;
 }
@@ -101,13 +80,6 @@ std::string Animal::getFilePath(){
 	return mFilePath;
 }
 
-bool Animal::checkMod(std::string name){
-
-	bool found = false;
-	for(ModSet::iterator i = mModSet.begin(); i != mModSet.end(); i++){
-		if((*i)->getID() == name){
-			found = true;
-		}
-	}
-	return found;
-}
+float Animal::doDamage(){
+	return 0.0; //gör inget
+};

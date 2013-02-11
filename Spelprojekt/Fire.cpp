@@ -48,3 +48,7 @@ sf::Vector2f Fire::getPos(){
 Fire::~Fire(){
 
 }
+
+float Fire::doDamage(){
+	return 0.0;// gör inget
+}

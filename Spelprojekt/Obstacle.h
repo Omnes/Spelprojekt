@@ -17,15 +17,16 @@ public:
 	virtual void setAlive(bool alive);
 	virtual void collide(Entity* entity);
 	std::string getID();
-	virtual void setMod(SpeedMod* speedMod);
+	
 	virtual sf::Vector2f getPos();
+	virtual float doDamage();
 
 private:
 
 	std::string mID;
 	sf::Texture* mTexture;
 	sf::Vector2f mPosition;
-	float mSpeedMod;
+	float mSpeedEffect;
 	sf::Sprite mSprite;
 	bool mAlive;
 	sf::Clock collideCooldown;

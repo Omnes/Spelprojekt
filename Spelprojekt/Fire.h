@@ -17,6 +17,7 @@ public:
 	virtual void setMod(SpeedMod* speedMod);
 	virtual std::string getID();
 	virtual sf::Vector2f getPos();
+	virtual float doDamage();
 
 private:
 	float mSpeed;

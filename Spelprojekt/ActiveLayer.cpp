@@ -22,8 +22,8 @@ ActiveLayer::~ActiveLayer(){}
 
 void ActiveLayer::move(float cameraVelocity){
 
-	//ska denna användas ?? <----------------------------------------------------'******
-	//inte för tillfället men det skadar inte att den finns ett tag
+	//ska denna användas ?? <----------------------------------------------------'****** /sean xoxo <3
+	//inte för tillfället men det skadar inte att den finns ett tag /robin
 
 }
 

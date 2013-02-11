@@ -3,6 +3,8 @@
 WorldMap::WorldMap(){
 	mButtonVector.push_back(new LevelButton(sf::Vector2f(500,100), "addTaktik","knapp1.jpg", "Resources/Data/Jungle_Level1.xml"));
 	mButtonVector.push_back(new LevelButton(sf::Vector2f(500,300), "addTaktik","knapp2.jpg", "Resources/Data/Jungle_Level2.xml"));
+	mButtonVector.push_back(new LevelButton(sf::Vector2f(500,500), "addTaktik","knapp3.jpg", "Resources/Data/Jungle_Level3.xml"));
+	
 
 	//mButtonVector.push_back(new LevelButton(sf::Vector2f(200,300), "addGameplay","knapp3.jpg","Resources/Data/Jungle_Level1.xml"));
 	readFromFile();
