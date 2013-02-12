@@ -93,10 +93,10 @@ void TaktikMeny::placeSpots(){
 	mPosVector.push_back(mLevelGround); // värdelöst ???
 
 	int xDistance = 250;
-	int yDistance = 200;
+	int yDistance = -200;
 	
 	int startX = 80;
-	int startY = 80;
+	int startY = 540;
 	//placerar ut spots 
 	for(int i = 0; i < 3/* == antal level på en bana*/; i++){
 		for(int j = 0; j < mPosVector[i]; j++){
