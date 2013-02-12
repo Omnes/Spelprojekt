@@ -28,7 +28,7 @@ void Animal::update(){
 	mAnimation->update();
 	mAnimation->setPosition(mPosition);
 
-	mCalcSpeed = mSpeed;
+	mCalcSpeed = mSpeed; //det här borde vi fixa på ngt random sätt. vet ej hur
 }
 
 sf::Sprite* Animal::getSprite(){
