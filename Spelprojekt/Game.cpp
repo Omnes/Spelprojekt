@@ -33,9 +33,9 @@ void Game::run(){
 	StateManager* stateManager = &StateManager::getInst();                                                      
 	EventManager* eventManager = &EventManager::getInst();
 	ParticleManager* particleManager = &ParticleManager::getInst();
-	particleManager->loadPrototype("Resources/Particle/buttonParticle.xml"); // <------- ska bort härifrån annars ser det ut som zumas kod
-	particleManager->loadPrototype("Resources/Particle/firewallParticle.xml");
-	particleManager->loadPrototype("Resources/Particle/smokeParticle.xml");
+	particleManager->loadPrototype("Resources/Data/Particle/buttonParticle.xml"); // <------- ska bort härifrån annars ser det ut som zumas kod
+	particleManager->loadPrototype("Resources/Data/Particle/firewallParticle.xml");
+	particleManager->loadPrototype("Resources/Data/Particle/smokeParticle.xml");
 
 	//sf::Sprite aim = sf::Sprite(*ResourceManager::getInst().getTexture("Resources/Misc/pointer.png"));
 

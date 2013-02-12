@@ -1,6 +1,6 @@
 <Particle>
 	<Name>Firewall</Name>
-	<Texture yframes="3">Resources/robeld.png</Texture>
+	<Texture yframes="3">Resources/Particle/robeld.png</Texture>
 	<Life min="20" max="30"/>
 	<Direction min ="75" max="105"/>
 	<Speed min=".1" max=".2" increase=".01"/>

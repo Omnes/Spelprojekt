@@ -3,7 +3,7 @@
 #include <iostream>
 
 Fire::Fire(sf::Vector2f position,float speed): mID("Fire"), mPosition(position), mSpeed(speed), mAlive(true),mFireSystem("Firewall",500),mSmokeSystem("Smoke",500){
-	mSprite.setTexture(*ResourceManager::getInst().getTexture("eld.png"));
+	mSprite.setTexture(*ResourceManager::getInst().getTexture("Resources/Animals/eld.png"));
 	mFireSystem.setBlendMode(sf::BlendAdd);
 	mSmokeSystem.setBlendMode(sf::BlendAlpha);
 	mSprite.setColor(sf::Color(0,0,0,0));

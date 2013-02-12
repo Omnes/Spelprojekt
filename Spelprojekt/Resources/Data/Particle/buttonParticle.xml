@@ -1,6 +1,6 @@
 <Particle>
 	<Name>ButtonEffekt</Name>
-	<Texture yframes="10">Resources/finaord.png</Texture>
+	<Texture yframes="10">Resources/Particle/fileNotFound.png</Texture>
 	<Life min="10" max="30"/>
 	<Direction min ="0" max="180"/>
 	<Speed min=".1" max=".2" increase=".01"/>

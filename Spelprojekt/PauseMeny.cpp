@@ -3,9 +3,9 @@
 #include "ResourceManager.h"
 #include "WindowManager.h"
 
-PauseMeny::PauseMeny(): mRenderState(0), mResumeButton(sf::Vector2f(640,480),"addTaktik","knapp1.jpg", "Resources/Sound/test.wav"){
+PauseMeny::PauseMeny(): mRenderState(0), mResumeButton(sf::Vector2f(640,480),"addTaktik","Resources/Misc/knapp1.jpg", "Resources/Sound/test.wav"){
 	mRenderState = StateManager::getInst().getTop();
-	mSprite.setTexture(*ResourceManager::getInst().getTexture("paused.png"));
+	mSprite.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/PauseMenu/paused.png"));
 }
 
 PauseMeny::~PauseMeny(){

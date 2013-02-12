@@ -6,7 +6,7 @@
 static sf::Texture TextureNotFound;
 
 void ParticlePrototype::init(){
-	TextureNotFound.loadFromFile("resources/fileNotFound.png");
+	TextureNotFound.loadFromFile("Resources/Particle/fileNotFound.png");
 }
 
 ParticlePrototype::ParticlePrototype(){

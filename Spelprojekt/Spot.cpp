@@ -11,7 +11,7 @@ Spot::Spot(int level, sf::Vector2f position):
 {
 	ResourceManager* r = &ResourceManager::getInst();
 
-	mTexture = *r->getTexture("spot2.png");
+	mTexture = *r->getTexture("Resources/Menu/TacticMenu/spot2.png");
 
 	mSprite = new sf::Sprite;
 	mSprite->setTexture(mTexture);

@@ -2,7 +2,7 @@
 
 	<Name>Scorpion</Name>
 
-	<Images>scorpion.png</Images>
+	<Images>Resources/Animals/scorpion.png</Images>
 
 	<Speed ground="0" middle="0" tree="1"/>
 	

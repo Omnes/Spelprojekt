@@ -2,7 +2,7 @@
 
 	<Name>Ocelot</Name>
 
-	<Images>ocelot.png</Images>
+	<Images>Resources/Animals/ocelot.png</Images>
 
 	<Speed ground="0" middle="1" tree="0"/>
 	

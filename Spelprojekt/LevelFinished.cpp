@@ -5,7 +5,7 @@
 #include "WindowManager.h"
 
 
-LevelFinished::LevelFinished() : mButton(sf::Vector2f(500, 500), "addStart", "knapp1.jpg", "Resources/Sound/test.wav"){
+LevelFinished::LevelFinished() : mButton(sf::Vector2f(500, 500), "addStart", "Resources/Misc/knapp1.jpg", "Resources/Sound/test.wav"){
 	
 	std::vector<std::string> Alive = LevelManager::getInst().getAliveAnimals();
 	std::vector<std::string> Dead = LevelManager::getInst().getDeadAnimals();
