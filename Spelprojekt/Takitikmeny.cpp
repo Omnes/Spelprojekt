@@ -96,11 +96,11 @@ void TaktikMeny::placeSpots(){
 	int yDistance = 200;
 	
 	int startX = 80;
-
+	int startY = 80;
 	//placerar ut spots 
 	for(int i = 0; i < 3/* == antal level på en bana*/; i++){
 		for(int j = 0; j < mPosVector[i]; j++){
-			mSpotVector.push_back(new Spot(i, sf::Vector2f(startX + j*xDistance, i*yDistance)));
+			mSpotVector.push_back(new Spot(i, sf::Vector2f(startX + j*xDistance, startY + i*yDistance)));
 		}
 	}
 }
