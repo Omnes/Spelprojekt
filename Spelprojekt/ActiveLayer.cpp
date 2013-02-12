@@ -58,13 +58,13 @@ void ActiveLayer::collision(){
 		
 		for(EntityVector::iterator j = mEntityVector.begin(); j != mEntityVector.end(); j++){
 			//animalmax kan vara noll i början. kolla detta.
-			if((AnimalMax + 70) > (*i)->getPos().x && (AnimalMax + 70) > (*j)->getPos().x){
+			//if((AnimalMax + 70) > (*i)->getPos().x && (AnimalMax + 70) > (*j)->getPos().x){
 				if((*i)->getSprite()->getGlobalBounds().intersects((*j)->getSprite()->getGlobalBounds()) && (*i)->getID() != (*j)->getID()){
 
 					(*i)->collide((*j));
 					(*j)->collide((*i));
 				}	
-			}
+			//}
 		}
 	}
 }
