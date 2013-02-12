@@ -84,7 +84,7 @@
 </Level>
 
 
-<Obstacles minDistance="64" maxDistance="128">
+<Obstacles minDistance="256" maxDistance="512">
 	<Stone chance = "25" speedMod = "0" y="200" numberOfFrames="2">sten.png</Stone>
 	<Gren chance = "75" speedMod = "0" y="500" numberOfFrames="2">gren.png</Gren>
 

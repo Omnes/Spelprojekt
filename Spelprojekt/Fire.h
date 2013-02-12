@@ -2,6 +2,8 @@
 #define FIRE
 #include "Entity.h"
 #include <string>
+#include "ParticleSystem.h"
+#include "Emitter.h"
 	
 class Fire: public Entity{
 public:
@@ -24,6 +26,11 @@ private:
 	sf::Sprite mSprite;
 	std::string mID;
 	bool mAlive;
+	ParticleSystem mSmokeSystem;
+	ParticleSystem mFireSystem;
+	
+	Emitter mEmitter;
+
 
 };
 
