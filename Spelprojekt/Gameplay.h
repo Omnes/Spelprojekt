@@ -13,6 +13,8 @@ public:
 	~Gameplay();
 	virtual void update();
 	virtual void render();
+	void renderFromTacVision();
+	LayerManager* getLayerManager();
 
 private:
 	Gui mGui;

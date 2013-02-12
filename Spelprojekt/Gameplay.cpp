@@ -48,3 +48,20 @@ void Gameplay::render(){
 	
 
 }
+
+void Gameplay::renderFromTacVision(){
+
+	sf::RenderWindow* window = WindowManager::getInst().getWindow();
+	ParticleManager* particleManager = &ParticleManager::getInst();
+
+	mLayerManager->render();
+	particleManager->render(*window);
+	window->setView(window->getDefaultView());
+	mGui.render();
+
+}
+
+LayerManager* Gameplay::getLayerManager(){
+
+	return mLayerManager;
+}

@@ -121,6 +121,7 @@
     <ClCompile Include="StaticLayer.cpp" />
     <ClCompile Include="TacticalVision.cpp" />
     <ClCompile Include="TacticalVisionButton.cpp" />
+    <ClCompile Include="TacticalVisionCamera.cpp" />
     <ClCompile Include="Takitikmeny.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="WindowManager.cpp" />
@@ -177,6 +178,7 @@
     <ClInclude Include="StaticLayer.h" />
     <ClInclude Include="TacticalVision.h" />
     <ClInclude Include="TacticalVisionButton.h" />
+    <ClInclude Include="TacticalVisionCamera.h" />
     <ClInclude Include="Taktikmeny.h" />
     <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="WindowManager.h" />

@@ -1,7 +1,9 @@
 #ifndef TACTICALVISION
 #define TACTICALVISION
 #include "States.h"
+#include "TacticalVisionCamera.h"
 #include <SFML\System\Clock.hpp>
+#include "Gameplay.h"
 
 class TacticalVision : public States{
 
@@ -13,8 +15,10 @@ public:
 	virtual void render();
 
 private:
-	States* mRenderState;
+	Gameplay* mRenderState;
 	sf::Clock mTimer;
+	TacticalVisionCamera* mCamera;
+	float mDuration;
 
 };
 
