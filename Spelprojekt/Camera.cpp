@@ -2,7 +2,7 @@
 #include "WindowManager.h"
 #include "ActiveLayer.h"
 #include "LevelManager.h"
-
+#include "ScrollDetector.h"
 
 
 
@@ -56,6 +56,16 @@ void Camera::update(){
 	}
 	 
 	else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && mVelocity > -mMinVelocity){
+
+		mVelocity -= panSpeed;
+	}
+
+	if(ScrollDetector::getScrollDelta() > 0 && mVelocity < mMaxVelocity){
+
+		mVelocity += panSpeed;
+	}
+	 
+	else if(ScrollDetector::getScrollDelta() < 0 && mVelocity > -mMinVelocity){
 
 		mVelocity -= panSpeed;
 	}
