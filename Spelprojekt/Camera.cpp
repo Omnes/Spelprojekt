@@ -51,15 +51,17 @@ void Camera::update(){
 	float panSpeed = 0.1;
 	float lastPosition = mPosition;
 
-	if(ScrollDetector::getScrollDelta() > 0 && sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && mVelocity < mMaxVelocity){
+	if((ScrollDetector::getScrollDelta() > 0 || sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) && mVelocity < mMaxVelocity){
 
 		mVelocity += panSpeed;
 	}
 	 
-	else if(ScrollDetector::getScrollDelta() < 0 && sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && mVelocity > -mMinVelocity){
+	else if((ScrollDetector::getScrollDelta() < 0 || sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) && mVelocity > -mMinVelocity){
 
 		mVelocity -= panSpeed;
 	}
+
+
 	
 	if(mPosition > mMaxPos){ 
 		mPosition -= 1;
