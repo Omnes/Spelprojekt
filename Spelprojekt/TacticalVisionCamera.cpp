@@ -1,52 +1,44 @@
-#include "Camera.h"
+#include "TacticalVisionCamera.h"
 #include "WindowManager.h"
 #include "ActiveLayer.h"
 #include "LevelManager.h"
+#include "Camera.h"
 
-
-
-
-Camera::Camera(LayerManager* layermanager) : 
+TacticalVisionCamera::TacticalVisionCamera(LayerManager* layermanager) : 
 	mLayerManager(layermanager), 
 	mWindow(WindowManager::getInst().getWindow()), 
 	mVelocity(0.0),
-	mView(sf::FloatRect(0,0,1280,720)),
-	mPosition(mView.getSize().x/2), 
+	mView(*LevelManager::getInst().getCamera()->getView()),
+	mPosition(mView.getCenter().x), 
 	mMaxVelocity(2.5), 
 	mMinVelocity(1),
-	mMaxPos(1),
-	mMinPos(2000){
+	mMinPos(2000),
+	mStartPosition(mView.getCenter().x){
 
 		mLevellength=LevelManager::getInst().getLevelLength();
 		
 }
 
-Camera::~Camera(){
+TacticalVisionCamera::~TacticalVisionCamera(){
 
 }
 
-void Camera::getMinMax(){
+void TacticalVisionCamera::setMin(){
 	std::vector<Entity*>* entityVector = LevelManager::getInst().getActiveLayer()->getEntityVector();
-	mMaxPos = INT_MIN;
 	mMinPos = INT_MAX;
 
 	for(std::vector<Entity*>::iterator i = entityVector->begin(); i != entityVector->end(); i++){
 		
-		if((*i)->getID() == "Animal" ||(*i)->getID() == "Fire"){
-			if((*i)->getPos().x > mMaxPos){
-				mMaxPos=(*i)->getPos().x;
-			}
+		if((*i)->getID() == "Fire" && (*i)->getPos().x < mMinPos){
 
-			if((*i)->getPos().x < mMinPos){
 				mMinPos=(*i)->getPos().x;
-			}
 		}
 	}
 }
 
-void Camera::update(){
+void TacticalVisionCamera::update(){
 
-	getMinMax();
+	setMin();
 
 	float panSpeed = 0.1;
 	float lastPosition = mPosition;
@@ -60,21 +52,13 @@ void Camera::update(){
 		mVelocity -= panSpeed;
 	}
 
-	
-	if(mPosition > mMaxPos){ 
-		mPosition -= 1;
-		if (mVelocity > .5){
-			mVelocity-= panSpeed*2;
-		}
-	}	
-	
 	if(mPosition < mMinPos + 440){
 		if (mVelocity < 0){
 			mVelocity = 0;
 		}
 		mPosition = mMinPos + 440;
 	}
-	 
+	
 	if(mPosition<mView.getSize().x - mView.getSize().x/2){
 		
 		mPosition = mView.getSize().x - mView.getSize().x/2;
@@ -93,13 +77,22 @@ void Camera::update(){
 
 	mWindow->setView(mView);
 
-	LevelManager::getInst().setCamera(this);
 }
 
-float Camera::getMax(){
-	return mMaxPos;
+void TacticalVisionCamera::moveBackToStartPosition(){
+
+	float lastPosition = mPosition;
+
+	mPosition += (mStartPosition-mPosition)/10;
+
+	mLayerManager->move(mPosition-lastPosition);//<<<<<<<<<<<<<<<<<<<<<--------------------------------------------kan göras snyggare
+
+	mView.setCenter(mPosition, mWindow->getSize().y/2);
+
+	mWindow->setView(mView);
+
 }
 
-sf::View* Camera::getView(){
+sf::View* TacticalVisionCamera::getView(){
 	return &mView;
 }
