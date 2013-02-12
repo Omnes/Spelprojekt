@@ -43,22 +43,12 @@ void TacticalVisionCamera::update(){
 
 	float panSpeed = 0.1;
 	float lastPosition = mPosition;
-	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && mVelocity < mMaxVelocity){
+	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && mVelocity < mMaxVelocity || ScrollDetector::getScrollDelta() > 0 && mVelocity < mMaxVelocity){
 
 		mVelocity += panSpeed;
 	}
 	 
-	else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && mVelocity > -mMinVelocity){
-
-		mVelocity -= panSpeed;
-	}
-
-	if(ScrollDetector::getScrollDelta() > 0 && mVelocity < mMaxVelocity){
-
-		mVelocity += panSpeed;
-	}
-	 
-	else if(ScrollDetector::getScrollDelta() < 0 && mVelocity > -mMinVelocity){
+	else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && mVelocity > -mMinVelocity || ScrollDetector::getScrollDelta() < 0 && mVelocity > -mMinVelocity){
 
 		mVelocity -= panSpeed;
 	}
