@@ -40,7 +40,7 @@ void Animal::collide(Entity* entity){
 	float aCol = 1;
 	float oCol = 1;
 
-	if(entity->getID() == "Animal" && mPosition.x < entity->getPos().x/* - entity->getSprite()->getLocalBounds().width*/){
+	if(entity->getID() == "Animal" && mPosition.x < entity->getPos().x){
 		aCol = 0;
 	}
 

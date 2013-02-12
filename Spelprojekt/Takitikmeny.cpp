@@ -88,9 +88,9 @@ void TaktikMeny::placeSpots(){
 	mLevelGround += mLevelTop / 2;
 	mLevelTop = ((float)mLevelTop / 2) + 0.5;
 
-	mPosVector.push_back(mLevelTop);
-	mPosVector.push_back(mLevelMiddle);
 	mPosVector.push_back(mLevelGround); // värdelöst ???
+	mPosVector.push_back(mLevelMiddle);
+	mPosVector.push_back(mLevelTop);
 
 	int xDistance = 250;
 	int yDistance = 200;
