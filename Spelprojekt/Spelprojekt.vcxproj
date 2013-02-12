@@ -113,6 +113,7 @@
     <ClCompile Include="PauseMeny.cpp" />
     <ClCompile Include="RemoveObstacleButton.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
+    <ClCompile Include="ScrollDetector.cpp" />
     <ClCompile Include="SpeedMod.cpp" />
     <ClCompile Include="Spot.cpp" />
     <ClCompile Include="StartMeny.cpp" />
@@ -166,6 +167,7 @@
     <ClInclude Include="PopState.h" />
     <ClInclude Include="RemoveObstacleButton.h" />
     <ClInclude Include="ResourceManager.h" />
+    <ClInclude Include="ScrollDetector.h" />
     <ClInclude Include="SpeedMod.h" />
     <ClInclude Include="AddMap.h" />
     <ClInclude Include="Spot.h" />

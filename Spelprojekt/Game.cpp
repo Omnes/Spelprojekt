@@ -15,6 +15,7 @@
 #include "ParticleManager.h"
 
 #include "StartMeny.h"
+#include "ScrollDetector.h"
 
 
 
@@ -117,6 +118,9 @@ void Game::PollWindowEvents(sf::RenderWindow* window){
 		}
 		if(evt.type == sf::Event::GainedFocus){
 			mInFocus = true;
+		}
+		if(evt.type == sf::Event::MouseWheelMoved){
+			ScrollDetector::setScrollDelta(evt.mouseWheel.delta);
 		}
 	}
 }
