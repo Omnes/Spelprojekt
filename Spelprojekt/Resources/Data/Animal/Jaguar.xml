@@ -4,7 +4,7 @@
 
 	<Images>Resources/Animals/jaguar.png</Images>
 
-	<Speed ground="1" middle="2" tree="0"/>
+	<Speed ground="0" middle="0.8" tree="0.6"/>
 	
 	<AnimalType>plant</AnimalType>
 
