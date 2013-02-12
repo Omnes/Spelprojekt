@@ -1,0 +1,14 @@
+<Particle>
+	<Name>Smoke</Name>
+	<Texture yframes="2">Resources/rok.png</Texture>
+	<Life min="60" max="120"/>
+	<Direction min ="90" max="180"/>
+	<Speed min=".1" max=".2" increase="0"/>
+	<Rotation min="0" max="359" increaseMin="0" increaseMax="0"/>
+	<Scale min="1" max="2" increase=".01"/>
+	<Color>
+		<Start r="255" g="255" b="255" a="175"/>
+		<End r="255" g="255" b="255" a="0"/>
+	</Color>
+
+</Particle>

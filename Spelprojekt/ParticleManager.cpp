@@ -79,6 +79,13 @@ void ParticleManager::loadPrototype(std::string filePath){
 	tinyxml2::XMLElement* elm = doc.FirstChildElement("Particle")->FirstChildElement("Name");
 	std::string name = elm->GetText();
 
+	//ser till att vi nite laddar in en partikel som redan finns igen;
+	PrototypeMap::iterator i;
+	i = mPrototypeMap.find(name);
+	if(i != mPrototypeMap.end()){
+		return;
+	}
+
 	//textur
 	elm = doc.FirstChildElement("Particle")->FirstChildElement("Texture");
 	sf::Texture* texture = new sf::Texture; //resourceManager här istället;

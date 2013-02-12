@@ -1,6 +1,7 @@
 #include "Gameplay.h"
 #include <SFML\Graphics\RenderWindow.hpp>
 #include "WindowManager.h"
+#include "ParticleManager.h"
 #include "EventManager.h"
 
 Gameplay::Gameplay(){
@@ -17,10 +18,12 @@ Gameplay::~Gameplay(){
 
 void Gameplay::update(){
 	sf::RenderWindow* window = WindowManager::getInst().getWindow();
+	ParticleManager* particleManager = &ParticleManager::getInst();
 
 	window->setView(*mCamera->getView());
 
 	mLayerManager->update();
+	particleManager->update();
 	mGui.update();
 	mCamera->update();
 
@@ -34,9 +37,11 @@ void Gameplay::update(){
 void Gameplay::render(){
 
 	sf::RenderWindow* window = WindowManager::getInst().getWindow();
+	ParticleManager* particleManager = &ParticleManager::getInst();
 
 	window->setView(*mCamera->getView());
 	mLayerManager->render();
+	particleManager->render(*window);
 	window->setView(window->getDefaultView());
 	mGui.render();
 	

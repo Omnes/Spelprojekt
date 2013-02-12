@@ -10,7 +10,7 @@
 
 ParticleSystem::ParticleSystem(ParticlePrototype* prototype, int amount)
 	: mPrototype(prototype)
-	, mBlendMode(sf::BlendNone){
+	, mBlendMode(sf::BlendAlpha){
 
 		ParticleManager::getInst().addSystem(this);
 		mParticleVector.reserve(amount);
@@ -19,7 +19,7 @@ ParticleSystem::ParticleSystem(ParticlePrototype* prototype, int amount)
 
 ParticleSystem::ParticleSystem(std::string name, int amount)
 	: mPrototype(&ParticleManager::getInst().getPrototype(name))
-	, mBlendMode(sf::BlendNone){
+	, mBlendMode(sf::BlendAlpha){
 
 		ParticleManager::getInst().addSystem(this);
 		mParticleVector.reserve(amount);
