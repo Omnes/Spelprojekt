@@ -168,11 +168,10 @@
     <ClCompile Include="TacticalVision.cpp">
       <Filter>Source Files\States</Filter>
     </ClCompile>
-<<<<<<< HEAD
-    <ClCompile Include="ScrollDetector.cpp">
-=======
     <ClCompile Include="TacticalVisionCamera.cpp">
->>>>>>> Jessica
+      <Filter>Source Files\Abilities</Filter>
+    </ClCompile>
+    <ClCompile Include="ScrollDetector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -336,12 +335,11 @@
     <ClInclude Include="TacticalVision.h">
       <Filter>Header Files\States</Filter>
     </ClInclude>
-<<<<<<< HEAD
     <ClInclude Include="ScrollDetector.h">
-=======
-    <ClInclude Include="TacticalVisionCamera.h">
->>>>>>> Jessica
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TacticalVisionCamera.h">
+      <Filter>Header Files\Abilites</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
