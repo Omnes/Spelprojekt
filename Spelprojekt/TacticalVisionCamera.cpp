@@ -3,6 +3,7 @@
 #include "ActiveLayer.h"
 #include "LevelManager.h"
 #include "Camera.h"
+#include "ScrollDetector.h"
 
 TacticalVisionCamera::TacticalVisionCamera(LayerManager* layermanager) : 
 	mLayerManager(layermanager), 
@@ -48,6 +49,16 @@ void TacticalVisionCamera::update(){
 	}
 	 
 	else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && mVelocity > -mMinVelocity){
+
+		mVelocity -= panSpeed;
+	}
+
+	if(ScrollDetector::getScrollDelta() > 0 && mVelocity < mMaxVelocity){
+
+		mVelocity += panSpeed;
+	}
+	 
+	else if(ScrollDetector::getScrollDelta() < 0 && mVelocity > -mMinVelocity){
 
 		mVelocity -= panSpeed;
 	}
