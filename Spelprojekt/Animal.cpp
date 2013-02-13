@@ -12,6 +12,7 @@ Animal::Animal(Animation* animation, sf::Vector2f position, float speed, std::st
 	mCalcSpeed(speed),
 	mID("Animal"),
 	mFilePath(filePath){
+
 	
 }
 
@@ -22,13 +23,17 @@ Animal::~Animal(){
 void Animal::update(){
 
 	mAnimation->setCurrentAnimation(currentAnimation);
+	currentAnimation = 0;
 
-	mPosition.x += mSpeed * mCalcSpeed;
+	mCurrentSpeed = mSpeed * mCalcSpeed;
+
+	mPosition.x += mCurrentSpeed;
 
 	mAnimation->update();
 	mAnimation->setPosition(mPosition);
 
-	mCalcSpeed = mSpeed; //det här borde vi fixa på ngt random sätt. vet ej hur
+	//mCalcSpeed = mSpeed; //det här borde vi fixa på ngt random sätt. vet ej hur
+	mCalcSpeed = 1;
 }
 
 sf::Sprite* Animal::getSprite(){
@@ -40,14 +45,27 @@ void Animal::collide(Entity* entity){
 	float aCol = 1;
 	float oCol = 1;
 
+	
+
 	if(entity->getID() == "Animal" && mPosition.x < entity->getPos().x){
+		if(entity->getCurrentSpeed() == 0){
+			currentAnimation = 1;
+		}
 		aCol = 0;
 	}
 
 	//sktriv om id som id
-	if(entity->getID() == "Stone" /*|| entity->getID() == "Gren"*/){
-		oCol = entity->doDamage();
-	}else if(/*entity->getID() == "Sten" ||*/ entity->getID() == "Gren"){
+	//if(entity->getID() == "Stone" /*|| entity->getID() == "Gren"*/){
+	//	currentAnimation = 1;
+	//	oCol = entity->doDamage();
+	//}else if(/*entity->getID() == "Sten" ||*/ entity->getID() == "Gren"){
+	//	oCol = entity->doDamage();
+	//}
+
+	if(entity->getID() != "Animal"  && entity->getID() != "Fire"){
+		if(entity->doDamage() == 0){
+			currentAnimation = 1;
+		}
 		oCol = entity->doDamage();
 	}
 
@@ -83,3 +101,7 @@ std::string Animal::getFilePath(){
 float Animal::doDamage(){
 	return 0.0; //gör inget
 };
+
+float Animal::getCurrentSpeed(){
+	return mCurrentSpeed;
+}

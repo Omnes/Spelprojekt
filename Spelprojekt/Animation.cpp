@@ -1,11 +1,11 @@
 #include "Animation.h"
 
-Animation::Animation(sf::Texture *texture, int frametime, int frames): mTexture(texture), mFrametime(frametime), mFrames(frames), mCurrentframe(0), mCurrentanimation(0){
+Animation::Animation(sf::Texture *texture, int frametime, int xframes, int yframes): mTexture(texture), mFrametime(frametime), mFrames(xframes), mCurrentframe(0), mCurrentanimation(0){
 
 	mSprite.setTexture(*mTexture);
-	mRectangle = sf::IntRect(0,0,mTexture->getSize().x/mFrames,mTexture->getSize().y/2);
+	mRectangle = sf::IntRect(0,0,mTexture->getSize().x/mFrames,mTexture->getSize().y/yframes);
 	mSprite.setTextureRect(mRectangle);
-	setCurrentAnimation(1);
+	setCurrentAnimation(0);
 
 }
 

@@ -9,7 +9,10 @@ public:
 
 	AddGameplay(){}
 	~AddGameplay(){}
-	virtual void update(){StateManager::getInst().addState(new Gameplay);}
+	virtual void update(){
+		StateManager::getInst().popState();
+		StateManager::getInst().addState(new Gameplay);
+	}
 
 };
 

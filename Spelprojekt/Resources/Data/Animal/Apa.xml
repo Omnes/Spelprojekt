@@ -4,7 +4,7 @@
 
 	<Images>Resources/Animals/apa.png</Images>
 
-	<Speed ground="0" middle="1.2" tree="0.6"/>
+	<Speed ground="1.2" middle="2" tree="0"/>
 	
 	<AnimalType>plant</AnimalType>
 

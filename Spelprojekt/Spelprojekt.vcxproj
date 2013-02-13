@@ -166,6 +166,7 @@
     <ClInclude Include="ParticleSystem.h" />
     <ClInclude Include="PauseMeny.h" />
     <ClInclude Include="PopState.h" />
+    <ClInclude Include="PopStateTwice.h" />
     <ClInclude Include="RemoveObstacleButton.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="ScrollDetector.h" />

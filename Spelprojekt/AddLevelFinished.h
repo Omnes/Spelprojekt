@@ -9,7 +9,10 @@ class AddLevelFinished : public Event{
 public:
 	AddLevelFinished(){}
 	~AddLevelFinished(){}
-	virtual void update(){ StateManager::getInst().addState(new LevelFinished);}
+	virtual void update(){ 
+		StateManager::getInst().popState();
+		StateManager::getInst().addState(new LevelFinished);
+	}
 
 };
 

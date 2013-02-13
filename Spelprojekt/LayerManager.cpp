@@ -8,7 +8,10 @@ LayerManager::LayerManager():
 {}
 
 LayerManager::~LayerManager(){
-
+	while(!mLayerVector.empty()){
+		delete mLayerVector.back();
+		mLayerVector.pop_back();
+	}
 }
 
 void LayerManager::move(float velocity){
