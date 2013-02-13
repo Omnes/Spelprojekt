@@ -27,6 +27,7 @@ public:
 	std::string getID();
 	sf::Vector2f getPos();
 	std::string getFilePath();
+	virtual float getCurrentSpeed();
 	
 	float doDamage();
 
@@ -34,6 +35,7 @@ private:
 	Animation* mAnimation;
 	int currentAnimation;
 	float mSpeed;
+	float mCurrentSpeed;
 
 	float mCalcSpeed;
 	sf::Vector2f mPosition;

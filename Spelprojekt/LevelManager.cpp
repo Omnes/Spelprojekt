@@ -139,12 +139,18 @@ std::vector<Layer*> LevelManager::loadLayers(){
 				float speedMod = atr->FloatValue();
 				atr = atr->Next();
 				float y = atr->FloatValue();
+				atr = atr->Next();
+				int xframes = atr->IntValue();
+				atr = atr->Next();
+				float frameTime = atr->IntValue();
 			
 			
 				std::string id = obst->Name();
 				sf::Vector2f pos = sf::Vector2f(x,y);
 				sf::Texture* tex = ResourceManager::getInst().getTexture(obst->GetText());
-				Obstacle* obstacle = new Obstacle(tex, pos, speedMod, id);
+
+				Animation* animation = new Animation(tex,200,xframes,1);
+				Obstacle* obstacle = new Obstacle(animation, pos, speedMod, id);
 				entityVector.push_back(obstacle);
 
 				x += minDistance + rand() % (maxDistance - minDistance);

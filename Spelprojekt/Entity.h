@@ -18,6 +18,7 @@ public:
 	virtual std::string getID()=0;
 	virtual sf::Vector2f getPos()=0;
 	virtual std::string getFilePath(){return "hej";}
+	virtual float getCurrentSpeed(){return 0;}
 	
 	virtual float doDamage()=0;
 

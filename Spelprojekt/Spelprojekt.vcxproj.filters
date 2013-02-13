@@ -341,5 +341,8 @@
     <ClInclude Include="TacticalVisionCamera.h">
       <Filter>Header Files\Abilites</Filter>
     </ClInclude>
+    <ClInclude Include="PopStateTwice.h">
+      <Filter>Header Files\Events</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

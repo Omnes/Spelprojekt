@@ -8,6 +8,7 @@ Fire::Fire(sf::Vector2f position,float speed): mID("Fire"), mPosition(position),
 	mSmokeSystem.setBlendMode(sf::BlendAlpha);
 	mSprite.setColor(sf::Color(0,0,0,0));
 	mEmitter.setPosition(mPosition);
+	mSprite.setPosition(mPosition);
 }
 
 void Fire::update(){
@@ -15,7 +16,7 @@ void Fire::update(){
 	mPosition.x += mSpeed;
 	mEmitter.setPosition(mPosition);
 	mEmitter.burst(mFireSystem,sf::FloatRect(-100,0,150,720),17);
-	mEmitter.burst(mSmokeSystem,sf::FloatRect(-150,0,100,720),3);
+	mEmitter.burst(mSmokeSystem,sf::FloatRect(-1000,0,950,720),6);
 	mSprite.setPosition(mPosition);
 }
 

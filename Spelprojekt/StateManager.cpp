@@ -23,7 +23,7 @@ StateManager& StateManager::getInst(){
 }
 
 void StateManager::popState(){
-
+	std::cout << " <--";
 	if(!mStates.empty()){
 		delete mStates.top();
 		mStates.pop();
@@ -41,6 +41,7 @@ void StateManager::render(){
 }
 
 void StateManager::addState(States* state){
+	std::cout << " -->";
 	
 	mStates.push(state);
 }

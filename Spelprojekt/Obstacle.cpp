@@ -1,36 +1,36 @@
 #include "Obstacle.h"
 #include <SFML\System\Clock.hpp>
 
-Obstacle::Obstacle(sf::Texture* texture, sf::Vector2f position, float speed, std::string ID) : 
-	mTexture(texture),
+Obstacle::Obstacle(Animation* animation, sf::Vector2f position, float speed, std::string ID) : 
+	mAnimation(animation),
 	mPosition(position),
 	mSpeedEffect(speed),
 	mID(ID),
 	mAlive(true)
 {
-
-	mSprite.setTexture(*mTexture);
+	mAnimation->setPosition(mPosition);
 
 }
 
 Obstacle::~Obstacle(){
-
+	delete mAnimation;
 }
 
 sf::Sprite* Obstacle::getSprite(){
 
-	return &mSprite;
+	return mAnimation->getSprite();
 }
 
 void Obstacle::update(){
 
-	mSprite.setPosition(mPosition);
+	mAnimation->update();
+	//mAnimation->setPosition(mPosition);
 }
 	
 
 sf::FloatRect* Obstacle::getRect(){
 
-	return &mSprite.getGlobalBounds();
+	return 0;//&mSprite.getGlobalBounds();
 }
 
 bool Obstacle::getAlive(){

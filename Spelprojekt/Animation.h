@@ -10,7 +10,7 @@ class Animation{
 
 public:
 
-	Animation(sf::Texture *texture, int frametime, int frames);
+	Animation(sf::Texture *texture, int frametime, int xframes, int yframes);
 	~Animation();
 	void update();
 	sf::Sprite* getSprite();

@@ -2,13 +2,14 @@
 #define OBSTACLE
 #include "Entity.h"
 #include <SFML\Graphics\Texture.hpp>
+#include "Animation.h"
 
 
 class Obstacle : public Entity{
 
 public:
 
-	Obstacle(sf::Texture* texture, sf::Vector2f position, float speed, std::string ID);
+	Obstacle(Animation* animation, sf::Vector2f position, float speed, std::string ID);
 	~Obstacle();
 	virtual void update();
 	virtual sf::Sprite* getSprite();
@@ -24,10 +25,9 @@ public:
 private:
 
 	std::string mID;
-	sf::Texture* mTexture;
+	Animation* mAnimation;
 	sf::Vector2f mPosition;
 	float mSpeedEffect;
-	sf::Sprite mSprite;
 	bool mAlive;
 	sf::Clock collideCooldown;
 };

@@ -34,7 +34,7 @@ void TaktikMeny::update(){
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return)){
 		createAnimals();
 		EventManager::getInst().addEvent("addGameplay");
-		EventManager::getInst().addEvent("popState");
+		//EventManager::getInst().addEvent("popState");
 	}
 }
 
@@ -88,9 +88,9 @@ void TaktikMeny::placeSpots(){
 	mLevelGround += mLevelTop / 2;
 	mLevelTop = ((float)mLevelTop / 2) + 0.5;
 
-	mPosVector.push_back(mLevelGround); // värdelöst ???
-	mPosVector.push_back(mLevelMiddle);
 	mPosVector.push_back(mLevelTop);
+	mPosVector.push_back(mLevelMiddle);
+	mPosVector.push_back(mLevelGround); // värdelöst ???
 
 	int xDistance = 250;
 	int yDistance = -200;

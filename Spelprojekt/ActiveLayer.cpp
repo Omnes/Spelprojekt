@@ -18,7 +18,12 @@ ActiveLayer::ActiveLayer(std::vector <Entity*> entityVector, int levellength):
 	mThisCamera = 0;
 }
 
-ActiveLayer::~ActiveLayer(){}
+ActiveLayer::~ActiveLayer(){
+	while(!mEntityVector.empty()){
+		delete mEntityVector.back();
+		mEntityVector.pop_back();
+	}
+}
 
 void ActiveLayer::move(float cameraVelocity){
 
