@@ -53,7 +53,7 @@ bool Spot::getTakenSpot(){
 void Spot::setColorSpot(bool colorGreen){
 
 	if(colorGreen){
-		mRect.left = mRect.width/3;//<-------------------statiska siffor
+		mRect.left = mRect.width;//<-------------------statiska siffor
 		mSprite->setTextureRect(mRect);
 	}else{
 		mRect.left = 0; //<-------------------statiska siffor

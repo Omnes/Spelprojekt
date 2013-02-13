@@ -63,7 +63,7 @@ void Camera::update(){
 
 
 	
-	if(mPosition > mMaxPos){ 
+	if(mPosition > mMaxPos + 320){ 
 		mPosition -= 1;
 		if (mVelocity > .5){
 			mVelocity-= panSpeed*2;
