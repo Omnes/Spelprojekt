@@ -153,6 +153,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameOver.h" />
     <ClInclude Include="Gameplay.h" />
+    <ClInclude Include="GoBackToWorld.h" />
     <ClInclude Include="Gui.h" />
     <ClInclude Include="InnerBeastButton.h" />
     <ClInclude Include="Layer.h" />

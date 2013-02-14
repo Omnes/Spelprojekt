@@ -5,7 +5,7 @@
 #include "WindowManager.h"
 
 
-LevelFinished::LevelFinished() : mButton(sf::Vector2f(500, 500), "popState", "Resources/Misc/knapp1.jpg", "Resources/Sound/test.wav"){
+LevelFinished::LevelFinished() : mButton(sf::Vector2f(500, 500), "goBackToWorld", "Resources/Misc/knapp1.jpg", "Resources/Sound/test.wav"){
 	
 	std::vector<std::string> Alive = LevelManager::getInst().getAliveAnimals();
 	std::vector<std::string> Dead = LevelManager::getInst().getDeadAnimals();
@@ -37,9 +37,6 @@ void LevelFinished::render(){
 void LevelFinished::update(){
 
 	mButton.update();
-
-	StateManager::getInst().popState();
-	dynamic_cast<WorldMap*>StateManager::getTop()->readFile();
 
 } 
 

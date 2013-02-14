@@ -48,7 +48,6 @@ void WorldMap::readFromFile(){
 			}
 		}
 	}
-	saveToFile();
 }
 
 void WorldMap::saveToFile(std::string levelName){

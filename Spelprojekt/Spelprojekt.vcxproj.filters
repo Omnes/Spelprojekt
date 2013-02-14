@@ -347,5 +347,8 @@
     <ClInclude Include="addGameOver.h">
       <Filter>Header Files\Events</Filter>
     </ClInclude>
+    <ClInclude Include="GoBackToWorld.h">
+      <Filter>Header Files\Events</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
