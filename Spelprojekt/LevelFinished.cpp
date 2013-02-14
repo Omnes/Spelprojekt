@@ -4,6 +4,9 @@
 #include "ResourceManager.h"
 #include "WindowManager.h"
 
+#include "StateManager.h"
+
+
 
 LevelFinished::LevelFinished() : mButton(sf::Vector2f(500, 500), "goBackToWorld", "Resources/Misc/knapp1.jpg", "Resources/Sound/test.wav"){
 	

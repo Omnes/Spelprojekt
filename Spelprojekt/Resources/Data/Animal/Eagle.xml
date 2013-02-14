@@ -1,12 +1,12 @@
 <Animal>
 
-	<Name>Eagle</Name>
+	<Name>Monkey</Name>
 
 	<Images>Resources/Animals/eagle.png</Images>
 
-	<Speed ground="0" middle="2" tree="3"/>
+	<Speed air="2" middle="1.2" ground="0"/>
 	
-	<AnimalType>plant</AnimalType>
+	<AnimalType>meat</AnimalType>
 
 	<ImageAttr fTick="100" frames="10"/>
 
