@@ -38,6 +38,9 @@ void LevelFinished::update(){
 
 	mButton.update();
 
+	StateManager::getInst().popState();
+	dynamic_cast<WorldMap*>StateManager::getTop()->readFile();
+
 } 
 
 std::vector<sf::Sprite*> LevelFinished::loadAnimals(std::vector<std::string> animalvector){

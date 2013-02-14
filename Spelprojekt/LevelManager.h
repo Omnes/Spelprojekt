@@ -13,6 +13,7 @@ class Camera;
 class LevelManager{
 public:
 	void setFilePath(std::string filePath);
+	std::string getFilePath();
 	std::vector<AnimalPrototype*> getAnimalsOnLevel();
 	void setAliveAnimals(std::vector<std::string>& aliveVector);
 	void setDeadAnimals(std::vector<std::string>& deadVector);
