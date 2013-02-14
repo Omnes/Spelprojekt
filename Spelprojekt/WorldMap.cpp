@@ -65,4 +65,6 @@ void WorldMap::saveToFile(std::string levelName){
 
 	doc.SaveFile("Resources/Data/Save/SavedGame.xml"); //<------- variabel funkar här
 
+	readFromFile();
+
 }
