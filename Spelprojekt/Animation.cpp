@@ -1,6 +1,11 @@
 #include "Animation.h"
 
-Animation::Animation(sf::Texture *texture, int frametime, int xframes, int yframes): mTexture(texture), mFrametime(frametime), mFrames(xframes), mCurrentframe(0), mCurrentanimation(0){
+Animation::Animation(sf::Texture *texture, int frametime, int xframes, int yframes)
+	: mTexture(texture)
+	, mFrametime(frametime)
+	, mFrames(xframes)
+	, mCurrentframe(0)
+	, mCurrentanimation(0){
 
 	mSprite.setTexture(*mTexture);
 	mRectangle = sf::IntRect(0,0,mTexture->getSize().x/mFrames,mTexture->getSize().y/yframes);
@@ -15,7 +20,7 @@ Animation::~Animation(){
 
 void Animation::update(){
 
-	if(mTimer.getElapsedTime().asMilliseconds() > mFrametime){
+	if(mTimer.getElapsedTime().asMilliseconds() > mFrametime && mFrametime != 0){
 		
 		mCurrentframe+=1;
 		mTimer.restart();

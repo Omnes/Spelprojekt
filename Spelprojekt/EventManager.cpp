@@ -8,6 +8,7 @@
 #include "AddPause.h"
 #include "PopState.h"
 #include "AddLevelFinished.h"
+#include "addGameOver.h"
 
 EventManager::EventManager(){
 
@@ -20,6 +21,7 @@ EventManager::EventManager(){
 	mEventMap["popState"] = new PopState();
 	mEventMap["addPause"] = new AddPause();
 	mEventMap["addLevelFinished"] = new AddLevelFinished();
+	mEventMap["addGameOver"] = new AddGameOver();
 
 }
 

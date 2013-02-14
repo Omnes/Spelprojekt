@@ -2,6 +2,7 @@
 #include "Entity.h"
 #include "WindowManager.h"
 #include "LevelManager.h"
+#include "StateManager.h"
 #include "Camera.h"
 #include "EventManager.h"
 
@@ -81,6 +82,10 @@ void ActiveLayer::killDead(){
 
 		if((*i)->getAlive() == false){
 			if((*i)->getID() == "Animal"){
+				LevelManager::getInst().getDeadAnimalCollection()->push_back((*i)->getFilePath());
+				if(LevelManager::getInst().getDeadAnimalCollection()->size() > 1){
+					EventManager::getInst().addEvent("addGameOver");
+				}
 				mDeadAnimalsVector.push_back((*i)->getFilePath());
 			}
 			delete (*i);
