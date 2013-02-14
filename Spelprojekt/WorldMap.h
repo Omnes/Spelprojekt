@@ -4,6 +4,7 @@
 #include "LevelButton.h"
 
 #include "tinyxml2.h"
+#include <string> // kanske inte behövs (se: saveToFile(std::string))
 
 class WorldMap : public States{
 
@@ -14,7 +15,7 @@ public:
 	virtual void update();
 	virtual void render();
 	void readFromFile();
-	void saveToFile();
+	void saveToFile(std::string levelName);
 
 private:
 
