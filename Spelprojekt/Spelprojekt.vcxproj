@@ -96,6 +96,7 @@
     <ClCompile Include="EventManager.cpp" />
     <ClCompile Include="Fire.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Gameover.cpp" />
     <ClCompile Include="Gameplay.cpp" />
     <ClCompile Include="Gui.cpp" />
     <ClCompile Include="InnerBeastButton.cpp" />
@@ -114,7 +115,6 @@
     <ClCompile Include="RemoveObstacleButton.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="ScrollDetector.cpp" />
-    <ClCompile Include="SpeedMod.cpp" />
     <ClCompile Include="Spot.cpp" />
     <ClCompile Include="StartMeny.cpp" />
     <ClCompile Include="StateManager.cpp" />
@@ -130,6 +130,7 @@
   <ItemGroup>
     <ClInclude Include="AbilityButton.h" />
     <ClInclude Include="ActiveLayer.h" />
+    <ClInclude Include="addGameOver.h" />
     <ClInclude Include="AddGameplay.h" />
     <ClInclude Include="AddLevelFinished.h" />
     <ClInclude Include="AddOptions.h" />
@@ -150,6 +151,7 @@
     <ClInclude Include="ExitGame.h" />
     <ClInclude Include="Fire.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameOver.h" />
     <ClInclude Include="Gameplay.h" />
     <ClInclude Include="Gui.h" />
     <ClInclude Include="InnerBeastButton.h" />
@@ -170,7 +172,6 @@
     <ClInclude Include="RemoveObstacleButton.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="ScrollDetector.h" />
-    <ClInclude Include="SpeedMod.h" />
     <ClInclude Include="AddMap.h" />
     <ClInclude Include="Spot.h" />
     <ClInclude Include="StartMeny.h" />

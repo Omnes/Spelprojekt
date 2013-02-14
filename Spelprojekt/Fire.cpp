@@ -2,7 +2,7 @@
 #include "ResourceManager.h"
 #include <iostream>
 
-Fire::Fire(sf::Vector2f position,float speed): mID("Fire"), mPosition(position), mSpeed(speed), mAlive(true),mFireSystem("Firewall",500),mSmokeSystem("Smoke",500){
+Fire::Fire(sf::Vector2f position,float speed): mID("Fire"), mPosition(position), mSpeed(speed), mAlive(true),mFireSystem("Firewall",500),mSmokeSystem("Smoke",770){
 	mSprite.setTexture(*ResourceManager::getInst().getTexture("Resources/Animals/eld.png"));
 	mFireSystem.setBlendMode(sf::BlendAdd);
 	mSmokeSystem.setBlendMode(sf::BlendAlpha);
@@ -16,7 +16,7 @@ void Fire::update(){
 	mPosition.x += mSpeed;
 	mEmitter.setPosition(mPosition);
 	mEmitter.burst(mFireSystem,sf::FloatRect(-100,0,150,720),17);
-	mEmitter.burst(mSmokeSystem,sf::FloatRect(-1000,0,950,720),6);
+	mEmitter.burst(mSmokeSystem,sf::FloatRect(-1000,0,950,720),10);
 	mSprite.setPosition(mPosition);
 }
 
@@ -40,10 +40,6 @@ void Fire::setAlive(bool alive){
 
 void Fire::collide(Entity* entity){
 	entity->setAlive(false);
-}
-
-void Fire::setMod(SpeedMod* speedMod){
-	delete speedMod;
 }
 
 std::string Fire::getID(){

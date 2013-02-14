@@ -111,9 +111,6 @@
     <ClCompile Include="StaticLayer.cpp">
       <Filter>Source Files\Layer</Filter>
     </ClCompile>
-    <ClCompile Include="SpeedMod.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Obstacle.cpp">
       <Filter>Source Files\Entities</Filter>
     </ClCompile>
@@ -174,6 +171,9 @@
     <ClCompile Include="ScrollDetector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Gameover.cpp">
+      <Filter>Source Files\States</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -183,9 +183,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Camera.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SpeedMod.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Animation.h">
@@ -342,6 +339,12 @@
       <Filter>Header Files\Abilites</Filter>
     </ClInclude>
     <ClInclude Include="PopStateTwice.h">
+      <Filter>Header Files\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOver.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="addGameOver.h">
       <Filter>Header Files\Events</Filter>
     </ClInclude>
   </ItemGroup>

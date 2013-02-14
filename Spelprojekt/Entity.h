@@ -1,7 +1,6 @@
 #ifndef ENTITY
 #define ENTITY
 #include <SFML\Graphics\Sprite.hpp>
-#include "SpeedMod.h"
 #include <string>
 
 class Entity{

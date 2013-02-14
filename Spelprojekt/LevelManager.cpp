@@ -199,6 +199,11 @@ void LevelManager::setAliveAnimals(std::vector<std::string>& aliveVector){
 }
 
 void LevelManager::setDeadAnimals(std::vector<std::string>& deadVector){
+
+	for(int i = 0; i < deadVector.size();i++){
+		mDeadAnimalCollection.push_back(deadVector[i]);
+	}
+
 	mDeadAnimals = deadVector;
 }
 
@@ -210,4 +215,8 @@ std::vector<std::string> LevelManager::getAliveAnimals(){
 std::vector<std::string> LevelManager::getDeadAnimals(){
 
 	return mDeadAnimals;
+}
+
+std::vector<std::string>* LevelManager::getDeadAnimalCollection(){
+	return &mDeadAnimalCollection;
 }

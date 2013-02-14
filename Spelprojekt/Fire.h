@@ -16,7 +16,6 @@ public:
 	virtual bool getAlive();
 	virtual void setAlive(bool alive);
 	virtual void collide(Entity* entity);
-	virtual void setMod(SpeedMod* speedMod);
 	virtual std::string getID();
 	virtual sf::Vector2f getPos();
 	virtual float doDamage();

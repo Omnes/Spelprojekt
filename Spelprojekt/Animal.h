@@ -4,7 +4,6 @@
 #include <vector>
 #include <set>
 #include <SFML\Graphics\Sprite.hpp>
-#include "SpeedMod.h"
 #include "Entity.h"
 #include <SFML\System\Clock.hpp>
 #include <string>
@@ -39,8 +38,6 @@ private:
 
 	float mCalcSpeed;
 	sf::Vector2f mPosition;
-	typedef std::set<SpeedMod*> ModSet;
-	ModSet mModSet;
 	bool mAlive;
 	sf::Clock collideCooldown;
 
