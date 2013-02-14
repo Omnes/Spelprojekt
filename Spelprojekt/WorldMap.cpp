@@ -53,10 +53,7 @@ void WorldMap::readFromFile(){
 void WorldMap::saveToFile(std::string levelName){
 	
 	tinyxml2::XMLDocument doc;
-
-	//deklaration
-	tinyxml2::XMLDeclaration* dec = doc.NewDeclaration("SavedGame");
-	doc.LinkEndChild(dec);
+	doc.LoadFile("Resources/Data/Save/SavedGame.xml");
 
 	//levelcomp+letede
 	tinyxml2::XMLElement* levelCompleted = doc.NewElement("LevelCompleted");

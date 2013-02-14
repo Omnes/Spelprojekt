@@ -25,6 +25,8 @@ private:
 	typedef std::vector <std::string> PlayedLevels;
 	PlayedLevels mPlayedLevels;
 
+	
+
 };
 
 #endif
