@@ -2,7 +2,7 @@
 
 	<Name>GrodaR</Name>
 
-	<Images>Resources/Animals/grodaR.png</Images>
+	<Images>Resources/Animals/frogRed.png</Images>
 
 	<Speed ground="2" middle="1.1" tree="0"/>
 	

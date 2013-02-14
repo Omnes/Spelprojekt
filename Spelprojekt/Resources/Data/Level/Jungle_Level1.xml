@@ -85,8 +85,9 @@
 
 
 <Obstacles minDistance="256" maxDistance="512">
-	<Stone chance = "25" speedMod = "0" y="400" numberOfFrames="2" frameTime="100">Resources/Obstacle/stone.png</Stone>
-	<Gren chance = "75" speedMod = "0.5" y="500" numberOfFrames="2" frameTime="100">Resources/Obstacle/branch.png</Gren>
+	<Oil chance="25" speedMod="0.5" y="200" numberOfFrames="1" frameTime="100">Resources/Obstacle/oil.png</Oil>
+	<FallenTree chance="50" speedMod="0.5" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/fallentree.png</FallenTree>
+	<Stone chance="25" speedMod="0.5" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/stone.png</Stone>
 
 
 
