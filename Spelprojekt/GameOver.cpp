@@ -4,7 +4,7 @@
 
 
 GameOver::GameOver()
-	:mReturnToMain(sf::Vector2f(500,500),"popTwice","Resources/Misc/knapp1.jpg","Resources/Sound/test.wmv")
+	:mReturnToMain(sf::Vector2f(500,500),"popStateTwice","Resources/Misc/knapp1.jpg","Resources/Sound/test.wmv")
 	,mLoadLast(sf::Vector2f(700,500),"popTwice","Resources/Misc/knapp2.jpg","Resources/Sound/test.wmv")
 	,mBackground(*ResourceManager::getInst().getTexture("Resources/Menu/GameOverScreenWithSadOcelotInTheMiddle.png")){
 
