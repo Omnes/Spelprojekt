@@ -51,7 +51,7 @@ void WorldMap::readFromFile(){
 	saveToFile();
 }
 
-void WorldMap::saveToFile(){
+void WorldMap::saveToFile(std::string levelName){
 	
 	tinyxml2::XMLDocument doc;
 
@@ -61,7 +61,7 @@ void WorldMap::saveToFile(){
 
 	//levelcomp+letede
 	tinyxml2::XMLElement* levelCompleted = doc.NewElement("LevelCompleted");
-	levelCompleted->LinkEndChild(doc.NewText("Resources/Data/Level/Jungle_Level2.xml"));// variabel här <----------
+	levelCompleted->LinkEndChild(doc.NewText(levelName.c_str()));// variabel här <----------
 	doc.LinkEndChild(levelCompleted);
 
 	doc.SaveFile("Resources/Data/Save/SavedGame.xml"); //<------- variabel funkar här
