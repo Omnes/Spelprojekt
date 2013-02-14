@@ -31,7 +31,7 @@ void WorldMap::readFromFile(){
 
 	doc.LoadFile("Resources/Data/Save/SavedGame.xml"); // denna kommer inte funka sen när vi ska göra användare
 
-	tinyxml2::XMLElement *elm = doc.FirstChildElement("Level")->FirstChildElement("LevelsCompleted")->FirstChildElement();
+	tinyxml2::XMLElement *elm = doc.FirstChildElement();
 
 	while(elm != 0){
 		mPlayedLevels.push_back(elm->GetText());
@@ -42,11 +42,28 @@ void WorldMap::readFromFile(){
 		for(ButtonVector::iterator j = mButtonVector.begin(); j != mButtonVector.end(); j++){
 			if((*i) == (*j)->getLevel()){
 				(*j)->setAlive(false);
-
 				//kolla i LevelButton.cpp och fixa så bilden ändras i setAlive();
 				//kolla också LevelButton.cpp i update
 
 			}
 		}
 	}
+	saveToFile();
+}
+
+void WorldMap::saveToFile(){
+	
+	tinyxml2::XMLDocument doc;
+
+	//deklaration
+	tinyxml2::XMLDeclaration* dec = doc.NewDeclaration("SavedGame");
+	doc.LinkEndChild(dec);
+
+	//levelcomp+letede
+	tinyxml2::XMLElement* levelCompleted = doc.NewElement("LevelCompleted");
+	levelCompleted->LinkEndChild(doc.NewText("Resources/Data/Level/Jungle_Level2.xml"));// variabel här <----------
+	doc.LinkEndChild(levelCompleted);
+
+	doc.SaveFile("Resources/Data/Save/SavedGame.xml"); //<------- variabel funkar här
+
 }

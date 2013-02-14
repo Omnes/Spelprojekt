@@ -4,7 +4,7 @@
 
 	<Images>Resources/Animals/frogRed.png</Images>
 
-	<Speed ground="2" middle="1.1" tree="0"/>
+	<Speed air="0" middle="1.1" ground="2"/>
 	
 	<AnimalType>plant</AnimalType>
 

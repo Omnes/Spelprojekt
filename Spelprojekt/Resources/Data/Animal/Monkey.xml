@@ -4,7 +4,7 @@
 
 	<Images>Resources/Animals/monkey.png</Images>
 
-	<Speed ground="1.2" middle="2" tree="0"/>
+	<Speed air="0" middle="2" ground="1.2"/>
 	
 	<AnimalType>plant</AnimalType>
 
