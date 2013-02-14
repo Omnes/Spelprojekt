@@ -14,6 +14,7 @@ public:
 	virtual void update();
 	virtual void render();
 	void readFromFile();
+	void saveToFile();
 
 private:
 

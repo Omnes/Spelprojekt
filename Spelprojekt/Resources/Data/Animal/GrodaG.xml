@@ -4,7 +4,7 @@
 
 	<Images>Resources/Animals/grodaG.png</Images>
 
-	<Speed ground="3" middle="1.1" tree="0"/>
+	<Speed air="0" middle="1.1" ground="3"/>
 	
 	<AnimalType>plant</AnimalType>
 
