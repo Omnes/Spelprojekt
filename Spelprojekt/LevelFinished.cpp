@@ -4,6 +4,9 @@
 #include "ResourceManager.h"
 #include "WindowManager.h"
 
+#include "StateManager.h"
+
+
 
 LevelFinished::LevelFinished() : mButton(sf::Vector2f(500, 500), "popState", "Resources/Misc/knapp1.jpg", "Resources/Sound/test.wav"){
 	
@@ -38,8 +41,8 @@ void LevelFinished::update(){
 
 	mButton.update();
 
-	StateManager::getInst().popState();
-	dynamic_cast<WorldMap*>StateManager::getTop()->readFile();
+	//StateManager::getInst().popState();
+	//dynamic_cast <WorldMap*> StateManager::getTop()->readFile();
 
 } 
 

@@ -48,7 +48,6 @@ void WorldMap::readFromFile(){
 			}
 		}
 	}
-	saveToFile();
 }
 
 void WorldMap::saveToFile(std::string levelName){
@@ -65,5 +64,7 @@ void WorldMap::saveToFile(std::string levelName){
 	doc.LinkEndChild(levelCompleted);
 
 	doc.SaveFile("Resources/Data/Save/SavedGame.xml"); //<------- variabel funkar här
+
+	readFromFile();
 
 }
