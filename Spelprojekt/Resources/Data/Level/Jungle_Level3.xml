@@ -69,15 +69,18 @@
 
 <AnimalsOnLevel>
 
-	<Animal_1>Resources/Data/Animal/Apa.xml</Animal_1>
-	<Animal_1>Resources/Data/Animal/Apa.xml</Animal_1>
+	<Animal_1>Resources/Data/Animal/Monkey.xml</Animal_1>
+	<Animal_1>Resources/Data/Animal/Monkey.xml</Animal_1>
+	<Animal_1>Resources/Data/Animal/Bat.xml</Animal_1>
+	<Animal_1>Resources/Data/Animal/Eagle.xml</Animal_1>
+	<Animal_1>Resources/Data/Animal/HummingBird.xml</Animal_1>
 
 
 
 
 </AnimalsOnLevel>
 
-<Level length = "1000">
+<Level length = "3000">
 	
 </Level>
 

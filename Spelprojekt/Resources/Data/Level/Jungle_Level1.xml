@@ -69,9 +69,9 @@
 
 <AnimalsOnLevel>
 
-	<Animal_1>Resources/Data/Animal/GrodaR.xml</Animal_1>
-	<Animal_1>Resources/Data/Animal/Apa.xml</Animal_1>
-	<Animal_1>Resources/Data/Animal/GrodaG.xml</Animal_1>
+	<Animal_1>Resources/Data/Animal/FrogRed.xml</Animal_1>
+	<Animal_1>Resources/Data/Animal/Monkey.xml</Animal_1>
+	<Animal_1>Resources/Data/Animal/FrogGreen.xml</Animal_1>
 	<Animal_1>Resources/Data/Animal/Jaguar.xml</Animal_1>
 
 

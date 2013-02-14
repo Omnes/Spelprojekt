@@ -1,8 +1,8 @@
 <Animal>
 
-	<Name>GrodaG</Name>
+	<Name>FrogGreen</Name>
 
-	<Images>Resources/Animals/grodaG.png</Images>
+	<Images>Resources/Animals/frogGreen.png</Images>
 
 	<Speed ground="3" middle="1.1" tree="0"/>
 	

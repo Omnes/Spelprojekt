@@ -1,8 +1,8 @@
 <Animal>
 
-	<Name>Apa</Name>
+	<Name>Monkey</Name>
 
-	<Images>Resources/Animals/apa.png</Images>
+	<Images>Resources/Animals/monkey.png</Images>
 
 	<Speed ground="1.2" middle="2" tree="0"/>
 	

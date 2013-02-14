@@ -69,7 +69,7 @@ void Camera::update(){
 			mVelocity-= panSpeed*2;
 		}
 	}	
-	
+	 
 	if(mPosition < mMinPos + 440){
 		if (mVelocity < 0){
 			mVelocity = 0;
