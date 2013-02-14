@@ -4,11 +4,14 @@
 #include "Event.h"
 #include "StateManager.h"
 
-class PopTwiceState: public Event{
+class PopStateTwice: public Event{
 public:
-	void update(){StateManager::getInst().popState();}
-	PopState(){}
-	~PopState(){}
+	void update(){
+		StateManager::getInst().popState();
+		StateManager::getInst().popState();
+	}
+	PopStateTwice(){}
+	~PopStateTwice(){}
 };
 
 
