@@ -1,7 +1,7 @@
 <Particle>
 	<Name>Smoke</Name>
 	<Texture yframes="2">Resources/Particle/rok.png</Texture>
-	<Life min="60" max="120"/>
+	<Life min="110" max="110"/>
 	<Direction min ="90" max="180"/>
 	<Speed min=".1" max=".2" increase="0"/>
 	<Rotation min="0" max="359" increaseMin="0" increaseMax="0"/>

@@ -31,6 +31,10 @@ LevelManager& LevelManager::getInst(){
 void LevelManager::setFilePath(std::string filePath){
 	mFilePath = filePath;
 }
+std::string LevelManager::getFilePath(){
+
+	return mFilePath;
+}
 
 std::vector <AnimalPrototype*> LevelManager::getAnimalsOnLevel(){
 	std::vector<AnimalPrototype*> animalsOnLevel;
