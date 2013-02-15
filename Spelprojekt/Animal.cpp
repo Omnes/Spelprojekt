@@ -14,6 +14,7 @@ Animal::Animal(Animation* animation, sf::Vector2f position, float speed, std::st
 	mID("Animal"),
 	mFilePath(filePath){
 
+
 	
 }
 
@@ -27,6 +28,7 @@ void Animal::update(){
 	currentAnimation = 0;
 
 	mCurrentSpeed = mSpeed * mCalcSpeed * mSpeedIncrease;
+
 
 	mPosition.x += mCurrentSpeed;
 

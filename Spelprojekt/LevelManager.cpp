@@ -162,8 +162,7 @@ std::vector<Layer*> LevelManager::loadLayers(){
 			}
 
 			float fireSpeed = doc.FirstChildElement("Fire")->FirstAttribute()->FloatValue();
-			entityVector.push_back(new Fire(sf::Vector2f(0,0),fireSpeed));
-			
+			entityVector.push_back(new Fire(sf::Vector2f(-50,0),fireSpeed));
 
 			ActiveLayer* activeLayer = new ActiveLayer(entityVector, mLevellength);
 			layer = activeLayer;
@@ -223,4 +222,20 @@ std::vector<std::string> LevelManager::getDeadAnimals(){
 
 std::vector<std::string>* LevelManager::getDeadAnimalCollection(){
 	return &mDeadAnimalCollection;
+}
+
+std::vector<float> LevelManager::getLevelsOnLevel(){
+	tinyxml2::XMLDocument doc;
+	doc.LoadFile(mFilePath.c_str());
+
+	const tinyxml2::XMLAttribute* attr = doc.FirstChildElement("LevelsYValue")->FirstAttribute();
+	
+	std::vector<float>LevelYVector;
+
+	while(attr != 0){
+		LevelYVector.push_back(attr->FloatValue());
+		attr = attr->Next();
+	}
+
+	return LevelYVector;
 }

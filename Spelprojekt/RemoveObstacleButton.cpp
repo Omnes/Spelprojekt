@@ -8,10 +8,10 @@
 #include "Gui.h"
 #include <SFML\Graphics\CircleShape.hpp>
 
-RemoveObstacleButton::RemoveObstacleButton(std::string obstacle,sf::Vector2f position, std::string texture, Gui* gui)
-	: mObstacle(obstacle)
+RemoveObstacleButton::RemoveObstacleButton(std::vector<std::string> obstacle,sf::Vector2f position, std::string texture, Gui* gui)
+	: mObstacles(obstacle)
 	, mTexture(ResourceManager::getInst().getTexture(texture))
-	, mFrames(4)
+	, mFrames(3)
 	, mCooldown(100)
 	, mClickCooldown(75)
 	, mGui(gui)
@@ -26,6 +26,15 @@ RemoveObstacleButton::RemoveObstacleButton(std::string obstacle,sf::Vector2f pos
 
 RemoveObstacleButton::~RemoveObstacleButton(){}
 
+bool RemoveObstacleButton::findID(std::string id){
+	for(int i = 0; i < mObstacles.size(); i++){
+		if(mObstacles[i] == id){
+			return true;
+		}
+	}
+	return false;
+}
+
 
 void RemoveObstacleButton::killRelativePositionEntity(sf::Vector2f mousePosition){
 	const sf::View* view = &WindowManager::getInst().getWindow()->getView();
@@ -36,7 +45,10 @@ void RemoveObstacleButton::killRelativePositionEntity(sf::Vector2f mousePosition
 		for(std::vector<Entity*>::iterator i = entityVector->begin();i != entityVector->end();){
 			sf::FloatRect bounds = (*i)->getSprite()->getGlobalBounds();
 			bool contains = bounds.contains(relativeMousePosition);
-			if((*i)->getID() == mObstacle && contains){
+
+			std::string id = (*i)->getID();
+
+			if(findID(id) && contains){
 				delete *i;
 				i = entityVector->erase(i);
 			}else{
@@ -48,6 +60,8 @@ void RemoveObstacleButton::killRelativePositionEntity(sf::Vector2f mousePosition
 		mCooldownTimer.restart();
 		mClickCooldownTimer.restart();
 }
+
+
 
 void RemoveObstacleButton::update(){
 
@@ -77,9 +91,9 @@ void RemoveObstacleButton::update(){
 
 	
 
-	if(mCooldownTimer.getElapsedTime().asMilliseconds() < mCooldown){
+	/*if(mCooldownTimer.getElapsedTime().asMilliseconds() < mCooldown){
 		mSprite.setTextureRect(sf::IntRect(mTexture->getSize().x/mFrames*3,0,mTexture->getSize().x/mFrames,mTexture->getSize().y));
-	}
+	}*/
 
 	if(mClicked){
 		mSprite.setTextureRect(sf::IntRect(mTexture->getSize().x/mFrames*2,0,mTexture->getSize().x/mFrames,mTexture->getSize().y));

@@ -10,6 +10,7 @@ Animation::Animation(sf::Texture *texture, int frametime, int xframes, int yfram
 	mSprite.setTexture(*mTexture);
 	mRectangle = sf::IntRect(0,0,mTexture->getSize().x/mFrames,mTexture->getSize().y/yframes);
 	mSprite.setTextureRect(mRectangle);
+	mSprite.setOrigin(mTexture->getSize().x/(xframes*2),mTexture->getSize().y/(yframes*2));
 	setCurrentAnimation(0);
 
 }

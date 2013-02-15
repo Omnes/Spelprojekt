@@ -11,8 +11,8 @@ TacticalVisionCamera::TacticalVisionCamera(LayerManager* layermanager) :
 	mVelocity(0.0),
 	mView(*LevelManager::getInst().getCamera()->getView()),
 	mPosition(mView.getCenter().x), 
-	mMaxVelocity(2.5), 
-	mMinVelocity(1),
+	mMaxVelocity(5), 
+	mMinVelocity(-5),
 	mMinPos(2000),
 	mStartPosition(mView.getCenter().x){
 
@@ -41,14 +41,14 @@ void TacticalVisionCamera::update(){
 
 	setMin();
 
-	float panSpeed = 0.1;
+	float panSpeed = 0.2;
 	float lastPosition = mPosition;
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && mVelocity < mMaxVelocity || ScrollDetector::getScrollDelta() > 0 && mVelocity < mMaxVelocity){
 
 		mVelocity += panSpeed;
 	}
 	 
-	else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && mVelocity > -mMinVelocity || ScrollDetector::getScrollDelta() < 0 && mVelocity > -mMinVelocity){
+	else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && mVelocity > -mMinVelocity || ScrollDetector::getScrollDelta() < 0 && mVelocity > mMinVelocity){
 
 		mVelocity -= panSpeed;
 	}

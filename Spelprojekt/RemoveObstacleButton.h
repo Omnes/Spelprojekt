@@ -12,17 +12,18 @@ class Gui;
 
 class RemoveObstacleButton: public AbilityButton{
 public:
-	RemoveObstacleButton(std::string obstacle,sf::Vector2f position, std::string texture, Gui* gui);
+	RemoveObstacleButton(std::vector<std::string> obstacle,sf::Vector2f position, std::string texture, Gui* gui);
 
 	virtual void update();
 	virtual sf::Sprite* getSprite();
 	virtual void setClicked(bool boolean);
 	void killRelativePositionEntity(sf::Vector2f mousePosition);
+	bool findID(std::string);
 	
 	~RemoveObstacleButton();
 
 private:
-	std::string mObstacle;
+	std::vector<std::string> mObstacles;
 	bool mClicked;
 	sf::Texture* mTexture;
 	sf::Sprite mSprite;

@@ -93,14 +93,14 @@ void TaktikMeny::placeSpots(){
 	mPosVector.push_back(mLevelGround); // värdelöst ???
 
 	int xDistance = 250;
-	int yDistance = 200;
-	
 	int startX = 80;
-	int startY = 100;
+
+	std::vector<float> LevelYVector = LevelManager::getInst().getLevelsOnLevel();
+
 	//placerar ut spots 
-	for(int i = 0; i < 3/* == antal level på en bana*/; i++){
+	for(std::vector<float>::size_type i = 0; i < LevelYVector.size(); i++){
 		for(int j = 0; j < mPosVector[i]; j++){
-			mSpotVector.push_back(new Spot(i, sf::Vector2f(startX + j*xDistance, startY + i*yDistance)));
+			mSpotVector.push_back(new Spot(i, sf::Vector2f(startX + j*xDistance, LevelYVector[i])));
 		}
 	}
 }
