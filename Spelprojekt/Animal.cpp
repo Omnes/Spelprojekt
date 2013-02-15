@@ -25,7 +25,7 @@ void Animal::update(){
 	mAnimation->setCurrentAnimation(currentAnimation);
 	currentAnimation = 0;
 
-	mCurrentSpeed = mSpeed * mCalcSpeed;
+	mCurrentSpeed = mSpeed* mCalcSpeed;
 
 	mPosition.x += mCurrentSpeed;
 

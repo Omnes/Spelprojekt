@@ -9,7 +9,7 @@ TacticalVisionButton::TacticalVisionButton(sf::Vector2f position, std::string te
 	: mTexture(ResourceManager::getInst().getTexture(texture))
 	, mGui(gui)
 	, mClicked(false)
-	, mFrames(4)
+	, mFrames(3)
 	, mCooldown(1)
 	, mClickCooldown(){
 		mCooldownTimer.restart();
@@ -43,6 +43,10 @@ void TacticalVisionButton::update(){
 			mClickCooldownTimer.restart();
 			mGui->unclickAll();
 		}
+	}
+
+	if(mCooldownTimer.getElapsedTime().asSeconds() < mCooldown ){
+		mSprite.setTextureRect(sf::IntRect(mTexture->getSize().x/mFrames*2,0,mTexture->getSize().x/mFrames,mTexture->getSize().y));
 	}
 }
 
