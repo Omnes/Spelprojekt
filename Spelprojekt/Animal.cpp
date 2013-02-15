@@ -9,6 +9,7 @@ Animal::Animal(Animation* animation, sf::Vector2f position, float speed, std::st
 	currentAnimation(0), 
 	mPosition(position),
 	mSpeed(speed),
+	mSpeedIncrease(1),
 	mCalcSpeed(speed),
 	mID("Animal"),
 	mFilePath(filePath){
@@ -25,7 +26,7 @@ void Animal::update(){
 	mAnimation->setCurrentAnimation(currentAnimation);
 	currentAnimation = 0;
 
-	mCurrentSpeed = mSpeed * mCalcSpeed;
+	mCurrentSpeed = mSpeed * mCalcSpeed * mSpeedIncrease;
 
 	mPosition.x += mCurrentSpeed;
 
@@ -104,4 +105,8 @@ float Animal::doDamage(){
 
 float Animal::getCurrentSpeed(){
 	return mCurrentSpeed;
+}
+
+void Animal::setSpeedIncrease(float speedIncrease){
+	mSpeedIncrease = speedIncrease;
 }

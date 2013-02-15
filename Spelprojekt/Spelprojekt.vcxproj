@@ -99,6 +99,7 @@
     <ClCompile Include="Gameover.cpp" />
     <ClCompile Include="Gameplay.cpp" />
     <ClCompile Include="Gui.cpp" />
+    <ClCompile Include="InnerBeastArrow.cpp" />
     <ClCompile Include="InnerBeastButton.cpp" />
     <ClCompile Include="LayerManager.cpp" />
     <ClCompile Include="LevelButton.cpp" />
@@ -155,6 +156,7 @@
     <ClInclude Include="Gameplay.h" />
     <ClInclude Include="GoBackToWorld.h" />
     <ClInclude Include="Gui.h" />
+    <ClInclude Include="InnerBeastArrow.h" />
     <ClInclude Include="InnerBeastButton.h" />
     <ClInclude Include="Layer.h" />
     <ClInclude Include="LayerManager.h" />

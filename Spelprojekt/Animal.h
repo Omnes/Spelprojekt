@@ -27,6 +27,7 @@ public:
 	sf::Vector2f getPos();
 	std::string getFilePath();
 	virtual float getCurrentSpeed();
+	void setSpeedIncrease(float speedIncrease);
 	
 	float doDamage();
 
@@ -35,7 +36,7 @@ private:
 	int currentAnimation;
 	float mSpeed;
 	float mCurrentSpeed;
-
+	float mSpeedIncrease;
 	float mCalcSpeed;
 	sf::Vector2f mPosition;
 	bool mAlive;
