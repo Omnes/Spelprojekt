@@ -27,6 +27,7 @@ public:
 	void setCamera(Camera* camera);
 	Camera* getCamera();
 	int getLevelLength();
+	std::vector <float> getLevelsOnLevel(); //nivåer på en bana 
 
 private:
 	//std::vector<Layer*> layers;
