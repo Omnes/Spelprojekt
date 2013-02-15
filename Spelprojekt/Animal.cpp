@@ -13,6 +13,7 @@ Animal::Animal(Animation* animation, sf::Vector2f position, float speed, std::st
 	mID("Animal"),
 	mFilePath(filePath){
 
+
 	
 }
 

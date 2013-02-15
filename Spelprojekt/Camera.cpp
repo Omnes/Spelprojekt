@@ -13,7 +13,7 @@ Camera::Camera(LayerManager* layermanager) :
 	mView(sf::FloatRect(0,0,1280,720)),
 	mPosition(mView.getSize().x/2), 
 	mMaxVelocity(2.5), 
-	mMinVelocity(1),
+	mMinVelocity(-2.5),
 	mMaxPos(1),
 	mMinPos(2000){
 
@@ -56,7 +56,7 @@ void Camera::update(){
 		mVelocity += panSpeed;
 	}
 	 
-	else if((ScrollDetector::getScrollDelta() < 0 || sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) && mVelocity > -mMinVelocity){
+	else if((ScrollDetector::getScrollDelta() < 0 || sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) && mVelocity > mMinVelocity){
 
 		mVelocity -= panSpeed;
 	}
