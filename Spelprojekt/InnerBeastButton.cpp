@@ -22,9 +22,12 @@ InnerBeastButton::InnerBeastButton(sf::Vector2f position, std::string texture, G
 		mSprite.setTexture(*mTexture);
 
 		mSprite.setTextureRect(sf::IntRect(0,0,mTexture->getSize().x/mFrames,mTexture->getSize().y)); //<--- texture rect
-		mArrows.push_back(InnerBeastArrow(sf::Vector2f(100, 200), "Resources/Misc/knapp1.jpg"));
-		mArrows.push_back(InnerBeastArrow(sf::Vector2f(100, 400), "Resources/Misc/knapp2.jpg"));
-		mArrows.push_back(InnerBeastArrow(sf::Vector2f(100, 600), "Resources/Misc/knapp3.jpg"));
+
+		std::vector<float> yPositions = LevelManager::getInst().getLevelsOnLevel();
+
+		mArrows.push_back(InnerBeastArrow(sf::Vector2f(100, yPositions[0]), "Resources/Misc/knapp1.jpg"));
+		mArrows.push_back(InnerBeastArrow(sf::Vector2f(100, yPositions[1]), "Resources/Misc/knapp2.jpg"));
+		mArrows.push_back(InnerBeastArrow(sf::Vector2f(100, yPositions[2]), "Resources/Misc/knapp3.jpg"));
 }
 
 InnerBeastButton::~InnerBeastButton(){}

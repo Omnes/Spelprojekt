@@ -3,15 +3,7 @@
 #include "RemoveObstacleButton.h"
 #include "WindowManager.h"
 #include "TacticalVisionButton.h"
-<<<<<<< HEAD
 #include "InnerBeastButton.h"
-
-Gui::Gui(): mWindow(WindowManager::getInst().getWindow()){
-	mButtons.push_back(new RemoveObstacleButton("Stone",sf::Vector2f(0,100),"Resources/Misc/knapp1.jpg",this));
-	mButtons.push_back(new RemoveObstacleButton("Gren",sf::Vector2f(0,250),"Resources/Misc/knapp2.jpg",this));
-	mButtons.push_back(new TacticalVisionButton(sf::Vector2f(0,400),"Resources/Misc/knapp1.jpg",this));
-	mButtons.push_back(new InnerBeastButton(sf::Vector2f(0,600),"Resources/Misc/knapp2.jpg",this));
-=======
 #include <string>
 
 Gui::Gui(): mWindow(WindowManager::getInst().getWindow()){
@@ -29,7 +21,8 @@ Gui::Gui(): mWindow(WindowManager::getInst().getWindow()){
 	mButtons.push_back(new RemoveObstacleButton(button1vector,sf::Vector2f(0,100),"Resources/GUI/elephantcrush.png",this));
 	mButtons.push_back(new RemoveObstacleButton(button2vector,sf::Vector2f(0,250),"Resources/GUI/diskmedel.png",this));
 	mButtons.push_back(new TacticalVisionButton(sf::Vector2f(0,400),"Resources/GUI/sonar.png",this));
->>>>>>> b9d789ac26e978240cce581abb7785baf69f990e
+	mButtons.push_back(new InnerBeastButton(sf::Vector2f(0,600),"Resources/Misc/knapp2.jpg",this));
+
 	mGuiSprite.setTexture(*ResourceManager::getInst().getTexture("Resources/Misc/Ui.png"));
 	mGuiSprite.setPosition(sf::Vector2f(0,720-72));
 }
