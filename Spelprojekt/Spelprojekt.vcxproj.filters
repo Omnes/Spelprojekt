@@ -174,13 +174,11 @@
     <ClCompile Include="InnerBeastArrow.cpp">
       <Filter>Source Files\Abilities</Filter>
     </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="SoundManager.cpp">
       <Filter>Source Files\Managers</Filter>
-=======
+    </ClCompile>
     <ClCompile Include="Taktikmeny.cpp">
       <Filter>Source Files\States</Filter>
->>>>>>> sean
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
