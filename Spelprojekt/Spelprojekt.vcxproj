@@ -116,6 +116,7 @@
     <ClCompile Include="RemoveObstacleButton.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="ScrollDetector.cpp" />
+    <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="Spot.cpp" />
     <ClCompile Include="StartMeny.cpp" />
     <ClCompile Include="StateManager.cpp" />
@@ -176,6 +177,7 @@
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="ScrollDetector.h" />
     <ClInclude Include="AddMap.h" />
+    <ClInclude Include="SoundManager.h" />
     <ClInclude Include="Spot.h" />
     <ClInclude Include="StartMeny.h" />
     <ClInclude Include="StateManager.h" />

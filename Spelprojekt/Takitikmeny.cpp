@@ -4,6 +4,7 @@
 #include "Spot.h"
 #include "AnimalPrototype.h"
 #include "EventManager.h"
+#include "SoundManager.h"
 
 #include <SFML\Window\Mouse.hpp>
 #include <SFML\Graphics\RectangleShape.hpp>
@@ -34,6 +35,8 @@ void TaktikMeny::update(){
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return)){
 		createAnimals();
 		EventManager::getInst().addEvent("addGameplay");
+		SoundManager::getInst().fadeTo("Resources/Sound/Level1.ogg",150);
+		
 		//EventManager::getInst().addEvent("popState");
 	}
 }

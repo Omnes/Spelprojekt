@@ -15,7 +15,7 @@ void Fire::update(){
 	
 	mPosition.x += mSpeed;
 	mEmitter.setPosition(mPosition);
-	mEmitter.burst(mFireSystem,sf::FloatRect(-100,0,150,720),17);
+	mEmitter.burst(mFireSystem,sf::FloatRect(-100,0,225,720),17);
 	mEmitter.burst(mSmokeSystem,sf::FloatRect(-1000,0,950,720),10);
 	mSprite.setPosition(mPosition);
 }

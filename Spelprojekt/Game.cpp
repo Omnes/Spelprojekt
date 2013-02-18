@@ -13,6 +13,7 @@
 #include "EventManager.h"
 #include "ResourceManager.h"
 #include "ParticleManager.h"
+#include "SoundManager.h"
 
 #include "StartMeny.h"
 #include "ScrollDetector.h"
@@ -33,6 +34,7 @@ void Game::run(){
 	sf::RenderWindow* window = windowManager->getWindow();
 	StateManager* stateManager = &StateManager::getInst();                                                      
 	EventManager* eventManager = &EventManager::getInst();
+	SoundManager* soundManager = &SoundManager::getInst();
 	ParticleManager* particleManager = &ParticleManager::getInst();
 	particleManager->loadPrototype("Resources/Data/Particle/buttonParticle.xml"); // <------- ska bort härifrån annars ser det ut som zumas kod
 	particleManager->loadPrototype("Resources/Data/Particle/firewallParticle.xml");
@@ -53,6 +55,7 @@ void Game::run(){
 			window->setView(window->getDefaultView());
 
 			stateManager->update(); // main update
+			soundManager->update();
 
 			countFrames();
 			eventManager->update(); // process events
