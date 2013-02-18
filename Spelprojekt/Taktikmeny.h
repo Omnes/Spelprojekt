@@ -4,6 +4,7 @@
 #include "States.h"
 #include "AnimalPrototype.h"
 #include "Entity.h"
+#include "ResourceManager.h"
 
 class LevelManager;
 class Spot;
@@ -19,6 +20,8 @@ public:
 
 	void isClicked();
 	void isNotClicked();
+
+	void readFromFile();
 
 	~TaktikMeny();
 	TaktikMeny();
@@ -43,6 +46,9 @@ private:
 
 	typedef std::vector <float> SpeedVector;
 	SpeedVector mSpeedVector;
+
+	typedef std::vector <sf::Sprite> BgVector;
+	BgVector mBgVector;
 
 	int mLevelTop, mLevelMiddle, mLevelGround;
 

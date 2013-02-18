@@ -40,7 +40,7 @@ private:
 	float mCalcSpeed;
 	sf::Vector2f mPosition;
 	bool mAlive;
-	sf::Clock collideCooldown;
+	int mCollideCooldown;
 
 	std::string mFilePath;
 

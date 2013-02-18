@@ -123,7 +123,7 @@
     <ClCompile Include="TacticalVision.cpp" />
     <ClCompile Include="TacticalVisionButton.cpp" />
     <ClCompile Include="TacticalVisionCamera.cpp" />
-    <ClCompile Include="Takitikmeny.cpp" />
+    <ClCompile Include="Taktikmeny.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="WindowManager.cpp" />
     <ClCompile Include="WorldMap.cpp" />
