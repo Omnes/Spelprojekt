@@ -16,7 +16,7 @@ TaktikMeny::TaktikMeny() :
 	mLevelMiddle(0),
 	mLevelGround(0)
 {
-
+	readFromFile();
 	receiveAnimals();
 	placeSpots();
 }
@@ -45,6 +45,10 @@ void TaktikMeny::render(){
 
 	sf::RenderWindow *window = WindowManager::getInst().getWindow();
 
+
+	for(BgVector::iterator i = mBgVector.begin(); i != mBgVector.end(); i++){
+		window->draw((*i));
+	}
 
 	for(SpotVector::iterator i = mSpotVector.begin(); i != mSpotVector.end(); i++){
 		window->draw(*(*i)->getSprite());
@@ -207,4 +211,23 @@ void TaktikMeny::isNotClicked(){
 
 	}
 
+}
+
+void TaktikMeny::readFromFile(){
+	tinyxml2::XMLDocument doc;
+
+	doc.LoadFile(LevelManager::getInst().getFilePath().c_str());
+
+	tinyxml2::XMLElement* elem = doc.FirstChildElement()->FirstChildElement();
+
+	while (elem != 0){
+		std::string layerType = elem->FirstChildElement("Layer")->GetText();
+		if(layerType == "static"){
+			const tinyxml2::XMLElement *img = elem->FirstChildElement("Images")->FirstChildElement();
+			sf::Sprite bg(*ResourceManager::getInst().getTexture(img->GetText()));
+			bg.setPosition(0,0);
+			mBgVector.push_back(bg);
+		}
+		elem = elem->NextSiblingElement();
+	}
 }

@@ -12,7 +12,9 @@ Animal::Animal(Animation* animation, sf::Vector2f position, float speed, std::st
 	mSpeedIncrease(1),
 	mCalcSpeed(speed),
 	mID("Animal"),
-	mFilePath(filePath){
+	mFilePath(filePath),
+	mCollideCooldown(50)	//ändra denna om det behövs
+{
 
 
 	
@@ -35,6 +37,10 @@ void Animal::update(){
 	mAnimation->update();
 	mAnimation->setPosition(mPosition);
 
+	if(mCalcSpeed != 0){
+		mCollideCooldown = 50;
+	}
+
 	//mCalcSpeed = mSpeed; //det här borde vi fixa på ngt random sätt. vet ej hur
 	mCalcSpeed = 1;
 }
@@ -48,10 +54,10 @@ void Animal::collide(Entity* entity){
 	float aCol = 1;
 	float oCol = 1;
 
-	
+	mCollideCooldown--;
 
 	if(entity->getID() == "Animal" && mPosition.x < entity->getPos().x){
-		if(entity->getCurrentSpeed() == 0){
+		if(entity->getCurrentSpeed() == 0 && mCollideCooldown < 0){
 			currentAnimation = 1;
 		}
 		aCol = 0;
