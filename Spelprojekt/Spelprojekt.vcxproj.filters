@@ -9,10 +9,6 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Header Files\Managers">
       <UniqueIdentifier>{17644b6d-4d1f-4c3c-b03e-62afe50a5032}</UniqueIdentifier>
     </Filter>
@@ -52,29 +48,26 @@
     <Filter Include="Header Files\Particles">
       <UniqueIdentifier>{428a39de-1ffc-4ff9-9281-e4067e357097}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Interface">
+      <UniqueIdentifier>{8e0d6de7-1681-4801-bb2d-4e862c808a12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Misc">
+      <UniqueIdentifier>{6de95e59-6472-4243-85a2-a754ae4b24d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TinyXML2">
+      <UniqueIdentifier>{f002b672-bbb7-499e-90dd-fcc6b9991d48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Misc">
+      <UniqueIdentifier>{e2bb77be-241c-4b41-a537-be5afe11facf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Interface">
+      <UniqueIdentifier>{d740a385-cff0-4e65-8032-96985bec2256}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TinyXML2">
+      <UniqueIdentifier>{2bab1d3b-fe0e-4199-abd5-b1327aaef26c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="tinyxml2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Camera.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Animation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AnimalPrototype.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Button.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ActiveLayer.cpp">
       <Filter>Source Files\Layer</Filter>
     </ClCompile>
@@ -117,14 +110,8 @@
     <ClCompile Include="OptionsMeny.cpp">
       <Filter>Source Files\States</Filter>
     </ClCompile>
-    <ClCompile Include="LevelButton.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Fire.cpp">
       <Filter>Source Files\Entities</Filter>
-    </ClCompile>
-    <ClCompile Include="Spot.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PauseMeny.cpp">
       <Filter>Source Files\States</Filter>
@@ -140,9 +127,6 @@
     </ClCompile>
     <ClCompile Include="LevelFinished.cpp">
       <Filter>Source Files\States</Filter>
-    </ClCompile>
-    <ClCompile Include="Gui.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ParticleSystem.cpp">
       <Filter>Source Files\Particles</Filter>
@@ -165,9 +149,6 @@
     <ClCompile Include="TacticalVisionCamera.cpp">
       <Filter>Source Files\Abilities</Filter>
     </ClCompile>
-    <ClCompile Include="ScrollDetector.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Gameover.cpp">
       <Filter>Source Files\States</Filter>
     </ClCompile>
@@ -180,26 +161,44 @@
     <ClCompile Include="Taktikmeny.cpp">
       <Filter>Source Files\States</Filter>
     </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Source Files\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Spot.cpp">
+      <Filter>Source Files\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui.cpp">
+      <Filter>Source Files\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelButton.cpp">
+      <Filter>Source Files\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimalPrototype.cpp">
+      <Filter>Source Files\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>Source Files\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files\Misc</Filter>
+    </ClCompile>
     <ClCompile Include="MusicLoop.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="ScrollDetector.cpp">
+      <Filter>Source Files\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml2.cpp">
+      <Filter>Source Files\TinyXML2</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="tinyxml2.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Camera.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Animation.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AnimalPrototype.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="EventManager.h">
       <Filter>Header Files\Managers</Filter>
     </ClInclude>
@@ -236,9 +235,6 @@
     <ClInclude Include="StartMeny.h">
       <Filter>Header Files\States</Filter>
     </ClInclude>
-    <ClInclude Include="Button.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Layer.h">
       <Filter>Header Files\Layer</Filter>
     </ClInclude>
@@ -269,17 +265,11 @@
     <ClInclude Include="AddOptions.h">
       <Filter>Header Files\Events</Filter>
     </ClInclude>
-    <ClInclude Include="LevelButton.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="AddTaktik.h">
       <Filter>Header Files\Events</Filter>
     </ClInclude>
     <ClInclude Include="Fire.h">
       <Filter>Header Files\Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="Spot.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AddStartMeny.h">
       <Filter>Header Files\Events</Filter>
@@ -311,9 +301,6 @@
     <ClInclude Include="AddLevelFinished.h">
       <Filter>Header Files\Events</Filter>
     </ClInclude>
-    <ClInclude Include="Gui.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="AddPause.h">
       <Filter>Header Files\Events</Filter>
     </ClInclude>
@@ -341,9 +328,6 @@
     <ClInclude Include="TacticalVision.h">
       <Filter>Header Files\States</Filter>
     </ClInclude>
-    <ClInclude Include="ScrollDetector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="TacticalVisionCamera.h">
       <Filter>Header Files\Abilites</Filter>
     </ClInclude>
@@ -365,8 +349,38 @@
     <ClInclude Include="SoundManager.h">
       <Filter>Header Files\Managers</Filter>
     </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Header Files\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelButton.h">
+      <Filter>Header Files\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Gui.h">
+      <Filter>Header Files\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Spot.h">
+      <Filter>Header Files\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimalPrototype.h">
+      <Filter>Header Files\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
     <ClInclude Include="MusicLoop.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="ScrollDetector.h">
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyxml2.h">
+      <Filter>Header Files\TinyXML2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

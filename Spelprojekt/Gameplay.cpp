@@ -3,10 +3,13 @@
 #include "WindowManager.h"
 #include "ParticleManager.h"
 #include "EventManager.h"
+#include "LevelManager.h"
 
 Gameplay::Gameplay(){
 	mLayerManager = new LayerManager;
 	mCamera = new Camera(mLayerManager);
+
+	mMusic = LevelManager::getInst().getMusicOnLevel();
 
 }
 
