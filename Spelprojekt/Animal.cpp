@@ -27,10 +27,13 @@ Animal::~Animal(){
 void Animal::update(){
 
 	mAnimation->setCurrentAnimation(currentAnimation);
+	
 	currentAnimation = 0;
 
 	mCurrentSpeed = mSpeed * mCalcSpeed * mSpeedIncrease;
-
+	if(mCalcSpeed != 0){
+		mAnimation->setFrameTime(mCalcSpeed * mSpeedIncrease);
+	}
 
 	mPosition.x += mCurrentSpeed;
 

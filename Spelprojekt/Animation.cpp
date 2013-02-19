@@ -3,6 +3,7 @@
 Animation::Animation(sf::Texture *texture, int frametime, int xframes, int yframes)
 	: mTexture(texture)
 	, mFrametime(frametime)
+	, mOriginalFrameTime(frametime)
 	, mFrames(xframes)
 	, mCurrentframe(0)
 	, mCurrentanimation(0){
@@ -49,4 +50,8 @@ sf::Sprite* Animation::getSprite(){
 void Animation::setPosition(sf::Vector2f position){
 
 	mSprite.setPosition(position);
+}
+
+void Animation::setFrameTime(float value){
+	mFrametime = mOriginalFrameTime/value;
 }
