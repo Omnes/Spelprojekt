@@ -16,6 +16,7 @@ public:
 	sf::Sprite* getSprite();
 	void setCurrentAnimation(int animation);
 	void setPosition(sf::Vector2f position);
+	void setFrameTime(float value);
 
 private:
 
@@ -23,7 +24,7 @@ private:
 	sf::Clock mTimer;
 	sf::IntRect mRectangle;
 	sf::Sprite mSprite;
-	int mFrametime, mFrames, mCurrentframe, mCurrentanimation;
+	int mFrametime, mFrames, mCurrentframe, mCurrentanimation, mOriginalFrameTime;
 
 };
 

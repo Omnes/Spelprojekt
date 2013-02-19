@@ -16,7 +16,7 @@ LevelFinished::LevelFinished() : mButton(sf::Vector2f(500, 500), "goBackToWorld"
 	mDeadVector = loadAnimals(Dead);
 	setPosition();
 
-	mMusic = "Resources/Sound/TitleScreen";
+	mMusic = "Resources/Sound/Level1_";
 }
 
 LevelFinished::~LevelFinished(){

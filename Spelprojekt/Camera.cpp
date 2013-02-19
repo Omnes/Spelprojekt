@@ -46,7 +46,11 @@ void Camera::getMinMax(){
 
 void Camera::update(){
 
+	
+
 	getMinMax();
+
+	///mView.setSize(mMaxPos-mMinPos,mMaxPos-mMinPos);
 
 	float panSpeed = 0.1;
 	float lastPosition = mPosition;
