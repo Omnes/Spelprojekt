@@ -116,7 +116,7 @@ void TaktikMeny::placeSpots(){
 	mPosVector.push_back(mLevelMiddle);
 	mPosVector.push_back(mLevelGround); // värdelöst ???
 
-	int xDistance = 250;
+	int xDistance = 128;
 	int startX = 80;
 
 	std::vector<float> LevelYVector = LevelManager::getInst().getLevelsOnLevel();
