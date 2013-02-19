@@ -68,17 +68,21 @@ void TaktikMeny::receiveAnimals(){
 
 	sf::RenderWindow *window = WindowManager::getInst().getWindow();
 
-	int minDist = 300;
+	int minDist = 400;
 
-	sf::Vector2f startPos = sf::Vector2f(window->getSize().x - minDist,0);
+	sf::Vector2f startPos = sf::Vector2f(window->getSize().x - minDist,64);
 	sf::Vector2f distance = sf::Vector2f(128,128);
 	mFakeAnimals = LevelManager::getInst().getAnimalsOnLevel();
-	int row = 1;
-	for(FakeAnimals::size_type i = 0; i < mFakeAnimals.size(); i++){
-		mFakeAnimals[i]->setPos(startPos + sf::Vector2f(distance.x*(i%2 != 1), distance.y*row));
-		mFakeAnimals[i]->setStartPos(startPos + sf::Vector2f(distance.x*(i%2 != 1), distance.y*row));
-		if(i%2 == 1){
-			row++;
+
+	int counter = 0;
+
+	for(int y = 0;counter < mFakeAnimals.size()-1;y++){
+		for(int x = 0;x < 4;x++){
+			mFakeAnimals[counter]->setPos(startPos + sf::Vector2f(distance.x*x, distance.y*y));
+			mFakeAnimals[counter]->setStartPos(startPos + sf::Vector2f(distance.x*x, distance.y*y));
+			counter ++;
+			if(counter > mFakeAnimals.size())
+				break;
 		}
 	}
 
