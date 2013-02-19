@@ -74,6 +74,7 @@ void TaktikMeny::receiveAnimals(){
 	sf::Vector2f distance = sf::Vector2f(128,128);
 	mFakeAnimals = LevelManager::getInst().getAnimalsOnLevel();
 	int row = 1;
+
 	for(FakeAnimals::size_type i = 0; i < mFakeAnimals.size(); i++){
 		mFakeAnimals[i]->setPos(startPos + sf::Vector2f(distance.x*(i%2 != 1), distance.y*row));
 		mFakeAnimals[i]->setStartPos(startPos + sf::Vector2f(distance.x*(i%2 != 1), distance.y*row));
@@ -112,7 +113,7 @@ void TaktikMeny::placeSpots(){
 	mPosVector.push_back(mLevelMiddle);
 	mPosVector.push_back(mLevelGround); // värdelöst ???
 
-	int xDistance = 250;
+	int xDistance = 128;
 	int startX = 80;
 
 	std::vector<float> LevelYVector = LevelManager::getInst().getLevelsOnLevel();
