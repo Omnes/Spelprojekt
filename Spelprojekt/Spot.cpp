@@ -61,3 +61,11 @@ void Spot::setColorSpot(bool colorGreen){
 	}
 
 }
+
+void Spot::setPrototypeAnimal(AnimalPrototype* PlacedAnimal){
+	mPlacedAnimal = PlacedAnimal;
+}
+
+AnimalPrototype* Spot::getPrototypeAnimal(){
+	return mPlacedAnimal;
+}
