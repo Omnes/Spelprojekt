@@ -10,7 +10,13 @@
 #include "Animal.h"
 #include "Animation.h"
 #include "Fire.h"
+/*
+**********************************************************************
+								Notes
+	spara TinyEXML::doc istället för en sträng (mFilePath)
 
+**********************************************************************
+*/
 
 
 LevelManager::LevelManager() : 
@@ -238,4 +244,14 @@ std::vector<float> LevelManager::getLevelsOnLevel(){
 	}
 
 	return LevelYVector;
+}
+
+
+std::string LevelManager::getMusicOnLevel(){
+	tinyxml2::XMLDocument doc;
+	doc.LoadFile(mFilePath.c_str());
+
+	return doc.FirstChildElement("Music")->GetText();
+	
+
 }
