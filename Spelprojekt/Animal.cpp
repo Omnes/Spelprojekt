@@ -31,6 +31,7 @@ void Animal::update(){
 	currentAnimation = 0;
 
 	mCurrentSpeed = mSpeed * mCalcSpeed * mSpeedIncrease;
+
 	if(mCalcSpeed != 0){
 		mAnimation->setFrameTime(mCalcSpeed * mSpeedIncrease);
 	}
