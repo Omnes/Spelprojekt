@@ -65,3 +65,7 @@ LayerManager* Gameplay::getLayerManager(){
 
 	return mLayerManager;
 }
+
+std::string Gameplay::getMusic(){
+	return mMusic;
+}

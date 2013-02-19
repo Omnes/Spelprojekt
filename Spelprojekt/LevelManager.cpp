@@ -116,7 +116,7 @@ std::vector<Layer*> LevelManager::loadLayers(){
 
 			mLevellength = doc.FirstChildElement("Level")->FirstAttribute()->IntValue();
 
-			float x = 500 + rand()%200;
+			float x = 1280 + rand()%100;
 
 			int minDistanceFromGoal = 250;
 

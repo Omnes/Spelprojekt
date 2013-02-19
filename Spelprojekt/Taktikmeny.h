@@ -23,6 +23,8 @@ public:
 
 	void readFromFile();
 
+	std::string getMusic();
+
 	~TaktikMeny();
 	TaktikMeny();
 
@@ -55,6 +57,8 @@ private:
 	bool mDown;
 
 	sf::Vector2f mGrabOffset;
+
+	std::string mMusic;
 
 };
 

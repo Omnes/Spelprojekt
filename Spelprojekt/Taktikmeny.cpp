@@ -19,6 +19,8 @@ TaktikMeny::TaktikMeny() :
 	readFromFile();
 	receiveAnimals();
 	placeSpots();
+
+	mMusic = "Resources/Sound/TitleScreen";
 }
 
 TaktikMeny::~TaktikMeny(){}
@@ -35,7 +37,6 @@ void TaktikMeny::update(){
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return)){
 		createAnimals();
 		EventManager::getInst().addEvent("addGameplay");
-		SoundManager::getInst().fadeTo("Resources/Sound/Level1.ogg",150);
 		
 		//EventManager::getInst().addEvent("popState");
 	}
@@ -230,4 +231,8 @@ void TaktikMeny::readFromFile(){
 		}
 		elem = elem->NextSiblingElement();
 	}
+}
+
+std::string TaktikMeny::getMusic(){
+	return mMusic;
 }

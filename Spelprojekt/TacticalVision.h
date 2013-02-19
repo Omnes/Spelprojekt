@@ -13,12 +13,15 @@ public:
 	~TacticalVision();
 	virtual void update();
 	virtual void render();
+	std::string getMusic();
 
 private:
 	Gameplay* mRenderState;
 	sf::Clock mTimer;
 	TacticalVisionCamera* mCamera;
 	float mDuration;
+
+	std::string mMusic;
 
 };
 

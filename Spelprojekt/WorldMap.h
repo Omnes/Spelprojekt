@@ -17,6 +17,8 @@ public:
 	void readFromFile();
 	void saveToFile(std::string levelName);
 
+	std::string getMusic();
+
 private:
 
 	typedef std::vector <LevelButton*> ButtonVector;
@@ -24,6 +26,8 @@ private:
 
 	typedef std::vector <std::string> PlayedLevels;
 	PlayedLevels mPlayedLevels;
+
+	std::string mMusic;
 
 	
 

@@ -2,7 +2,7 @@
 #define SOUNDMANAGER
 
 #include <string>
-#include <SFML\Audio\Music.hpp>
+#include "MusicLoop.h"
 
 class SoundManager{
 public:
@@ -10,14 +10,16 @@ public:
 	static SoundManager& getInst();
 	void update();
 
-	void play(std::string filePath);
-	void fadeTo(std::string filePath,float fadeTime);
+	void play(std::string filename);
+	void fadeTo(std::string filename,float fadeTime);
+	void loop();
+	MusicLoop* getCurrentPlaying();
 
 private:
 	float mVolume;
 	bool mMuted;
-	sf::Music* mCurrentMusic;
-	sf::Music* mFadeToMusic;
+	MusicLoop* mCurrentMusic;
+	MusicLoop* mFadeToMusic;
 
 	bool mFading;
 

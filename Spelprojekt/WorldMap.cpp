@@ -4,6 +4,7 @@ WorldMap::WorldMap(){
 	mButtonVector.push_back(new LevelButton(sf::Vector2f(300,100), "addTaktik","Resources/Misc/knapp1.jpg", "Resources/Data/Level/Jungle_Level1.xml"));
 	mButtonVector.push_back(new LevelButton(sf::Vector2f(300,300), "addTaktik","Resources/Misc/knapp2.jpg", "Resources/Data/Level/Jungle_Level2.xml"));
 	mButtonVector.push_back(new LevelButton(sf::Vector2f(300,500), "addTaktik","Resources/Misc/knapp3.jpg", "Resources/Data/Level/Jungle_Level3.xml"));
+	mMusic = "Resources/Sound/TitleScreen";
 	
 
 	//mButtonVector.push_back(new LevelButton(sf::Vector2f(200,300), "addGameplay","knapp3.jpg","Resources/Data/Jungle_Level1.xml"));
@@ -66,4 +67,8 @@ void WorldMap::saveToFile(std::string levelName){
 
 	readFromFile();
 
+}
+
+std::string WorldMap::getMusic(){
+	return mMusic;
 }

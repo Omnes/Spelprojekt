@@ -13,11 +13,14 @@ public:
 	virtual void update();
 	virtual void render();
 
+	std::string getMusic();
+
 
 private:
 	sf::Sprite mBackground;
 	Button mReturnToMain;
 	Button mLoadLast;
+	std::string mMusic;
 	
 };
 

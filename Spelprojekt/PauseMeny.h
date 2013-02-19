@@ -13,11 +13,14 @@ public:
 	void render();
 	void update();
 
+	std::string getMusic();
+
 
 private:
 	States* mRenderState;
 	sf::Sprite mSprite;
 	Button mResumeButton;
+	std::string mMusic;
 };
 
 #endif

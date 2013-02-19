@@ -17,10 +17,13 @@ public:
 	std::vector<sf::Sprite*> loadAnimals(std::vector<std::string> animalvector);
 	void setPosition();
 
+	std::string getMusic();
+
 private:
 
 	Button mButton;
 	std::vector<sf::Sprite*> mAliveVector, mDeadVector;
+	std::string mMusic;
 };
 
 #endif

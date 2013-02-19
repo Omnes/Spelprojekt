@@ -15,7 +15,7 @@ InnerBeastButton::InnerBeastButton(sf::Vector2f position, std::string texture, G
 	, mClickCooldown(150)
 	, mGui(gui)
 	, mClicked(false)
-	, mSpeedIncrease(2)
+	, mSpeedIncrease(20)
 	, mSpeedDuration(5){
 
 		mSprite.setPosition(position);

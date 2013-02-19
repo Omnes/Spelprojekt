@@ -8,6 +8,7 @@ TacticalVision::TacticalVision()
 	: mRenderState(0)
 	, mDuration(6){
 	mRenderState = dynamic_cast<Gameplay*>(StateManager::getInst().getTop());
+	mMusic = mRenderState->getMusic();
 	mTimer.restart();
 	mCamera = new TacticalVisionCamera(mRenderState->getLayerManager());
 }
@@ -45,4 +46,8 @@ void TacticalVision::render(){
 
 	
 	
+}
+
+std::string TacticalVision::getMusic(){
+	return mMusic;
 }

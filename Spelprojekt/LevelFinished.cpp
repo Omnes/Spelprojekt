@@ -15,6 +15,8 @@ LevelFinished::LevelFinished() : mButton(sf::Vector2f(500, 500), "goBackToWorld"
 	mAliveVector = loadAnimals(Alive);
 	mDeadVector = loadAnimals(Dead);
 	setPosition();
+
+	mMusic = "Resources/Sound/TitleScreen";
 }
 
 LevelFinished::~LevelFinished(){
@@ -81,6 +83,10 @@ void LevelFinished::setPosition(){
 
 		mDeadVector[i]->setPosition(startpos.x + distance * i, startpos.y + 100);
 	}
+}
+
+std::string LevelFinished::getMusic(){
+	return mMusic;
 }
 
 

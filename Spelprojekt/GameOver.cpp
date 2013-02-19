@@ -8,6 +8,8 @@ GameOver::GameOver()
 	,mLoadLast(sf::Vector2f(700,500),"popTwice","Resources/Misc/knapp2.jpg","Resources/Sound/test.wmv")
 	,mBackground(*ResourceManager::getInst().getTexture("Resources/Menu/GameOverScreenWithSadOcelotInTheMiddle.png")){
 
+		mMusic = "Resources/Sound/TitleScreen";
+
 }
 
 
@@ -26,4 +28,8 @@ void GameOver::render(){
 
 GameOver::~GameOver(){
 
+}
+
+std::string GameOver::getMusic(){
+	return mMusic;
 }

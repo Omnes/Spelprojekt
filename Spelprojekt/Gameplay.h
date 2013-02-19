@@ -16,10 +16,13 @@ public:
 	void renderFromTacVision();
 	LayerManager* getLayerManager();
 
+	std::string getMusic();
+
 private:
 	Gui mGui;
 	Camera *mCamera;
 	LayerManager *mLayerManager;
+	std::string mMusic;
 
 };
 

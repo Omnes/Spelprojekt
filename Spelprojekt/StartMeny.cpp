@@ -6,7 +6,7 @@ StartMeny::StartMeny(){
 	mButtons.push_back(new Button(sf::Vector2f(100,100), "addGameplay","Resources/Misc/knapp1.jpg", "Resources/Sound/test.wav"));
 	mButtons.push_back(new Button(sf::Vector2f(100,300), "addTaktik","Resources/Misc/knapp2.jpg","Resources/Sound/test.wav"));
 	mButtons.push_back(new Button(sf::Vector2f(100,500), "addMap","Resources/Misc/knapp3.jpg","Resources/Sound/test.wav"));
-	SoundManager::getInst().play("Resources/Sound/TitleScreen.ogg");
+	mMusic = "Resources/Sound/TitleScreen";
 }
 
 StartMeny::~StartMeny(){}
@@ -22,4 +22,8 @@ void StartMeny::render(){
 	for (std::vector<Button*>::iterator i = mButtons.begin(); i != mButtons.end(); i++){
 		window->draw((*i)->getSprite());
 	}
+}
+
+std::string StartMeny::getMusic(){
+	return mMusic;
 }

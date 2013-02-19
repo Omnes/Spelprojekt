@@ -7,6 +7,7 @@
 #include <iostream>
 #include "PauseMeny.h"
 #include "LevelFinished.h"
+#include "SoundManager.h"
 
 StateManager::StateManager(){
 	
@@ -28,6 +29,8 @@ void StateManager::popState(){
 		delete mStates.top();
 		mStates.pop();
 	}
+
+	changeMusic();
 }
 
 void StateManager::update(){
@@ -44,10 +47,26 @@ void StateManager::addState(States* state){
 	std::cout << " -->";
 	
 	mStates.push(state);
+
+	changeMusic();
 }
 
 States* StateManager::getTop(){
 	if(!mStates.empty())
 		return mStates.top();
 	return 0;
+}
+
+void StateManager::changeMusic(){
+	SoundManager* soundManager = &SoundManager::getInst();
+
+	States* topState = getTop();
+
+	float fadeTime = 120;
+
+	if(soundManager->getCurrentPlaying() == 0){
+		soundManager->play(topState->getMusic());
+	}else if(soundManager->getCurrentPlaying()->getFilepath() != topState->getMusic()){
+		soundManager->fadeTo(topState->getMusic(), fadeTime);
+	}
 }

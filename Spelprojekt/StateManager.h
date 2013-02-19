@@ -19,6 +19,8 @@ public:
 
 private:
 
+	void changeMusic();
+
 	typedef std::map<std::string, States*> StateMap;
 	StateMap mStateMap;
 	std::stack<States*> mStates;

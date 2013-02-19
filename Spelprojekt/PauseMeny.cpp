@@ -5,6 +5,7 @@
 
 PauseMeny::PauseMeny(): mRenderState(0), mResumeButton(sf::Vector2f(640,480),"popState","Resources/Misc/knapp1.jpg", "Resources/Sound/test.wav"){
 	mRenderState = StateManager::getInst().getTop();
+	mMusic = mRenderState->getMusic();
 	mSprite.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/PauseMenu/paused.png"));
 }
 
@@ -29,4 +30,8 @@ void PauseMeny::render(){
 void PauseMeny::update(){
 	mResumeButton.update();
 
+}
+
+std::string PauseMeny::getMusic(){
+	return mMusic;
 }

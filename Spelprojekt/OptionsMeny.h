@@ -10,8 +10,11 @@ public:
 	OptionsMeny();
 	~OptionsMeny();
 
+	std::string getMusic();
+
 private:
 	std::vector<Button*> mButtons;
+	std::string mMusic;
 	
 };
 
