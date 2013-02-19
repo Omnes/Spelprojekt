@@ -64,13 +64,25 @@ void TaktikMeny::render(){
 
 //tar emot och placerar ut animaler innan de kan placeras
 void TaktikMeny::receiveAnimals(){
-	sf::Vector2f startPos = sf::Vector2f(500,300);
-	sf::Vector2f distance = sf::Vector2f(128,0);
+
+	sf::RenderWindow *window = WindowManager::getInst().getWindow();
+
+	int minDist = 300;
+
+	sf::Vector2f startPos = sf::Vector2f(window->getSize().x - minDist,0);
+	sf::Vector2f distance = sf::Vector2f(128,128);
 	mFakeAnimals = LevelManager::getInst().getAnimalsOnLevel();
+	int row = 1;
 	for(FakeAnimals::size_type i = 0; i < mFakeAnimals.size(); i++){
-		mFakeAnimals[i]->setPos(startPos + sf::Vector2f(distance.x*i,distance.y*i));
-		mFakeAnimals[i]->setStartPos(startPos + sf::Vector2f(distance.x*i,distance.y*i));
+		mFakeAnimals[i]->setPos(startPos + sf::Vector2f(distance.x*(i%2 != 1), distance.y*row));
+		mFakeAnimals[i]->setStartPos(startPos + sf::Vector2f(distance.x*(i%2 != 1), distance.y*row));
+		if(i%2 == 1){
+			row++;
+		}
 	}
+
+
+
 }
 
 void TaktikMeny::placeSpots(){
@@ -137,7 +149,7 @@ void TaktikMeny::isClicked(){
 
 			//kan fucka ur om man tar djur utanför spotboxen
 			for(SpotVector::iterator i = mSpotVector.begin(); i != mSpotVector.end(); i++){
-				if((*i)->getSprite()->getGlobalBounds().contains(musPosition)){
+				if((*i)->getPrototypeAnimal() == mCurrentDragAnimal){
 					(*i)->setTakenSpot(false);
 				}
 			}
@@ -188,6 +200,10 @@ void TaktikMeny::isNotClicked(){
 						if((*j)->getActSpot() == true && (*j)->getTakenSpot() == false && mCurrentDragAnimal->getSprite()->getGlobalBounds().intersects((*j)->getSprite()->getGlobalBounds())){
 							mCurrentDragAnimal->setPos((*j)->getSprite()->getPosition());
 							mCurrentDragAnimal->setStandardSpeed(mSpeedVector[i]);
+							
+							//här är pekarsatsen
+							(*j)->setPrototypeAnimal(mCurrentDragAnimal);
+
 							mCurrentDragAnimal = 0;
 							(*j)->setTakenSpot(true);
 							(*j)->setColorSpot(true);
@@ -204,6 +220,7 @@ void TaktikMeny::isNotClicked(){
 
 		for(SpotVector::iterator i = mSpotVector.begin(); i != mSpotVector.end(); i++){
 			if((*i)->getTakenSpot() == false){
+				(*i)->setPrototypeAnimal(0);
 				(*i)->setActSpot(false);
 				(*i)->setColorSpot(false);
 			}

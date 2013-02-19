@@ -24,7 +24,12 @@ public:
 	void setColorSpot(bool taken);
 
 	sf::Sprite* getSprite();
-	
+
+	void setPrototypeAnimal(AnimalPrototype* PlacedAnimal);
+	AnimalPrototype* getPrototypeAnimal();
+
+
+
 private:
 
 	sf::Texture mTexture;

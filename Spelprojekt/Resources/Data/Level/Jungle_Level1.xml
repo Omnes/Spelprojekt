@@ -96,7 +96,7 @@
 
 <Fire speed = "1"/>
 
-<LevelsYValue air="30" middle="220" ground="430"/>
+<LevelsYValue air="100" middle="290" ground="500"/>
 
 
 
