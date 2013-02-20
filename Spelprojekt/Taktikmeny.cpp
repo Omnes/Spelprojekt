@@ -83,6 +83,7 @@ void TaktikMeny::receiveAnimals(){
 			counter ++;
 			if(counter >= mFakeAnimals.size())
 				return;
+
 		}
 	}
 

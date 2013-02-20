@@ -68,6 +68,14 @@ void SoundManager::fadeTo(std::string filename,float fadeTime){
 
 	mFadeVolumeDeltaChange = currentVolume/fadeTime;
 
+	if(mFadeToMusic != 0 && mCurrentMusic != 0){
+		mCurrentMusic->stop();
+		delete mCurrentMusic;
+		mCurrentMusic = mFadeToMusic;
+		mFadeToMusic = 0;
+		mCurrentMusic->setVolume(mVolume*(!mMuted));
+	}
+
 	mFadeToMusic = new MusicLoop(filename);
 	mFadeToMusic->setVolume(0);
 	mFadeToMusic->play();

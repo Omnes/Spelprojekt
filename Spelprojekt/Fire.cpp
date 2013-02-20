@@ -1,14 +1,17 @@
 #include "Fire.h"
 #include "ResourceManager.h"
 #include <iostream>
+#include "ParticleManager.h"
 
-Fire::Fire(sf::Vector2f position,float speed): mID("Fire"), mPosition(position), mSpeed(speed), mAlive(true),mFireSystem("Firewall",500),mSmokeSystem("Smoke",770){
+Fire::Fire(sf::Vector2f position,float speed): mID("Fire"), mPosition(position), mSpeed(speed), mAlive(true),mFireSystem("Firewall",500),mSmokeSystem("Smoke",770),mPoofSystem("Smoke",50){
 	mSprite.setTexture(*ResourceManager::getInst().getTexture("Resources/Animals/eld.png"));
 	mFireSystem.setBlendMode(sf::BlendAdd);
 	mSmokeSystem.setBlendMode(sf::BlendAlpha);
 	mSprite.setColor(sf::Color(0,0,0,0));
 	mEmitter.setPosition(mPosition);
 	mSprite.setPosition(mPosition);
+
+	
 }
 
 void Fire::update(){
@@ -39,6 +42,8 @@ void Fire::setAlive(bool alive){
 }
 
 void Fire::collide(Entity* entity){
+	mEmitter.setPosition(entity->getPos());
+	mEmitter.burst(mPoofSystem,30,10);
 	entity->setAlive(false);
 }
 

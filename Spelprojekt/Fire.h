@@ -28,6 +28,7 @@ private:
 	bool mAlive;
 	ParticleSystem mSmokeSystem;
 	ParticleSystem mFireSystem;
+	ParticleSystem mPoofSystem;
 	
 	Emitter mEmitter;
 

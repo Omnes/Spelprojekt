@@ -37,8 +37,7 @@ void Game::run(){
 	SoundManager* soundManager = &SoundManager::getInst();
 	ParticleManager* particleManager = &ParticleManager::getInst();
 	particleManager->loadPrototype("Resources/Data/Particle/buttonParticle.xml"); // <------- ska bort härifrån annars ser det ut som zumas kod
-	particleManager->loadPrototype("Resources/Data/Particle/firewallParticle.xml");
-	particleManager->loadPrototype("Resources/Data/Particle/smokeParticle.xml");
+
 
 	//sf::Sprite aim = sf::Sprite(*ResourceManager::getInst().getTexture("Resources/Misc/pointer.png"));
 

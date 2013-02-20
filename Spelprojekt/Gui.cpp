@@ -5,6 +5,7 @@
 #include "TacticalVisionButton.h"
 #include "InnerBeastButton.h"
 #include <string>
+#include "ParticleManager.h"
 
 Gui::Gui(): mWindow(WindowManager::getInst().getWindow()){
 
@@ -18,8 +19,12 @@ Gui::Gui(): mWindow(WindowManager::getInst().getWindow()){
 	button2vector.push_back("Box");
 	button2vector.push_back("Oil");
 
-	mButtons.push_back(new RemoveObstacleButton(button1vector,sf::Vector2f(0,100),"Resources/GUI/elephantcrush.png",this));
-	mButtons.push_back(new RemoveObstacleButton(button2vector,sf::Vector2f(0,250),"Resources/GUI/diskmedel.png",this));
+	ParticleManager* particleManager = &ParticleManager::getInst();
+	particleManager->loadPrototype("Resources/Data/Particle/heartParticle.xml");
+	particleManager->loadPrototype("Resources/Data/Particle/dirtParticle.xml");
+
+	mButtons.push_back(new RemoveObstacleButton(button1vector,sf::Vector2f(0,100),"Resources/GUI/elephantcrush.png","Dirt",50,this));
+	mButtons.push_back(new RemoveObstacleButton(button2vector,sf::Vector2f(0,250),"Resources/GUI/diskmedel.png","Heart",20,this));
 	mButtons.push_back(new TacticalVisionButton(sf::Vector2f(0,400),"Resources/GUI/sonar.png",this));
 	mButtons.push_back(new InnerBeastButton(sf::Vector2f(0,600),"Resources/Misc/knapp2.jpg",this));
 
