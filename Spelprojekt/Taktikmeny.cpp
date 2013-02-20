@@ -5,6 +5,7 @@
 #include "AnimalPrototype.h"
 #include "EventManager.h"
 #include "SoundManager.h"
+#include "TacticMenuButton.h"
 
 #include <SFML\Window\Mouse.hpp>
 #include <SFML\Graphics\RectangleShape.hpp>
@@ -14,8 +15,11 @@ TaktikMeny::TaktikMeny() :
 	mCurrentDragAnimal(0),
 	mLevelTop(0),
 	mLevelMiddle(0),
-	mLevelGround(0)
+	mLevelGround(0),
+	mAllSpotsTaken(false)
 {
+	mButton = new TacticMenuButton(sf::Vector2f(100,100), this, "Resources/Misc/knapp1.jpg", "Resources/Sound/test.wav");
+
 	readFromFile();
 	receiveAnimals();
 	placeSpots();
@@ -37,8 +41,6 @@ void TaktikMeny::update(){
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return)){
 		createAnimals();
 		EventManager::getInst().addEvent("addGameplay");
-		
-		//EventManager::getInst().addEvent("popState");
 	}
 }
 
@@ -256,4 +258,8 @@ void TaktikMeny::readFromFile(){
 
 std::string TaktikMeny::getMusic(){
 	return mMusic;
+}
+
+bool TaktikMeny::getAllSpotsTaken(){
+	
 }
