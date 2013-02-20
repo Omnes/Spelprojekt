@@ -1,0 +1,14 @@
+<Particle>
+	<Name>Fire</Name>
+	<Texture yframes="1">resources/particle/gul.png</Texture>
+	<Life min="90" max="150"/>
+	<Direction min ="0" max="360"/>
+	<Speed min="1" max="2" increase="-0.01"/>
+	<Rotation min="0" max="360" increaseMin="0" increaseMax="0"/>
+	<Scale min="1" max="2" increase="0"/>
+	<Color>
+		<Start r="0" g="0" b="0" a="255"/>
+		<End r="255" g="255" b="255" a="255"/>
+	</Color>
+
+</Particle>

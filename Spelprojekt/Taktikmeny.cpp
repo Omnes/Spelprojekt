@@ -81,7 +81,7 @@ void TaktikMeny::receiveAnimals(){
 			mFakeAnimals[counter]->setPos(startPos + sf::Vector2f(distance.x*x, distance.y*y));
 			mFakeAnimals[counter]->setStartPos(startPos + sf::Vector2f(distance.x*x, distance.y*y));
 			counter ++;
-			if(counter > mFakeAnimals.size())
+			if(counter >= mFakeAnimals.size())
 				break;
 		}
 	}

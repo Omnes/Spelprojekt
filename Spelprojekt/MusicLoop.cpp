@@ -45,9 +45,9 @@ float MusicLoop::getVolume(){
 
 
 void MusicLoop::stop(){
-	//if(mCurrentPlaying != 0){ kanske crashar nu
+	if(mCurrentPlaying != 0){
 		mCurrentPlaying->stop();
-	//}
+	}
 
 }
 

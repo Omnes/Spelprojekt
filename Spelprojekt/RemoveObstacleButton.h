@@ -8,11 +8,14 @@
 #include <SFML\Graphics\Sprite.hpp>
 #include <SFML\System\Clock.hpp>
 
+#include "ParticleSystem.h"
+#include "Emitter.h"
+
 class Gui;
 
 class RemoveObstacleButton: public AbilityButton{
 public:
-	RemoveObstacleButton(std::vector<std::string> obstacle,sf::Vector2f position, std::string texture, Gui* gui);
+	RemoveObstacleButton(std::vector<std::string> obstacle,sf::Vector2f position, std::string texture,std::string particleName,int EmittAmount, Gui* gui);
 
 	virtual void update();
 	virtual sf::Sprite* getSprite();
@@ -33,6 +36,10 @@ private:
 	sf::Clock mClickCooldownTimer;
 	sf::Clock mCooldownTimer;
 	Gui* mGui;
+
+	int mEmittAmount;
+	ParticleSystem mParticleSystem;
+	Emitter mEmitter;
 
 
 

@@ -2,6 +2,7 @@
 #include "tinyxml2.h"
 #include <SFML\Graphics\Sprite.hpp>
 #include "ResourceManager.h"
+#include "ParticleManager.h"
 #include "StaticLayer.h"
 #include "ActiveLayer.h"
 #include <iostream>
@@ -167,6 +168,10 @@ std::vector<Layer*> LevelManager::loadLayers(){
 			
 			}
 
+			//skapar elden
+			ParticleManager* particleManager = &ParticleManager::getInst();
+			particleManager->loadPrototype("Resources/Data/Particle/firewallParticle.xml");
+			particleManager->loadPrototype("Resources/Data/Particle/smokeParticle.xml");
 			float fireSpeed = doc.FirstChildElement("Fire")->FirstAttribute()->FloatValue();
 			entityVector.push_back(new Fire(sf::Vector2f(-150,0),fireSpeed));
 

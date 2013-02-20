@@ -4,6 +4,7 @@
 #include <SFML\Graphics\RenderWindow.hpp>
 #include <SFML\Graphics\Texture.hpp>
 #include "tinyxml2.h"
+#include "iostream"
 
 
 ParticleManager::ParticleManager(){
@@ -83,6 +84,7 @@ void ParticleManager::loadPrototype(std::string filePath){
 	PrototypeMap::iterator i;
 	i = mPrototypeMap.find(name);
 	if(i != mPrototypeMap.end()){
+		std::cout<< std::endl << name << " is already loaded!";
 		return;
 	}
 
