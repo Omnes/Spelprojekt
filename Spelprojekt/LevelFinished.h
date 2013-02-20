@@ -24,6 +24,8 @@ private:
 	Button mButton;
 	std::vector<sf::Sprite*> mAliveVector, mDeadVector;
 	std::string mMusic;
+
+	sf::Sprite mBackground;
 };
 
 #endif

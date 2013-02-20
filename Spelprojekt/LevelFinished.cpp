@@ -16,6 +16,7 @@ LevelFinished::LevelFinished() : mButton(sf::Vector2f(500, 500), "goBackToWorld"
 	mDeadVector = loadAnimals(Dead);
 	setPosition();
 
+	mBackground.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/LevelFinished.png"));
 	mMusic = "Resources/Sound/Level1_";
 }
 
@@ -26,6 +27,8 @@ LevelFinished::~LevelFinished(){
 void LevelFinished::render(){
 
 	sf::RenderWindow* window = WindowManager::getInst().getWindow();
+
+	window->draw(mBackground);
 
 
 	for(std::vector<sf::Sprite*>::iterator i = mAliveVector.begin(); i != mAliveVector.end(); i++){
@@ -71,7 +74,7 @@ std::vector<sf::Sprite*> LevelFinished::loadAnimals(std::vector<std::string> ani
 
 void LevelFinished::setPosition(){
 
-	sf::Vector2f startpos(200,200);
+	sf::Vector2f startpos(200,50);
 	float distance = 100;
 
 	for(int i = 0; i<mAliveVector.size(); i++){
