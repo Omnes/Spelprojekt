@@ -197,6 +197,9 @@
     <ClCompile Include="tinyxml2.cpp">
       <Filter>Source Files\TinyXML2</Filter>
     </ClCompile>
+    <ClCompile Include="TacticMenuButton.cpp">
+      <Filter>Source Files\Interface</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EventManager.h">
@@ -381,6 +384,9 @@
     </ClInclude>
     <ClInclude Include="tinyxml2.h">
       <Filter>Header Files\TinyXML2</Filter>
+    </ClInclude>
+    <ClInclude Include="TacticMenuButton.h">
+      <Filter>Header Files\Interface</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

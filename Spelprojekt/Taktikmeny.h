@@ -6,6 +6,7 @@
 #include "Entity.h"
 #include "ResourceManager.h"
 
+class TacticMenuButton;
 class LevelManager;
 class Spot;
 
@@ -24,6 +25,8 @@ public:
 	void readFromFile();
 
 	std::string getMusic();
+
+	bool getAllSpotsTaken();
 
 	~TaktikMeny();
 	TaktikMeny();
@@ -59,6 +62,10 @@ private:
 	sf::Vector2f mGrabOffset;
 
 	std::string mMusic;
+
+	Button mButton;
+
+	bool mAllSpotsTaken;
 
 };
 
