@@ -28,6 +28,17 @@ TaktikMeny::TaktikMeny() :
 }
 
 TaktikMeny::~TaktikMeny(){
+
+	while(mSpotVector.size() != 0){
+		delete mSpotVector.back();
+		mSpotVector.pop_back();
+	}
+
+	while(mFakeAnimals.size() != 0){
+		delete mFakeAnimals.back();
+		mFakeAnimals.pop_back();
+	}
+
 	delete mButton;
 }
 
