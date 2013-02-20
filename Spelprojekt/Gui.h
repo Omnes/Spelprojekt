@@ -12,6 +12,7 @@ public:
 	void update();
 	void render();
 	void unclickAll();
+	void loadAbilites();
 
 	Gui();
 	~Gui();

@@ -89,9 +89,14 @@
 	<FallenTree chance="50" speedMod="0.5" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/fallentree.png</FallenTree>
 	<Stone chance="25" speedMod="0.5" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/stone.png</Stone>
 
-
-
 </Obstacles>
+
+<Abilities>
+	<Ability>Crush</Ability>
+	<Ability>Love</Ability>
+	<Ability>Sonar</Ability>
+	<Ability>InnerBeast</Ability>
+</Abilities>
 
 
 <Fire speed = "1"/>

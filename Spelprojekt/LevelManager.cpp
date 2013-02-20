@@ -260,3 +260,20 @@ std::string LevelManager::getMusicOnLevel(){
 	
 
 }
+
+std::vector<std::string> LevelManager::getAbilitiesOnLevel(){
+	std::vector<std::string> vector;
+
+	tinyxml2::XMLDocument doc;
+	doc.LoadFile(mFilePath.c_str());
+
+	tinyxml2::XMLElement *elem = doc.FirstChildElement("Abilities")->FirstChildElement();
+
+	while(elem != 0){
+		vector.push_back(elem->GetText());
+		elem = elem->NextSiblingElement();
+	}
+
+	return vector;
+
+}
