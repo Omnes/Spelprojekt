@@ -23,6 +23,7 @@ public:
 	std::vector<std::string>* getDeadAnimalCollection();
 	std::vector<Layer*> loadLayers();
 	std::string getMusicOnLevel();
+	std::vector<std::string> getAbilitiesOnLevel();
 	static LevelManager& getInst();
 	ActiveLayer* getActiveLayer();
 	void setCamera(Camera* camera);

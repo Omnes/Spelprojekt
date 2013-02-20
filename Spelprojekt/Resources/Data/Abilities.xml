@@ -1,0 +1,36 @@
+<Abilities>
+	<Sonar>
+		<Type>Vision</Type>
+		<Texture>Resources/GUI/sonar.png</Texture>
+	</Sonar>
+
+	<InnerBeast>
+		<Type>Speed</Type>
+		<Texture>Resources/GUI/sonar.png</Texture>
+	</InnerBeast>
+
+	<Crush>
+		<Type>Remove</Type>
+		<Texture>Resources/GUI/elephantcrush.png</Texture>
+		<ParticleEffekt amount="50">Dirt</ParticleEffekt>
+		<CanRemove>
+			<Obstacle>Stone</Obstacle>
+			<Obstacle>FallenTree</Obstacle>
+		</CanRemove>
+
+	</Crush>
+
+	<Love>
+		<Type>Remove</Type>
+		<Texture>Resources/GUI/diskmedel.png</Texture>
+		<ParticleEffekt amount="20">Heart</ParticleEffekt>
+		<CanRemove>
+			<Obstacle>Bees</Obstacle>
+			<Obstacle>GarbageSwamp</Obstacle>
+			<Obstacle>Box</Obstacle>
+			<Obstacle>Oil</Obstacle>
+		</CanRemove>
+
+	</Love>
+
+</Abilities>

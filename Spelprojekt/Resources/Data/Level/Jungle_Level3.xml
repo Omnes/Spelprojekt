@@ -94,6 +94,13 @@
 
 </Obstacles>
 
+<Abilities>
+	<Ability>Crush</Ability>
+	<Ability>Love</Ability>
+	<Ability>Sonar</Ability>
+	<Ability>InnerBeast</Ability>
+</Abilities>
+
 <Fire speed = "0.4"/>
 
 
