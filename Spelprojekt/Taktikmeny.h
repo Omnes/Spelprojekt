@@ -67,6 +67,8 @@ private:
 
 	bool mAllSpotsTaken;
 
+	sf::Sprite mAnimalSpriteBg;
+
 };
 
 

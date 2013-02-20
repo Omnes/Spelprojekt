@@ -20,6 +20,10 @@ TaktikMeny::TaktikMeny() :
 {
 	mButton = new TacticMenuButton(sf::Vector2f(500,600), this, "Resources/Misc/knapp1.jpg", "Resources/Sound/test.wav");
 
+	mAnimalSpriteBg.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/TacticMenu/taktikdjurbg.png"));
+	mAnimalSpriteBg.setPosition(550, 0);
+
+
 	readFromFile();
 	receiveAnimals();
 	placeSpots();
@@ -63,6 +67,8 @@ void TaktikMeny::render(){
 		window->draw((*i));
 	}
 
+	window->draw(mAnimalSpriteBg);
+
 	for(SpotVector::iterator i = mSpotVector.begin(); i != mSpotVector.end(); i++){
 		window->draw(*(*i)->getSprite());
 	}
@@ -83,7 +89,7 @@ void TaktikMeny::receiveAnimals(){
 
 	int minDist = 600;
 
-	sf::Vector2f startPos = sf::Vector2f(window->getSize().x - minDist,64);
+	sf::Vector2f startPos = sf::Vector2f(window->getSize().x - minDist,128);
 	sf::Vector2f distance = sf::Vector2f(128,128);
 	mFakeAnimals = LevelManager::getInst().getAnimalsOnLevel();
 
