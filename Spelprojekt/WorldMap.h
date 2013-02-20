@@ -30,7 +30,6 @@ private:
 
 	std::string mMusic;
 
-	sf::Texture mTexture;
 	sf::Sprite mSprite;
 
 	
