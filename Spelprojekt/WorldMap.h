@@ -3,6 +3,7 @@
 #include "States.h"
 #include "LevelButton.h"
 
+#include "SFML\Graphics\Texture.hpp"
 #include "tinyxml2.h"
 #include <string> // kanske inte behövs (se: saveToFile(std::string))
 
@@ -28,6 +29,9 @@ private:
 	PlayedLevels mPlayedLevels;
 
 	std::string mMusic;
+
+	sf::Texture mTexture;
+	sf::Sprite mSprite;
 
 	
 

@@ -1,11 +1,14 @@
 #include "WorldMap.h"
 #include "WindowManager.h"
 WorldMap::WorldMap(){
-	mButtonVector.push_back(new LevelButton(sf::Vector2f(300,100), "addTaktik","Resources/Misc/knapp1.jpg", "Resources/Data/Level/Jungle_Level1.xml"));
-	mButtonVector.push_back(new LevelButton(sf::Vector2f(300,300), "addTaktik","Resources/Misc/knapp2.jpg", "Resources/Data/Level/Jungle_Level2.xml"));
-	mButtonVector.push_back(new LevelButton(sf::Vector2f(300,500), "addTaktik","Resources/Misc/knapp3.jpg", "Resources/Data/Level/Jungle_Level3.xml"));
+	mButtonVector.push_back(new LevelButton(sf::Vector2f(250,500), "addTaktik","Resources/Misc/knapp1.jpg", "Resources/Data/Level/Jungle_Level1.xml"));
+	mButtonVector.push_back(new LevelButton(sf::Vector2f(100,550), "addTaktik","Resources/Misc/knapp2.jpg", "Resources/Data/Level/Jungle_Level2.xml"));
+	mButtonVector.push_back(new LevelButton(sf::Vector2f(300,550), "addTaktik","Resources/Misc/knapp3.jpg", "Resources/Data/Level/Jungle_Level3.xml"));
 	mMusic = "Resources/Sound/TitleScreen";
-	
+
+	mTexture.loadFromFile("Resources/Menu/WorldMenu/worldmap.png");
+	mSprite.setTexture(mTexture);
+	mSprite.setPosition(0,0);
 
 	//mButtonVector.push_back(new LevelButton(sf::Vector2f(200,300), "addGameplay","knapp3.jpg","Resources/Data/Jungle_Level1.xml"));
 	readFromFile();
@@ -20,7 +23,11 @@ void WorldMap::update(){
 }
 
 void WorldMap::render(){
+	
 	sf::RenderWindow* window = WindowManager::getInst().getWindow();
+	
+	window->draw(mSprite);
+	
 	for (std::vector<LevelButton*>::iterator i = mButtonVector.begin(); i != mButtonVector.end(); i++){
 		window->draw((*i)->getSprite());
 	}

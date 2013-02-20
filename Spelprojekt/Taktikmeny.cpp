@@ -18,7 +18,7 @@ TaktikMeny::TaktikMeny() :
 	mLevelGround(0),
 	mAllSpotsTaken(false)
 {
-	mButton = new TacticMenuButton(sf::Vector2f(100,100), this, "Resources/Misc/knapp1.jpg", "Resources/Sound/test.wav");
+	mButton = new TacticMenuButton(sf::Vector2f(500,600), this, "Resources/Misc/knapp1.jpg", "Resources/Sound/test.wav");
 
 	readFromFile();
 	receiveAnimals();
