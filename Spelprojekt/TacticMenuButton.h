@@ -37,6 +37,7 @@ private:
 	Emitter mEmitter;
 	ParticleSystem mPartSystem;
 
+	TaktikMeny* mTaktikMeny;
 
 };
 

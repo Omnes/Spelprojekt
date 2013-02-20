@@ -1,12 +1,21 @@
 #include "TacticMenuButton.h"
-#include "Taktikmeny.h"
+#include "TaktikMeny.h"
 #include "ResourceManager.h"
 #include "EventManager.h"
 #include "WindowManager.h"
 #include "AnimalPrototype.h"
 
 
-TacticMenuButton::TacticMenuButton(sf::Vector2f pos, TaktikMenu* tacticMenu, std::string img, std::string sound) : mPosition(pos), mEvent(evt), mCurrentImage(0), mPartSystem("ButtonEffekt",100){
+TacticMenuButton::TacticMenuButton(sf::Vector2f pos, TaktikMeny* tacticMenu, std::string img, std::string sound) : 
+
+	mPosition(pos),
+	mCurrentImage(0),
+	mPartSystem("ButtonEffekt",100),
+	mTaktikMeny(tacticMenu)
+{
+	
+		
+		
 	mTexture = (ResourceManager::getInst().getTexture(img));
 	mSprite.setTexture(*mTexture);
 	mSprite.setPosition(mPosition);
@@ -28,17 +37,27 @@ void TacticMenuButton::update(){
 
 	sf::RenderWindow* window = WindowManager::getInst().getWindow();
 	
-	if(mSprite.getGlobalBounds().contains((sf::Vector2f)sf::Mouse::getPosition(*window))){		
-	
-		mEmitter.burst(mPartSystem,sf::FloatRect(0,0,66,150),1);
-		mCurrentImage=1;
 
-		if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){ 
+	//mTaktikMeny->getAllSpotsTaken() returnar false im det inte finns några lediga spots
+	if(mSprite.getGlobalBounds().contains((sf::Vector2f)sf::Mouse::getPosition(*window))){
+		//kan sätta denna framför mSprite.getGlobalBounds().... för att få bättre 
+		// visuell feedback att alla spots är tagna
+
+		if(mTaktikMeny->getFreeSpots() == false){
+
+			mEmitter.burst(mPartSystem,sf::FloatRect(0,0,66,150),1);
+			mCurrentImage=1;
+
+			if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){ 
 	
-			mSound.play();
-			mCurrentImage=2;
-			/*EventManager::getInst().addEvent("gameplay");*/
-		}		
+				mSound.play();
+				mCurrentImage=2;
+
+				mTaktikMeny->createAnimals();
+				EventManager::getInst().addEvent("addGameplay");
+			}
+
+		}
 	}
 
 	else{

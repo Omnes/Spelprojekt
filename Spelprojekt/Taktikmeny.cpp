@@ -27,7 +27,9 @@ TaktikMeny::TaktikMeny() :
 	mMusic = "Resources/Sound/TitleScreen";
 }
 
-TaktikMeny::~TaktikMeny(){}
+TaktikMeny::~TaktikMeny(){
+	delete mButton;
+}
 
 
 void TaktikMeny::update(){
@@ -38,10 +40,7 @@ void TaktikMeny::update(){
 		isNotClicked();
 	}
 
-	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return)){
-		createAnimals();
-		EventManager::getInst().addEvent("addGameplay");
-	}
+	mButton->update();
 }
 
 void TaktikMeny::render(){
@@ -61,6 +60,7 @@ void TaktikMeny::render(){
 		window->draw(*(*i)->getSprite());
 	}
 
+	window->draw(mButton->getSprite());
 
 }
 
@@ -261,6 +261,15 @@ std::string TaktikMeny::getMusic(){
 	return mMusic;
 }
 
-bool TaktikMeny::getAllSpotsTaken(){
-	
+bool TaktikMeny::getFreeSpots(){
+
+	bool freeSpots = false;
+
+	for(SpotVector::iterator i = mSpotVector.begin(); i != mSpotVector.end(); i++){
+		if((*i)->getPrototypeAnimal() == 0){
+			freeSpots = true;
+		}
+	}
+
+	return freeSpots;
 }

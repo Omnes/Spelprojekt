@@ -26,7 +26,7 @@ public:
 
 	std::string getMusic();
 
-	bool getAllSpotsTaken();
+	bool getFreeSpots();
 
 	~TaktikMeny();
 	TaktikMeny();
@@ -63,7 +63,7 @@ private:
 
 	std::string mMusic;
 
-	Button mButton;
+	TacticMenuButton* mButton;
 
 	bool mAllSpotsTaken;
 
