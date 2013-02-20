@@ -15,6 +15,8 @@ public:
 private:
 	std::vector<Button*> mButtons;
 	std::string mMusic;
+
+	sf::Sprite mBackground;
 	
 };
 

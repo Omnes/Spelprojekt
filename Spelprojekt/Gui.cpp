@@ -17,8 +17,8 @@ Gui::Gui(): mWindow(WindowManager::getInst().getWindow()){
 
 	loadAbilites();
 
-	mGuiSprite.setTexture(*ResourceManager::getInst().getTexture("Resources/Misc/Ui.png"));
-	mGuiSprite.setPosition(sf::Vector2f(0,720-72));
+	mGuiSprite.setTexture(*ResourceManager::getInst().getTexture("Resources/GUI/SwampGUI.png"));
+	mGuiSprite.setPosition(sf::Vector2f(0,0));
 }
 
 void Gui::update(){
@@ -27,10 +27,10 @@ void Gui::update(){
 	}
 }
 void Gui::render(){
-	mWindow->draw(mGuiSprite);
 	for(AbilityButtons::iterator i = mButtons.begin(); i != mButtons.end(); i++){
 		mWindow->draw(*(*i)->getSprite());
 	}
+	mWindow->draw(mGuiSprite);
 }
 
 void Gui::unclickAll(){
@@ -47,8 +47,11 @@ void Gui::loadAbilites(){
 
 	float abilityNumber = 0;
 
-	sf::Vector2f startPosition = sf::Vector2f(100,600);
+	sf::Vector2f startPosition = sf::Vector2f(0,625);
 	sf::Vector2f distance = sf::Vector2f(200,0);
+	sf::Vector2f distance2 = sf::Vector2f(150,0);
+
+	sf::Vector2f position = startPosition;
 
 	for(std::vector<std::string>::iterator i = abilities.begin(); i != abilities.end();i++){
 		tinyxml2::XMLElement *elm = doc.FirstChildElement("Abilities")->FirstChildElement((*i).c_str());
@@ -57,7 +60,13 @@ void Gui::loadAbilites(){
 
 		std::string type = elm->FirstChildElement("Type")->GetText();
 
-		sf::Vector2f position = startPosition + distance * abilityNumber;
+		
+
+		if((int)abilityNumber % 2 == 1){
+			position += distance;
+		}else{
+			position += distance2;
+		}
 
 		if(type == "Vision"){
 			mButtons.push_back(new TacticalVisionButton(position,texture,this));
