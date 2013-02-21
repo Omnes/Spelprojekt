@@ -4,9 +4,9 @@
 
 
 WorldMap::WorldMap(){
-	mButtonVector.push_back(new LevelButton(sf::Vector2f(250,500), "addTaktik","Resources/Misc/knapp1.jpg", "Resources/Data/Level/Jungle_Level1.xml"));
-	mButtonVector.push_back(new LevelButton(sf::Vector2f(100,550), "addTaktik","Resources/Misc/knapp2.jpg", "Resources/Data/Level/Jungle_Level2.xml"));
-	mButtonVector.push_back(new LevelButton(sf::Vector2f(300,550), "addTaktik","Resources/Misc/knapp3.jpg", "Resources/Data/Level/Jungle_Level3.xml"));
+	mButtonVector.push_back(new LevelButton(sf::Vector2f(100,400), "addTaktik","Resources/Menu/WorldMenu/djungel.png", "Resources/Data/Level/Jungle_Level1.xml"));
+	mButtonVector.push_back(new LevelButton(sf::Vector2f(500,400), "addTaktik","Resources/Menu/WorldMenu/swamp.png", "Resources/Data/Level/Jungle_Level2.xml"));
+	mButtonVector.push_back(new LevelButton(sf::Vector2f(950,350), "addTaktik","Resources/Menu/WorldMenu/night.png", "Resources/Data/Level/Jungle_Level3.xml"));
 	mMusic = "Resources/Sound/TitleScreen";
 
 	mSprite.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/WorldMenu/worldmap.png"));

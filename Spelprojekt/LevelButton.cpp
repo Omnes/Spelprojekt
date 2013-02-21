@@ -4,12 +4,18 @@
 #include "WindowManager.h"
 #include "LevelManager.h"
 
-LevelButton::LevelButton(sf::Vector2f pos, std::string evt, std::string img, std::string level) : mPosition(pos), mEvent(evt), mImage(img), mCurrentImage(0), mLevel(level), mAlive(true){
+LevelButton::LevelButton(sf::Vector2f pos, std::string evt, std::string img, std::string level) 
+	: mPosition(pos)
+	, mEvent(evt)
+	, mImage(img)
+	, mCurrentImage(0)
+	, mLevel(level)
+	, mAlive(true){
 	mTexture = *(ResourceManager::getInst().getTexture(img));
 	mSprite.setTexture(mTexture);
 	mSprite.setPosition(mPosition);
-	mRectangle = sf::IntRect(0,0, mTexture.getSize().x/3, mTexture.getSize().y);
-		mSprite.setTextureRect(mRectangle);
+	mRectangle = sf::IntRect(0,0, mTexture.getSize().x/1, mTexture.getSize().y); //Rekten ska ha rätt bredd
+	mSprite.setTextureRect(mRectangle);
 
 }
 
@@ -44,7 +50,7 @@ void LevelButton::update(){
 		mCurrentImage=0;
 	}
 
-	mRectangle.left = mRectangle.width*mCurrentImage;
+	//mRectangle.left = mRectangle.width*mCurrentImage; // kommentera in den här när vi har en lämplig bild
 	mSprite.setTextureRect(mRectangle);
 }
 
