@@ -1,12 +1,12 @@
 <Animal>
 
-	<Name>Monkey</Name>
+	<Name>Bat</Name>
 
 	<Images>Resources/Animals/bat.png</Images>
 
 	<Speed air="2" middle="1.3" ground="0"/>
 	
-	<AnimalType>plant</AnimalType>
+	<AnimalType>meat</AnimalType>
 
 	<ImageAttr fTick="100" frames="10"/>
 

@@ -110,7 +110,11 @@ std::vector<Layer*> LevelManager::loadLayers(){
 			int minDistance = doc.FirstChildElement("Obstacles")->FirstAttribute()->IntValue();
 			int maxDistance = doc.FirstChildElement("Obstacles")->FirstAttribute()->Next()->IntValue();
 
+<<<<<<< HEAD
 			std::map<std::string, int> mChanceMap;
+=======
+			std::map<std::string,int> mChanceMap;
+>>>>>>> master
 
 			tinyxml2::XMLElement *obst = doc.FirstChildElement("Obstacles")->FirstChildElement();
 

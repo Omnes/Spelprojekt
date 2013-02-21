@@ -1,0 +1,14 @@
+<Animal>
+
+	<Name>Snake</Name>
+
+	<Images>Resources/Animals/snake.png</Images>
+
+	<Speed air="0" middle="2" ground="1.2"/>
+	
+	<AnimalType>meat</AnimalType>
+
+	<ImageAttr fTick="100" frames="10"/>
+
+
+</Animal>
