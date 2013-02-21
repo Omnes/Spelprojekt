@@ -2,10 +2,10 @@
 
 SoundManager::SoundManager()
 	: mMuted(false)
-	, mMusicVolume(100)
+	, mMusicVolume(30)
 	, mCurrentMusic(0)
 	, mFading(false)
-	, mSoundVolume(75){
+	, mSoundVolume(100){
 
 }
 
