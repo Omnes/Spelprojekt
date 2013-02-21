@@ -2,6 +2,7 @@
 #include "Animal.h"
 #include "ResourceManager.h"
 #include "Animation.h"
+#include "SoundManager.h"
 
 
 AnimalPrototype::AnimalPrototype(std::string filePath){
@@ -57,6 +58,13 @@ void AnimalPrototype::loadAnimal(std::string filePath){
 	mFrameTick = imageAttr->FloatValue();
 	imageAttr = imageAttr->Next();
 	mFrames = imageAttr->FloatValue();
+
+	//sound
+	const tinyxml2::XMLElement *xmlSound = elm->FirstChildElement("Sound");
+
+	std::string animalSound = xmlSound->GetText();
+
+	mSound.setBuffer(*resourceManager->getSoundBuffer(animalSound));
 	
 }
 
@@ -111,3 +119,6 @@ std::vector <float> AnimalPrototype::getSpeedVector(){
 	return mSpeedVector;
 }
 
+void AnimalPrototype::playSound(){
+	SoundManager::getInst().play(mSound);
+};

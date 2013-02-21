@@ -64,6 +64,9 @@ void Spot::setColorSpot(bool colorGreen){
 
 void Spot::setPrototypeAnimal(AnimalPrototype* PlacedAnimal){
 	mPlacedAnimal = PlacedAnimal;
+	//if(PlacedAnimal != 0){
+	//	mPlacedAnimal->playSound();
+	//}
 }
 
 AnimalPrototype* Spot::getPrototypeAnimal(){

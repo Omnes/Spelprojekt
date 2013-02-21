@@ -29,6 +29,7 @@ TaktikMeny::TaktikMeny() :
 	placeSpots();
 
 	mMusic = "Resources/Sound/TitleScreen";
+
 }
 
 TaktikMeny::~TaktikMeny(){
@@ -167,6 +168,7 @@ void TaktikMeny::isClicked(){
 			for(FakeAnimals::iterator i = mFakeAnimals.begin(); i != mFakeAnimals.end(); ++i){
 				if((*i)->getSprite()->getGlobalBounds().contains(musPosition)){
 					mCurrentDragAnimal = (*i);
+					mCurrentDragAnimal->playSound();
 					mGrabOffset = mCurrentDragAnimal->getPos() - musPosition;
 				}
 			}
