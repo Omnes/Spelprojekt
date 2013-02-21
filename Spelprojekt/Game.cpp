@@ -53,11 +53,13 @@ void Game::run(){
 
 			window->setView(window->getDefaultView());
 
+			eventManager->update(); // process events
+
 			stateManager->update(); // main update
 			soundManager->update();
 
 			countFrames();
-			eventManager->update(); // process events
+			
 		
 			window->clear(sf::Color::Black);
 		
