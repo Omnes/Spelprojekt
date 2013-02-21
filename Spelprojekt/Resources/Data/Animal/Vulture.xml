@@ -1,8 +1,8 @@
 <Animal>
 
-	<Name>Bat</Name>
+	<Name>Vulture</Name>
 
-	<Images>Resources/Animals/bat.png</Images>
+	<Images>Resources/Animals/vulture.png</Images>
 
 	<Speed air="3" middle="2" ground="0"/>
 	

@@ -1,5 +1,5 @@
 <Particle>
-	<Name>Fire</Name>
+	<Name>Sonar</Name>
 	<Texture yframes="1">resources/particle/ring1.png</Texture>
 	<Life min="90" max="150"/>
 	<Direction min ="0" max="0"/>

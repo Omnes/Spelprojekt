@@ -6,6 +6,8 @@
 			<Image_1>Resources/Level/Swamp/BakSWAMP.png</Image_1>
 			<Image_1>Resources/Level/Swamp/BakSWAMP.png</Image_1>
 			<Image_1>Resources/Level/Swamp/BakSWAMP.png</Image_1>
+			<Image_1>Resources/Level/Swamp/BakSWAMP.png</Image_1>
+			<Image_1>Resources/Level/Swamp/BakSWAMP.png</Image_1>
 
 		</Images>
 		<Stats speed="-0.95"/>
@@ -20,6 +22,9 @@
 			<Image_1>Resources/Level/Swamp/BakG2.png</Image_1>
 			<Image_1>Resources/Level/Swamp/BakG3.png</Image_1>
 			<Image_1>Resources/Level/Swamp/BakG4.png</Image_1>
+			<Image_1>Resources/Level/Swamp/BakG1.png</Image_1>
+			<Image_1>Resources/Level/Swamp/BakG2.png</Image_1>
+			<Image_1>Resources/Level/Swamp/BakG3.png</Image_1>
 
 		</Images>
 		<Stats speed="-0.8"/>
@@ -36,6 +41,9 @@
 			<Image_1>Resources/Level/Swamp/BanS2.png</Image_1>
 			<Image_1>Resources/Level/Swamp/BanS3.png</Image_1>
 			<Image_1>Resources/Level/Swamp/BanS4.png</Image_1>
+			<Image_1>Resources/Level/Swamp/BanS1.png</Image_1>
+			<Image_1>Resources/Level/Swamp/BanS2.png</Image_1>
+			<Image_1>Resources/Level/Swamp/BanS3.png</Image_1>
 
 		
 		</Images>
@@ -57,6 +65,9 @@
 			<Image_1>Resources/Level/Swamp/FörG2.png</Image_1>
 			<Image_1>Resources/Level/Swamp/FörG3.png</Image_1>
 			<Image_1>Resources/Level/Swamp/FörG4.png</Image_1>
+			<Image_1>Resources/Level/Swamp/FörG5.png</Image_1>
+			<Image_1>Resources/Level/Swamp/FörG6.png</Image_1>
+			<Image_1>Resources/Level/Swamp/FörG7.png</Image_1>
 			
 		</Images>
 		<Stats speed="1.3"/>
@@ -75,6 +86,8 @@
 	<Animal_1>Resources/Data/Animal/Snake.xml</Animal_1>
 	<Animal_1>Resources/Data/Animal/HummingBird.xml</Animal_1>
 	<Animal_1>Resources/Data/Animal/Spider.xml</Animal_1>
+	<Animal_1>Resources/Data/Animal/Monkey.xml</Animal_1>
+	<Animal_1>Resources/Data/Animal/Vulture.xml</Animal_1>
 
 
 
@@ -82,33 +95,35 @@
 
 </AnimalsOnLevel>
 
-<Level length = "3000">
+<Level length = "10000">
 	
 </Level>
 
 
-<Obstacles minDistance="256" maxDistance="512">
-	<Stone 		chance ="25" speedMod="0" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/stone.png</Stone>
-	<Box 		chance ="75" speedMod="0" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/box.png</Box>
-	<Bees 		chance ="25" speedMod="0" y="100" numberOfFrames="1" frameTime="100">Resources/Obstacle/bees.png</Bees>
-	<FallenTree 	chance ="75" speedMod="0" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/fallentree.png</FallenTree>
-	<GarbageSwamp 	chance ="25" speedMod="0" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/garbageswamp.png</GarbageSwamp>
-	<Oil 		chance ="75" speedMod="0" y="315" numberOfFrames="1" frameTime="100">Resources/Obstacle/oil.png</Oil>
-	<Smoke 		chance ="25" speedMod="0" y="100" numberOfFrames="1" frameTime="100">Resources/Obstacle/smoke.png</Smoke>
-	<Trash 		chance ="75" speedMod="0" y="290" numberOfFrames="1" frameTime="100">Resources/Obstacle/trash.png</Trash>
+<Obstacles minDistance="200" maxDistance="900">
+	<Stone 		chance ="365" speedMod="0" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/stone.png</Stone>
+	<Box 		chance ="1124" speedMod="0" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/box.png</Box>
+	<Bees 		chance ="1120" speedMod="0" y="100" numberOfFrames="5" frameTime="200">Resources/Obstacle/bees.png</Bees>
+	<FallenTree 	chance ="481" speedMod="0" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/fallentree.png</FallenTree>
+	<GarbageSwamp 	chance ="786" speedMod="0.5" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/garbageswamp.png</GarbageSwamp>
+	<Oil 		chance ="764" speedMod="0.5" y="352" numberOfFrames="1" frameTime="100">Resources/Obstacle/oil.png</Oil>
+	<Smoke 		chance ="533" speedMod="0.5" y="100" numberOfFrames="1" frameTime="100">Resources/Obstacle/smoke.png</Smoke>
+	<Trash 		chance ="1142" speedMod="0" y="290" numberOfFrames="1" frameTime="100">Resources/Obstacle/trash.png</Trash>
 
 
 
 </Obstacles>
 
 <Abilities>
-	<Ability>Crush</Ability>
-	<Ability>Love</Ability>
-	<Ability>Sonar</Ability>
 	<Ability>InnerBeast</Ability>
+	<Ability>Squeeze</Ability>
+	<Ability>Rage</Ability>
+	<Ability>Omsorg</Ability>
+	<Ability>Sonar</Ability>
+	<Ability>Growl</Ability>
 </Abilities>
 
-<Fire speed = "0.5" acceleration="-0.01"/>
+<Fire speed = "1.8" acceleration="0.0"/>
 
 
 

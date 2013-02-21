@@ -4,7 +4,7 @@
 
 	<Images>Resources/Animals/hummingbird.png</Images>
 
-	<Speed air="2" middle="1.2" ground="0"/>
+	<Speed air="3" middle="2" ground="0"/>
 	
 	<AnimalType>plant</AnimalType>
 
