@@ -10,7 +10,7 @@
 
 InnerBeastButton::InnerBeastButton(sf::Vector2f position, std::string texture,float cooldown,float speedincrease, float duration, Gui* gui)
 	: mTexture(ResourceManager::getInst().getTexture(texture))
-	, mFrames(4)
+	, mFrames(3)
 	, mCooldown(cooldown)
 	, mClickCooldown(150)
 	, mGui(gui)
