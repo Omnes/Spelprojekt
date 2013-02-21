@@ -23,10 +23,11 @@ void Gui::update(){
 	}
 }
 void Gui::render(){
+	mWindow->draw(mGuiSprite);
 	for(AbilityButtons::iterator i = mButtons.begin(); i != mButtons.end(); i++){
 		mWindow->draw(*(*i)->getSprite());
 	}
-	mWindow->draw(mGuiSprite);
+	
 }
 
 void Gui::unclickAll(){

@@ -282,5 +282,5 @@ std::vector<std::string> LevelManager::getAbilitiesOnLevel(){
 std::string LevelManager::getGuiTextureFilepath(){
 	tinyxml2::XMLDocument doc;
 	doc.LoadFile(mFilePath.c_str());
-	return doc.FirstChildElement()->FirstChildElement("Gui")->GetText();
+	return doc.FirstChildElement("Gui")->GetText();
 }
