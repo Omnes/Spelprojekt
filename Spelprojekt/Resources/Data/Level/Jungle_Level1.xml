@@ -79,10 +79,9 @@
 
 </AnimalsOnLevel>
 
-<Level length = "3000">
+<Level length = "5000">
 	
 </Level>
-
 
 <Obstacles minDistance="256" maxDistance="512">
 	<Oil chance="25" speedMod="0.5" y="200" numberOfFrames="1" frameTime="100">Resources/Obstacle/oil.png</Oil>
