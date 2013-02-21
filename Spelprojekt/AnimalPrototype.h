@@ -6,11 +6,13 @@
 #include "tinyxml2.h"
 #include <string>
 #include <SFML\Graphics\Sprite.hpp>
+#include <SFML\Audio\Sound.hpp>
 #include <vector>
 
 class Animal;
 class ResourceManager;
 class Animation;
+class SoundManager;
 
 class AnimalPrototype{
 public:
@@ -31,6 +33,8 @@ public:
 	int getLevel();
 	std::vector <float> getSpeedVector();
 
+	void playSound();
+
 
 private:
 
@@ -48,6 +52,10 @@ private:
 	sf::Texture* mTex;
 	sf::Sprite mSprite;
 	std::string mAnimalType;
+	//std::string mSound;
+
+	sf::Sound mSound;
+
 	float mFrameTick, mFrames;
 
 	sf::Vector2f mStartPos;
