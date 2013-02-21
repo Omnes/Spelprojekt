@@ -5,12 +5,12 @@
 #include "StateManager.h"
 #include "TacticalVision.h"
 
-TacticalVisionButton::TacticalVisionButton(sf::Vector2f position, std::string texture, Gui* gui) 
+TacticalVisionButton::TacticalVisionButton(sf::Vector2f position, std::string texture,float cooldown, Gui* gui) 
 	: mTexture(ResourceManager::getInst().getTexture(texture))
 	, mGui(gui)
 	, mClicked(false)
 	, mFrames(3)
-	, mCooldown(1)
+	, mCooldown(cooldown)
 	, mClickCooldown(){
 		mCooldownTimer.restart();
 		mSprite.setTexture(*mTexture);

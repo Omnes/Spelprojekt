@@ -8,15 +8,15 @@
 #include "Gui.h"
 #include <SFML\Graphics\CircleShape.hpp>
 
-InnerBeastButton::InnerBeastButton(sf::Vector2f position, std::string texture, Gui* gui)
+InnerBeastButton::InnerBeastButton(sf::Vector2f position, std::string texture,float cooldown,float speedincrease, float duration, Gui* gui)
 	: mTexture(ResourceManager::getInst().getTexture(texture))
 	, mFrames(4)
-	, mCooldown(10)
+	, mCooldown(cooldown)
 	, mClickCooldown(150)
 	, mGui(gui)
 	, mClicked(false)
-	, mSpeedIncrease(20)
-	, mSpeedDuration(5){
+	, mSpeedIncrease(speedincrease)
+	, mSpeedDuration(duration){
 
 		mSprite.setPosition(position);
 		mSprite.setTexture(*mTexture);
@@ -81,12 +81,10 @@ void InnerBeastButton::update(){
 
 	
 
-	if(mCooldownTimer.getElapsedTime().asMilliseconds() < mCooldown){
-		mSprite.setTextureRect(sf::IntRect(mTexture->getSize().x/mFrames*3,0,mTexture->getSize().x/mFrames,mTexture->getSize().y));
-	}
+	
 
 	if(mClicked){
-		mSprite.setTextureRect(sf::IntRect(mTexture->getSize().x/mFrames*2,0,mTexture->getSize().x/mFrames,mTexture->getSize().y));
+		mSprite.setTextureRect(sf::IntRect(mTexture->getSize().x/mFrames*1,0,mTexture->getSize().x/mFrames,mTexture->getSize().y));
 		for(int i = 0; i<mArrows.size(); i++){
 
 			mArrows[i].update();
@@ -99,6 +97,10 @@ void InnerBeastButton::update(){
 			mAnimals.back()->setSpeedIncrease(1);
 			mAnimals.pop_back();
 		}
+	}
+
+	if(mCooldownTimer.getElapsedTime().asMilliseconds() < mCooldown){
+		mSprite.setTextureRect(sf::IntRect(mTexture->getSize().x/mFrames*2,0,mTexture->getSize().x/mFrames,mTexture->getSize().y));
 	}
 }
 

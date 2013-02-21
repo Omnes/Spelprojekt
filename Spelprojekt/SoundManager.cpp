@@ -1,6 +1,11 @@
 #include "SoundManager.h"
 
-SoundManager::SoundManager():mMuted(false), mVolume(100), mCurrentMusic(0), mFading(false){
+SoundManager::SoundManager()
+	: mMuted(false)
+	, mMusicVolume(100)
+	, mCurrentMusic(0)
+	, mFading(false)
+	, mSoundVolume(75){
 
 }
 
@@ -27,7 +32,7 @@ void SoundManager::update(){
 	if(mFading){
 		if(mCurrentMusic->getVolume()>0){
 			mCurrentMusic->setVolume(clampValue(mCurrentMusic->getVolume() - mFadeVolumeDeltaChange));
-			mFadeToMusic->setVolume(clampValue(mVolume - mCurrentMusic->getVolume()));
+			mFadeToMusic->setVolume(clampValue(mMusicVolume - mCurrentMusic->getVolume()));
 		}else{
 			mFading = false;
 			mCurrentMusic->stop();
@@ -52,9 +57,14 @@ void SoundManager::play(std::string filename){
 
 	//kanske ska ha en fade här?
 	mCurrentMusic = new MusicLoop(filename);
-	mCurrentMusic->setVolume(mVolume * (!mMuted));
+	mCurrentMusic->setVolume(mMusicVolume * (!mMuted));
 	mCurrentMusic->play();
 	
+}
+
+void SoundManager::play(sf::Sound &sound){
+	sound.setVolume(mSoundVolume * (!mMuted));
+	sound.play();
 }
 
 void SoundManager::fadeTo(std::string filename,float fadeTime){
@@ -73,7 +83,7 @@ void SoundManager::fadeTo(std::string filename,float fadeTime){
 		delete mCurrentMusic;
 		mCurrentMusic = mFadeToMusic;
 		mFadeToMusic = 0;
-		mCurrentMusic->setVolume(mVolume*(!mMuted));
+		mCurrentMusic->setVolume(mMusicVolume*(!mMuted));
 	}
 
 	mFadeToMusic = new MusicLoop(filename);
@@ -81,11 +91,6 @@ void SoundManager::fadeTo(std::string filename,float fadeTime){
 	mFadeToMusic->play();
 
 	mFading = true;
-}
-
-void SoundManager::loop(){
-
-
 }
 
 MusicLoop* SoundManager::getCurrentPlaying(){

@@ -11,10 +11,6 @@
 
 Gui::Gui(): mWindow(WindowManager::getInst().getWindow()){
 
-	ParticleManager* particleManager = &ParticleManager::getInst();
-	particleManager->loadPrototype("Resources/Data/Particle/heartParticle.xml");
-	particleManager->loadPrototype("Resources/Data/Particle/dirtParticle.xml");
-
 	loadAbilites();
 
 	mGuiSprite.setTexture(*ResourceManager::getInst().getTexture("Resources/GUI/SwampGUI.png"));
@@ -69,11 +65,23 @@ void Gui::loadAbilites(){
 		}
 
 		if(type == "Vision"){
-			mButtons.push_back(new TacticalVisionButton(position,texture,this));
+			float cooldown = elm->FirstChildElement("Stats")->FirstAttribute()->FloatValue();
+			mButtons.push_back(new TacticalVisionButton(position,texture,cooldown,this));
 		}
+
 		if(type == "Speed"){
-			mButtons.push_back(new InnerBeastButton(position,texture,this));
+
+			const tinyxml2::XMLAttribute* attr = elm->FirstChildElement("Stats")->FirstAttribute();
+			float cooldown = attr->FloatValue();
+			attr = attr->Next();
+			float speedIncrease = attr->FloatValue();
+			attr = attr->Next();
+			float duration = attr->FloatValue();
+			attr = attr->Next();
+
+			mButtons.push_back(new InnerBeastButton(position,texture,cooldown,speedIncrease,duration,this));
 		}
+
 		if(type == "Remove"){
 			std::vector<std::string> canRemoveVector;
 			tinyxml2::XMLElement *canRemove = elm->FirstChildElement("CanRemove")->FirstChildElement();

@@ -24,6 +24,7 @@ public:
 	int getActiveParticleCount();
 	static ParticleManager& getInst();
 	void loadPrototype(std::string filepath);
+	void loadAllParticlesFromFile(std::string filePath);
 
 private:
 	ParticleManager();

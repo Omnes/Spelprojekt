@@ -96,11 +96,13 @@ void RemoveObstacleButton::update(){
 
 	
 
-	/*if(mCooldownTimer.getElapsedTime().asMilliseconds() < mCooldown){
-		mSprite.setTextureRect(sf::IntRect(mTexture->getSize().x/mFrames*3,0,mTexture->getSize().x/mFrames,mTexture->getSize().y));
-	}*/
+	
 
 	if(mClicked){
+		mSprite.setTextureRect(sf::IntRect(mTexture->getSize().x/mFrames*1,0,mTexture->getSize().x/mFrames,mTexture->getSize().y));
+	}
+
+	if(mCooldownTimer.getElapsedTime().asMilliseconds() < mCooldown){
 		mSprite.setTextureRect(sf::IntRect(mTexture->getSize().x/mFrames*2,0,mTexture->getSize().x/mFrames,mTexture->getSize().y));
 	}
 }

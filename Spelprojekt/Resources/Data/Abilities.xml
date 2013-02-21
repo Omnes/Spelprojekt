@@ -2,11 +2,13 @@
 	<Sonar>
 		<Type>Vision</Type>
 		<Texture>Resources/GUI/sonar.png</Texture>
+		<Stats cooldown="5"/>
 	</Sonar>
 
 	<InnerBeast>
 		<Type>Speed</Type>
 		<Texture>Resources/GUI/sonar.png</Texture>
+		<Stats cooldown="5" speedIncrease="3" duration="5"/>
 	</InnerBeast>
 
 	<Crush>

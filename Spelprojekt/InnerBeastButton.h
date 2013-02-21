@@ -14,7 +14,7 @@ class Gui;
 
 class InnerBeastButton: public AbilityButton{
 public:
-	InnerBeastButton(sf::Vector2f position, std::string texture, Gui* gui);
+	InnerBeastButton(sf::Vector2f position, std::string texture,float cooldown,float speedincrease,float duration ,Gui* gui);
 
 	virtual void update();
 	virtual sf::Sprite* getSprite();

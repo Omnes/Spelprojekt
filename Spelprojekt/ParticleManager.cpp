@@ -144,3 +144,16 @@ void ParticleManager::loadPrototype(std::string filePath){
 	delete prototype;
 
 }
+
+void ParticleManager::loadAllParticlesFromFile(std::string filePath){
+	tinyxml2::XMLDocument doc;
+	doc.LoadFile(filePath.c_str());
+
+	tinyxml2::XMLElement* elm = doc.FirstChildElement();
+
+	while(elm != 0){
+		loadPrototype(elm->GetText());
+		elm = elm->NextSiblingElement();
+	}
+
+}

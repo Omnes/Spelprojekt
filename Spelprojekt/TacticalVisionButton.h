@@ -10,7 +10,7 @@ class TacticalVisionButton : public AbilityButton {
 
 public:
 
-	TacticalVisionButton(sf::Vector2f position, std::string texture, Gui* gui);
+	TacticalVisionButton(sf::Vector2f position, std::string texture,float cooldown, Gui* gui);
 	~TacticalVisionButton();
 	virtual void update();
 	virtual sf::Sprite* getSprite();

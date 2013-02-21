@@ -3,6 +3,7 @@
 
 #include <string>
 #include "MusicLoop.h"
+#include <SFML\Audio\Sound.hpp>
 
 class SoundManager{
 public:
@@ -11,12 +12,13 @@ public:
 	void update();
 
 	void play(std::string filename);
+	void play(sf::Sound& sound);
 	void fadeTo(std::string filename,float fadeTime);
-	void loop();
 	MusicLoop* getCurrentPlaying();
 
 private:
-	float mVolume;
+	float mMusicVolume;
+	float mSoundVolume;
 	bool mMuted;
 	MusicLoop* mCurrentMusic;
 	MusicLoop* mFadeToMusic;
