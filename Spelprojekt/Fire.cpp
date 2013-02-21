@@ -3,7 +3,16 @@
 #include <iostream>
 #include "ParticleManager.h"
 
-Fire::Fire(sf::Vector2f position,float speed): mID("Fire"), mPosition(position), mSpeed(speed), mAlive(true),mFireSystem("Firewall",500),mSmokeSystem("Smoke",770),mPoofSystem("Smoke",50){
+Fire::Fire(sf::Vector2f position,float speed, float acceleration)
+	: mID("Fire")
+	, mPosition(position)
+	, mSpeed(speed)
+	, mAlive(true)
+	, mFireSystem("Firewall",500)
+	, mSmokeSystem("Smoke",770)
+	, mPoofSystem("Smoke",50)
+	, mAcceleration(acceleration){
+
 	mSprite.setTexture(*ResourceManager::getInst().getTexture("Resources/Animals/eld.png"));
 	mFireSystem.setBlendMode(sf::BlendAdd);
 	mSmokeSystem.setBlendMode(sf::BlendAlpha);
@@ -15,7 +24,7 @@ Fire::Fire(sf::Vector2f position,float speed): mID("Fire"), mPosition(position),
 }
 
 void Fire::update(){
-	
+	mSpeed += mAcceleration;
 	mPosition.x += mSpeed;
 	mEmitter.setPosition(mPosition);
 	mEmitter.burst(mFireSystem,sf::FloatRect(-100,0,225,720),17);

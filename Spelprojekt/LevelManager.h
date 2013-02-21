@@ -24,6 +24,7 @@ public:
 	std::vector<Layer*> loadLayers();
 	std::string getMusicOnLevel();
 	std::vector<std::string> getAbilitiesOnLevel();
+	std::string getGuiTextureFilepath();
 	static LevelManager& getInst();
 	ActiveLayer* getActiveLayer();
 	void setCamera(Camera* camera);

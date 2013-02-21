@@ -13,7 +13,7 @@ Gui::Gui(): mWindow(WindowManager::getInst().getWindow()){
 
 	loadAbilites();
 
-	mGuiSprite.setTexture(*ResourceManager::getInst().getTexture("Resources/GUI/SwampGUI.png"));
+	mGuiSprite.setTexture(*ResourceManager::getInst().getTexture(LevelManager::getInst().getGuiTextureFilepath()));
 	mGuiSprite.setPosition(sf::Vector2f(0,0));
 }
 

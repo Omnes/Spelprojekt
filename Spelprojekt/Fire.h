@@ -7,7 +7,7 @@
 	
 class Fire: public Entity{
 public:
-	Fire(sf::Vector2f position, float speed);
+	Fire(sf::Vector2f position, float speed, float acceleration);
 	~Fire();
 
 	virtual void update();
@@ -22,6 +22,7 @@ public:
 
 private:
 	float mSpeed;
+	float mAcceleration;
 	sf::Vector2f mPosition;
 	sf::Sprite mSprite;
 	std::string mID;

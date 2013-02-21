@@ -114,9 +114,12 @@ std::vector<Layer*> LevelManager::loadLayers(){
 
 			tinyxml2::XMLElement *obst = doc.FirstChildElement("Obstacles")->FirstChildElement();
 
+
+			int totalChanceValue = 0;
+
 			while(obst != 0){
 				const tinyxml2::XMLAttribute *atr = obst->FirstAttribute();
-
+				totalChanceValue += atr->IntValue();
 				mChanceMap[atr->IntValue()] = obst->Name();
 				obst = obst->NextSiblingElement();
 			}
@@ -129,9 +132,9 @@ std::vector<Layer*> LevelManager::loadLayers(){
 
 
 			while(x < mLevellength - minDistanceFromGoal){
-				std::string name = "Stone";
+				std::string name;
 
-				int randNumber = rand()%100;
+				int randNumber = rand()%totalChanceValue;
 				int currentNumber = 0;
 
 				for(std::map<int,std::string>::iterator i = mChanceMap.begin(); i != mChanceMap.end(); i++){
@@ -170,7 +173,8 @@ std::vector<Layer*> LevelManager::loadLayers(){
 
 			//skapar elden
 			float fireSpeed = doc.FirstChildElement("Fire")->FirstAttribute()->FloatValue();
-			entityVector.push_back(new Fire(sf::Vector2f(-150,0),fireSpeed));
+			float acceleration = doc.FirstChildElement("Fire")->FirstAttribute()->Next()->FloatValue();
+			entityVector.push_back(new Fire(sf::Vector2f(-150,0),fireSpeed,acceleration));
 
 			ActiveLayer* activeLayer = new ActiveLayer(entityVector, mLevellength);
 			layer = activeLayer;
@@ -273,4 +277,10 @@ std::vector<std::string> LevelManager::getAbilitiesOnLevel(){
 
 	return vector;
 
+}
+
+std::string LevelManager::getGuiTextureFilepath(){
+	tinyxml2::XMLDocument doc;
+	doc.LoadFile(mFilePath.c_str());
+	return doc.FirstChildElement()->FirstChildElement("Gui")->GetText();
 }

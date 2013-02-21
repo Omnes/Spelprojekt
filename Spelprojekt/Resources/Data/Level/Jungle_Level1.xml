@@ -99,12 +99,14 @@
 </Abilities>
 
 
-<Fire speed = "1"/>
+<Fire speed = "1" acceleration="0.01"/>
 
 <LevelsYValue air="100" middle="290" ground="500"/>
 
 
 <Music>Resources/Sound/Level1_</Music>
+
+<Gui>Resources/GUI/swampGui.png</Gui>
 
 
 
