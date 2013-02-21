@@ -110,7 +110,7 @@ std::vector<Layer*> LevelManager::loadLayers(){
 			int minDistance = doc.FirstChildElement("Obstacles")->FirstAttribute()->IntValue();
 			int maxDistance = doc.FirstChildElement("Obstacles")->FirstAttribute()->Next()->IntValue();
 
-			std::map<int,std::string> mChanceMap;
+			std::map<std::string, int> mChanceMap;
 
 			tinyxml2::XMLElement *obst = doc.FirstChildElement("Obstacles")->FirstChildElement();
 
@@ -120,7 +120,7 @@ std::vector<Layer*> LevelManager::loadLayers(){
 			while(obst != 0){
 				const tinyxml2::XMLAttribute *atr = obst->FirstAttribute();
 				totalChanceValue += atr->IntValue();
-				mChanceMap[atr->IntValue()] = obst->Name();
+				mChanceMap[obst->Name()] = atr->IntValue();
 				obst = obst->NextSiblingElement();
 			}
 
@@ -137,11 +137,11 @@ std::vector<Layer*> LevelManager::loadLayers(){
 				int randNumber = rand()%totalChanceValue;
 				int currentNumber = 0;
 
-				for(std::map<int,std::string>::iterator i = mChanceMap.begin(); i != mChanceMap.end(); i++){
-					currentNumber += i->first;
+				for(std::map<std::string,int>::iterator i = mChanceMap.begin(); i != mChanceMap.end(); i++){
+					currentNumber += i->second;
 
 					if (currentNumber > randNumber){
-						name = i->second;
+						name = i->first;
 						break;
 					}
 				

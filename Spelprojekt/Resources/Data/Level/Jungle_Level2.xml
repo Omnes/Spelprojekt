@@ -108,3 +108,5 @@
 <LevelsYValue air="100" middle="290" ground="500"/>
 
 <Music>Resources/Sound/Level2_</Music>
+
+<Gui>Resources/GUI/swampGui.png</Gui>
