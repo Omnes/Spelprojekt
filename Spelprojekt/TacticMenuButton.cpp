@@ -37,21 +37,21 @@ void TacticMenuButton::update(){
 
 	sf::RenderWindow* window = WindowManager::getInst().getWindow();
 	
+	//kan sätta denna framför mSprite.getGlobalBounds().... för att få bättre 
+	// visuell feedback att alla spots är tagna
+	if(mTaktikMeny->getFreeSpots() == false){
 
-	//mTaktikMeny->getAllSpotsTaken() returnar false im det inte finns några lediga spots
-	if(mSprite.getGlobalBounds().contains((sf::Vector2f)sf::Mouse::getPosition(*window))){
-		//kan sätta denna framför mSprite.getGlobalBounds().... för att få bättre 
-		// visuell feedback att alla spots är tagna
+		mCurrentImage=1;
 
-		if(mTaktikMeny->getFreeSpots() == false){
+		//mTaktikMeny->getAllSpotsTaken() returnar false im det inte finns några lediga spots
+		if(mSprite.getGlobalBounds().contains((sf::Vector2f)sf::Mouse::getPosition(*window))){
 
 			mEmitter.burst(mPartSystem,sf::FloatRect(0,0,66,150),1);
-			mCurrentImage=1;
+			mCurrentImage=2;
 
 			if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){ 
-	
+
 				mSound.play();
-				mCurrentImage=2;
 
 				mTaktikMeny->createAnimals();
 				EventManager::getInst().addEvent("addGameplay");
