@@ -2,6 +2,7 @@
 	<Sonar>
 		<Type>Vision</Type>
 		<Texture>Resources/GUI/sonar.png</Texture>
+		<ParticleEffekt amount="2">Sonar</ParticleEffekt>
 		<Stats cooldown="5"/>
 	</Sonar>
 
@@ -11,28 +12,55 @@
 		<Stats cooldown="5" speedIncrease="3" duration="5"/>
 	</InnerBeast>
 
-	<Crush>
+	<Rage>
 		<Type>Remove</Type>
 		<Texture>Resources/GUI/rage.png</Texture>
-		<ParticleEffekt amount="50">Dirt</ParticleEffekt>
+		<ParticleEffekt amount="1">Smash</ParticleEffekt>
 		<CanRemove>
 			<Obstacle>Stone</Obstacle>
 			<Obstacle>FallenTree</Obstacle>
+			<Obstacle>Bees</Obstacle>
+			<Obstacle>Box</Obstacle>
+			<Obstacle>Trash</Obstacle>
 		</CanRemove>
 
-	</Crush>
+	</Rage>
 
-	<Love>
+	<Omsorg>
 		<Type>Remove</Type>
 		<Texture>Resources/GUI/omsorg.png</Texture>
 		<ParticleEffekt amount="20">Heart</ParticleEffekt>
 		<CanRemove>
-			<Obstacle>Bees</Obstacle>
 			<Obstacle>GarbageSwamp</Obstacle>
 			<Obstacle>Box</Obstacle>
 			<Obstacle>Oil</Obstacle>
+			<Obstacle>Smoke</Obstacle>
+			<Obstacle>Trash</Obstacle>
 		</CanRemove>
 
-	</Love>
+	</Omsorg>
+
+	<Squeeze>
+		<Type>Remove</Type>
+		<Texture>Resources/GUI/squeeze.png</Texture>
+		<ParticleEffekt amount="1">Crack</ParticleEffekt>
+		<CanRemove>
+			<Obstacle>Box</Obstacle>
+			<Obstacle>FallenTree</Obstacle>
+			<Obstacle>Trash</Obstacle>
+		</CanRemove>
+
+	</Squeeze>
+
+	<Growl>
+		<Type>Remove</Type>
+		<Texture>Resources/GUI/growl.png</Texture>
+		<ParticleEffekt amount="1">Smash</ParticleEffekt>
+		<CanRemove>
+			<Obstacle>Bees</Obstacle>
+		</CanRemove>
+
+	</Growl>
+
 
 </Abilities>
