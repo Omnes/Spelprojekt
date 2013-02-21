@@ -7,13 +7,13 @@
 
 	<InnerBeast>
 		<Type>Speed</Type>
-		<Texture>Resources/GUI/sonar.png</Texture>
+		<Texture>Resources/GUI/innerbeast.png</Texture>
 		<Stats cooldown="5" speedIncrease="3" duration="5"/>
 	</InnerBeast>
 
 	<Crush>
 		<Type>Remove</Type>
-		<Texture>Resources/GUI/elephantcrush.png</Texture>
+		<Texture>Resources/GUI/rage.png</Texture>
 		<ParticleEffekt amount="50">Dirt</ParticleEffekt>
 		<CanRemove>
 			<Obstacle>Stone</Obstacle>
@@ -24,7 +24,7 @@
 
 	<Love>
 		<Type>Remove</Type>
-		<Texture>Resources/GUI/diskmedel.png</Texture>
+		<Texture>Resources/GUI/omsorg.png</Texture>
 		<ParticleEffekt amount="20">Heart</ParticleEffekt>
 		<CanRemove>
 			<Obstacle>Bees</Obstacle>
