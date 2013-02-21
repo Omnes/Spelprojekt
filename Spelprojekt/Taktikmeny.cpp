@@ -18,7 +18,7 @@ TaktikMeny::TaktikMeny() :
 	mLevelGround(0),
 	mAllSpotsTaken(false)
 {
-	mButton = new TacticMenuButton(sf::Vector2f(500,600), this, "Resources/Misc/knapp1.jpg", "Resources/Sound/test.wav");
+	mButton = new TacticMenuButton(sf::Vector2f(500,600), this, "Resources/Menu/TacticMenu/startgameplaybutton.png", "Resources/Sound/test.wav");
 
 	mAnimalSpriteBg.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/TacticMenu/taktikdjurbg.png"));
 	mAnimalSpriteBg.setPosition(550, 0);
