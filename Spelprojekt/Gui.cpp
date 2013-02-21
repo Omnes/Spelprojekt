@@ -44,7 +44,7 @@ void Gui::loadAbilites(){
 
 	float abilityNumber = 0;
 
-	sf::Vector2f startPosition = sf::Vector2f(0,625);
+	sf::Vector2f startPosition = sf::Vector2f(140,615);
 	sf::Vector2f distance = sf::Vector2f(200,0);
 	sf::Vector2f distance2 = sf::Vector2f(150,0);
 
@@ -57,12 +57,12 @@ void Gui::loadAbilites(){
 
 		std::string type = elm->FirstChildElement("Type")->GetText();
 
-		
-
-		if((int)abilityNumber % 2 == 1){
-			position += distance;
-		}else{
-			position += distance2;
+		if(abilityNumber != 0){
+			if((int)abilityNumber % 2 == 1){
+				position += distance;
+			}else{
+				position += distance2;
+			}
 		}
 
 		if(type == "Vision"){
