@@ -18,6 +18,7 @@ public:
 	void setAliveAnimals(std::vector<std::string>& aliveVector);
 	void setDeadAnimals(std::vector<std::string>& deadVector);
 	void setAnimalPosition(std::vector<Entity*>);
+	void preloadBackgrounds();
 	std::vector<std::string> getAliveAnimals();
 	std::vector<std::string> getDeadAnimals();
 	std::vector<std::string>* getDeadAnimalCollection();
