@@ -68,6 +68,9 @@
 			<Image_1>Resources/Level/Swamp/FörG5.png</Image_1>
 			<Image_1>Resources/Level/Swamp/FörG6.png</Image_1>
 			<Image_1>Resources/Level/Swamp/FörG7.png</Image_1>
+			<Image_1>Resources/Level/Swamp/FörG1.png</Image_1>
+			<Image_1>Resources/Level/Swamp/FörG2.png</Image_1>
+			<Image_1>Resources/Level/Swamp/FörG3.png</Image_1>
 			
 		</Images>
 		<Stats speed="1.3"/>
@@ -123,7 +126,7 @@
 	<Ability>Growl</Ability>
 </Abilities>
 
-<Fire speed = "1.8" acceleration="0.0"/>
+<Fire speed = "1.6" acceleration="0.0"/>
 
 
 
