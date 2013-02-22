@@ -28,9 +28,10 @@ void LevelButton::update(){
 
 	sf::RenderWindow* window = WindowManager::getInst().getWindow();
 
+	sf::Vector2f mousePosition = WindowManager::getInst().getWindow()->convertCoords(sf::Mouse::getPosition(*WindowManager::getInst().getWindow()),WindowManager::getInst().getWindow()->getDefaultView());
 
 	//mAlive står här. ändra om du behöver
-	if(mAlive  && mSprite.getGlobalBounds().contains((sf::Vector2f)sf::Mouse::getPosition(*window))){		
+	if(mAlive  && mSprite.getGlobalBounds().contains(mousePosition)){		
 	
 		mCurrentImage=1;
 

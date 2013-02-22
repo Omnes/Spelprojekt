@@ -164,16 +164,16 @@ void TaktikMeny::createAnimals(){
 }
 
 void TaktikMeny::isClicked(){
-	sf::Vector2f musPosition = sf::Vector2f(sf::Mouse::getPosition(*WindowManager::getInst().getWindow()));
+	sf::Vector2f mousePosition = WindowManager::getInst().getWindow()->convertCoords(sf::Mouse::getPosition(*WindowManager::getInst().getWindow()),WindowManager::getInst().getWindow()->getDefaultView());
 
 		if(mCurrentDragAnimal == 0){
 
 			for(FakeAnimals::iterator i = mFakeAnimals.begin(); i != mFakeAnimals.end(); ++i){
-				if((*i)->getSprite()->getGlobalBounds().contains(musPosition)){
+				if((*i)->getSprite()->getGlobalBounds().contains(mousePosition)){
 					mCurrentDragAnimal = (*i);
 					mCurrentDragAnimal->playSound();
 					mCurrentDragAnimal->getSprite()->setScale(0.8,0.8);
-					mGrabOffset = mCurrentDragAnimal->getPos() - musPosition;
+					mGrabOffset = mCurrentDragAnimal->getPos() - mousePosition;
 				}
 			}
 
@@ -217,7 +217,7 @@ void TaktikMeny::isClicked(){
 			float floatSpeed = 0.75;
 			mGrabOffset.x *= floatSpeed;
 			mGrabOffset.y *= floatSpeed;
-			mCurrentDragAnimal -> setPos(musPosition + mGrabOffset);
+			mCurrentDragAnimal -> setPos(mousePosition + mGrabOffset);
 		}
 
 }

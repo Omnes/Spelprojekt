@@ -7,10 +7,12 @@ public:
 
 	static WindowManager& getInst();
 	sf::RenderWindow* getWindow();
+	sf::View* getDefaultView();
 
 private:
 
 	sf::RenderWindow* mWindow;
+	sf::View* mDefaultView;
 	WindowManager();
 	WindowManager& operator=(const WindowManager);
 	WindowManager(const WindowManager&);

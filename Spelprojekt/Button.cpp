@@ -25,15 +25,15 @@ Button::~Button(){
 void Button::update(){
 
 	sf::RenderWindow* window = WindowManager::getInst().getWindow();
+
+	sf::Vector2f mousePosition = WindowManager::getInst().getWindow()->convertCoords(sf::Mouse::getPosition(*WindowManager::getInst().getWindow()),WindowManager::getInst().getWindow()->getDefaultView());
 	
-	if(mSprite.getGlobalBounds().contains((sf::Vector2f)sf::Mouse::getPosition(*window))){		
+	if(mSprite.getGlobalBounds().contains(mousePosition)){		
 	
 		mEmitter.burst(mPartSystem,sf::FloatRect(0,0,66,150),1);
 		mCurrentImage=1;
 
 		if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){ 
-	
-			mSound.play();
 			mCurrentImage=2;
 			EventManager::getInst().addEvent(mEvent);
 		}		

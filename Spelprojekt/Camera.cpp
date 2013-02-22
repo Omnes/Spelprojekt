@@ -12,8 +12,6 @@ Camera::Camera(LayerManager* layermanager) :
 	mWindow(WindowManager::getInst().getWindow()), 
 	mVelocity(0.0),
 	mView(sf::FloatRect(0,0,1280,720)),
-	mPosition(mView.getSize().x/2), 
-
 	mMaxPos(1),
 	mMinPos(2000){
 
@@ -29,7 +27,13 @@ Camera::Camera(LayerManager* layermanager) :
 		mPanSpeed = attr->FloatValue();
 
 		mLevellength=LevelManager::getInst().getLevelLength();
-		
+
+		float zoomfactor = 1280 / WindowManager::getInst().getWindow()->getSize().x;
+		mView.setSize(WindowManager::getInst().getWindow()->getSize().x,WindowManager::getInst().getWindow()->getSize().y);
+		mView.zoom(zoomfactor);
+
+		mPosition = mView.getSize().x/2;
+
 }
 
 Camera::~Camera(){
@@ -57,6 +61,8 @@ void Camera::getMinMax(){
 
 void Camera::update(){
 
+	//mView.rotate(1);
+	
 	
 
 	getMinMax();

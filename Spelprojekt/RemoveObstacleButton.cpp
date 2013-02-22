@@ -40,7 +40,8 @@ bool RemoveObstacleButton::findID(std::string id){
 
 void RemoveObstacleButton::killRelativePositionEntity(sf::Vector2f mousePosition){
 	const sf::View* view = &WindowManager::getInst().getWindow()->getView();
-	sf::Vector2f relativeMousePosition = mousePosition + view->getCenter() - sf::Vector2f(view->getSize().x/2,view->getSize().y/2);
+	//sf::Vector2f relativeMousePosition = mousePosition + view->getCenter() - sf::Vector2f(view->getSize().x/2,view->getSize().y/2);
+	sf::Vector2f relativeMousePosition = WindowManager::getInst().getWindow()->convertCoords((sf::Vector2i)mousePosition,WindowManager::getInst().getWindow()->getView());
 
 		std::vector<Entity*>* entityVector = LevelManager::getInst().getActiveLayer()->getEntityVector();
 		//hitta vad vi har musen över och döda den
@@ -70,7 +71,7 @@ void RemoveObstacleButton::killRelativePositionEntity(sf::Vector2f mousePosition
 
 void RemoveObstacleButton::update(){
 
-	sf::Vector2f mousePosition = (sf::Vector2f) sf::Mouse::getPosition(*WindowManager::getInst().getWindow());
+	sf::Vector2f mousePosition = WindowManager::getInst().getWindow()->convertCoords(sf::Mouse::getPosition(*WindowManager::getInst().getWindow()),WindowManager::getInst().getWindow()->getDefaultView());
 
 	mSprite.setTextureRect(sf::IntRect(0,0,mTexture->getSize().x/mFrames,mTexture->getSize().y));
 	//om musen är över

@@ -44,7 +44,10 @@ void TacticMenuButton::update(){
 		mCurrentImage=1;
 
 		//mTaktikMeny->getAllSpotsTaken() returnar false im det inte finns några lediga spots
-		if(mSprite.getGlobalBounds().contains((sf::Vector2f)sf::Mouse::getPosition(*window))){
+
+		sf::Vector2f mousePosition = WindowManager::getInst().getWindow()->convertCoords(sf::Mouse::getPosition(*WindowManager::getInst().getWindow()),WindowManager::getInst().getWindow()->getDefaultView());
+
+		if(mSprite.getGlobalBounds().contains(mousePosition)){
 
 			mEmitter.burst(mPartSystem,sf::FloatRect(0,0,66,150),1);
 			mCurrentImage=2;

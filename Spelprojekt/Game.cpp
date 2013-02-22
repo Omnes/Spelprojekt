@@ -51,7 +51,7 @@ void Game::run(){
 		
 		if(mInFocus){
 
-			window->setView(window->getDefaultView());
+			window->setView(*windowManager->getDefaultView());
 
 			eventManager->update(); // process events
 
@@ -66,7 +66,7 @@ void Game::run(){
 			stateManager->render(); //rendrering
 			//particleManager->render(*window); // denna ska nog ligga i varje states update (tex i activeLayer vid rätt lager)
 
-			window->setView(window->getDefaultView());
+			window->setView(*windowManager->getDefaultView());
 			drawFPS(window);
 
 			//aim.setPosition((sf::Vector2f)sf::Mouse::getPosition(*window));

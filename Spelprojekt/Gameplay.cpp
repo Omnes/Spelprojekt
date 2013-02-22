@@ -16,7 +16,7 @@ Gameplay::Gameplay(){
 Gameplay::~Gameplay(){
 	delete mCamera;
 	delete mLayerManager;
-	WindowManager::getInst().getWindow()->setView(WindowManager::getInst().getWindow()->getDefaultView());
+	WindowManager::getInst().getWindow()->setView(*WindowManager::getInst().getDefaultView());
 }
 
 void Gameplay::update(){
@@ -30,7 +30,7 @@ void Gameplay::update(){
 	mGui.update();
 	mCamera->update();
 
-	window->setView(window->getDefaultView());
+	window->setView(*WindowManager::getInst().getDefaultView());
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
 		EventManager::getInst().addEvent("addPause");
@@ -45,7 +45,7 @@ void Gameplay::render(){
 	window->setView(*mCamera->getView());
 	mLayerManager->render();
 	particleManager->render(*window);
-	window->setView(window->getDefaultView());
+	window->setView(*WindowManager::getInst().getDefaultView());
 	mGui.render();
 	
 	
@@ -59,7 +59,7 @@ void Gameplay::renderFromTacVision(){
 
 	mLayerManager->render();
 	particleManager->render(*window);
-	window->setView(window->getDefaultView());
+	window->setView(*WindowManager::getInst().getDefaultView());
 	mGui.render();
 
 }
