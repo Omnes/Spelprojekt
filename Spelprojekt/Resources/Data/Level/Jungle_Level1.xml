@@ -3,9 +3,12 @@
 	<Layer_1>
 		<Layer>static</Layer>
 		<Images>
-			<Image_1>Resources/Level/Night/BakNATT.png</Image_1>
-			<Image_1>Resources/Level/Night/BakNATT.png</Image_1>
-			<Image_1>Resources/Level/Night/BakNATT.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakJUNGLE.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakJUNGLE.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakJUNGLE.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakJUNGLE.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakJUNGLE.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakJUNGLE.png</Image_1>
 
 		</Images>
 		<Stats speed="-0.95"/>
@@ -16,10 +19,14 @@
 	<Layer_2>
 		<Layer>static</Layer>
 		<Images>
-			<Image_1>Resources/Level/Night/BakG1.png</Image_1>
-			<Image_1>Resources/Level/Night/BakG2.png</Image_1>
-			<Image_1>Resources/Level/Night/BakG3.png</Image_1>
-			<Image_1>Resources/Level/Night/BakG4.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakG1.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakG2.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakG3.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakG4.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakG1.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakG2.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakG3.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakG4.png</Image_1>
 
 		</Images>
 		<Stats speed="-0.8"/>
@@ -32,10 +39,14 @@
 		<Layer>static</Layer>
 		<Images>
 
-			<Image_1>Resources/Level/Night/BanS1.png</Image_1>
-			<Image_1>Resources/Level/Night/BanS2.png</Image_1>
-			<Image_1>Resources/Level/Night/BanS3.png</Image_1>
-			<Image_1>Resources/Level/Night/BanS4.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BanS1.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BanS2.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BanS3.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BanS4.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BanS1.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BanS2.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BanS3.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BanS4.png</Image_1>
 
 		
 		</Images>
@@ -53,10 +64,17 @@
 	<Layer_5>
 		<Layer>static</Layer>
 		<Images>
-			<Image_1>Resources/Level/Night/FörG1.png</Image_1>
-			<Image_1>Resources/Level/Night/FörG2.png</Image_1>
-			<Image_1>Resources/Level/Night/FörG3.png</Image_1>
-			<Image_1>Resources/Level/Night/FörG4.png</Image_1>
+			<Image_1>Resources/Level/Jungle/FörG1.png</Image_1>
+			<Image_1>Resources/Level/Jungle/FörG2.png</Image_1>
+			<Image_1>Resources/Level/Jungle/FörG3.png</Image_1>
+			<Image_1>Resources/Level/Jungle/FörG4.png</Image_1>
+			<Image_1>Resources/Level/Jungle/FörG1.png</Image_1>
+			<Image_1>Resources/Level/Jungle/FörG2.png</Image_1>
+			<Image_1>Resources/Level/Jungle/FörG3.png</Image_1>
+			<Image_1>Resources/Level/Jungle/FörG4.png</Image_1>
+			<Image_1>Resources/Level/Jungle/FörG4.png</Image_1>
+			<Image_1>Resources/Level/Jungle/FörG1.png</Image_1>
+			<Image_1>Resources/Level/Jungle/FörG2.png</Image_1>
 			
 		</Images>
 		<Stats speed="1.3"/>
@@ -69,13 +87,10 @@
 
 <AnimalsOnLevel>
 
-	<Animal_1>Resources/Data/Animal/FrogRed.xml</Animal_1>
-	<Animal_1>Resources/Data/Animal/Monkey.xml</Animal_1>
-	<Animal_1>Resources/Data/Animal/FrogGreen.xml</Animal_1>
-	<Animal_1>Resources/Data/Animal/Jaguar.xml</Animal_1>
-
-
-
+	<Animal_1>Resources/Data/Animal/frogRed.xml</Animal_1>
+	<Animal_1>Resources/Data/Animal/frogGreen.xml</Animal_1>
+	<Animal_1>Resources/Data/Animal/Spider.xml</Animal_1>
+	
 
 </AnimalsOnLevel>
 
@@ -84,28 +99,32 @@
 </Level>
 
 <Obstacles minDistance="256" maxDistance="512">
-	<Oil chance="25" speedMod="0.5" y="200" numberOfFrames="1" frameTime="100">Resources/Obstacle/oil.png</Oil>
-	<FallenTree chance="50" speedMod="0.5" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/fallentree.png</FallenTree>
-	<Stone chance="25" speedMod="0.5" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/stone.png</Stone>
+	<Stone 		chance ="365" speedMod="0" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/stone.png</Stone>
+	<Box 		chance ="1124" speedMod="0" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/box.png</Box>
+	<FallenTree 	chance ="481" speedMod="0" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/fallentree.png</FallenTree>
+	<GarbageSwamp 	chance ="786" speedMod="0.5" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/garbageswamp.png</GarbageSwamp>
+	<Oil 		chance ="764" speedMod="0.5" y="352" numberOfFrames="1" frameTime="100">Resources/Obstacle/oil.png</Oil>
+	<Trash 		chance ="1142" speedMod="0" y="290" numberOfFrames="1" frameTime="100">Resources/Obstacle/trash.png</Trash>
+
 
 </Obstacles>
 
 <Abilities>
-	<Ability>Crush</Ability>
-	<Ability>Love</Ability>
-	<Ability>Sonar</Ability>
 	<Ability>InnerBeast</Ability>
+	<Ability>Dig</Ability>
+	<Ability>Sonar</Ability>
+	<Ability>Omsorg</Ability>
 </Abilities>
 
 
-<Fire speed = "1" acceleration="0.01"/>
+<Fire speed = "1.6" acceleration="0.00"/>
 
 <LevelsYValue air="100" middle="290" ground="500"/>
 
 
 <Music>Resources/Sound/Level1_</Music>
 
-<Gui>Resources/GUI/SwampGui.png</Gui>
+<Gui>Resources/GUI/JungleGui.png</Gui>
 
 
 

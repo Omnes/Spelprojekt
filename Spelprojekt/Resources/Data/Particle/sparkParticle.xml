@@ -1,9 +1,9 @@
 <Particle>
-	<Name>Fire</Name>
+	<Name>Spark</Name>
 	<Texture yframes="1">resources/particle/gul.png</Texture>
 	<Life min="90" max="150"/>
 	<Direction min ="0" max="360"/>
-	<Speed min="1" max="2" increase="-0.01"/>
+	<Speed min="1" max="2" increase="1"/>
 	<Rotation min="0" max="360" increaseMin="0" increaseMax="0"/>
 	<Scale min="1" max="2" increase="0"/>
 	<Color>
