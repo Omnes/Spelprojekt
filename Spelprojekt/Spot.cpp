@@ -11,15 +11,15 @@ Spot::Spot(int level, sf::Vector2f position):
 {
 	ResourceManager* r = &ResourceManager::getInst();
 
-	mTexture = *r->getTexture("Resources/Menu/TacticMenu/spot2.png");
+	mTexture = *r->getTexture("Resources/Menu/TacticMenu/spot.png");
 
 	mSprite = new sf::Sprite;
 	mSprite->setTexture(mTexture);
 	mSprite->setPosition(position);
 	
-	mRect = sf::IntRect(0,0, mTexture.getSize().x/2, mTexture.getSize().y);
-	mSprite->setTextureRect(mRect);
-	mSprite->setOrigin(64,64); // kom ihåg att fixa orgin när vi fått grafik
+	//mRect = sf::IntRect(0,0, mTexture.getSize().x/2, mTexture.getSize().y);
+	//mSprite->setTextureRect(mRect);
+	mSprite->setOrigin(mTexture.getSize().x/2, mTexture.getSize().y/2); // kom ihåg att fixa orgin när vi fått grafik
 
 }
 
@@ -50,23 +50,19 @@ bool Spot::getTakenSpot(){
 	return mTaken;
 }
 
+//byt namn till typ. chan
 void Spot::setColorSpot(bool colorGreen){
 
 	if(colorGreen){
-		mRect.left = mRect.width;//<-------------------statiska siffor
-		mSprite->setTextureRect(mRect);
+		mSprite->setColor(sf::Color(255,100,255,255));
 	}else{
-		mRect.left = 0; //<-------------------statiska siffor
-		mSprite->setTextureRect(mRect);
+		mSprite->setColor(sf::Color(0,0,0,0));
 	}
 
 }
 
 void Spot::setPrototypeAnimal(AnimalPrototype* PlacedAnimal){
 	mPlacedAnimal = PlacedAnimal;
-	//if(PlacedAnimal != 0){
-	//	mPlacedAnimal->playSound();
-	//}
 }
 
 AnimalPrototype* Spot::getPrototypeAnimal(){
