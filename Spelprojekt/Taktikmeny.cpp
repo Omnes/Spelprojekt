@@ -154,7 +154,13 @@ void TaktikMeny::placeSpots(){
 
 void TaktikMeny::createAnimals(){
 
-	//setSpeed();
+	for(SpotVector::iterator i = mSpotVector.begin(); i != mSpotVector.end(); i++){
+		if((*i)->getAfraidAnimal()){
+
+			(*i)->getPrototypeAnimal()->setExtraSpeed(2.0f);
+
+		}
+	}
 
 	for(FakeAnimals::iterator i = mFakeAnimals.begin(); i != mFakeAnimals.end(); ++i){
 		mAnimalVector.push_back((Entity*)(*i)->createAnimal());
@@ -177,8 +183,6 @@ void TaktikMeny::isClicked(){
 				}
 			}
 
-
-			//kan fucka ur om man tar djur utanför spotboxen
 			for(SpotVector::iterator i = mSpotVector.begin(); i != mSpotVector.end(); i++){
 				if((*i)->getPrototypeAnimal() == mCurrentDragAnimal){
 					(*i)->setTakenSpot(false);
@@ -192,25 +196,47 @@ void TaktikMeny::isClicked(){
 					//om speedvector inte har ngn nolla i sig
 					if(mSpeedVector[j] != 0){
 						//går igenom de olika spotsen
-						for(SpotVector::iterator k = mSpotVector.begin(); k != mSpotVector.end(); k++){
-							int level = (*k)->getLevel();
+						for(SpotVector::size_type k = 0; k < mSpotVector.size(); ++k){
+							int level = mSpotVector[k]->getLevel();
 							//om positionen på nummret i speedvectorn är detsamma som spottens position
-							if(level == j && (*k)->getPrototypeAnimal() == 0){
-								if(mCurrentDragAnimal->getLevel() != level){
+						
+
+							if(mSpotVector[k]->getPrototypeAnimal() != 0 && (k+1) < mSpotVector.size() && level == j){
+
+								////rovdjur VS växtätare
+								if(mSpotVector[k]->getPrototypeAnimal()->getAnimalType() == "meat" && mSpotVector[k+1]->getLevel() == mSpotVector[k]->getLevel() && mCurrentDragAnimal->getAnimalType() == "plant" /*&& mSpotVector[i]->getColorSpot() != 2*/          /*snabbaste farten är == 2*/){
 									//aktiviera ljus
-									(*k)->setActSpot(true);
-									(*k)->setColorSpot(1);
-								}else{
-									//aktiviera ljus snabb
-									(*k)->setActSpot(true);
-									(*k)->setColorSpot(2);
+									mSpotVector[k+1]->setActSpot(true);
+									mSpotVector[k+1]->setColorSpot(2);
+
+									//rovdjuret får också speed. inte bra
+									//mSpotVector[k+1]->setAfraidAnimal(true);
 								}
+							
 							}
+
+
+							if(level == j && mSpotVector[k]->getPrototypeAnimal() == 0 && mCurrentDragAnimal->getLevel() != level && mSpotVector[k]->getColorSpot() != 2/*<--funkar inte egentligen*/){
+
+								//aktiviera ljus
+								mSpotVector[k]->setActSpot(true);
+								mSpotVector[k]->setColorSpot(1);
+								//mSpotVector[k]->setAfraidAnimal(false);
+
+							}else if(mCurrentDragAnimal->getLevel() == level && mSpotVector[k]->getPrototypeAnimal() == 0){
+								
+								//aktiviera ljus snabbt
+								mSpotVector[k]->setActSpot(true);
+								mSpotVector[k]->setColorSpot(2);
+								//mSpotVector[k]->setAfraidAnimal(false);
+
+							}
+
+
 						}
 					}
 				}
 			}
-
 		}
 
 		if(mCurrentDragAnimal !=0){
@@ -233,18 +259,43 @@ void TaktikMeny::isNotClicked(){
 			//om speedvector inte har ngn nolla i sig
 			if(mSpeedVector[i] != 0){
 				//går igenom de olika spotsen
-				for(SpotVector::iterator j = mSpotVector.begin(); j != mSpotVector.end(); j++){
-					int level = (*j)->getLevel();
+				for(SpotVector::size_type j = 0; j < mSpotVector.size(); j++){
+					int level = mSpotVector[j]->getLevel();
 					//om positionen på nummret i speedvectorn är detsamma som spottens position
 					if(level == i && mCurrentDragAnimal != 0){
-						if((*j)->getActSpot() == true && (*j)->getTakenSpot() == false && mCurrentDragAnimal->getSprite()->getGlobalBounds().intersects((*j)->getSprite()->getGlobalBounds())){
-							mCurrentDragAnimal->setPos((*j)->getSprite()->getPosition());
+						if(mSpotVector[j]->getActSpot() == true && mSpotVector[j]->getTakenSpot() == false && mCurrentDragAnimal->getSprite()->getGlobalBounds().intersects(mSpotVector[j]->getSprite()->getGlobalBounds())){
+							mCurrentDragAnimal->setPos(mSpotVector[j]->getSprite()->getPosition());
 							mCurrentDragAnimal->setStandardSpeed(mSpeedVector[i]);
 							
 							//här är pekarsatsen
-							(*j)->setPrototypeAnimal(mCurrentDragAnimal);
+							mSpotVector[j]->setPrototypeAnimal(mCurrentDragAnimal);
+							mSpotVector[j]->setTakenSpot(true);
 
-							(*j)->setTakenSpot(true);
+							//out of boundsgrej. assertsats typ
+							if(mSpotVector[j]->getPrototypeAnimal() != 0 && (j+1) < mSpotVector.size() && level == i){
+								////rovdjur VS växtätare
+								if(mSpotVector[j]->getPrototypeAnimal()->getAnimalType() == "meat" && mSpotVector[j+1]->getLevel() == mSpotVector[j]->getLevel() /*&& mSpotVector[j+1]->getPrototypeAnimal()->getAnimalType() == "plant"*/  /* && mSpotVector[j]->getColorSpot() != 2*/){ //<---------------------- HÄR KOLLLA ROBINTNTNTTNTNNT
+									
+									
+									
+									
+									
+									
+									//xstring size är för kort. 	gillar ej: mSpotVector[j+1]->getPrototypeAnimal()->getAnimalType() == "plant"				
+//HÄRÄRÄÄRÄR
+//HÄRÄRÄÄRÄR
+
+//HÄRÄRÄÄRÄR
+//HÄRÄRÄÄRÄR
+									//HÄRÄRÄÄRÄR
+									
+									
+									
+									
+									
+									mSpotVector[j]->setAfraidAnimal(true);
+								}
+							}
 
 							mCurrentDragAnimal = 0;
 
@@ -307,8 +358,3 @@ bool TaktikMeny::getFreeSpots(){
 	return freeSpots;
 }
 
-void TaktikMeny::setSpeed(){
-	for(FakeAnimals::iterator i = mFakeAnimals.begin(); i != mFakeAnimals.end(); ++i){
-		
-	}
-}

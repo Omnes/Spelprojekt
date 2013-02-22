@@ -20,7 +20,7 @@ public:
 	~AnimalPrototype();
 	
 	void loadAnimal(std::string filePath);
-	Animal* createAnimal(); 
+	Animal* createAnimal(/*float bonusSpeed*/); 
 	void setPos(sf::Vector2f position);
 	void setStartPos(sf::Vector2f startPos);
 
@@ -34,6 +34,13 @@ public:
 	std::vector <float> getSpeedVector();
 
 	void playSound();
+
+	//int getCurrentLevel();
+	//void setCurrentLevel(int currentLevel);
+
+	std::string getAnimalType();
+
+	void setExtraSpeed(float extraSpeed);
 
 
 private:
@@ -61,6 +68,8 @@ private:
 	sf::Vector2f mStartPos;
 
 	Animation* mAnimation;
+
+	float mExtraSpeed;
 
 };
 

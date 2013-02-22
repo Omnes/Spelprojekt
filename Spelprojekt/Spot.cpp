@@ -8,7 +8,8 @@ Spot::Spot(int level, sf::Vector2f position):
 	mPlacedAnimal(0),
 	mActSpot(false),
 	mTaken(false),
-	mColor(0)
+	mColor(0),
+	mExtraSpeed(false)
 {
 	ResourceManager* r = &ResourceManager::getInst();
 
@@ -56,9 +57,9 @@ void Spot::setColorSpot(int colorGreen){
 
 	//kanske ändra sen. fulkod. 
 	if(colorGreen == 1/*uptagen men ej snabbast*/){
-		mSprite->setColor(sf::Color(255,255,255,255));
+		mSprite->setColor(sf::Color(255,255,255,200));
 	}else if(colorGreen == 2/*uptagen och snabbast*/){
-		mSprite->setColor(sf::Color(255,200,255,255));
+		mSprite->setColor(sf::Color(255,100,100,200));
 	}else{
 		mSprite->setColor(sf::Color(0,0,0,0));
 	}
@@ -75,4 +76,13 @@ AnimalPrototype* Spot::getPrototypeAnimal(){
 
 int Spot::getColorSpot(){
 	return mColor;
+}
+
+
+void Spot::setAfraidAnimal(bool extraSpeed){
+	mExtraSpeed = extraSpeed;
+}
+
+bool Spot::getAfraidAnimal(){
+	return mExtraSpeed;
 }
