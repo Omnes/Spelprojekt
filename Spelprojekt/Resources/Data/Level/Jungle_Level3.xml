@@ -6,6 +6,9 @@
 			<Image_1>Resources/Level/Night/BakNATT.png</Image_1>
 			<Image_1>Resources/Level/Night/BakNATT.png</Image_1>
 			<Image_1>Resources/Level/Night/BakNATT.png</Image_1>
+			<Image_1>Resources/Level/Night/BakNATT.png</Image_1>
+			<Image_1>Resources/Level/Night/BakNATT.png</Image_1>
+			<Image_1>Resources/Level/Night/BakNATT.png</Image_1>
 
 		</Images>
 		<Stats speed="-0.95"/>
@@ -16,6 +19,10 @@
 	<Layer_2>
 		<Layer>static</Layer>
 		<Images>
+			<Image_1>Resources/Level/Night/BakG1.png</Image_1>
+			<Image_1>Resources/Level/Night/BakG2.png</Image_1>
+			<Image_1>Resources/Level/Night/BakG3.png</Image_1>
+			<Image_1>Resources/Level/Night/BakG4.png</Image_1>
 			<Image_1>Resources/Level/Night/BakG1.png</Image_1>
 			<Image_1>Resources/Level/Night/BakG2.png</Image_1>
 			<Image_1>Resources/Level/Night/BakG3.png</Image_1>
@@ -32,6 +39,10 @@
 		<Layer>static</Layer>
 		<Images>
 
+			<Image_1>Resources/Level/Night/BanS1.png</Image_1>
+			<Image_1>Resources/Level/Night/BanS2.png</Image_1>
+			<Image_1>Resources/Level/Night/BanS3.png</Image_1>
+			<Image_1>Resources/Level/Night/BanS4.png</Image_1>
 			<Image_1>Resources/Level/Night/BanS1.png</Image_1>
 			<Image_1>Resources/Level/Night/BanS2.png</Image_1>
 			<Image_1>Resources/Level/Night/BanS3.png</Image_1>
@@ -57,6 +68,13 @@
 			<Image_1>Resources/Level/Night/FörG2.png</Image_1>
 			<Image_1>Resources/Level/Night/FörG3.png</Image_1>
 			<Image_1>Resources/Level/Night/FörG4.png</Image_1>
+			<Image_1>Resources/Level/Night/FörG1.png</Image_1>
+			<Image_1>Resources/Level/Night/FörG2.png</Image_1>
+			<Image_1>Resources/Level/Night/FörG3.png</Image_1>
+			<Image_1>Resources/Level/Night/FörG4.png</Image_1>
+			<Image_1>Resources/Level/Night/FörG4.png</Image_1>
+			<Image_1>Resources/Level/Night/FörG1.png</Image_1>
+			<Image_1>Resources/Level/Night/FörG2.png</Image_1>
 			
 		</Images>
 		<Stats speed="1.3"/>
@@ -69,44 +87,55 @@
 
 <AnimalsOnLevel>
 
-	<Animal_1>Resources/Data/Animal/Monkey.xml</Animal_1>
-	<Animal_1>Resources/Data/Animal/Monkey.xml</Animal_1>
+	<Animal_1>Resources/Data/Animal/frogGreen.xml</Animal_1>
 	<Animal_1>Resources/Data/Animal/Bat.xml</Animal_1>
-	<Animal_1>Resources/Data/Animal/Eagle.xml</Animal_1>
+	<Animal_1>Resources/Data/Animal/Snake.xml</Animal_1>
 	<Animal_1>Resources/Data/Animal/HummingBird.xml</Animal_1>
+	<Animal_1>Resources/Data/Animal/Spider.xml</Animal_1>
+	<Animal_1>Resources/Data/Animal/Monkey.xml</Animal_1>
+	<Animal_1>Resources/Data/Animal/Vulture.xml</Animal_1>
+	<Animal_1>Resources/Data/Animal/Jaguar.xml</Animal_1>
+	<Animal_1>Resources/Data/Animal/Eagle.xml</Animal_1>
 
 
 
 
 </AnimalsOnLevel>
 
-<Level length = "6000">
+<Level length = "10000">
 	
 </Level>
 
 
 <Obstacles minDistance="64" maxDistance="128">
-	<GarbageSwamp chance = "25" speedMod = "0" y="400" numberOfFrames="1" frameTime="100">Resources/Obstacle/garbageswamp.png</GarbageSwamp>
-	<Stone chance = "40" speedMod = "0" y="200" numberOfFrames="1" frameTime="100">Resources/Obstacle/stone.png</Stone>
-	<Bees chance = "350" speedMod = "0" y="100" numberOfFrames="5" frameTime="200">Resources/Obstacle/bees.png</Bees>
+	<Stone 		chance ="365" speedMod="0" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/stone.png</Stone>
+	<Box 		chance ="1124" speedMod="0" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/box.png</Box>
+	<Bees 		chance ="1120" speedMod="0" y="100" numberOfFrames="5" frameTime="200">Resources/Obstacle/bees.png</Bees>
+	<FallenTree 	chance ="481" speedMod="0" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/fallentree.png</FallenTree>
+	<GarbageSwamp 	chance ="786" speedMod="0.5" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/garbageswamp.png</GarbageSwamp>
+	<Oil 		chance ="764" speedMod="0.5" y="352" numberOfFrames="1" frameTime="100">Resources/Obstacle/oil.png</Oil>
+	<Smoke 		chance ="533" speedMod="0.5" y="100" numberOfFrames="1" frameTime="100">Resources/Obstacle/smoke.png</Smoke>
+	<Trash 		chance ="1142" speedMod="0" y="290" numberOfFrames="1" frameTime="100">Resources/Obstacle/trash.png</Trash>
 
 
 
 </Obstacles>
 
 <Abilities>
-	<Ability>Crush</Ability>
-	<Ability>Love</Ability>
 	<Ability>Sonar</Ability>
+	<Ability>Claw</Ability>
 	<Ability>InnerBeast</Ability>
+	<Ability>Growl</Ability>
+	<Ability>Power</Ability>
+	<Ability>Omsorg</Ability>
 </Abilities>
 
-<Fire speed = "0.0" acceleration="0.00"/>
+<Fire speed = "1.6" acceleration="0.00"/>
 
 
 <LevelsYValue air="100" middle="290" ground="500"/>
 
-<Music>Resources/Sound/Level1_</Music>
+<Music>Resources/Sound/Level3_</Music>
 
-<Gui>Resources/GUI/swampGui.png</Gui>
+<Gui>Resources/GUI/NattGui.png</Gui>
 
