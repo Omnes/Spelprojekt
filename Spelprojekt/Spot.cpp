@@ -20,7 +20,7 @@ Spot::Spot(int level, sf::Vector2f position):
 	//mRect = sf::IntRect(0,0, mTexture.getSize().x/2, mTexture.getSize().y);
 	//mSprite->setTextureRect(mRect);
 	mSprite->setOrigin(mTexture.getSize().x/2, mTexture.getSize().y/2); // kom ihåg att fixa orgin när vi fått grafik
-
+	mSprite->setColor(sf::Color(0,0,0,0));
 }
 
 Spot::~Spot(){}
@@ -54,7 +54,7 @@ bool Spot::getTakenSpot(){
 void Spot::setColorSpot(bool colorGreen){
 
 	if(colorGreen){
-		mSprite->setColor(sf::Color(255,100,255,255));
+		mSprite->setColor(sf::Color(255,200,255,255));
 	}else{
 		mSprite->setColor(sf::Color(0,0,0,0));
 	}
