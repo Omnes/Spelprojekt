@@ -67,5 +67,44 @@
 
 	</Growl>
 
+	<Dig>
+		<Type>Remove</Type>
+		<Texture>Resources/GUI/dig.png</Texture>
+		<ParticleEffekt amount="50">Dirt</ParticleEffekt>
+		<CanRemove>
+			<Obstacle>FallenTree</Obstacle>
+			<Obstacle>Box</Obstacle>
+			<Obstacle>Stone</Obstacle>
+			<Obstacle>Trash</Obstacle>
+		</CanRemove>
+
+	</Dig>
+
+	<Power>
+		<Type>Remove</Type>
+		<Texture>Resources/GUI/power.png</Texture>
+		<ParticleEffekt amount="1">Smash</ParticleEffekt>
+		<CanRemove>
+			<Obstacle>Stone</Obstacle>
+			<Obstacle>FallenTree</Obstacle>
+			<Obstacle>Box</Obstacle>
+			<Obstacle>Trash</Obstacle>
+		</CanRemove>
+
+	</Power>
+
+	<Claw>
+		<Type>Remove</Type>
+		<Texture>Resources/GUI/claw.png</Texture>
+		<ParticleEffekt amount="1">Smash</ParticleEffekt>
+		<CanRemove>
+			<Obstacle>Bees</Obstacle>
+			<Obstacle>Box</Obstacle>
+			<Obstacle>Trash</Obstacle>
+		</CanRemove>
+
+	</Claw>
+
+
 
 </Abilities>
