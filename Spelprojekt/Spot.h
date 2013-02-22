@@ -29,8 +29,8 @@ public:
 	void setPrototypeAnimal(AnimalPrototype* PlacedAnimal);
 	AnimalPrototype* getPrototypeAnimal();
 
-
-
+	void setAfraidAnimal(bool extraSpeed);
+	bool getAfraidAnimal();
 
 private:
 
@@ -45,6 +45,8 @@ private:
 	int mColor;
 
 	int mLevel;
+
+	bool mExtraSpeed; // kan ändra till float sen
 };
 
 #endif

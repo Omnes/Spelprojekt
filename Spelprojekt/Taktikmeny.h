@@ -36,6 +36,7 @@ public:
 private:
 
 	AnimalPrototype* mCurrentDragAnimal;
+
 	typedef std::vector<AnimalPrototype*> FakeAnimals;
 	FakeAnimals mFakeAnimals;
 
@@ -47,6 +48,9 @@ private:
 
 	typedef std::vector <int> LevelVector;  // kanske kan göras lokalt
 	LevelVector mLevelVector;
+
+	typedef std::vector <AnimalPrototype*> AnimalOnLevelsVector;  // kanske kan göras lokalt
+	AnimalOnLevelsVector mAnimalOnLevelsVector;
 
 	typedef std::vector <int> PosVector;
 	PosVector mPosVector;

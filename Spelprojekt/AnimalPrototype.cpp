@@ -5,7 +5,9 @@
 #include "SoundManager.h"
 
 
-AnimalPrototype::AnimalPrototype(std::string filePath){
+AnimalPrototype::AnimalPrototype(std::string filePath):
+	mExtraSpeed(1)
+{
 	loadAnimal(filePath);
 	mSprite.setTexture(*mTex);
 	mSprite.setTextureRect(sf::IntRect(0,mTex->getSize().y/2,mTex->getSize().x/10,mTex->getSize().y/2));
@@ -68,10 +70,10 @@ void AnimalPrototype::loadAnimal(std::string filePath){
 	
 }
 
-Animal* AnimalPrototype::createAnimal(){
+Animal* AnimalPrototype::createAnimal(/*float bonusSpeed*/){
 
 	mAnimation =  new Animation(mTex, mFrameTick, mFrames,2);// funkar alla parametrar ? jadå!
-	return new Animal(mAnimation, mPosition, mStandardSpeed, mFilePath); 
+	return new Animal(mAnimation, mPosition, mStandardSpeed*mExtraSpeed, mFilePath); 
 
 };
 
@@ -122,3 +124,12 @@ std::vector <float> AnimalPrototype::getSpeedVector(){
 void AnimalPrototype::playSound(){
 	SoundManager::getInst().play(mSound);
 };
+
+void AnimalPrototype::setExtraSpeed(float extraSpeed){
+		mExtraSpeed = extraSpeed; 
+}
+
+std::string AnimalPrototype::getAnimalType(){
+	return mAnimalType;
+}
+
