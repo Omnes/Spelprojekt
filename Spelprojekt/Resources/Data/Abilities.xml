@@ -71,6 +71,7 @@
 		<Type>Remove</Type>
 		<Texture>Resources/GUI/dig.png</Texture>
 		<ParticleEffekt amount="50">Dirt</ParticleEffekt>
+		<Stats cooldown="5"/>
 		<CanRemove>
 			<Obstacle>FallenTree</Obstacle>
 			<Obstacle>Box</Obstacle>
@@ -84,6 +85,7 @@
 		<Type>Remove</Type>
 		<Texture>Resources/GUI/power.png</Texture>
 		<ParticleEffekt amount="1">Smash</ParticleEffekt>
+		<Stats cooldown="5"/>
 		<CanRemove>
 			<Obstacle>Stone</Obstacle>
 			<Obstacle>FallenTree</Obstacle>
@@ -97,6 +99,7 @@
 		<Type>Remove</Type>
 		<Texture>Resources/GUI/claw.png</Texture>
 		<ParticleEffekt amount="1">Smash</ParticleEffekt>
+		<Stats cooldown="5"/>
 		<CanRemove>
 			<Obstacle>Bees</Obstacle>
 			<Obstacle>Box</Obstacle>
