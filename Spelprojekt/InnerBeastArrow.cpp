@@ -7,9 +7,9 @@ InnerBeastArrow::InnerBeastArrow(sf::Vector2f pos, std::string img) : mPosition(
 	mTexture = (ResourceManager::getInst().getTexture(img));
 	mSprite.setTexture(*mTexture);
 	mSprite.setPosition(mPosition);
-	mRectangle = sf::IntRect(0,0, mTexture->getSize().x/2, mTexture->getSize().y);
+	mRectangle = sf::IntRect(0,0, mTexture->getSize().x/10, mTexture->getSize().y);
 	mSprite.setTextureRect(mRectangle);
-	mSprite.setOrigin(mTexture->getSize().x/4, mTexture->getSize().y/2);
+	mSprite.setOrigin(mTexture->getSize().x/20, mTexture->getSize().y/2);
 }
 
 InnerBeastArrow::~InnerBeastArrow(){

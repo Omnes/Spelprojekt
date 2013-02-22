@@ -25,9 +25,9 @@ InnerBeastButton::InnerBeastButton(sf::Vector2f position, std::string texture,fl
 
 		std::vector<float> yPositions = LevelManager::getInst().getLevelsOnLevel();
 
-		mArrows.push_back(InnerBeastArrow(sf::Vector2f(100, yPositions[0]), "Resources/Misc/knapp1.jpg"));
-		mArrows.push_back(InnerBeastArrow(sf::Vector2f(100, yPositions[1]), "Resources/Misc/knapp2.jpg"));
-		mArrows.push_back(InnerBeastArrow(sf::Vector2f(100, yPositions[2]), "Resources/Misc/knapp3.jpg"));
+		mArrows.push_back(InnerBeastArrow(sf::Vector2f(100, yPositions[0]), "Resources/GUI/pil.png"));
+		mArrows.push_back(InnerBeastArrow(sf::Vector2f(100, yPositions[1]), "Resources/GUI/pil.png"));
+		mArrows.push_back(InnerBeastArrow(sf::Vector2f(100, yPositions[2]), "Resources/GUI/pil.png"));
 }
 
 InnerBeastButton::~InnerBeastButton(){}
