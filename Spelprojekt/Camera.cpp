@@ -3,6 +3,7 @@
 #include "ActiveLayer.h"
 #include "LevelManager.h"
 #include "ScrollDetector.h"
+#include "tinyxml2.h"
 
 
 
@@ -12,10 +13,20 @@ Camera::Camera(LayerManager* layermanager) :
 	mVelocity(0.0),
 	mView(sf::FloatRect(0,0,1280,720)),
 	mPosition(mView.getSize().x/2), 
-	mMaxVelocity(2.5), 
-	mMinVelocity(-2.5),
+
 	mMaxPos(1),
 	mMinPos(2000){
+
+		tinyxml2::XMLDocument doc;
+		doc.LoadFile("Resources/data/settings.xml");
+
+		const tinyxml2::XMLAttribute* attr = doc.FirstChildElement("Camera")->FirstAttribute();
+
+		mMinVelocity = attr->FloatValue();
+		attr = attr->Next();
+		mMaxVelocity = attr->FloatValue(); 
+		attr = attr->Next();
+		mPanSpeed = attr->FloatValue();
 
 		mLevellength=LevelManager::getInst().getLevelLength();
 		
@@ -52,17 +63,17 @@ void Camera::update(){
 
 	///mView.setSize(mMaxPos-mMinPos,mMaxPos-mMinPos);
 
-	float panSpeed = 0.1;
+	float mPanSpeed = 0.5;
 	float lastPosition = mPosition;
 
 	if((ScrollDetector::getScrollDelta() > 0 || sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) && mVelocity < mMaxVelocity){
 
-		mVelocity += panSpeed;
+		mVelocity += mPanSpeed;
 	}
 	 
 	else if((ScrollDetector::getScrollDelta() < 0 || sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) && mVelocity > mMinVelocity){
 
-		mVelocity -= panSpeed;
+		mVelocity -= mPanSpeed;
 	}
 
 
@@ -70,7 +81,7 @@ void Camera::update(){
 	if(mPosition > mMaxPos + 320){ 
 		mPosition -= 1;
 		if (mVelocity > .5){
-			mVelocity-= panSpeed*2;
+			mVelocity-= mPanSpeed*2;
 		}
 	}	
 	 

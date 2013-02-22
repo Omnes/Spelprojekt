@@ -1,5 +1,5 @@
 #include "ResourceManager.h"
-
+#include <iostream>
 
 ResourceManager::ResourceManager(){
 
@@ -23,6 +23,7 @@ sf::Texture* ResourceManager::getTexture(std::string filePath){
 	if(i == mTextureMap.end()){
 		sf::Texture* tex = new sf::Texture;
 		tex->loadFromFile(filePath);
+		std::cout << filePath << " was loaded!" << std::endl;;
 		mTextureMap[filePath] = tex;
 		return tex;
 	}
