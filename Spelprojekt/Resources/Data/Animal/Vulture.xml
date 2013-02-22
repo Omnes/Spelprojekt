@@ -10,5 +10,7 @@
 
 	<ImageAttr fTick="100" frames="10"/>
 
+	<Sound>Resources/Sound/Animals/caiman.wav</Sound>
+
 
 </Animal>

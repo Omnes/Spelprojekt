@@ -23,6 +23,7 @@ TaktikMeny::TaktikMeny() :
 	mAnimalSpriteBg.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/TacticMenu/taktikdjurbg.png"));
 	mAnimalSpriteBg.setPosition(550, 0);
 
+	LevelManager::getInst().preloadBackgrounds();
 
 	readFromFile();
 	receiveAnimals();

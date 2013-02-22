@@ -284,3 +284,29 @@ std::string LevelManager::getGuiTextureFilepath(){
 	doc.LoadFile(mFilePath.c_str());
 	return doc.FirstChildElement("Gui")->GetText();
 }
+
+void LevelManager::preloadBackgrounds(){
+	tinyxml2::XMLDocument doc;
+	doc.LoadFile(mFilePath.c_str());
+
+
+	tinyxml2::XMLElement *elm = doc.FirstChildElement("Layers")->FirstChildElement();
+	while (elm != 0){
+
+		ResourceManager* resourceManager = &ResourceManager::getInst();
+		
+		std::string layerType = elm->FirstChildElement("Layer")->GetText();
+		if(layerType == "static"){
+			const tinyxml2::XMLElement *img = elm->FirstChildElement("Images")->FirstChildElement();
+			
+			while(img != 0){
+
+				resourceManager->getTexture(img->GetText());
+				std::cout << img->GetText()<< std::endl;
+				img = img->NextSiblingElement();
+			}
+
+		}
+		elm = elm->NextSiblingElement();
+	}
+}
