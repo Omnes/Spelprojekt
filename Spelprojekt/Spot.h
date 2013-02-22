@@ -21,12 +21,14 @@ public:
 	void setTakenSpot(bool taken);
 	bool getTakenSpot();
 
-	void setColorSpot(bool taken);
+	void setColorSpot(int taken);
+	int getColorSpot();
 
 	sf::Sprite* getSprite();
 
 	void setPrototypeAnimal(AnimalPrototype* PlacedAnimal);
 	AnimalPrototype* getPrototypeAnimal();
+
 
 
 
@@ -40,6 +42,7 @@ private:
 	bool mActSpot;
 	bool mTaken;
 	
+	int mColor;
 
 	int mLevel;
 };

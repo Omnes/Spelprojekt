@@ -28,6 +28,8 @@ public:
 
 	bool getFreeSpots();
 
+	void setSpeed(); // växt vs kött
+
 	~TaktikMeny();
 	TaktikMeny();
 

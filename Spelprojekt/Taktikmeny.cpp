@@ -154,6 +154,8 @@ void TaktikMeny::placeSpots(){
 
 void TaktikMeny::createAnimals(){
 
+	//setSpeed();
+
 	for(FakeAnimals::iterator i = mFakeAnimals.begin(); i != mFakeAnimals.end(); ++i){
 		mAnimalVector.push_back((Entity*)(*i)->createAnimal());
 	}
@@ -192,10 +194,16 @@ void TaktikMeny::isClicked(){
 						for(SpotVector::iterator k = mSpotVector.begin(); k != mSpotVector.end(); k++){
 							int level = (*k)->getLevel();
 							//om positionen på nummret i speedvectorn är detsamma som spottens position
-							if(level == j){
-								//aktiviera ljus
-								(*k)->setActSpot(true);
-								(*k)->setColorSpot(true);
+							if(level == j && (*k)->getPrototypeAnimal() == 0){
+								if(mCurrentDragAnimal->getLevel() != level){
+									//aktiviera ljus
+									(*k)->setActSpot(true);
+									(*k)->setColorSpot(1);
+								}else{
+									//aktiviera ljus snabb
+									(*k)->setActSpot(true);
+									(*k)->setColorSpot(2);
+								}
 							}
 						}
 					}
@@ -232,9 +240,9 @@ void TaktikMeny::isNotClicked(){
 							//här är pekarsatsen
 							(*j)->setPrototypeAnimal(mCurrentDragAnimal);
 
-							mCurrentDragAnimal = 0;
 							(*j)->setTakenSpot(true);
-							(*j)->setColorSpot(true);
+
+							mCurrentDragAnimal = 0;
 
 						}
 					}
@@ -250,7 +258,7 @@ void TaktikMeny::isNotClicked(){
 			if((*i)->getTakenSpot() == false){
 				(*i)->setPrototypeAnimal(0);
 				(*i)->setActSpot(false);
-				(*i)->setColorSpot(false);
+				(*i)->setColorSpot(0);
 			}
 		}
 
@@ -292,4 +300,10 @@ bool TaktikMeny::getFreeSpots(){
 	}
 
 	return freeSpots;
+}
+
+void TaktikMeny::setSpeed(){
+	for(FakeAnimals::iterator i = mFakeAnimals.begin(); i != mFakeAnimals.end(); ++i){
+		
+	}
 }

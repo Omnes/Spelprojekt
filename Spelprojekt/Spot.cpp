@@ -7,7 +7,8 @@ Spot::Spot(int level, sf::Vector2f position):
 	mLevel(level),
 	mPlacedAnimal(0),
 	mActSpot(false),
-	mTaken(false)
+	mTaken(false),
+	mColor(0)
 {
 	ResourceManager* r = &ResourceManager::getInst();
 
@@ -17,8 +18,6 @@ Spot::Spot(int level, sf::Vector2f position):
 	mSprite->setTexture(mTexture);
 	mSprite->setPosition(position);
 	
-	//mRect = sf::IntRect(0,0, mTexture.getSize().x/2, mTexture.getSize().y);
-	//mSprite->setTextureRect(mRect);
 	mSprite->setOrigin(mTexture.getSize().x/2, mTexture.getSize().y/2); // kom ihåg att fixa orgin när vi fått grafik
 	mSprite->setColor(sf::Color(0,0,0,0));
 }
@@ -51,9 +50,14 @@ bool Spot::getTakenSpot(){
 }
 
 //byt namn till typ. chan
-void Spot::setColorSpot(bool colorGreen){
+void Spot::setColorSpot(int colorGreen){
 
-	if(colorGreen){
+	mColor = colorGreen;
+
+	//kanske ändra sen. fulkod. 
+	if(colorGreen == 1/*uptagen men ej snabbast*/){
+		mSprite->setColor(sf::Color(255,255,255,255));
+	}else if(colorGreen == 2/*uptagen och snabbast*/){
 		mSprite->setColor(sf::Color(255,200,255,255));
 	}else{
 		mSprite->setColor(sf::Color(0,0,0,0));
@@ -67,4 +71,8 @@ void Spot::setPrototypeAnimal(AnimalPrototype* PlacedAnimal){
 
 AnimalPrototype* Spot::getPrototypeAnimal(){
 	return mPlacedAnimal;
+}
+
+int Spot::getColorSpot(){
+	return mColor;
 }
