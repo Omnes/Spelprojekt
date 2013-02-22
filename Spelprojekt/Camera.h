@@ -21,6 +21,7 @@ public:
 private:
 	
 	int mLevellength;
+	float mPanSpeed;
 	sf::View mView;
 	sf::RenderWindow* mWindow;
 	float mVelocity, mPosition, mMaxVelocity, mMinVelocity, mMaxPos, mMinPos;

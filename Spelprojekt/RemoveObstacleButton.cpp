@@ -8,11 +8,11 @@
 #include "Gui.h"
 #include <SFML\Graphics\CircleShape.hpp>
 
-RemoveObstacleButton::RemoveObstacleButton(std::vector<std::string> obstacle,sf::Vector2f position, std::string texture, std::string particleName, int emittAmount, Gui* gui)
+RemoveObstacleButton::RemoveObstacleButton(std::vector<std::string> obstacle,sf::Vector2f position, std::string texture,float cooldown, std::string particleName, int emittAmount, Gui* gui)
 	: mObstacles(obstacle)
 	, mTexture(ResourceManager::getInst().getTexture(texture))
 	, mFrames(3)
-	, mCooldown(100)
+	, mCooldown(cooldown)
 	, mClickCooldown(75)
 	, mGui(gui)
 	, mClicked(false)
@@ -89,14 +89,10 @@ void RemoveObstacleButton::update(){
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left) 
 		&& mClicked 
 		&& mClickCooldownTimer.getElapsedTime().asMilliseconds() > mClickCooldown 
-		&& mCooldownTimer.getElapsedTime().asMilliseconds() > mCooldown){
+		&& mCooldownTimer.getElapsedTime().asSeconds() > mCooldown){
 
 		killRelativePositionEntity(mousePosition);
 	}
-
-	
-
-	
 
 	if(mClicked){
 		mSprite.setTextureRect(sf::IntRect(mTexture->getSize().x/mFrames*1,0,mTexture->getSize().x/mFrames,mTexture->getSize().y));

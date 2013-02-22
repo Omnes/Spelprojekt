@@ -37,6 +37,10 @@ LevelManager& LevelManager::getInst(){
 
 void LevelManager::setFilePath(std::string filePath){
 	mFilePath = filePath;
+	delete mDoc;
+	mDoc = new tinyxml2::XMLDocument;
+	mDoc->LoadFile(mFilePath.c_str());
+	
 }
 std::string LevelManager::getFilePath(){
 
@@ -46,10 +50,8 @@ std::string LevelManager::getFilePath(){
 std::vector <AnimalPrototype*> LevelManager::getAnimalsOnLevel(){
 	std::vector<AnimalPrototype*> animalsOnLevel;
 
-	tinyxml2::XMLDocument doc;
-	doc.LoadFile(mFilePath.c_str());
 
-	tinyxml2::XMLElement *elm = doc.FirstChildElement("AnimalsOnLevel")->FirstChildElement();
+	tinyxml2::XMLElement *elm = mDoc->FirstChildElement("AnimalsOnLevel")->FirstChildElement();
 
 	while (elm !=0){
 		animalsOnLevel.push_back(new AnimalPrototype(elm->GetText()));
@@ -72,10 +74,7 @@ void LevelManager::setAnimalPosition(std::vector <Entity*> entityVector){
 std::vector<Layer*> LevelManager::loadLayers(){
 	std::vector<Layer*> layers;
 	
-	tinyxml2::XMLDocument doc;
-	doc.LoadFile(mFilePath.c_str()); // den vill ha en const char *, lös skiten.  skiten är nu löst.
-
-	tinyxml2::XMLElement *elm = doc.FirstChildElement("Layers")->FirstChildElement();
+	tinyxml2::XMLElement *elm = mDoc->FirstChildElement("Layers")->FirstChildElement();
 	while (elm != 0){
 		std::cout << elm->Name() << std::endl;
 		Layer *layer;
@@ -91,7 +90,6 @@ std::vector<Layer*> LevelManager::loadLayers(){
 			while(img != 0){
 
 				sf::Texture* tex = resourceManager->getTexture(img->GetText());
-				std::cout << img->GetText()<< std::endl;
 				sf::Sprite *sprite = new sf::Sprite();
 				sprite->setTexture(*tex);
 				spriteVector.push_back(sprite);
@@ -107,12 +105,12 @@ std::vector<Layer*> LevelManager::loadLayers(){
 
 			std::vector<Entity*> entityVector(placedAnimals);
 
-			int minDistance = doc.FirstChildElement("Obstacles")->FirstAttribute()->IntValue();
-			int maxDistance = doc.FirstChildElement("Obstacles")->FirstAttribute()->Next()->IntValue();
+			int minDistance = mDoc->FirstChildElement("Obstacles")->FirstAttribute()->IntValue();
+			int maxDistance = mDoc->FirstChildElement("Obstacles")->FirstAttribute()->Next()->IntValue();
 
 			std::map<std::string, int> mChanceMap;
 
-			tinyxml2::XMLElement *obst = doc.FirstChildElement("Obstacles")->FirstChildElement();
+			tinyxml2::XMLElement *obst = mDoc->FirstChildElement("Obstacles")->FirstChildElement();
 
 
 			int totalChanceValue = 0;
@@ -124,7 +122,7 @@ std::vector<Layer*> LevelManager::loadLayers(){
 				obst = obst->NextSiblingElement();
 			}
 
-			mLevellength = doc.FirstChildElement("Level")->FirstAttribute()->IntValue();
+			mLevellength = mDoc->FirstChildElement("Level")->FirstAttribute()->IntValue();
 
 			float x = 1280 + rand()%100;
 
@@ -147,7 +145,7 @@ std::vector<Layer*> LevelManager::loadLayers(){
 				
 				}
 
-				obst = doc.FirstChildElement("Obstacles")->FirstChildElement(name.c_str());
+				obst = mDoc->FirstChildElement("Obstacles")->FirstChildElement(name.c_str());
 				const tinyxml2::XMLAttribute *atr = obst->FirstAttribute()->Next();
 
 				float speedMod = atr->FloatValue();
@@ -172,8 +170,8 @@ std::vector<Layer*> LevelManager::loadLayers(){
 			}
 
 			//skapar elden
-			float fireSpeed = doc.FirstChildElement("Fire")->FirstAttribute()->FloatValue();
-			float acceleration = doc.FirstChildElement("Fire")->FirstAttribute()->Next()->FloatValue();
+			float fireSpeed = mDoc->FirstChildElement("Fire")->FirstAttribute()->FloatValue();
+			float acceleration = mDoc->FirstChildElement("Fire")->FirstAttribute()->Next()->FloatValue();
 			entityVector.push_back(new Fire(sf::Vector2f(-150,0),fireSpeed,acceleration));
 
 			ActiveLayer* activeLayer = new ActiveLayer(entityVector, mLevellength);
@@ -237,10 +235,8 @@ std::vector<std::string>* LevelManager::getDeadAnimalCollection(){
 }
 
 std::vector<float> LevelManager::getLevelsOnLevel(){
-	tinyxml2::XMLDocument doc;
-	doc.LoadFile(mFilePath.c_str());
 
-	const tinyxml2::XMLAttribute* attr = doc.FirstChildElement("LevelsYValue")->FirstAttribute();
+	const tinyxml2::XMLAttribute* attr = mDoc->FirstChildElement("LevelsYValue")->FirstAttribute();
 	
 	std::vector<float>LevelYVector;
 
@@ -254,21 +250,14 @@ std::vector<float> LevelManager::getLevelsOnLevel(){
 
 
 std::string LevelManager::getMusicOnLevel(){
-	tinyxml2::XMLDocument doc;
-	doc.LoadFile(mFilePath.c_str());
 
-	return doc.FirstChildElement("Music")->GetText();
-	
-
+	return mDoc->FirstChildElement("Music")->GetText();
 }
 
 std::vector<std::string> LevelManager::getAbilitiesOnLevel(){
 	std::vector<std::string> vector;
 
-	tinyxml2::XMLDocument doc;
-	doc.LoadFile(mFilePath.c_str());
-
-	tinyxml2::XMLElement *elem = doc.FirstChildElement("Abilities")->FirstChildElement();
+	tinyxml2::XMLElement *elem = mDoc->FirstChildElement("Abilities")->FirstChildElement();
 
 	while(elem != 0){
 		vector.push_back(elem->GetText());
@@ -280,17 +269,13 @@ std::vector<std::string> LevelManager::getAbilitiesOnLevel(){
 }
 
 std::string LevelManager::getGuiTextureFilepath(){
-	tinyxml2::XMLDocument doc;
-	doc.LoadFile(mFilePath.c_str());
-	return doc.FirstChildElement("Gui")->GetText();
+
+	return mDoc->FirstChildElement("Gui")->GetText();
 }
 
 void LevelManager::preloadBackgrounds(){
-	tinyxml2::XMLDocument doc;
-	doc.LoadFile(mFilePath.c_str());
 
-
-	tinyxml2::XMLElement *elm = doc.FirstChildElement("Layers")->FirstChildElement();
+	tinyxml2::XMLElement *elm = mDoc->FirstChildElement("Layers")->FirstChildElement();
 	while (elm != 0){
 
 		ResourceManager* resourceManager = &ResourceManager::getInst();
@@ -302,7 +287,6 @@ void LevelManager::preloadBackgrounds(){
 			while(img != 0){
 
 				resourceManager->getTexture(img->GetText());
-				std::cout << img->GetText()<< std::endl;
 				img = img->NextSiblingElement();
 			}
 

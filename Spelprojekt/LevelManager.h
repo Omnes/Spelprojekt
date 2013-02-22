@@ -2,6 +2,7 @@
 #define LEVELMANAGER
 #include <vector>
 #include <string>
+#include "tinyxml2.h"
 
 
 class Layer;
@@ -36,6 +37,8 @@ public:
 private:
 	//std::vector<Layer*> layers;
 	std::string mFilePath;
+	tinyxml2::XMLDocument* mDoc;
+
 	std::vector<Entity*> placedAnimals;
 	std::vector<std::string> mAliveAnimals, mDeadAnimals, mDeadAnimalCollection;
 	ActiveLayer* mActiveLayer;

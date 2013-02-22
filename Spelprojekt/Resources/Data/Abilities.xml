@@ -16,6 +16,7 @@
 		<Type>Remove</Type>
 		<Texture>Resources/GUI/rage.png</Texture>
 		<ParticleEffekt amount="1">Smash</ParticleEffekt>
+		<Stats cooldown="5"/>
 		<CanRemove>
 			<Obstacle>Stone</Obstacle>
 			<Obstacle>FallenTree</Obstacle>
@@ -30,6 +31,7 @@
 		<Type>Remove</Type>
 		<Texture>Resources/GUI/omsorg.png</Texture>
 		<ParticleEffekt amount="20">Heart</ParticleEffekt>
+		<Stats cooldown="5"/>
 		<CanRemove>
 			<Obstacle>GarbageSwamp</Obstacle>
 			<Obstacle>Box</Obstacle>
@@ -44,6 +46,7 @@
 		<Type>Remove</Type>
 		<Texture>Resources/GUI/squeeze.png</Texture>
 		<ParticleEffekt amount="1">Crack</ParticleEffekt>
+		<Stats cooldown="5"/>
 		<CanRemove>
 			<Obstacle>Box</Obstacle>
 			<Obstacle>FallenTree</Obstacle>
@@ -56,8 +59,10 @@
 		<Type>Remove</Type>
 		<Texture>Resources/GUI/growl.png</Texture>
 		<ParticleEffekt amount="1">Smash</ParticleEffekt>
+		<Stats cooldown="5"/>
 		<CanRemove>
 			<Obstacle>Bees</Obstacle>
+			<Obstacle>Animal</Obstacle>
 		</CanRemove>
 
 	</Growl>
