@@ -1,0 +1,7 @@
+###########################################################
+			Settings
+###########################################################
+
+<Camera minSpeed = "-3" maxSpeed = "3" acceleration = "0.05"/>
+
+<Sound musicVolume = "5" soundVolume="5" muted = "0"/>

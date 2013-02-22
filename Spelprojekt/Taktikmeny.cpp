@@ -172,6 +172,7 @@ void TaktikMeny::isClicked(){
 				if((*i)->getSprite()->getGlobalBounds().contains(musPosition)){
 					mCurrentDragAnimal = (*i);
 					mCurrentDragAnimal->playSound();
+					mCurrentDragAnimal->getSprite()->setScale(0.8,0.8);
 					mGrabOffset = mCurrentDragAnimal->getPos() - musPosition;
 				}
 			}
@@ -213,6 +214,9 @@ void TaktikMeny::isClicked(){
 		}
 
 		if(mCurrentDragAnimal !=0){
+			float floatSpeed = 0.75;
+			mGrabOffset.x *= floatSpeed;
+			mGrabOffset.y *= floatSpeed;
 			mCurrentDragAnimal -> setPos(musPosition + mGrabOffset);
 		}
 
@@ -222,7 +226,7 @@ void TaktikMeny::isNotClicked(){
 
 	//om mCurrentAnimal är över en spot
 	if(mCurrentDragAnimal != 0){
-
+		mCurrentDragAnimal->getSprite()->setScale(1,1);
 		mSpeedVector = mCurrentDragAnimal->getSpeedVector();
 
 		for(SpeedVector::size_type i = 0; i < mSpeedVector.size(); i++){
@@ -252,6 +256,7 @@ void TaktikMeny::isNotClicked(){
 		if(mCurrentDragAnimal != 0){
 			mCurrentDragAnimal->setPos(mCurrentDragAnimal->getStartPos());
 		}
+		
 		mCurrentDragAnimal = 0;
 
 		for(SpotVector::iterator i = mSpotVector.begin(); i != mSpotVector.end(); i++){

@@ -90,12 +90,14 @@ void Gui::loadAbilites(){
 			std::string effekt = elm->FirstChildElement("ParticleEffekt")->GetText();
 			int amount = elm->FirstChildElement("ParticleEffekt")->FirstAttribute()->IntValue();
 
+			float cooldown = elm->FirstChildElement("Stats")->FirstAttribute()->FloatValue();;
+
 			while (canRemove != 0){
 				canRemoveVector.push_back(canRemove->GetText());
 				canRemove = canRemove->NextSiblingElement();
 			}
 
-			mButtons.push_back(new RemoveObstacleButton(canRemoveVector,position,texture,effekt,amount,this));
+			mButtons.push_back(new RemoveObstacleButton(canRemoveVector,position,texture,cooldown,effekt,amount,this));
 		}
 
 		abilityNumber++;
