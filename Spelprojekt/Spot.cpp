@@ -7,8 +7,8 @@ Spot::Spot(int level, sf::Vector2f position):
 	mLevel(level),
 	mPlacedAnimal(0),
 	mActSpot(false),
-	mTaken(false),
-	mColor(0),
+	//mTaken(false),
+	mColor(0,0,0,0),
 	mExtraSpeed(false)
 {
 	ResourceManager* r = &ResourceManager::getInst();
@@ -25,45 +25,38 @@ Spot::Spot(int level, sf::Vector2f position):
 
 Spot::~Spot(){}
 
-
+//ett djur kan placeras här
 void Spot::setActSpot(bool dragAnimal){
 	mActSpot = dragAnimal;
 }
 
+//returnerar om ett djur kan sitta här
+bool Spot::getActSpot(){
+	return mActSpot;
+}
+
+//returnerear vilken nivå denna spot är på
 int Spot::getLevel(){
 	return mLevel;
+}
+
+void Spot::update(){
+	if(mPlacedAnimal != 0 || mActSpot){
+		mSprite->setColor(mColor);
+	}else{
+		mSprite->setColor(sf::Color(0.0f,0.0f,0.0f,0.0f));
+	}
 }
 
 sf::Sprite* Spot::getSprite(){
 	return mSprite;
 }
 
-bool Spot::getActSpot(){
-	return mActSpot;
-}
+void Spot::setColorSpot(sf::Color color){
 
-void Spot::setTakenSpot(bool taken){
-	mTaken = taken;
-}
+	mColor = color;
 
-bool Spot::getTakenSpot(){
-	return mTaken;
-}
-
-//byt namn till typ. chan
-void Spot::setColorSpot(int colorGreen){
-
-	mColor = colorGreen;
-
-	//kanske ändra sen. fulkod. 
-	if(colorGreen == 1/*uptagen men ej snabbast*/){
-		mSprite->setColor(sf::Color(255,255,255,200));
-	}else if(colorGreen == 2/*uptagen och snabbast*/){
-		mSprite->setColor(sf::Color(255,100,100,200));
-	}else{
-		mSprite->setColor(sf::Color(0,0,0,0));
-	}
-
+	mSprite->setColor(mColor);
 }
 
 void Spot::setPrototypeAnimal(AnimalPrototype* PlacedAnimal){
@@ -73,11 +66,6 @@ void Spot::setPrototypeAnimal(AnimalPrototype* PlacedAnimal){
 AnimalPrototype* Spot::getPrototypeAnimal(){
 	return mPlacedAnimal;
 }
-
-int Spot::getColorSpot(){
-	return mColor;
-}
-
 
 void Spot::setAfraidAnimal(bool extraSpeed){
 	mExtraSpeed = extraSpeed;

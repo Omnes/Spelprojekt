@@ -18,18 +18,20 @@ public:
 
 	int getLevel();
 
+	void update();
+
 	void setTakenSpot(bool taken);
 	bool getTakenSpot();
 
-	void setColorSpot(int taken);
-	int getColorSpot();
+	void setColorSpot(sf::Color color);
+	//int getColorSpot();
 
 	sf::Sprite* getSprite();
 
 	void setPrototypeAnimal(AnimalPrototype* PlacedAnimal);
 	AnimalPrototype* getPrototypeAnimal();
 
-	void setAfraidAnimal(bool extraSpeed);
+	void setAfraidAnimal(bool afraid);
 	bool getAfraidAnimal();
 
 private:
@@ -42,7 +44,7 @@ private:
 	bool mActSpot;
 	bool mTaken;
 	
-	int mColor;
+	sf::Color mColor;
 
 	int mLevel;
 
