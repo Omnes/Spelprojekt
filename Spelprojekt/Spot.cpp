@@ -74,3 +74,11 @@ void Spot::setAfraidAnimal(bool extraSpeed){
 bool Spot::getAfraidAnimal(){
 	return mExtraSpeed;
 }
+
+void Spot::setOriginalColor(sf::Color originalColor){
+	mOriginalColor = originalColor;
+}
+
+void Spot::resetColor(){
+	mColor = mOriginalColor;
+}

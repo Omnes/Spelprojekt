@@ -34,6 +34,9 @@ public:
 	void setAfraidAnimal(bool afraid);
 	bool getAfraidAnimal();
 
+	void setOriginalColor(sf::Color originalColor);
+	void resetColor();
+
 private:
 
 	sf::Texture mTexture;
@@ -45,6 +48,7 @@ private:
 	bool mTaken;
 	
 	sf::Color mColor;
+	sf::Color mOriginalColor;
 
 	int mLevel;
 

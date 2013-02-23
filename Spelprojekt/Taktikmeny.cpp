@@ -201,25 +201,25 @@ void TaktikMeny::isClicked(){
 						//går igenom de olika spotsen
 						for(SpotVector::size_type k = 0; k < mSpotVector.size(); ++k){
 
-							//if rovdjur är nertrycck, kolla igenom spots efter plant/växtdjur
-							if(mSpotVector.size() > (k+1) && k > 2){ // eh ??? k > 2 osäker här, fösrta argumentet kommer aldrig hända pga. man hinner inte klicka innan den laddat allt
-								if(mSpotVector[k]->getPrototypeAnimal() != 0){
-									if(mCurrentDragAnimal->getAnimalType() == "meat" && mSpotVector[k]->getPrototypeAnimal()->getAnimalType()== "plant" && mSpotVector[k-1]->getPrototypeAnimal() == 0 && mSpotVector[k-1]->getLevel() == mSpotVector[k]->getLevel()){
-										mSpotVector[k]->setColorSpot(sf::Color(255,0,0,255)); //fixa detta ? kanske
-									}
-								}
-							}
-
 							int level = mSpotVector[k]->getLevel();
 							//om positionen på nummret i speedvectorn är detsamma som spottens position
 						
 							if(level == j){
+								//if rovdjur är nertrycck, kolla igenom spots efter plant/växtdjur
+								if(k >= 1){ // eh ??? k > 2 osäker här, fösrta argumentet kommer aldrig hända pga. man hinner inte klicka innan den laddat allt
+									if(mSpotVector[k]->getPrototypeAnimal() != 0){
+										if(mCurrentDragAnimal->getAnimalType() == "meat" && mSpotVector[k]->getPrototypeAnimal()->getAnimalType()== "plant" && mSpotVector[k-1]->getPrototypeAnimal() == 0 && mSpotVector[k-1]->getLevel() == mSpotVector[k]->getLevel()){
+											mSpotVector[k]->setColorSpot(sf::Color(255,0,0,255)); //fixa detta ? kanske
+										}
+									}
+								}
+
 								mSpotVector[k]->setActSpot(true);
 
 								//går igenom spotvectorn och kollar efter rovdjur
 								//gör detta till en funktion
 								if(level == j && mSpotVector[k]->getPrototypeAnimal() != 0 && (k+1) < mSpotVector.size()){
-									if(mSpotVector[k]->getPrototypeAnimal()->getAnimalType() == "meat" && mSpotVector[k+1]->getLevel() == mSpotVector[k]->getLevel() && mCurrentDragAnimal->getAnimalType() == "plant"/*och maxhastifghetinte är uppnådd*/){
+									if(mSpotVector[k]->getPrototypeAnimal()->getAnimalType() == "meat" && mSpotVector[k+1]->getLevel() == mSpotVector[k]->getLevel() && mCurrentDragAnimal->getAnimalType() == "plant" && mSpotVector[k+1]->getPrototypeAnimal() == 0/*och maxhastifghetinte är uppnådd*/){
 										mSpotVector[k+1]->setColorSpot(sf::Color(255,0,0,255)); //fixa detta ? kanske
 										mSpotVector[k+1]->setAfraidAnimal(true);
 									}
@@ -228,9 +228,12 @@ void TaktikMeny::isClicked(){
 								if(level == j && mCurrentDragAnimal->getLevel() != level && mSpotVector[k]->getPrototypeAnimal() == 0 && mSpotVector[k]->getAfraidAnimal() == false){
 									//aktiviera ljus
 									mSpotVector[k]->setColorSpot(sf::Color(255,255,255,255));
+									mSpotVector[k]->setOriginalColor(sf::Color(255,255,255,255));
+
 								}else if(mCurrentDragAnimal->getLevel() == level && mSpotVector[k]->getPrototypeAnimal() == 0 && mSpotVector[k]->getAfraidAnimal() == false){
 									//aktiviera ljus snabbt
 									mSpotVector[k]->setColorSpot(sf::Color(0,255,0,255));
+									mSpotVector[k]->setOriginalColor(sf::Color(0,255,0,255));
 								}
 							}
 						}
@@ -292,6 +295,19 @@ void TaktikMeny::isNotClicked(){
 				(*i)->setColorSpot(sf::Color(255,255,255,255));
 			}
 		}
+
+		for(SpotVector::size_type i = 0; i < mSpotVector.size(); i++){
+			//kollar alla spots och ser om växtdjur har tomma platser bakom sig så ska inte de de står på vara rodjursplatsde
+			if(mSpotVector[i]->getPrototypeAnimal() != 0 && i >= 1){
+				if(mSpotVector[i]->getPrototypeAnimal()->getAnimalType() == "plant" && mSpotVector[i-1]->getPrototypeAnimal() == 0){
+
+					//måste egentligen kolla igenom och sätta rätt färg här.
+					mSpotVector[i]->resetColor();
+					mSpotVector[i]->setAfraidAnimal(false);
+				}
+			}
+		}
+
 	}
 }
 
