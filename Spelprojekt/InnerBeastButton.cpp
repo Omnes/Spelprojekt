@@ -99,7 +99,7 @@ void InnerBeastButton::update(){
 		}
 	}
 
-	if(mCooldownTimer.getElapsedTime().asMilliseconds() < mCooldown){
+	if(mCooldownTimer.getElapsedTime().asSeconds() < mCooldown){
 		mSprite.setTextureRect(sf::IntRect(mTexture->getSize().x/mFrames*2,0,mTexture->getSize().x/mFrames,mTexture->getSize().y));
 	}
 }
