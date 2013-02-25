@@ -98,7 +98,7 @@
 	
 </Level>
 
-<Obstacles minDistance="256" maxDistance="512">
+<Obstacles minDistance="256" maxDistance="912">
 	<Stone 		chance ="365" speedMod="0" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/stone.png</Stone>
 	<Box 		chance ="1124" speedMod="0" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/box.png</Box>
 	<FallenTree 	chance ="481" speedMod="0" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/fallentree.png</FallenTree>
@@ -111,9 +111,9 @@
 
 <Abilities>
 	<Ability>InnerBeast</Ability>
-	<Ability>Dig</Ability>
 	<Ability>Sonar</Ability>
 	<Ability>Omsorg</Ability>
+	<Ability>Power</Ability>
 </Abilities>
 
 
@@ -124,7 +124,7 @@
 
 <Music>Resources/Sound/Level1_</Music>
 
-<Gui>Resources/GUI/JungleGui.png</Gui>
+<Gui>Resources/GUI/JungleGUI.png</Gui>
 
 
 
