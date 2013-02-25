@@ -26,6 +26,11 @@ RemoveObstacleButton::RemoveObstacleButton(std::vector<std::string> obstacle,sf:
 
 }
 
+/*
+ - Tror vi skulle tjäna endel på att göra en egen frametimer här istället för att använda sf::clock
+		T.e.x så skulle det lösa att timern räknar när vi har pausat och att abilities är på cooldown när spelet startat
+*/
+
 RemoveObstacleButton::~RemoveObstacleButton(){}
 
 bool RemoveObstacleButton::findID(std::string id){
@@ -56,14 +61,15 @@ void RemoveObstacleButton::killRelativePositionEntity(sf::Vector2f mousePosition
 				mEmitter.burst(mParticleSystem,60,mEmittAmount);
 				delete *i;
 				i = entityVector->erase(i);
-				
+				mCooldownTimer.restart();
+
 			}else{
 				i++;
 			}
 		}
 
 		setClicked(false);
-		mCooldownTimer.restart();
+		
 		mClickCooldownTimer.restart();
 }
 
@@ -76,7 +82,7 @@ void RemoveObstacleButton::update(){
 	mSprite.setTextureRect(sf::IntRect(0,0,mTexture->getSize().x/mFrames,mTexture->getSize().y));
 	//om musen är över
 	if(mSprite.getGlobalBounds().contains(mousePosition)){
-		mSprite.setTextureRect(sf::IntRect(mTexture->getSize().x/mFrames,0,mTexture->getSize().x/mFrames,mTexture->getSize().y));
+		mSprite.setTextureRect(sf::IntRect(mTexture->getSize().x/mFrames*1,0,mTexture->getSize().x/mFrames,mTexture->getSize().y));
 		//om vi klickat över fyrkanten
 		if(sf::Mouse::isButtonPressed(sf::Mouse::Left) && mClickCooldownTimer.getElapsedTime().asMilliseconds() > mClickCooldown){
 			mGui->unclickAll();
@@ -86,20 +92,23 @@ void RemoveObstacleButton::update(){
 	}
 
 	//om vi klickat nånstans
-	//kan leda till nån kul bugg i början av banan pga relativ position
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left) 
 		&& mClicked 
-		&& mClickCooldownTimer.getElapsedTime().asMilliseconds() > mClickCooldown 
-		&& mCooldownTimer.getElapsedTime().asSeconds() > mCooldown){
+		&& mClickCooldownTimer.getElapsedTime().asMilliseconds() > mClickCooldown){
 
-		killRelativePositionEntity(mousePosition);
+		if(mCooldownTimer.getElapsedTime().asSeconds() > mCooldown){
+
+			killRelativePositionEntity(mousePosition);
+		}else{
+			mGui->unclickAll();
+		}
 	}
 
 	if(mClicked){
 		mSprite.setTextureRect(sf::IntRect(mTexture->getSize().x/mFrames*1,0,mTexture->getSize().x/mFrames,mTexture->getSize().y));
 	}
 
-	if(mCooldownTimer.getElapsedTime().asMilliseconds() < mCooldown){
+	if(mCooldownTimer.getElapsedTime().asSeconds() < mCooldown){
 		mSprite.setTextureRect(sf::IntRect(mTexture->getSize().x/mFrames*2,0,mTexture->getSize().x/mFrames,mTexture->getSize().y));
 	}
 }

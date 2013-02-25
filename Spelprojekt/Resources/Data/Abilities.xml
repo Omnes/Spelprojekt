@@ -3,13 +3,13 @@
 		<Type>Vision</Type>
 		<Texture>Resources/GUI/sonar.png</Texture>
 		<ParticleEffekt amount="2">Sonar</ParticleEffekt>
-		<Stats cooldown="5"/>
+		<Stats cooldown="3"/>
 	</Sonar>
 
 	<InnerBeast>
 		<Type>Speed</Type>
 		<Texture>Resources/GUI/innerbeast.png</Texture>
-		<Stats cooldown="5" speedIncrease="3" duration="5"/>
+		<Stats cooldown="3" speedIncrease="3" duration="0.5"/>
 	</InnerBeast>
 
 	<Rage>
@@ -31,7 +31,7 @@
 		<Type>Remove</Type>
 		<Texture>Resources/GUI/omsorg.png</Texture>
 		<ParticleEffekt amount="20">Heart</ParticleEffekt>
-		<Stats cooldown="5"/>
+		<Stats cooldown="1"/>
 		<CanRemove>
 			<Obstacle>GarbageSwamp</Obstacle>
 			<Obstacle>Box</Obstacle>
@@ -59,10 +59,11 @@
 		<Type>Remove</Type>
 		<Texture>Resources/GUI/growl.png</Texture>
 		<ParticleEffekt amount="1">Smash</ParticleEffekt>
-		<Stats cooldown="5"/>
+		<Stats cooldown="1"/>
 		<CanRemove>
+			<Obstacle>Stone</Obstacle>
+			<Obstacle>FallenTree</Obstacle>
 			<Obstacle>Bees</Obstacle>
-			<Obstacle>Animal</Obstacle>
 		</CanRemove>
 
 	</Growl>
@@ -85,12 +86,11 @@
 		<Type>Remove</Type>
 		<Texture>Resources/GUI/power.png</Texture>
 		<ParticleEffekt amount="1">Smash</ParticleEffekt>
-		<Stats cooldown="5"/>
+		<Stats cooldown="1"/>
 		<CanRemove>
 			<Obstacle>Stone</Obstacle>
 			<Obstacle>FallenTree</Obstacle>
-			<Obstacle>Box</Obstacle>
-			<Obstacle>Trash</Obstacle>
+			<Obstacle>Bees</Obstacle>
 		</CanRemove>
 
 	</Power>

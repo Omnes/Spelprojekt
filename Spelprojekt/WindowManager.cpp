@@ -12,14 +12,15 @@ WindowManager::WindowManager(){
 	float width = res->IntValue();
 	float heigth = res->Next()->IntValue();
 
-	mWindow = new sf::RenderWindow(sf::VideoMode(width,heigth),title,sf::Style::Close);
+	bool fullscreen = res->Next()->Next()->BoolValue();
+	
+	mWindow = new sf::RenderWindow(sf::VideoMode(width,heigth),title,fullscreen ? sf::Style::Fullscreen : sf::Style::Close);
 
 	const tinyxml2::XMLAttribute* attr = doc.FirstChildElement("Window")->FirstAttribute();
 
 	int frameLimit = attr->IntValue();
 	attr = attr->Next();
 	bool vsync = attr->BoolValue();
-
 	mWindow->setVerticalSyncEnabled(vsync);
 	mWindow->setFramerateLimit(frameLimit);
 
@@ -28,6 +29,7 @@ WindowManager::WindowManager(){
 	float zoomfactor = 1280 / width;
 
 	mDefaultView->zoom(zoomfactor);
+	//mDefaultView->rotate(180);
 
 	//mDefaultView->setCenter(mDefaultView->getSize().x/2,mDefaultView->getSize().y/2);
 	

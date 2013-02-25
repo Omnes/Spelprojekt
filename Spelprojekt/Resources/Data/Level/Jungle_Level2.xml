@@ -71,6 +71,9 @@
 			<Image_1>Resources/Level/Swamp/FörG1.png</Image_1>
 			<Image_1>Resources/Level/Swamp/FörG2.png</Image_1>
 			<Image_1>Resources/Level/Swamp/FörG3.png</Image_1>
+			<Image_1>Resources/Level/Swamp/FörG5.png</Image_1>
+			<Image_1>Resources/Level/Swamp/FörG6.png</Image_1>
+			<Image_1>Resources/Level/Swamp/FörG7.png</Image_1>
 			
 		</Images>
 		<Stats speed="1.3"/>
@@ -119,11 +122,10 @@
 
 <Abilities>
 	<Ability>InnerBeast</Ability>
-	<Ability>Squeeze</Ability>
-	<Ability>Rage</Ability>
-	<Ability>Omsorg</Ability>
 	<Ability>Sonar</Ability>
+	<Ability>Omsorg</Ability>
 	<Ability>Growl</Ability>
+
 </Abilities>
 
 <Fire speed = "1.6" acceleration="0.0"/>
@@ -134,5 +136,5 @@
 
 <Music>Resources/Sound/Level2_</Music>
 
-<Gui>Resources/GUI/swampGui.png</Gui>
+<Gui>Resources/GUI/swampGUI.png</Gui>
 
