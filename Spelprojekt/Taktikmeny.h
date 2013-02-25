@@ -5,6 +5,7 @@
 #include "AnimalPrototype.h"
 #include "Entity.h"
 #include "ResourceManager.h"
+#include "FakeAbilityButton.h"
 
 class TacticMenuButton;
 class LevelManager;
@@ -71,9 +72,13 @@ private:
 
 	TacticMenuButton* mButton;
 
+	FakeAbilityButton* mAbilityButton;
+
 	bool mAllSpotsTaken;
 
 	sf::Sprite mAnimalSpriteBg;
+
+	sf::Sprite mGui;
 
 };
 

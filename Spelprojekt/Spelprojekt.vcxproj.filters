@@ -200,6 +200,9 @@
     <ClCompile Include="TacticMenuButton.cpp">
       <Filter>Source Files\Interface</Filter>
     </ClCompile>
+    <ClCompile Include="FakeAbilityButton.cpp">
+      <Filter>Source Files\States</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EventManager.h">
@@ -387,6 +390,12 @@
     </ClInclude>
     <ClInclude Include="TacticMenuButton.h">
       <Filter>Header Files\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="FakeAbilityButton.h">
+      <Filter>Header Files\Abilites</Filter>
+    </ClInclude>
+    <ClInclude Include="FakeGui.h">
+      <Filter>Source Files\Interface</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

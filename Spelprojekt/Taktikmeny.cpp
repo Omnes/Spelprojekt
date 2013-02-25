@@ -19,6 +19,7 @@ TaktikMeny::TaktikMeny() :
 	mAllSpotsTaken(false)
 {
 	mButton = new TacticMenuButton(sf::Vector2f(500,600), this, "Resources/Menu/TacticMenu/startgameplaybutton.png", "Resources/Sound/test.wav");
+	mAbilityButton = new FakeAbilityButton(sf::Vector2f(140,610), "Resources/GUI/sonar.png", "Resources/GUI/sonar.png");
 
 	mAnimalSpriteBg.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/TacticMenu/taktikdjurbg.png"));
 	mAnimalSpriteBg.setPosition(550, 0);
@@ -62,18 +63,23 @@ void TaktikMeny::update(){
 	}
 
 	mButton->update();
+	mAbilityButton->update();
+
 }
 
 void TaktikMeny::render(){
 
-	sf::RenderWindow *window = WindowManager::getInst().getWindow();
 
+	sf::RenderWindow *window = WindowManager::getInst().getWindow();
+		
 
 	for(BgVector::iterator i = mBgVector.begin(); i != mBgVector.end(); i++){
 		window->draw((*i));
 	}
 
+
 	window->draw(mAnimalSpriteBg);
+		window->draw(mGui);
 
 	for(SpotVector::iterator i = mSpotVector.begin(); i != mSpotVector.end(); i++){
 		window->draw(*(*i)->getSprite());
@@ -84,6 +90,9 @@ void TaktikMeny::render(){
 	}
 
 	window->draw(mButton->getSprite());
+
+	mAbilityButton->render();
+
 
 }
 
@@ -328,6 +337,8 @@ void TaktikMeny::readFromFile(){
 		}
 		elem = elem->NextSiblingElement();
 	}
+	
+	mGui.setTexture(*ResourceManager::getInst().getTexture(doc.FirstChildElement("Gui")->GetText()));
 }
 
 std::string TaktikMeny::getMusic(){
