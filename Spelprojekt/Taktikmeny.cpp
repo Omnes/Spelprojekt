@@ -160,7 +160,7 @@ void TaktikMeny::createAnimals(){
 
 	for(SpotVector::iterator i = mSpotVector.begin(); i != mSpotVector.end(); i++){
 		if((*i)->getAfraidAnimal()){
-			(*i)->getPrototypeAnimal()->setExtraSpeed(3.0f);
+			(*i)->getPrototypeAnimal()->setExtraSpeed(4.0f);
 		}
 	}
 
