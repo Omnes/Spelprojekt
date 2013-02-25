@@ -61,7 +61,7 @@ void Camera::getMinMax(){
 
 void Camera::update(){
 
-	//mView.rotate(1);
+	//mView.rotate(0.1);
 	
 	
 
