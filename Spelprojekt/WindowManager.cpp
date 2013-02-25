@@ -28,6 +28,7 @@ WindowManager::WindowManager(){
 	float zoomfactor = 1280 / width;
 
 	mDefaultView->zoom(zoomfactor);
+	//mDefaultView->rotate(180);
 
 	//mDefaultView->setCenter(mDefaultView->getSize().x/2,mDefaultView->getSize().y/2);
 	
