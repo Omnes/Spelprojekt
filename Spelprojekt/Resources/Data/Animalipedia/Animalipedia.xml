@@ -1,0 +1,24 @@
+<HummingBird>
+	<Title>Kollibri</Title>
+	<Image x="1000" y="0">Resources/Animals/hummingBird.png</Image>
+	<StandardFact>Kollibiries gillar fisk</StandardFact>
+	<LockedFact>Detta är sant!</LockedFact>
+
+</HummingBird>
+
+<Monkey>
+	<Title>Apa</Title>
+	<Image x="800" y="0">Resources/Animals/monkey.png</Image>
+	<StandardFact>Apor! Ja det gillar vi</StandardFact>
+	<LockedFact>Låsta Apor!</LockedFact>
+
+</Monkey>
+
+<Snake>
+	<Title>Snake</Title>
+	<Image x="1000" y="0">Resources/Animals/snake.png</Image>
+	<StandardFact>It's snaaaaake</StandardFact>
+	<LockedFact>Snaaaaaake</LockedFact>
+
+</Snake>
+

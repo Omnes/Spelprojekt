@@ -2,6 +2,10 @@
 #include "WindowManager.h"
 #include "SoundManager.h"
 #include "ResourceManager.h"
+#include "StateManager.h"
+#include "Animalipedia.h"
+
+#include <SFML\Window\Keyboard.hpp>
 
 StartMeny::StartMeny(){
 
@@ -16,6 +20,10 @@ StartMeny::~StartMeny(){}
 void StartMeny::update(){
 	for (std::vector<Button*>::iterator i = mButtons.begin(); i != mButtons.end(); i++){
 		(*i)->update();
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)){
+		StateManager::getInst().addState(new Animalipedia);
 	}
 }
 

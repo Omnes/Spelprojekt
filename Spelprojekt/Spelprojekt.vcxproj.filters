@@ -203,6 +203,15 @@
     <ClCompile Include="FakeAbilityButton.cpp">
       <Filter>Source Files\States</Filter>
     </ClCompile>
+    <ClCompile Include="Animalipedia.cpp">
+      <Filter>Source Files\States</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimalipediaButton.cpp">
+      <Filter>Source Files\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Info.cpp">
+      <Filter>Source Files\Interface</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EventManager.h">
@@ -393,6 +402,15 @@
     </ClInclude>
     <ClInclude Include="FakeAbilityButton.h">
       <Filter>Header Files\Abilites</Filter>
+	</ClInclude>
+    <ClInclude Include="Animalipedia.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimalipediaButton.h">
+      <Filter>Header Files\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Info.h">
+      <Filter>Header Files\Interface</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
