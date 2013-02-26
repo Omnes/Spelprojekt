@@ -1,6 +1,8 @@
 #include "WorldMap.h"
 #include "WindowManager.h"
 #include "ResourceManager.h"
+#include "EventManager.h"
+#include <SFML\Window\Keyboard.hpp>
 
 
 WorldMap::WorldMap(){
@@ -21,6 +23,10 @@ WorldMap::~WorldMap(){}
 void WorldMap::update(){
 	for (std::vector<LevelButton*>::iterator i = mButtonVector.begin(); i != mButtonVector.end(); i++){
 		(*i)->update();
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
+		EventManager::getInst().addEvent("popState");
 	}
 }
 

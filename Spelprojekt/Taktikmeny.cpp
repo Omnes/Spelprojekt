@@ -62,6 +62,10 @@ void TaktikMeny::update(){
 	}
 
 	mButton->update();
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
+		EventManager::getInst().addEvent("popState");
+	}
 }
 
 void TaktikMeny::render(){

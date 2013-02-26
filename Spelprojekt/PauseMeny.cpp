@@ -2,6 +2,8 @@
 #include "StateManager.h"
 #include "ResourceManager.h"
 #include "WindowManager.h"
+#include "EventManager.h"
+#include <SFML\Window\Keyboard.hpp>
 
 PauseMeny::PauseMeny(): mRenderState(0), mResumeButton(sf::Vector2f(640,480),"popState","Resources/Misc/knapp1.jpg", "Resources/Sound/test.wav"){
 	mRenderState = StateManager::getInst().getTop();
@@ -30,6 +32,9 @@ void PauseMeny::render(){
 void PauseMeny::update(){
 	mResumeButton.update();
 
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
+		EventManager::getInst().addEvent("popStateTwice");
+	}
 }
 
 std::string PauseMeny::getMusic(){

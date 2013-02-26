@@ -19,6 +19,7 @@
 		<Stats cooldown="5"/>
 		<CanRemove>
 			<Obstacle>Stone</Obstacle>
+			<Obstacle>Stone</Obstacle>
 			<Obstacle>FallenTree</Obstacle>
 			<Obstacle>Bees</Obstacle>
 			<Obstacle>Box</Obstacle>
@@ -33,6 +34,7 @@
 		<ParticleEffekt amount="20">Heart</ParticleEffekt>
 		<Stats cooldown="1"/>
 		<CanRemove>
+			<Obstacle>Fire</Obstacle>
 			<Obstacle>GarbageSwamp</Obstacle>
 			<Obstacle>Box</Obstacle>
 			<Obstacle>Oil</Obstacle>
