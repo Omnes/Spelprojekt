@@ -10,6 +10,7 @@
 #include <SFML\Window\Mouse.hpp>
 #include <SFML\Graphics\RectangleShape.hpp>
 #include <SFML\Window\Keyboard.hpp>
+#include <cmath>
 
 TaktikMeny::TaktikMeny() : 
 	mCurrentDragAnimal(0),
@@ -255,6 +256,13 @@ void TaktikMeny::isClicked(){
 
 }
 
+float TaktikMeny::getDistance(const sf::Vector2f& v1, const sf::Vector2f& v2){
+	float dx = v1.x - v2.x;
+	float dy = v1.y - v2.y;
+	float distance = std::sqrt(dx*dx + dy*dy);
+	return distance;
+}
+
 void TaktikMeny::isNotClicked(){
 
 	//om mCurrentAnimal är över en spot
@@ -267,22 +275,45 @@ void TaktikMeny::isNotClicked(){
 			//om speedvector inte har ngn nolla i sig
 			if(mSpeedVector[i] != 0){
 				//går igenom de olika spotsen
+				std::vector<Spot*> intersectingSpots;
 				for(SpotVector::size_type j = 0; j < mSpotVector.size(); j++){
 					int level = mSpotVector[j]->getLevel();
 					//om positionen på nummret i speedvectorn är detsamma som spottens position
 
 					//crashar utan mCurrentDragAnimal != 0
 					if(level == i && mCurrentDragAnimal != 0){
+						//sparar alla spots djuret intersectar med /Robin
+						
 						if(mSpotVector[j]->getActSpot() == true && mSpotVector[j]->getPrototypeAnimal() == 0 && mCurrentDragAnimal->getSprite()->getGlobalBounds().intersects(mSpotVector[j]->getSprite()->getGlobalBounds())){
 							
-							mSpotVector[j]->setPrototypeAnimal(mCurrentDragAnimal);
-							mCurrentDragAnimal->setPos(mSpotVector[j]->getSprite()->getPosition());
-							mCurrentDragAnimal->setStandardSpeed(mSpeedVector[i]);
-
-							mCurrentDragAnimal = 0;
+							intersectingSpots.push_back(mSpotVector[j]);
 
 						}
+					}	
+				}
+				// om den intersecar med nån spot /Robin
+				if(!intersectingSpots.empty()){
+					//kolla vilken som är närmast /Robin
+					Spot* closestSpot = intersectingSpots[0];
+					float closestDistance = 512;
+
+					for(SpotVector::size_type k = 0; k  < intersectingSpots.size(); k++){
+						sf::Vector2f v1 = mCurrentDragAnimal->getSprite()->getPosition();
+						sf::Vector2f v2 = intersectingSpots[k]->getSprite()->getPosition();
+						float distance = getDistance(v1,v2);
+
+						if(distance < closestDistance){
+							closestDistance = distance;
+							closestSpot = intersectingSpots[k];
+									
+						}
 					}
+					//sätt djuret på den platsen /Robin
+					closestSpot->setPrototypeAnimal(mCurrentDragAnimal);
+					mCurrentDragAnimal->setPos(closestSpot->getSprite()->getPosition());
+					mCurrentDragAnimal->setStandardSpeed(mSpeedVector[i]);
+
+					mCurrentDragAnimal = 0;
 				}
 			}
 		}

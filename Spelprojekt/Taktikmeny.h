@@ -35,6 +35,8 @@ public:
 
 private:
 
+	float getDistance(const sf::Vector2f& v1, const sf::Vector2f& v2);
+
 	AnimalPrototype* mCurrentDragAnimal;
 
 	typedef std::vector<AnimalPrototype*> FakeAnimals;
