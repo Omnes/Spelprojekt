@@ -212,6 +212,9 @@
     <ClCompile Include="Info.cpp">
       <Filter>Source Files\Interface</Filter>
     </ClCompile>
+    <ClCompile Include="PageButton.cpp">
+      <Filter>Source Files\Interface</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EventManager.h">
@@ -410,6 +413,9 @@
       <Filter>Header Files\Interface</Filter>
     </ClInclude>
     <ClInclude Include="Info.h">
+      <Filter>Header Files\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="PageButton.h">
       <Filter>Header Files\Interface</Filter>
     </ClInclude>
   </ItemGroup>

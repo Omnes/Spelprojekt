@@ -62,6 +62,7 @@
 
 	</Squeeze>
 
+
 	<Growl>
 		<Type>Remove</Type>
 		<Texture>Resources/GUI/growl.png</Texture>
