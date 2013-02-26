@@ -9,6 +9,7 @@
 #include <SFML\Graphics\Rect.hpp>
 #include <SFML\Audio\Sound.hpp>
 #include <SFML\Audio\SoundBuffer.hpp>
+#include <SFML\System\Clock.hpp>
 #include "Emitter.h"
 #include "ParticleSystem.h"
 
@@ -35,6 +36,10 @@ private:
 	int mCurrentImage;
 	Emitter mEmitter;
 	ParticleSystem mPartSystem;
+	sf::Clock mTimer;
+	float mButtonTime;
+	bool mPressed;
+
 
 
 };

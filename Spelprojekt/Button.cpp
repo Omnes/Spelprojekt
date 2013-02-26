@@ -4,16 +4,23 @@
 #include "WindowManager.h"
 
 
-Button::Button(sf::Vector2f pos, std::string evt, std::string img, std::string sound) : mPosition(pos), mEvent(evt), mCurrentImage(0), mPartSystem("ButtonEffekt",100){
-	mTexture = (ResourceManager::getInst().getTexture(img));
-	mSprite.setTexture(*mTexture);
-	mSprite.setPosition(mPosition);
-	mRectangle = sf::IntRect(0,0, mTexture->getSize().x/3, mTexture->getSize().y);
-	mSprite.setTextureRect(mRectangle);
-	mSoundBuffer = (ResourceManager::getInst().getSoundBuffer(sound));
-	mSound.setBuffer(*mSoundBuffer);
-	mSound.setLoop(false);
-	mEmitter.setPosition(mPosition);
+Button::Button(sf::Vector2f pos, std::string evt, std::string img, std::string sound) : 
+		mPosition(pos), 
+		mEvent(evt), 
+		mCurrentImage(0), 
+		mPartSystem("ButtonEffekt",100),
+		mButtonTime(1),
+		mPressed(false){
+
+		mTexture = (ResourceManager::getInst().getTexture(img));
+		mSprite.setTexture(*mTexture);
+		mSprite.setPosition(mPosition);
+		mRectangle = sf::IntRect(0,0, mTexture->getSize().x/3, mTexture->getSize().y);
+		mSprite.setTextureRect(mRectangle);
+		mSoundBuffer = (ResourceManager::getInst().getSoundBuffer(sound));
+		mSound.setBuffer(*mSoundBuffer);
+		mSound.setLoop(false);
+		mEmitter.setPosition(mPosition);
 
 }
 
@@ -28,20 +35,32 @@ void Button::update(){
 
 	sf::Vector2f mousePosition = WindowManager::getInst().getWindow()->convertCoords(sf::Mouse::getPosition(*WindowManager::getInst().getWindow()),WindowManager::getInst().getWindow()->getDefaultView());
 	
-	if(mSprite.getGlobalBounds().contains(mousePosition)){		
+	//om musen är ovanförknappen
+	if(mSprite.getGlobalBounds().contains(mousePosition) && !mPressed){		
 	
 		mEmitter.burst(mPartSystem,sf::FloatRect(0,0,66,150),1);
 		mCurrentImage=1;
 
+		//om knappen trycks ned
 		if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){ 
-			mCurrentImage=2;
-			EventManager::getInst().addEvent(mEvent);
+			mTimer.restart();
+			mPressed = true;
 		}		
 	}
 
 	else{
 
 		mCurrentImage=0;
+	}
+
+	if(mPressed){
+
+		mCurrentImage=2;
+
+		if(mTimer.getElapsedTime().asSeconds() > mButtonTime){
+		
+			EventManager::getInst().addEvent(mEvent);
+		}
 	}
 
 	mRectangle.left = mRectangle.width*mCurrentImage;
