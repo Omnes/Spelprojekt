@@ -6,6 +6,7 @@
 #include "EventManager.h"
 #include "SoundManager.h"
 #include "TacticMenuButton.h"
+#include "FakeAbilityButton.h"
 
 #include <SFML\Window\Mouse.hpp>
 #include <SFML\Graphics\RectangleShape.hpp>
@@ -62,9 +63,12 @@ void TaktikMeny::update(){
 		(*i)->update();
 	}
 
-	mButton->update();
-	mAbilityButton->update();
 
+	mButton->update();
+
+	for(std::vector<FakeAbilityButton*>::iterator i = mAbilityButtons.begin(); i != mAbilityButtons.end(); i++){
+		(*i)->update();
+	}
 }
 
 void TaktikMeny::render(){
@@ -91,8 +95,9 @@ void TaktikMeny::render(){
 
 	window->draw(mButton->getSprite());
 
-	mAbilityButton->render();
-
+	for(std::vector<FakeAbilityButton*>::iterator i = mAbilityButtons.begin(); i != mAbilityButtons.end(); i++){
+		(*i)->render();
+	}
 
 }
 
@@ -321,6 +326,40 @@ void TaktikMeny::isNotClicked(){
 }
 
 void TaktikMeny::readFromFile(){
+
+	std::vector<std::string> abilities = LevelManager::getInst().getAbilitiesOnLevel();
+
+	tinyxml2::XMLDocument doca;
+	doca.LoadFile("Resources/Data/Abilities.xml");
+
+	float abilityNumber = 0;
+
+	sf::Vector2f startPosition = sf::Vector2f(140,615);
+	sf::Vector2f distance = sf::Vector2f(200,0);
+	sf::Vector2f distance2 = sf::Vector2f(150,0);
+
+	sf::Vector2f position = startPosition;
+
+	for(std::vector<std::string>::iterator i = abilities.begin(); i != abilities.end();i++){
+		tinyxml2::XMLElement *elm = doca.FirstChildElement("Abilities")->FirstChildElement((*i).c_str());
+
+		std::string atexture = elm->FirstChildElement("Texture")->GetText();
+
+		std::string itexture = elm->FirstChildElement("InfoPicture")->GetText();
+
+		if(abilityNumber != 0){
+			if((int)abilityNumber % 2 == 1){
+				position += distance;
+			}else{
+				position += distance2;
+			}
+		}
+
+		mAbilityButtons.push_back(new FakeAbilityButton(position,atexture,itexture));
+
+		abilityNumber++;
+	}
+
 	tinyxml2::XMLDocument doc;
 
 	doc.LoadFile(LevelManager::getInst().getFilePath().c_str());

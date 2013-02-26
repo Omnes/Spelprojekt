@@ -394,8 +394,5 @@
     <ClInclude Include="FakeAbilityButton.h">
       <Filter>Header Files\Abilites</Filter>
     </ClInclude>
-    <ClInclude Include="FakeGui.h">
-      <Filter>Source Files\Interface</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

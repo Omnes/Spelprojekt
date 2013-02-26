@@ -155,7 +155,6 @@
     <ClInclude Include="EventManager.h" />
     <ClInclude Include="ExitGame.h" />
     <ClInclude Include="FakeAbilityButton.h" />
-    <ClInclude Include="FakeGui.h" />
     <ClInclude Include="Fire.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameOver.h" />

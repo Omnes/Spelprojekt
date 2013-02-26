@@ -5,11 +5,11 @@
 #include "AnimalPrototype.h"
 #include "Entity.h"
 #include "ResourceManager.h"
-#include "FakeAbilityButton.h"
 
 class TacticMenuButton;
 class LevelManager;
 class Spot;
+class FakeAbilityButton;
 
 class TaktikMeny: public States{
 public:
@@ -61,6 +61,9 @@ private:
 
 	typedef std::vector <sf::Sprite> BgVector;
 	BgVector mBgVector;
+
+	typedef std::vector <FakeAbilityButton*> AbilityButton;
+	AbilityButton mAbilityButtons;
 
 	int mLevelTop, mLevelMiddle, mLevelGround;
 
