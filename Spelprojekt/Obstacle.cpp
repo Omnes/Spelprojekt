@@ -30,6 +30,7 @@ void Obstacle::update(){
 
 sf::FloatRect* Obstacle::getRect(){
 
+
 	return 0;//&mSprite.getGlobalBounds();
 }
 
