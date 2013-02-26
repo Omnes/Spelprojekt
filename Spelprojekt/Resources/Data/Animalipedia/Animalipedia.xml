@@ -10,7 +10,7 @@
 	<Title>Apa</Title>
 	<Image x="800" y="0">Resources/Animals/monkey.png</Image>
 	<StandardFact>Apor! Ja det gillar vi</StandardFact>
-	<LockedFact>Låsta Apor!</LockedFact>
+	<LockedFact>Kan orsaka animaliska kollisioner vid närkontakt med andra djur</LockedFact>
 
 </Monkey>
 

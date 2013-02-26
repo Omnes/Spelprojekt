@@ -1,0 +1,7 @@
+<1>
+	<djur>xml1</djur>
+</1>
+<2>
+	<djur>xml1</djur>
+	<djur>xml1</djur>
+</2>

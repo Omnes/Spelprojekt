@@ -8,6 +8,7 @@
 #include <vector>
 #include <string>
 #include "Info.h"
+#include "PageButton.h"
 
 
 class Animalipedia: public States{
@@ -19,18 +20,26 @@ public:
 	void loadUnlocked();
 	void setInfo(std::string name);
 	std::string getInfo();
+	void setPage(int number);
+	int getPage();
 
 	std::string getMusic();
 
 
 private:
-
+	int mCurrentButtonPage;
+	int mButtonsPerPage;
 	Info* mInfo;
 	sf::Sprite mBackground;
 	std::string mMusic;
 	std::vector<AnimalipediaButton*> mButtonVector;
+	std::vector<AnimalipediaButton*> mActiveButtons;
 
 	std::string mInfoName;
+
+	PageButton mUpButton;
+	PageButton mDownButton;
+
 	
 };
 

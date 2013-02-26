@@ -5,19 +5,28 @@
 
 
 Animalipedia::Animalipedia()
-	: mBackground(*ResourceManager::getInst().getTexture("Resources/Menu/LevelFinished.png")){
+	: mBackground(*ResourceManager::getInst().getTexture("Resources/Menu/LevelFinished.png"))
+	, mCurrentButtonPage(0)
+	, mButtonsPerPage(5)
+	, mUpButton(sf::Vector2f(0,0),1,"Resources/Menu/knapp.png","",this)
+	, mDownButton(sf::Vector2f(0,600),-1,"Resources/Menu/knapp.png","",this){
 
 		mMusic = "Resources/Sound/TitleScreen";
 		loadUnlocked();
 		mInfo = 0;
+		setPage(mCurrentButtonPage);
+
 }
 
 
 
 void Animalipedia::update(){
-	for(std::vector<AnimalipediaButton*>::iterator i = mButtonVector.begin();i != mButtonVector.end(); i++){
+	for(std::vector<AnimalipediaButton*>::iterator i = mActiveButtons.begin();i != mActiveButtons.end(); i++){
 		(*i)->update();
 	}
+
+	mUpButton.update();
+	mDownButton.update();
 }
 
 void Animalipedia::render(){
@@ -28,10 +37,11 @@ void Animalipedia::render(){
 		mInfo->render();
 	}
 	
-	for(std::vector<AnimalipediaButton*>::iterator i = mButtonVector.begin();i != mButtonVector.end(); i++){
+	for(std::vector<AnimalipediaButton*>::iterator i = mActiveButtons.begin();i != mActiveButtons.end(); i++){
 		(*i)->render();
 	}
-
+	window->draw(mUpButton.getSprite());
+	window->draw(mDownButton.getSprite());
 }
 
 Animalipedia::~Animalipedia(){
@@ -85,4 +95,30 @@ void Animalipedia::setInfo(std::string name){
 
 std::string Animalipedia::getInfo(){
 	return mInfoName;
+}
+
+void Animalipedia::setPage(int number){
+
+	//gråa ut knapparna när vi inte kan gå längre
+
+	if(mButtonVector.size() > number*mButtonsPerPage && number >= 0){
+	
+		mCurrentButtonPage = number;
+		mActiveButtons.clear();
+
+		int startX = 0;
+		int startY = 100;
+		int yDistance = 64;
+
+		for (int i = 0; i < mButtonsPerPage; i++){
+			if(i + number*mButtonsPerPage < mButtonVector.size()){
+				mActiveButtons.push_back(mButtonVector[i + number*mButtonsPerPage]);
+				mActiveButtons.back()->setPosition(sf::Vector2f(startX,startY + yDistance*i));
+			}
+		}
+	}
+}
+
+int Animalipedia::getPage(){
+	return mCurrentButtonPage;
 }
