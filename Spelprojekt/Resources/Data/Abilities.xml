@@ -10,26 +10,10 @@
 	<InnerBeast>
 		<Type>Speed</Type>
 		<Texture>Resources/GUI/innerbeast.png</Texture>
-		<Stats cooldown="3" speedIncrease="3" duration="0.5"/>
+		<Stats cooldown="3" speedIncrease="1.5" duration="1"/>
 		<InfoPicture>Resources/GUI/sonar.png</InfoPicture>
 	</InnerBeast>
 
-	<Rage>
-		<Type>Remove</Type>
-		<Texture>Resources/GUI/rage.png</Texture>
-		<ParticleEffekt amount="1">Smash</ParticleEffekt>
-		<Stats cooldown="5"/>
-		<CanRemove>
-			<Obstacle>Stone</Obstacle>
-			<Obstacle>Stone</Obstacle>
-			<Obstacle>FallenTree</Obstacle>
-			<Obstacle>Bees</Obstacle>
-			<Obstacle>Box</Obstacle>
-			<Obstacle>Trash</Obstacle>
-		</CanRemove>
-		<InfoPicture>Resources/GUI/sonar.png</InfoPicture>
-
-	</Rage>
 
 	<Omsorg>
 		<Type>Remove</Type>
@@ -48,20 +32,6 @@
 
 	</Omsorg>
 
-	<Squeeze>
-		<Type>Remove</Type>
-		<Texture>Resources/GUI/squeeze.png</Texture>
-		<ParticleEffekt amount="1">Crack</ParticleEffekt>
-		<Stats cooldown="5"/>
-		<CanRemove>
-			<Obstacle>Box</Obstacle>
-			<Obstacle>FallenTree</Obstacle>
-			<Obstacle>Trash</Obstacle>
-		</CanRemove>
-		<InfoPicture>Resources/GUI/sonar.png</InfoPicture>
-
-	</Squeeze>
-
 
 	<Growl>
 		<Type>Remove</Type>
@@ -76,21 +46,6 @@
 		<InfoPicture>Resources/GUI/sonar.png</InfoPicture>
 
 	</Growl>
-
-	<Dig>
-		<Type>Remove</Type>
-		<Texture>Resources/GUI/dig.png</Texture>
-		<ParticleEffekt amount="50">Dirt</ParticleEffekt>
-		<Stats cooldown="5"/>
-		<CanRemove>
-			<Obstacle>FallenTree</Obstacle>
-			<Obstacle>Box</Obstacle>
-			<Obstacle>Stone</Obstacle>
-			<Obstacle>Trash</Obstacle>
-		</CanRemove>
-		<InfoPicture>Resources/GUI/sonar.png</InfoPicture>
-
-	</Dig>
 
 	<Power>
 		<Type>Remove</Type>

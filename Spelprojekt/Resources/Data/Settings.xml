@@ -2,7 +2,7 @@
 			Settings
 ###########################################################
 
-<Camera minSpeed = "-3" maxSpeed = "3" acceleration = "0.05"/>
+<Camera minSpeed = "-4" maxSpeed = "3" acceleration = "0.08"/>
 
 <Sound musicVolume = "100" soundVolume="100" muted = "1"/>
 
