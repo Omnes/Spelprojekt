@@ -17,8 +17,11 @@ public:
 	void setCurrentAnimation(int animation);
 	void setPosition(sf::Vector2f position);
 	void setFrameTime(float value);
+	bool getHasPlayed();
 
 private:
+
+	bool mHasPlayed;
 
 	sf::Texture* mTexture;
 	sf::Clock mTimer;

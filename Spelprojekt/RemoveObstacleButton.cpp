@@ -56,11 +56,15 @@ void RemoveObstacleButton::killRelativePositionEntity(sf::Vector2f mousePosition
 			sf::FloatRect bounds = (*i)->getSprite()->getGlobalBounds();
 			bool contains = bounds.contains(relativeMousePosition);
 
+			sf::FloatRect rect = (*i)->getSprite()->getGlobalBounds();
+			rect.left = -(*i)->getSprite()->getGlobalBounds().width/2 + (*i)->getPos().x;
+			rect.top = -(*i)->getSprite()->getGlobalBounds().height/2 + (*i)->getPos().y;
+
 			std::string id = (*i)->getID();
 
 			if(findID(id) && contains){
-				mEmitter.setPosition((*i)->getPos());
-				mEmitter.burst(mParticleSystem,60,mEmittAmount);
+				mEmitter.setPosition(sf::Vector2f(0,0));
+				mEmitter.burst(mParticleSystem,rect,mEmittAmount);
 				delete *i;
 				i = entityVector->erase(i);
 				mCooldownTimer.restart();

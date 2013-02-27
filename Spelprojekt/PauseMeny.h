@@ -3,6 +3,7 @@
 #include "States.h"
 #include <SFML\Graphics\Sprite.hpp>
 #include "Button.h"
+#include "FakeAbilityButton.h"
 
 
 class PauseMeny: public States{
@@ -12,6 +13,7 @@ public:
 
 	void render();
 	void update();
+	void readFromFile();
 
 	std::string getMusic();
 
@@ -21,6 +23,8 @@ private:
 	sf::Sprite mSprite;
 	Button mResumeButton;
 	std::string mMusic;
+	typedef std::vector <FakeAbilityButton*> AbilityButton;
+	AbilityButton mAbilityButtons;
 };
 
 #endif

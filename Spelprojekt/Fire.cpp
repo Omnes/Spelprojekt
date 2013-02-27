@@ -2,6 +2,9 @@
 #include "ResourceManager.h"
 #include <iostream>
 #include "ParticleManager.h"
+#include "Animation.h"
+#include "LevelManager.h"
+#include "ActiveLayer.h"
 
 Fire::Fire(sf::Vector2f position,float speed, float acceleration)
 	: mID("Fire")
@@ -29,7 +32,7 @@ void Fire::update(){
 	mEmitter.setPosition(mPosition);
 	mEmitter.burst(mFireSystem,sf::FloatRect(-100,0,225,720),17);
 	mEmitter.burst(mSmokeSystem,sf::FloatRect(-1000,0,950,720),10);
-	mSprite.setPosition(mPosition);
+	mSprite.setPosition(mPosition-sf::Vector2f(50,0));
 }
 
 sf::FloatRect* Fire::getRect(){
@@ -50,9 +53,14 @@ void Fire::setAlive(bool alive){
 	mAlive = alive;
 }
 
+
+
 void Fire::collide(Entity* entity){
-	mEmitter.setPosition(entity->getPos());
-	mEmitter.burst(mPoofSystem,30,10);
+	//mEmitter.setPosition(entity->getPos());
+	//mEmitter.burst(mPoofSystem,30,10);
+	Animation* animation = new Animation(ResourceManager::getInst().getTexture("Resources/Animals/death.png"),100,10,1);
+	animation->setPosition(entity->getPos());
+	LevelManager::getInst().getActiveLayer()->addAnimationEffekt(animation);
 	entity->setAlive(false);
 }
 

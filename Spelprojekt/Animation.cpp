@@ -13,6 +13,7 @@ Animation::Animation(sf::Texture *texture, int frametime, int xframes, int yfram
 	mSprite.setTextureRect(mRectangle);
 	mSprite.setOrigin(mTexture->getSize().x/(xframes*2),mTexture->getSize().y/(yframes*2));
 	setCurrentAnimation(0);
+	mHasPlayed = false;
 
 }
 
@@ -31,6 +32,7 @@ void Animation::update(){
 	if(mCurrentframe > mFrames-1){
 		
 		mCurrentframe=0;
+		mHasPlayed = true;
 	}
 
 	mRectangle.left = mRectangle.width*mCurrentframe;
@@ -54,4 +56,8 @@ void Animation::setPosition(sf::Vector2f position){
 
 void Animation::setFrameTime(float value){
 	mFrametime = mOriginalFrameTime/value;
+}
+
+bool Animation::getHasPlayed(){
+	return mHasPlayed;
 }
