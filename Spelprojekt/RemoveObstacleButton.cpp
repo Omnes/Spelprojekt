@@ -17,7 +17,9 @@ RemoveObstacleButton::RemoveObstacleButton(std::vector<std::string> obstacle,sf:
 	, mGui(gui)
 	, mClicked(false)
 	, mParticleSystem(particleName,100)
-	, mEmittAmount(emittAmount){
+	, mEmittAmount(emittAmount)
+	, mSparksOnButton("Spark",100)
+	, mSparksOnObstacles("Spark",1000){
 
 		mSprite.setPosition(position);
 		mSprite.setTexture(*mTexture);
@@ -76,8 +78,8 @@ void RemoveObstacleButton::killRelativePositionEntity(sf::Vector2f mousePosition
 
 
 void RemoveObstacleButton::update(){
-
-	sf::Vector2f mousePosition = WindowManager::getInst().getWindow()->convertCoords(sf::Mouse::getPosition(*WindowManager::getInst().getWindow()),WindowManager::getInst().getWindow()->getDefaultView());
+	sf::RenderWindow* window = WindowManager::getInst().getWindow();
+	sf::Vector2f mousePosition = window->convertCoords(sf::Mouse::getPosition(*WindowManager::getInst().getWindow()),WindowManager::getInst().getWindow()->getDefaultView());
 
 	mSprite.setTextureRect(sf::IntRect(0,0,mTexture->getSize().x/mFrames,mTexture->getSize().y));
 	//om musen är över
@@ -106,6 +108,24 @@ void RemoveObstacleButton::update(){
 
 	if(mClicked){
 		mSprite.setTextureRect(sf::IntRect(mTexture->getSize().x/mFrames*1,0,mTexture->getSize().x/mFrames,mTexture->getSize().y));
+		//mEmitter.setPosition(mSprite.getPosition());
+		//mEmitter.burst(mSparksOnButton,sf::FloatRect(0,0,mTexture->getSize().x/mFrames,mTexture->getSize().y/mFrames),1);
+
+		std::vector<Entity*>* entityVector = LevelManager::getInst().getActiveLayer()->getEntityVector();
+		for(std::vector<Entity*>::iterator i = entityVector->begin();i != entityVector->end();i++){
+			if(findID((*i)->getID())){
+				sf::FloatRect rect = (*i)->getSprite()->getGlobalBounds();
+				rect.left = -(*i)->getSprite()->getGlobalBounds().width/2 + (*i)->getPos().x;
+				rect.top = -(*i)->getSprite()->getGlobalBounds().height/2 + (*i)->getPos().y;
+
+				sf::FloatRect viewRect = sf::FloatRect(-window->getView().getSize().x/2 + window->getView().getCenter().x,-window->getView().getSize().y/2 + window->getView().getCenter().y,window->getView().getSize().x,window->getView().getSize().y);
+				if(viewRect.intersects(rect)){
+					mEmitter.setPosition(sf::Vector2f(0,0));
+					mEmitter.burst(mSparksOnObstacles,rect,1);
+				}
+			}
+		}
+
 	}
 
 	if(mCooldownTimer.getElapsedTime().asSeconds() < mCooldown){

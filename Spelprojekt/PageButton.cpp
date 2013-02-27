@@ -40,7 +40,8 @@ void PageButton::update(){
 	
 		mCurrentImage=1;
 
-		if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){ 
+		if(sf::Mouse::isButtonPressed(sf::Mouse::Left) && mClickCooldown.getElapsedTime().asMilliseconds() > 500){
+			mClickCooldown.restart();
 			mCurrentImage=2;
 			mWiki->setPage(mWiki->getPage() + mFlipNumber);
 

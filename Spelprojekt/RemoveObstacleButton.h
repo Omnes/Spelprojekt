@@ -41,6 +41,9 @@ private:
 	ParticleSystem mParticleSystem;
 	Emitter mEmitter;
 
+	ParticleSystem mSparksOnObstacles;
+	ParticleSystem mSparksOnButton;
+
 
 
 };

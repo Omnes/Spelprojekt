@@ -10,6 +10,8 @@
 #include <SFML\Audio\Sound.hpp>
 #include <SFML\Audio\SoundBuffer.hpp>
 
+#include <SFML\System\Clock.hpp>
+
 
 class Animalipedia;
 
@@ -35,7 +37,7 @@ private:
 	int mFlipNumber;
 	Animalipedia* mWiki;
 
-
+	sf::Clock mClickCooldown;
 
 };
 
