@@ -119,12 +119,12 @@
 <Abilities>
 	<Ability>InnerBeast</Ability>
 	<Ability>Sonar</Ability>
-	<Ability>Omsorg</Ability>
 	<Ability>Power</Ability>
+	<Ability>Omsorg</Ability>
 </Abilities>
 
 
-<Fire speed = "1.6" acceleration="0.00"/>
+<Fire speed = "1.8" acceleration="0.00"/>
 
 <LevelsYValue air="100" middle="290" ground="500"/>
 
