@@ -3,11 +3,12 @@
 	<Layer_1>
 		<Layer>static</Layer>
 		<Images>
-			<Image_1>Resources/Level/Swamp/BakSWAMP.png</Image_1>
-			<Image_1>Resources/Level/Swamp/BakSWAMP.png</Image_1>
-			<Image_1>Resources/Level/Swamp/BakSWAMP.png</Image_1>
-			<Image_1>Resources/Level/Swamp/BakSWAMP.png</Image_1>
-			<Image_1>Resources/Level/Swamp/BakSWAMP.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakJUNGLE.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakJUNGLE.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakJUNGLE.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakJUNGLE.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakJUNGLE.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakJUNGLE.png</Image_1>
 
 		</Images>
 		<Stats speed="-0.95"/>
@@ -18,13 +19,14 @@
 	<Layer_2>
 		<Layer>static</Layer>
 		<Images>
-			<Image_1>Resources/Level/Swamp/BakG1.png</Image_1>
-			<Image_1>Resources/Level/Swamp/BakG2.png</Image_1>
-			<Image_1>Resources/Level/Swamp/BakG3.png</Image_1>
-			<Image_1>Resources/Level/Swamp/BakG4.png</Image_1>
-			<Image_1>Resources/Level/Swamp/BakG1.png</Image_1>
-			<Image_1>Resources/Level/Swamp/BakG2.png</Image_1>
-			<Image_1>Resources/Level/Swamp/BakG3.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakG1.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakG2.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakG3.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakG4.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakG1.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakG2.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakG3.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakG4.png</Image_1>
 
 		</Images>
 		<Stats speed="-0.8"/>
@@ -37,13 +39,14 @@
 		<Layer>static</Layer>
 		<Images>
 
-			<Image_1>Resources/Level/Swamp/BanS1.png</Image_1>
-			<Image_1>Resources/Level/Swamp/BanS2.png</Image_1>
-			<Image_1>Resources/Level/Swamp/BanS3.png</Image_1>
-			<Image_1>Resources/Level/Swamp/BanS4.png</Image_1>
-			<Image_1>Resources/Level/Swamp/BanS1.png</Image_1>
-			<Image_1>Resources/Level/Swamp/BanS2.png</Image_1>
-			<Image_1>Resources/Level/Swamp/BanS3.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BanS1.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BanS2.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BanS3.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BanS4.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BanS1.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BanS2.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BanS3.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BanS4.png</Image_1>
 
 		
 		</Images>
@@ -61,19 +64,17 @@
 	<Layer_5>
 		<Layer>static</Layer>
 		<Images>
-			<Image_1>Resources/Level/Swamp/FörG1.png</Image_1>
-			<Image_1>Resources/Level/Swamp/FörG2.png</Image_1>
-			<Image_1>Resources/Level/Swamp/FörG3.png</Image_1>
-			<Image_1>Resources/Level/Swamp/FörG4.png</Image_1>
-			<Image_1>Resources/Level/Swamp/FörG5.png</Image_1>
-			<Image_1>Resources/Level/Swamp/FörG6.png</Image_1>
-			<Image_1>Resources/Level/Swamp/FörG7.png</Image_1>
-			<Image_1>Resources/Level/Swamp/FörG1.png</Image_1>
-			<Image_1>Resources/Level/Swamp/FörG2.png</Image_1>
-			<Image_1>Resources/Level/Swamp/FörG3.png</Image_1>
-			<Image_1>Resources/Level/Swamp/FörG5.png</Image_1>
-			<Image_1>Resources/Level/Swamp/FörG6.png</Image_1>
-			<Image_1>Resources/Level/Swamp/FörG7.png</Image_1>
+			<Image_1>Resources/Level/Jungle/FörG1.png</Image_1>
+			<Image_1>Resources/Level/Jungle/FörG2.png</Image_1>
+			<Image_1>Resources/Level/Jungle/FörG3.png</Image_1>
+			<Image_1>Resources/Level/Jungle/FörG4.png</Image_1>
+			<Image_1>Resources/Level/Jungle/FörG1.png</Image_1>
+			<Image_1>Resources/Level/Jungle/FörG2.png</Image_1>
+			<Image_1>Resources/Level/Jungle/FörG3.png</Image_1>
+			<Image_1>Resources/Level/Jungle/FörG4.png</Image_1>
+			<Image_1>Resources/Level/Jungle/FörG4.png</Image_1>
+			<Image_1>Resources/Level/Jungle/FörG1.png</Image_1>
+			<Image_1>Resources/Level/Jungle/FörG2.png</Image_1>
 			
 		</Images>
 		<Stats speed="1.3"/>
@@ -86,36 +87,22 @@
 
 <AnimalsOnLevel>
 
-	<Animal_1>Resources/Data/Animal/frogRed.xml</Animal_1>
-	<Animal_1>Resources/Data/Animal/frogGreen.xml</Animal_1>
-	<Animal_1>Resources/Data/Animal/Bat.xml</Animal_1>
-	<Animal_1>Resources/Data/Animal/Snake.xml</Animal_1>
-	<Animal_1>Resources/Data/Animal/HummingBird.xml</Animal_1>
-	<Animal_1>Resources/Data/Animal/Spider.xml</Animal_1>
-	<Animal_1>Resources/Data/Animal/Monkey.xml</Animal_1>
-	<Animal_1>Resources/Data/Animal/Vulture.xml</Animal_1>
 
-
-
-
+	
 
 </AnimalsOnLevel>
 
-<Level length = "10000">
+<Level length = "5000">
 	
 </Level>
 
-
-<Obstacles minDistance="200" maxDistance="900">
+<Obstacles minDistance="256" maxDistance="912">
 	<Stone 		chance ="365" speedMod="0" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/stone.png</Stone>
 	<Box 		chance ="1124" speedMod="0" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/box.png</Box>
-	<Bees 		chance ="1120" speedMod="0" y="100" numberOfFrames="5" frameTime="200">Resources/Obstacle/bees.png</Bees>
 	<FallenTree 	chance ="481" speedMod="0" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/fallentree.png</FallenTree>
 	<GarbageSwamp 	chance ="786" speedMod="0.5" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/garbageswamp.png</GarbageSwamp>
 	<Oil 		chance ="764" speedMod="0.5" y="352" numberOfFrames="1" frameTime="100">Resources/Obstacle/oil.png</Oil>
-	<Smoke 		chance ="533" speedMod="0.5" y="100" numberOfFrames="1" frameTime="100">Resources/Obstacle/smoke.png</Smoke>
 	<Trash 		chance ="1142" speedMod="0" y="290" numberOfFrames="1" frameTime="100">Resources/Obstacle/trash.png</Trash>
-
 
 
 </Obstacles>
@@ -130,11 +117,12 @@
 
 <Fire speed = "1.8" acceleration="0.0"/>
 
-
-
 <LevelsYValue air="100" middle="290" ground="500"/>
 
-<Music>Resources/Sound/Level2_</Music>
 
-<Gui>Resources/GUI/swampGUI.png</Gui>
+<Music>Resources/Sound/Level1_</Music>
+
+<Gui>Resources/GUI/JungleGUI.png</Gui>
+
+
 

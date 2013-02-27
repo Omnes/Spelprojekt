@@ -18,6 +18,9 @@ public:
 		WorldMap* worldMap = dynamic_cast<WorldMap*>(StateManager::getInst().getTop());
 		worldMap->saveToFile(LevelManager::getInst().getFilePath());
 		GameOver::sRetryCount = 0;
+		worldMap->setCurrentWorldOrSub(LevelManager::getInst().getFilePath());
+		worldMap->updateWorld();
+		worldMap->saveToFile();
 	}
 
 };
