@@ -405,7 +405,7 @@
     </ClInclude>
     <ClInclude Include="FakeAbilityButton.h">
       <Filter>Header Files\Abilites</Filter>
-	</ClInclude>
+    </ClInclude>
     <ClInclude Include="Animalipedia.h">
       <Filter>Header Files\States</Filter>
     </ClInclude>
@@ -417,6 +417,9 @@
     </ClInclude>
     <ClInclude Include="PageButton.h">
       <Filter>Header Files\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Retry.h">
+      <Filter>Header Files\Events</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

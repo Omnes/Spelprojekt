@@ -188,6 +188,7 @@
     <ClInclude Include="PopStateTwice.h" />
     <ClInclude Include="RemoveObstacleButton.h" />
     <ClInclude Include="ResourceManager.h" />
+    <ClInclude Include="Retry.h" />
     <ClInclude Include="ScrollDetector.h" />
     <ClInclude Include="AddMap.h" />
     <ClInclude Include="SoundManager.h" />

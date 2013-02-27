@@ -11,6 +11,7 @@
 #include "addGameOver.h"
 #include "GoBackToWorld.h"
 #include "PopStateTwice.h"
+#include "Retry.h"
 
 EventManager::EventManager(){
 
@@ -26,6 +27,7 @@ EventManager::EventManager(){
 	mEventMap["addGameOver"] = new AddGameOver();
 	mEventMap["goBackToWorld"] = new GoBackToWorld();
 	mEventMap["popStateTwice"] = new PopStateTwice();
+	mEventMap["retry"] = new Retry();
 
 
 }

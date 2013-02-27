@@ -37,6 +37,7 @@ private:
 	int mLevellength;
 	std::vector<std::string>mAliveAnimalsVector, mDeadAnimalsVector;
 	Camera* mThisCamera;
+	
 };
 
 #endif

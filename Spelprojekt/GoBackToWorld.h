@@ -5,6 +5,7 @@
 #include "StartMeny.h"
 #include "WorldMap.h"
 #include "LevelManager.h"
+#include "GameOver.h"
 
 class GoBackToWorld : public Event{
 
@@ -16,6 +17,7 @@ public:
 		StateManager::getInst().popState();
 		WorldMap* worldMap = dynamic_cast<WorldMap*>(StateManager::getInst().getTop());
 		worldMap->saveToFile(LevelManager::getInst().getFilePath());
+		GameOver::sRetryCount = 0;
 	}
 
 };

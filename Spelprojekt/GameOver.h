@@ -15,12 +15,14 @@ public:
 
 	std::string getMusic();
 
-
+	static int sRetryCount;
 private:
 	sf::Sprite mBackground;
 	Button mReturnToMain;
 	Button mLoadLast;
+	Button mRetryLevel;
 	std::string mMusic;
+	
 	
 };
 
