@@ -28,7 +28,7 @@
 			<Obstacle>Smoke</Obstacle>
 			<Obstacle>Trash</Obstacle>
 		</CanRemove>
-		<InfoPicture>Resources/GUI/sonar.png</InfoPicture>
+		<InfoPicture>Resources/GUI/nature.png</InfoPicture>
 
 	</Omsorg>
 
@@ -43,7 +43,7 @@
 			<Obstacle>FallenTree</Obstacle>
 			<Obstacle>Bees</Obstacle>
 		</CanRemove>
-		<InfoPicture>Resources/GUI/sonar.png</InfoPicture>
+		<InfoPicture>Resources/GUI/manmade.png</InfoPicture>
 
 	</Growl>
 
@@ -57,7 +57,7 @@
 			<Obstacle>FallenTree</Obstacle>
 			<Obstacle>Bees</Obstacle>
 		</CanRemove>
-		<InfoPicture>Resources/GUI/sonar.png</InfoPicture>
+		<InfoPicture>Resources/GUI/manmade.png</InfoPicture>
 
 	</Power>
 
@@ -71,7 +71,7 @@
 			<Obstacle>Box</Obstacle>
 			<Obstacle>Trash</Obstacle>
 		</CanRemove>
-		<InfoPicture>Resources/GUI/sonar.png</InfoPicture>
+		<InfoPicture>Resources/GUI/manmade.png</InfoPicture>
 
 	</Claw>
 
