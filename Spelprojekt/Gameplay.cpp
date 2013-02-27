@@ -4,13 +4,16 @@
 #include "ParticleManager.h"
 #include "EventManager.h"
 #include "LevelManager.h"
+#include "StateManager.h"
+#include "Countdown.h"
 
 Gameplay::Gameplay(){
 	mLayerManager = new LayerManager;
 	mCamera = new Camera(mLayerManager);
 
 	mMusic = LevelManager::getInst().getMusicOnLevel();
-
+	update();
+	
 }
 
 Gameplay::~Gameplay(){
@@ -34,6 +37,7 @@ void Gameplay::update(){
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
 		EventManager::getInst().addEvent("addPause");
+
 	}
 }
 
