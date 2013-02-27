@@ -77,8 +77,6 @@ private:
 
 	TacticMenuButton* mButton;
 
-	FakeAbilityButton* mAbilityButton;
-
 	bool mAllSpotsTaken;
 
 	sf::Sprite mAnimalSpriteBg;
