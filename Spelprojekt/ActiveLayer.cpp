@@ -38,6 +38,16 @@ void ActiveLayer::update(){
 	for(EntityVector::iterator i = mEntityVector.begin(); i != mEntityVector.end(); i++){
 		(*i)->update();
 	}
+	for(std::vector<Animation*>::iterator i = mAnimationVector.begin(); i != mAnimationVector.end();){
+		(*i)->update();
+		if((*i)->getHasPlayed()){
+			delete *i;
+			i = mAnimationVector.erase(i);
+		}else{
+			i++;
+		}
+	}
+
 	finishLine();
 	
 	collision();
@@ -46,6 +56,10 @@ void ActiveLayer::update(){
 
 void ActiveLayer::render(){
 	for(EntityVector::iterator i = mEntityVector.begin(); i != mEntityVector.end(); i++){
+		WindowManager::getInst().getWindow()->draw(*(*i)->getSprite());
+	}
+
+	for(std::vector<Animation*>::iterator i = mAnimationVector.begin(); i != mAnimationVector.end(); i++){
 		WindowManager::getInst().getWindow()->draw(*(*i)->getSprite());
 	}
 }
@@ -128,4 +142,8 @@ void ActiveLayer::finishLine(){
 	}
 
 } 
+
+void ActiveLayer::addAnimationEffekt(Animation* animation){
+	mAnimationVector.push_back(animation);
+}
 

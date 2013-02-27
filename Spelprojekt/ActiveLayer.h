@@ -10,6 +10,8 @@ class Entity;
 #include <iostream>
 #include <vector>
 
+#include "Animation.h"
+
 //utritning
 class WindowManager;
 class Camera;
@@ -29,6 +31,7 @@ public:
 	void killDead();
 	void finishLine();
 	std::vector<Entity*>* getEntityVector();
+	void addAnimationEffekt(Animation* animation);
 
 private:
 	typedef std::vector<Entity*> EntityVector;
@@ -37,6 +40,7 @@ private:
 	int mLevellength;
 	std::vector<std::string>mAliveAnimalsVector, mDeadAnimalsVector;
 	Camera* mThisCamera;
+	std::vector<Animation*> mAnimationVector;
 	
 };
 
