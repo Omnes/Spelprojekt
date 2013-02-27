@@ -59,6 +59,10 @@ void Spot::setColorSpot(sf::Color color){
 	mSprite->setColor(mColor);
 }
 
+sf::Color Spot::getColorSpot(){
+	return mColor;
+}
+
 void Spot::setPrototypeAnimal(AnimalPrototype* PlacedAnimal){
 	mPlacedAnimal = PlacedAnimal;
 }

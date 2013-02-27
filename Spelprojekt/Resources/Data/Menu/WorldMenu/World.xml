@@ -1,0 +1,30 @@
+<World>
+	<Sub>
+		<Level>Resources/Data/Level/Jungle_Level1.xml</Level>
+	</Sub>
+
+	<Sub>
+		<Level>Resources/Data/Level/Jungle_Level2.xml</Level>
+	</Sub>
+</World>
+
+<World>
+	<Sub>
+		<Level>Resources/Data/Level/Swamp_Level1.xml</Level>
+	</Sub>
+	<Sub>
+		<Level>Resources/Data/Level/Swamp_Level2.xml</Level>
+		<Level>Resources/Data/Level/Swamp_Level3.xml</Level>
+	</Sub>
+
+</World>
+
+<World>
+	<Sub>
+		<Level>Resources/Data/Level/Night_Level1.xml</Level>
+		<Level>Resources/Data/Level/Night_Level2.xml</Level>
+		<Level>Resources/Data/Level/Night_Level3.xml</Level>
+		<Level>Resources/Data/Level/Night_Level4.xml</Level>
+	</Sub>
+
+</World>

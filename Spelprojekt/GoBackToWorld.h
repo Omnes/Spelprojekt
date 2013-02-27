@@ -15,7 +15,9 @@ public:
 	virtual void update(){
 		StateManager::getInst().popState();
 		WorldMap* worldMap = dynamic_cast<WorldMap*>(StateManager::getInst().getTop());
-		worldMap->saveToFile(LevelManager::getInst().getFilePath());
+		worldMap->setCurrentWorldOrSub(LevelManager::getInst().getFilePath());
+		worldMap->updateWorld();
+		worldMap->saveToFile();
 	}
 
 };

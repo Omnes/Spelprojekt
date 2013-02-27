@@ -24,7 +24,7 @@ public:
 	bool getTakenSpot();
 
 	void setColorSpot(sf::Color color);
-	//int getColorSpot();
+	sf::Color getColorSpot();
 
 	sf::Sprite* getSprite();
 

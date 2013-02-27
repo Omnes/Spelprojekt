@@ -159,8 +159,12 @@ void TaktikMeny::placeSpots(){
 void TaktikMeny::createAnimals(){
 
 	for(SpotVector::iterator i = mSpotVector.begin(); i != mSpotVector.end(); i++){
+		//fuuult
+		if((*i)->getColorSpot() == sf::Color(255,0,0,255)){
+			(*i)->setAfraidAnimal(true);
+		}
 		if((*i)->getAfraidAnimal()){
-			(*i)->getPrototypeAnimal()->setExtraSpeed(4.0f);
+			(*i)->getPrototypeAnimal()->setExtraSpeed(2.0f);
 		}
 	}
 
@@ -299,7 +303,7 @@ void TaktikMeny::isNotClicked(){
 		for(SpotVector::size_type i = 0; i < mSpotVector.size(); i++){
 			//kollar alla spots och ser om växtdjur har tomma platser bakom sig så ska inte de de står på vara rodjursplatsde
 			if(mSpotVector[i]->getPrototypeAnimal() != 0 && i >= 1){
-				if(mSpotVector[i]->getPrototypeAnimal()->getAnimalType() == "plant" && mSpotVector[i-1]->getPrototypeAnimal() == 0){
+				if(mSpotVector[i]->getPrototypeAnimal()->getAnimalType() == "plant" && mSpotVector[i-1]->getPrototypeAnimal() == 0 && mSpotVector[i]->getLevel() == mSpotVector[i-1]->getLevel()){ // måste ta bort på samma rad
 
 					//måste egentligen kolla igenom och sätta rätt färg här.
 					mSpotVector[i]->resetColor();

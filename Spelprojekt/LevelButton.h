@@ -22,6 +22,9 @@ public:
 	bool getAlive(); //tror denna behövs <----
 	void setAlive(bool alive);
 
+	bool getActive();
+	void setActive(bool active);
+
 private:
 	
 	sf::Vector2f mPosition;
@@ -32,7 +35,7 @@ private:
 	sf::Texture mTexture;
 	std::string mLevel;
 
-	bool mAlive;
+	bool mAlive, mActive;
 
 	int mCurrentImage;
 };
