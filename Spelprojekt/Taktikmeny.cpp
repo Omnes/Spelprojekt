@@ -203,6 +203,7 @@ void TaktikMeny::isClicked(){
 					mCurrentDragAnimal->playSound();
 					mCurrentDragAnimal->getSprite()->setScale(0.8,0.8);
 					mGrabOffset = mCurrentDragAnimal->getPos() - mousePosition;
+					break;
 				}
 			}
 
