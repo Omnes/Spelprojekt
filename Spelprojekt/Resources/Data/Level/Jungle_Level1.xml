@@ -20,17 +20,14 @@
 	<Layer_2>
 		<Layer>static</Layer>
 		<Images>
-			<Image_1>Resources/Level/Jungle/BakG1.png</Image_1>
 			<Image_1>Resources/Level/Jungle/BakG4.png</Image_1>
 			<Image_1>Resources/Level/Jungle/BakG3.png</Image_1>
-			<Image_1>Resources/Level/Jungle/BakG2.png</Image_1>
-			<Image_1>Resources/Level/Jungle/BakG3.png</Image_1>
-			<Image_1>Resources/Level/Jungle/BakG1.png</Image_1>
-			<Image_1>Resources/Level/Jungle/BakG3.png</Image_1>
-			<Image_1>Resources/Level/Jungle/BakG2.png</Image_1>
 			<Image_1>Resources/Level/Jungle/BakG4.png</Image_1>
 			<Image_1>Resources/Level/Jungle/BakG3.png</Image_1>
-			<Image_1>Resources/Level/Jungle/BakG2.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakG4.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakG3.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakG4.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakG3.png</Image_1>	
 
 		</Images>
 		<Stats speed="-0.8"/>

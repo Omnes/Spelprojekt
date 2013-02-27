@@ -22,8 +22,10 @@ public:
 private:
 
 	Button mButton;
-	std::vector<sf::Sprite*> mAliveVector, mDeadVector;
+	std::vector<sf::Sprite*> mAliveVector, mDeadVector, mStampVector;
 	std::string mMusic;
+	sf::Clock mStampDelay;
+	int mStampIndex;
 
 	sf::Sprite mBackground;
 };

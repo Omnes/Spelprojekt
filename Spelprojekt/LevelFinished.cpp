@@ -18,6 +18,8 @@ LevelFinished::LevelFinished() : mButton(sf::Vector2f(500, 500), "goBackToWorld"
 
 	mBackground.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/LevelFinished.png"));
 	mMusic = "Resources/Sound/Level2_";
+
+	mStampIndex = 0;
 }
 
 LevelFinished::~LevelFinished(){
@@ -40,11 +42,25 @@ void LevelFinished::render(){
 
 	window->draw(mButton.getSprite());
 
+	for(std::vector<sf::Sprite*>::iterator i = mStampVector.begin(); i != mStampVector.end(); i++){
+		window->draw(*(*i));
+	}
+
 }
 
 void LevelFinished::update(){
 
 	mButton.update();
+
+	if(mStampIndex < mDeadVector.size() && mStampDelay.getElapsedTime().asSeconds() > 3){
+		sf::Sprite* stamp = new sf::Sprite;
+		stamp->setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/Utrotad.png"));
+		stamp->setPosition(mDeadVector[mStampIndex]->getPosition());
+		mStampVector.push_back(stamp);
+
+		mStampDelay.restart();
+		mStampIndex++;
+	}
 
 } 
 

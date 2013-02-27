@@ -1,6 +1,6 @@
 <Particle>
 	<Name>Spark</Name>
-	<Texture yframes="1">resources/particle/gul.png</Texture>
+	<Texture yframes="2">resources/particle/Spark.png</Texture>
 	<Life min="10" max="30"/>
 	<Direction min ="0" max="360"/>
 	<Speed min="1" max="2" increase="0"/>
