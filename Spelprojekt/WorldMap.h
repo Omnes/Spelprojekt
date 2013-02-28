@@ -2,6 +2,7 @@
 #define WORLDMAP
 #include "States.h"
 #include "LevelButton.h"
+#include "LevelManager.h"
 
 #include "SFML\Graphics\Texture.hpp"
 #include "tinyxml2.h"
@@ -25,6 +26,8 @@ public:
 	void updateWorld();
 	void setCurrentWorldOrSub(std::string currentLevel);
 
+	void readAnimals();
+
 
 
 	std::string getMusic();
@@ -41,11 +44,14 @@ private:
 	typedef std::vector <std::string> BurnedLevelVector;
 	BurnedLevelVector mBurnedLevelVector;
 
+	typedef std::vector <std::string> FakeAnimals;
+	FakeAnimals mFakeAnimals;
+
 	std::string mMusic;
 
 	sf::Sprite mSprite;
 
-	int mWorld, mSub, mCurrentWorld;
+	int mWorld, mSub, mCurrentWorld, mSection, mCurrentSection;
 
 	int mLevelCount;
 
