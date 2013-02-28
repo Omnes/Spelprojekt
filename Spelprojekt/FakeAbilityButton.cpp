@@ -16,7 +16,8 @@ FakeAbilityButton::FakeAbilityButton(sf::Vector2f position, std::string buttonte
 }
 	
 FakeAbilityButton::~FakeAbilityButton(){
-
+	delete mSpriteButton;
+	delete mSpriteInfo;
 
 }
 

@@ -58,7 +58,7 @@ void Button::update(){
 		mCurrentImage=2;
 
 		if(mTimer.getElapsedTime().asSeconds() > mButtonTime){
-		
+			mPressed = false;
 			EventManager::getInst().addEvent(mEvent);
 		}
 	}
