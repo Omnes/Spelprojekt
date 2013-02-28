@@ -234,5 +234,10 @@ pip-log.txt
 ################
 SFML/
 
+#####
+#Misc
+#####
+
+SavedGame.xml
 
 
