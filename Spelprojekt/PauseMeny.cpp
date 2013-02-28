@@ -15,7 +15,14 @@ PauseMeny::PauseMeny(): mRenderState(0), mResumeButton(sf::Vector2f(640,480),"po
 
 PauseMeny::~PauseMeny(){
 
-}
+	while(!mAbilityButtons.empty()){
+
+		delete	mAbilityButtons.back();
+		mAbilityButtons.pop_back();
+		
+	}
+
+}   
 
 //se till att den är relativ till view! GJORT!!!!!
 void PauseMeny::render(){

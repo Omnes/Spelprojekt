@@ -18,6 +18,13 @@ TacticalVision::TacticalVision()
 
 TacticalVision::~TacticalVision(){
 
+	while(!mAbilityButtons.empty()){
+
+		delete mAbilityButtons.back();
+		mAbilityButtons.pop_back();
+	}
+
+	delete mCamera;
 }
 
 void TacticalVision::update(){

@@ -37,7 +37,7 @@ void Gameplay::update(){
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
 		EventManager::getInst().addEvent("addPause");
-
+	
 	}
 }
 
