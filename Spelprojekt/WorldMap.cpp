@@ -18,9 +18,11 @@ WorldMap::WorldMap() :
 	mSprite.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/WorldMenu/worldmap.png"));
 	mSprite.setPosition(0,0);
 
-	saveToFile();
+	readSave();
 	readWorld();
 	updateWorld();
+
+	mCurrentWorld = mWorld;
 }
 
 WorldMap::~WorldMap(){}
@@ -50,14 +52,25 @@ void WorldMap::readSave(){
 
 	tinyxml2::XMLDocument doc;
 
-	doc.LoadFile("Resources/Data/Save/SavedGame.xml"); // denna kommer inte funka sen när vi ska göra användare
-
-	tinyxml2::XMLElement *elm = doc.FirstChildElement("World");
+	doc.LoadFile("Resources/Data/Save/SavedGame.xml");// denna kommer inte funka sen när vi ska göra användare
 	
-	mWorld = elm->FirstAttribute()->IntValue();
+	tinyxml2::XMLElement *elm = doc.FirstChildElement("World");
+
+	if(elm != 0){
+		mWorld = elm->FirstAttribute()->IntValue();
+	}else{
+		std::cout<<"Sparfilen laddades inte"<<std::endl;
+	}
+
+	tinyxml2::XMLElement *burnedLevel = doc.FirstChildElement("BurnedLevel");
+
+	//while(burnedLevel != 0){
+	//	//burnedLevel->FirstAttribute(); <------------------ häääär
+	//
+	//}
 }
 
-void WorldMap::saveToFile(){
+void WorldMap::saveToFile(std::string currentLevel){
 	
 	tinyxml2::XMLDocument doc;
 
@@ -66,13 +79,23 @@ void WorldMap::saveToFile(){
 
 	//doc.LoadFile("Resources/Data/Save/SavedGame.xml");
 
-	tinyxml2::XMLElement* world = doc.NewElement("World");
+	tinyxml2::XMLElement* world = doc.NewElement("World"); // måste ha stöd gför att skapa filer
 	world->SetAttribute("Worlds", mWorld);
 	doc.LinkEndChild(world);
 
-	doc.SaveFile("Resources/Data/Save/SavedGame.xml"); //<------- variabel funkar här
+	mBurnedLevelVector.push_back(currentLevel);
 
-	readSave();
+	if(mWorld > mCurrentWorld){
+		for(BurnedLevelVector::iterator i = mBurnedLevelVector.begin(); i != mBurnedLevelVector.end();i++){
+			tinyxml2::XMLElement* burnedLevel = doc.NewElement("BurnedLevel");
+			burnedLevel->SetAttribute("Level", (*i).c_str());
+			doc.LinkEndChild(burnedLevel);
+		}
+		mBurnedLevelVector.clear();
+		mCurrentWorld = mWorld;
+	}
+
+	doc.SaveFile("Resources/Data/Save/SavedGame.xml"); //<------- variabel funkar här
 
 }
 
@@ -178,4 +201,7 @@ void WorldMap::setCurrentWorldOrSub(std::string currentLevel){
 			(*i)->setAlive(false);
 		}
 	}
+
+	updateWorld();
+	saveToFile(currentLevel);
 }
