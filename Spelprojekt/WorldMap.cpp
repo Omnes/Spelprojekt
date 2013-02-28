@@ -244,3 +244,21 @@ void WorldMap::readAnimals(){
 
 	LevelManager::getInst().setAliveAnimals(mFakeAnimals);
 }
+
+void WorldMap::readNewAnimals(){
+
+	tinyxml2::XMLDocument doc;
+	doc.LoadFile("Resources/Data/AnimalUnlock.xml");
+
+	tinyxml2::XMLElement *section = doc.FirstChildElement();
+
+	while(section != 0 && section->FirstAttribute()->IntValue() == mCurrentSection){
+		tinyxml2::XMLElement *animals = section->FirstChildElement();
+		while(animals != 0){
+			mFakeAnimals.push_back(animals->GetText());
+			animals = animals->NextSiblingElement();
+		}
+		section = section->NextSiblingElement();
+	}
+	LevelManager::getInst().setAliveAnimals(mFakeAnimals);
+}

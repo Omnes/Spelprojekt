@@ -27,6 +27,7 @@ public:
 	void setCurrentWorldOrSub(std::string currentLevel);
 
 	void readAnimals();
+	void readNewAnimals();
 
 
 

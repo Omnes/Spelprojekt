@@ -71,3 +71,38 @@
 
 </Button>
 
+<Button>
+
+	<Position x="1100" y="200"/>
+
+	<Event>addTaktik</Event>
+
+	<Images>Resources/Menu/WorldMenu/night.png</Images>
+
+	<Bana>Resources/Data/Level/Night_Level2.xml</Bana>
+
+</Button>
+
+<Button>
+
+	<Position x="950" y="300"/>
+
+	<Event>addTaktik</Event>
+
+	<Images>Resources/Menu/WorldMenu/night.png</Images>
+
+	<Bana>Resources/Data/Level/Night_Level3.xml</Bana>
+
+</Button>
+
+<Button>
+
+	<Position x="1100" y="500"/>
+
+	<Event>addTaktik</Event>
+
+	<Images>Resources/Menu/WorldMenu/night.png</Images>
+
+	<Bana>Resources/Data/Level/Night_Level4.xml</Bana>
+
+</Button>
