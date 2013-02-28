@@ -255,9 +255,9 @@ void WorldMap::readNewAnimals(){
 
 	tinyxml2::XMLElement *section = doc.FirstChildElement();
 
-	while(section != 0 && section->FirstAttribute()->IntValue() == mCurrentSection){
+	while(section != 0){
 		tinyxml2::XMLElement *animals = section->FirstChildElement();
-		while(animals != 0){
+		while(animals != 0 && section->FirstAttribute()->IntValue() == mCurrentSection){
 			mFakeAnimals.push_back(animals->GetText());
 			animals = animals->NextSiblingElement();
 		}
