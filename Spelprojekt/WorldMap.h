@@ -17,7 +17,7 @@ public:
 	virtual void update();
 	virtual void render();
 	void readSave();
-	void saveToFile();
+	void saveToFile(std::string currentLevel);
 
 	void readButtons();
 
@@ -38,11 +38,14 @@ private:
 	typedef std::vector <std::vector<std::vector<std::string>>> WorldVector;
 	WorldVector mWorldVector;
 
+	typedef std::vector <std::string> BurnedLevelVector;
+	BurnedLevelVector mBurnedLevelVector;
+
 	std::string mMusic;
 
 	sf::Sprite mSprite;
 
-	int mWorld, mSub;
+	int mWorld, mSub, mCurrentWorld;
 
 	int mLevelCount;
 
