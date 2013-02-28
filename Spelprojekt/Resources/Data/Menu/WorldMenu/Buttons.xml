@@ -4,7 +4,7 @@
 
 	<Event>addTaktik</Event>
 
-	<Images>Resources/Menu/WorldMenu/djungel.png</Images>
+	<Images>Resources/Menu/WorldMenu/djungel1.png</Images>
 
 	<Bana>Resources/Data/Level/Jungle_Level1.xml</Bana>
 
@@ -12,11 +12,11 @@
 
 <Button>
 
-	<Position x="200" y="560"/>
+	<Position x="100" y="450"/>
 
 	<Event>addTaktik</Event>
 
-	<Images>Resources/Menu/WorldMenu/djungel.png</Images>
+	<Images>Resources/Menu/WorldMenu/djungel2.png</Images>
 
 	<Bana>Resources/Data/Level/Jungle_Level2.xml</Bana>
 

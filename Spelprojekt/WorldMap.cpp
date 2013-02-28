@@ -8,7 +8,8 @@
 WorldMap::WorldMap() : 
 	mWorld(0),
 	mSub(0),
-	mLevelCount(0)
+	mLevelCount(0),
+	mSection(0)
 {
 
 	readButtons();
@@ -21,8 +22,10 @@ WorldMap::WorldMap() :
 	readSave();
 	readWorld();
 	updateWorld();
+	readAnimals();
 
 	mCurrentWorld = mWorld;
+	mCurrentSection = mSection;
 }
 
 WorldMap::~WorldMap(){}
@@ -64,10 +67,19 @@ void WorldMap::readSave(){
 
 	tinyxml2::XMLElement *burnedLevel = doc.FirstChildElement("BurnedLevel");
 
-	//while(burnedLevel != 0){
-	//	//burnedLevel->FirstAttribute(); <------------------ häääär
-	//
-	//}
+	while(burnedLevel != 0){
+		for(ButtonVector::iterator i = mButtonVector.begin(); i != mButtonVector.end(); i++){
+			if(burnedLevel->FirstAttribute()->Value() == (*i)->getLevel()){
+				(*i)->setAlive(false);
+			}
+		}
+		burnedLevel = burnedLevel->NextSiblingElement();
+	}
+
+	tinyxml2::XMLElement *section = doc.FirstChildElement("Section");
+
+	mSection = section->FirstAttribute()->IntValue();
+
 }
 
 void WorldMap::saveToFile(std::string currentLevel){
@@ -86,6 +98,7 @@ void WorldMap::saveToFile(std::string currentLevel){
 	mBurnedLevelVector.push_back(currentLevel);
 
 	if(mWorld > mCurrentWorld){
+		mSection = mCurrentSection;
 		for(BurnedLevelVector::iterator i = mBurnedLevelVector.begin(); i != mBurnedLevelVector.end();i++){
 			tinyxml2::XMLElement* burnedLevel = doc.NewElement("BurnedLevel");
 			burnedLevel->SetAttribute("Level", (*i).c_str());
@@ -94,6 +107,10 @@ void WorldMap::saveToFile(std::string currentLevel){
 		mBurnedLevelVector.clear();
 		mCurrentWorld = mWorld;
 	}
+
+	tinyxml2::XMLElement* section = doc.NewElement("Section"); // måste ha stöd gför att skapa filer
+	section->SetAttribute("Level", mSection);
+	doc.LinkEndChild(section);
 
 	doc.SaveFile("Resources/Data/Save/SavedGame.xml"); //<------- variabel funkar här
 
@@ -186,6 +203,7 @@ void WorldMap::setCurrentWorldOrSub(std::string currentLevel){
 	if(mWorldVector[mWorld][mSub].size() <= mLevelCount){
 		//anger plats i vectorn. 
 		mSub++;
+		mCurrentSection++;
 		mLevelCount = 0;
 	}
 	
@@ -204,4 +222,25 @@ void WorldMap::setCurrentWorldOrSub(std::string currentLevel){
 
 	updateWorld();
 	saveToFile(currentLevel);
+}
+
+void WorldMap::readAnimals(){
+
+	tinyxml2::XMLDocument doc;
+	doc.LoadFile("Resources/Data/AnimalUnlock.xml");
+
+	tinyxml2::XMLElement *section = doc.FirstChildElement();
+
+	int level = 0;
+	/*section->FirstAttribute()->IntValue() <= mSection && */
+	while(section != 0 && section->FirstAttribute()->IntValue() <= mSection){
+		tinyxml2::XMLElement *animals = section->FirstChildElement();
+		while(animals != 0){
+			mFakeAnimals.push_back(animals->GetText());
+			animals = animals->NextSiblingElement();
+		}
+		section = section->NextSiblingElement();
+	}
+
+	LevelManager::getInst().setAliveAnimals(mFakeAnimals);
 }
