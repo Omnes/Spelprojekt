@@ -171,8 +171,7 @@ std::vector<Layer*> LevelManager::loadLayers(){
 
 			//skapar elden
 			float fireSpeed = mDoc->FirstChildElement("Fire")->FirstAttribute()->FloatValue();
-			float acceleration = mDoc->FirstChildElement("Fire")->FirstAttribute()->Next()->FloatValue();
-			entityVector.push_back(new Fire(sf::Vector2f(-150,0),fireSpeed,acceleration));
+			entityVector.push_back(new Fire(sf::Vector2f(-150,0),fireSpeed));
 
 			ActiveLayer* activeLayer = new ActiveLayer(entityVector, mLevellength);
 			layer = activeLayer;

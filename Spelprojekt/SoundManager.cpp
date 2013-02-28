@@ -45,12 +45,12 @@ void SoundManager::update(){
 	if(mFading){
 		if(mCurrentMusic->getVolume()>0){
 			mCurrentMusic->setVolume(clampValue(mCurrentMusic->getVolume() - mFadeVolumeDeltaChange));
-			mFadeToMusic->setVolume(clampValue(mMusicVolume - mCurrentMusic->getVolume()));
 		}else{
 			mFading = false;
 			mCurrentMusic->stop();
 			delete mCurrentMusic;
 			mCurrentMusic = mFadeToMusic;
+			mCurrentMusic->play();
 			mFadeToMusic = 0;
 		}
 	}
@@ -85,6 +85,9 @@ void SoundManager::fadeTo(std::string filename,float fadeTime){
 
 	if(mCurrentMusic !=0){
 		currentVolume = mCurrentMusic->getVolume();
+		if(filename == mCurrentMusic->getFilepath()){
+			return;
+		}
 	}else{
 		currentVolume = 0;
 	}
@@ -100,8 +103,7 @@ void SoundManager::fadeTo(std::string filename,float fadeTime){
 	}
 
 	mFadeToMusic = new MusicLoop(filename);
-	mFadeToMusic->setVolume(0);
-	mFadeToMusic->play();
+	mFadeToMusic->setVolume(mMusicVolume*(!mMuted));
 
 	mFading = true;
 }

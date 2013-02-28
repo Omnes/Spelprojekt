@@ -49,7 +49,7 @@ void ActiveLayer::update(){
 	}
 
 	finishLine();
-	
+	 
 	collision();
 	killDead();
 }

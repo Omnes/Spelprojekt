@@ -124,7 +124,7 @@
 </Abilities>
 
 
-<Fire speed = "1.8" acceleration="0.00"/>
+<Fire speed = "180"/>
 
 <LevelsYValue air="100" middle="290" ground="500"/>
 

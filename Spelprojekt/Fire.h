@@ -4,10 +4,11 @@
 #include <string>
 #include "ParticleSystem.h"
 #include "Emitter.h"
+#include <SFML\System\Clock.hpp>
 	
 class Fire: public Entity{
 public:
-	Fire(sf::Vector2f position, float speed, float acceleration);
+	Fire(sf::Vector2f position, float speed);
 	~Fire();
 
 	virtual void update();
@@ -21,8 +22,8 @@ public:
 	virtual float doDamage();
 
 private:
+	float mCloseupSpeed;
 	float mSpeed;
-	float mAcceleration;
 	sf::Vector2f mPosition;
 	sf::Sprite mSprite;
 	std::string mID;
@@ -30,6 +31,7 @@ private:
 	ParticleSystem mSmokeSystem;
 	ParticleSystem mFireSystem;
 	ParticleSystem mPoofSystem;
+	sf::Clock mSpeedUpdateCooldown;
 	
 	Emitter mEmitter;
 

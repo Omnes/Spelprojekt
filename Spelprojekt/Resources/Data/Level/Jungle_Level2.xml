@@ -110,12 +110,12 @@
 <Abilities>
 	<Ability>InnerBeast</Ability>
 	<Ability>Sonar</Ability>
-	<Ability>Growl</Ability>
+	<Ability>Power</Ability>
 	<Ability>Omsorg</Ability>
 
 </Abilities>
 
-<Fire speed = "1.8" acceleration="0.0"/>
+<Fire speed = "180"/>
 
 <LevelsYValue air="100" middle="290" ground="500"/>
 

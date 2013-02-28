@@ -6,15 +6,15 @@
 #include "LevelManager.h"
 #include "ActiveLayer.h"
 
-Fire::Fire(sf::Vector2f position,float speed, float acceleration)
+Fire::Fire(sf::Vector2f position,float closeupspeed = 180)
 	: mID("Fire")
 	, mPosition(position)
-	, mSpeed(speed)
+	, mCloseupSpeed(closeupspeed)
+	, mSpeed(0)
 	, mAlive(true)
 	, mFireSystem("Firewall",500)
 	, mSmokeSystem("Smoke",770)
-	, mPoofSystem("Smoke",50)
-	, mAcceleration(acceleration){
+	, mPoofSystem("Smoke",50){
 
 	mSprite.setTexture(*ResourceManager::getInst().getTexture("Resources/Animals/eld.png"));
 	mFireSystem.setBlendMode(sf::BlendAdd);
@@ -27,12 +27,31 @@ Fire::Fire(sf::Vector2f position,float speed, float acceleration)
 }
 
 void Fire::update(){
-	mSpeed += mAcceleration;
+	//mSpeed += mAcceleration;
 	mPosition.x += mSpeed;
 	mEmitter.setPosition(mPosition);
 	mEmitter.burst(mFireSystem,sf::FloatRect(-100,0,225,720),17);
 	mEmitter.burst(mSmokeSystem,sf::FloatRect(-1000,0,950,720),10);
 	mSprite.setPosition(mPosition-sf::Vector2f(50,0));
+
+	if(mSpeedUpdateCooldown.getElapsedTime().asSeconds() > 1){
+		std::vector<Entity*>* entityVector = LevelManager::getInst().getActiveLayer()->getEntityVector();
+		float distance = 1000;
+		for(std::vector<Entity*>::iterator i = entityVector->begin();i != entityVector->end();i++){
+			if((*i)->getID() == "Animal"){
+				int dist = (*i)->getPos().x - mPosition.x;
+				if(dist < distance){
+					distance = dist;
+				}
+			}
+		}
+		if(distance < 10 ){
+			distance = 10;
+		}
+
+		mSpeed = distance/mCloseupSpeed;
+		mSpeedUpdateCooldown.restart();
+	}
 }
 
 sf::FloatRect* Fire::getRect(){

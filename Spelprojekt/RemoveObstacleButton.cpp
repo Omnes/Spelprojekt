@@ -18,7 +18,7 @@ RemoveObstacleButton::RemoveObstacleButton(std::vector<std::string> obstacle,sf:
 	, mClicked(false)
 	, mParticleSystem(particleName,100)
 	, mEmittAmount(emittAmount)
-	, mSparksOnObstacles("Spark",1000){
+	, mSparksOnObstacles("Spark",300){
 
 		mSprite.setPosition(position);
 		mSprite.setTexture(*mTexture);
