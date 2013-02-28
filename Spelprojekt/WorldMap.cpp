@@ -78,7 +78,10 @@ void WorldMap::readSave(){
 
 	tinyxml2::XMLElement *section = doc.FirstChildElement("Section");
 
-	mSection = section->FirstAttribute()->IntValue();
+
+	if(section != 0){
+		mSection = section->FirstAttribute()->IntValue();
+	}
 
 }
 
