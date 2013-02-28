@@ -47,6 +47,12 @@ TaktikMeny::~TaktikMeny(){
 	}
 
 	delete mButton;
+
+	while(!mAbilityButtons.empty()){
+
+		delete mAbilityButtons.back();
+		mAbilityButtons.pop_back();
+	}
 }
 
 
