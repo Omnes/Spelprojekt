@@ -93,11 +93,12 @@ void ActiveLayer::killDead(){
 
 		if((*i)->getAlive() == false){
 			if((*i)->getID() == "Animal"){
-				LevelManager::getInst().getDeadAnimalCollection()->push_back((*i)->getFilePath());
-				if(LevelManager::getInst().getDeadAnimalCollection()->size() > 1){
+				mDeadAnimalsVector.push_back((*i)->getFilePath());
+				//LevelManager::getInst().getDeadAnimalCollection()->push_back((*i)->getFilePath());
+				if(LevelManager::getInst().getDeadAnimalCollection()->size() + mDeadAnimalsVector.size() > 1){
 					EventManager::getInst().addEvent("addGameOver");
 				}
-				mDeadAnimalsVector.push_back((*i)->getFilePath());
+				
 			}
 			delete (*i);
 			i = mEntityVector.erase(i);
