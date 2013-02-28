@@ -92,15 +92,6 @@
 
 </Layers>
 
-<AnimalsOnLevel>
-
-	<Animal_1>Resources/Data/Animal/frogRed.xml</Animal_1>
-	<Animal_1>Resources/Data/Animal/frogGreen.xml</Animal_1>
-	<Animal_1>Resources/Data/Animal/Spider.xml</Animal_1>
-	
-
-</AnimalsOnLevel>
-
 <Level length = "10000">
 	
 </Level>

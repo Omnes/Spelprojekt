@@ -85,22 +85,6 @@
 
 </Layers>
 
-<AnimalsOnLevel>
-
-	<Animal_1>Resources/Data/Animal/frogGreen.xml</Animal_1>
-	<Animal_1>Resources/Data/Animal/Bat.xml</Animal_1>
-	<Animal_1>Resources/Data/Animal/Snake.xml</Animal_1>
-	<Animal_1>Resources/Data/Animal/HummingBird.xml</Animal_1>
-	<Animal_1>Resources/Data/Animal/Spider.xml</Animal_1>
-	<Animal_1>Resources/Data/Animal/Monkey.xml</Animal_1>
-	<Animal_1>Resources/Data/Animal/Vulture.xml</Animal_1>
-	<Animal_1>Resources/Data/Animal/Jaguar.xml</Animal_1>
-	<Animal_1>Resources/Data/Animal/Eagle.xml</Animal_1>
-
-
-
-
-</AnimalsOnLevel>
 
 <Level length = "10000">
 	

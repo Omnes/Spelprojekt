@@ -22,7 +22,7 @@
 
 LevelManager::LevelManager() : 
 	mLevellength(0){
-	mFilePath = "Resources/Data/Level/Jungle_Level1.xml";
+	mFilePath = "";
 }
 
 
@@ -51,12 +51,12 @@ std::vector <AnimalPrototype*> LevelManager::getAnimalsOnLevel(){
 	std::vector<AnimalPrototype*> animalsOnLevel;
 
 
-	tinyxml2::XMLElement *elm = mDoc->FirstChildElement("AnimalsOnLevel")->FirstChildElement();
+	//tinyxml2::XMLElement *elm = mDoc->FirstChildElement("AnimalsOnLevel")->FirstChildElement();
 
-	while (elm !=0){
-		animalsOnLevel.push_back(new AnimalPrototype(elm->GetText()));
-		elm = elm->NextSiblingElement();
-	}
+	//while (elm !=0){
+	//	animalsOnLevel.push_back(new AnimalPrototype(elm->GetText()));
+	//	elm = elm->NextSiblingElement();
+	//}
 
 	for (std::vector<std::string>::iterator i = mAliveAnimals.begin();i != mAliveAnimals.end();i++){
 		animalsOnLevel.push_back(new AnimalPrototype(*i));

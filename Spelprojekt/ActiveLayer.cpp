@@ -93,11 +93,12 @@ void ActiveLayer::killDead(){
 
 		if((*i)->getAlive() == false){
 			if((*i)->getID() == "Animal"){
-				LevelManager::getInst().getDeadAnimalCollection()->push_back((*i)->getFilePath());
-				if(LevelManager::getInst().getDeadAnimalCollection()->size() > 1){
+				mDeadAnimalsVector.push_back((*i)->getFilePath());
+				//LevelManager::getInst().getDeadAnimalCollection()->push_back((*i)->getFilePath());
+				if(LevelManager::getInst().getDeadAnimalCollection()->size() + mDeadAnimalsVector.size() > 1){
 					EventManager::getInst().addEvent("addGameOver");
 				}
-				mDeadAnimalsVector.push_back((*i)->getFilePath());
+				
 			}
 			delete (*i);
 			i = mEntityVector.erase(i);
@@ -131,10 +132,9 @@ void ActiveLayer::finishLine(){
 	if(mAllAnimalsPassed){
 		for(EntityVector::iterator i = mEntityVector.begin(); i != mEntityVector.end(); i++){
 			if((*i)->getID() == "Animal"){
-			mAliveAnimalsVector.push_back((*i)->getFilePath());
+				mAliveAnimalsVector.push_back((*i)->getFilePath());
 			}
 		}
-		LevelManager::getInst().setAliveAnimals(mAliveAnimalsVector);
 
 		LevelManager::getInst().setDeadAnimals(mDeadAnimalsVector);
 		EventManager::getInst().addEvent("addLevelFinished");

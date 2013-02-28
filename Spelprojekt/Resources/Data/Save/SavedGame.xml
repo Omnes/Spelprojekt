@@ -1,1 +1,7 @@
-<World Worlds="0"/>
+<World Worlds="1"/>
+
+<BurnedLevel Level="Resources/Data/Level/Jungle_Level1.xml"/>
+
+<BurnedLevel Level="Resources/Data/Level/Jungle_Level2.xml"/>
+
+<Section Level="2"/>

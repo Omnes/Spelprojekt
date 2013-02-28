@@ -1,0 +1,33 @@
+<Section level="0">
+
+	<Animal>Resources/Data/Animal/frogRed.xml</Animal>
+	<Animal>Resources/Data/Animal/frogGreen.xml</Animal>
+	<Animal>Resources/Data/Animal/Spider.xml</Animal>
+
+</Section>
+
+<Section level="1">
+	
+</Section>
+
+<Section level="2">
+	
+	<Animal>Resources/Data/Animal/Bat.xml</Animal>
+	<Animal>Resources/Data/Animal/Monkey.xml</Animal>
+	
+</Section>
+
+
+<Section level="3">
+	
+</Section>
+
+
+<Section level="4">
+	
+</Section>
+
+
+<Section level="5">
+	
+</Section>
