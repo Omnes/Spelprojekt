@@ -39,9 +39,6 @@ void Game::run(){
 	particleManager->loadAllParticlesFromFile("Resources/data/Particle/ParticleList.xml");
 
 
-	//sf::Sprite aim = sf::Sprite(*ResourceManager::getInst().getTexture("Resources/Misc/pointer.png"));
-
-
 	stateManager->addState(new StartMeny);
 
 	while(window->isOpen()){
@@ -69,9 +66,10 @@ void Game::run(){
 			window->setView(*windowManager->getDefaultView());
 			drawFPS(window);
 
-			//aim.setPosition((sf::Vector2f)sf::Mouse::getPosition(*window));
-
-			//window->draw(aim);
+			window->setMouseCursorVisible(false);
+			
+			WindowManager::getInst().getCursor()->setPosition(sf::Vector2f(sf::Mouse::getPosition(*window)));
+			window->draw(*WindowManager::getInst().getCursor());
 
 			window->display();
 		}
