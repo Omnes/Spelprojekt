@@ -293,3 +293,9 @@ void LevelManager::preloadBackgrounds(){
 		elm = elm->NextSiblingElement();
 	}
 }
+
+void LevelManager::addAliveAnimals(std::vector<std::string> fakeAnimals){
+	for(std::vector<std::string>::size_type i = 0; i < fakeAnimals.size(); i++){
+		mAliveAnimals.push_back(fakeAnimals[i]);
+	}
+}
