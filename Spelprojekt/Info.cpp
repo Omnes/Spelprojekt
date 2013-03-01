@@ -12,8 +12,8 @@ Info::Info(std::string elementName){
 	sf::Texture* tex = ResourceManager::getInst().getTexture(elm->FirstChildElement("Image")->GetText());
 	mPicture.setTexture(*tex);
 
-	float x = elm->FirstChildElement("Image")->FirstAttribute()->FloatValue();
-	float y = elm->FirstChildElement("Image")->FirstAttribute()->Next()->FloatValue();
+	float x = elm->FirstChildElement("Image")->FloatAttribute("x");
+	float y = elm->FirstChildElement("Image")->FloatAttribute("y");
 	mPicture.setPosition(sf::Vector2f(x,y));
 
 	mStandardText.setString(elm->FirstChildElement("StandardFact")->GetText());
@@ -25,7 +25,7 @@ Info::Info(std::string elementName){
 	tinyxml2::XMLDocument docfacts;
 	docfacts.LoadFile("Resources/Data/Animalipedia/UnlockedFacts.xml");
 
-	mExtraInfoUnlocked = docfacts.FirstChildElement(elementName.c_str())->FirstAttribute()->Next()->BoolValue();
+	mExtraInfoUnlocked = docfacts.FirstChildElement(elementName.c_str())->BoolAttribute("extraUnlocked");
 }
 
 Info::~Info(){

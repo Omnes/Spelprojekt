@@ -97,7 +97,7 @@ std::vector<Layer*> LevelManager::loadLayers(){
 				img = img->NextSiblingElement();
 			}
 
-			float speed = elm->FirstChildElement("Stats")->FirstAttribute()->FloatValue();
+			float speed = elm->FirstChildElement("Stats")->FloatAttribute("speed");
 			std::cout << speed << std::endl;
 			layer = new StaticLayer(spriteVector, speed);
 		}
@@ -105,8 +105,8 @@ std::vector<Layer*> LevelManager::loadLayers(){
 
 			std::vector<Entity*> entityVector(placedAnimals);
 
-			int minDistance = mDoc->FirstChildElement("Obstacles")->FirstAttribute()->IntValue();
-			int maxDistance = mDoc->FirstChildElement("Obstacles")->FirstAttribute()->Next()->IntValue();
+			int minDistance = mDoc->FirstChildElement("Obstacles")->FloatAttribute("minDistance");
+			int maxDistance = mDoc->FirstChildElement("Obstacles")->FloatAttribute("maxDistance");
 
 			std::map<std::string, int> mChanceMap;
 
@@ -122,7 +122,7 @@ std::vector<Layer*> LevelManager::loadLayers(){
 				obst = obst->NextSiblingElement();
 			}
 
-			mLevellength = mDoc->FirstChildElement("Level")->FirstAttribute()->IntValue();
+			mLevellength = mDoc->FirstChildElement("Level")->FloatAttribute("length");
 
 			float x = 1280 + rand()%100;
 
@@ -146,15 +146,11 @@ std::vector<Layer*> LevelManager::loadLayers(){
 				}
 
 				obst = mDoc->FirstChildElement("Obstacles")->FirstChildElement(name.c_str());
-				const tinyxml2::XMLAttribute *atr = obst->FirstAttribute()->Next();
 
-				float speedMod = atr->FloatValue();
-				atr = atr->Next();
-				float y = atr->FloatValue();
-				atr = atr->Next();
-				int xframes = atr->IntValue();
-				atr = atr->Next();
-				float frameTime = atr->IntValue();
+				float speedMod = obst->FloatAttribute("speedMod");
+				float y = obst->FloatAttribute("y");
+				int xframes = obst->FloatAttribute("numberOfFrames");
+				float frameTime = obst->FloatAttribute("frameTime");
 			
 			
 				std::string id = obst->Name();
@@ -170,7 +166,7 @@ std::vector<Layer*> LevelManager::loadLayers(){
 			}
 
 			//skapar elden
-			float fireSpeed = mDoc->FirstChildElement("Fire")->FirstAttribute()->FloatValue();
+			float fireSpeed = mDoc->FirstChildElement("Fire")->FloatAttribute("speed");
 			entityVector.push_back(new Fire(sf::Vector2f(-150,0),fireSpeed));
 
 			ActiveLayer* activeLayer = new ActiveLayer(entityVector, mLevellength);

@@ -18,13 +18,10 @@ Camera::Camera(LayerManager* layermanager) :
 		tinyxml2::XMLDocument doc;
 		doc.LoadFile("Resources/data/settings.xml");
 
-		const tinyxml2::XMLAttribute* attr = doc.FirstChildElement("Camera")->FirstAttribute();
 
-		mMinVelocity = attr->FloatValue();
-		attr = attr->Next();
-		mMaxVelocity = attr->FloatValue(); 
-		attr = attr->Next();
-		mPanSpeed = attr->FloatValue();
+		mMinVelocity = doc.FirstChildElement("Camera")->FloatAttribute("minSpeed");
+		mMaxVelocity = doc.FirstChildElement("Camera")->FloatAttribute("maxSpeed"); 
+		mPanSpeed = doc.FirstChildElement("Camera")->FloatAttribute("acceleration");
 
 		mLevellength=LevelManager::getInst().getLevelLength();
 

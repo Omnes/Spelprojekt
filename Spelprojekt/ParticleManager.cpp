@@ -92,51 +92,51 @@ void ParticleManager::loadPrototype(std::string filePath){
 	elm = doc.FirstChildElement("Particle")->FirstChildElement("Texture");
 	sf::Texture* texture = new sf::Texture; //resourceManager här istället;
 	texture->loadFromFile(elm->GetText());
-	int yframes = doc.FirstChildElement("Particle")->FirstChildElement("Texture")->FirstAttribute()->IntValue();
+	int yframes = doc.FirstChildElement("Particle")->FirstChildElement("Texture")->IntAttribute("yframes");
 	prototype->setTexture(texture,yframes);
 
 	//life
 	elm = doc.FirstChildElement("Particle")->FirstChildElement("Life");
-	int lifeMin = elm->FirstAttribute()->IntValue();
-	int lifeMax = elm->FirstAttribute()->Next()->IntValue();
+	int lifeMin = elm->IntAttribute("min");
+	int lifeMax = elm->IntAttribute("max");
 	prototype->setLife(lifeMin,lifeMax);
 
 	//direction
 	elm = doc.FirstChildElement("Particle")->FirstChildElement("Direction");
-	float directionMin = elm->FirstAttribute()->FloatValue();
-	float directionMax = elm->FirstAttribute()->Next()->FloatValue();
+	float directionMin = elm->FloatAttribute("min");
+	float directionMax = elm->FloatAttribute("max");
 	prototype->setDirection(directionMin, directionMax);
 
 	//speed
 	elm = doc.FirstChildElement("Particle")->FirstChildElement("Speed");
-	float speedMin = elm->FirstAttribute()->FloatValue();
-	float speedMax = elm->FirstAttribute()->Next()->FloatValue();
-	float speedIncrease = elm->FirstAttribute()->Next()->Next()->FloatValue();
+	float speedMin = elm->FloatAttribute("min");
+	float speedMax = elm->FloatAttribute("max");
+	float speedIncrease = elm->FloatAttribute("increase");
 	prototype->setSpeed(speedMin,speedMax,speedIncrease);
 
 	//rotation
 	elm = doc.FirstChildElement("Particle")->FirstChildElement("Rotation");
-	float rotationMin = elm->FirstAttribute()->FloatValue();
-	float rotationMax = elm->FirstAttribute()->Next()->FloatValue();
-	float rotationIncreaseMin = elm->FirstAttribute()->Next()->Next()->FloatValue();
-	float rotationIncreaseMax = elm->FirstAttribute()->Next()->Next()->Next()->FloatValue();
+	float rotationMin = elm->FloatAttribute("min");
+	float rotationMax = elm->FloatAttribute("max");
+	float rotationIncreaseMin = elm->FloatAttribute("increaseMin");
+	float rotationIncreaseMax = elm->FloatAttribute("increaseMax");
 	prototype->setRotation(rotationMin,rotationMax,rotationIncreaseMin,rotationIncreaseMax);
 
 	//scale
 	elm = doc.FirstChildElement("Particle")->FirstChildElement("Scale");
-	float scaleMin = elm->FirstAttribute()->FloatValue();
-	float scaleMax = elm->FirstAttribute()->Next()->FloatValue();
-	float scaleIncrease = elm->FirstAttribute()->Next()->Next()->FloatValue();
+	float scaleMin = elm->FloatAttribute("min");
+	float scaleMax = elm->FloatAttribute("max");
+	float scaleIncrease = elm->FloatAttribute("increase");
 	prototype->setScale(scaleMin,scaleMax,scaleIncrease);
 
 	//color
-	const tinyxml2::XMLAttribute* col;
+	const tinyxml2::XMLElement* col;
 	elm = doc.FirstChildElement("Particle")->FirstChildElement("Color");
 
-	col = elm->FirstChildElement("Start")->FirstAttribute();
-	sf::Color start = sf::Color(col->FloatValue(),col->Next()->FloatValue(),col->Next()->Next()->FloatValue(),col->Next()->Next()->Next()->FloatValue());
-	col = elm->FirstChildElement("End")->FirstAttribute();
-	sf::Color end = sf::Color(col->FloatValue(),col->Next()->FloatValue(),col->Next()->Next()->FloatValue(),col->Next()->Next()->Next()->FloatValue());
+	col = elm->FirstChildElement("Start");
+	sf::Color start = sf::Color(col->FloatAttribute("r"),col->FloatAttribute("g"),col->FloatAttribute("b"),col->FloatAttribute("a"));
+	col = elm->FirstChildElement("End");
+	sf::Color end = sf::Color(col->FloatAttribute("r"),col->FloatAttribute("g"),col->FloatAttribute("b"),col->FloatAttribute("a"));
 	prototype->setColor(start,end);
 
 	mPrototypeMap[name] = ParticlePrototype(*prototype);

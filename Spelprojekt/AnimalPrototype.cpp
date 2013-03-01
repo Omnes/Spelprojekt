@@ -35,17 +35,12 @@ void AnimalPrototype::loadAnimal(std::string filePath){
 	mTex = resourceManager->getTexture(img->GetText()); // kan nog inte vara lokal
 
 	//kollar andra elemntet som har flera attribut
-	const tinyxml2::XMLAttribute *speed = elm->FirstChildElement("Speed")->FirstAttribute();
+	//const tinyxml2::XMLAttribute *speed = elm->FirstChildElement("Speed")->FloatAttribute("air");
 
 	//sätter attribut
-	//ground
-	mSpeedVector.push_back(speed->FloatValue());
-	speed = speed->Next();
-	//middle
-	mSpeedVector.push_back(speed->FloatValue());
-	speed = speed->Next();
-	//air
-	mSpeedVector.push_back(speed->FloatValue());
+	mSpeedVector.push_back(elm->FirstChildElement("Speed")->FloatAttribute("air"));
+	mSpeedVector.push_back(elm->FirstChildElement("Speed")->FloatAttribute("middle"));
+	mSpeedVector.push_back(elm->FirstChildElement("Speed")->FloatAttribute("ground"));
 	
 
 	//kollar tredje elemntet
@@ -57,9 +52,8 @@ void AnimalPrototype::loadAnimal(std::string filePath){
 	const tinyxml2::XMLAttribute *imageAttr = elm->FirstChildElement("ImageAttr")->FirstAttribute();
 
 	//sätter attribut
-	mFrameTick = imageAttr->FloatValue();
-	imageAttr = imageAttr->Next();
-	mFrames = imageAttr->FloatValue();
+	mFrameTick = elm->FirstChildElement("ImageAttr")->FloatAttribute("fTick");
+	mFrames = elm->FirstChildElement("ImageAttr")->FloatAttribute("frames");
 
 	//sound
 	const tinyxml2::XMLElement *xmlSound = elm->FirstChildElement("Sound");

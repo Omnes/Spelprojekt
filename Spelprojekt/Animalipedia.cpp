@@ -78,8 +78,8 @@ void Animalipedia::loadUnlocked(){
 	 
 		AnimalipediaButton* button = new AnimalipediaButton(pos,page,title,sound,this);
 
-		button->setLocked(elm->FirstAttribute()->IntValue());
-		button->setNewInfo(elm->FirstAttribute()->Next()->BoolValue());
+		button->setLocked(elm->FloatAttribute("unlocked"));
+		button->setNewInfo(elm->FloatAttribute("newFacts"));
 
 		mButtonVector.push_back(button);
 
