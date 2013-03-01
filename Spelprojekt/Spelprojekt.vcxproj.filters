@@ -221,6 +221,9 @@
     <ClCompile Include="Checkbox.cpp">
       <Filter>Source Files\Interface</Filter>
     </ClCompile>
+    <ClCompile Include="ApplyOptionsButton.cpp">
+      <Filter>Source Files\Interface</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EventManager.h">
@@ -431,6 +434,9 @@
       <Filter>Header Files\States</Filter>
     </ClInclude>
     <ClInclude Include="Checkbox.h">
+      <Filter>Header Files\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplyOptionsButton.h">
       <Filter>Header Files\Interface</Filter>
     </ClInclude>
   </ItemGroup>
