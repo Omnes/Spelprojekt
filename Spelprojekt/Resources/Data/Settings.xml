@@ -2,8 +2,7 @@
 			Settings
 ###########################################################
 
-<Camera minSpeed = "-3" maxSpeed = "4" acceleration = "0.06"/>
-
+<Camera minSpeed="-3" maxSpeed="4" acceleration="0.06"/>
 
 <Sound musicVolume="100" soundVolume="100" muted="0"/>
 
@@ -11,4 +10,4 @@
     <Title>Flykten</Title>
 </Window>
 
-<Resolution width="1280" height="720" fullscreen="0"/>
+<Resolution width="1280" heigth="720" fullscreen="1"/>

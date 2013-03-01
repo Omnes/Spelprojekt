@@ -3,6 +3,7 @@
 #include "Event.h"
 #include "StateManager.h"
 #include "WindowManager.h"
+#include "SoundManager.h"
 
 class GoBackToStartFromOptions : public Event{
 

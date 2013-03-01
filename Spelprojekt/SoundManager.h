@@ -15,6 +15,9 @@ public:
 	void play(sf::Sound& sound);
 	void fadeTo(std::string filename,float fadeTime);
 	MusicLoop* getCurrentPlaying();
+	void setMusicVolume(float volume);
+	void setSoundVolume(float volume);
+	void setMuted(bool muted);
 
 private:
 	float mMusicVolume;
