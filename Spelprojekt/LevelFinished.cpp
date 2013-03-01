@@ -81,7 +81,7 @@ std::vector<sf::Sprite*> LevelFinished::loadAnimals(std::vector<std::string> ani
 		sf::Texture* tex = resourceManager->getTexture(elm->GetText());
 		sf::Sprite *sprite = new sf::Sprite();
 		sprite->setTexture(*tex);
-		sprite->setTextureRect(sf::IntRect(0,0, tex->getSize().x/elmf->FirstAttribute()->Next()->FloatValue(), tex->getSize().y/2));
+		sprite->setTextureRect(sf::IntRect(0,0, tex->getSize().x/elmf->IntAttribute("frames"), tex->getSize().y/2));
 		spriteVector.push_back(sprite);
 	}
 

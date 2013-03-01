@@ -111,3 +111,20 @@ void SoundManager::fadeTo(std::string filename,float fadeTime){
 MusicLoop* SoundManager::getCurrentPlaying(){
 	return mCurrentMusic;
 }
+
+void SoundManager::setMusicVolume(float volume){
+	if(mCurrentMusic != 0){
+		mCurrentMusic->setVolume(volume*(!mMuted));
+		mMusicVolume = volume;
+	}
+}
+
+void SoundManager::setSoundVolume(float volume){
+	mSoundVolume = volume * (!mMuted);
+}
+
+void SoundManager::setMuted(bool muted){
+	mMuted = muted;
+	setSoundVolume(mSoundVolume);
+	setMusicVolume(mMusicVolume);
+}

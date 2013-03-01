@@ -18,13 +18,10 @@ Camera::Camera(LayerManager* layermanager) :
 		tinyxml2::XMLDocument doc;
 		doc.LoadFile("Resources/data/settings.xml");
 
-		const tinyxml2::XMLAttribute* attr = doc.FirstChildElement("Camera")->FirstAttribute();
 
-		mMinVelocity = attr->FloatValue();
-		attr = attr->Next();
-		mMaxVelocity = attr->FloatValue(); 
-		attr = attr->Next();
-		mPanSpeed = attr->FloatValue();
+		mMinVelocity = doc.FirstChildElement("Camera")->FloatAttribute("minSpeed");
+		mMaxVelocity = doc.FirstChildElement("Camera")->FloatAttribute("maxSpeed"); 
+		mPanSpeed = doc.FirstChildElement("Camera")->FloatAttribute("acceleration");
 
 		mLevellength=LevelManager::getInst().getLevelLength();
 
@@ -43,7 +40,7 @@ Camera::~Camera(){
 void Camera::getMinMax(){
 	std::vector<Entity*>* entityVector = LevelManager::getInst().getActiveLayer()->getEntityVector();
 	mMaxPos = -1000;
-	mMinPos = 1000;
+	mMinPos = 50000;
 
 	for(std::vector<Entity*>::iterator i = entityVector->begin(); i != entityVector->end(); i++){
 		
@@ -120,7 +117,9 @@ void Camera::update(){
 }
 
 float Camera::getMax(){
+
 	return mMaxPos;    // hהההההההההההההr fוr jag randomfel ibland 
+
 }
 
 sf::View* Camera::getView(){

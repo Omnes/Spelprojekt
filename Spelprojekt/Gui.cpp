@@ -66,31 +66,27 @@ void Gui::loadAbilites(){
 		}
 
 		if(type == "Vision"){
-			float cooldown = elm->FirstChildElement("Stats")->FirstAttribute()->FloatValue();
+			float cooldown = elm->FirstChildElement("Stats")->FloatAttribute("cooldown");
 			mButtons.push_back(new TacticalVisionButton(position,texture,cooldown,this));
 		}
 
 		if(type == "Speed"){
 
-			const tinyxml2::XMLAttribute* attr = elm->FirstChildElement("Stats")->FirstAttribute();
-			float cooldown = attr->FloatValue();
-			attr = attr->Next();
-			float speedIncrease = attr->FloatValue();
-			attr = attr->Next();
-			float duration = attr->FloatValue();
-			attr = attr->Next();
+			float cooldown = elm->FirstChildElement("Stats")->FloatAttribute("cooldown");
+			float speedIncrease = elm->FirstChildElement("Stats")->FloatAttribute("speedIncrease");
+			float duration = elm->FirstChildElement("Stats")->FloatAttribute("duration");
 
 			mButtons.push_back(new InnerBeastButton(position,texture,cooldown,speedIncrease,duration,this));
 		}
 
 		if(type == "Remove"){
-			std::vector<std::string> canRemoveVector;
-			tinyxml2::XMLElement *canRemove = elm->FirstChildElement("CanRemove")->FirstChildElement();
 
 			std::string effekt = elm->FirstChildElement("ParticleEffekt")->GetText();
-			int amount = elm->FirstChildElement("ParticleEffekt")->FirstAttribute()->IntValue();
+			int amount = elm->FirstChildElement("ParticleEffekt")->IntAttribute("amount");
+			float cooldown = elm->FirstChildElement("Stats")->FloatAttribute("cooldown");
 
-			float cooldown = elm->FirstChildElement("Stats")->FirstAttribute()->FloatValue();;
+			std::vector<std::string> canRemoveVector;
+			tinyxml2::XMLElement *canRemove = elm->FirstChildElement("CanRemove")->FirstChildElement();
 
 			while (canRemove != 0){
 				canRemoveVector.push_back(canRemove->GetText());
@@ -106,6 +102,8 @@ void Gui::loadAbilites(){
 }
 
 Gui::~Gui(){
+
+	unclickAll();
 	while(!mButtons.empty()){
 		delete mButtons.back();
 		mButtons.pop_back();

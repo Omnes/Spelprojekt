@@ -22,7 +22,10 @@ public:
 	void preloadBackgrounds();
 	std::vector<std::string> getAliveAnimals();
 	std::vector<std::string> getDeadAnimals();
+	void setDeadAnimalCollection(std::vector <std::string> deadAnimals);
+
 	std::vector<std::string>* getDeadAnimalCollection();
+
 	std::vector<Layer*> loadLayers();
 	std::string getMusicOnLevel();
 	std::vector<std::string> getAbilitiesOnLevel();
@@ -33,6 +36,8 @@ public:
 	Camera* getCamera();
 	int getLevelLength();
 	std::vector <float> getLevelsOnLevel(); //nivåer på en bana 
+
+	void addAliveAnimals(std::vector <std::string> fakeAnimals);
 
 private:
 	//std::vector<Layer*> layers;

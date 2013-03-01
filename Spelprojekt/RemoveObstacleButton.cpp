@@ -18,7 +18,8 @@ RemoveObstacleButton::RemoveObstacleButton(std::vector<std::string> obstacle,sf:
 	, mClicked(false)
 	, mParticleSystem(particleName,100)
 	, mEmittAmount(emittAmount)
-	, mSparksOnObstacles("Spark",300){
+	, mSparksOnObstacles("Spark",300)
+	, mMissedAbility("Smoke",300){
 
 		mSprite.setPosition(position);
 		mSprite.setTexture(*mTexture);
@@ -51,6 +52,7 @@ void RemoveObstacleButton::killRelativePositionEntity(sf::Vector2f mousePosition
 
 		std::vector<Entity*>* entityVector = LevelManager::getInst().getActiveLayer()->getEntityVector();
 		//hitta vad vi har musen över och döda den
+		bool didDelete = false;
 		for(std::vector<Entity*>::iterator i = entityVector->begin();i != entityVector->end();){
 			sf::FloatRect bounds = (*i)->getSprite()->getGlobalBounds();
 			bool contains = bounds.contains(relativeMousePosition);
@@ -67,10 +69,16 @@ void RemoveObstacleButton::killRelativePositionEntity(sf::Vector2f mousePosition
 				delete *i;
 				i = entityVector->erase(i);
 				mCooldownTimer.restart();
+				didDelete = true;
 
 			}else{
 				i++;
 			}
+		}
+
+		if(!didDelete){
+			mEmitter.setPosition(relativeMousePosition);
+			mEmitter.burst(mMissedAbility,10,10);
 		}
 
 		setClicked(false);
@@ -144,4 +152,6 @@ sf::Sprite* RemoveObstacleButton::getSprite(){
 
 void RemoveObstacleButton::setClicked(bool boolean){
 	mClicked = boolean;
+	WindowManager::getInst().getCursor()->setTextureRect(sf::IntRect(WindowManager::getInst().getCursor()->getTexture()->getSize().x/2*boolean,0,WindowManager::getInst().getCursor()->getTexture()->getSize().x/2,WindowManager::getInst().getCursor()->getTexture()->getSize().y));
+
 }

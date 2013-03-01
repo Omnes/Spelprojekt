@@ -3,7 +3,7 @@
 #include "States.h"
 #include "LevelButton.h"
 #include "LevelManager.h"
-
+#include "Button.h"
 #include "SFML\Graphics\Texture.hpp"
 #include "tinyxml2.h"
 #include <string> // kanske inte behövs (se: saveToFile(std::string))
@@ -45,8 +45,8 @@ private:
 	typedef std::vector <std::string> BurnedLevelVector;
 	BurnedLevelVector mBurnedLevelVector;
 
-	typedef std::vector <std::string> FakeAnimals;
-	FakeAnimals mFakeAnimals;
+	typedef std::vector <std::string> DeadAnimalVector;
+	DeadAnimalVector mDeadAnimalVector;
 
 	std::string mMusic;
 
@@ -55,6 +55,8 @@ private:
 	int mWorld, mSub, mCurrentWorld, mSection, mCurrentSection;
 
 	int mLevelCount;
+
+	Button* mButton;
 
 };
 

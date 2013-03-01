@@ -16,6 +16,7 @@ Animalipedia::Animalipedia()
 		mInfo = 0;
 		setPage(mCurrentButtonPage);
 
+		mButton = new Button(sf::Vector2f(1100,100), "popState", "Resources/Menu/knapp.png", "");
 }
 
 
@@ -25,6 +26,7 @@ void Animalipedia::update(){
 		(*i)->update();
 	}
 
+	mButton->update();
 	mUpButton.update();
 	mDownButton.update();
 }
@@ -40,6 +42,8 @@ void Animalipedia::render(){
 	for(std::vector<AnimalipediaButton*>::iterator i = mActiveButtons.begin();i != mActiveButtons.end(); i++){
 		(*i)->render();
 	}
+
+	window->draw(mButton->getSprite());
 	window->draw(mUpButton.getSprite());
 	window->draw(mDownButton.getSprite());
 }
@@ -74,8 +78,8 @@ void Animalipedia::loadUnlocked(){
 	 
 		AnimalipediaButton* button = new AnimalipediaButton(pos,page,title,sound,this);
 
-		button->setLocked(elm->FirstAttribute()->IntValue());
-		button->setNewInfo(elm->FirstAttribute()->Next()->BoolValue());
+		button->setLocked(elm->FloatAttribute("unlocked"));
+		button->setNewInfo(elm->FloatAttribute("newFacts"));
 
 		mButtonVector.push_back(button);
 
