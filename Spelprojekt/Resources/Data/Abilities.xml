@@ -4,14 +4,14 @@
 		<Texture>Resources/GUI/sonar.png</Texture>
 		<ParticleEffekt amount="2">Sonar</ParticleEffekt>
 		<Stats cooldown="3"/>
-		<InfoPicture>Resources/GUI/sonar.png</InfoPicture>
+		<InfoPicture>Resources/GUI/pause.png</InfoPicture>
 	</Sonar>
 
 	<InnerBeast>
 		<Type>Speed</Type>
 		<Texture>Resources/GUI/innerbeast.png</Texture>
 		<Stats cooldown="3" speedIncrease="2" duration="1"/>
-		<InfoPicture>Resources/GUI/sonar.png</InfoPicture>
+		<InfoPicture>Resources/GUI/speed.png</InfoPicture>
 	</InnerBeast>
 
 
