@@ -4,6 +4,7 @@
 #include "ResourceManager.h"
 #include "StateManager.h"
 #include "Animalipedia.h"
+#include "OptionsMeny.h"
 
 #include <SFML\Window\Keyboard.hpp>
 
@@ -23,7 +24,7 @@ void StartMeny::update(){
 	}
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)){
-		StateManager::getInst().addState(new Animalipedia);
+		StateManager::getInst().addState(new OptionsMeny);
 	}
 }
 

@@ -34,7 +34,7 @@ void Fire::update(){
 	mEmitter.burst(mSmokeSystem,sf::FloatRect(-1000,0,950,720),10);
 	mSprite.setPosition(mPosition-sf::Vector2f(50,0));
 
-	if(mSpeedUpdateCooldown.getElapsedTime().asSeconds() > 1){
+	if(mSpeedUpdateCooldown.getElapsedTime().asSeconds() > 0.5){
 		std::vector<Entity*>* entityVector = LevelManager::getInst().getActiveLayer()->getEntityVector();
 		float distance = 1000;
 		for(std::vector<Entity*>::iterator i = entityVector->begin();i != entityVector->end();i++){

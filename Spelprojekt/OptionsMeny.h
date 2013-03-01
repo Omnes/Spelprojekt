@@ -2,6 +2,8 @@
 #define OPTIONSMENY
 #include "Button.h"
 #include "States.h"
+#include "Checkbox.h"
+#include "ApplyOptionsButton.h"
 
 class OptionsMeny: public States{
 public:
@@ -9,11 +11,14 @@ public:
 	virtual void render();
 	OptionsMeny();
 	~OptionsMeny();
+	void saveSettings();
 
 	std::string getMusic();
 
 private:
-	std::vector<Button*> mButtons;
+	std::vector<Checkbox*> mCheckboxes;
+	ApplyOptionsButton mApplyButton;
+
 	std::string mMusic;
 	
 };

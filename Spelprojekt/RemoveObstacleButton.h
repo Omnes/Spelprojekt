@@ -42,6 +42,7 @@ private:
 	Emitter mEmitter;
 
 	ParticleSystem mSparksOnObstacles;
+	ParticleSystem mMissedAbility;
 
 
 

@@ -43,7 +43,7 @@ Camera::~Camera(){
 void Camera::getMinMax(){
 	std::vector<Entity*>* entityVector = LevelManager::getInst().getActiveLayer()->getEntityVector();
 	mMaxPos = -1000;
-	mMinPos = 1000;
+	mMinPos = 50000;
 
 	for(std::vector<Entity*>::iterator i = entityVector->begin(); i != entityVector->end(); i++){
 		
