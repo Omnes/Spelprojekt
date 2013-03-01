@@ -23,6 +23,7 @@ WorldMap::WorldMap() :
 	readWorld();
 	updateWorld();
 	readAnimals();
+	LevelManager::getInst().setDeadAnimalCollection(mDeadAnimalVector);
 
 	mCurrentWorld = mWorld;
 	mCurrentSection = mSection;
@@ -101,23 +102,31 @@ void WorldMap::saveToFile(std::string currentLevel){
 	
 	tinyxml2::XMLDocument doc;
 	
+	doc.LoadFile("Resources/Data/Save/SavedGame.xml");
+
 	// sparar vilken värld man är på
-	tinyxml2::XMLElement* world = doc.NewElement("World"); // måste ha stöd gför att skapa filer
+	tinyxml2::XMLElement* world = doc.FirstChildElement("World"); // måste ha stöd gför att skapa filer
 	world->SetAttribute("Worlds", mWorld);
-	doc.LinkEndChild(world);
+	//doc.LinkEndChild(world);
+
+
+
+
 
 	//sparar döda animaler
-	if(mWorld > mCurrentWorld){
-		std::vector<std::string> deadAnimals = *LevelManager::getInst().getDeadAnimalCollection();
+	//if(mWorld > mCurrentWorld){
 
-		for(std::vector<std::string>::size_type i = 0; i < deadAnimals.size(); i++){
+	//	for(DeadAnimalVector::iterator i = mDeadAnimalVector.begin(); i != mDeadAnimalVector.end();i++){
+	//			tinyxml2::XMLElement* dead = doc.NewElement("DeadAnimals");
+	//			dead->SetAttribute("Dead", (*i).c_str());
+	//			doc.LinkEndChild(dead);
+	//	}
 
-			tinyxml2::XMLElement* dead = doc.NewElement("DeadAnimals");
-			dead->SetAttribute("Dead", deadAnimals[i].c_str());
-			doc.LinkEndChild(dead);
+	//} fiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiixa dennna skiten<-------------------------------------------------------
 
-		}
-	}
+
+
+
 
 	// tar emot vilken level man just var på
 	mBurnedLevelVector.push_back(currentLevel);
@@ -129,14 +138,14 @@ void WorldMap::saveToFile(std::string currentLevel){
 			burnedLevel->SetAttribute("Level", (*i).c_str());
 			doc.LinkEndChild(burnedLevel);
 		}
-		//mBurnedLevelVector.clear();
+		mBurnedLevelVector.clear();
 		mCurrentWorld = mWorld;
 	}
 
 	// sparar vilken section man är på. kan lägga denna inom ifsatsen och ta bort mSection(tror jag)
-	tinyxml2::XMLElement* section = doc.NewElement("Section");
+	tinyxml2::XMLElement* section = doc.FirstChildElement("Section");
 	section->SetAttribute("Level", mSection);
-	doc.LinkEndChild(section);
+	//doc.LinkEndChild(section);
 
 	doc.SaveFile("Resources/Data/Save/SavedGame.xml"); //<------- variabel funkar här
 
@@ -268,7 +277,7 @@ void WorldMap::readAnimals(){
 		section = section->NextSiblingElement();
 	}
 
-	if(!mDeadAnimalVector.empty()){
+	if(mDeadAnimalVector.empty() == false){
 		for(DeadAnimalVector::iterator i = mDeadAnimalVector.begin(); i != mDeadAnimalVector.end(); i++){
 			for(std::vector<std::string>::iterator j = fakeAnimals.begin(); j != fakeAnimals.end();){
 				if((*i) == (*j)){
