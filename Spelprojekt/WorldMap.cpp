@@ -129,7 +129,7 @@ void WorldMap::saveToFile(std::string currentLevel){
 			burnedLevel->SetAttribute("Level", (*i).c_str());
 			doc.LinkEndChild(burnedLevel);
 		}
-		mBurnedLevelVector.clear();
+		//mBurnedLevelVector.clear();
 		mCurrentWorld = mWorld;
 	}
 
@@ -259,7 +259,6 @@ void WorldMap::readAnimals(){
 
 	std::vector <std::string> fakeAnimals;
 
-	/*section->FirstAttribute()->IntValue() <= mSection && */
 	while(section != 0 && section->FirstAttribute()->IntValue() <= mSection){
 		tinyxml2::XMLElement *animals = section->FirstChildElement();
 		while(animals != 0){
