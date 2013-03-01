@@ -67,7 +67,7 @@
 		<Stats cooldown="5"/>
 		<CanRemove>
 			<Obstacle>Bees</Obstacle>
-			<Obstacle>Box</Obstacle>
+			<Obstacle>Stone</Obstacle>
 			<Obstacle>FallenTree</Obstacle>
 		</CanRemove>
 		<InfoPicture>Resources/GUI/nature.png</InfoPicture>
