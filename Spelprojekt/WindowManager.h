@@ -8,6 +8,7 @@ public:
 	static WindowManager& getInst();
 	sf::RenderWindow* getWindow();
 	sf::View* getDefaultView();
+	void createWindow();
 
 private:
 

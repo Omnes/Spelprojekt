@@ -13,6 +13,7 @@
 #include "GoBackToWorld.h"
 #include "PopStateTwice.h"
 #include "Retry.h"
+#include "GoBackToStartFromOptions.h"
 
 EventManager::EventManager(){
 
@@ -30,6 +31,7 @@ EventManager::EventManager(){
 	mEventMap["goBackToWorld"] = new GoBackToWorld();
 	mEventMap["popStateTwice"] = new PopStateTwice();
 	mEventMap["retry"] = new Retry();
+	mEventMap["goBackToStartFromOptions"] = new GoBackToStartFromOptions;
 
 
 }

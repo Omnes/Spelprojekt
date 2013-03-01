@@ -2,17 +2,30 @@
 #include "tinyxml2.h"
 
 WindowManager::WindowManager(){
+
+	mWindow = 0;
+
+	createWindow();
+
+}
+
+void WindowManager::createWindow(){
+
 	tinyxml2::XMLDocument doc;
 	doc.LoadFile("Resources/data/settings.xml");
 
 	std::string title = doc.FirstChildElement("Window")->FirstChildElement("Title")->GetText();
 
-	const tinyxml2::XMLAttribute* res = doc.FirstChildElement("Window")->FirstChildElement("Resolution")->FirstAttribute();
+	const tinyxml2::XMLAttribute* res = doc.FirstChildElement("Resolution")->FirstAttribute();
 
 	float width = res->IntValue();
 	float heigth = res->Next()->IntValue();
 
 	bool fullscreen = res->Next()->Next()->BoolValue();
+
+	if(mWindow != 0){
+		delete mWindow;
+	}
 	
 	mWindow = new sf::RenderWindow(sf::VideoMode(width,heigth),title,fullscreen ? sf::Style::Fullscreen : sf::Style::Close);
 
@@ -32,8 +45,6 @@ WindowManager::WindowManager(){
 	//mDefaultView->rotate(180);
 
 	//mDefaultView->setCenter(mDefaultView->getSize().x/2,mDefaultView->getSize().y/2);
-	
-
 }
 
 WindowManager::~WindowManager(){

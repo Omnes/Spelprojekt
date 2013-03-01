@@ -54,8 +54,10 @@ void Game::run(){
 			window->setView(*windowManager->getDefaultView());
 
 			eventManager->update(); // process events
+			window = windowManager->getWindow(); // <--- krashar i options meny om vi inte har den här eftersom vi skapar ett nytt fönster under StateManager->update();
 
 			stateManager->update(); // main update
+			
 			soundManager->update();
 
 			countFrames();
