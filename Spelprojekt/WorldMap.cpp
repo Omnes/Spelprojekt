@@ -26,11 +26,16 @@ WorldMap::WorldMap() :
 
 	mCurrentWorld = mWorld;
 	mCurrentSection = mSection;
+
+	mButton = new Button(sf::Vector2f(100,100), "addAnimalipedia", "Resources/Menu/knapp.png", "");
 }
 
 WorldMap::~WorldMap(){}
 
 void WorldMap::update(){
+
+	mButton->update();
+
 	for (std::vector<LevelButton*>::iterator i = mButtonVector.begin(); i != mButtonVector.end(); i++){
 		(*i)->update();
 	}
@@ -46,6 +51,8 @@ void WorldMap::render(){
 	
 	window->draw(mSprite);
 	
+	window->draw(mButton->getSprite());
+
 	for (std::vector<LevelButton*>::iterator i = mButtonVector.begin(); i != mButtonVector.end(); i++){
 		window->draw((*i)->getSprite());
 	}

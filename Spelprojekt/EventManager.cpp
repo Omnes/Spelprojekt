@@ -9,6 +9,7 @@
 #include "PopState.h"
 #include "AddLevelFinished.h"
 #include "addGameOver.h"
+#include "AddAnimalipedia.h"
 #include "GoBackToWorld.h"
 #include "PopStateTwice.h"
 #include "Retry.h"
@@ -25,6 +26,7 @@ EventManager::EventManager(){
 	mEventMap["addPause"] = new AddPause();
 	mEventMap["addLevelFinished"] = new AddLevelFinished();
 	mEventMap["addGameOver"] = new AddGameOver();
+	mEventMap["addAnimalipedia"] = new AddAnimalipedia();
 	mEventMap["goBackToWorld"] = new GoBackToWorld();
 	mEventMap["popStateTwice"] = new PopStateTwice();
 	mEventMap["retry"] = new Retry();

@@ -427,5 +427,8 @@
     <ClInclude Include="Countdown.h">
       <Filter>Header Files\States</Filter>
     </ClInclude>
+    <ClInclude Include="AddAnimalipedia.h">
+      <Filter>Header Files\Events</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
