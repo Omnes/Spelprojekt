@@ -45,8 +45,8 @@ private:
 	typedef std::vector <std::string> BurnedLevelVector;
 	BurnedLevelVector mBurnedLevelVector;
 
-	typedef std::vector <std::string> FakeAnimals;
-	FakeAnimals mFakeAnimals;
+	typedef std::vector <std::string> DeadAnimalVector;
+	DeadAnimalVector mDeadAnimalVector;
 
 	std::string mMusic;
 

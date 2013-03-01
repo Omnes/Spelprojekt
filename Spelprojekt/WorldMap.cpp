@@ -57,30 +57,35 @@ void WorldMap::readSave(){
 
 	doc.LoadFile("Resources/Data/Save/SavedGame.xml");// denna kommer inte funka sen när vi ska göra användare
 	
+	//laddar in vilken värld man är på. kollar om det finns ett elemnet eller inte(onödigt)
 	tinyxml2::XMLElement *elm = doc.FirstChildElement("World");
-
 	if(elm != 0){
 		mWorld = elm->FirstAttribute()->IntValue();
 	}else{
 		std::cout<<"Sparfilen laddades inte"<<std::endl;
 	}
 
+	//kollar vilka världar som är brända(banor)
 	tinyxml2::XMLElement *burnedLevel = doc.FirstChildElement("BurnedLevel");
-
 	while(burnedLevel != 0){
 		for(ButtonVector::iterator i = mButtonVector.begin(); i != mButtonVector.end(); i++){
 			if(burnedLevel->FirstAttribute()->Value() == (*i)->getLevel()){
+				//sätter världen till alive == false
 				(*i)->setAlive(false);
 			}
 		}
 		burnedLevel = burnedLevel->NextSiblingElement();
 	}
 
+	//kollar vilken section man är på
 	tinyxml2::XMLElement *section = doc.FirstChildElement("Section");
-
-
 	if(section != 0){
 		mSection = section->FirstAttribute()->IntValue();
+	}
+
+	tinyxml2::XMLElement *dead = doc.FirstChildElement("DeadAnimals");
+	if(dead != 0){
+		mDeadAnimalVector.push_back(dead->FirstAttribute()->Value());
 	}
 
 }
@@ -88,18 +93,28 @@ void WorldMap::readSave(){
 void WorldMap::saveToFile(std::string currentLevel){
 	
 	tinyxml2::XMLDocument doc;
-
-	////kanske skapar dokument. konstigt men funkar bra
-	//tinyxml2::XMLElement* levelCompleted = doc.NewElement("LevelCompleted");
-
-	//doc.LoadFile("Resources/Data/Save/SavedGame.xml");
-
+	
+	// sparar vilken värld man är på
 	tinyxml2::XMLElement* world = doc.NewElement("World"); // måste ha stöd gför att skapa filer
 	world->SetAttribute("Worlds", mWorld);
 	doc.LinkEndChild(world);
 
-	mBurnedLevelVector.push_back(currentLevel);
+	//sparar döda animaler
+	if(mWorld > mCurrentWorld){
+		std::vector<std::string> deadAnimals = *LevelManager::getInst().getDeadAnimalCollection();
 
+		for(std::vector<std::string>::size_type i = 0; i < deadAnimals.size(); i++){
+
+			tinyxml2::XMLElement* dead = doc.NewElement("DeadAnimals");
+			dead->SetAttribute("Dead", deadAnimals[i].c_str());
+			doc.LinkEndChild(dead);
+
+		}
+	}
+
+	// tar emot vilken level man just var på
+	mBurnedLevelVector.push_back(currentLevel);
+	//om man har gått vidare till nästa värld. spara vilka världar som har brunnit
 	if(mWorld > mCurrentWorld){
 		mSection = mCurrentSection;
 		for(BurnedLevelVector::iterator i = mBurnedLevelVector.begin(); i != mBurnedLevelVector.end();i++){
@@ -111,7 +126,8 @@ void WorldMap::saveToFile(std::string currentLevel){
 		mCurrentWorld = mWorld;
 	}
 
-	tinyxml2::XMLElement* section = doc.NewElement("Section"); // måste ha stöd gför att skapa filer
+	// sparar vilken section man är på. kan lägga denna inom ifsatsen och ta bort mSection(tror jag)
+	tinyxml2::XMLElement* section = doc.NewElement("Section");
 	section->SetAttribute("Level", mSection);
 	doc.LinkEndChild(section);
 
@@ -234,18 +250,23 @@ void WorldMap::readAnimals(){
 
 	tinyxml2::XMLElement *section = doc.FirstChildElement();
 
-	int level = 0;
+	std::vector <std::string> fakeAnimals;
+
 	/*section->FirstAttribute()->IntValue() <= mSection && */
 	while(section != 0 && section->FirstAttribute()->IntValue() <= mSection){
 		tinyxml2::XMLElement *animals = section->FirstChildElement();
 		while(animals != 0){
-			mFakeAnimals.push_back(animals->GetText());
+			for(DeadAnimalVector::iterator i = mDeadAnimalVector.begin(); i != mDeadAnimalVector.end(); i++){
+				if((*i) != animals->GetText()){
+					fakeAnimals.push_back(animals->GetText());
+				}
+			}
 			animals = animals->NextSiblingElement();
 		}
 		section = section->NextSiblingElement();
 	}
 
-	LevelManager::getInst().setAliveAnimals(mFakeAnimals);
+	LevelManager::getInst().setAliveAnimals(fakeAnimals);
 }
 
 void WorldMap::readNewAnimals(){
@@ -255,13 +276,15 @@ void WorldMap::readNewAnimals(){
 
 	tinyxml2::XMLElement *section = doc.FirstChildElement();
 
+	std::vector <std::string> fakeAnimals;
+
 	while(section != 0){
 		tinyxml2::XMLElement *animals = section->FirstChildElement();
 		while(animals != 0 && section->FirstAttribute()->IntValue() == mCurrentSection){
-			mFakeAnimals.push_back(animals->GetText());
+			fakeAnimals.push_back(animals->GetText());
 			animals = animals->NextSiblingElement();
 		}
 		section = section->NextSiblingElement();
 	}
-	LevelManager::getInst().setAliveAnimals(mFakeAnimals);
+	LevelManager::getInst().addAliveAnimals(fakeAnimals);
 }
