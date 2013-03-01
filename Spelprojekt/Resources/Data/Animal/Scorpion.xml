@@ -1,0 +1,16 @@
+<Animal>
+
+	<Name>Scorpion</Name>
+
+	<Images>Resources/Animals/scorpion.png</Images>
+
+	<Speed air="0" middle="3" ground="2"/>
+	
+	<AnimalType>meat</AnimalType>
+
+	<ImageAttr fTick="100" frames="10"/>
+
+	<Sound>Resources/Sound/Animals/bat.wav</Sound>
+
+
+</Animal>

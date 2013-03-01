@@ -1,6 +1,6 @@
 <Section level="0">
 
-	<Animal>Resources/Data/Animal/frogRed.xml</Animal>
+	<Animal>Resources/Data/Animal/Scorpion.xml</Animal>
 	<Animal>Resources/Data/Animal/frogGreen.xml</Animal>
 	<Animal>Resources/Data/Animal/Spider.xml</Animal>
 
@@ -19,7 +19,11 @@
 
 
 <Section level="3">
-	
+
+	<Animal>Resources/Data/Animal/Vulture.xml</Animal>
+	<Animal>Resources/Data/Animal/HummingBird.xml</Animal>	
+	<Animal>Resources/Data/Animal/Snake.xml</Animal>
+
 </Section>
 
 
@@ -29,15 +33,21 @@
 
 
 <Section level="5">
-	
+
+	<Animal>Resources/Data/Animal/Croc.xml</Animal>
+
 </Section>
 
 <Section level="6">
-	
+
+	<Animal>Resources/Data/Animal/Eagle.xml</Animal>
+
 </Section>
 
 <Section level="7">
-	
+
+	<Animal>Resources/Data/Animal/Jaguar.xml</Animal>
+
 </Section>
 
 <Section level="8">
