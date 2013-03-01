@@ -102,6 +102,8 @@ void Gui::loadAbilites(){
 }
 
 Gui::~Gui(){
+
+	unclickAll();
 	while(!mButtons.empty()){
 		delete mButtons.back();
 		mButtons.pop_back();
