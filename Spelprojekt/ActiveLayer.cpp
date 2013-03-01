@@ -49,7 +49,7 @@ void ActiveLayer::update(){
 	}
 
 	finishLine();
-	 
+	
 	collision();
 	killDead();
 }
@@ -109,7 +109,7 @@ void ActiveLayer::killDead(){
 		}
 
 	}
-
+	 
 }
 
 std::vector<Entity*>* ActiveLayer::getEntityVector(){
@@ -132,9 +132,10 @@ void ActiveLayer::finishLine(){
 	if(mAllAnimalsPassed){
 		for(EntityVector::iterator i = mEntityVector.begin(); i != mEntityVector.end(); i++){
 			if((*i)->getID() == "Animal"){
-				mAliveAnimalsVector.push_back((*i)->getFilePath());
+			mAliveAnimalsVector.push_back((*i)->getFilePath());
 			}
 		}
+		LevelManager::getInst().setAliveAnimals(mAliveAnimalsVector);
 
 		LevelManager::getInst().setDeadAnimals(mDeadAnimalsVector);
 		EventManager::getInst().addEvent("addLevelFinished");
