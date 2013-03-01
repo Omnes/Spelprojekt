@@ -11,6 +11,8 @@ Countdown::Countdown()
 	mRenderState = StateManager::getInst().getTop();
 	mMusic = mRenderState->getMusic();
 	mSprite.setTexture(*ResourceManager::getInst().getTexture("Resources/Misc/Countdown.png"));
+	mSprite.setOrigin(mSprite.getTexture()->getSize().x/6,mSprite.getTexture()->getSize().y/2);
+	mSprite.setPosition(WindowManager::getInst().getWindow()->getView().getCenter());
 	mRect = sf::IntRect(0,0,mSprite.getTexture()->getSize().x/3,mSprite.getTexture()->getSize().y);
 	mSprite.setTextureRect(sf::IntRect(mRect));
 	mCountdown.restart();
