@@ -9,6 +9,7 @@
 #include <vector>
 #include "InnerBeastArrow.h"
 #include "Animal.h"
+#include "Animation.h"
 
 class Gui;
 
@@ -36,8 +37,10 @@ private:
 	sf::Clock mCooldownTimer;
 	sf::Clock mSpeedTimer;
 	Gui* mGui;
-	std::vector<InnerBeastArrow> mArrows; 
+	//std::vector<InnerBeastArrow> mArrows; 
+	std::vector<Animation*> mAnimations;
 	std::vector<Animal*> mAnimals;
+	Animation* mAnimation;
 
 };
 

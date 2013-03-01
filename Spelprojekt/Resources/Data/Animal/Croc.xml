@@ -1,0 +1,16 @@
+<Animal>
+
+	<Name>Croc</Name>
+
+	<Images>Resources/Animals/croc.png</Images>
+
+	<Speed air="0" middle="2" ground="3"/>
+	
+	<AnimalType>meat</AnimalType>
+
+	<ImageAttr fTick="100" frames="10"/>
+
+	<Sound>Resources/Sound/Animals/bat.wav</Sound>
+
+
+</Animal>

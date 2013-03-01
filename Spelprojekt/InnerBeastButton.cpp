@@ -7,6 +7,7 @@
 #include "Entity.h"
 #include "Gui.h"
 #include <SFML\Graphics\CircleShape.hpp>
+#include "ResourceManager.h"
 
 InnerBeastButton::InnerBeastButton(sf::Vector2f position, std::string texture,float cooldown,float speedincrease, float duration, Gui* gui)
 	: mTexture(ResourceManager::getInst().getTexture(texture))
@@ -23,14 +24,23 @@ InnerBeastButton::InnerBeastButton(sf::Vector2f position, std::string texture,fl
 
 		mSprite.setTextureRect(sf::IntRect(0,0,mTexture->getSize().x/mFrames,mTexture->getSize().y)); //<--- texture rect
 
-		std::vector<float> yPositions = LevelManager::getInst().getLevelsOnLevel();
 
-		mArrows.push_back(InnerBeastArrow(sf::Vector2f(100, yPositions[0]), "Resources/GUI/pil.png"));
+		/*mArrows.push_back(InnerBeastArrow(sf::Vector2f(100, yPositions[0]), "Resources/GUI/pil.png"));
 		mArrows.push_back(InnerBeastArrow(sf::Vector2f(100, yPositions[1]), "Resources/GUI/pil.png"));
 		mArrows.push_back(InnerBeastArrow(sf::Vector2f(100, yPositions[2]), "Resources/GUI/pil.png"));
+		*/
+		mAnimations.push_back(new Animation(ResourceManager::getInst().getTexture("Resources/GUI/pil.png"), 100, 10, 1));
+		mAnimations.push_back(new Animation(ResourceManager::getInst().getTexture("Resources/GUI/pil.png"), 100, 10, 1));
+		mAnimations.push_back(new Animation(ResourceManager::getInst().getTexture("Resources/GUI/pil.png"), 100, 10, 1));
 }
 
-InnerBeastButton::~InnerBeastButton(){}
+InnerBeastButton::~InnerBeastButton(){
+
+	while(!mAnimations.empty()){
+		delete mAnimations.back();
+		mAnimations.pop_back();
+	}
+}
 
 void InnerBeastButton::update(){
 
@@ -58,15 +68,15 @@ void InnerBeastButton::update(){
 
 		mGui->unclickAll();	
 		mClickCooldownTimer.restart();
-		for(int i = 0; i< mArrows.size(); i++){
+		for(int i = 0; i< mAnimations.size(); i++){
 			
 			//När vi har klickat på en pil
-			if(mArrows[i].getSprite().getGlobalBounds().contains(mousePosition)){
+			if(mAnimations[i]->getSprite()->getGlobalBounds().contains(mousePosition)){
 
 				std::vector<Entity*>* entityVector = LevelManager::getInst().getActiveLayer()->getEntityVector();
 				for(std::vector <Entity*>::iterator j = entityVector->begin(); j != entityVector->end(); j++){
 					
-					if((*j)->getID() == "Animal" && (*j)->getPos().y == mArrows[i].getSprite().getPosition().y){
+					if((*j)->getID() == "Animal" && (*j)->getPos().y == mAnimations[i]->getSprite()->getPosition().y){
 
 						Animal* animal = dynamic_cast<Animal*>(*j);
 						mAnimals.push_back(animal);
@@ -85,9 +95,9 @@ void InnerBeastButton::update(){
 
 	if(mClicked){
 		mSprite.setTextureRect(sf::IntRect(mTexture->getSize().x/mFrames*1,0,mTexture->getSize().x/mFrames,mTexture->getSize().y));
-		for(int i = 0; i<mArrows.size(); i++){
+		for(int i = 0; i<mAnimations.size(); i++){
 
-			mArrows[i].update();
+			mAnimations[i]->update();
 		}
 	}
 
@@ -107,11 +117,14 @@ void InnerBeastButton::update(){
 
 sf::Sprite* InnerBeastButton::getSprite(){
 	//robins fel att det ser ut såhär.
+
+	std::vector<float> yPositions = LevelManager::getInst().getLevelsOnLevel();
 	sf::RenderWindow* window =  WindowManager::getInst().getWindow();
 	if(mClicked){
-		for(int i = 0; i<mArrows.size(); i++){
+		for(int i = 0; i<mAnimations.size(); i++){
 
-			window->draw(mArrows[i].getSprite());
+			mAnimations[i]->setPosition(sf::Vector2f(100,yPositions[i]));
+			window->draw(*mAnimations[i]->getSprite());
 		}
 	}
 

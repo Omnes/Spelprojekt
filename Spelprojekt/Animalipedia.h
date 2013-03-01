@@ -40,6 +40,8 @@ private:
 	PageButton mUpButton;
 	PageButton mDownButton;
 
+	Button * mButton;
+
 	
 };
 
