@@ -22,6 +22,7 @@ public:
 	void preloadBackgrounds();
 	std::vector<std::string> getAliveAnimals();
 	std::vector<std::string> getDeadAnimals();
+	void setDeadAnimalCollection(std::vector <std::string> deadAnimals);
 
 	std::vector<std::string>* getDeadAnimalCollection();
 

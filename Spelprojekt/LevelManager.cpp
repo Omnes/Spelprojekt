@@ -229,6 +229,12 @@ std::vector<std::string> LevelManager::getDeadAnimals(){
 	return mDeadAnimals;
 }
 
+void LevelManager::setDeadAnimalCollection(std::vector <std::string> deadAnimals){
+	for(std::vector<std::string>::iterator i = deadAnimals.begin(); i != deadAnimals.end(); i++){
+		mDeadAnimalCollection.push_back((*i));
+	}
+}
+
 std::vector<std::string>* LevelManager::getDeadAnimalCollection(){
 	return &mDeadAnimalCollection;
 }
