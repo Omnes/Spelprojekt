@@ -120,7 +120,7 @@ void Camera::update(){
 }
 
 float Camera::getMax(){
-	return mMaxPos;
+	return mMaxPos;    // hהההההההההההההr fוr jag randomfel ibland 
 }
 
 sf::View* Camera::getView(){
