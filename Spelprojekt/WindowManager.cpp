@@ -7,7 +7,7 @@ WindowManager::WindowManager(){
 
 	std::string title = doc.FirstChildElement("Window")->FirstChildElement("Title")->GetText();
 
-	const tinyxml2::XMLAttribute* res = doc.FirstChildElement("Window")->FirstChildElement("Resolution")->FirstAttribute();
+	const tinyxml2::XMLAttribute* res = doc.FirstChildElement("Resolution")->FirstAttribute();
 
 	float width = res->IntValue();
 	float heigth = res->Next()->IntValue();

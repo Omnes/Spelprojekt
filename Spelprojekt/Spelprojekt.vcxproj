@@ -94,6 +94,7 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Checkbox.cpp" />
     <ClCompile Include="Countdown.cpp" />
     <ClCompile Include="Emitter.cpp" />
     <ClCompile Include="EventManager.cpp" />
@@ -156,6 +157,7 @@
     <ClInclude Include="Behavior.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Checkbox.h" />
     <ClInclude Include="Countdown.h" />
     <ClInclude Include="Emitter.h" />
     <ClInclude Include="Entity.h" />

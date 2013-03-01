@@ -218,6 +218,9 @@
     <ClCompile Include="FakeAbilityButton.cpp">
       <Filter>Source Files\Interface</Filter>
     </ClCompile>
+    <ClCompile Include="Checkbox.cpp">
+      <Filter>Source Files\Interface</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EventManager.h">
@@ -426,6 +429,9 @@
     </ClInclude>
     <ClInclude Include="Countdown.h">
       <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="Checkbox.h">
+      <Filter>Header Files\Interface</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
