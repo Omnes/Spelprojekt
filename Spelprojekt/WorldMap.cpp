@@ -222,6 +222,7 @@ void WorldMap::setCurrentWorldOrSub(std::string currentLevel){
 		for(std::vector<std::string>::iterator i = mWorldVector.at(mWorld).at(mSub).begin(); i != mWorldVector.at(mWorld).at(mSub).end(); i++){
 			if((*i) == currentLevel){
 				mLevelCount++;
+				mCurrentSection++;
 			}
 		}
 	}
@@ -229,7 +230,6 @@ void WorldMap::setCurrentWorldOrSub(std::string currentLevel){
 	if(mWorldVector[mWorld][mSub].size() <= mLevelCount){
 		//anger plats i vectorn. 
 		mSub++;
-		mCurrentSection++;
 		mLevelCount = 0;
 	}
 	
@@ -263,14 +263,22 @@ void WorldMap::readAnimals(){
 	while(section != 0 && section->FirstAttribute()->IntValue() <= mSection){
 		tinyxml2::XMLElement *animals = section->FirstChildElement();
 		while(animals != 0){
-			for(DeadAnimalVector::iterator i = mDeadAnimalVector.begin(); i != mDeadAnimalVector.end(); i++){
-				if((*i) != animals->GetText()){
-					fakeAnimals.push_back(animals->GetText());
-				}
-			}
+			fakeAnimals.push_back(animals->GetText());
 			animals = animals->NextSiblingElement();
 		}
 		section = section->NextSiblingElement();
+	}
+
+	if(!mDeadAnimalVector.empty()){
+		for(DeadAnimalVector::iterator i = mDeadAnimalVector.begin(); i != mDeadAnimalVector.end(); i++){
+			for(std::vector<std::string>::iterator j = fakeAnimals.begin(); j != fakeAnimals.end();){
+				if((*i) == (*j)){
+					j = fakeAnimals.erase(j);
+				}else{
+					j++;
+				}
+			}
+		}
 	}
 
 	LevelManager::getInst().setAliveAnimals(fakeAnimals);
