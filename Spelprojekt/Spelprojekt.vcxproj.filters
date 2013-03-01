@@ -436,10 +436,13 @@
     <ClInclude Include="Checkbox.h">
       <Filter>Header Files\Interface</Filter>
     </ClInclude>
+    <ClInclude Include="AddAnimalipedia.h">
+      <Filter>Header Files\Events</Filter>
+    </ClInclude>
     <ClInclude Include="ApplyOptionsButton.h">
       <Filter>Header Files\Interface</Filter>
-	</ClInclude>
-    <ClInclude Include="AddAnimalipedia.h">
+    </ClInclude>
+    <ClInclude Include="GoBackToStartFromOptions.h">
       <Filter>Header Files\Events</Filter>
     </ClInclude>
   </ItemGroup>

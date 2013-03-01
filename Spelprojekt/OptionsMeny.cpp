@@ -1,20 +1,26 @@
 #include "OptionsMeny.h"
 #include "WindowManager.h"
-#include "StateManager.h"
+#include "EventManager.h"
 
 OptionsMeny::OptionsMeny()
-	: mApplyButton(sf::Vector2f(1000,600),"Resources/Menu/knapp.png","",this){
+	: mApplyButton(sf::Vector2f(900,600),"Resources/Menu/knapp.png","",this){
 	mCheckboxes.push_back(new Checkbox(sf::Vector2f(640,360),"Resolution","fullscreen"));
 	mCheckboxes.push_back(new Checkbox(sf::Vector2f(640,420),"Sound","muted"));
 	mMusic = "Resources/Sound/TitleScreen";
 }
 
-OptionsMeny::~OptionsMeny(){}
+OptionsMeny::~OptionsMeny(){
+	while(!mCheckboxes.empty()){
+		delete mCheckboxes.back();
+		mCheckboxes.pop_back();
+	}
+}
 
 void OptionsMeny::update(){
 	for (std::vector<Checkbox*>::iterator i = mCheckboxes.begin(); i != mCheckboxes.end(); i++){
 		(*i)->update();
 	}
+	mApplyButton.update();
 }
 
 void OptionsMeny::render(){
@@ -22,6 +28,7 @@ void OptionsMeny::render(){
 	for (std::vector<Checkbox*>::iterator i = mCheckboxes.begin(); i != mCheckboxes.end(); i++){
 		(*i)->render(); 
 	}
+	window->draw(mApplyButton.getSprite());
 }
 
 std::string OptionsMeny::getMusic(){
@@ -34,6 +41,7 @@ void OptionsMeny::saveSettings(){
 		(*i)->saveSetting();
 	}
 
-	StateManager::getInst().popState();
+	EventManager::getInst().addEvent("goBackToStartFromOptions");
+
 
 }
