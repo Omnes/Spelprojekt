@@ -152,4 +152,6 @@ sf::Sprite* RemoveObstacleButton::getSprite(){
 
 void RemoveObstacleButton::setClicked(bool boolean){
 	mClicked = boolean;
+	WindowManager::getInst().getCursor()->setTextureRect(sf::IntRect(WindowManager::getInst().getCursor()->getTexture()->getSize().x/2*boolean,0,WindowManager::getInst().getCursor()->getTexture()->getSize().x/2,WindowManager::getInst().getCursor()->getTexture()->getSize().y));
+
 }
