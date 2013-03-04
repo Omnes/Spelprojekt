@@ -10,6 +10,7 @@
 
 StartMeny::StartMeny(){
 
+	mButtons.push_back(new Button(sf::Vector2f(400,300), "startGameFirstTime","Resources/Menu/StartButton.png", "Resources/Sound/test.wav"));
 	mButtons.push_back(new Button(sf::Vector2f(800,200), "addMap","Resources/Menu/StartButton.png", "Resources/Sound/test.wav"));
 	mButtons.push_back(new Button(sf::Vector2f(800,400), "exitGame","Resources/Menu/ExitGameButton.png","Resources/Sound/test.wav"));
 	mMusic = "Resources/Sound/TitleScreen";

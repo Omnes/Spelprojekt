@@ -136,6 +136,7 @@
     <ClCompile Include="TacticMenuButton.cpp" />
     <ClCompile Include="Taktikmeny.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
+    <ClCompile Include="Tutorial.cpp" />
     <ClCompile Include="WindowManager.cpp" />
     <ClCompile Include="WorldMap.cpp" />
   </ItemGroup>
@@ -201,6 +202,7 @@
     <ClInclude Include="AddMap.h" />
     <ClInclude Include="SoundManager.h" />
     <ClInclude Include="Spot.h" />
+    <ClInclude Include="StartGameFirstTime.h" />
     <ClInclude Include="StartMeny.h" />
     <ClInclude Include="StateManager.h" />
     <ClInclude Include="States.h" />
@@ -211,6 +213,7 @@
     <ClInclude Include="TacticMenuButton.h" />
     <ClInclude Include="Taktikmeny.h" />
     <ClInclude Include="tinyxml2.h" />
+    <ClInclude Include="Tutorial.h" />
     <ClInclude Include="WindowManager.h" />
     <ClInclude Include="WorldMap.h" />
   </ItemGroup>
