@@ -1,15 +1,15 @@
-<Cutscene ambient = "musik.ogg">
+<Cutscene music = "musik.ogg">
 	<Enviroment texture = "bakgrund.png">
 		<Scene>
 			<Image texture = "bild.png" x = "100" y = "100"/>
 			<Voice file = "voice.ogg"/>
-			<Text>Spring, vi har en eld bakom oss grodan!</Text>
+			<Text x = "400" y = "500">Spring, vi har en eld bakom oss grodan!</Text>
 
 		</Scene>
 		<Scene>
 			<Image texture = "bild.png" x = "100" y = "100"/>
 			<Voice file = "voice.ogg"/>
-			<Text>ojdå! nämen hallå! vad var det bra för?</Text>
+			<Text x = "400" y = "500">ojdå! nämen hallå! vad var det bra för?</Text>
 		</Scene>
 	</Enviroment>
 
@@ -17,13 +17,13 @@
 		<Scene>
 			<Image texture = "bild.png" x = "100" y = "100"/>
 			<Voice file = "voice.ogg"/>
-			<Text>Spring, vi har en eld bakom oss grodan!</Text>
+			<Text x = "400" y = "500">Spring, vi har en eld bakom oss grodan!</Text>
 
 		</Scene>
 		<Scene>
 			<Image texture = "bild.png" x = "100" y = "100"/>
 			<Voice file = "voice.ogg"/>
-			<Text>ojdå! nämen hallå! vad var det bra för?</Text>
+			<Text x = "400" y = "500">ojdå! nämen hallå! vad var det bra för?</Text>
 		</Scene>
 	</Enviroment>
 </Cutscene>
