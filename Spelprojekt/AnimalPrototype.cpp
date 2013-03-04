@@ -6,7 +6,8 @@
 
 
 AnimalPrototype::AnimalPrototype(std::string filePath):
-	mExtraSpeed(1)
+	mExtraSpeed(1),
+	mAnimalHighSpeed(0)
 {
 	loadAnimal(filePath);
 	mSprite.setTexture(*mTex);
@@ -67,7 +68,14 @@ void AnimalPrototype::loadAnimal(std::string filePath){
 Animal* AnimalPrototype::createAnimal(/*float bonusSpeed*/){
 
 	mAnimation =  new Animation(mTex, mFrameTick, mFrames,2);// funkar alla parametrar ? jadå!
-	return new Animal(mAnimation, mPosition, mStandardSpeed*mExtraSpeed, mFilePath); 
+
+	if(mStandardSpeed*mExtraSpeed > mAnimalHighSpeed){
+		mStandardSpeed = mAnimalHighSpeed;
+	}else{
+		mStandardSpeed = mStandardSpeed*mExtraSpeed;
+	}
+
+	return new Animal(mAnimation, mPosition, mStandardSpeed, mFilePath); 
 
 };
 
@@ -101,10 +109,9 @@ sf::Sprite* AnimalPrototype::getSprite(){
 }
 
 int AnimalPrototype::getLevel(){
-	float temp = 0;
 	for(SpeedVector::size_type i = 0 ; i < mSpeedVector.size(); i++){
-		if(mSpeedVector[i] > temp){
-			temp = mSpeedVector[i];
+		if(mSpeedVector[i] > mAnimalHighSpeed){
+			mAnimalHighSpeed = mSpeedVector[i];
 			mHighSpeed = i;
 		}
 	}

@@ -52,6 +52,7 @@ private:
 	std::string mFilePath;
 
 	int mHighSpeed;
+	float mAnimalHighSpeed;
 	//farten den får
 	float mStandardSpeed;
 
