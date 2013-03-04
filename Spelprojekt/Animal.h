@@ -31,6 +31,8 @@ public:
 	
 	float doDamage();
 
+	void setPos(sf::Vector2f pos);
+
 private:
 	Animation* mAnimation;
 	int currentAnimation;

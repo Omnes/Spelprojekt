@@ -1,5 +1,6 @@
 #include "ActiveLayer.h"
 #include "Entity.h"
+#include "Animal.h" // ta bort sen
 #include "WindowManager.h"
 #include "LevelManager.h"
 #include "StateManager.h"
@@ -16,7 +17,6 @@ ActiveLayer::ActiveLayer(std::vector <Entity*> entityVector, int levellength):
 	if(mEntityVector.empty()){
 		std::cout<<"EntityVector is empty";
 	}
-	mThisCamera = 0;
 }
 
 ActiveLayer::~ActiveLayer(){
@@ -34,6 +34,12 @@ void ActiveLayer::move(float cameraVelocity){
 }
 
 void ActiveLayer::update(){
+
+	if(sf::Keyboard::isKeyPressed(sf::Keyboard::M)){
+		makeMonsterJumpToFinishLineSoBellaWontBitchAboutXML();
+	}
+
+
 
 	for(EntityVector::iterator i = mEntityVector.begin(); i != mEntityVector.end(); i++){
 		(*i)->update();
@@ -65,14 +71,6 @@ void ActiveLayer::render(){
 }
 
 void ActiveLayer::collision(){
-
-	float AnimalMax = 0;
-
-	if(LevelManager::getInst().getCamera() != nullptr && mThisCamera == 0){
-		mThisCamera = LevelManager::getInst().getCamera();
-	}else if(mThisCamera != 0){
-		AnimalMax = mThisCamera->getMax();
-	}
 
 	for(EntityVector::iterator i = mEntityVector.begin(); i != mEntityVector.end(); i++){
 		if(((*i)->getID() == "Animal" || (*i)->getID() == "Fire")){
@@ -148,3 +146,10 @@ void ActiveLayer::addAnimationEffekt(Animation* animation){
 	mAnimationVector.push_back(animation);
 }
 
+void ActiveLayer::makeMonsterJumpToFinishLineSoBellaWontBitchAboutXML(){
+	for(EntityVector::iterator i = mEntityVector.begin(); i != mEntityVector.end(); i++){
+		if((*i)->getID() == "Animal"){
+			dynamic_cast <Animal*> (*i)->setPos(sf::Vector2f(mLevellength + 20, 0));
+		}
+	}
+}
