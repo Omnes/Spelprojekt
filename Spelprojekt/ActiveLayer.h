@@ -33,6 +33,8 @@ public:
 	std::vector<Entity*>* getEntityVector();
 	void addAnimationEffekt(Animation* animation);
 
+	void makeMonsterJumpToFinishLineSoBellaWontBitchAboutXML();
+
 private:
 	typedef std::vector<Entity*> EntityVector;
 	EntityVector mEntityVector;

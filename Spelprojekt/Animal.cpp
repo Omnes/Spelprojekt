@@ -122,3 +122,7 @@ float Animal::getCurrentSpeed(){
 void Animal::setSpeedIncrease(float speedIncrease){
 	mSpeedIncrease = speedIncrease;
 }
+
+void Animal::setPos(sf::Vector2f pos){
+	mPosition = pos;
+}

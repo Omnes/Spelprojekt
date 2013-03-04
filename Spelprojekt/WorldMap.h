@@ -29,7 +29,7 @@ public:
 	void readAnimals();
 	void readNewAnimals();
 
-
+	void setDeadAnimals(std::vector <std::string> deadAnimals);
 
 	std::string getMusic();
 

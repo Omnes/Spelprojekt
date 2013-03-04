@@ -69,6 +69,8 @@ Animal* AnimalPrototype::createAnimal(/*float bonusSpeed*/){
 
 	mAnimation =  new Animation(mTex, mFrameTick, mFrames,2);// funkar alla parametrar ? jadå!
 
+
+	//fullösning
 	if(mStandardSpeed*mExtraSpeed > mAnimalHighSpeed){
 		mStandardSpeed = mAnimalHighSpeed;
 	}else{
