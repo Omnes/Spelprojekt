@@ -14,6 +14,7 @@
 #include "PopStateTwice.h"
 #include "Retry.h"
 #include "GoBackToStartFromOptions.h"
+#include "StartGameFirstTime.h"
 
 EventManager::EventManager(){
 
@@ -31,7 +32,9 @@ EventManager::EventManager(){
 	mEventMap["goBackToWorld"] = new GoBackToWorld();
 	mEventMap["popStateTwice"] = new PopStateTwice();
 	mEventMap["retry"] = new Retry();
-	mEventMap["goBackToStartFromOptions"] = new GoBackToStartFromOptions;
+	mEventMap["goBackToStartFromOptions"] = new GoBackToStartFromOptions();
+	mEventMap["startGameFirstTime"] = new StartGameFirstTime();
+
 
 
 }
