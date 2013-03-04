@@ -97,6 +97,7 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Checkbox.cpp" />
     <ClCompile Include="Countdown.cpp" />
+    <ClCompile Include="Cutscene.cpp" />
     <ClCompile Include="Emitter.cpp" />
     <ClCompile Include="EventManager.cpp" />
     <ClCompile Include="FakeAbilityButton.cpp" />
@@ -124,6 +125,7 @@
     <ClCompile Include="PauseMeny.cpp" />
     <ClCompile Include="RemoveObstacleButton.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
+    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="ScrollDetector.cpp" />
     <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="Spot.cpp" />
@@ -163,6 +165,7 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Checkbox.h" />
     <ClInclude Include="Countdown.h" />
+    <ClInclude Include="Cutscene.h" />
     <ClInclude Include="Emitter.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Event.h" />
@@ -198,6 +201,7 @@
     <ClInclude Include="RemoveObstacleButton.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Retry.h" />
+    <ClInclude Include="Scene.h" />
     <ClInclude Include="ScrollDetector.h" />
     <ClInclude Include="AddMap.h" />
     <ClInclude Include="SoundManager.h" />
