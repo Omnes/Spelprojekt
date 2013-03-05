@@ -18,7 +18,7 @@ GameOver::GameOver()
 void GameOver::update(){
 	mReturnToMain.update();
 	//mLoadLast.update();
-	if(sRetryCount < 2){
+	if(sRetryCount < 2){ 
 		mRetryLevel.update();
 	}
 

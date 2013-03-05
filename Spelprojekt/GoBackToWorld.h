@@ -6,11 +6,13 @@
 #include "WorldMap.h"
 #include "LevelManager.h"
 #include "GameOver.h"
+#include "WorldMapTutorial.h"
 
 class GoBackToWorld : public Event{
 
 public:
 
+	static bool sTutorialPlayed;
 	GoBackToWorld(){}
 	~GoBackToWorld(){}
 	virtual void update(){
@@ -20,8 +22,12 @@ public:
 		worldMap->setDeadAnimals(LevelManager::getInst().getDeadAnimals());
 		worldMap->setCurrentWorldOrSub(LevelManager::getInst().getFilePath());
 		worldMap->readNewAnimals();
+		if(!sTutorialPlayed){
+			StateManager::getInst().addState(new WorldMapTutorial);
+			sTutorialPlayed = true;
+		}
 	}
-
 };
+ 
 
 #endif 

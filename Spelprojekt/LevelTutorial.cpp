@@ -1,9 +1,9 @@
-#include "Tutorial.h"
+#include "LevelTutorial.h"
 #include "ResourceManager.h"
 #include "WindowManager.h"
 #include "LevelManager.h"
  
-Tutorial::Tutorial() 
+LevelTutorial::LevelTutorial() 
 	: mStartedTimer(false){
 	mMusic = "Resources/Sound/TitleScreen";
 	mTimer1.restart();
@@ -19,6 +19,8 @@ Tutorial::Tutorial()
 	WindowManager::getInst().getWindow()->display();
 	mTaktik = new TaktikMeny;
 
+	//spela ljud nr 1
+
 	for(int i=0; i<5; i++){
 		mArrows.push_back(mArrow);
 	}
@@ -26,11 +28,11 @@ Tutorial::Tutorial()
 	setArrowPositions();
 }
 
-Tutorial::~Tutorial(){
+LevelTutorial::~LevelTutorial(){
 	delete mTaktik;
 }
 
-void Tutorial::update(){
+void LevelTutorial::update(){
 
 	//När ljud nr 1 spelats
 	if(mTimer1.getElapsedTime().asSeconds() > 7/*ljudtid*/ && mTaktik->getFreeSpots()){
@@ -52,7 +54,7 @@ void Tutorial::update(){
 
 }
 
-void Tutorial::render(){
+void LevelTutorial::render(){
 
 	sf::RenderWindow* window = WindowManager::getInst().getWindow();
 
@@ -84,12 +86,12 @@ void Tutorial::render(){
 
 }
 
-std::string Tutorial::getMusic(){
+std::string LevelTutorial::getMusic(){
 
 	return mMusic;
 }
 
-void Tutorial::setArrowPositions(){
+void LevelTutorial::setArrowPositions(){
 		
 	mArrows[0].setPosition(100,100);
 	mArrows[1].setPosition(200,100);
@@ -98,7 +100,7 @@ void Tutorial::setArrowPositions(){
 	mArrows[4].setPosition(100,300);
 }
 
-void Tutorial::readAnimals(){
+void LevelTutorial::readAnimals(){
 
 	tinyxml2::XMLDocument doc;
 	doc.LoadFile("Resources/Data/AnimalUnlock.xml");

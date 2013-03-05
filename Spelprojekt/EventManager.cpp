@@ -15,6 +15,7 @@
 #include "Retry.h"
 #include "GoBackToStartFromOptions.h"
 #include "StartGameFirstTime.h"
+#include "GoToWorldMapFirstTime.h"
 
 EventManager::EventManager(){
 
@@ -34,8 +35,7 @@ EventManager::EventManager(){
 	mEventMap["retry"] = new Retry();
 	mEventMap["goBackToStartFromOptions"] = new GoBackToStartFromOptions();
 	mEventMap["startGameFirstTime"] = new StartGameFirstTime();
-
-
+	mEventMap["goToWorldMapFirstTime"] = new GoToWorldMapFirstTime();
 
 }
 

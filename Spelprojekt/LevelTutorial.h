@@ -1,14 +1,14 @@
-#ifndef TUTORIAL
-#define TUTORIAL
+#ifndef LEVELTUTORIAL
+#define LEVELTUTORIAL
 #include "States.h"
 #include "Taktikmeny.h"
 #include <SFML\System\Clock.hpp>
 
-class Tutorial : public States{
+class LevelTutorial : public States{
 
 public:
-	Tutorial();
-	~Tutorial(); 
+	LevelTutorial();
+	~LevelTutorial(); 
 	virtual void update();
 	virtual void render();
 	virtual std::string getMusic();
