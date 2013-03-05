@@ -4,7 +4,7 @@
 
 	<Images>Resources/Animals/scorpion.png</Images>
 
-	<Speed air="0" middle="6" ground="2"/>
+	<Speed air="0" middle="3" ground="2"/>
 	
 	<AnimalType>meat</AnimalType>
 

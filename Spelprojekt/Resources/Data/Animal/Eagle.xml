@@ -4,7 +4,7 @@
 
 	<Images>Resources/Animals/eagle.png</Images>
 
-	<Speed air="4" middle="1.5" ground="0"/>
+	<Speed air="2" middle="1.5" ground="0"/>
 	
 	<AnimalType>meat</AnimalType>
 

@@ -4,7 +4,7 @@
 
 	<Images>Resources/Animals/snake.png</Images>
 
-	<Speed air="0" middle="2" ground="6"/>
+	<Speed air="0" middle="2" ground="3"/>
 	
 	<AnimalType>meat</AnimalType>
 
