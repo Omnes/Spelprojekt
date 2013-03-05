@@ -49,6 +49,8 @@ void WindowManager::createWindow(){
 
 	mDefaultView->zoom(zoomfactor);
 
+	mWindow->setMouseCursorVisible(false);
+
 	//mDefaultView->setCenter(mDefaultView->getSize().x/2,mDefaultView->getSize().y/2);
 }
 

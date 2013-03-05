@@ -466,5 +466,8 @@
     <ClInclude Include="Scene.h">
       <Filter>Header Files\Misc</Filter>
     </ClInclude>
+    <ClInclude Include="AddCutscene_1.h">
+      <Filter>Header Files\Events</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

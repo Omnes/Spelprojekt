@@ -22,6 +22,7 @@ public:
 private:
 	typedef std::vector<Scene*> SceneVector;
 	typedef std::pair<SceneVector,sf::Sprite*> Enviroment;
+	typedef std::pair<bool,bool> BoolPair;
 
 	typedef std::vector<Enviroment> Enviroments;
 	Enviroments mEnviroments;

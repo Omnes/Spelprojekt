@@ -68,7 +68,7 @@ void Game::run(){
 			window->setView(*windowManager->getDefaultView());
 			drawFPS(window);
 
-			window->setMouseCursorVisible(false);
+			//window->setMouseCursorVisible(false);
 			
 			WindowManager::getInst().getCursor()->setPosition(sf::Vector2f(sf::Mouse::getPosition(*window)));
 			window->draw(*WindowManager::getInst().getCursor());
