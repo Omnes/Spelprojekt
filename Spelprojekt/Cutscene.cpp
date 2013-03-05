@@ -4,6 +4,7 @@
 #include <SFML\Window\Keyboard.hpp>
 #include "tinyxml2.h"
 #include "ResourceManager.h"
+#include "StateManager.h"
 
 
 Cutscene::Cutscene(std::string file){
@@ -11,10 +12,13 @@ Cutscene::Cutscene(std::string file){
 	mCurrentEnviroment = 0;
 	mCurrentScene = 0;
 
+	WindowManager::getInst().getCursor()->setColor(sf::Color(0,0,0,0));
+
 	
 }
 
 Cutscene::~Cutscene(){
+	WindowManager::getInst().getCursor()->setColor(sf::Color(255,255,255,255));
 
 	while(!mEnviroments.empty()){
 		while(!mEnviroments.back().first.empty()){
@@ -28,26 +32,36 @@ Cutscene::~Cutscene(){
 
 void Cutscene::goToNext(){
 	
-	if(mEnviroments[mCurrentEnviroment].first.size() < mCurrentScene + 2){
+	if(mEnviroments[mCurrentEnviroment].first.size() > mCurrentScene+1){
 		mCurrentScene ++;
 	}else{
 		mCurrentScene = 0;
-		if(mEnviroments.size() < mCurrentEnviroment + 2){
+		if(mEnviroments.size() > mCurrentEnviroment+1){
 			mCurrentEnviroment ++;
 		}else{
-			//end cutscene yes.
+			StateManager::getInst().popState();
+			return;
 		}
 	}
-	mEnviroments[mCurrentEnviroment].first[mCurrentScene]->play();
 }
 
 void Cutscene::update(){
-	if(mEnviroments[mCurrentEnviroment].first[mCurrentScene]->isCompleted()){
-		goToNext();
+
+	Scene* currentScene = mEnviroments[mCurrentEnviroment].first[mCurrentScene];
+	if(!currentScene->isStarted()){
+		if(!currentScene->fadeIn()){
+			currentScene->play();
+		}
+	}
+
+	if(currentScene->isCompleted()){
+		if(!currentScene->fadeOut()){
+			goToNext();
+		}
 	}
 
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
-		//end cutscene yes.
+		StateManager::getInst().popState();
 	}
 }
 
@@ -82,16 +96,30 @@ void Cutscene::loadFromFile(std::string file){
 
 			std::string voice = sce->FirstChildElement("Voice")->Attribute("file");
 
-			std::string texString = sce->FirstChildElement("Image")->Attribute("texture");
-			sf::Texture* tex = ResourceManager::getInst().getTexture(texString);
-			sf::Sprite* sprite = new sf::Sprite(*tex);
-			float sx = sce->FirstChildElement("Image")->FloatAttribute("x");
-			float sy = sce->FirstChildElement("Image")->FloatAttribute("y");
-			sprite->setPosition(sx,sy);
+			float duration = sce->FloatAttribute("duration");
 
-			
-			
-			Scene* scene = new Scene(sprite,voice,text);
+			std::vector<std::pair<sf::Sprite*,std::pair<bool,bool>>> sprites;
+			tinyxml2::XMLElement* img = sce->FirstChildElement("Image");
+
+			while(img != 0){
+				std::string texString = img->Attribute("texture");
+				sf::Texture* tex = ResourceManager::getInst().getTexture(texString);
+				sf::Sprite* sprite = new sf::Sprite(*tex);
+				float sx = img->FloatAttribute("x");
+				float sy = img->FloatAttribute("y");
+				sprite->setPosition(sx,sy);
+				bool fadeIn = img->BoolAttribute("fadeIn");
+				bool fadeOut = img->BoolAttribute("fadeOut");
+
+				if(fadeIn){
+					sprite->setColor(sf::Color(255,255,255,0));
+				}
+
+				sprites.push_back(std::pair<sf::Sprite*,BoolPair>(sprite,BoolPair(fadeIn,fadeOut)));
+				img = img->NextSiblingElement("Image");
+			}
+
+			Scene* scene = new Scene(sprites,voice,text,duration);
 			scenes.push_back(scene);
 			sce = sce->NextSiblingElement();
 		}
