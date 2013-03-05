@@ -20,7 +20,7 @@ public:
 		StateManager::getInst().addState(new WorldMap);
 
 		if(mWorld == 0){
-			StateManager::getInst().addState(new Tutorial);
+			StateManager::getInst().addState(new LevelTutorial);
 		}
 	
 	}
