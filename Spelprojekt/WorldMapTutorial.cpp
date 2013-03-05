@@ -11,8 +11,10 @@ WorldMapTutorial::WorldMapTutorial() {
 	sf::Sprite loadingscreen(*ResourceManager::getInst().getTexture("Resources/Menu/LevelFinished.png"));
 	WindowManager::getInst().getWindow()->draw(loadingscreen);
 	WindowManager::getInst().getWindow()->display();
-	mWorldMap = new WorldMap;
 
+	mWorldMap = dynamic_cast <WorldMap*> (StateManager::getInst().getTop());
+	mWorldMap->update();
+		
 	//spela ljud 
 
 	for(int i=0; i<5; i++){
@@ -23,14 +25,13 @@ WorldMapTutorial::WorldMapTutorial() {
 }
 
 WorldMapTutorial::~WorldMapTutorial(){
-	delete mWorldMap;
 }
 
 void WorldMapTutorial::update(){
 
 	//När ljudet spelats
 	if(mTimer.getElapsedTime().asSeconds() > 7/*ljudtid*/){
-		mWorldMap->update();
+		StateManager::getInst().popState();
 	}
 }
 

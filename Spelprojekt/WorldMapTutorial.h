@@ -2,6 +2,7 @@
 #define WORLDMAPTUTORIAL
 #include "States.h"
 #include "WorldMap.h"
+#include "StateManager.h"
 #include <SFML\System\Clock.hpp>
 
 class WorldMapTutorial : public States{

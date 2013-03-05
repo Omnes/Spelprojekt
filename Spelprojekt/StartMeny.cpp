@@ -17,6 +17,10 @@ StartMeny::StartMeny(){
 
 	mMusic = "Resources/Sound/TitleScreen";
 	mBackground.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/StartMenu/startMeny.png"));
+
+
+
+
 }
 
 StartMeny::~StartMeny(){}

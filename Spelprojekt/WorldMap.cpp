@@ -29,6 +29,7 @@ WorldMap::WorldMap() :
 	mCurrentSection = mSection;
 
 	mButton = new Button(sf::Vector2f(100,100), "addAnimalipedia", "Resources/Menu/knapp.png", "");
+
 }
 
 WorldMap::~WorldMap(){}
