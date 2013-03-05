@@ -12,7 +12,6 @@ public:
 
 	StartGameFirstTime() : mWorld(0){}
 	~StartGameFirstTime(){}
-<<<<<<< HEAD
 
 	virtual void update(){
 
@@ -43,9 +42,6 @@ public:
 private:
 	int mWorld;
 
-=======
-	virtual void update(){StateManager::getInst().addState(new WorldMap); StateManager::getInst().addState(new LevelTutorial);}
->>>>>>> Jessica
 
 };
 
