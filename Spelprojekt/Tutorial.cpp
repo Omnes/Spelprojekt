@@ -32,16 +32,19 @@ Tutorial::~Tutorial(){
 
 void Tutorial::update(){
 
+	//När ljud nr 1 spelats
 	if(mTimer1.getElapsedTime().asSeconds() > 7/*ljudtid*/ && mTaktik->getFreeSpots()){
 		mTaktik->update();
 	}
 
+	//Starta ljud nr 2
 	if(mTaktik->getFreeSpots() == false && mStartedTimer == false){
 		mTimer2.restart();
 		mStartedTimer=true;
 		//spela ljud
 	}
 
+	//När ljud nr 2 spelats
 	if(mTimer2.getElapsedTime().asSeconds() > 5/*ljudtid*/){ 
 		mTaktik->update();
 	}
@@ -55,21 +58,25 @@ void Tutorial::render(){
 
 	mTaktik->render();
 
+	//pil 1
 	if(mTimer1.getElapsedTime().asSeconds() > 2 && mTimer1.getElapsedTime().asSeconds() < 4){
 	
 		window->draw(mArrows[0]);		
 	}
-
+	
+	//pil 2
 	if(mTimer1.getElapsedTime().asSeconds() > 4 && mTimer1.getElapsedTime().asSeconds() < 6){
 	
 		window->draw(mArrows[1]);		
 	}
 
+	//pil 3
 	if(mTimer2.getElapsedTime().asSeconds() > 1 && mTimer2.getElapsedTime().asSeconds() < 3 && mStartedTimer == true){
 	
 		window->draw(mArrows[2]);		
 	}
 	
+	//pil 4
 	if(mTimer2.getElapsedTime().asSeconds() > 3 && mTimer2.getElapsedTime().asSeconds() < 5 && mStartedTimer == true){
 	
 		window->draw(mArrows[3]);		
