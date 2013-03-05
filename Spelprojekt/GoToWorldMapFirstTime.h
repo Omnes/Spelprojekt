@@ -1,20 +1,16 @@
-#ifndef GOBACKTOWORLD
-#define GOBACKTOWORLD
+#ifndef GOTOWORLDMAPFIRSTTIME
+#define GOTOWORLDMAPFIRSTTIME
 #include "Event.h"
 #include "StateManager.h"
-#include "StartMeny.h"
-#include "WorldMap.h"
-#include "LevelManager.h"
-#include "GameOver.h"
 #include "WorldMapTutorial.h"
+#include "WorldMap.h"
 
-class GoBackToWorld : public Event{
+class GoToWorldMapFirstTime : public Event{
 
 public:
 
-	static bool sTutorialPlayed;
-	GoBackToWorld(){}
-	~GoBackToWorld(){}
+	GoToWorldMapFirstTime(){}
+	~GoToWorldMapFirstTime(){}
 	virtual void update(){
 		StateManager::getInst().popState();
 		WorldMap* worldMap = dynamic_cast<WorldMap*>(StateManager::getInst().getTop());
@@ -22,12 +18,8 @@ public:
 		worldMap->setDeadAnimals(LevelManager::getInst().getDeadAnimals());
 		worldMap->setCurrentWorldOrSub(LevelManager::getInst().getFilePath());
 		worldMap->readNewAnimals();
-		if(!sTutorialPlayed){
-			StateManager::getInst().addState(new WorldMapTutorial);
-			sTutorialPlayed = true;
-		}
 	}
+
 };
- 
 
 #endif 

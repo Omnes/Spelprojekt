@@ -105,6 +105,7 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Gameover.cpp" />
     <ClCompile Include="Gameplay.cpp" />
+    <ClCompile Include="GoBackToWorld.cpp" />
     <ClCompile Include="Gui.cpp" />
     <ClCompile Include="Info.cpp" />
     <ClCompile Include="InnerBeastArrow.cpp" />
@@ -138,9 +139,10 @@
     <ClCompile Include="TacticMenuButton.cpp" />
     <ClCompile Include="Taktikmeny.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
-    <ClCompile Include="Tutorial.cpp" />
+    <ClCompile Include="LevelTutorial.cpp" />
     <ClCompile Include="WindowManager.cpp" />
     <ClCompile Include="WorldMap.cpp" />
+    <ClCompile Include="WorldMapTutorial.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbilityButton.h" />
@@ -217,9 +219,10 @@
     <ClInclude Include="TacticMenuButton.h" />
     <ClInclude Include="Taktikmeny.h" />
     <ClInclude Include="tinyxml2.h" />
-    <ClInclude Include="Tutorial.h" />
+    <ClInclude Include="LevelTutorial.h" />
     <ClInclude Include="WindowManager.h" />
     <ClInclude Include="WorldMap.h" />
+    <ClInclude Include="WorldMapTutorial.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

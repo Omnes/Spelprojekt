@@ -66,6 +66,9 @@
     <Filter Include="Header Files\TinyXML2">
       <UniqueIdentifier>{2bab1d3b-fe0e-4199-abd5-b1327aaef26c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Events">
+      <UniqueIdentifier>{f8b888fd-7dc7-4863-b517-adfc01d9e490}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ActiveLayer.cpp">
@@ -224,14 +227,20 @@
     <ClCompile Include="ApplyOptionsButton.cpp">
       <Filter>Source Files\Interface</Filter>
     </ClCompile>
-    <ClCompile Include="Tutorial.cpp">
-      <Filter>Source Files\States</Filter>
-    </ClCompile>
     <ClCompile Include="Cutscene.cpp">
       <Filter>Source Files\States</Filter>
     </ClCompile>
     <ClCompile Include="Scene.cpp">
       <Filter>Source Files\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelTutorial.cpp">
+      <Filter>Source Files\States</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapTutorial.cpp">
+      <Filter>Source Files\States</Filter>
+    </ClCompile>
+    <ClCompile Include="GoBackToWorld.cpp">
+      <Filter>Source Files\Events</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -454,9 +463,6 @@
     <ClInclude Include="GoBackToStartFromOptions.h">
       <Filter>Header Files\Events</Filter>
     </ClInclude>
-    <ClInclude Include="Tutorial.h">
-      <Filter>Header Files\States</Filter>
-    </ClInclude>
     <ClInclude Include="StartGameFirstTime.h">
       <Filter>Header Files\Events</Filter>
     </ClInclude>
@@ -465,6 +471,12 @@
     </ClInclude>
     <ClInclude Include="Scene.h">
       <Filter>Header Files\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelTutorial.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapTutorial.h">
+      <Filter>Header Files\States</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
