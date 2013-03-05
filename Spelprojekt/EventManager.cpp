@@ -15,6 +15,7 @@
 #include "Retry.h"
 #include "GoBackToStartFromOptions.h"
 #include "StartGameFirstTime.h"
+#include "AddCutscene_1.h"
 
 EventManager::EventManager(){
 
@@ -34,6 +35,7 @@ EventManager::EventManager(){
 	mEventMap["retry"] = new Retry();
 	mEventMap["goBackToStartFromOptions"] = new GoBackToStartFromOptions();
 	mEventMap["startGameFirstTime"] = new StartGameFirstTime();
+	mEventMap["cutscene_1"] = new AddCutscene_1();
 
 }
 

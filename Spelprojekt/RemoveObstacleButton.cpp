@@ -97,7 +97,7 @@ void RemoveObstacleButton::update(){
 	if(mSprite.getGlobalBounds().contains(mousePosition)){
 		mSprite.setTextureRect(sf::IntRect(mTexture->getSize().x/mFrames*1,0,mTexture->getSize().x/mFrames,mTexture->getSize().y));
 		//om vi klickat över fyrkanten
-		if(sf::Mouse::isButtonPressed(sf::Mouse::Left) && mClickCooldownTimer.getElapsedTime().asMilliseconds() > mClickCooldown){
+		if(sf::Mouse::isButtonPressed(sf::Mouse::Left) && mClickCooldownTimer.getElapsedTime().asMilliseconds() > mClickCooldown && mCooldownTimer.getElapsedTime().asSeconds() > mCooldown){
 			mGui->unclickAll();
 			setClicked(true);
 			mClickCooldownTimer.restart();
