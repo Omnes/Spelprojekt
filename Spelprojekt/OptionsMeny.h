@@ -5,6 +5,8 @@
 #include "Checkbox.h"
 #include "ApplyOptionsButton.h"
 
+class ResourceManager;
+
 class OptionsMeny: public States{
 public:
 	virtual void update();
@@ -20,6 +22,8 @@ private:
 	ApplyOptionsButton mApplyButton;
 
 	std::string mMusic;
+
+	sf::Sprite mBackground;
 	
 };
 

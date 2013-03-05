@@ -1,12 +1,16 @@
 #include "OptionsMeny.h"
 #include "WindowManager.h"
 #include "EventManager.h"
+#include "ResourceManager.h"
 
 OptionsMeny::OptionsMeny()
 	: mApplyButton(sf::Vector2f(900,600),"Resources/Menu/knapp.png","",this){
 	mCheckboxes.push_back(new Checkbox(sf::Vector2f(640,360),"Resolution","fullscreen"));
 	mCheckboxes.push_back(new Checkbox(sf::Vector2f(640,420),"Sound","muted"));
 	mMusic = "Resources/Sound/TitleScreen";
+
+
+	mBackground.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/OptionsMenu/OptionsBG.png"));
 }
 
 OptionsMeny::~OptionsMeny(){
@@ -25,6 +29,9 @@ void OptionsMeny::update(){
 
 void OptionsMeny::render(){
 	sf::RenderWindow* window = WindowManager::getInst().getWindow();
+
+	window->draw(mBackground);
+
 	for (std::vector<Checkbox*>::iterator i = mCheckboxes.begin(); i != mCheckboxes.end(); i++){
 		(*i)->render(); 
 	}
