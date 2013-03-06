@@ -1,29 +1,30 @@
-<Cutscene music = "musik.ogg">
-	<Enviroment texture = "bakgrund.png">
-		<Scene>
-			<Image texture = "bild.png" x = "100" y = "100"/>
+<Cutscene music = "musik_">
+	<Enviroment texture = "Resources/Menu/LevelFinished.png">
+		<Scene duration = "4">
+			<Image texture = "Resources/Animals/bat.png" x = "100" y = "100" fadeIn = "1" fadeOut = "0"/>
 			<Voice file = "voice.ogg"/>
 			<Text x = "400" y = "500">Spring, vi har en eld bakom oss grodan!</Text>
 
 		</Scene>
-		<Scene>
-			<Image texture = "bild.png" x = "100" y = "100"/>
+		<Scene duration = "4">
+			<Image texture = "Resources/Animals/bat.png" x = "100" y = "100" fadeIn = "0" fadeOut = "1"/>
+			<Image texture = "Resources/Animals/monkey.png" x = "100" y = "100" fadeIn = "1" fadeOut = "1"/>
 			<Voice file = "voice.ogg"/>
 			<Text x = "400" y = "500">ojdå! nämen hallå! vad var det bra för?</Text>
 		</Scene>
 	</Enviroment>
 
-	<Enviroment texture = "bakgrund.png">
-		<Scene>
-			<Image texture = "bild.png" x = "100" y = "100"/>
+	<Enviroment texture = "Resources/Menu/GameOverMenu/Gameover.png">
+		<Scene duration = "4">
+			<Image texture = "Resources/Animals/bat.png" x = "100" y = "100" fadeIn = "1" fadeOut = "1"/>
 			<Voice file = "voice.ogg"/>
-			<Text x = "400" y = "500">Spring, vi har en eld bakom oss grodan!</Text>
+			<Text x = "400" y = "500">asså den här elden är ju den invalidaste haggan någonsin...</Text>
 
 		</Scene>
-		<Scene>
-			<Image texture = "bild.png" x = "100" y = "100"/>
+		<Scene duration = "4">
+			<Image texture = "Resources/Animals/eld.png" x = "100" y = "100" fadeIn = "1" fadeOut = "1"/>
 			<Voice file = "voice.ogg"/>
-			<Text x = "400" y = "500">ojdå! nämen hallå! vad var det bra för?</Text>
+			<Text x = "400" y = "500">woa! bitchin' hora LOL</Text>
 		</Scene>
 	</Enviroment>
 </Cutscene>

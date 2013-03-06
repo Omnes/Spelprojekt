@@ -477,6 +477,9 @@
     </ClInclude>
     <ClInclude Include="WorldMapTutorial.h">
       <Filter>Header Files\States</Filter>
+	</ClInclude>
+    <ClInclude Include="AddCutscene_1.h">
+      <Filter>Header Files\Events</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
