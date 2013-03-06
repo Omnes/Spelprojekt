@@ -1,23 +1,25 @@
 #include "SoundManager.h"
 #include "tinyxml2.h"
+#include "ResourceManager.h"
 
 SoundManager::SoundManager()
 	: mMuted(false)
 	, mMusicVolume(100)
 	, mCurrentMusic(0)
 	, mFading(false)
-	, mSoundVolume(100){
+	, mSoundVolume(100)
+	, mCurrentVoice(0)
+	, mVoiceVolume(100){
 
 		tinyxml2::XMLDocument doc;
 		doc.LoadFile("Resources/data/settings.xml");
 
-		const tinyxml2::XMLAttribute* attr = doc.FirstChildElement("Sound")->FirstAttribute();
+		tinyxml2::XMLElement* elm = doc.FirstChildElement("Sound");
 
-		mMusicVolume = attr->FloatValue();
-		attr = attr->Next();
-		mSoundVolume = attr->FloatValue(); 
-		attr = attr->Next();
-		mMuted = attr->BoolValue();
+		mMusicVolume = elm->FloatAttribute("musicVolume");
+		mSoundVolume = elm->FloatAttribute("soundVolume"); 
+		mVoiceVolume = elm->FloatAttribute("voiceVolume"); 
+		mMuted = elm->BoolAttribute("muted");
 
 
 }
@@ -58,6 +60,13 @@ void SoundManager::update(){
 		mCurrentMusic->update();
 	}
 
+	if(mCurrentVoice != 0){
+		if(mCurrentVoice->getStatus() == sf::Sound::Stopped){
+			delete mCurrentVoice;
+			mCurrentVoice = 0;
+		}
+	}
+
 }
 
 
@@ -78,6 +87,20 @@ void SoundManager::play(std::string filename){
 void SoundManager::play(sf::Sound &sound){
 	sound.setVolume(mSoundVolume * (!mMuted));
 	sound.play();
+}
+
+void SoundManager::playVoice(std::string filename){
+	//vi kanske får ladda in alla dessa vid cutscenes start för att undvika avbrott
+	if(mCurrentVoice != 0){
+		mCurrentVoice->stop();
+		delete mCurrentVoice;
+	}
+	mCurrentVoice = new sf::Sound();
+	mCurrentVoice->setBuffer(*ResourceManager::getInst().getSoundBuffer(filename));
+	mCurrentVoice->setVolume(mVoiceVolume * (!mMuted));
+	mCurrentVoice->play();
+
+
 }
 
 void SoundManager::fadeTo(std::string filename,float fadeTime){

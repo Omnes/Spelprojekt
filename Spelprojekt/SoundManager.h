@@ -13,6 +13,7 @@ public:
 
 	void play(std::string filename);
 	void play(sf::Sound& sound);
+	void playVoice(std::string filename);
 	void fadeTo(std::string filename,float fadeTime);
 	MusicLoop* getCurrentPlaying();
 	void setMusicVolume(float volume);
@@ -21,10 +22,13 @@ public:
 
 private:
 	float mMusicVolume;
+	float mVoiceVolume;
 	float mSoundVolume;
 	bool mMuted;
 	MusicLoop* mCurrentMusic;
 	MusicLoop* mFadeToMusic;
+
+	sf::Sound* mCurrentVoice;
 
 	bool mFading;
 
