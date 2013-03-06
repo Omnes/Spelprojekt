@@ -9,7 +9,7 @@ Button::Button(sf::Vector2f pos, std::string evt, std::string img, std::string s
 		mEvent(evt), 
 		mCurrentImage(0), 
 		mPartSystem("ButtonEffekt",100),
-		mButtonTime(1),
+		mButtonTime(0.3),
 		mPressed(false){
 
 		mTexture = (ResourceManager::getInst().getTexture(img));

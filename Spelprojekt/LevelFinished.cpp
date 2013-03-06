@@ -8,7 +8,7 @@
 
 
 
-LevelFinished::LevelFinished() : mButton(sf::Vector2f(500, 500), "goBackToWorld", "Resources/Misc/knapp1.jpg", "Resources/Sound/test.wav"){
+LevelFinished::LevelFinished() : mButton(sf::Vector2f(500, 500), "goBackToWorld", "Resources/Menu/PauseMenu/ContinueButton.png", "Resources/Sound/test.wav"){
 	
 	std::vector<std::string> Alive = LevelManager::getInst().getAliveAnimals();
 	std::vector<std::string> Dead = LevelManager::getInst().getDeadAnimals();
