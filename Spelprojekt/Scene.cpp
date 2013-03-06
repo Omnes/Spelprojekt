@@ -33,7 +33,7 @@ void Scene::render(){
 }
 
 void Scene::play(){
-	//spela upp voiceovern
+	SoundManager::getInst().playVoice(mVoice);
 	mIsStarted = true;
 	mTimer.restart();
 

@@ -1,4 +1,5 @@
 #include "MusicLoop.h"
+#include <iostream>
 
 MusicLoop::MusicLoop(std::string filename):mCurrentPlaying(0), mVolume(100){
 	mFirstFile.openFromFile(filename+"1.ogg");
@@ -25,6 +26,7 @@ void MusicLoop::update(){
 	if(mCurrentPlaying != 0){
 		if(mCurrentPlaying->getDuration() < mMusicTimer.getElapsedTime() && mCurrentPlaying->getStatus() == sf::Music::Playing){
 			mCurrentPlaying->stop();
+			std::cout << mFileName << " has looped at " << mMusicTimer.getElapsedTime().asSeconds() << " (" <<mMusicTimer.getElapsedTime().asMilliseconds() << ")" << std::endl;
 			mMusicTimer.restart();
 			mSecondFile.play();
 			mCurrentPlaying = &mSecondFile;
