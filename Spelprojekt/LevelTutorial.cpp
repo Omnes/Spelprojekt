@@ -2,6 +2,8 @@
 #include "ResourceManager.h"
 #include "WindowManager.h"
 #include "LevelManager.h"
+#include "SoundManager.h"
+#include <SFML\System\Time.hpp>
  
 LevelTutorial::LevelTutorial() 
 	: mStartedTimer(false){
@@ -19,7 +21,7 @@ LevelTutorial::LevelTutorial()
 	WindowManager::getInst().getWindow()->display();
 	mTaktik = new TaktikMeny;
 
-	//spela ljud nr 1
+	//float duraion = SoundManager::getInst().playVoice("Resources/Sound/Tutorial/Intro.wav")
 
 	for(int i=0; i<5; i++){
 		mArrows.push_back(mArrow);
