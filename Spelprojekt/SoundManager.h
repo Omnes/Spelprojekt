@@ -28,7 +28,7 @@ private:
 	MusicLoop* mCurrentMusic;
 	MusicLoop* mFadeToMusic;
 
-	sf::Sound* mCurrentVoice;
+	sf::Music* mCurrentVoice;
 
 	bool mFading;
 
