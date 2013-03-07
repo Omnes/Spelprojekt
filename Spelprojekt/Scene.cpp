@@ -3,10 +3,10 @@
 #include "SoundManager.h"
 
 
-Scene::Scene(SpritesWithBoolPairs sprites,std::string voice, sf::Text text, float duration)
+Scene::Scene(SpritesWithBoolPairs sprites,std::string voice, std::vector<std::pair<sf::Text,float>> texts, float duration)
 	: mSprites(sprites)
 	, mVoice(voice)
-	, mText(text)
+	, mTexts(texts)
 	, mCompleted(false)
 	, mDuration(duration)
 	, mIsStarted(false){
@@ -29,7 +29,21 @@ void Scene::render(){
 	for(SpritesWithBoolPairs::iterator i = mSprites.begin(); i != mSprites.end();i++){
 		window->draw(*(*i).first);
 	}
-	window->draw(mText);
+	
+	if(mIsStarted){
+		float curMin = 0;
+		float curMax = 0;
+		float goalTime = mTimer.getElapsedTime().asSeconds();
+
+		for(int i = 0; i < mTexts.size();i++){
+			curMin = curMax;
+			curMax += mTexts[i].second;
+			if(curMin <= goalTime && curMax > goalTime){
+				window->draw(mTexts[i].first);
+				//break;
+			}
+		}
+	}
 }
 
 void Scene::play(){

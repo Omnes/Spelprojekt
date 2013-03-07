@@ -86,13 +86,19 @@ void Cutscene::loadFromFile(std::string file){
 		std::vector<Scene*> scenes;
 
 		while(sce != 0){
+			std::vector<std::pair<sf::Text,float>> texts;
+			tinyxml2::XMLElement* elmText = sce->FirstChildElement("Text");
 
-			sf::Text text;
-
-			text.setString(sce->FirstChildElement("Text")->GetText());
-			float tx = sce->FirstChildElement("Text")->FloatAttribute("x");
-			float ty = sce->FirstChildElement("Text")->FloatAttribute("y");
-			text.setPosition(tx,ty);
+			while(elmText != 0){
+				sf::Text text;
+				text.setString(elmText->GetText());
+				float tx = elmText->FloatAttribute("x");
+				float ty = elmText->FloatAttribute("y");
+				text.setPosition(tx,ty);
+				float duration = elmText->FloatAttribute("duration");
+				texts.push_back(std::pair<sf::Text,float>(text,duration));
+				elmText = elmText->NextSiblingElement("Text");
+			}
 
 			std::string voice = sce->FirstChildElement("Voice")->Attribute("file");
 
@@ -119,7 +125,7 @@ void Cutscene::loadFromFile(std::string file){
 				img = img->NextSiblingElement("Image");
 			}
 
-			Scene* scene = new Scene(sprites,voice,text,duration);
+			Scene* scene = new Scene(sprites,voice,texts,duration);
 			scenes.push_back(scene);
 			sce = sce->NextSiblingElement();
 		}

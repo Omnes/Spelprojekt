@@ -25,21 +25,17 @@ private:
 	float mVoiceVolume;
 	float mSoundVolume;
 	bool mMuted;
-	MusicLoop* mCurrentMusic;
-	MusicLoop* mFadeToMusic;
 
 	sf::Music* mCurrentVoice;
-
+	MusicLoop* mCurrentMusic;
+	MusicLoop* mFadeToMusic;
 	bool mFading;
-
 	float mFadeVolumeDeltaChange;
 
 	SoundManager();
 	~SoundManager();
 	SoundManager& operator=(const SoundManager&);
 	SoundManager(const SoundManager&);
-
-
 
 };
 
