@@ -89,7 +89,7 @@ void SoundManager::play(sf::Sound &sound){
 	sound.play();
 }
 
-void SoundManager::playVoice(std::string filename){
+sf::Time& SoundManager::playVoice(std::string filename){
 	//vi kanske får ladda in alla dessa vid cutscenes start för att undvika avbrott
 	if(mCurrentVoice != 0){
 		mCurrentVoice->stop();
@@ -99,8 +99,7 @@ void SoundManager::playVoice(std::string filename){
 	mCurrentVoice->setBuffer(*ResourceManager::getInst().getSoundBuffer(filename));
 	mCurrentVoice->setVolume(mVoiceVolume * (!mMuted));
 	mCurrentVoice->play();
-
-
+	return mCurrentVoice->getBuffer()->getDuration();
 }
 
 void SoundManager::fadeTo(std::string filename,float fadeTime){
