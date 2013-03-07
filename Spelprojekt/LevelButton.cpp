@@ -15,7 +15,7 @@ LevelButton::LevelButton(sf::Vector2f pos, std::string evt, std::string img, std
 	mTexture = *(ResourceManager::getInst().getTexture(img));
 	mSprite.setTexture(mTexture);
 	mSprite.setPosition(mPosition);
-	mRectangle = sf::IntRect(0,0, mTexture.getSize().x/4, mTexture.getSize().y); //Rekten ska ha rätt bredd
+	mRectangle = sf::IntRect(0,0, mTexture.getSize().x/3, mTexture.getSize().y); //Rekten ska ha rätt bredd
 	mSprite.setTextureRect(mRectangle);
 
 }
@@ -46,9 +46,9 @@ void LevelButton::update(){
 			
 		}		
 	}else if(mActive == false && mAlive == true){
-		mCurrentImage = 2;
+		mCurrentImage = 0;
 	}else if(mAlive == false){
-		mCurrentImage = 3;
+		mCurrentImage = 2;
 	}else{
 		mCurrentImage = 0;
 	}

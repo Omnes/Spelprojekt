@@ -185,7 +185,7 @@ void TaktikMeny::createAnimals(){
 
 	for(SpotVector::iterator i = mSpotVector.begin(); i != mSpotVector.end(); i++){
 		//fuuult
-		if((*i)->getColorSpot() == sf::Color(255,0,0,255)){
+		if((*i)->getColorSpot() == sf::Color(0,254,0,255)){
 			(*i)->setAfraidAnimal(true);
 		}
 		if((*i)->getAfraidAnimal()){
@@ -239,7 +239,7 @@ void TaktikMeny::isClicked(){
 								if(k >= 1){ // eh ??? k > 2 osäker här, fösrta argumentet kommer aldrig hända pga. man hinner inte klicka innan den laddat allt
 									if(mSpotVector[k]->getPrototypeAnimal() != 0){
 										if(mCurrentDragAnimal->getAnimalType() == "meat" && mSpotVector[k]->getPrototypeAnimal()->getAnimalType()== "plant" && mSpotVector[k-1]->getPrototypeAnimal() == 0 && mSpotVector[k-1]->getLevel() == mSpotVector[k]->getLevel()){
-											mSpotVector[k]->setColorSpot(sf::Color(255,0,0,255)); //fixa detta ? kanske
+											mSpotVector[k]->setColorSpot(sf::Color(0,254,0,255)); //fixa detta ? kanske
 										}
 									}
 								}
@@ -250,7 +250,7 @@ void TaktikMeny::isClicked(){
 								//gör detta till en funktion
 								if(level == j && mSpotVector[k]->getPrototypeAnimal() != 0 && (k+1) < mSpotVector.size()){
 									if(mSpotVector[k]->getPrototypeAnimal()->getAnimalType() == "meat" && mSpotVector[k+1]->getLevel() == mSpotVector[k]->getLevel() && mCurrentDragAnimal->getAnimalType() == "plant" && mSpotVector[k+1]->getPrototypeAnimal() == 0/*och maxhastifghetinte är uppnådd*/){
-										mSpotVector[k+1]->setColorSpot(sf::Color(255,0,0,255)); //fixa detta ? kanske
+										mSpotVector[k+1]->setColorSpot(sf::Color(0,254,0,255)); //fixa detta ? kanske
 										mSpotVector[k+1]->setAfraidAnimal(true);
 									}
 								}
