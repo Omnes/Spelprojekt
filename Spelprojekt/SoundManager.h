@@ -25,8 +25,8 @@ private:
 	float mVoiceVolume;
 	float mSoundVolume;
 	bool mMuted;
-	sf::Sound* mCurrentVoice;
 
+	sf::Music* mCurrentVoice;
 	MusicLoop* mCurrentMusic;
 	MusicLoop* mFadeToMusic;
 	bool mFading;
