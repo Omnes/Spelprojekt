@@ -7,8 +7,9 @@
 #include "Entity.h"
 #include "Gui.h"
 #include <SFML\Graphics\CircleShape.hpp>
+#include "SoundManager.h"
 
-RemoveObstacleButton::RemoveObstacleButton(std::vector<std::string> obstacle,sf::Vector2f position, std::string texture,float cooldown, std::string particleName, int emittAmount, Gui* gui)
+RemoveObstacleButton::RemoveObstacleButton(std::vector<std::string> obstacle,sf::Vector2f position, std::string texture,float cooldown, std::string particleName, int emittAmount, std::string soundFX, Gui* gui)
 	: mObstacles(obstacle)
 	, mTexture(ResourceManager::getInst().getTexture(texture))
 	, mFrames(3)
@@ -19,7 +20,8 @@ RemoveObstacleButton::RemoveObstacleButton(std::vector<std::string> obstacle,sf:
 	, mParticleSystem(particleName,100)
 	, mEmittAmount(emittAmount)
 	, mSparksOnObstacles("Spark",300)
-	, mMissedAbility("Smoke",300){
+	, mMissedAbility("Smoke",300)
+	, mSoundFX(*ResourceManager::getInst().getSoundBuffer(soundFX)){
 
 		mSprite.setPosition(position);
 		mSprite.setTexture(*mTexture);
@@ -46,6 +48,7 @@ bool RemoveObstacleButton::findID(std::string id){
 
 
 void RemoveObstacleButton::killRelativePositionEntity(sf::Vector2f mousePosition){
+
 	const sf::View* view = &WindowManager::getInst().getWindow()->getView();
 	//sf::Vector2f relativeMousePosition = mousePosition + view->getCenter() - sf::Vector2f(view->getSize().x/2,view->getSize().y/2);
 	sf::Vector2f relativeMousePosition = WindowManager::getInst().getWindow()->convertCoords((sf::Vector2i)mousePosition,WindowManager::getInst().getWindow()->getView());
@@ -70,6 +73,7 @@ void RemoveObstacleButton::killRelativePositionEntity(sf::Vector2f mousePosition
 				i = entityVector->erase(i);
 				mCooldownTimer.restart();
 				didDelete = true;
+				SoundManager::getInst().play(mSoundFX);
 
 			}else{
 				i++;
@@ -110,7 +114,6 @@ void RemoveObstacleButton::update(){
 		&& mClickCooldownTimer.getElapsedTime().asMilliseconds() > mClickCooldown){
 
 		if(mCooldownTimer.getElapsedTime().asSeconds() > mCooldown){
-
 			killRelativePositionEntity(mousePosition);
 		}else{
 			mGui->unclickAll();

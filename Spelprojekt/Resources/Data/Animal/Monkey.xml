@@ -10,6 +10,6 @@
 
 	<ImageAttr fTick="100" frames="10"/>
 
-	<Sound>Resources/Sound/Animals/crocodile2.wav</Sound>
+	<Sound>Resources/Sound/Animals/apa2.wav</Sound>
 
 </Animal>

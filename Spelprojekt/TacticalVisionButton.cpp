@@ -4,14 +4,16 @@
 #include "WindowManager.h"
 #include "StateManager.h"
 #include "TacticalVision.h"
+#include "SoundManager.h"
 
-TacticalVisionButton::TacticalVisionButton(sf::Vector2f position, std::string texture,float cooldown, Gui* gui) 
+TacticalVisionButton::TacticalVisionButton(sf::Vector2f position, std::string texture,float cooldown, std::string soundFX, Gui* gui) 
 	: mTexture(ResourceManager::getInst().getTexture(texture))
 	, mGui(gui)
 	, mClicked(false)
 	, mFrames(3)
 	, mCooldown(cooldown)
-	, mClickCooldown(){
+	, mClickCooldown()
+	, mSoundFX(*ResourceManager::getInst().getSoundBuffer(soundFX)){
 		mCooldownTimer.restart();
 		mSprite.setTexture(*mTexture);
 		mSprite.setPosition(position);
@@ -23,7 +25,7 @@ TacticalVisionButton::~TacticalVisionButton(){
 }
 
 void TacticalVisionButton::activateTac(){
-
+	SoundManager::getInst().play(mSoundFX);
 	StateManager::getInst().addState(new TacticalVision);
 	mCooldownTimer.restart();
 

@@ -8,8 +8,9 @@
 #include "Gui.h"
 #include <SFML\Graphics\CircleShape.hpp>
 #include "ResourceManager.h"
+#include "SoundManager.h"
 
-InnerBeastButton::InnerBeastButton(sf::Vector2f position, std::string texture,float cooldown,float speedincrease, float duration, Gui* gui)
+InnerBeastButton::InnerBeastButton(sf::Vector2f position, std::string texture,float cooldown,float speedincrease, float duration, std::string soundFX, Gui* gui)
 	: mTexture(ResourceManager::getInst().getTexture(texture))
 	, mFrames(3)
 	, mCooldown(cooldown)
@@ -17,7 +18,8 @@ InnerBeastButton::InnerBeastButton(sf::Vector2f position, std::string texture,fl
 	, mGui(gui)
 	, mClicked(false)
 	, mSpeedIncrease(speedincrease)
-	, mSpeedDuration(duration){
+	, mSpeedDuration(duration)
+	, mSoundFX(*ResourceManager::getInst().getSoundBuffer(soundFX)){
 
 		mSprite.setPosition(position);
 		mSprite.setTexture(*mTexture);
@@ -72,6 +74,8 @@ void InnerBeastButton::update(){
 			
 			//När vi har klickat på en pil
 			if(mAnimations[i]->getSprite()->getGlobalBounds().contains(mousePosition)){
+
+				SoundManager::getInst().play(mSoundFX);
 
 				std::vector<Entity*>* entityVector = LevelManager::getInst().getActiveLayer()->getEntityVector();
 				for(std::vector <Entity*>::iterator j = entityVector->begin(); j != entityVector->end(); j++){
