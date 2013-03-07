@@ -19,7 +19,6 @@ Button::Button(sf::Vector2f pos, std::string evt, std::string img, std::string s
 		mSprite.setTextureRect(mRectangle);
 		mSoundBuffer = (ResourceManager::getInst().getSoundBuffer(sound));
 		mSound.setBuffer(*mSoundBuffer);
-		mSound.setLoop(false);
 		mEmitter.setPosition(mPosition);
 
 }

@@ -5,6 +5,7 @@
 #include "Animation.h"
 #include "LevelManager.h"
 #include "ActiveLayer.h"
+#include "SoundManager.h"
 
 Fire::Fire(sf::Vector2f position,float closeupspeed = 180)
 	: mID("Fire")
@@ -14,7 +15,8 @@ Fire::Fire(sf::Vector2f position,float closeupspeed = 180)
 	, mAlive(true)
 	, mFireSystem("Firewall",500)
 	, mSmokeSystem("Smoke",770)
-	, mPoofSystem("Smoke",50){
+	, mPoofSystem("Smoke",50)
+	, mDeathSound(*ResourceManager::getInst().getSoundBuffer("Resources/Sound/Effekts/Death_effekt.wav")){
 
 	mSprite.setTexture(*ResourceManager::getInst().getTexture("Resources/Animals/eld.png"));
 	mFireSystem.setBlendMode(sf::BlendAdd);
@@ -22,6 +24,7 @@ Fire::Fire(sf::Vector2f position,float closeupspeed = 180)
 	mSprite.setColor(sf::Color(0,0,0,0));
 	mEmitter.setPosition(mPosition);
 	mSprite.setPosition(mPosition);
+
 
 	
 }
@@ -81,6 +84,7 @@ void Fire::collide(Entity* entity){
 	animation->setPosition(entity->getPos());
 	LevelManager::getInst().getActiveLayer()->addAnimationEffekt(animation);
 	entity->setAlive(false);
+	SoundManager::getInst().play(mDeathSound);
 }
 
 std::string Fire::getID(){

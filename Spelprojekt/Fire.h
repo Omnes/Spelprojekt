@@ -5,6 +5,8 @@
 #include "ParticleSystem.h"
 #include "Emitter.h"
 #include <SFML\System\Clock.hpp>
+#include <SFML\Audio\Sound.hpp>
+
 	
 class Fire: public Entity{
 public:
@@ -32,6 +34,7 @@ private:
 	ParticleSystem mFireSystem;
 	ParticleSystem mPoofSystem;
 	sf::Clock mSpeedUpdateCooldown;
+	sf::Sound mDeathSound;
 	
 	Emitter mEmitter;
 
