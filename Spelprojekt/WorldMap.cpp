@@ -16,7 +16,7 @@ WorldMap::WorldMap() :
 
 	mMusic = "Resources/Sound/TitleScreen";
 
-	mSprite.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/WorldMenu/worldmap.png"));
+	mSprite.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/WorldMenu/WorldmapBG.png"));
 	mSprite.setPosition(0,0);
 
 	readSave();
