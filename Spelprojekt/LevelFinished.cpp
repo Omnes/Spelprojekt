@@ -54,7 +54,7 @@ void LevelFinished::update(){
 
 	if(mStampIndex < mDeadVector.size() && mStampDelay.getElapsedTime().asSeconds() > 3){
 		sf::Sprite* stamp = new sf::Sprite;
-		stamp->setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/GameOverMenu/Extinct"));
+		stamp->setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/GameOverMenu/Extinct.png"));
 		stamp->setPosition(mDeadVector[mStampIndex]->getPosition());
 		mStampVector.push_back(stamp);
 
