@@ -3,14 +3,16 @@
 		<Scene duration = "4">
 			<Image texture = "Resources/Animals/bat.png" x = "100" y = "100" fadeIn = "1" fadeOut = "0"/>
 			<Voice file = "Resources/Sound/TitleScreen1.ogg"/>
-			<Text x = "400" y = "500">Spring, vi har en eld bakom oss grodan!</Text>
+			<Text x = "400" y = "500" duration="4">Spring, vi har en eld bakom oss grodan!</Text>
 
 		</Scene>
 		<Scene duration = "4">
 			<Image texture = "Resources/Animals/bat.png" x = "100" y = "100" fadeIn = "0" fadeOut = "1"/>
 			<Image texture = "Resources/Animals/monkey.png" x = "100" y = "100" fadeIn = "1" fadeOut = "1"/>
 			<Voice file = "Resources/Sound/TitleScreen1.ogg"/>
-			<Text x = "400" y = "500">ojdå! nämen hallå! vad var det bra för?</Text>
+			<Text x = "400" y = "500" duration="1">ojdå!</Text>
+			<Text x = "400" y = "500" duration="1">nämen hallå!</Text>
+			<Text x = "400" y = "500" duration="2">vad var det bra för?</Text>
 		</Scene>
 	</Enviroment>
 
@@ -18,13 +20,22 @@
 		<Scene duration = "4">
 			<Image texture = "Resources/Animals/bat.png" x = "100" y = "100" fadeIn = "1" fadeOut = "1"/>
 			<Voice file = "Resources/Sound/TitleScreen1.ogg"/>
-			<Text x = "400" y = "500">asså den här elden är ju den invalidaste haggan någonsin...</Text>
+			<Text x = "400" y = "500" duration="2">asså den här elden är ju den invalidaste haggan någonsin...</Text>
 
 		</Scene>
 		<Scene duration = "4">
 			<Image texture = "Resources/Animals/eld.png" x = "100" y = "100" fadeIn = "1" fadeOut = "1"/>
 			<Voice file = "Resources/Sound/TitleScreen1.ogg"/>
-			<Text x = "400" y = "500">woa! bitchin' hora LOL</Text>
+			<Text x = "400" y = "500" duration="0.2">H</Text>
+			<Text x = "410" y = "500" duration="0.2">A</Text>
+			<Text x = "420" y = "500" duration="0.2">H</Text>
+			<Text x = "430" y = "500" duration="0.2"> </Text>
+			<Text x = "440" y = "500" duration="0.2">L</Text>
+			<Text x = "450" y = "500" duration="0.2">O</Text>
+			<Text x = "460" y = "500" duration="0.2">L</Text>
+			<Text x = "470" y = "500" duration="0.2">!</Text>
+			<Text x = "480" y = "500" duration="0.2">1</Text>
+			<Text x = "490" y = "500" duration="0.2">!</Text>
 		</Scene>
 	</Enviroment>
 </Cutscene>

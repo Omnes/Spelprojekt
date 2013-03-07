@@ -5,6 +5,7 @@
 		<ParticleEffekt amount="2">Sonar</ParticleEffekt>
 		<Stats cooldown="3"/>
 		<InfoPicture>Resources/GUI/pause.png</InfoPicture>
+		<Sound onUse = "Resources/Sound/Effekts/Sonar_effekt.wav"/>
 	</Sonar>
 
 	<InnerBeast>
@@ -12,6 +13,7 @@
 		<Texture>Resources/GUI/innerbeast.png</Texture>
 		<Stats cooldown="3" speedIncrease="2" duration="1"/>
 		<InfoPicture>Resources/GUI/speed.png</InfoPicture>
+		<Sound onUse = "Resources/Sound/Effekts/InnerBeat_effekt.wav"/>
 	</InnerBeast>
 
 
@@ -28,6 +30,7 @@
 			<Obstacle>Trash</Obstacle>
 		</CanRemove>
 		<InfoPicture>Resources/GUI/manmade.png</InfoPicture>
+		<Sound onUse = "Resources/Sound/Effekts/Care_effekt.wav"/>
 
 	</Omsorg>
 
@@ -43,6 +46,7 @@
 			<Obstacle>Bees</Obstacle>
 		</CanRemove>
 		<InfoPicture>Resources/GUI/nature.png</InfoPicture>
+		<Sound onUse = "Resources/Sound/Effekts/Strength_effekt.wav"/>
 
 	</Growl>
 
@@ -57,6 +61,7 @@
 			<Obstacle>Bees</Obstacle>
 		</CanRemove>
 		<InfoPicture>Resources/GUI/nature.png</InfoPicture>
+		<Sound onUse = "Resources/Sound/Effekts/Strength_effekt.wav"/>
 
 	</Power>
 
@@ -71,6 +76,7 @@
 			<Obstacle>FallenTree</Obstacle>
 		</CanRemove>
 		<InfoPicture>Resources/GUI/nature.png</InfoPicture>
+		<Sound onUse = "Resources/Sound/Effekts/Strength_effekt.wav"/>
 
 	</Claw>
 
