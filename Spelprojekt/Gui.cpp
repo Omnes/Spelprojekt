@@ -57,6 +57,8 @@ void Gui::loadAbilites(){
 
 		std::string type = elm->FirstChildElement("Type")->GetText();
 
+		std::string sound = elm->FirstChildElement("Sound")->Attribute("onUse");
+
 		if(abilityNumber != 0){
 			if((int)abilityNumber % 2 == 1){
 				position += distance;
@@ -67,7 +69,7 @@ void Gui::loadAbilites(){
 
 		if(type == "Vision"){
 			float cooldown = elm->FirstChildElement("Stats")->FloatAttribute("cooldown");
-			mButtons.push_back(new TacticalVisionButton(position,texture,cooldown,this));
+			mButtons.push_back(new TacticalVisionButton(position,texture,cooldown,sound,this));
 		}
 
 		if(type == "Speed"){
@@ -76,7 +78,7 @@ void Gui::loadAbilites(){
 			float speedIncrease = elm->FirstChildElement("Stats")->FloatAttribute("speedIncrease");
 			float duration = elm->FirstChildElement("Stats")->FloatAttribute("duration");
 
-			mButtons.push_back(new InnerBeastButton(position,texture,cooldown,speedIncrease,duration,this));
+			mButtons.push_back(new InnerBeastButton(position,texture,cooldown,speedIncrease,duration,sound,this));
 		}
 
 		if(type == "Remove"){
@@ -93,7 +95,7 @@ void Gui::loadAbilites(){
 				canRemove = canRemove->NextSiblingElement();
 			}
 
-			mButtons.push_back(new RemoveObstacleButton(canRemoveVector,position,texture,cooldown,effekt,amount,this));
+			mButtons.push_back(new RemoveObstacleButton(canRemoveVector,position,texture,cooldown,effekt,amount,sound,this));
 		}
 
 		abilityNumber++;

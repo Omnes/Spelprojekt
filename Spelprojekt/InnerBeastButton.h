@@ -10,12 +10,13 @@
 #include "InnerBeastArrow.h"
 #include "Animal.h"
 #include "Animation.h"
+#include <SFML\Audio\Sound.hpp>
 
 class Gui;
 
 class InnerBeastButton: public AbilityButton{
 public:
-	InnerBeastButton(sf::Vector2f position, std::string texture,float cooldown,float speedincrease,float duration ,Gui* gui);
+	InnerBeastButton(sf::Vector2f position, std::string texture,float cooldown,float speedincrease,float duration, std::string soundFX,Gui* gui);
 
 	virtual void update();
 	virtual sf::Sprite* getSprite();
@@ -41,6 +42,8 @@ private:
 	std::vector<Animation*> mAnimations;
 	std::vector<Animal*> mAnimals;
 	Animation* mAnimation;
+
+	sf::Sound mSoundFX;
 
 };
 

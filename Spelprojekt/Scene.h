@@ -8,7 +8,7 @@
 class Scene{
 public:
 
-	Scene(std::vector<std::pair<sf::Sprite*,std::pair<bool,bool>>> sprites,std::string voice, sf::Text text, float duration);
+	Scene(std::vector<std::pair<sf::Sprite*,std::pair<bool,bool>>> sprites,std::string voice, std::vector<std::pair<sf::Text,float>> texts, float duration);
 	~Scene();
 
 	void render();
@@ -25,7 +25,7 @@ private:
 	sf::Clock mTimer;
 	bool mIsStarted;
 	float mAlpha;
-	sf::Text mText;
+	std::vector<std::pair<sf::Text,float>> mTexts;
 	std::string mVoice;
 	typedef std::vector<std::pair<sf::Sprite*,std::pair<bool,bool>>> SpritesWithBoolPairs;
 	SpritesWithBoolPairs mSprites;

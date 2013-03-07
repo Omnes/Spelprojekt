@@ -3,13 +3,13 @@
 		<Scene duration = "4">
 			<Image texture = "Resources/Cutscenes/Scene1/groda1.png" x = "0" y = "0" fadeIn = "1" fadeOut = "0"/>
 			<Voice file = "Resources/Sound/TitleScreen1.ogg"/>
-			<Text x = "400" y = "700">”Varför springer du, min aningen rundlätte undersåte?”</Text>
-
+			<Text x = "400" y = "700" duration="4">”Varför springer du, min aningen rundlätte undersåte?”</Text>
 		</Scene>
 		<Scene duration = "4">
 			<Image texture = "Resources/Cutscenes/Scene1/orm2.png" x = "0" y = "0" fadeIn = "0" fadeOut = "1"/>
 			<Voice file = "Resources/Sound/TitleScreen1.ogg"/>
-			<Text x = "400" y = "700">”Varför springer du, min aningen rundlätte undersåte?”</Text>
+			<Text x = "400" y = "700" duration="4">”Varför springer du, min aningen rundlätte undersåte?”</Text>
+
 		</Scene>
 	</Enviroment>
 
@@ -27,13 +27,13 @@
 			<Image texture = "Resources/Cutscenes/Scene1/sol1.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
 			<Image texture = "Resources/Cutscenes/Scene1/orm1.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
 			<Voice file = "Resources/Sound/TitleScreen1.ogg"/>
-			<Text x = "400" y = "500">asså den här elden är ju den invalidaste haggan någonsin...</Text>
+			<Text x = "400" y = "500" duration="2">asså den här elden är ju den invalidaste haggan någonsin...</Text>
 
 		</Scene>
 		<Scene duration = "4">
 			<Image texture = "Resources/Cutscenes/Scene1/groda2.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
 			<Voice file = "Resources/Sound/TitleScreen1.ogg"/>
-			<Text x = "400" y = "650">”Det brinner i knutarna!”</Text>
+			<Text x = "400" y = "650" duration="4">”Det brinner i knutarna!”</Text>
 
 		</Scene>
 
