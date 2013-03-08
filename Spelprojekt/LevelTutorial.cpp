@@ -3,6 +3,8 @@
 #include "WindowManager.h"
 #include "LevelManager.h"
 #include "SoundManager.h"
+#include "StateManager.h"
+#include <SFML\Window\Keyboard.hpp>
  
 LevelTutorial::LevelTutorial() 
 	: mStartedTimer(false)
@@ -49,6 +51,8 @@ LevelTutorial::~LevelTutorial(){
 }
 
 void LevelTutorial::update(){
+
+	
 
 	sf::RenderWindow* window = WindowManager::getInst().getWindow();
 
@@ -151,6 +155,10 @@ void LevelTutorial::update(){
 				}
 			}
 		}
+	}
+
+	if(sf::Keyboard::isKeyPressed(sf::Keyboard::F1)){
+		StateManager::getInst().popState();
 	}
 }
 

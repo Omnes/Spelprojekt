@@ -1,41 +1,69 @@
-<Cutscene music = "Level1_">
-	<Enviroment texture = "Resources/Menu/LevelFinished.png">
-		<Scene duration = "4">
-			<Image texture = "Resources/Animals/bat.png" x = "100" y = "100" fadeIn = "1" fadeOut = "0"/>
-			<Voice file = "Resources/Sound/TitleScreen1.ogg"/>
-			<Text x = "400" y = "500" duration="4">Spring, vi har en eld bakom oss grodan!</Text>
+<Cutscene music = "">
+	<Enviroment texture = "Resources/Cutscenes/Scene1/bak1.png">
+		<Scene duration = "2">
+			<Image texture = "Resources/Cutscenes/Scene1/orm1.png" x = "0" y = "0" fadeIn = "1" fadeOut = "0"/>
+			<Image texture = "Resources/Cutscenes/Scene1/frog1.png" x = "0" y = "0" fadeIn = "1" fadeOut = "0"/>
+			<Voice file = ""/>
+			<Text x = "400" y = "600" duration="4"></Text>
 
-		</Scene>
-		<Scene duration = "4">
-			<Image texture = "Resources/Animals/bat.png" x = "100" y = "100" fadeIn = "0" fadeOut = "1"/>
-			<Image texture = "Resources/Animals/monkey.png" x = "100" y = "100" fadeIn = "1" fadeOut = "1"/>
-			<Voice file = "Resources/Sound/TitleScreen1.ogg"/>
-			<Text x = "400" y = "500" duration="1">ojdå!</Text>
-			<Text x = "400" y = "500" duration="1">nämen hallå!</Text>
-			<Text x = "400" y = "500" duration="2">vad var det bra för?</Text>
 		</Scene>
 	</Enviroment>
 
-	<Enviroment texture = "Resources/Menu/GameOverMenu/Gameover.png">
-		<Scene duration = "4">
-			<Image texture = "Resources/Animals/bat.png" x = "100" y = "100" fadeIn = "1" fadeOut = "1"/>
-			<Voice file = "Resources/Sound/TitleScreen1.ogg"/>
-			<Text x = "400" y = "500" duration="2">asså den här elden är ju den invalidaste haggan någonsin...</Text>
+	<Enviroment texture = "">
+		<Scene duration = "34">
+			<Image texture = "Resources/Cutscenes/Scene1/orm3.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
+			<Voice file = "Resources/Sound/Cutscenes/Scen1/del1.ogg"/>
+			<Text x = "14" y = "535" duration="4">Varför springer du, min aningen rundlätte undersåte?</Text>
+			<Text x = "797" y = "94" duration="2">Min gode herre-</Text>
+			<Text x = "14" y = "535" duration="8">Varför stressar du denna underbara dag tillägnat mig och mitt kungarike?</Text>
+			<Text x = "797" y = "94" duration="2">Men min gode herre-</Text>
+			<Text x = "14" y = "535" duration="5">Alla verkar denna ljuvliga dag springa lösa som om de fått djungelfeber.</Text>
+			<Text x = "14" y = "535" duration="5">Skall ni möjligtvis ha ett överraskningskalas tillägnat mig?</Text>
+			<Text x = "797" y = "94" duration="2">Nej, min gode herre, men-</Text>
+			<Text x = "14" y = "535" duration="6">Jag lovar att bete mig överraskad ifall du råkar avslöja något.</Text>
 
 		</Scene>
-		<Scene duration = "4">
-			<Image texture = "Resources/Animals/eld.png" x = "100" y = "100" fadeIn = "1" fadeOut = "1"/>
-			<Voice file = "Resources/Sound/TitleScreen1.ogg"/>
-			<Text x = "400" y = "500" duration="0.2">H</Text>
-			<Text x = "410" y = "500" duration="0.2">A</Text>
-			<Text x = "420" y = "500" duration="0.2">H</Text>
-			<Text x = "430" y = "500" duration="0.2"> </Text>
-			<Text x = "440" y = "500" duration="0.2">L</Text>
-			<Text x = "450" y = "500" duration="0.2">O</Text>
-			<Text x = "460" y = "500" duration="0.2">L</Text>
-			<Text x = "470" y = "500" duration="0.2">!</Text>
-			<Text x = "480" y = "500" duration="0.2">1</Text>
-			<Text x = "490" y = "500" duration="0.2">!</Text>
+	</Enviroment>
+	
+	<Enviroment texture = "Resources/Cutscenes/Scene1/bak1.png">
+		<Scene duration = "3">
+			<Image texture = "Resources/Cutscenes/Scene1/sol1.png" x = "0" y = "0" fadeIn = "0" fadeOut = "0"/>
+			<Voice file = ""/>
+			<Text x = "400" y = "500" duration="2"></Text>
+
+		</Scene>
+	</Enviroment>
+	
+	<Enviroment texture = "Resources/Cutscenes/Scene1/bak2.png">
+		<Scene duration = "13">
+			<Image texture = "Resources/Cutscenes/Scene1/sol2.png" x = "0" y = "0" fadeIn = "0" fadeOut = "0"/>
+			<Image texture = "Resources/Cutscenes/Scene1/orm2.png" x = "0" y = "0" fadeIn = "0" fadeOut = "0"/>
+			<Voice file = "Resources/Sound/Cutscenes/Scen1/del2.ogg"/>
+			<Text x = "745" y = "334" duration="3">Rei Doido, släpp genast grodan!</Text>
+			<Text x = "56" y = "636" duration="5">Men jag frågade endast ut min bastanta undersåte här.</Text>
+			<Text x = "745" y = "334" duration="1">Vi måste fly!</Text>
+			<Text x = "56" y = "636" duration="4">Men mitt överrakningskalas då?!</Text>
+
+		</Scene>
+	</Enviroment>
+
+	<Enviroment texture = "">
+		<Scene duration = "3">
+			<Image texture = "Resources/Cutscenes/Scene1/frog2.png" x = "0" y = "0" fadeIn = "0" fadeOut = "0"/>
+			<Voice file = "Resources/Sound/Cutscenes/Scen1/del3.ogg"/>
+			<Text x = "183" y = "656" duration="3">Det brinner i knutarna!</Text>
+
+		</Scene>
+	</Enviroment>
+
+	<Enviroment texture = "Resources/Cutscenes/Scene1/bak1.png">
+		<Scene duration = "5">
+			<Image texture = "Resources/Cutscenes/Scene1/sol3.png" x = "0" y = "0" fadeIn = "0" fadeOut = "1"/>
+			<Image texture = "Resources/Cutscenes/Scene1/frog3.png" x = "0" y = "0" fadeIn = "0" fadeOut = "1"/>
+			<Image texture = "Resources/Cutscenes/Scene1/orm4.png" x = "0" y = "0" fadeIn = "0" fadeOut = "1"/>
+			<Voice file = "Resources/Sound/Cutscenes/Scen1/del4.ogg"/>
+			<Text x = "544" y = "295" duration="5">Mitt kalas! Mitt överraskningskalas!</Text>
+
 		</Scene>
 	</Enviroment>
 </Cutscene>

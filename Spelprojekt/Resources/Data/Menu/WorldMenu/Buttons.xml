@@ -4,7 +4,7 @@
 
 	<Event>addTaktik</Event>
 
-	<Images>Resources/Menu/WorldMenu/Jungle1.png</Images>
+	<Images>Resources/Menu/WorldMenu/jungle1.png</Images>
 
 	<Bana>Resources/Data/Level/Jungle_Level1.xml</Bana>
 
@@ -16,7 +16,7 @@
 
 	<Event>addTaktik</Event>
 
-	<Images>Resources/Menu/WorldMenu/Jungle2.png</Images>
+	<Images>Resources/Menu/WorldMenu/jungle2.png</Images>
 
 	<Bana>Resources/Data/Level/Jungle_Level2.xml</Bana>
 
@@ -28,7 +28,7 @@
 
 	<Event>addTaktik</Event>
 
-	<Images>Resources/Menu/WorldMenu/swamp.png</Images>
+	<Images>Resources/Menu/WorldMenu/swamp1.png</Images>
 
 	<Bana>Resources/Data/Level/Swamp_Level1.xml</Bana>
 
@@ -40,7 +40,7 @@
 
 	<Event>addTaktik</Event>
 
-	<Images>Resources/Menu/WorldMenu/swamp.png</Images>
+	<Images>Resources/Menu/WorldMenu/swamp2.png</Images>
 
 	<Bana>Resources/Data/Level/Swamp_Level2.xml</Bana>
 
@@ -52,7 +52,7 @@
 
 	<Event>addTaktik</Event>
 
-	<Images>Resources/Menu/WorldMenu/swamp.png</Images>
+	<Images>Resources/Menu/WorldMenu/swamp3.png</Images>
 
 	<Bana>Resources/Data/Level/Swamp_Level3.xml</Bana>
 
@@ -65,7 +65,7 @@
 
 	<Event>addTaktik</Event>
 
-	<Images>Resources/Menu/WorldMenu/night.png</Images>
+	<Images>Resources/Menu/WorldMenu/natt1.png</Images>
 
 	<Bana>Resources/Data/Level/Night_Level1.xml</Bana>
 
@@ -77,7 +77,7 @@
 
 	<Event>addTaktik</Event>
 
-	<Images>Resources/Menu/WorldMenu/night.png</Images>
+	<Images>Resources/Menu/WorldMenu/natt2.png</Images>
 
 	<Bana>Resources/Data/Level/Night_Level2.xml</Bana>
 
@@ -89,7 +89,7 @@
 
 	<Event>addTaktik</Event>
 
-	<Images>Resources/Menu/WorldMenu/night.png</Images>
+	<Images>Resources/Menu/WorldMenu/natt3.png</Images>
 
 	<Bana>Resources/Data/Level/Night_Level3.xml</Bana>
 
@@ -101,7 +101,7 @@
 
 	<Event>addTaktik</Event>
 
-	<Images>Resources/Menu/WorldMenu/night.png</Images>
+	<Images>Resources/Menu/WorldMenu/natt4.png</Images>
 
 	<Bana>Resources/Data/Level/Night_Level4.xml</Bana>
 
