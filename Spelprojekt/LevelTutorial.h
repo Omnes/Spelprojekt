@@ -12,18 +12,18 @@ public:
 	virtual void update();
 	virtual void render();
 	virtual std::string getMusic();
-	void setArrowPositions();
 	void readAnimals(); 
 
 private:
 
+	float mIntroLength, mStep1, mStep2, mStep3;
 	std::string mMusic;
 	TaktikMeny* mTaktik;
 	sf::Clock mTimer1;
 	sf::Clock mTimer2;
-	bool mStartedTimer;
-	sf::Sprite mArrow;
-	std::vector<sf::Sprite> mArrows;
+	bool mStartedTimer, mS1Played;
+	sf::Sprite mArrow, mSpot, mObst1, mObst2;
+
 
 };
 

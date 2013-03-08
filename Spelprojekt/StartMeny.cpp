@@ -5,6 +5,8 @@
 #include "StateManager.h"
 #include "Animalipedia.h"
 #include "OptionsMeny.h"
+#include "EventManager.h"
+
 
 #include <SFML\Window\Keyboard.hpp>
 
@@ -33,6 +35,10 @@ void StartMeny::update(){
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)){
 		StateManager::getInst().addState(new OptionsMeny);
 	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::C)){
+		EventManager::getInst().addEvent("cutscene_1");
+	}
+
 }
 
 void StartMeny::render(){

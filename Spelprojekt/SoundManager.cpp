@@ -95,11 +95,12 @@ sf::Time& SoundManager::playVoice(std::string filename){
 		mCurrentVoice->stop();
 		delete mCurrentVoice;
 	}
-	mCurrentVoice = new sf::Sound();
-	mCurrentVoice->setBuffer(*ResourceManager::getInst().getSoundBuffer(filename));
+	mCurrentVoice = new sf::Music();
+	mCurrentVoice->openFromFile(filename);
+	//mCurrentVoice->setBuffer(*ResourceManager::getInst().getSoundBuffer(filename));
 	mCurrentVoice->setVolume(mVoiceVolume * (!mMuted));
 	mCurrentVoice->play();
-	return mCurrentVoice->getBuffer()->getDuration();
+	return mCurrentVoice->getDuration();
 }
 
 void SoundManager::fadeTo(std::string filename,float fadeTime){

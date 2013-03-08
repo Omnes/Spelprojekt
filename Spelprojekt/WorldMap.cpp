@@ -166,6 +166,10 @@ void WorldMap::saveToFile(std::string currentLevel){
 		}
 		mBurnedLevelVector.clear();
 
+		//if(mWorld > mCurrentWorld){
+		//	EventManager::getInst().addEvent("cutscene_1");
+		//}
+
 		mCurrentWorld = mWorld;
 		mSection = mCurrentSection;
 	}
@@ -279,6 +283,7 @@ void WorldMap::setCurrentWorldOrSub(std::string currentLevel){
 	if(mWorldVector[mWorld].size() <= mSub){
 		mWorld++;
 		mSub = 0;
+		
 	}
 
 	for(ButtonVector::iterator i = mButtonVector.begin(); i != mButtonVector.end(); i++){

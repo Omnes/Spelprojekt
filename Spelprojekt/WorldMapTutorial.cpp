@@ -30,7 +30,7 @@ WorldMapTutorial::~WorldMapTutorial(){
 void WorldMapTutorial::update(){
 
 	//När ljudet spelats
-	if(mTimer.getElapsedTime().asSeconds() > 7/*ljudtid*/){
+	if(mTimer.getElapsedTime().asSeconds() > 6/*ljudtid*/){
 		StateManager::getInst().popState();
 	}
 }
