@@ -1,7 +1,7 @@
 #include "SoundManager.h"
+
 #include "tinyxml2.h"
 #include "ResourceManager.h"
-
 SoundManager::SoundManager()
 	: mMuted(false)
 	, mMusicVolume(100)
@@ -11,17 +11,21 @@ SoundManager::SoundManager()
 	, mCurrentVoice(0)
 	, mVoiceVolume(100){
 
-		tinyxml2::XMLDocument doc;
-		doc.LoadFile("Resources/data/settings.xml");
-
-		tinyxml2::XMLElement* elm = doc.FirstChildElement("Sound");
-
-		mMusicVolume = elm->FloatAttribute("musicVolume");
-		mSoundVolume = elm->FloatAttribute("soundVolume"); 
-		mVoiceVolume = elm->FloatAttribute("voiceVolume"); 
-		mMuted = elm->BoolAttribute("muted");
+		loadSettings();
 
 
+}
+
+void SoundManager::loadSettings(){
+	tinyxml2::XMLDocument doc;
+	doc.LoadFile("Resources/data/settings.xml");
+
+	tinyxml2::XMLElement* elm = doc.FirstChildElement("Sound");
+
+	mMusicVolume = elm->FloatAttribute("musicVolume");
+	mSoundVolume = elm->FloatAttribute("soundVolume"); 
+	mVoiceVolume = elm->FloatAttribute("voiceVolume"); 
+	mMuted = elm->BoolAttribute("muted");
 }
 
 SoundManager::~SoundManager(){}

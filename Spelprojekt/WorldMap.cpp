@@ -3,6 +3,9 @@
 #include "ResourceManager.h"
 #include "EventManager.h"
 #include <SFML\Window\Keyboard.hpp>
+#include "StateManager.h"
+#include "Cutscene.h"
+
 
 
 WorldMap::WorldMap() : 
@@ -29,6 +32,10 @@ WorldMap::WorldMap() :
 	mCurrentSection = mSection;
 
 	mButton = new Button(sf::Vector2f(100,100), "addAnimalipedia", "Resources/Menu/knapp.png", "");
+
+	mCutscenes.push_back("Resources/Data/Cutscenes/Cutscene_1.xml");
+	mCutscenes.push_back("Resources/Data/Cutscenes/Cutscene_2.xml");
+	mCutscenes.push_back("Resources/Data/Cutscenes/Cutscene_3.xml");
 
 }
 
@@ -283,6 +290,7 @@ void WorldMap::setCurrentWorldOrSub(std::string currentLevel){
 	if(mWorldVector[mWorld].size() <= mSub){
 		mWorld++;
 		mSub = 0;
+		StateManager::getInst().addState(new Cutscene(mCutscenes[mWorld-1])); //hårdkodade cutscenes ohoy!
 		
 	}
 

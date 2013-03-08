@@ -7,6 +7,7 @@
 
 
 
+
 Camera::Camera(LayerManager* layermanager) : 
 	mLayerManager(layermanager), 
 	mWindow(WindowManager::getInst().getWindow()), 

@@ -13,7 +13,7 @@
 		<Texture>Resources/GUI/innerbeast.png</Texture>
 		<Stats cooldown="3" speedIncrease="2" duration="1"/>
 		<InfoPicture>Resources/GUI/speed.png</InfoPicture>
-		<Sound onUse = "Resources/Sound/Effekts/InnerBeat_effekt.wav"/>
+		<Sound onUse = ""/>
 	</InnerBeast>
 
 
@@ -30,7 +30,7 @@
 			<Obstacle>Trash</Obstacle>
 		</CanRemove>
 		<InfoPicture>Resources/GUI/manmade.png</InfoPicture>
-		<Sound onUse = "Resources/Sound/Effekts/Care_effekt.wav"/>
+		<Sound onUse = "Resources/Sound/Effekts/Unlock_effekt.wav"/>
 
 	</Omsorg>
 

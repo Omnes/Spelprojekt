@@ -17,7 +17,7 @@ StartMeny::StartMeny(){
 	//mButtons.push_back(new Button(sf::Vector2f(800,200), "addMap","Resources/Menu/StartMenu/StartButton.png", "Resources/Sound/Menu/Menu_click.wav"));
 	mButtons.push_back(new Button(sf::Vector2f(800,400), "exitGame","Resources/Menu/StartMenu/ExitButton.png", "Resources/Sound/Menu/Menu_click.wav"));
 
-	mMusic = "Resources/Sound/Level2_";
+	mMusic = "Resources/Sound/Music/TitleScreen";
 	mBackground.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/StartMenu/startMeny.png"));
 
 
