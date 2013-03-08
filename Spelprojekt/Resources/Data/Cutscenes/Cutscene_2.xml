@@ -1,0 +1,12 @@
+<Cutscene music = "Level1_">
+	<Enviroment texture = "Resources/Menu/LevelFinished.png">
+		<Scene duration = "0">
+			<Image texture = "Resources/Animals/bat.png" x = "100" y = "100" fadeIn = "1" fadeOut = "0"/>
+			<Voice file = "Resources/Sound/TitleScreen1.ogg"/>
+			<Text x = "400" y = "500" duration="0">Spring, vi har en eld bakom oss grodan!</Text>
+
+		</Scene>
+
+	</Enviroment>
+
+</Cutscene>

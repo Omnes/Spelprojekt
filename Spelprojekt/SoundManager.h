@@ -11,6 +11,8 @@ public:
 	static SoundManager& getInst();
 	void update();
 
+	void loadSettings();
+
 	void play(std::string filename);
 	void play(sf::Sound& sound);
 	sf::Time& playVoice(std::string filename);

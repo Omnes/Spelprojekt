@@ -9,6 +9,7 @@
 #include <string> // kanske inte behövs (se: saveToFile(std::string))
 #include <vector>
 
+
 class WorldMap : public States{
 
 public:
@@ -47,6 +48,8 @@ private:
 
 	typedef std::vector <std::string> DeadAnimalVector;
 	DeadAnimalVector mDeadAnimalVector;
+
+	std::vector<std::string> mCutscenes;
 
 	std::string mMusic;
 

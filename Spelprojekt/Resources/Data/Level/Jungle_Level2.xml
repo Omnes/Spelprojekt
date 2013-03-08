@@ -19,12 +19,12 @@
 	<Layer_2>
 		<Layer>static</Layer>
 		<Images>
-			<Image_1>Resources/Level/Jungle/BakG1.png</Image_1>
-			<Image_1>Resources/Level/Jungle/BakG2.png</Image_1>
 			<Image_1>Resources/Level/Jungle/BakG3.png</Image_1>
 			<Image_1>Resources/Level/Jungle/BakG4.png</Image_1>
-			<Image_1>Resources/Level/Jungle/BakG1.png</Image_1>
-			<Image_1>Resources/Level/Jungle/BakG2.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakG3.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakG4.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakG3.png</Image_1>
+			<Image_1>Resources/Level/Jungle/BakG4.png</Image_1>
 			<Image_1>Resources/Level/Jungle/BakG3.png</Image_1>
 			<Image_1>Resources/Level/Jungle/BakG4.png</Image_1>
 
@@ -114,7 +114,7 @@
 <LevelsYValue air="100" middle="290" ground="500"/>
 
 
-<Music>Resources/Sound/Level1_</Music>
+<Music>Resources/Sound/Music/Level_1_</Music>
 
 <Gui>Resources/GUI/JungleGUI.png</Gui>
 

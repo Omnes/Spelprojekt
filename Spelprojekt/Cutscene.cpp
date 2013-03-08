@@ -5,6 +5,7 @@
 #include "tinyxml2.h"
 #include "ResourceManager.h"
 #include "StateManager.h"
+#include "SoundManager.h"
 
 
 Cutscene::Cutscene(std::string file){
@@ -13,7 +14,7 @@ Cutscene::Cutscene(std::string file){
 	mCurrentScene = 0;
 
 	WindowManager::getInst().getCursor()->setColor(sf::Color(0,0,0,0));
-
+	SoundManager::getInst().setMusicVolume(5); // komihåg att ändra tillbaka detta efter betan!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! <----- LÄS DEN HÄR
 	
 }
 
@@ -28,6 +29,8 @@ Cutscene::~Cutscene(){
 		delete mEnviroments.back().second;
 		mEnviroments.pop_back();
 	}
+
+	SoundManager::getInst().loadSettings();
 }
 
 void Cutscene::goToNext(){

@@ -120,7 +120,7 @@
 <LevelsYValue air="100" middle="290" ground="500"/>
 
 
-<Music>Resources/Sound/Level1_</Music>
+<Music>Resources/Sound/Music/Level_1_</Music>
 
 <Gui>Resources/GUI/JungleGUI.png</Gui>
 
