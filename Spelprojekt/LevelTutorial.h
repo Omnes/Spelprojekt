@@ -22,7 +22,7 @@ private:
 	sf::Clock mTimer1;
 	sf::Clock mTimer2;
 	bool mStartedTimer, mS1Played;
-	sf::Sprite mArrow, mSpot, mObst1, mObst2;
+	sf::Sprite mArrow, mSpot, mObst1, mObst2, mSteer, mScroll;
 
 
 };
