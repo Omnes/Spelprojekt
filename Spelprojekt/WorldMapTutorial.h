@@ -13,7 +13,6 @@ public:
 	virtual void update();
 	virtual void render();
 	virtual std::string getMusic();
-	void setArrowPositions();
 
 private:
 
@@ -21,7 +20,8 @@ private:
 	WorldMap* mWorldMap;
 	sf::Clock mTimer;
 	sf::Sprite mArrow;
-	std::vector<sf::Sprite> mArrows;
+	sf::Sprite mArrow2;
+	float mTutorialDuration;
 
 };
 
