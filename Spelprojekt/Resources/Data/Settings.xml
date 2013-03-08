@@ -4,7 +4,11 @@
 
 <Camera minSpeed="-3" maxSpeed="4" acceleration="0.06"/>
 
+<<<<<<< HEAD
 <Sound musicVolume="50" soundVolume="100" voiceVolume = "100" muted="0"/>
+=======
+<Sound musicVolume="100" soundVolume="100" voiceVolume="100" muted="0"/>
+>>>>>>> sean
 
 <Window framelimit="60" vsync="1">
     <Title>Flykten</Title>

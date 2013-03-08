@@ -242,6 +242,9 @@
     <ClCompile Include="GoBackToWorld.cpp">
       <Filter>Source Files\Events</Filter>
     </ClCompile>
+    <ClCompile Include="OptionSlider.cpp">
+      <Filter>Source Files\Interface</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EventManager.h">
@@ -477,9 +480,12 @@
     </ClInclude>
     <ClInclude Include="WorldMapTutorial.h">
       <Filter>Header Files\States</Filter>
-	</ClInclude>
+    </ClInclude>
     <ClInclude Include="AddCutscene_1.h">
       <Filter>Header Files\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="OptionSlider.h">
+      <Filter>Header Files\Interface</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

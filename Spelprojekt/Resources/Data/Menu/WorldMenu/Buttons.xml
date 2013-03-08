@@ -1,6 +1,6 @@
 <Button>
 
-	<Position x="7" y="280"/>
+	<Position x="-14" y="246"/>
 
 	<Event>addTaktik</Event>
 
@@ -12,7 +12,7 @@
 
 <Button>
 
-	<Position x="0" y="333"/>
+	<Position x="33" y="440"/>
 
 	<Event>addTaktik</Event>
 
@@ -24,7 +24,7 @@
 
 <Button>
 
-	<Position x="640" y="450"/>
+	<Position x="420" y="483"/>
 
 	<Event>addTaktik</Event>
 
@@ -36,7 +36,7 @@
 
 <Button>
 
-	<Position x="560" y="400"/>
+	<Position x="800" y="400"/>
 
 	<Event>addTaktik</Event>
 
@@ -48,7 +48,7 @@
 
 <Button>
 
-	<Position x="560" y="560"/>
+	<Position x="800" y="560"/>
 
 	<Event>addTaktik</Event>
 
