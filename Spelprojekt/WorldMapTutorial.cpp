@@ -48,7 +48,7 @@ void WorldMapTutorial::update(){
 
 	if(mTimer.getElapsedTime().asSeconds() > mTutorialDuration){
 		StateManager::getInst().popState();
-		SoundManager::getInst().setMusicVolume(100);
+		SoundManager::getInst().loadSettings();
 	}
 }
 

@@ -154,7 +154,7 @@ void LevelTutorial::update(){
 										if(mTimer2.getElapsedTime().asSeconds() > mStep2){	
 											
 											mTaktik->update();
-											SoundManager::getInst().setMusicVolume(100);
+											SoundManager::getInst().loadSettings();
 										}
 									}
 								}
