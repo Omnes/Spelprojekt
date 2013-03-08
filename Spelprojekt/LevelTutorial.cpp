@@ -29,9 +29,18 @@ LevelTutorial::LevelTutorial()
 		mObst2.setTexture(*ResourceManager::getInst().getTexture("Resources/GUI/nature.png"));
 		mObst2.setPosition(690, 515);
 
+		mSteer.setTexture(*ResourceManager::getInst().getTexture("Resources/Misc/piltangent.png"));
+		mSteer.setOrigin(mSteer.getTexture()->getSize().x/2,mSteer.getTexture()->getSize().y/2);
+		mSteer.setPosition(500,380);
+
+		mScroll.setTexture(*ResourceManager::getInst().getTexture("Resources/Misc/scroller.png"));
+		mScroll.setOrigin(mSteer.getTexture()->getSize().x/2,mSteer.getTexture()->getSize().y/2);
+		mScroll.setPosition(500,380);
+
 		LevelManager::getInst().setFilePath("Resources/Data/Level/Jungle_Level1.xml");
 		
 		readAnimals();
+
 
 		sf::Sprite loadingscreen(*ResourceManager::getInst().getTexture("Resources/Menu/LevelFinished.png"));
 		WindowManager::getInst().getWindow()->draw(loadingscreen);
@@ -175,13 +184,22 @@ void LevelTutorial::render(){
 		window->draw(mObst1);
 		window->draw(mObst2);
 	}
+
+	if(mTimer2.getElapsedTime().asSeconds() > 28.5 && mTimer2.getElapsedTime().asSeconds() < 32 && mStartedTimer == true){
+
+		window->draw(mSteer);
+	}
+	
+	if(mTimer2.getElapsedTime().asSeconds() > 32 && mTimer2.getElapsedTime().asSeconds() < 34 && mStartedTimer == true){
+
+		window->draw(mScroll);
+	}
 }
 
 std::string LevelTutorial::getMusic(){
 
 	return mMusic;
 }
-
 
 void LevelTutorial::readAnimals(){
 
