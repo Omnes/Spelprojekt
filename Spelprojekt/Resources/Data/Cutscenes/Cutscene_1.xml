@@ -1,41 +1,64 @@
 <Cutscene music = "Level1_">
-	<Enviroment texture = "Resources/Cutscenes/Scene1/bak2.png">
-		<Scene duration = "4">
-			<Image texture = "Resources/Cutscenes/Scene1/groda1.png" x = "0" y = "0" fadeIn = "1" fadeOut = "0"/>
-			<Voice file = "Resources/Sound/TitleScreen1.ogg"/>
-			<Text x = "400" y = "700" duration="4">”Varför springer du, min aningen rundlätte undersåte?”</Text>
+	<Enviroment texture = "Resources/Cutscenes/Scene1/bak1.png">
+		<Scene duration = "2">
+			<Image texture = "Resources/Cutscenes/Scene1/frog1.png" x = "0" y = "0" fadeIn = "1" fadeOut = "0"/>
+			<Voice file = ""/>
+			<Text x = "400" y = "700" duration="4"></Text>
 		</Scene>
 		<Scene duration = "4">
-			<Image texture = "Resources/Cutscenes/Scene1/orm2.png" x = "0" y = "0" fadeIn = "0" fadeOut = "1"/>
-			<Voice file = "Resources/Sound/TitleScreen1.ogg"/>
-			<Text x = "400" y = "700" duration="4">”Varför springer du, min aningen rundlätte undersåte?”</Text>
+			<Image texture = "Resources/Cutscenes/Scene1/orm1.png" x = "0" y = "0" fadeIn = "0" fadeOut = "1"/>
+			<Image texture = "Resources/Cutscenes/Scene1/frog1.png" x = "0" y = "0" fadeIn = "0" fadeOut = "1"/>
+			<Voice file = ""/>
+			<Text x = "400" y = "700" duration="4"></Text>
 
 		</Scene>
 	</Enviroment>
 
 	<Enviroment texture = "Resources/Cutscenes/Scene1/bak2.png">
-		<Scene duration = "4">
-			<Image texture = "Resources/Cutscenes/Scene1/sol2.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
-			<Voice file = "Resources/Sound/TitleScreen1.ogg"/>
-			<Text x = "400" y = "700">”Varför springer du, min aningen rundlätte undersåte?”</Text>
+		<Scene duration = "34">
+			<Image texture = "Resources/Cutscenes/Scene1/orm2.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
+			<Voice file = "Resources/Sound/Cutscenes/Scen1/del1.ogg"/>
+			<Text x = "400" y = "700" duration="4">”Varför springer du, min aningen rundlätte undersåte?”</Text>
 
 		</Scene>
 	</Enviroment>
 	
 	<Enviroment texture = "Resources/Cutscenes/Scene1/bak1.png">
-		<Scene duration = "4">
+		<Scene duration = "3">
 			<Image texture = "Resources/Cutscenes/Scene1/sol1.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
-			<Image texture = "Resources/Cutscenes/Scene1/orm1.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
-			<Voice file = "Resources/Sound/TitleScreen1.ogg"/>
-			<Text x = "400" y = "500" duration="2">asså den här elden är ju den invalidaste haggan någonsin...</Text>
+			<Voice file = ""/>
+			<Text x = "400" y = "500" duration="2"></Text>
 
 		</Scene>
+	</Enviroment>
+	
+	<Enviroment texture = "Resources/Cutscenes/Scene1/bak2.png">
+		<Scene duration = "13">
+			<Image texture = "Resources/Cutscenes/Scene1/sol2.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
+			<Image texture = "Resources/Cutscenes/Scene1/orm2.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
+			<Voice file = "Resources/Sound/Cutscenes/Scen1/del2.ogg"/>
+			<Text x = "400" y = "500" duration="2"></Text>
+
+		</Scene>
+	</Enviroment>
+
+	<Enviroment texture = "Resources/Cutscenes/Scene1/bak2.png">
 		<Scene duration = "4">
-			<Image texture = "Resources/Cutscenes/Scene1/groda2.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
-			<Voice file = "Resources/Sound/TitleScreen1.ogg"/>
-			<Text x = "400" y = "650" duration="4">”Det brinner i knutarna!”</Text>
+			<Image texture = "Resources/Cutscenes/Scene1/frog2.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
+			<Voice file = "Resources/Sound/Cutscenes/Scen1/del3.ogg"/>
+			<Text x = "400" y = "500" duration="4">Det brinner i knutarna!</Text>
 
 		</Scene>
+	</Enviroment>
 
+	<Enviroment texture = "Resources/Cutscenes/Scene1/bak1.png">
+		<Scene duration = "7">
+			<Image texture = "Resources/Cutscenes/Scene1/sol3.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
+			<Image texture = "Resources/Cutscenes/Scene1/frog3.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
+			<Image texture = "Resources/Cutscenes/Scene1/orm4.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
+			<Voice file = "Resources/Sound/Cutscenes/Scen1/del2.ogg"/>
+			<Text x = "400" y = "500" duration="2"></Text>
+
+		</Scene>
 	</Enviroment>
 </Cutscene>
