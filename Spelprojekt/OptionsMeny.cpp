@@ -7,7 +7,7 @@ OptionsMeny::OptionsMeny()
 	: mApplyButton(sf::Vector2f(900,600),"Resources/Menu/knapp.png","",this){
 	mCheckboxes.push_back(new Checkbox(sf::Vector2f(1050,165),"Resolution","fullscreen"));
 	mCheckboxes.push_back(new Checkbox(sf::Vector2f(270,435),"Sound","muted"));
-	mMusic = "Resources/Sound/TitleScreen";
+	mMusic = "Resources/Sound/Music/TitleScreen";
 
 
 	mBackground.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/OptionsMenu/OptionsBG.png"));

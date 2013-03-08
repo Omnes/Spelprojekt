@@ -10,7 +10,7 @@ GameOver::GameOver()
 	, mBackground(*ResourceManager::getInst().getTexture("Resources/Menu/GameOverMenu/GameOver.png"))
 	, mRetryLevel(sf::Vector2f(600,200), "retry", "Resources/Menu/GameOverMenu/RetryButton.png", "Resources/Sound/test.wmv"){
 
-		mMusic = "Resources/Sound/TitleScreen";
+		mMusic = "Resources/Sound/Music/TitleScreen";
 }
 
 
