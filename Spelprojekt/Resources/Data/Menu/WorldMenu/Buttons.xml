@@ -1,6 +1,6 @@
 <Button>
 
-	<Position x="7" y="280"/>
+	<Position x="-14" y="246"/>
 
 	<Event>addTaktik</Event>
 
@@ -12,11 +12,11 @@
 
 <Button>
 
-	<Position x="0" y="333"/>
+	<Position x="33" y="440"/>
 
 	<Event>addTaktik</Event>
 
-	<Images>Resources/Menu/WorldMenu/Jungle2.png</Images>
+	<Images>Resources/Menu/WorldMenu/jungle2.png</Images>
 
 	<Bana>Resources/Data/Level/Jungle_Level2.xml</Bana>
 
@@ -24,11 +24,11 @@
 
 <Button>
 
-	<Position x="640" y="450"/>
+	<Position x="420" y="483"/>
 
 	<Event>addTaktik</Event>
 
-	<Images>Resources/Menu/WorldMenu/swamp.png</Images>
+	<Images>Resources/Menu/WorldMenu/swamp1.png</Images>
 
 	<Bana>Resources/Data/Level/Swamp_Level1.xml</Bana>
 
@@ -36,11 +36,11 @@
 
 <Button>
 
-	<Position x="560" y="400"/>
+	<Position x="800" y="400"/>
 
 	<Event>addTaktik</Event>
 
-	<Images>Resources/Menu/WorldMenu/swamp.png</Images>
+	<Images>Resources/Menu/WorldMenu/swamp2.png</Images>
 
 	<Bana>Resources/Data/Level/Swamp_Level2.xml</Bana>
 
@@ -48,11 +48,11 @@
 
 <Button>
 
-	<Position x="560" y="560"/>
+	<Position x="800" y="560"/>
 
 	<Event>addTaktik</Event>
 
-	<Images>Resources/Menu/WorldMenu/swamp.png</Images>
+	<Images>Resources/Menu/WorldMenu/swamp3.png</Images>
 
 	<Bana>Resources/Data/Level/Swamp_Level3.xml</Bana>
 
@@ -65,7 +65,7 @@
 
 	<Event>addTaktik</Event>
 
-	<Images>Resources/Menu/WorldMenu/night.png</Images>
+	<Images>Resources/Menu/WorldMenu/natt1.png</Images>
 
 	<Bana>Resources/Data/Level/Night_Level1.xml</Bana>
 
@@ -77,7 +77,7 @@
 
 	<Event>addTaktik</Event>
 
-	<Images>Resources/Menu/WorldMenu/night.png</Images>
+	<Images>Resources/Menu/WorldMenu/natt2.png</Images>
 
 	<Bana>Resources/Data/Level/Night_Level2.xml</Bana>
 
@@ -89,7 +89,7 @@
 
 	<Event>addTaktik</Event>
 
-	<Images>Resources/Menu/WorldMenu/night.png</Images>
+	<Images>Resources/Menu/WorldMenu/natt3.png</Images>
 
 	<Bana>Resources/Data/Level/Night_Level3.xml</Bana>
 
@@ -101,7 +101,7 @@
 
 	<Event>addTaktik</Event>
 
-	<Images>Resources/Menu/WorldMenu/night.png</Images>
+	<Images>Resources/Menu/WorldMenu/natt4.png</Images>
 
 	<Bana>Resources/Data/Level/Night_Level4.xml</Bana>
 
