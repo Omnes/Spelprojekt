@@ -11,7 +11,7 @@ Animalipedia::Animalipedia()
 	, mUpButton(sf::Vector2f(0,0),1,"Resources/Menu/knapp.png","",this)
 	, mDownButton(sf::Vector2f(0,600),-1,"Resources/Menu/knapp.png","",this){
 
-		mMusic = "Resources/Sound/TitleScreen";
+		mMusic = "Resources/Sound/Music/TitleScreen";
 		loadUnlocked();
 		mInfo = 0;
 		setPage(mCurrentButtonPage);

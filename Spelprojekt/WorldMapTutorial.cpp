@@ -4,7 +4,7 @@
 #include "SoundManager.h"
  
 WorldMapTutorial::WorldMapTutorial() {
-	mMusic = "Resources/Sound/TitleScreen";
+	mMusic = "Resources/Sound/Music/TitleScreen";
 	mArrow.setTexture(*ResourceManager::getInst().getTexture("Resources/GUI/pil.png"));
 	mArrow.setTextureRect(sf::IntRect(0,0, mArrow.getTexture()->getSize().x/10, mArrow.getTexture()->getSize().y));
 	mArrow.setOrigin(mArrow.getTexture()->getSize().x/20, mArrow.getTexture()->getSize().y/2);
@@ -48,7 +48,7 @@ void WorldMapTutorial::update(){
 
 	if(mTimer.getElapsedTime().asSeconds() > mTutorialDuration){
 		StateManager::getInst().popState();
-		SoundManager::getInst().setMusicVolume(100);
+		SoundManager::getInst().loadSettings();
 	}
 }
 

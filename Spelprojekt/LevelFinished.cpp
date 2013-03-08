@@ -17,7 +17,7 @@ LevelFinished::LevelFinished() : mButton(sf::Vector2f(500, 500), "goBackToWorld"
 	setPosition();
 
 	mBackground.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/LevelFinished.png"));
-	mMusic = "Resources/Sound/TitleScreen";
+	mMusic = "Resources/Sound/Music/TitleScreen";
 
 	mStampIndex = 0;
 }

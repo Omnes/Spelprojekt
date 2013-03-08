@@ -4,7 +4,6 @@
 
 <Camera minSpeed="-3" maxSpeed="4" acceleration="0.06"/>
 
-
 <Sound musicVolume="50" soundVolume="100" voiceVolume = "100" muted="0"/>
 
 

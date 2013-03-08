@@ -8,12 +8,13 @@ OptionsMeny::OptionsMeny()
 	mCheckboxes.push_back(new Checkbox(sf::Vector2f(1050,165),"Resolution","fullscreen"));
 	mCheckboxes.push_back(new Checkbox(sf::Vector2f(270,435),"Sound","muted"));
 
+
 	//ändra till vector sen.
 	mOptionSliders.push_back(new OptionSlider(50, sf::Vector2f(50,50), "Sound", "musicVolume"));
 	mOptionSliders.push_back(new OptionSlider(150, sf::Vector2f(50,150), "Sound", "soundVolume"));
 	mOptionSliders.push_back(new OptionSlider(250, sf::Vector2f(50,250), "Sound", "voiceVolume"));
 
-	mMusic = "Resources/Sound/TitleScreen";
+	mMusic = "Resources/Sound/Music/TitleScreen";
 
 
 	mBackground.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/OptionsMenu/OptionsBG.png"));
