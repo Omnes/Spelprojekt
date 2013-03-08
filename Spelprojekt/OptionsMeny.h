@@ -4,6 +4,7 @@
 #include "States.h"
 #include "Checkbox.h"
 #include "ApplyOptionsButton.h"
+#include "OptionSlider.h"
 
 class ResourceManager;
 
@@ -19,6 +20,12 @@ public:
 
 private:
 	std::vector<Checkbox*> mCheckboxes;
+
+	typedef std::vector<OptionSlider*> OptionSliders;
+	OptionSliders mOptionSliders;
+
+	//OptionSlider* mOptionSlider;
+
 	ApplyOptionsButton mApplyButton;
 
 	std::string mMusic;

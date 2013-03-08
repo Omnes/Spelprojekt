@@ -12,7 +12,8 @@ WorldMap::WorldMap() :
 	mWorld(0),
 	mSub(0),
 	mLevelCount(0),
-	mSection(0)
+	mSection(0),
+	mCount(0)
 {
 
 	readButtons();
@@ -51,6 +52,12 @@ void WorldMap::update(){
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
 		EventManager::getInst().addEvent("popState");
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::I)){
+		for (std::vector<LevelButton*>::iterator i = mButtonVector.begin(); i != mButtonVector.end(); i++){
+			(*i)->setActive(true);
+		}
 	}
 }
 

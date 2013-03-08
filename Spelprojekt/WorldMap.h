@@ -61,6 +61,9 @@ private:
 
 	Button* mButton;
 
+	//ta bort denna
+	int mCount;
+
 };
 
 #endif
