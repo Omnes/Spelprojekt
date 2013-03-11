@@ -74,6 +74,7 @@ void RemoveObstacleButton::killRelativePositionEntity(sf::Vector2f mousePosition
 				mCooldownTimer.restart();
 				didDelete = true;
 				SoundManager::getInst().play(mSoundFX);
+				setClicked(false);
 
 			}else{
 				i++;
@@ -85,7 +86,7 @@ void RemoveObstacleButton::killRelativePositionEntity(sf::Vector2f mousePosition
 			mEmitter.burst(mMissedAbility,10,10);
 		}
 
-		setClicked(false);
+		//setClicked(false);
 		
 		mClickCooldownTimer.restart();
 }

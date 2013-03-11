@@ -26,6 +26,10 @@ void SoundManager::loadSettings(){
 	mSoundVolume = elm->FloatAttribute("soundVolume"); 
 	mVoiceVolume = elm->FloatAttribute("voiceVolume"); 
 	mMuted = elm->BoolAttribute("muted");
+
+	if (mCurrentMusic != 0){
+		mCurrentMusic->setVolume(mMusicVolume);
+	}
 }
 
 SoundManager::~SoundManager(){}
