@@ -17,7 +17,6 @@ LevelButton::LevelButton(sf::Vector2f pos, std::string evt, std::string img, std
 	mSprite.setPosition(mPosition);
 	mRectangle = sf::IntRect(0,0, mTexture.getSize().x/3, mTexture.getSize().y); //Rekten ska ha rätt bredd
 	mSprite.setTextureRect(mRectangle);
-
 }
 
 LevelButton::~LevelButton(){
@@ -36,14 +35,14 @@ void LevelButton::update(){
 	
 		mCurrentImage=1;
 
-		if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){ 
+		if(sf::Mouse::isButtonPressed(sf::Mouse::Left) && GlobalButtonTimer::onCoolDown()){ 
 			
 			
 				//mCurrentImage=2;
 				LevelManager::getInst().setFilePath(mLevel);
 				EventManager::getInst().addEvent(mEvent);
 
-			
+				GlobalButtonTimer::globalRestart();
 		}		
 	}else if(mActive == false && mAlive == true){
 		mCurrentImage = 0;
