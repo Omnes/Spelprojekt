@@ -15,6 +15,23 @@ Gui::Gui(): mWindow(WindowManager::getInst().getWindow()){
 
 	mGuiSprite.setTexture(*ResourceManager::getInst().getTexture(LevelManager::getInst().getGuiTextureFilepath()));
 	mGuiSprite.setPosition(sf::Vector2f(0,0));
+
+	std::vector<std::string>* deadAnimalCollection = LevelManager::getInst().getDeadAnimalCollection();
+	
+	//skitkod skiter sig hårt när vi har mer än 1 dött djur <- fixa detta om det blir ett problem
+	for(std::vector<std::string>::iterator i = deadAnimalCollection->begin(); i != deadAnimalCollection->end();i++){
+		tinyxml2::XMLDocument doc;
+		doc.LoadFile((*i).c_str());
+		sf::Sprite* sprite = new sf::Sprite(*ResourceManager::getInst().getTexture(doc.FirstChildElement()->FirstChildElement("Images")->GetText()));
+		sprite->setTextureRect(sf::IntRect(0,0,sprite->getTexture()->getSize().x/10,sprite->getTexture()->getSize().y/2));
+		sprite->setPosition(1100,0);
+		sprite->setScale(0.5,0.5);
+		mExtinct.setPosition(1100,0);
+		mExtinct.setScale(0.5,0.5);
+		mDeadAnimals.push_back(sprite);
+	}
+
+	mExtinct.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/GameOverMenu/Extinct.png"));
 }
 
 void Gui::update(){
@@ -27,8 +44,14 @@ void Gui::render(){
 	for(AbilityButtons::iterator i = mButtons.begin(); i != mButtons.end(); i++){
 		mWindow->draw(*(*i)->getSprite());
 	}
+
+	for(std::vector<sf::Sprite*>::iterator i = mDeadAnimals.begin(); i != mDeadAnimals.end(); i++){
+		mWindow->draw(*(*i));
+		mWindow->draw(mExtinct);
+	}
 	
 }
+
 
 void Gui::unclickAll(){
 	for(AbilityButtons::iterator i = mButtons.begin(); i != mButtons.end(); i++){

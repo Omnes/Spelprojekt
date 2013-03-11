@@ -22,6 +22,8 @@ private:
 	AbilityButtons mButtons;
 	sf::RenderWindow* mWindow;
 	sf::Sprite mGuiSprite;
+	std::vector<sf::Sprite*> mDeadAnimals;
+	sf::Sprite mExtinct;
 
 };
 
