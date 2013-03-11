@@ -41,7 +41,7 @@ void WindowManager::createWindow(){
 	int frameLimit = win->IntAttribute("framelimit");
 	bool vsync = win->BoolAttribute("vsync");
 	mWindow->setVerticalSyncEnabled(vsync);
-	//mWindow->setFramerateLimit(frameLimit);
+	//mWindow->setFramerateLimit(frameLimit); //<------------ kom ihåg att avkommentera den här
 
 	
 	mDefaultView = new sf::View(mWindow->getDefaultView());

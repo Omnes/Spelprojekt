@@ -38,6 +38,7 @@ void ApplyOptionsButton::update(){
 		if(sf::Mouse::isButtonPressed(sf::Mouse::Left) && mClickCooldownTimer.getElapsedTime().asMilliseconds() > mClickCooldown){ 
 			mClickCooldownTimer.restart();
 			mOptionsMenu->saveSettings();
+			SoundManager::getInst().loadSettings();
 		}		
 	}
 

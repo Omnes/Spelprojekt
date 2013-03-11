@@ -18,16 +18,16 @@ Gui::Gui(): mWindow(WindowManager::getInst().getWindow()){
 
 	std::vector<std::string>* deadAnimalCollection = LevelManager::getInst().getDeadAnimalCollection();
 	
-	//skitkod skiter sig hårt när vi har mer än 1 dött djur <- fixa detta om det blir ett problem
+	//skitkod skiter sig hårt när vi har mer än 1 dött djur <- fixa detta om det blir ett problem... så mycket fel med den här kodbiten
 	for(std::vector<std::string>::iterator i = deadAnimalCollection->begin(); i != deadAnimalCollection->end();i++){
 		tinyxml2::XMLDocument doc;
 		doc.LoadFile((*i).c_str());
 		sf::Sprite* sprite = new sf::Sprite(*ResourceManager::getInst().getTexture(doc.FirstChildElement()->FirstChildElement("Images")->GetText()));
 		sprite->setTextureRect(sf::IntRect(0,0,sprite->getTexture()->getSize().x/10,sprite->getTexture()->getSize().y/2));
-		sprite->setPosition(1100,0);
-		sprite->setScale(0.5,0.5);
-		mExtinct.setPosition(1100,0);
-		mExtinct.setScale(0.5,0.5);
+		sprite->setPosition(1100,608);
+		sprite->setScale(0.65,0.65);
+		mExtinct.setPosition(1120,625);
+		mExtinct.setScale(0.4,0.4);
 		mDeadAnimals.push_back(sprite);
 	}
 
@@ -132,5 +132,9 @@ Gui::~Gui(){
 	while(!mButtons.empty()){
 		delete mButtons.back();
 		mButtons.pop_back();
+	}
+	while(!mDeadAnimals.empty()){
+		delete mDeadAnimals.back();
+		mDeadAnimals.pop_back();
 	}
 }
