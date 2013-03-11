@@ -2,6 +2,7 @@
 #define LEVELTUTORIAL
 #include "States.h"
 #include "Taktikmeny.h"
+#include "FakeAbilityButton.h"
 #include <SFML\System\Clock.hpp>
 
 class LevelTutorial : public States{
@@ -16,13 +17,15 @@ public:
 
 private:
 
-	float mIntroLength, mStep1, mStep2, mStep3;
+	float mIntroLength, mStep1, mStep2;
 	std::string mMusic;
 	TaktikMeny* mTaktik;
 	sf::Clock mTimer1;
 	sf::Clock mTimer2;
 	bool mStartedTimer, mS1Played;
-	sf::Sprite mArrow, mSpot, mObst1, mObst2, mSteer, mScroll;
+	sf::Sprite mArrow, mSpot, mSteer, mScroll;
+	typedef std::vector <FakeAbilityButton*> AbilityButton;
+	AbilityButton mAbilityButtons;
 
 
 };

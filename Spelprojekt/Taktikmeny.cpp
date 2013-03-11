@@ -381,7 +381,7 @@ void TaktikMeny::readFromFile(){
 	float abilityNumber = 0;
 
 	sf::Vector2f startPosition = sf::Vector2f(140,615);
-	sf::Vector2f distance = sf::Vector2f(200,0);
+	sf::Vector2f distance = sf::Vector2f(200,0); 
 	sf::Vector2f distance2 = sf::Vector2f(150,0);
 
 	sf::Vector2f position = startPosition;

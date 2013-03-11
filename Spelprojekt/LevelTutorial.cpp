@@ -10,7 +10,6 @@ LevelTutorial::LevelTutorial()
 	: mStartedTimer(false)
 	, mStep1(1)
 	, mStep2(1)
-	, mStep3(1)
 	, mS1Played(false){
 	
 		mMusic = "Resources/Sound/Music/TitleScreen";
@@ -24,12 +23,6 @@ LevelTutorial::LevelTutorial()
 		mSpot.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/TacticMenu/spot.png"));
 		mSpot.setPosition(85,300);
 		mSpot.setOrigin(mSpot.getTexture()->getSize().x/2, mSpot.getTexture()->getSize().y/2);
-
-		mObst1.setTexture(*ResourceManager::getInst().getTexture("Resources/GUI/manmade.png"));
-		mObst1.setPosition(390, 515);
-
-		mObst2.setTexture(*ResourceManager::getInst().getTexture("Resources/GUI/nature.png"));
-		mObst2.setPosition(690, 515);
 
 		mSteer.setTexture(*ResourceManager::getInst().getTexture("Resources/Misc/piltangent.png"));
 		mSteer.setOrigin(mSteer.getTexture()->getSize().x/2,mSteer.getTexture()->getSize().y/2);
@@ -143,18 +136,26 @@ void LevelTutorial::update(){
 								
 								mArrow.setPosition(-500,-500);
 
-								if(mTimer2.getElapsedTime().asSeconds() > 34.5){
+								if(mTimer2.getElapsedTime().asSeconds() > 20){
 
-									mArrow.setPosition(1010, 540);
+									for(std::vector<FakeAbilityButton*>::iterator i = mAbilityButtons.begin(); i != mAbilityButtons.end(); i++){
+										
+										(*i)->update();
+									}
 
-									if(mTimer2.getElapsedTime().asSeconds() > 37){
-
-										mArrow.setPosition(-500, -500);
-
-										if(mTimer2.getElapsedTime().asSeconds() > mStep2){	
+									if(mTimer2.getElapsedTime().asSeconds() > 34.5){
 											
-											mTaktik->update();
-											SoundManager::getInst().loadSettings();
+										mArrow.setPosition(1010, 540);
+
+										if(mTimer2.getElapsedTime().asSeconds() > 37){
+
+											mArrow.setPosition(-500, -500);
+
+											if(mTimer2.getElapsedTime().asSeconds() > mStep2){	
+											
+												mTaktik->update();
+												SoundManager::getInst().loadSettings();
+											}
 										}
 									}
 								}
@@ -187,10 +188,11 @@ void LevelTutorial::render(){
 		window->draw(mSpot);
 	}
 	
-	if(mTimer2.getElapsedTime().asSeconds() > 20 && mTimer2.getElapsedTime().asSeconds() < 26 && mStartedTimer == true){
-
-		window->draw(mObst1);
-		window->draw(mObst2);
+	if(mTimer2.getElapsedTime().asSeconds() > 20){
+		
+		for(std::vector<FakeAbilityButton*>::iterator i = mAbilityButtons.begin(); i != mAbilityButtons.end(); i++){
+			(*i)->render();
+		}
 	}
 
 	if(mTimer2.getElapsedTime().asSeconds() > 28.5 && mTimer2.getElapsedTime().asSeconds() < 32 && mStartedTimer == true){
@@ -224,4 +226,37 @@ void LevelTutorial::readAnimals(){
 	}
 
 	LevelManager::getInst().setAliveAnimals(fakeAnimals);
+
+		std::vector<std::string> abilities = LevelManager::getInst().getAbilitiesOnLevel();
+
+	tinyxml2::XMLDocument doca;
+	doca.LoadFile("Resources/Data/Abilities.xml");
+
+	float abilityNumber = 0;
+
+	sf::Vector2f startPosition = sf::Vector2f(140,615);
+	sf::Vector2f distance = sf::Vector2f(200,0); 
+	sf::Vector2f distance2 = sf::Vector2f(150,0);
+
+	sf::Vector2f position = startPosition;
+
+	for(std::vector<std::string>::iterator i = abilities.begin(); i != abilities.end();i++){
+		tinyxml2::XMLElement *elm = doca.FirstChildElement("Abilities")->FirstChildElement((*i).c_str());
+
+		std::string atexture = elm->FirstChildElement("Texture")->GetText();
+
+		std::string itexture = elm->FirstChildElement("InfoPicture")->GetText();
+
+		if(abilityNumber != 0){
+			if((int)abilityNumber % 2 == 1){
+				position += distance;
+			}else{
+				position += distance2;
+			}
+		}
+
+		mAbilityButtons.push_back(new FakeAbilityButton(position,atexture,itexture));
+
+		abilityNumber++;
+	}
 }
