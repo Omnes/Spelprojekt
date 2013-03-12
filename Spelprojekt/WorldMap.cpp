@@ -89,15 +89,18 @@ void WorldMap::readSave(){
 	}
 
 	//kollar vilka världar som är brända(banor)
-	tinyxml2::XMLElement *burnedLevel = doc.FirstChildElement("BurnedLevel");
-	while(burnedLevel != 0){
-		for(ButtonVector::iterator i = mButtonVector.begin(); i != mButtonVector.end(); i++){
-			if(burnedLevel->FirstAttribute()->Value() == (*i)->getLevel()){
-				//sätter världen till alive == false
-				(*i)->setAlive(false);
+	tinyxml2::XMLElement *burned = doc.FirstChildElement("Burned");
+	if(burned != 0){
+		tinyxml2::XMLElement *burnedLevel = burned->FirstChildElement("BurnedLevel");
+		while(burnedLevel != 0){
+			for(ButtonVector::iterator i = mButtonVector.begin(); i != mButtonVector.end(); i++){
+				if(burnedLevel->FirstAttribute()->Value() == (*i)->getLevel()){
+					//sätter världen till alive == false
+					(*i)->setAlive(false);
+				}
 			}
-		}
 		burnedLevel = burnedLevel->NextSiblingElement();
+		}
 	}
 
 	//kollar vilken section man är på
@@ -174,9 +177,12 @@ void WorldMap::saveToFile(std::string currentLevel){
 
 		//om man har gått vidare till nästa värld. spara vilka världar som har brunnit
 		for(BurnedLevelVector::iterator i = mBurnedLevelVector.begin(); i != mBurnedLevelVector.end();i++){
-			tinyxml2::XMLElement* burnedLevel = doc.NewElement("BurnedLevel");
-			burnedLevel->SetAttribute("Level", (*i).c_str());
-			doc.LinkEndChild(burnedLevel);
+
+			if(doc.FirstChildElement("Burned")){
+				tinyxml2::XMLElement* burnedLevel = doc.NewElement("BurnedLevel");
+				burnedLevel->SetAttribute("Level", (*i).c_str());
+				doc.LinkEndChild(burnedLevel);
+			}
 		}
 		mBurnedLevelVector.clear();
 
