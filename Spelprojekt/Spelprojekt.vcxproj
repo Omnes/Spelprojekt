@@ -106,7 +106,6 @@
     <ClCompile Include="Gameover.cpp" />
     <ClCompile Include="Gameplay.cpp" />
     <ClCompile Include="GlobalButtonTimer.cpp" />
-    <ClCompile Include="GoBackToWorld.cpp" />
     <ClCompile Include="Gui.cpp" />
     <ClCompile Include="Info.cpp" />
     <ClCompile Include="InnerBeastArrow.cpp" />

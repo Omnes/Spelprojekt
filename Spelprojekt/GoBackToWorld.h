@@ -12,7 +12,7 @@ class GoBackToWorld : public Event{
 
 public:
 
-	static bool sTutorialPlayed;
+	//static bool sTutorialPlayed;
 	GoBackToWorld(){}
 	~GoBackToWorld(){}
 	virtual void update(){
@@ -22,9 +22,13 @@ public:
 		worldMap->setDeadAnimals(LevelManager::getInst().getDeadAnimals());
 		worldMap->setCurrentWorldOrSub(LevelManager::getInst().getFilePath());
 		worldMap->readNewAnimals();
-		if(!sTutorialPlayed){
+
+		//kanske borde sätta den här ngn annanstans
+		tinyxml2::XMLDocument doc;
+		doc.LoadFile("Resources/Data/Save/SavedGame.xml");
+
+		if(!doc.FirstChildElement("Tutorial")){
 			StateManager::getInst().addState(new WorldMapTutorial);
-			sTutorialPlayed = true;
 		}
 	}
 };

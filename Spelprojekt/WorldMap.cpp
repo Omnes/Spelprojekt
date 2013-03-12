@@ -176,19 +176,20 @@ void WorldMap::saveToFile(std::string currentLevel){
 		}
 
 		//om man har gått vidare till nästa värld. spara vilka världar som har brunnit
-		for(BurnedLevelVector::iterator i = mBurnedLevelVector.begin(); i != mBurnedLevelVector.end();i++){
-
-			if(doc.FirstChildElement("Burned")){
-				tinyxml2::XMLElement* burnedLevel = doc.NewElement("BurnedLevel");
-				burnedLevel->SetAttribute("Level", (*i).c_str());
-				doc.LinkEndChild(burnedLevel);
-			}
-		}
-		mBurnedLevelVector.clear();
-
-		//if(mWorld > mCurrentWorld){
-		//	EventManager::getInst().addEvent("cutscene_1");
-		//}
+		tinyxml2::XMLElement* burned;																				//
+																													//
+		if(!doc.FirstChildElement("Burned")){																		//
+			burned = doc.NewElement("Burned");																		//
+			doc.LinkEndChild(burned);																				//
+		}																											//
+		//kanske inte funkar om burned är nollpekare. (= man har fuskat)											//
+		for(BurnedLevelVector::iterator i = mBurnedLevelVector.begin(); i != mBurnedLevelVector.end();i++){			//
+			tinyxml2::XMLElement* burnedLevel = doc.NewElement("BurnedLevel");										//
+			burnedLevel->SetAttribute("Level", (*i).c_str());														//
+			burned->LinkEndChild(burnedLevel);																		//
+		}																											//
+																													//
+		mBurnedLevelVector.clear();																					//
 
 		mCurrentWorld = mWorld;
 		mSection = mCurrentSection;

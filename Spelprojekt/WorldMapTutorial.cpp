@@ -31,6 +31,15 @@ WorldMapTutorial::WorldMapTutorial() {
 }
 
 WorldMapTutorial::~WorldMapTutorial(){
+
+	tinyxml2::XMLDocument doc;
+	doc.LoadFile("Resources/Data/Save/SavedGame.xml");
+
+	tinyxml2::XMLElement *tutorialDone = doc.NewElement("Tutorial");
+	doc.LinkEndChild(tutorialDone);
+
+	doc.SaveFile("Resources/Data/Save/SavedGame.xml");
+
 }
 
 void WorldMapTutorial::update(){
