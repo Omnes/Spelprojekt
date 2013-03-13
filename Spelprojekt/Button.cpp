@@ -2,6 +2,7 @@
 #include "ResourceManager.h"
 #include "EventManager.h"
 #include "WindowManager.h"
+#include "SoundManager.h"
 
 
 Button::Button(sf::Vector2f pos, std::string evt, std::string img, std::string sound) : 
@@ -43,6 +44,8 @@ void Button::update(){
 		//om knappen trycks ned
 		if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){ 
 			mTimer.restart();
+
+			SoundManager::getInst().play(mSound);
 			mPressed = true;
 		}		
 	}
