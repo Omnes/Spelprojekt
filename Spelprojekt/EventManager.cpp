@@ -16,6 +16,10 @@
 #include "GoBackToStartFromOptions.h"
 #include "StartGameFirstTime.h"
 #include "AddCutscene_1.h"
+#include "AddCutscene_2.h"
+#include "AddCutscene_3.h"
+#include "AddCutscene_4.h"
+
 
 EventManager::EventManager(){
 
@@ -35,7 +39,10 @@ EventManager::EventManager(){
 	mEventMap["retry"] = new Retry();
 	mEventMap["goBackToStartFromOptions"] = new GoBackToStartFromOptions();
 	mEventMap["startGameFirstTime"] = new StartGameFirstTime();
-	mEventMap["cutscene_1"] = new AddCutscene_1();
+	mEventMap["cutscene_intro"] = new AddCutscene_1();
+	mEventMap["cutscene_2"] = new AddCutscene_2();
+	mEventMap["cutscene_3"] = new AddCutscene_3();
+	mEventMap["cutscene_ending"] = new AddCutscene_4();
 
 }
 

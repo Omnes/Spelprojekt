@@ -150,6 +150,9 @@
     <ClInclude Include="ActiveLayer.h" />
     <ClInclude Include="AddAnimalipedia.h" />
     <ClInclude Include="AddCutscene_1.h" />
+    <ClInclude Include="AddCutscene_2.h" />
+    <ClInclude Include="AddCutscene_3.h" />
+    <ClInclude Include="AddCutscene_4.h" />
     <ClInclude Include="addGameOver.h" />
     <ClInclude Include="AddGameplay.h" />
     <ClInclude Include="AddLevelFinished.h" />

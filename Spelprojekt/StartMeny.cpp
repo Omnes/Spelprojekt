@@ -34,8 +34,17 @@ void StartMeny::update(){
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)){
 		StateManager::getInst().addState(new OptionsMeny);
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::C)){
-		EventManager::getInst().addEvent("cutscene_1");
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)){
+		EventManager::getInst().addEvent("cutscene_intro");
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)){
+		EventManager::getInst().addEvent("cutscene_2");
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)){
+		EventManager::getInst().addEvent("cutscene_3");
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)){
+		EventManager::getInst().addEvent("cutscene_ending");
 	}
 
 }

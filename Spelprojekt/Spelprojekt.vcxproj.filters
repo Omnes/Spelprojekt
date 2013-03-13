@@ -490,5 +490,14 @@
     <ClInclude Include="GlobalButtonTimer.h">
       <Filter>Header Files\Misc</Filter>
     </ClInclude>
+    <ClInclude Include="AddCutscene_2.h">
+      <Filter>Header Files\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="AddCutscene_3.h">
+      <Filter>Header Files\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="AddCutscene_4.h">
+      <Filter>Header Files\Events</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -19,7 +19,7 @@ RemoveObstacleButton::RemoveObstacleButton(std::vector<std::string> obstacle,sf:
 	, mClicked(false)
 	, mParticleSystem(particleName,100)
 	, mEmittAmount(emittAmount)
-	, mSparksOnObstacles("Spark",300)
+	, mSparksOnObstacles("Spark",600)
 	, mMissedAbility("Smoke",300)
 	, mSoundFX(*ResourceManager::getInst().getSoundBuffer(soundFX)){
 
@@ -136,7 +136,7 @@ void RemoveObstacleButton::update(){
 				sf::FloatRect viewRect = sf::FloatRect(-window->getView().getSize().x/2 + window->getView().getCenter().x,-window->getView().getSize().y/2 + window->getView().getCenter().y,window->getView().getSize().x,window->getView().getSize().y);
 				if(viewRect.intersects(rect)){
 					mEmitter.setPosition(sf::Vector2f(0,0));
-					mEmitter.burst(mSparksOnObstacles,rect,1);
+					mEmitter.burst(mSparksOnObstacles,rect,2);
 				}
 			}
 		}

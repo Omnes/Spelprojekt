@@ -6,9 +6,8 @@
 
 <Sound musicVolume="18" soundVolume="100" voiceVolume="100" muted="0"/>
 
-
 <Window framelimit="60" vsync="1">
     <Title>Flykten</Title>
 </Window>
 
-<Resolution width="1280" heigth="720" fullscreen="1"/>
+<Resolution width="1280" heigth="720" fullscreen="0"/>

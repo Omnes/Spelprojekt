@@ -28,8 +28,6 @@
 			<Obstacle>Oil</Obstacle>
 			<Obstacle>Smoke</Obstacle>
 			<Obstacle>Trash</Obstacle>
-			<Obstacle>Animal<Obstacle>
-			<Obstacle>Fire<Obstacle>
 		</CanRemove>
 		<InfoPicture>Resources/GUI/manmade.png</InfoPicture>
 		<Sound onUse = "Resources/Sound/Effekts/Unlock_effekt.wav"/>

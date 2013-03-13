@@ -8,11 +8,10 @@
 class AddCutscene_1 : public Event{
 
 public:
-
 	AddCutscene_1(){}
 	~AddCutscene_1(){}
 	virtual void update(){
-		StateManager::getInst().addState(new Cutscene("Resources/Data/Cutscenes/Cutscene_1.xml"));
+		StateManager::getInst().addState(new Cutscene("Resources/Data/Cutscenes/Cutscene_intro.xml"));
 	}
 
 };

@@ -1,11 +1,11 @@
 <Particle>
 	<Name>Spark</Name>
-	<Texture yframes="2">resources/particle/Spark.png</Texture>
+	<Texture yframes="2">resources/particle/Spark_2.png</Texture>
 	<Life min="10" max="30"/>
 	<Direction min ="0" max="360"/>
 	<Speed min="1" max="2" increase="0"/>
 	<Rotation min="0" max="360" increaseMin="0" increaseMax="0"/>
-	<Scale min="1" max="2" increase="0"/>
+	<Scale min="1" max="2" increase="0.01"/>
 	<Color>
 		<Start r="255" g="255" b="255" a="255"/>
 		<End r="255" g="255" b="255" a="0"/>
