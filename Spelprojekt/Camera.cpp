@@ -59,7 +59,7 @@ void Camera::getMinMax(){
 
 void Camera::update(){
 
-	//mView.rotate(1);
+	//mView.rotate(.25);
 	
 	
 
@@ -70,13 +70,12 @@ void Camera::update(){
 	float mPanSpeed = 0.5;
 	float lastPosition = mPosition;
 
+	//detta funkar jättedåligt...
 	if((ScrollDetector::getScrollDelta() > 0 || sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) && mVelocity < mMaxVelocity){
-
 		mVelocity += mPanSpeed;
 	}
 	 
 	else if((ScrollDetector::getScrollDelta() < 0 || sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) && mVelocity > mMinVelocity){
-
 		mVelocity -= mPanSpeed;
 	}
 
