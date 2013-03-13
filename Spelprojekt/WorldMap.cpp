@@ -176,20 +176,22 @@ void WorldMap::saveToFile(std::string currentLevel){
 		}
 
 		//om man har gått vidare till nästa värld. spara vilka världar som har brunnit
-		tinyxml2::XMLElement* burned;																				//
-																													//
-		if(!doc.FirstChildElement("Burned")){																		//
-			burned = doc.NewElement("Burned");																		//
-			doc.LinkEndChild(burned);																				//
-		}																											//
-		//kanske inte funkar om burned är nollpekare. (= man har fuskat)											//
-		for(BurnedLevelVector::iterator i = mBurnedLevelVector.begin(); i != mBurnedLevelVector.end();i++){			//
-			tinyxml2::XMLElement* burnedLevel = doc.NewElement("BurnedLevel");										//
-			burnedLevel->SetAttribute("Level", (*i).c_str());														//
-			burned->LinkEndChild(burnedLevel);																		//
-		}																											//
-																													//
-		mBurnedLevelVector.clear();																					//
+		tinyxml2::XMLElement* burned;																				
+																													
+		if(!doc.FirstChildElement("Burned")){																		
+			burned = doc.NewElement("Burned");																		
+			doc.LinkEndChild(burned);																				
+		}else{
+			burned = doc.FirstChildElement("Burned");
+		}																											
+		//kanske inte funkar om burned är nollpekare. (= man har fuskat)											
+		for(BurnedLevelVector::iterator i = mBurnedLevelVector.begin(); i != mBurnedLevelVector.end();i++){			
+			tinyxml2::XMLElement* burnedLevel = doc.NewElement("BurnedLevel");										
+			burnedLevel->SetAttribute("Level", (*i).c_str());														
+			burned->LinkEndChild(burnedLevel);																		
+		}																											
+																													
+		mBurnedLevelVector.clear();																					
 
 		mCurrentWorld = mWorld;
 		mSection = mCurrentSection;
@@ -315,7 +317,10 @@ void WorldMap::setCurrentWorldOrSub(std::string currentLevel){
 		}
 	}
 
-	updateWorld();
+	//så endgame funakr
+	if(mWorld <= 2){
+		updateWorld();
+	}
 	saveToFile(currentLevel);
 }
 
