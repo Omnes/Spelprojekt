@@ -28,6 +28,8 @@
 			<Obstacle>Oil</Obstacle>
 			<Obstacle>Smoke</Obstacle>
 			<Obstacle>Trash</Obstacle>
+			<Obstacle>Animal<Obstacle>
+			<Obstacle>Fire<Obstacle>
 		</CanRemove>
 		<InfoPicture>Resources/GUI/manmade.png</InfoPicture>
 		<Sound onUse = "Resources/Sound/Effekts/Unlock_effekt.wav"/>
@@ -69,7 +71,7 @@
 		<Type>Remove</Type>
 		<Texture>Resources/GUI/claw.png</Texture>
 		<ParticleEffekt amount="1">Smash</ParticleEffekt>
-		<Stats cooldown="5"/>
+		<Stats cooldown="1"/>
 		<CanRemove>
 			<Obstacle>Bees</Obstacle>
 			<Obstacle>Stone</Obstacle>
