@@ -35,6 +35,9 @@ void Animation::update(){
 		mHasPlayed = true;
 	}
 
+	//mSprite.rotate((rand()%2) - 1);
+	//mSprite.setScale(0.5 + std::sin((double)mTimer.getElapsedTime().asSeconds())*3,0.5 + std::sin((double)mTimer.getElapsedTime().asSeconds())*3);
+
 	mRectangle.left = mRectangle.width*mCurrentframe;
 	mSprite.setTextureRect(mRectangle);
 }
