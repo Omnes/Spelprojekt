@@ -25,8 +25,6 @@ Fire::Fire(sf::Vector2f position,float closeupspeed = 180)
 	mEmitter.setPosition(mPosition);
 	mSprite.setPosition(mPosition);
 
-
-	
 }
 
 void Fire::update(){
