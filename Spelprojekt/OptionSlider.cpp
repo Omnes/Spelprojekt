@@ -1,6 +1,6 @@
 #include "OptionSlider.h"
 
-OptionSlider::OptionSlider(float yPos, sf::Vector2f posBg, std::string element, std::string attribute) : 
+OptionSlider::OptionSlider(sf::Vector2f posBg, std::string element, std::string attribute) : 
 	mElement(element),
 	mPressed(false),
 	mAttribute(attribute),
@@ -21,7 +21,7 @@ OptionSlider::OptionSlider(float yPos, sf::Vector2f posBg, std::string element, 
 
 	mPosRatio = mSpriteBg.getTexture()->getSize().x / 100.0f;
 
-	mSprite.setPosition((mVolume * mPosRatio) + mMinPos, yPos);
+	mSprite.setPosition((mVolume * mPosRatio) + mMinPos, mSpriteBg.getPosition().y + 24);
 
 	mVolRatio = 100.0f / mSpriteBg.getTexture()->getSize().x;
 

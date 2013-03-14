@@ -5,14 +5,15 @@
 
 OptionsMeny::OptionsMeny()
 	: mApplyButton(sf::Vector2f(900,600),"Resources/Menu/knapp.png","",this){
-	mCheckboxes.push_back(new Checkbox(sf::Vector2f(1050,165),"Resolution","fullscreen"));
+	mCheckboxes.push_back(new Checkbox(sf::Vector2f(850,165),"Resolution","fullscreen"));
 	mCheckboxes.push_back(new Checkbox(sf::Vector2f(270,435),"Sound","muted"));
+	mCheckboxes.push_back(new Checkbox(sf::Vector2f(850,215),"Tutorial","play"));
 
 
 	//ändra till vector sen.
-	mOptionSliders.push_back(new OptionSlider(50, sf::Vector2f(50,50), "Sound", "musicVolume"));
-	mOptionSliders.push_back(new OptionSlider(150, sf::Vector2f(50,150), "Sound", "soundVolume"));
-	mOptionSliders.push_back(new OptionSlider(250, sf::Vector2f(50,250), "Sound", "voiceVolume"));
+	mOptionSliders.push_back(new OptionSlider(sf::Vector2f(50,140), "Sound", "musicVolume"));
+	mOptionSliders.push_back(new OptionSlider(sf::Vector2f(50,240), "Sound", "soundVolume"));
+	mOptionSliders.push_back(new OptionSlider(sf::Vector2f(50,340), "Sound", "voiceVolume"));
 
 	mMusic = "Resources/Sound/Music/TitleScreen";
 

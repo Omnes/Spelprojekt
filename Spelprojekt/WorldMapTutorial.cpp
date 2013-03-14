@@ -35,8 +35,14 @@ WorldMapTutorial::~WorldMapTutorial(){
 	tinyxml2::XMLDocument doc;
 	doc.LoadFile("Resources/Data/Save/SavedGame.xml");
 
-	tinyxml2::XMLElement *tutorialDone = doc.NewElement("Tutorial");
-	doc.LinkEndChild(tutorialDone);
+	if(!doc.FirstChildElement("Tutorial")){
+		tinyxml2::XMLElement *tutorial = doc.NewElement("Tutorial");
+		//den här kommer inte köras. kanske fixa, behövs ej
+		if(!tutorial->Attribute("World")){
+			tutorial->SetAttribute("World", false);
+			doc.LinkEndChild(tutorial);	
+		}
+	}
 
 	doc.SaveFile("Resources/Data/Save/SavedGame.xml");
 

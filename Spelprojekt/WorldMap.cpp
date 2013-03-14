@@ -136,6 +136,12 @@ void WorldMap::saveToFile(std::string currentLevel){
 		doc.LinkEndChild(world);
 	}
 
+	//magiskt tal för värld 1
+	if(mWorld >= 1){
+		doc.FirstChildElement("Tutorial")->SetAttribute("World", true);
+		doc.FirstChildElement("Tutorial")->SetAttribute("Tactic", true);
+	}
+
 	// tar emot vilken level man just var på
 	mBurnedLevelVector.push_back(currentLevel);
 
