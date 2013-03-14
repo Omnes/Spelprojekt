@@ -12,7 +12,7 @@
 
 class OptionSlider{
 public:
-	OptionSlider(float yPos, sf::Vector2f posBg, std::string element,std::string attribute);
+	OptionSlider(sf::Vector2f posBg, std::string element,std::string attribute);
 	~OptionSlider();
 	void render();
 	void update();

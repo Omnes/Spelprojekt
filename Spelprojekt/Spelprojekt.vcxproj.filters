@@ -66,9 +66,6 @@
     <Filter Include="Header Files\TinyXML2">
       <UniqueIdentifier>{2bab1d3b-fe0e-4199-abd5-b1327aaef26c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Events">
-      <UniqueIdentifier>{f8b888fd-7dc7-4863-b517-adfc01d9e490}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ActiveLayer.cpp">
@@ -490,6 +487,7 @@
     <ClInclude Include="GlobalButtonTimer.h">
       <Filter>Header Files\Misc</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="AddCutscene_2.h">
       <Filter>Header Files\Events</Filter>
     </ClInclude>
@@ -498,6 +496,10 @@
     </ClInclude>
     <ClInclude Include="AddCutscene_4.h">
       <Filter>Header Files\Events</Filter>
+=======
+    <ClInclude Include="AchievementState.h">
+      <Filter>Header Files\States</Filter>
+>>>>>>> sean
     </ClInclude>
   </ItemGroup>
 </Project>

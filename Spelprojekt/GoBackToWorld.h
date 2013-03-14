@@ -24,10 +24,13 @@ public:
 		worldMap->readNewAnimals();
 
 		//kanske borde sätta den här ngn annanstans
-		tinyxml2::XMLDocument doc;
-		doc.LoadFile("Resources/Data/Save/SavedGame.xml");
+		tinyxml2::XMLDocument docSave;
+		docSave.LoadFile("Resources/Data/Save/SavedGame.xml");
 
-		if(!doc.FirstChildElement("Tutorial")){
+		tinyxml2::XMLDocument docSetting;
+		docSetting.LoadFile("Resources/Data/Settings.xml");
+
+		if(docSave.FirstChildElement("Tutorial")->BoolAttribute("World") == false && docSetting.FirstChildElement("Tutorial")->BoolAttribute("play") == false){
 			StateManager::getInst().addState(new WorldMapTutorial);
 		}
 	}
