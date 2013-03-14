@@ -487,7 +487,6 @@
     <ClInclude Include="GlobalButtonTimer.h">
       <Filter>Header Files\Misc</Filter>
     </ClInclude>
-<<<<<<< HEAD
     <ClInclude Include="AddCutscene_2.h">
       <Filter>Header Files\Events</Filter>
     </ClInclude>
@@ -496,10 +495,9 @@
     </ClInclude>
     <ClInclude Include="AddCutscene_4.h">
       <Filter>Header Files\Events</Filter>
-=======
+    </ClInclude>
     <ClInclude Include="AchievementState.h">
       <Filter>Header Files\States</Filter>
->>>>>>> sean
     </ClInclude>
   </ItemGroup>
 </Project>
