@@ -6,6 +6,7 @@
 #include "Animalipedia.h"
 #include "OptionsMeny.h"
 #include "EventManager.h"
+#include "ParticleManager.h"
 
 
 #include <SFML\Window\Keyboard.hpp>
@@ -47,9 +48,15 @@ void StartMeny::update(){
 		EventManager::getInst().addEvent("cutscene_ending");
 	}
 
+	ParticleManager* particleManager = &ParticleManager::getInst();
+	particleManager->update();
+
 }
 
 void StartMeny::render(){
+
+	
+
 	sf::RenderWindow* window = WindowManager::getInst().getWindow();
 
 	window->draw(mBackground);
@@ -57,6 +64,9 @@ void StartMeny::render(){
 	for (std::vector<Button*>::iterator i = mButtons.begin(); i != mButtons.end(); i++){
 		window->draw((*i)->getSprite());
 	}
+
+	ParticleManager* particleManager = &ParticleManager::getInst();
+	particleManager->render(*window);
 }
 
 std::string StartMeny::getMusic(){

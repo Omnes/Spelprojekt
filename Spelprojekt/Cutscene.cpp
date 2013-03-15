@@ -6,6 +6,7 @@
 #include "ResourceManager.h"
 #include "StateManager.h"
 #include "SoundManager.h"
+#include "FontMaster.h"
 
 
 Cutscene::Cutscene(std::string file){
@@ -98,6 +99,7 @@ void Cutscene::loadFromFile(std::string file){
 				float tx = elmText->FloatAttribute("x");
 				float ty = elmText->FloatAttribute("y");
 				text.setPosition(tx,ty);
+				text.setFont(FontMaster::sFont);
 				float duration = elmText->FloatAttribute("duration");
 				texts.push_back(std::pair<sf::Text,float>(text,duration));
 				elmText = elmText->NextSiblingElement("Text");

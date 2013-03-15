@@ -9,7 +9,7 @@ Button::Button(sf::Vector2f pos, std::string evt, std::string img, std::string s
 		mPosition(pos), 
 		mEvent(evt), 
 		mCurrentImage(0), 
-		mPartSystem("ButtonEffekt",100),
+		mPartSystem("Leaf",100),
 		mButtonTime(0.3),
 		mPressed(false){
 
@@ -38,7 +38,7 @@ void Button::update(){
 	//om musen är ovanförknappen
 	if(mSprite.getGlobalBounds().contains(mousePosition) && !mPressed){		
 	
-		mEmitter.burst(mPartSystem,sf::FloatRect(0,0,66,150),1);
+		mEmitter.burst(mPartSystem,sf::FloatRect(0,0,mRectangle.width,mRectangle.height),1);
 		mCurrentImage=1;
 
 		//om knappen trycks ned

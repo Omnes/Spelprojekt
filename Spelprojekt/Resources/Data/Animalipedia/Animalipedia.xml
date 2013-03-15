@@ -1,24 +1,61 @@
 <HummingBird>
 	<Title>Kollibri</Title>
 	<Image x="1000" y="0">Resources/Animals/hummingBird.png</Image>
-	<StandardFact>Kollibiries gillar fisk</StandardFact>
-	<LockedFact>Detta är sant!</LockedFact>
+	<StandardFact>Längd: 17-23 cm
+Vikt: 12-15 g
+Ålder: ca 5 år
+
+Migration: Stannfågel
+
+Status: Livskraftig
+</StandardFact>
+	<LockedFact>Likt de flesta kolibri arter livnär sig svärdnäbbskolibrin på nektar. Två av dess vanliga blommor den söker föda hos är passionsblommor och spikklubbor.
+Svärdnäbbskolibrins näbb kan bli upp till hela 11 cm lång vilket betyder att näbben kan bli längre än kroppen!
+Kolibrifåglar är kända för sin förmåga att kunna flyga åt alla håll, både upp, ner, åt sidorna och till och med på rygg.
+</LockedFact>
 
 </HummingBird>
 
 <Monkey>
 	<Title>Apa</Title>
-	<Image x="800" y="0">Resources/Animals/monkey.png</Image>
-	<StandardFact>Apor! Ja det gillar vi</StandardFact>
-	<LockedFact>Kan orsaka animaliska kollisioner vid närkontakt med andra djur</LockedFact>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/monkey.png</Image>
+	<StandardFact>Längd: 51-63cm
+Längd med svans: 106-132cm
+Vikt: 4-9kg
+Ålder: 5-10år
+Livsstil: Flock
+
+Status: Under observation
+</StandardFact>
+	<LockedFact>Vrålapor lever oftast i en grupp på fyra till fem djur, med en hane och tre eller fyra honor.
+Den röda vrålapan är den största av alla vrålapor.
+Vrålapan har fått sitt namn ifrån att de vråla väldigt högt när de ska kommunicera
+ med andra vrålapor eller skrämma bort en annan flock av apor från sitt revir.
+När en vrålapa vrålar är ljudet så starkt att det kan höras upp till två km bort i den
+ täta regnskogsdjungeln. Vrålapan hör till gruppen spindelapor, vilka är apor med väldigt
+ långa svansar, som fungerar som en extra arm för dem som de t.ex. kan plocka bär med.
+Den har ett väldigt starkt luktsinne som den använder för att hitta de bär, blad och 
+frukter som den äter.
+
+</LockedFact>
 
 </Monkey>
 
 <Snake>
 	<Title>Snake</Title>
 	<Image x="1000" y="0">Resources/Animals/snake.png</Image>
-	<StandardFact>It's snaaaaake</StandardFact>
-	<LockedFact>Snaaaaaake</LockedFact>
+	<StandardFact>Längd: 6-10 m
+Vikt: Upp till 250 kg
+Ålder: 25 år
+
+Livsstil: Delvis akvatisk
+
+Status: Allmän
+</StandardFact>
+	<LockedFact>Då anakondan kan komma upp i en vikt på 250 kg gör det den till världens tyngsta orm. Med längden medräknad blir anakondan den största ormen i världen! Arten lever mest på kapybaror och hjortar men kan också döda fullvuxna kajmaner.
+Anakondan är anpassad för att kunna se och andas även när den ligger nere i vattnet genom att den har sina ögon och näsborrar placerade mot huvudets ovansida.
+Ett Spanskt namn för ormen är matatoro och det betyder ”tjur dödare”.
+</LockedFact>
 
 </Snake>
 

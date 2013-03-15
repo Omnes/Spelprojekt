@@ -2,6 +2,7 @@
 #include "WindowManager.h"
 #include "tinyxml2.h"
 #include "ResourceManager.h"
+#include "FontMaster.h"
 
 Info::Info(std::string elementName){
 	tinyxml2::XMLDocument doc;
@@ -17,10 +18,16 @@ Info::Info(std::string elementName){
 	mPicture.setPosition(sf::Vector2f(x,y));
 
 	mStandardText.setString(elm->FirstChildElement("StandardFact")->GetText());
-	mStandardText.setPosition(150,64);
+	mStandardText.setPosition(400,150);
+	mStandardText.setFont(FontMaster::sFont);
+	mStandardText.setColor(sf::Color(0,0,0));
+	mStandardText.setCharacterSize(18);
 
 	mLockedText.setString(elm->FirstChildElement("LockedFact")->GetText());
-	mLockedText.setPosition(150,360);
+	mLockedText.setPosition(400,410);
+	mLockedText.setFont(FontMaster::sFont);
+	mLockedText.setColor(sf::Color(0,0,0));
+	mLockedText.setCharacterSize(18);
 
 	tinyxml2::XMLDocument docfacts;
 	docfacts.LoadFile("Resources/Data/Animalipedia/UnlockedFacts.xml");

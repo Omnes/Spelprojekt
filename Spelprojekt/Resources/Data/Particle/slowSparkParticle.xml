@@ -1,0 +1,14 @@
+<Particle>
+	<Name>SlowSpark</Name>
+	<Texture yframes="2">resources/particle/Spark_2.png</Texture>
+	<Life min="10" max="20"/>
+	<Direction min ="0" max="360"/>
+	<Speed min="0.01" max="0.02" increase="0"/>
+	<Rotation min="0" max="360" increaseMin="-0.1" increaseMax="0.1"/>
+	<Scale min="1" max="1" increase="0"/>
+	<Color>
+		<Start r="255" g="255" b="255" a="255"/>
+		<End r="255" g="255" b="255" a="0"/>
+	</Color>
+
+</Particle>

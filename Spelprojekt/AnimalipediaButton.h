@@ -37,6 +37,8 @@ private:
 
 	int mLocked;
 	bool mNewInfo;
+	Emitter mEmitter;
+	ParticleSystem mNewEffekt;
 
 	sf::Vector2f mPosition;
 	sf::Sprite mSprite;
