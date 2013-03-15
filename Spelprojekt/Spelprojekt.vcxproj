@@ -102,6 +102,7 @@
     <ClCompile Include="EventManager.cpp" />
     <ClCompile Include="FakeAbilityButton.cpp" />
     <ClCompile Include="Fire.cpp" />
+    <ClCompile Include="FontMaster.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Gameover.cpp" />
     <ClCompile Include="Gameplay.cpp" />
@@ -181,6 +182,7 @@
     <ClInclude Include="ExitGame.h" />
     <ClInclude Include="FakeAbilityButton.h" />
     <ClInclude Include="Fire.h" />
+    <ClInclude Include="FontMaster.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameOver.h" />
     <ClInclude Include="Gameplay.h" />

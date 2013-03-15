@@ -242,6 +242,9 @@
     <ClCompile Include="GlobalButtonTimer.cpp">
       <Filter>Source Files\Misc</Filter>
     </ClCompile>
+    <ClCompile Include="FontMaster.cpp">
+      <Filter>Source Files\Managers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EventManager.h">
@@ -498,6 +501,9 @@
     </ClInclude>
     <ClInclude Include="AchievementState.h">
       <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="FontMaster.h">
+      <Filter>Header Files\Managers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

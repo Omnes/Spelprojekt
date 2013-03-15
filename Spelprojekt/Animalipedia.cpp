@@ -2,21 +2,22 @@
 #include "ResourceManager.h"
 #include "WindowManager.h"
 #include "tinyxml2.h"
+#include "ParticleManager.h"
 
 
 Animalipedia::Animalipedia()
 	: mBackground(*ResourceManager::getInst().getTexture("Resources/Menu/Animalipedia/animalipedia.png"))
 	, mCurrentButtonPage(0)
 	, mButtonsPerPage(5)
-	, mUpButton(sf::Vector2f(0,0),-1,"Resources/Menu/Animalipedia/scroll_knapp.png","",this)
-	, mDownButton(sf::Vector2f(0,600),1,"Resources/Menu/Animalipedia/scroll_knapp_ner.png","",this){
+	, mUpButton(sf::Vector2f(32,0),-1,"Resources/Menu/Animalipedia/scroll_knapp.png","",this)
+	, mDownButton(sf::Vector2f(32,570),1,"Resources/Menu/Animalipedia/scroll_knapp_ner.png","",this){
 
 		mMusic = "Resources/Sound/Music/TitleScreen";
 		loadUnlocked();
 		mInfo = 0;
 		setPage(mCurrentButtonPage);
 
-		mButton = new Button(sf::Vector2f(1100,100), "popState", "Resources/Menu/knapp.png", "");
+		mButton = new Button(sf::Vector2f(1100,650), "popState", "Resources/Menu/knapp.png", "");
 }
 
 
@@ -29,6 +30,9 @@ void Animalipedia::update(){
 	mButton->update();
 	mUpButton.update();
 	mDownButton.update();
+
+	ParticleManager* particleManager = &ParticleManager::getInst();
+	particleManager->update();
 }
 
 void Animalipedia::render(){
@@ -46,6 +50,9 @@ void Animalipedia::render(){
 	window->draw(mButton->getSprite());
 	window->draw(mUpButton.getSprite());
 	window->draw(mDownButton.getSprite());
+
+	ParticleManager* particleManager = &ParticleManager::getInst();
+	particleManager->render(*window);
 }
 
 Animalipedia::~Animalipedia(){
@@ -111,7 +118,7 @@ void Animalipedia::setPage(int number){
 		mActiveButtons.clear();
 
 		int startX = 0;
-		int startY = 100;
+		int startY = 200;
 		int yDistance = 64;
 
 		for (int i = 0; i < mButtonsPerPage; i++){

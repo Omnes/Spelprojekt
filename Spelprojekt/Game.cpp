@@ -14,6 +14,7 @@
 #include "ResourceManager.h"
 #include "ParticleManager.h"
 #include "SoundManager.h"
+#include "FontMaster.h"
 
 #include "StartMeny.h"
 #include "ScrollDetector.h"
@@ -37,7 +38,7 @@ void Game::run(){
 	SoundManager* soundManager = &SoundManager::getInst();
 	ParticleManager* particleManager = &ParticleManager::getInst();
 	particleManager->loadAllParticlesFromFile("Resources/data/Particle/ParticleList.xml");
-
+	FontMaster::loadFonts();
 
 	stateManager->addState(new StartMeny);
 

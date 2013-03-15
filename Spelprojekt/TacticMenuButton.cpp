@@ -10,7 +10,7 @@ TacticMenuButton::TacticMenuButton(sf::Vector2f pos, TaktikMeny* tacticMenu, std
 
 	mPosition(pos),
 	mCurrentImage(0),
-	mPartSystem("ButtonEffekt",100),
+	mPartSystem("Leaf",100),
 	mTaktikMeny(tacticMenu)
 {
 	
