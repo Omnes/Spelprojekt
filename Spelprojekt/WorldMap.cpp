@@ -32,7 +32,7 @@ WorldMap::WorldMap() :
 	mCurrentWorld = mWorld;
 	mCurrentSection = mSection;
 
-	mButton = new Button(sf::Vector2f(100,100), "addAnimalipedia", "Resources/Menu/knapp.png", "");
+	mFactButton = new FactButton(sf::Vector2f(20,20), "addAnimalipedia", "Resources/Menu/AchievementMenu/faktaknapp.png", "");
 
 	mCutscenes.push_back("Resources/Data/Cutscenes/Cutscene_1.xml");
 	mCutscenes.push_back("Resources/Data/Cutscenes/Cutscene_2.xml");
@@ -44,7 +44,7 @@ WorldMap::~WorldMap(){}
 
 void WorldMap::update(){
 
-	mButton->update();
+	mFactButton->update();
 
 	for (std::vector<LevelButton*>::iterator i = mButtonVector.begin(); i != mButtonVector.end(); i++){
 		(*i)->update();
@@ -67,7 +67,7 @@ void WorldMap::render(){
 	
 	window->draw(mSprite);
 	
-	window->draw(mButton->getSprite());
+	window->draw(mFactButton->getSprite());
 
 	for (std::vector<LevelButton*>::iterator i = mButtonVector.begin(); i != mButtonVector.end(); i++){
 		window->draw((*i)->getSprite());
@@ -387,4 +387,8 @@ void WorldMap::setDeadAnimals(std::vector <std::string> deadAnimals){
 	for(std::vector<std::string>::iterator i = deadAnimals.begin(); i != deadAnimals.end(); i++){
 		mDeadAnimalVector.push_back((*i));
 	}
+}
+
+int WorldMap::getSection(){
+	return mCurrentSection;
 }

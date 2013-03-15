@@ -7,6 +7,7 @@
 #include "LevelManager.h"
 #include "GameOver.h"
 #include "WorldMapTutorial.h"
+#include "AchievementState.h"
 
 class GoBackToWorld : public Event{
 
@@ -32,6 +33,8 @@ public:
 
 		if(docSave.FirstChildElement("Tutorial")->BoolAttribute("World") == false && docSetting.FirstChildElement("Tutorial")->BoolAttribute("play") == false){
 			StateManager::getInst().addState(new WorldMapTutorial);
+		}else{
+			StateManager::getInst().addState(new AchievementState(worldMap->getSection()));	
 		}
 	}
 };
