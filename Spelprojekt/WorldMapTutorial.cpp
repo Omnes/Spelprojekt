@@ -2,6 +2,7 @@
 #include "ResourceManager.h"
 #include "WindowManager.h"
 #include "SoundManager.h"
+#include "AchievementState.h"
  
 WorldMapTutorial::WorldMapTutorial() {
 	mMusic = "Resources/Sound/Music/TitleScreen";
@@ -23,6 +24,8 @@ WorldMapTutorial::WorldMapTutorial() {
 
 	mWorldMap = dynamic_cast <WorldMap*> (StateManager::getInst().getTop());
 	mWorldMap->update();
+
+	StateManager::getInst().addState(new AchievementState(1));
 	
 	SoundManager::getInst().setMusicVolume(10);
 

@@ -2,6 +2,7 @@
 #define WORLDMAP
 #include "States.h"
 #include "LevelButton.h"
+#include "FactButton.h"
 #include "LevelManager.h"
 #include "Button.h"
 #include "SFML\Graphics\Texture.hpp"
@@ -34,6 +35,8 @@ public:
 
 	std::string getMusic();
 
+	int getSection();
+
 
 private:
 
@@ -59,7 +62,7 @@ private:
 
 	int mLevelCount;
 
-	Button* mButton;
+	FactButton* mFactButton;
 
 	//ta bort denna
 	int mCount;
