@@ -36,6 +36,7 @@ private:
 	float mClickCooldown;
 	sf::Clock mClickCooldownTimer;
 	sf::Clock mCooldownTimer;
+	sf::Clock mCooldownSound;
 	Gui* mGui;
 
 	int mEmittAmount;
@@ -44,9 +45,11 @@ private:
 
 	ParticleSystem mSparksOnObstacles;
 	ParticleSystem mMissedAbility;
+	ParticleSystem mWrongAbility;
 
 	sf::Sound mSoundFX;
-
+	sf::Sound mSoundWrong;
+	
 
 
 };

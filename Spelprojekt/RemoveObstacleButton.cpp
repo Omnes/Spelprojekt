@@ -21,7 +21,9 @@ RemoveObstacleButton::RemoveObstacleButton(std::vector<std::string> obstacle,sf:
 	, mEmittAmount(emittAmount)
 	, mSparksOnObstacles("Spark",600)
 	, mMissedAbility("Smoke",300)
-	, mSoundFX(*ResourceManager::getInst().getSoundBuffer(soundFX)){
+	, mWrongAbility("Crack",3)
+	, mSoundFX(*ResourceManager::getInst().getSoundBuffer(soundFX))
+	, mSoundWrong(*ResourceManager::getInst().getSoundBuffer("Resources/Sound/Effekts/Strength_effekt.wav")){
 
 		mSprite.setPosition(position);
 		mSprite.setTexture(*mTexture);
@@ -63,20 +65,31 @@ void RemoveObstacleButton::killRelativePositionEntity(sf::Vector2f mousePosition
 			sf::FloatRect rect = (*i)->getSprite()->getGlobalBounds();
 			rect.left = -(*i)->getSprite()->getGlobalBounds().width/2 + (*i)->getPos().x;
 			rect.top = -(*i)->getSprite()->getGlobalBounds().height/2 + (*i)->getPos().y;
-
+			 
 			std::string id = (*i)->getID();
 
-			if(findID(id) && contains){
-				mEmitter.setPosition(sf::Vector2f(0,0));
-				mEmitter.burst(mParticleSystem,rect,mEmittAmount);
-				delete *i;
-				i = entityVector->erase(i);
-				mCooldownTimer.restart();
-				didDelete = true;
-				SoundManager::getInst().play(mSoundFX);
-				setClicked(false);
-
-			}else{
+			if(contains){
+				if(findID(id)){
+					mEmitter.setPosition(sf::Vector2f(0,0));
+					mEmitter.burst(mParticleSystem,rect,mEmittAmount);
+					delete *i;
+					i = entityVector->erase(i);
+					mCooldownTimer.restart();
+					didDelete = true;
+					SoundManager::getInst().play(mSoundFX);
+					setClicked(false);
+				}
+				else{
+					i++;
+					if(id != "Animal" && id != "Fire" && mCooldownSound.getElapsedTime().asSeconds() > 1){
+						mEmitter.setPosition(relativeMousePosition);
+						mEmitter.burst(mWrongAbility, 1);
+						SoundManager::getInst().play(mSoundWrong);
+						mCooldownSound.restart();
+					}
+				}
+			}
+			else{
 				i++;
 			}
 		}
