@@ -4,6 +4,7 @@
 #include "States.h"
 #include <SFML\Graphics\Sprite.hpp>
 #include "Button.h"
+#include <SFML\Graphics\Text.hpp>
 
 
 class GameOver: public States{
@@ -19,9 +20,9 @@ public:
 private:
 	sf::Sprite mBackground;
 	Button mReturnToMain;
-	Button mLoadLast;
 	Button mRetryLevel;
 	std::string mMusic;
+	sf::Text mRetryText;
 	
 	
 };

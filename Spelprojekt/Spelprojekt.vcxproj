@@ -147,6 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbilityButton.h" />
+    <ClInclude Include="AchievementState.h" />
     <ClInclude Include="ActiveLayer.h" />
     <ClInclude Include="AddAnimalipedia.h" />
     <ClInclude Include="AddCutscene_1.h" />
