@@ -5,11 +5,11 @@
 
 
 Animalipedia::Animalipedia()
-	: mBackground(*ResourceManager::getInst().getTexture("Resources/Menu/LevelFinished.png"))
+	: mBackground(*ResourceManager::getInst().getTexture("Resources/Menu/Animalipedia/animalipedia.png"))
 	, mCurrentButtonPage(0)
 	, mButtonsPerPage(5)
-	, mUpButton(sf::Vector2f(0,0),1,"Resources/Menu/knapp.png","",this)
-	, mDownButton(sf::Vector2f(0,600),-1,"Resources/Menu/knapp.png","",this){
+	, mUpButton(sf::Vector2f(0,0),-1,"Resources/Menu/Animalipedia/scroll_knapp.png","",this)
+	, mDownButton(sf::Vector2f(0,600),1,"Resources/Menu/Animalipedia/scroll_knapp_ner.png","",this){
 
 		mMusic = "Resources/Sound/Music/TitleScreen";
 		loadUnlocked();

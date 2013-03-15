@@ -11,7 +11,7 @@ AnimalipediaButton::AnimalipediaButton(sf::Vector2f pos, std::string page, std::
 	, mInfo(page)
 	, mTitle(title)
 	, mWiki(wiki){
-	mTexture = (ResourceManager::getInst().getTexture("Resources/Menu/TacticMenu/startgameplaybutton.png"));
+	mTexture = (ResourceManager::getInst().getTexture("Resources/Menu/Animalipedia/text_knapp.png"));
 	mSprite.setTexture(*mTexture);
 	mSprite.setPosition(mPosition);
 	mTitle.setPosition(mPosition);
