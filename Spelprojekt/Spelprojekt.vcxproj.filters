@@ -508,13 +508,11 @@
     <ClInclude Include="AchievementState.h">
       <Filter>Header Files\States</Filter>
     </ClInclude>
-<<<<<<< HEAD
     <ClInclude Include="FontMaster.h">
       <Filter>Header Files\Managers</Filter>
-=======
+    </ClInclude>
     <ClInclude Include="FactButton.h">
       <Filter>Header Files\Interface</Filter>
->>>>>>> sean
     </ClInclude>
   </ItemGroup>
 </Project>

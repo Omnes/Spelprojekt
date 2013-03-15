@@ -20,7 +20,6 @@ AchievementState::AchievementState(int section){
 	tinyxml2::XMLDocument doc;
 
 	doc.LoadFile("Resources/Data/AnimalUnlock.xml");
-
 	tinyxml2::XMLElement *sect = doc.FirstChildElement("Section");
 
 	while(sect != 0){
@@ -48,9 +47,17 @@ AchievementState::AchievementState(int section){
 		sf::Sprite *sprite = new sf::Sprite();
 		sprite->setTexture(*tex);
 		sprite->setTextureRect(sf::IntRect(0,0, tex->getSize().x/elmf->IntAttribute("frames"), tex->getSize().y/2));
+		//sprite->setPosition(500,500);
 		mImageVector.push_back(sprite);
 	}
 
+	int startPosX = 350;
+	int startPosY = 350;
+
+	//kanske onödig
+	for(std::vector<sf::Sprite*>::size_type i = 0; i < mImageVector.size(); i++){
+		mImageVector[i]->setPosition(sf::Vector2f(startPosX + 250 * i, startPosY));
+	}
 
 	//mTutorialDuration = 10.0f;
 	//mTimer.restart();
