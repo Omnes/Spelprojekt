@@ -47,7 +47,7 @@ AchievementState::AchievementState(int section){
 		sf::Sprite *sprite = new sf::Sprite();
 		sprite->setTexture(*tex);
 		sprite->setTextureRect(sf::IntRect(0,0, tex->getSize().x/elmf->IntAttribute("frames"), tex->getSize().y/2));
-		//sprite->setPosition(500,500);
+
 		mImageVector.push_back(sprite);
 	}
 
@@ -63,7 +63,12 @@ AchievementState::AchievementState(int section){
 	//mTimer.restart();
 }
 
-AchievementState::~AchievementState(){}
+AchievementState::~AchievementState(){
+	
+	//tror ej detta behövs
+	mAnimalVector.clear();
+	mImageVector.clear();
+}
 
 void AchievementState::update(){
 
