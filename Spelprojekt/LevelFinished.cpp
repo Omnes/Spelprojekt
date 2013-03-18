@@ -17,7 +17,7 @@ LevelFinished::LevelFinished() : mButton(sf::Vector2f(500, 500), "goBackToWorld"
 	setPosition();
 
 	mBackground.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/tillfalligwin.png"));
-	mMusic = "Resources/Sound/Music/TitleScreen";
+	mMusic = "Resources/Sound/Music/Title_Screen_";
 
 	mStampIndex = 0;
 }

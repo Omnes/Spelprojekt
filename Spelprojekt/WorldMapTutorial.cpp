@@ -5,7 +5,7 @@
 #include "AchievementState.h"
  
 WorldMapTutorial::WorldMapTutorial() {
-	mMusic = "Resources/Sound/Music/TitleScreen";
+	mMusic = "Resources/Sound/Music/Title_Screen_";
 	mArrow.setTexture(*ResourceManager::getInst().getTexture("Resources/GUI/pil.png"));
 	mArrow.setTextureRect(sf::IntRect(0,0, mArrow.getTexture()->getSize().x/10, mArrow.getTexture()->getSize().y));
 	mArrow.setOrigin(mArrow.getTexture()->getSize().x/20, mArrow.getTexture()->getSize().y/2);
