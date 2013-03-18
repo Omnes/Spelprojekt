@@ -7,10 +7,9 @@ Theraphosa blondi
 Längd: 30 cm
 Vikt: 170 g
 Ålder: 15-25 år
-
 Livsstil: Solitär
 
-Status: Marklevande
+Status: Inte hotad
 
 </StandardFact>
 	<LockedFact>Goliatspindeln äter vanligtvis insekter. Men på grund utav sin storlek är det inte ovanligt 
@@ -33,7 +32,7 @@ Längd: 1.5-6cm
 Vikt: 2-10g
 Ålder: 5år
 
-Status: Hotade
+Status: Hotad
 
 </StandardFact>
 	<LockedFact>Pilgiftsgrodan har fått sitt namn eftersom deras gift har använts till att göra förgiftade pilar.
@@ -57,10 +56,9 @@ Leptodactylus pentadactylus
 Längd: 8-22 cm
 Vikt: 500 g
 Ålder: 7-9 år
-
 Livsstil: Främst terrestrisk
 
-Status: Lokalt allmän
+Status: Vanlig, inte hotad
 
 </StandardFact>
 	<LockedFact>Denna art är mycket glupsk och äter allt den kan få i sig. 
@@ -117,7 +115,7 @@ Vikt: 1.6-2.5kg
 Ålder: 7år
 Livsstil: Solitär
 
-Status: Under observation
+Status: Under bevakning, svagt hotad
 
 </StandardFact>
 	<LockedFact>Korpgamen är en asätare och äter därför kadaver, döda djur. 
@@ -146,7 +144,7 @@ Vikt: 2.7-4.5kg
 Ålder: 30år
 Livsstil: Solitär eller i familj
 
-Status: Under bevakning
+Status: Under bevakning, svagt hotad
 
 </StandardFact>
 	<LockedFact>Kungsgamen kan leva båda ensam eller i familj med andra kungsgamar och 
@@ -171,10 +169,10 @@ Ensifera ensifera
 Längd: 17-23 cm
 Vikt: 12-15 g
 Ålder: ca 5 år
-
 Migration: Stannfågel
 
-Status: Livskraftig
+Status: Inte hotad
+
 </StandardFact>
 	<LockedFact>Likt de flesta kolibri arter livnär sig svärdnäbbskolibrin på nektar. Två av dess vanliga 
 blommor den söker föda hos är passionsblommor och spikklubbor.Svärdnäbbskolibrins 
@@ -196,10 +194,9 @@ Topaza pella
 Längd: 21-23 cm
 Vikt: 10-15 g
 Ålder: ca 5 år
-
 Migration: Stannfågel
-
-Status: Livskraftig
+ 
+Status: Inte hotad
 
 </StandardFact>
 	<LockedFact>Topaskolibrin lever på den nektar den kan samla upp från ett stort antal regnskogsblommor 
@@ -227,7 +224,8 @@ Vikt: 4-9kg
 Ålder: 5-10år
 Livsstil: Flock
 
-Status: Under observation
+Status: Under bevakning, svagt hotad
+
 </StandardFact>
 	<LockedFact>Vrålapor lever oftast i en grupp på fyra till fem djur, med en hane och tre eller fyra honor.
 Den röda vrålapan är den största av alla vrålapor.
@@ -252,10 +250,9 @@ Boa constrictor
 Längd: 1-4 m
 Vikt: ca 25 kg
 Ålder: 30 år
-
 Livsstil: Marklevande/trädlevande
 
-Status: Allmän
+Status: Vanlig, inte hotad
 
 </StandardFact>
 	<LockedFact>Kungsboan lever främst på olika däggdjur och fåglar. Likt sin kusin anakondan är 
@@ -268,6 +265,231 @@ Arten är också ett vanligt husdjur både på zoo och hos reptil intresserade.
 </LockedFact>
 
 </Snake1>
+
+
+<Snake2>
+	<Title>Anakonda</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/snake2.png</Image>
+	<StandardFact>Anakonda
+Eunectes murinus
+
+Längd: 6-10 m
+Vikt: Upp till 250 kg
+Ålder: 25 år
+Livsstil: Delvis akvatisk
+
+Status: Vanlig, inte hotad
+
+</StandardFact>
+	<LockedFact>Då anakondan kan komma upp i en vikt på 250 kg gör det den till världens tyngsta 
+orm. Med längden medräknad blir anakondan den största ormen i världen! Arten lever 
+mest på kapybaror och hjortar men kan också döda fullvuxna kajmaner. Anakondan är 
+anpassad för att kunna se och andas även när den ligger nere i vattnet genom att 
+den har sina ögon och näsborrar placerade mot huvudets ovansida. Ett Spanskt namn 
+för ormen är matatoro och det betyder ”tjur dödare”.
+</LockedFact>
+
+</Snake2>
+
+
+<Ozelot>
+	<Title>Ozelot</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/ozelot.png</Image>
+	<StandardFact>Ozelot
+Felis pardalis
+
+Längd: 50-100 cm
+Svans: 30-45 cm
+Vikt: 11,5-16 kg
+Ålder: 10-13 år i det vilda, upp till 20 år på zoo
+Organisation: Solitär
+
+Status: Under bevakning, svagt hotad
+
+</StandardFact>
+	<LockedFact>Ozeloten föder sig bland annat på mycket smågnagare, fågel, fisk och fladdermöss. 
+Men den är också känd för att äta även större djur som apor, sköldpaddor, unga hjortar, 
+bältor och myrslok. Ozeloten har utmärkt syn och hörsel och är främst aktiv under 
+dygnets mörka timmar. Olikt de flesta kattarter undviker inte ozeloten vatten och är 
+faktiskt en utmärkt simmare! Ozelotens vackra päls har gjort dom populära bland jägare. 
+På de flesta platser detta kattdjur förekommer är den utrotningshotad och inte tillåten 
+att jaga längre.
+</LockedFact>
+
+</Ozelot>
+
+
+<Eagle>
+	<Title>Fiskgjuse</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/eagle.png</Image>
+	<StandardFact>Fiskgjuse
+Pandion haliaetus
+
+Längd: 1,5-1,7 m
+Vikt: 1,5-2 kg
+Ålder: 20-25 år
+Vingspann: 145-170 cm
+Migration: Flyttfågel
+
+Status: Vanlig, inte hotad
+
+</StandardFact>
+	<LockedFact>Fiskgjusen lever enbart på fisk den fångar vid vattenytan. Fågelns yttre tå kan 
+vändas bakåt så att fiskarna transporteras med huvudet först. Denna art är en av de 
+mest spridda rovfåglarna i världen. Fiskgjusen förekommer på alla kontinenter förutom 
+Antarktis. Det engelska namnet för fiskgjuse osprey kommer från det Latinska ordet 
+ossifragus vilket betyder benknäckare.
+</LockedFact>
+
+</Eagle>
+
+
+<Harpy>
+	<Title>Harpya</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/harpy.png</Image>
+	<StandardFact>Harpya
+Harpia harpyja
+
+Längd: 86-107cm
+Vingspann: 176-224cm
+Vikt: Hona 6-9kg Hane 4-4.8kg
+Ålder: 25år
+Livsstil: Solitär
+
+Status: Nära hotad
+
+</StandardFact>
+	<LockedFact>Harpyan är ett topprovdjur, vilket betyder att den är allra högst upp i 
+näringskedjan och den är inte ett byte åt något annat djur. Den äter andra 
+fågelsorter, apor och sengångare främst, men kan även ta nyfödda boskapsdjur. 
+En harpya kan fånga och flya iväg med djur som väger lika mycket som de själva 
+när de jagar. De lägger oftast tre ägg, men så fort ett av äggen har kläckts så 
+slutar de oftast ruva på de andra äggen, så de får bara en unge varje gång de 
+lägger ägg. Harpyor är orädda djur och skräms inte av människor, därför blir de 
+ofta skjutna av tjuvjägare, eftersom de inte flyr när människor kommer i närheten 
+av dem. Fenixen Fawks i Harry Potter filmerna är modellerad efter en harpya.
+</LockedFact>
+
+</Harpy>
+
+
+<Jaguar>
+	<Title>Jaguar</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/jaguar.png</Image>
+	<StandardFact>Jaguar
+Panthera onca
+
+Längd: 1,1-1,9 m
+Svans: 45-75 cm
+Vikt: 36-160 kg
+Ålder: 11 år
+Livsstil: Solitär
+
+Status: Under bevakning, svagt hotad
+
+</StandardFact>
+	<LockedFact>Jaguaren lever mest på hjort, navelsvin och tapirer. Jaguaren är däremot 
+också känd för att ibland jaga efter unga kajmaner för föda. Likt de flesta 
+kattdjur kommer även jaguaren i en svart form där jaguarens päls är helt svart 
+och fläckarna syns ibland bara väldigt svagt. Detta under kallas melanistisk jaguar. 
+Ordet jaguar kommer från det Indianska ordet yaguar vilket betyder 
+”han som dödar med ett språng”.
+</LockedFact>
+
+</Jaguar>
+
+
+<Caiman>
+	<Title>Kajman</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/caiman.png</Image>
+	<StandardFact>Svart kajman
+Melanosuchus niger
+
+Längd: 4-6 m
+Vikt: Upp till 400 kg
+Ålder: 50-80 år
+Livsstil: Akvatisk
+
+Status: Inte hotad
+
+</StandardFact>
+	<LockedFact>Arten lever på föda bestående av fisk, vattenlevande fåglar och, kapybaror 
+och ibland tamdjur. Samt mer sällsynt människor. Honor lägger mellan 30-65 ägg 
+och både ägg och ungar vaktas. Den svarta kajmanen har jagats för sitt skinn, 
+vilket har gjort att den försvunnit från stora delar av sitt utbredningsområde. 
+Likt många arter av kajmaner och krokodiler så brukar den svarta kajmanen dra ner 
+sitt byte under vattnet och fästa det i skrevor eller under träd där det låter 
+bytet vara för att det ska bli enklare att äta. Kajmanens tänder är nämligen inte 
+gjorda för att slita kött från sina byten.
+</LockedFact>
+
+</Caiman>
+
+
+
+
+
+
+<Amazon>
+	<Title>Amazonas</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/amazon.png</Image>
+	<StandardFact>Amazonas regnskog 
+är världens största regnskog, den täcker 
+ett område som är större än fem 
+miljoner kvadratmeter. Vilket är 
+mer än 12 gånger så stort som 
+hela Sverige.</StandardFact>
+	<LockedFact>Amazonas regnskog är världens största regnskog och ligger i Sydamerika och 
+den är så stor att den ligger i 9 stycken länder, bland annat Brasilien, 
+Peru, Colombia och Ecuador. I regnskogar lever det väldigt många olika 
+arter av djur och Amazonas är den regnskog där det finns flest olika djurarter. 
+Var tionde av alla världens djurarter lever i Amazonas regnskog och det är 
+den plats i världen där det finns flest olika djurarter.
+</LockedFact>
+
+</Amazon>
+
+
+<History>
+	<Title>Historia</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/historia.png</Image>
+	<StandardFact>Amazonas regnskog 
+är bland de äldsta skogarna om inte den 
+äldsta som finns i världen, den är 55 
+miljoner år gammal. </StandardFact>
+	<LockedFact>Den har under sina levnads år skiftat i storlek. Under istiderna var den oftast 
+väldigt liten, då det inte fanns mycket plats på jorden som var varmt 
+och fuktigt nog för en regnskog, och har varit större än vad den är 
+nu under vissa väldigt varma perioder under jordens historia. När den 
+var som störst sträckte sig Amazonas regnskog nästan ner till botten 
+av Sydamerika.</LockedFact>
+
+</History>
+
+<Danger>
+	<Title>Faror</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/faror.png</Image>
+	<StandardFact>Amazonas regnskog 
+har under de senaste 50 åren krympt
+mycket i storlek både på grund av 
+människor och av naturkatastrofer.
+Det har varit torka flera gånger i 
+Sydamerika, som har fått regnskogen 
+att torka ut och stora partier av 
+skogen av försvunnit då den dött av 
+brist på vatten.</StandardFact>
+	<LockedFact>Jordens klimat har även blivit varmare, vilket har lett till att det inte 
+regnar lika mycket i Amazonas och delar av skogen dör då de inte får tillräckligt 
+med regn. Människor har även huggit ner stora delar av skogen, då de behöver 
+utrymme för sin boskap och för odling. På senare år har även stora delar av Amazonas 
+regnskog börjat huggas ner för byggandet av motorvägar. Det är även folk som inte har 
+tillåtes att hugga ner skogen som gör det för att sälja veden de får. När skogen 
+försvinner dör även de djur som bor där, då de inte har någon annan stans att ta 
+vägen och för att de lever av det som skogen har att ge som föda.
+</LockedFact>
+
+</Danger>
+
 
 <>
 	<Title></Title>
