@@ -1,39 +1,239 @@
-<HummingBird>
-	<Title>Kollibri</Title>
-	<Image x="1000" y="0">Resources/Animals/hummingBird.png</Image>
-	<StandardFact>Längd: 17-23 cm
-Vikt: 12-15 g
-Ålder: ca 5 år
+<Spider>
+	<Title>Spindel</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/spider.png</Image>
+	<StandardFact>Goliatspindel
+Theraphosa blondi
 
-Migration: Stannfågel
+Längd: 30 cm
+Vikt: 170 g
+Ålder: 15-25 år
+Livsstil: Solitär
 
-Status: Livskraftig
+Status: Inte hotad
+
 </StandardFact>
-	<LockedFact>Likt de flesta kolibri arter livnär sig svärdnäbbskolibrin på nektar. Två av dess vanliga blommor den söker föda hos är passionsblommor och spikklubbor.
-Svärdnäbbskolibrins näbb kan bli upp till hela 11 cm lång vilket betyder att näbben kan bli längre än kroppen!
-Kolibrifåglar är kända för sin förmåga att kunna flyga åt alla håll, både upp, ner, åt sidorna och till och med på rygg.
+	<LockedFact>Goliatspindeln äter vanligtvis insekter. Men på grund utav sin storlek är det inte ovanligt 
+att den äter även gnagare, grodor, ödlor, fladdermöss och till och med giftiga ormar.
+Hanarna i arten dör strax efter könsmognad, vid ca 3-6 års ålder, medan honorna lever 
+mycket längre. Honorna kan lägga mellan 100-200 ägg som kläcks inom två månader.
+Goliatspindeln har dålig syn och förlitar sig på att känna vibrationer i marken. 
+Den gömmer sig i sin bohåla i marken under dagen och jagar istället på natten.
 </LockedFact>
 
-</HummingBird>
+</Spider>
+
+<Frog>
+	<Title>Giftgroda</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/frog.png</Image>
+	<StandardFact>Pilgiftsgroda
+Dendrobatidae
+
+Längd: 1.5-6cm
+Vikt: 2-10g
+Ålder: 5år
+
+Status: Hotad
+
+</StandardFact>
+	<LockedFact>Pilgiftsgrodan har fått sitt namn eftersom deras gift har använts till att göra förgiftade pilar.
+Hela pilgiftsgrodans kropp är täckt av ett farligt gift och det kan räcka med att du 
+har ett litet skrapsår för att du ska bli förgiftad av den. Anledningen till att 
+pilgiftsgrodorna är så färgglada är att giftet på deras kropp ändrar deras hudfärg. 
+De flesta rovdjuren lämnar pilgiftsgrodorna ifred då de har så starka och färgglada 
+färger på sin kropp, vilket ofta betyder att de antingen är giftiga eller smakar illa. 
+Många groddjur lägger sina ägg i kanten på sjöar eller dammar men många pilgiftsgrodor 
+lägger istället sina ägg i vattenfyllda håligheter i träd och växter.
+</LockedFact>
+
+</Frog>
+
+<Bullfrog>
+	<Title>Oxgroda</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/bullfrog.png</Image>
+	<StandardFact>Sydamerikansk oxgroda
+Leptodactylus pentadactylus
+
+Längd: 8-22 cm
+Vikt: 500 g
+Ålder: 7-9 år
+Livsstil: Främst terrestrisk
+
+Status: Vanlig, inte hotad
+
+</StandardFact>
+	<LockedFact>Denna art är mycket glupsk och äter allt den kan få i sig. 
+Mestadels lever den på andra svanslösa djur men den kan även föda på snokar, 
+andungar och andra fågelungar. Den sydamerikanska oxgrodan är en kraftfullt 
+byggd groda och den största av sitt släkte. Denna art skulle lätt kunna utrota 
+hela bestånd av andra groddjur i den vattensamling den lever. 
+
+Bakbenen från denna art äts ibland av människor. Om oxgrodan plockas upp ger 
+den ifrån sig ett högt skrik för att skrämma rovdjuret till att släppa dem.
+</LockedFact>
+
+</Bullfrog>
+
+<Scorpion>
+	<Title>Scorpion</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/scorpion.png</Image>
+	<StandardFact>Skorpioner
+
+Skorpioner är precis som spindlar en del av 
+spindeldjursfamiljen och är inte insekter. 
+
+Spindeldjuren har åtta stycken ben istället 
+för sex stycken som insekter har.
+Den minsta sortens skorpion är 
+Typhlochactas mitchelli. 
+
+</StandardFact>
+	<LockedFact>Den blir bara 9mm lång och lever bara i Mexico, den största 
+sorten Hadogenes troglodytes kan bli upp till 20cm lång. Skorpioner kan leva nästan 
+över allt och de går att hitta på alla kontinenter utom en, Sydpolen. Skorpioner har 
+en giftgadd längst ut på svansen som den använder när den försvarar sig mot rovdjur eller 
+jagar bytesdjur. Med sitt gift dödar de sina bytesdjur eller paralyserar dem innan de äter 
+upp dem. Vissa skorpionarter kan klara av att leve på platser där det blir mellan -31 och 
+-50 Celsius.Skorpioner är en väldigt gammal sort av djur och de fanns redan innan 
+dinosaurierna fanns, men då levde nere i haven.
+</LockedFact>
+
+</Scorpion>
+
+
+
+
+
+<Vulture>
+	<Title>Korpgam</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/vulture.png</Image>
+	<StandardFact>Korpgam
+Coragyps atratus
+
+Längd: 54-74cm
+Vingspann: 133-167cm
+Vikt: 1.6-2.5kg
+Ålder: 7år
+Livsstil: Solitär
+
+Status: Under bevakning, svagt hotad
+
+</StandardFact>
+	<LockedFact>Korpgamen är en asätare och äter därför kadaver, döda djur. 
+Asätare hjälper till med att hålla naturen ren och frisk genom att de äter upp de 
+döda djuren så att det inte bildas massor av bakterier som kan göra andra djur sjuka.
+
+Den äter främst kadaver men kan även äta sopor, ägg från andra fåglar och rutten frukt.
+Korpgamar har inget stämband och kan därför inte ”prata” utan gör bara hesa läten 
+istället, de har inte heller något luktsinne, så för att hitta kadaver följer de efter 
+andra gamar som kan lukta och hitta de döda djuren. Deras avföring är dessutom skadlig 
+för växter.
+
+</LockedFact>
+
+</Vulture>
+
+<KingVulture>
+	<Title>Kungsgam</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/kingvulture.png</Image>
+	<StandardFact>Kungsgam
+Sarcoramphus papa
+
+Längd: 67-81cm
+Vingspann: 120-200cm
+Vikt: 2.7-4.5kg
+Ålder: 30år
+Livsstil: Solitär eller i familj
+
+Status: Under bevakning, svagt hotad
+
+</StandardFact>
+	<LockedFact>Kungsgamen kan leva båda ensam eller i familj med andra kungsgamar och 
+de kan t.ex. bada och dricka tillsammans.Deras enda naturliga fiender är ormar och jaguarer.
+Precis som korpgamen saknar de stämband och gör hesa kraxande läten eller knäpper med 
+näbben istället för att ”prata” som andra fåglar. Kungsgamen är en asätare så deras 
+huvudföda är kadaver, men de kan även äta levande sengångare och fånga små ödlor 
+och liknande. Många andra mindre gamar har svagare och inte särskilt vassa näbbar, 
+därför väntar de ofta på att en kungsgam börjar äta och skär upp skinnet på kadavret 
+så att de kan komma åt det mjukare innanmätet.
+
+</LockedFact>
+
+</KingVulture>
+
+<HummingBird1>
+	<Title>Svärdnäbb</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/hummingbird1.png</Image>
+	<StandardFact>Svärdnäbbskolibri
+Ensifera ensifera
+
+Längd: 17-23 cm
+Vikt: 12-15 g
+Ålder: ca 5 år
+Migration: Stannfågel
+
+Status: Inte hotad
+
+</StandardFact>
+	<LockedFact>Likt de flesta kolibri arter livnär sig svärdnäbbskolibrin på nektar. Två av dess vanliga 
+blommor den söker föda hos är passionsblommor och spikklubbor.Svärdnäbbskolibrins 
+näbb kan bli upp till hela 11 cm lång vilket betyder att näbben kan bli längre 
+än kroppen! 
+
+Kolibrifåglar är kända för sin förmåga att kunna flyga åt alla håll, 
+både upp, ner, åt sidorna och till och med på rygg.
+</LockedFact>
+
+</HummingBird1>
+
+<HummingBird2>
+	<Title>Topas</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/hummingbird2.png</Image>
+	<StandardFact>Topaskolibri
+Topaza pella
+
+Längd: 21-23 cm
+Vikt: 10-15 g
+Ålder: ca 5 år
+Migration: Stannfågel
+ 
+Status: Inte hotad
+
+</StandardFact>
+	<LockedFact>Topaskolibrin lever på den nektar den kan samla upp från ett stort antal regnskogsblommor 
+med hjälp av sin relativt korta och svagt böjda näbb.
+
+Hanor och honor av arten Topaskolibri har två olika fjäderdräkter vilket gör det 
+lätt att särskilja de två könen från varandra. Hanen av Topaskolibrin har en 
+glittrande fjäderdräkt i blandade färger av rött och violett. Två långa, svarta 
+stjärtfjädrar pryder hans fjäderdräkt och de är inåtböjda så att de korsar varandra. 
+Honan har istället kortare svans och är tecknad i grönt.
+</LockedFact>
+
+</HummingBird2>
+
 
 <Monkey>
-	<Title>Apa</Title>
+	<Title>Vrålapa</Title>
 	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/monkey.png</Image>
-	<StandardFact>Längd: 51-63cm
+	<StandardFact>Röd Vrålapa
+Alouatta seniculus
+
+Längd: 51-63cm
 Längd med svans: 106-132cm
 Vikt: 4-9kg
 Ålder: 5-10år
 Livsstil: Flock
 
-Status: Under observation
+Status: Under bevakning, svagt hotad
+
 </StandardFact>
 	<LockedFact>Vrålapor lever oftast i en grupp på fyra till fem djur, med en hane och tre eller fyra honor.
 Den röda vrålapan är den största av alla vrålapor.
 Vrålapan har fått sitt namn ifrån att de vråla väldigt högt när de ska kommunicera
- med andra vrålapor eller skrämma bort en annan flock av apor från sitt revir.
+med andra vrålapor eller skrämma bort en annan flock av apor från sitt revir.
 När en vrålapa vrålar är ljudet så starkt att det kan höras upp till två km bort i den
- täta regnskogsdjungeln. Vrålapan hör till gruppen spindelapor, vilka är apor med väldigt
- långa svansar, som fungerar som en extra arm för dem som de t.ex. kan plocka bär med.
+täta regnskogsdjungeln. Vrålapan hör till gruppen spindelapor, vilka är apor med väldigt
+långa svansar, som fungerar som en extra arm för dem som de t.ex. kan plocka bär med.
 Den har ett väldigt starkt luktsinne som den använder för att hitta de bär, blad och 
 frukter som den äter.
 
@@ -41,21 +241,261 @@ frukter som den äter.
 
 </Monkey>
 
-<Snake>
-	<Title>Snake</Title>
-	<Image x="1000" y="0">Resources/Animals/snake.png</Image>
-	<StandardFact>Längd: 6-10 m
-Vikt: Upp till 250 kg
-Ålder: 25 år
+<Snake1>
+	<Title>Kungsboa</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/snake1.png</Image>
+	<StandardFact>Kungsboa
+Boa constrictor
 
-Livsstil: Delvis akvatisk
+Längd: 1-4 m
+Vikt: ca 25 kg
+Ålder: 30 år
+Livsstil: Marklevande/trädlevande
 
-Status: Allmän
+Status: Vanlig, inte hotad
+
 </StandardFact>
-	<LockedFact>Då anakondan kan komma upp i en vikt på 250 kg gör det den till världens tyngsta orm. Med längden medräknad blir anakondan den största ormen i världen! Arten lever mest på kapybaror och hjortar men kan också döda fullvuxna kajmaner.
-Anakondan är anpassad för att kunna se och andas även när den ligger nere i vattnet genom att den har sina ögon och näsborrar placerade mot huvudets ovansida.
-Ett Spanskt namn för ormen är matatoro och det betyder ”tjur dödare”.
+	<LockedFact>Kungsboan lever främst på olika däggdjur och fåglar. Likt sin kusin anakondan är 
+kungsboan inte giftig istället slingrar sig kungsboan kring sitt byte och kväver 
+det. Den sväljer sina byten hela och efter en stor middag behöver kungsboan inte 
+äta på dagar efteråt! Kungsboans ungar föds levande. Äggen kläcks i modern innan 
+de föds, skyddade av bara en tunn hinna. Arten kan föda upp till 65 ungar per gång. 
+Ungarna föds med naturliga instikter om hur den jagar och att gömma sig från rovdjur. 
+Arten är också ett vanligt husdjur både på zoo och hos reptil intresserade.
 </LockedFact>
 
-</Snake>
+</Snake1>
+
+
+<Snake2>
+	<Title>Anakonda</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/snake2.png</Image>
+	<StandardFact>Anakonda
+Eunectes murinus
+
+Längd: 6-10 m
+Vikt: Upp till 250 kg
+Ålder: 25 år
+Livsstil: Delvis akvatisk
+
+Status: Vanlig, inte hotad
+
+</StandardFact>
+	<LockedFact>Då anakondan kan komma upp i en vikt på 250 kg gör det den till världens tyngsta 
+orm. Med längden medräknad blir anakondan den största ormen i världen! Arten lever 
+mest på kapybaror och hjortar men kan också döda fullvuxna kajmaner. Anakondan är 
+anpassad för att kunna se och andas även när den ligger nere i vattnet genom att 
+den har sina ögon och näsborrar placerade mot huvudets ovansida. Ett Spanskt namn 
+för ormen är matatoro och det betyder ”tjur dödare”.
+</LockedFact>
+
+</Snake2>
+
+
+<Ozelot>
+	<Title>Ozelot</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/ozelot.png</Image>
+	<StandardFact>Ozelot
+Felis pardalis
+
+Längd: 50-100 cm
+Svans: 30-45 cm
+Vikt: 11,5-16 kg
+Ålder: 10-13 år i det vilda, upp till 20 år på zoo
+Organisation: Solitär
+
+Status: Under bevakning, svagt hotad
+
+</StandardFact>
+	<LockedFact>Ozeloten föder sig bland annat på mycket smågnagare, fågel, fisk och fladdermöss. 
+Men den är också känd för att äta även större djur som apor, sköldpaddor, unga hjortar, 
+bältor och myrslok. Ozeloten har utmärkt syn och hörsel och är främst aktiv under 
+dygnets mörka timmar. Olikt de flesta kattarter undviker inte ozeloten vatten och är 
+faktiskt en utmärkt simmare! Ozelotens vackra päls har gjort dom populära bland jägare. 
+På de flesta platser detta kattdjur förekommer är den utrotningshotad och inte tillåten 
+att jaga längre.
+</LockedFact>
+
+</Ozelot>
+
+
+<Eagle>
+	<Title>Fiskgjuse</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/eagle.png</Image>
+	<StandardFact>Fiskgjuse
+Pandion haliaetus
+
+Längd: 1,5-1,7 m
+Vikt: 1,5-2 kg
+Ålder: 20-25 år
+Vingspann: 145-170 cm
+Migration: Flyttfågel
+
+Status: Vanlig, inte hotad
+
+</StandardFact>
+	<LockedFact>Fiskgjusen lever enbart på fisk den fångar vid vattenytan. Fågelns yttre tå kan 
+vändas bakåt så att fiskarna transporteras med huvudet först. Denna art är en av de 
+mest spridda rovfåglarna i världen. Fiskgjusen förekommer på alla kontinenter förutom 
+Antarktis. Det engelska namnet för fiskgjuse osprey kommer från det Latinska ordet 
+ossifragus vilket betyder benknäckare.
+</LockedFact>
+
+</Eagle>
+
+
+<Harpy>
+	<Title>Harpya</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/harpy.png</Image>
+	<StandardFact>Harpya
+Harpia harpyja
+
+Längd: 86-107cm
+Vingspann: 176-224cm
+Vikt: Hona 6-9kg Hane 4-4.8kg
+Ålder: 25år
+Livsstil: Solitär
+
+Status: Nära hotad
+
+</StandardFact>
+	<LockedFact>Harpyan är ett topprovdjur, vilket betyder att den är allra högst upp i 
+näringskedjan och den är inte ett byte åt något annat djur. Den äter andra 
+fågelsorter, apor och sengångare främst, men kan även ta nyfödda boskapsdjur. 
+En harpya kan fånga och flya iväg med djur som väger lika mycket som de själva 
+när de jagar. De lägger oftast tre ägg, men så fort ett av äggen har kläckts så 
+slutar de oftast ruva på de andra äggen, så de får bara en unge varje gång de 
+lägger ägg. Harpyor är orädda djur och skräms inte av människor, därför blir de 
+ofta skjutna av tjuvjägare, eftersom de inte flyr när människor kommer i närheten 
+av dem. Fenixen Fawks i Harry Potter filmerna är modellerad efter en harpya.
+</LockedFact>
+
+</Harpy>
+
+
+<Jaguar>
+	<Title>Jaguar</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/jaguar.png</Image>
+	<StandardFact>Jaguar
+Panthera onca
+
+Längd: 1,1-1,9 m
+Svans: 45-75 cm
+Vikt: 36-160 kg
+Ålder: 11 år
+Livsstil: Solitär
+
+Status: Under bevakning, svagt hotad
+
+</StandardFact>
+	<LockedFact>Jaguaren lever mest på hjort, navelsvin och tapirer. Jaguaren är däremot 
+också känd för att ibland jaga efter unga kajmaner för föda. Likt de flesta 
+kattdjur kommer även jaguaren i en svart form där jaguarens päls är helt svart 
+och fläckarna syns ibland bara väldigt svagt. Detta under kallas melanistisk jaguar. 
+Ordet jaguar kommer från det Indianska ordet yaguar vilket betyder 
+”han som dödar med ett språng”.
+</LockedFact>
+
+</Jaguar>
+
+
+<Caiman>
+	<Title>Kajman</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/caiman.png</Image>
+	<StandardFact>Svart kajman
+Melanosuchus niger
+
+Längd: 4-6 m
+Vikt: Upp till 400 kg
+Ålder: 50-80 år
+Livsstil: Akvatisk
+
+Status: Inte hotad
+
+</StandardFact>
+	<LockedFact>Arten lever på föda bestående av fisk, vattenlevande fåglar och, kapybaror 
+och ibland tamdjur. Samt mer sällsynt människor. Honor lägger mellan 30-65 ägg 
+och både ägg och ungar vaktas. Den svarta kajmanen har jagats för sitt skinn, 
+vilket har gjort att den försvunnit från stora delar av sitt utbredningsområde. 
+Likt många arter av kajmaner och krokodiler så brukar den svarta kajmanen dra ner 
+sitt byte under vattnet och fästa det i skrevor eller under träd där det låter 
+bytet vara för att det ska bli enklare att äta. Kajmanens tänder är nämligen inte 
+gjorda för att slita kött från sina byten.
+</LockedFact>
+
+</Caiman>
+
+
+
+
+
+
+<Amazon>
+	<Title>Amazonas</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/amazon.png</Image>
+	<StandardFact>Amazonas regnskog 
+är världens största regnskog, den täcker 
+ett område som är större än fem 
+miljoner kvadratmeter. Vilket är 
+mer än 12 gånger så stort som 
+hela Sverige.</StandardFact>
+	<LockedFact>Amazonas regnskog är världens största regnskog och ligger i Sydamerika och 
+den är så stor att den ligger i 9 stycken länder, bland annat Brasilien, 
+Peru, Colombia och Ecuador. I regnskogar lever det väldigt många olika 
+arter av djur och Amazonas är den regnskog där det finns flest olika djurarter. 
+Var tionde av alla världens djurarter lever i Amazonas regnskog och det är 
+den plats i världen där det finns flest olika djurarter.
+</LockedFact>
+
+</Amazon>
+
+
+<History>
+	<Title>Historia</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/historia.png</Image>
+	<StandardFact>Amazonas regnskog 
+är bland de äldsta skogarna om inte den 
+äldsta som finns i världen, den är 55 
+miljoner år gammal. </StandardFact>
+	<LockedFact>Den har under sina levnads år skiftat i storlek. Under istiderna var den oftast 
+väldigt liten, då det inte fanns mycket plats på jorden som var varmt 
+och fuktigt nog för en regnskog, och har varit större än vad den är 
+nu under vissa väldigt varma perioder under jordens historia. När den 
+var som störst sträckte sig Amazonas regnskog nästan ner till botten 
+av Sydamerika.</LockedFact>
+
+</History>
+
+<Danger>
+	<Title>Faror</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/faror.png</Image>
+	<StandardFact>Amazonas regnskog 
+har under de senaste 50 åren krympt
+mycket i storlek både på grund av 
+människor och av naturkatastrofer.
+Det har varit torka flera gånger i 
+Sydamerika, som har fått regnskogen 
+att torka ut och stora partier av 
+skogen av försvunnit då den dött av 
+brist på vatten.</StandardFact>
+	<LockedFact>Jordens klimat har även blivit varmare, vilket har lett till att det inte 
+regnar lika mycket i Amazonas och delar av skogen dör då de inte får tillräckligt 
+med regn. Människor har även huggit ner stora delar av skogen, då de behöver 
+utrymme för sin boskap och för odling. På senare år har även stora delar av Amazonas 
+regnskog börjat huggas ner för byggandet av motorvägar. Det är även folk som inte har 
+tillåtes att hugga ner skogen som gör det för att sälja veden de får. När skogen 
+försvinner dör även de djur som bor där, då de inte har någon annan stans att ta 
+vägen och för att de lever av det som skogen har att ge som föda.
+</LockedFact>
+
+</Danger>
+
+
+<>
+	<Title></Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/.png</Image>
+	<StandardFact></StandardFact>
+	<LockedFact></LockedFact>
+
+</>
 
