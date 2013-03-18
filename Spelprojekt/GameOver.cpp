@@ -17,7 +17,7 @@ GameOver::GameOver()
 		}
 		mRetryText.setString(string);
 		mRetryText.setPosition(sf::Vector2f(520,460));
-		mMusic = "Resources/Sound/Music/TitleScreen";
+		mMusic = "Resources/Sound/Music/Title_Screen_";
 
 		
 }

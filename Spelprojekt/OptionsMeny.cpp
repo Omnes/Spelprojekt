@@ -15,7 +15,7 @@ OptionsMeny::OptionsMeny()
 	mOptionSliders.push_back(new OptionSlider(sf::Vector2f(50,240), "Sound", "soundVolume"));
 	mOptionSliders.push_back(new OptionSlider(sf::Vector2f(50,340), "Sound", "voiceVolume"));
 
-	mMusic = "Resources/Sound/Music/TitleScreen";
+	mMusic = "Resources/Sound/Music/Title_Screen_";
 
 
 	mBackground.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/OptionsMenu/OptionsBG.png"));

@@ -12,7 +12,7 @@ Animalipedia::Animalipedia()
 	, mUpButton(sf::Vector2f(32,0),-1,"Resources/Menu/Animalipedia/scroll_knapp.png","",this)
 	, mDownButton(sf::Vector2f(32,570),1,"Resources/Menu/Animalipedia/scroll_knapp_ner.png","",this){
 
-		mMusic = "Resources/Sound/Music/TitleScreen";
+		mMusic = "Resources/Sound/Music/Title_Screen_";
 		loadUnlocked();
 		mInfo = 0;
 		setPage(mCurrentButtonPage);

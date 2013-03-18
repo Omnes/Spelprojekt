@@ -30,7 +30,7 @@ TaktikMeny::TaktikMeny() :
 	receiveAnimals();
 	placeSpots();
 
-	mMusic = "Resources/Sound/Music/TitleScreen";
+	mMusic = "Resources/Sound/Music/Title_Screen_";
 
 }
 
