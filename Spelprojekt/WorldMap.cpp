@@ -13,7 +13,8 @@ WorldMap::WorldMap() :
 	mSub(0),
 	mLevelCount(0),
 	mSection(0),
-	mCount(0)
+	mCount(0),
+	mNewWorld(false)
 {
 
 	readButtons();
@@ -43,6 +44,8 @@ WorldMap::WorldMap() :
 WorldMap::~WorldMap(){}
 
 void WorldMap::update(){
+	
+	ParticleManager::getInst().update();
 
 	mFactButton->update();
 
@@ -72,6 +75,9 @@ void WorldMap::render(){
 	for (std::vector<LevelButton*>::iterator i = mButtonVector.begin(); i != mButtonVector.end(); i++){
 		window->draw((*i)->getSprite());
 	}
+
+	ParticleManager::getInst().render(*window);
+
 }
 
 void WorldMap::readSave(){
@@ -312,8 +318,7 @@ void WorldMap::setCurrentWorldOrSub(std::string currentLevel){
 	if(mWorldVector[mWorld].size() <= mSub){
 		mWorld++;
 		mSub = 0;
-		StateManager::getInst().addState(new Cutscene(mCutscenes[mWorld-1])); //hårdkodade cutscenes ohoy!
-		
+		mNewWorld = true;
 	}
 
 	for(ButtonVector::iterator i = mButtonVector.begin(); i != mButtonVector.end(); i++){
@@ -323,7 +328,7 @@ void WorldMap::setCurrentWorldOrSub(std::string currentLevel){
 		}
 	}
 
-	//så endgame funakr
+	//så endgame funakr, hååårdkod
 	if(mWorld <= 2){
 		updateWorld();
 	}
@@ -391,4 +396,13 @@ void WorldMap::setDeadAnimals(std::vector <std::string> deadAnimals){
 
 int WorldMap::getSection(){
 	return mCurrentSection;
+}
+
+bool WorldMap::getNewWorld(){
+	return mNewWorld;
+}
+
+void WorldMap::doCutscene(){
+	StateManager::getInst().addState(new Cutscene(mCutscenes[mWorld-1])); //hårdkodade cutscenes ohoy!
+	mNewWorld = false;
 }

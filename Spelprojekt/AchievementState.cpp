@@ -47,7 +47,7 @@ AchievementState::AchievementState(int section){
 		sf::Sprite *sprite = new sf::Sprite();
 		sprite->setTexture(*tex);
 		sprite->setTextureRect(sf::IntRect(0,0, tex->getSize().x/elmf->IntAttribute("frames"), tex->getSize().y/2));
-		//sprite->setPosition(500,500);
+		
 		mImageVector.push_back(sprite);
 	}
 
@@ -59,13 +59,18 @@ AchievementState::AchievementState(int section){
 		mImageVector[i]->setPosition(sf::Vector2f(startPosX + 250 * i, startPosY));
 	}
 
-	//mTutorialDuration = 10.0f;
-	//mTimer.restart();
+
 }
 
 AchievementState::~AchievementState(){}
 
 void AchievementState::update(){
+
+	if(mAnimalVector.empty()){
+		EventManager::getInst().addEvent("popState");
+	}
+
+	ParticleManager::getInst().update();
 
 	mButton->update();
 
@@ -75,13 +80,18 @@ void AchievementState::render(){
 
 	sf::RenderWindow* window = WindowManager::getInst().getWindow();
 
-	mPreState->render();
-	window->draw(mSprite);
-	window->draw(mButton->getSprite());
+	if(!mAnimalVector.empty()){
+		mPreState->render();
+		window->draw(mSprite);
+		window->draw(mButton->getSprite());
 
-	for(ImageVector::iterator i = mImageVector.begin(); i != mImageVector.end(); i++){
-		window->draw(*(*i));
+		for(ImageVector::iterator i = mImageVector.begin(); i != mImageVector.end(); i++){
+			window->draw(*(*i));
+		}
 	}
+
+	//ta bort sen, funkar inte atm
+	ParticleManager::getInst().render(*window);
 
 }
 
