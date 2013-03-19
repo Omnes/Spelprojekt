@@ -45,8 +45,9 @@ void MusicLoop::update(){
 
 void MusicLoop::setVolume(float volume){
 	mVolume = volume;
-	mFirstFile.setVolume(volume);
-	mSecondFile.setVolume(volume);
+	if(mCurrentPlaying != 0){
+		mCurrentPlaying->setVolume(volume);
+	}
 }
 
 float MusicLoop::getVolume(){
@@ -55,9 +56,8 @@ float MusicLoop::getVolume(){
 
 
 void MusicLoop::stop(){
-	if(mCurrentPlaying != 0){
-		mCurrentPlaying->stop();
-	}
+	mFirstFile.stop();
+	mSecondFile.stop();
 
 }
 
