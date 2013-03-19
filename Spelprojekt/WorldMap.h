@@ -5,6 +5,7 @@
 #include "FactButton.h"
 #include "LevelManager.h"
 #include "Button.h"
+#include "ParticleManager.h"
 #include "SFML\Graphics\Texture.hpp"
 #include "tinyxml2.h"
 #include <string> // kanske inte behövs (se: saveToFile(std::string))
@@ -36,6 +37,9 @@ public:
 	std::string getMusic();
 
 	int getSection();
+	bool getNewWorld();
+	void doCutscene();
+
 
 
 private:
@@ -66,6 +70,8 @@ private:
 
 	//ta bort denna
 	int mCount;
+
+	bool mNewWorld;
 
 };
 

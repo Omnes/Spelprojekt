@@ -7,6 +7,8 @@
 #include "tinyxml2.h"
 #include "Button.h"
 #include <vector>
+#include "ParticleManager.h"
+#include "EventManager.h"
 
 
 

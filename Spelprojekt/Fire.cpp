@@ -1,7 +1,6 @@
 #include "Fire.h"
 #include "ResourceManager.h"
 #include <iostream>
-#include "ParticleManager.h"
 #include "Animation.h"
 #include "LevelManager.h"
 #include "ActiveLayer.h"

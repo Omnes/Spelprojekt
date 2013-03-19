@@ -59,8 +59,7 @@ AchievementState::AchievementState(int section){
 		mImageVector[i]->setPosition(sf::Vector2f(startPosX + 250 * i, startPosY));
 	}
 
-	//mTutorialDuration = 10.0f;
-	//mTimer.restart();
+
 }
 
 AchievementState::~AchievementState(){
@@ -72,6 +71,12 @@ AchievementState::~AchievementState(){
 
 void AchievementState::update(){
 
+	if(mAnimalVector.empty()){
+		EventManager::getInst().addEvent("popState");
+	}
+
+	ParticleManager::getInst().update();
+
 	mButton->update();
 
 }
@@ -81,12 +86,18 @@ void AchievementState::render(){
 	sf::RenderWindow* window = WindowManager::getInst().getWindow();
 
 	mPreState->render();
-	window->draw(mSprite);
-	window->draw(mButton->getSprite());
 
-	for(ImageVector::iterator i = mImageVector.begin(); i != mImageVector.end(); i++){
-		window->draw(*(*i));
+	if(!mAnimalVector.empty()){
+		window->draw(mSprite);
+		window->draw(mButton->getSprite());
+
+		for(ImageVector::iterator i = mImageVector.begin(); i != mImageVector.end(); i++){
+			window->draw(*(*i));
+		}
 	}
+
+	//ta bort sen, funkar inte atm
+	ParticleManager::getInst().render(*window);
 
 }
 
