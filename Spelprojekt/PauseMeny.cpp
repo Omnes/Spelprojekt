@@ -6,7 +6,7 @@
 #include "LevelManager.h"
 #include <SFML\Window\Keyboard.hpp>
 
-PauseMeny::PauseMeny(): mRenderState(0), mResumeButton(sf::Vector2f(640,480),"popState","Resources/Menu/PauseMenu/ContinueButton.png", "Resources/Sound/test.wav"){
+PauseMeny::PauseMeny(): mRenderState(0), mResumeButton(sf::Vector2f(640,480),"popState","Resources/Menu/PauseMenu/ContinueButton.png", "Resources/Sound/Menu/Menu_forward.wav"){
 	mRenderState = StateManager::getInst().getTop();
 	mMusic = mRenderState->getMusic();
 	mSprite.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/PauseMenu/paused.png"));

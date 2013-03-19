@@ -9,7 +9,6 @@ Button::Button(sf::Vector2f pos, std::string evt, std::string img, std::string s
 		mPosition(pos), 
 		mEvent(evt), 
 		mCurrentImage(0), 
-		mPartSystem("Leaf",100),
 		mButtonTime(0.3),
 		mPressed(false){
 
@@ -20,7 +19,6 @@ Button::Button(sf::Vector2f pos, std::string evt, std::string img, std::string s
 		mSprite.setTextureRect(mRectangle);
 		mSoundBuffer = (ResourceManager::getInst().getSoundBuffer(sound));
 		mSound.setBuffer(*mSoundBuffer);
-		mEmitter.setPosition(mPosition);
 
 }
 
@@ -38,7 +36,6 @@ void Button::update(){
 	//om musen är ovanförknappen
 	if(mSprite.getGlobalBounds().contains(mousePosition) && !mPressed){		
 	
-		mEmitter.burst(mPartSystem,sf::FloatRect(0,0,mRectangle.width,mRectangle.height),1);
 		mCurrentImage=1;
 
 		//om knappen trycks ned
