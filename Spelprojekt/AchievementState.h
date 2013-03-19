@@ -20,6 +20,7 @@ public:
 	virtual void update();
 	virtual void render();
 	virtual std::string getMusic();
+	void saveUnlocked();
 
 private:
 
@@ -35,6 +36,9 @@ private:
 
 	typedef std::vector <sf::Sprite*> ImageVector;
 	ImageVector mImageVector;
+
+	typedef std::vector <std::string> UnlockVector;
+	UnlockVector mUnlockVector;
 
 	Button* mButton;
 

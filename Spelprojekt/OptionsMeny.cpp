@@ -18,7 +18,7 @@ OptionsMeny::OptionsMeny()
 	mMusic = "Resources/Sound/Music/Title_Screen_";
 
 
-	mBackground.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/OptionsMenu/OptionsBG.png"));
+	mBackground.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/OptionsMenu/bakgrund_optionsmeny.png"));
 }
 
 OptionsMeny::~OptionsMeny(){
