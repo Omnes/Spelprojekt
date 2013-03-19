@@ -58,6 +58,8 @@ TaktikMeny::~TaktikMeny(){
 
 void TaktikMeny::update(){
 
+	ParticleManager::getInst().update();
+
 	if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
 		isClicked();
 	}else{

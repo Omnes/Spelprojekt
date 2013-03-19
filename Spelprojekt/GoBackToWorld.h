@@ -20,6 +20,7 @@ public:
 		StateManager::getInst().popState();
 		WorldMap* worldMap = dynamic_cast<WorldMap*>(StateManager::getInst().getTop());
 		GameOver::sRetryCount = 0;
+
 		worldMap->setDeadAnimals(LevelManager::getInst().getDeadAnimals());
 		worldMap->setCurrentWorldOrSub(LevelManager::getInst().getFilePath());
 		worldMap->readNewAnimals();
@@ -34,7 +35,10 @@ public:
 		if(docSave.FirstChildElement("Tutorial")->BoolAttribute("World") == false && docSetting.FirstChildElement("Tutorial")->BoolAttribute("play") == false){
 			StateManager::getInst().addState(new WorldMapTutorial);
 		}else{
-			StateManager::getInst().addState(new AchievementState(worldMap->getSection()));	
+			StateManager::getInst().addState(new AchievementState(worldMap->getSection()));
+			if(worldMap->getNewWorld()){
+				worldMap->doCutscene();
+			}
 		}
 	}
 };
