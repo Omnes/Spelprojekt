@@ -85,8 +85,9 @@ void AchievementState::render(){
 
 	sf::RenderWindow* window = WindowManager::getInst().getWindow();
 
+	mPreState->render();
+
 	if(!mAnimalVector.empty()){
-		mPreState->render();
 		window->draw(mSprite);
 		window->draw(mButton->getSprite());
 

@@ -35,7 +35,6 @@ WorldMap::WorldMap() :
 
 	mFactButton = new FactButton(sf::Vector2f(20,20), "addAnimalipedia", "Resources/Menu/AchievementMenu/faktaknapp.png", "");
 
-	mCutscenes.push_back("Resources/Data/Cutscenes/Cutscene_1.xml");
 	mCutscenes.push_back("Resources/Data/Cutscenes/Cutscene_2.xml");
 	mCutscenes.push_back("Resources/Data/Cutscenes/Cutscene_3.xml");
 
