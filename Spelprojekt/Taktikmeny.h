@@ -5,6 +5,7 @@
 #include "AnimalPrototype.h"
 #include "Entity.h"
 #include "ResourceManager.h"
+#include "ParticleManager.h"
 
 class TacticMenuButton;
 class LevelManager;

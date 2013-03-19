@@ -3,12 +3,11 @@
 #include "tinyxml2.h"
 #include "ResourceManager.h"
 #include "WindowManager.h"
-
 #include "StateManager.h"
 
 
 
-LevelFinished::LevelFinished() : mButton(sf::Vector2f(500, 500), "goBackToWorld", "Resources/Menu/PauseMenu/ContinueButton.png", "Resources/Sound/test.wav"){
+LevelFinished::LevelFinished() : mButton(sf::Vector2f(1000, 75), "goBackToWorld", "Resources/Menu/PauseMenu/ContinueButton.png", "Resources/Sound/Menu/Menu_forward.wav"){
 	
 	std::vector<std::string> Alive = LevelManager::getInst().getAliveAnimals();
 	std::vector<std::string> Dead = LevelManager::getInst().getDeadAnimals();
@@ -17,7 +16,7 @@ LevelFinished::LevelFinished() : mButton(sf::Vector2f(500, 500), "goBackToWorld"
 	setPosition();
 
 	mBackground.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/tillfalligwin.png"));
-	mMusic = "Resources/Sound/Music/TitleScreen";
+	mMusic = "Resources/Sound/Music/Title_Screen_";
 
 	mStampIndex = 0;
 }

@@ -6,6 +6,11 @@ MusicLoop::MusicLoop(std::string filename):mCurrentPlaying(0), mVolume(100){
 	mSecondFile.openFromFile(filename+"2.ogg");
 	mFileName = filename;
 	mMusicTimer.restart();
+	mSecondFile.play();
+	mSecondFile.setVolume(0);
+
+	mSecondFile.setLoop(true);
+
 }
 
 
@@ -25,11 +30,14 @@ void MusicLoop::update(){
 
 	if(mCurrentPlaying != 0){
 		if(mCurrentPlaying->getDuration() < mMusicTimer.getElapsedTime() && mCurrentPlaying->getStatus() == sf::Music::Playing){
-			mCurrentPlaying->stop();
+			if(mCurrentPlaying != &mSecondFile){
+				mCurrentPlaying->stop();
+				mSecondFile.setVolume(mVolume);
+				mSecondFile.play();
+				mCurrentPlaying = &mSecondFile;
+			}
 			std::cout << mFileName << " has looped at " << mMusicTimer.getElapsedTime().asSeconds() << " (" <<mMusicTimer.getElapsedTime().asMilliseconds() << ")" << std::endl;
 			mMusicTimer.restart();
-			mSecondFile.play();
-			mCurrentPlaying = &mSecondFile;
 		}
 	}
 }
@@ -37,8 +45,9 @@ void MusicLoop::update(){
 
 void MusicLoop::setVolume(float volume){
 	mVolume = volume;
-	mFirstFile.setVolume(volume);
-	mSecondFile.setVolume(volume);
+	if(mCurrentPlaying != 0){
+		mCurrentPlaying->setVolume(volume);
+	}
 }
 
 float MusicLoop::getVolume(){
@@ -47,9 +56,8 @@ float MusicLoop::getVolume(){
 
 
 void MusicLoop::stop(){
-	if(mCurrentPlaying != 0){
-		mCurrentPlaying->stop();
-	}
+	mFirstFile.stop();
+	mSecondFile.stop();
 
 }
 

@@ -1,11 +1,12 @@
 #include "GameOver.h"
 #include "ResourceManager.h"
 #include "WindowManager.h"
+#include "FontMaster.h"
 
 int GameOver::sRetryCount = 0;
 
 GameOver::GameOver()
-	: mReturnToMain(sf::Vector2f(430,500),"popStateTwice","Resources/Menu/GameOverMenu/MenuButton.png","Resources/Sound/Menu/Menu_click.wav")
+	: mReturnToMain(sf::Vector2f(430,460),"popStateTwice","Resources/Menu/GameOverMenu/MenuButton.png","Resources/Sound/Menu/Menu_click.wav")
 	, mBackground(*ResourceManager::getInst().getTexture("Resources/Menu/GameOverMenu/GameOver.png"))
 	, mRetryLevel(sf::Vector2f(570,360), "retry", "Resources/Menu/GameOverMenu/RetryButton.png", "Resources/Sound/Menu/Menu_click.wav"){
 
@@ -17,7 +18,8 @@ GameOver::GameOver()
 		}
 		mRetryText.setString(string);
 		mRetryText.setPosition(sf::Vector2f(520,460));
-		mMusic = "Resources/Sound/Music/TitleScreen";
+		mRetryText.setFont(FontMaster::sFont);
+		mMusic = "Resources/Sound/Music/Title_Screen_";
 
 		
 }

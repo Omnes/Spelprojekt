@@ -13,12 +13,13 @@ WorldMap::WorldMap() :
 	mSub(0),
 	mLevelCount(0),
 	mSection(0),
-	mCount(0)
+	mCount(0),
+	mNewWorld(false)
 {
 
 	readButtons();
 
-	mMusic = "Resources/Sound/Music/TitleScreen";
+	mMusic = "Resources/Sound/Music/Title_Screen_";
 
 	mSprite.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/WorldMenu/WorldmapBG.png"));
 	mSprite.setPosition(0,0);
@@ -32,9 +33,8 @@ WorldMap::WorldMap() :
 	mCurrentWorld = mWorld;
 	mCurrentSection = mSection;
 
-	mFactButton = new FactButton(sf::Vector2f(20,20), "addAnimalipedia", "Resources/Menu/AchievementMenu/faktaknapp.png", "");
+	mFactButton = new FactButton(sf::Vector2f(20,20), "addAnimalipedia", "Resources/Menu/AchievementMenu/faktaknapp.png", "Resources/Sound/Menu/Menu_forward.wav");
 
-	mCutscenes.push_back("Resources/Data/Cutscenes/Cutscene_1.xml");
 	mCutscenes.push_back("Resources/Data/Cutscenes/Cutscene_2.xml");
 	mCutscenes.push_back("Resources/Data/Cutscenes/Cutscene_3.xml");
 
@@ -43,6 +43,8 @@ WorldMap::WorldMap() :
 WorldMap::~WorldMap(){}
 
 void WorldMap::update(){
+	
+	ParticleManager::getInst().update();
 
 	mFactButton->update();
 
@@ -72,6 +74,9 @@ void WorldMap::render(){
 	for (std::vector<LevelButton*>::iterator i = mButtonVector.begin(); i != mButtonVector.end(); i++){
 		window->draw((*i)->getSprite());
 	}
+
+	ParticleManager::getInst().render(*window);
+
 }
 
 void WorldMap::readSave(){
@@ -312,8 +317,7 @@ void WorldMap::setCurrentWorldOrSub(std::string currentLevel){
 	if(mWorldVector[mWorld].size() <= mSub){
 		mWorld++;
 		mSub = 0;
-		StateManager::getInst().addState(new Cutscene(mCutscenes[mWorld-1])); //hårdkodade cutscenes ohoy!
-		
+		mNewWorld = true;
 	}
 
 	for(ButtonVector::iterator i = mButtonVector.begin(); i != mButtonVector.end(); i++){
@@ -323,7 +327,7 @@ void WorldMap::setCurrentWorldOrSub(std::string currentLevel){
 		}
 	}
 
-	//så endgame funakr
+	//så endgame funakr, hååårdkod
 	if(mWorld <= 2){
 		updateWorld();
 	}
@@ -391,4 +395,13 @@ void WorldMap::setDeadAnimals(std::vector <std::string> deadAnimals){
 
 int WorldMap::getSection(){
 	return mCurrentSection;
+}
+
+bool WorldMap::getNewWorld(){
+	return mNewWorld;
+}
+
+void WorldMap::doCutscene(){
+	StateManager::getInst().addState(new Cutscene(mCutscenes[mWorld-1])); //hårdkodade cutscenes ohoy!
+	mNewWorld = false;
 }

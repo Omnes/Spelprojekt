@@ -20,7 +20,7 @@ TaktikMeny::TaktikMeny() :
 	mLevelGround(0),
 	mAllSpotsTaken(false)
 {
-	mButton = new TacticMenuButton(sf::Vector2f(950,635), this, "Resources/Menu/TacticMenu/startgameplaybutton.png", "Resources/Sound/test.wav");
+	mButton = new TacticMenuButton(sf::Vector2f(950,635), this, "Resources/Menu/TacticMenu/startgameplaybutton.png", "Resources/Sound/Menu/Menu_forward.wav");
 	mAnimalSpriteBg.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/TacticMenu/taktikdjurbg.png"));
 	mAnimalSpriteBg.setPosition(550, 0);
 
@@ -30,7 +30,7 @@ TaktikMeny::TaktikMeny() :
 	receiveAnimals();
 	placeSpots();
 
-	mMusic = "Resources/Sound/Music/TitleScreen";
+	mMusic = "Resources/Sound/Music/Title_Screen_";
 
 }
 
@@ -57,6 +57,8 @@ TaktikMeny::~TaktikMeny(){
 
 
 void TaktikMeny::update(){
+
+	ParticleManager::getInst().update();
 
 	if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
 		isClicked();

@@ -12,7 +12,7 @@ LevelTutorial::LevelTutorial()
 	, mStep2(1)
 	, mS1Played(false){
 	
-		mMusic = "Resources/Sound/Music/TitleScreen";
+		mMusic = "Resources/Sound/Music/Title_Screen_";
 		
 		mArrow.setTexture(*ResourceManager::getInst().getTexture("Resources/GUI/pil.png"));
 		mArrow.setTextureRect(sf::IntRect(0,0, mArrow.getTexture()->getSize().x/10, mArrow.getTexture()->getSize().y));

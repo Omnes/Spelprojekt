@@ -5,6 +5,7 @@
 #include "Animalipedia.h"
 #include "FontMaster.h"
 #include "tinyxml2.h"
+#include "SoundManager.h"
 
 
 AnimalipediaButton::AnimalipediaButton(sf::Vector2f pos, std::string page, std::string title, std::string sound, Animalipedia* wiki) 
@@ -26,7 +27,6 @@ AnimalipediaButton::AnimalipediaButton(sf::Vector2f pos, std::string page, std::
 	mSprite.setTextureRect(mRectangle);
 	mSoundBuffer = (ResourceManager::getInst().getSoundBuffer(sound));
 	mSound.setBuffer(*mSoundBuffer);
-	mSound.setLoop(false);
 
 
 
@@ -51,8 +51,9 @@ void AnimalipediaButton::update(){
 	
 		mCurrentImage=1;
 
-		if(sf::Mouse::isButtonPressed(sf::Mouse::Left) ){ 
+		if(sf::Mouse::isButtonPressed(sf::Mouse::Left) && mWiki->getInfo() != mInfo ){ 
 			mCurrentImage=2;
+			SoundManager::getInst().play(mSound);
 			if(mNewInfo){
 				tinyxml2::XMLDocument doc;
 				doc.LoadFile("Resources/Data/Animalipedia/UnlockedFacts.xml");
