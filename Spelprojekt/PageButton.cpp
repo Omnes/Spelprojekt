@@ -3,6 +3,7 @@
 #include "EventManager.h"
 #include "WindowManager.h"
 #include "Animalipedia.h"
+#include "SoundManager.h"
 
 
 
@@ -44,6 +45,7 @@ void PageButton::update(){
 			mClickCooldown.restart();
 			mCurrentImage=2;
 			mWiki->setPage(mWiki->getPage() + mFlipNumber);
+			SoundManager::getInst().play(mSound);
 
 		}		
 	}

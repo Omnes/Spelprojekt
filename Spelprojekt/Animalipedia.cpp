@@ -9,15 +9,16 @@ Animalipedia::Animalipedia()
 	: mBackground(*ResourceManager::getInst().getTexture("Resources/Menu/Animalipedia/animalipedia.png"))
 	, mCurrentButtonPage(0)
 	, mButtonsPerPage(5)
-	, mUpButton(sf::Vector2f(32,0),-1,"Resources/Menu/Animalipedia/scroll_knapp.png","",this)
-	, mDownButton(sf::Vector2f(32,570),1,"Resources/Menu/Animalipedia/scroll_knapp_ner.png","",this){
+	, mUpButton(sf::Vector2f(32,0),-1,"Resources/Menu/Animalipedia/scroll_knapp.png","Resources/Sound/Menu/Menu_forward.wav",this)
+	, mDownButton(sf::Vector2f(32,570),1,"Resources/Menu/Animalipedia/scroll_knapp_ner.png","Resources/Sound/Menu/Menu_back.wav",this)
+	, mInfoName(""){
 
 		mMusic = "Resources/Sound/Music/Title_Screen_";
 		loadUnlocked();
 		mInfo = 0;
 		setPage(mCurrentButtonPage);
 
-		mButton = new Button(sf::Vector2f(1100,650), "popState", "Resources/Menu/knapp.png", "");
+		mButton = new Button(sf::Vector2f(1100,660), "popState", "Resources/Menu/Animalipedia/back_knapp.png", "Resources/Sound/Menu/Menu_back.wav");
 }
 
 
@@ -81,7 +82,7 @@ void Animalipedia::loadUnlocked(){
 		sf::Vector2f pos = sf::Vector2f(0,100*count);
 		std::string page = elm->Name();
 		std::string title = wikiDoc.FirstChildElement(page.c_str())->FirstChildElement("Title")->GetText();
-		std::string sound = "Resources/Data/Sound/test.wav";
+		std::string sound = "Resources/Sound/Menu/Menu_click.wav";
 	 
 		AnimalipediaButton* button = new AnimalipediaButton(pos,page,title,sound,this);
 

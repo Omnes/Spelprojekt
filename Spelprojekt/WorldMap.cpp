@@ -33,7 +33,7 @@ WorldMap::WorldMap() :
 	mCurrentWorld = mWorld;
 	mCurrentSection = mSection;
 
-	mFactButton = new FactButton(sf::Vector2f(20,20), "addAnimalipedia", "Resources/Menu/AchievementMenu/faktaknapp.png", "");
+	mFactButton = new FactButton(sf::Vector2f(20,20), "addAnimalipedia", "Resources/Menu/AchievementMenu/faktaknapp.png", "Resources/Sound/Menu/Menu_forward.wav");
 
 	mCutscenes.push_back("Resources/Data/Cutscenes/Cutscene_1.xml");
 	mCutscenes.push_back("Resources/Data/Cutscenes/Cutscene_2.xml");

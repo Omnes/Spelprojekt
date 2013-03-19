@@ -34,8 +34,6 @@ private:
 	sf::Sound mSound;
 	sf::SoundBuffer *mSoundBuffer;
 	int mCurrentImage;
-	Emitter mEmitter;
-	ParticleSystem mPartSystem;
 	sf::Clock mTimer;
 	float mButtonTime;
 	bool mPressed;
