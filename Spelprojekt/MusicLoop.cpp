@@ -7,7 +7,8 @@ MusicLoop::MusicLoop(std::string filename):mCurrentPlaying(0), mVolume(100){
 	mFileName = filename;
 	mMusicTimer.restart();
 	mSecondFile.play();
-	mSecondFile.setVolume(0);
+	/*mSecondFile.setVolume(0);*/
+	mSecondFile.stop();
 
 	mSecondFile.setLoop(true);
 
@@ -47,6 +48,7 @@ void MusicLoop::setVolume(float volume){
 	mVolume = volume;
 	if(mCurrentPlaying != 0){
 		mCurrentPlaying->setVolume(volume);
+		mFirstFile.setVolume(volume);
 	}
 }
 

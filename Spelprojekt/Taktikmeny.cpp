@@ -22,7 +22,8 @@ TaktikMeny::TaktikMeny() :
 {
 	mButton = new TacticMenuButton(sf::Vector2f(950,635), this, "Resources/Menu/TacticMenu/startgameplaybutton.png", "Resources/Sound/Menu/Menu_forward.wav");
 	mAnimalSpriteBg.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/TacticMenu/taktikdjurbg.png"));
-	mAnimalSpriteBg.setPosition(550, 0);
+	mAnimalSpriteBg.setPosition(530, 0);
+	mAnimalSpriteBg.setScale(1.3,1.3);
 
 	LevelManager::getInst().preloadBackgrounds();
 
