@@ -20,9 +20,8 @@ AnimalipediaButton::AnimalipediaButton(sf::Vector2f pos, std::string page, std::
 	setPosition(mPosition);
 
 	mTitle.setFont(FontMaster::sFont);
-	mTitle.setCharacterSize(24);
-	mTitle.setPosition(mPosition);
-	mTitle.setColor(sf::Color(0,0,0));
+	mTitle.setCharacterSize(20);
+	mTitle.setColor(sf::Color(149,102,2));
 	mRectangle = sf::IntRect(0,0, mTexture->getSize().x/4, mTexture->getSize().y);
 	mSprite.setTextureRect(mRectangle);
 	mSoundBuffer = (ResourceManager::getInst().getSoundBuffer(sound));
@@ -101,6 +100,6 @@ void AnimalipediaButton::setNewInfo(bool boolean){
 void AnimalipediaButton::setPosition(sf::Vector2f pos){
 	mPosition = pos;
 	mSprite.setPosition(mPosition);
-	mTitle.setPosition(mPosition+sf::Vector2f(40,8));
+	mTitle.setPosition(mPosition+sf::Vector2f(40,22));
 	mEmitter.setPosition(mPosition);
 }

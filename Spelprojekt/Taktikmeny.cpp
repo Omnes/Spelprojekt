@@ -121,9 +121,9 @@ void TaktikMeny::receiveAnimals(){
 
 	sf::RenderWindow *window = WindowManager::getInst().getWindow();
 
-	int minDist = 600;
+	int minDist = 564;
 
-	sf::Vector2f startPos = sf::Vector2f(window->getSize().x - minDist,128);
+	sf::Vector2f startPos = sf::Vector2f(window->getSize().x - minDist,164);
 	sf::Vector2f distance = sf::Vector2f(128,128);
 	mFakeAnimals = LevelManager::getInst().getAnimalsOnLevel();
 

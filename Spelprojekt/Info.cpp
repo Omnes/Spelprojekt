@@ -16,6 +16,7 @@ Info::Info(std::string elementName){
 	float x = elm->FirstChildElement("Image")->FloatAttribute("x");
 	float y = elm->FirstChildElement("Image")->FloatAttribute("y");
 	mPicture.setPosition(sf::Vector2f(x,y));
+	//mPicture.setColor(sf::Color(255,255,255,175));
 
 	mStandardText.setString(elm->FirstChildElement("StandardFact")->GetText());
 	mStandardText.setPosition(400,150);

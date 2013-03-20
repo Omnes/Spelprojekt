@@ -9,8 +9,8 @@ Animalipedia::Animalipedia()
 	: mBackground(*ResourceManager::getInst().getTexture("Resources/Menu/Animalipedia/animalipedia.png"))
 	, mCurrentButtonPage(0)
 	, mButtonsPerPage(5)
-	, mUpButton(sf::Vector2f(32,0),-1,"Resources/Menu/Animalipedia/scroll_knapp.png","Resources/Sound/Menu/Menu_forward.wav",this)
-	, mDownButton(sf::Vector2f(32,570),1,"Resources/Menu/Animalipedia/scroll_knapp_ner.png","Resources/Sound/Menu/Menu_back.wav",this)
+	, mUpButton(sf::Vector2f(16,0),-1,"Resources/Menu/Animalipedia/scroll_knapp.png","Resources/Sound/Menu/Menu_forward.wav",this)
+	, mDownButton(sf::Vector2f(16,520),1,"Resources/Menu/Animalipedia/scroll_knapp_ner.png","Resources/Sound/Menu/Menu_back.wav",this)
 	, mInfoName(""){
 
 		mMusic = "Resources/Sound/Music/Title_Screen_";
