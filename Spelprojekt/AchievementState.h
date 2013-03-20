@@ -20,7 +20,10 @@ public:
 	virtual void update();
 	virtual void render();
 	virtual std::string getMusic();
+	void readSprites();
+	void readUnlocked();
 	void saveUnlocked();
+	void readSaveExtraFact();
 
 private:
 
@@ -41,6 +44,8 @@ private:
 	UnlockVector mUnlockVector;
 
 	Button* mButton;
+
+	tinyxml2::XMLDocument mDoc;
 
 	float mTutorialDuration;
 
