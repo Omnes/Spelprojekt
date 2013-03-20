@@ -4,10 +4,7 @@
 
 <Camera minSpeed="-3" maxSpeed="4" acceleration="0.06"/>
 
-
-<Sound musicVolume="13" soundVolume="100" voiceVolume="100" muted="0"/>
-
-
+<Sound musicVolume="8" soundVolume="100" voiceVolume="100" muted="0"/>
 
 <Window framelimit="60" vsync="1">
     <Title>Flykten</Title>
