@@ -42,6 +42,8 @@ AchievementState::AchievementState(int section){
 		tinyxml2::XMLElement *elm = doc.FirstChildElement("Animal")->FirstChildElement("Images");
 		tinyxml2::XMLElement *elmf = doc.FirstChildElement("Animal")->FirstChildElement("ImageAttr");
 
+		tinyxml2::XMLElement *name = doc.FirstChildElement()->FirstChildElement("Name");
+		//mUnlockVector.push_back(name->GetText());
 
 		sf::Texture* tex = resourceManager->getTexture(elm->GetText());
 		sf::Sprite *sprite = new sf::Sprite();
@@ -59,7 +61,23 @@ AchievementState::AchievementState(int section){
 		mImageVector[i]->setPosition(sf::Vector2f(startPosX + 250 * i, startPosY));
 	}
 
+	//factUnlock **************************************************************************************
+	doc.LoadFile("Resources/Data/FactUnlock.xml");
+	tinyxml2::XMLElement *secti = doc.FirstChildElement("Section");
 
+	while(secti != 0){
+		const tinyxml2::XMLElement *unlock = secti->FirstChildElement();
+		if(secti->IntAttribute("level") == section){
+			while(unlock != 0){
+				mUnlockVector.push_back(unlock->GetText());
+				unlock = unlock->NextSiblingElement();
+			}
+			break;
+		}
+		secti = secti->NextSiblingElement();
+	}
+
+	saveUnlocked();
 }
 
 AchievementState::~AchievementState(){
@@ -106,4 +124,26 @@ void AchievementState::render(){
 std::string AchievementState::getMusic(){
 
 	return mMusic;
+}
+
+void AchievementState::saveUnlocked(){
+	tinyxml2::XMLDocument doc;
+
+	doc.LoadFile("Resources/Data/Animalipedia/UnlockedFacts.xml");
+
+	tinyxml2::XMLElement *elm = doc.FirstChildElement();
+
+
+	while(elm != 0){
+		for(UnlockVector::iterator i = mUnlockVector.begin(); i != mUnlockVector.end(); i++){
+			if((*i) == elm->Name()){
+				elm->SetAttribute("newFacts", 1);
+				elm->SetAttribute("unlocked", 1);
+			}
+		}
+		elm = elm->NextSiblingElement();
+	}
+
+	doc.SaveFile("Resources/Data/Animalipedia/UnlockedFacts.xml");
+
 }

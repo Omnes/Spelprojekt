@@ -5,7 +5,7 @@
 #include "tinyxml2.h"
 
 Checkbox::Checkbox(sf::Vector2f position,std::string element,std::string attribute)
-	: mTex(ResourceManager::getInst().getTexture("Resources/Menu/checkbox.png"))
+	: mTex(ResourceManager::getInst().getTexture("Resources/Menu/OptionsMenu/checkbox3.png"))
 	, mSprite(*mTex)
 	, mElement(element)
 	, mAttribute(attribute)

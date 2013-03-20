@@ -4,10 +4,10 @@ OptionSlider::OptionSlider(sf::Vector2f posBg, std::string element, std::string 
 	mElement(element),
 	mPressed(false),
 	mAttribute(attribute),
-	mTex(ResourceManager::getInst().getTexture("Resources/Particle/heart.png")),
+	mTex(ResourceManager::getInst().getTexture("Resources/Menu/OptionsMenu/arrowslider.png")),
 	mSprite(*mTex)
 {
-	mTex = ResourceManager::getInst().getTexture("Resources/Menu/OptionsMenu/SliderBG.png");
+	mTex = ResourceManager::getInst().getTexture("Resources/Menu/OptionsMenu/Slider.png");
 	mSpriteBg.setTexture(*mTex);
 	mSpriteBg.setPosition(posBg);
 	mMinPos = mSpriteBg.getPosition().x;

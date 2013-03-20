@@ -160,7 +160,7 @@ så att de kan komma åt det mjukare innanmätet.
 
 </KingVulture>
 
-<HummingBird1>
+<HummingBird>
 	<Title>Svärdnäbb</Title>
 	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/hummingbird1.png</Image>
 	<StandardFact>Svärdnäbbskolibri
@@ -183,7 +183,7 @@ Kolibrifåglar är kända för sin förmåga att kunna flyga åt alla håll,
 både upp, ner, åt sidorna och till och med på rygg.
 </LockedFact>
 
-</HummingBird1>
+</HummingBird>
 
 <HummingBird2>
 	<Title>Topas</Title>
@@ -241,7 +241,7 @@ frukter som den äter.
 
 </Monkey>
 
-<Snake1>
+<Snake>
 	<Title>Kungsboa</Title>
 	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/snake1.png</Image>
 	<StandardFact>Kungsboa
@@ -264,7 +264,7 @@ Ungarna föds med naturliga instikter om hur den jagar och att gömma sig från rov
 Arten är också ett vanligt husdjur både på zoo och hos reptil intresserade.
 </LockedFact>
 
-</Snake1>
+</Snake>
 
 
 <Snake2>
