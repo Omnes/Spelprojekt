@@ -6,19 +6,20 @@
 OptionsMeny::OptionsMeny()
 	: mApplyButton(sf::Vector2f(900,600),"Resources/Menu/knapp.png","Resources/Sound/Menu/Menu_forward.wav",this){
 	mCheckboxes.push_back(new Checkbox(sf::Vector2f(850,165),"Resolution","fullscreen"));
-	mCheckboxes.push_back(new Checkbox(sf::Vector2f(270,435),"Sound","muted"));
+	mCheckboxes.push_back(new Checkbox(sf::Vector2f(230,475),"Sound","muted"));
 	mCheckboxes.push_back(new Checkbox(sf::Vector2f(850,215),"Tutorial","play"));
 
 
 	//ändra till vector sen.
-	mOptionSliders.push_back(new OptionSlider(sf::Vector2f(50,140), "Sound", "musicVolume"));
-	mOptionSliders.push_back(new OptionSlider(sf::Vector2f(50,240), "Sound", "soundVolume"));
-	mOptionSliders.push_back(new OptionSlider(sf::Vector2f(50,340), "Sound", "voiceVolume"));
+	mOptionSliders.push_back(new OptionSlider(sf::Vector2f(50,180), "Sound", "musicVolume"));
+	mOptionSliders.push_back(new OptionSlider(sf::Vector2f(50,280), "Sound", "soundVolume"));
+	mOptionSliders.push_back(new OptionSlider(sf::Vector2f(50,380), "Sound", "voiceVolume"));
 
 	mMusic = "Resources/Sound/Music/Title_Screen_";
 
 
 	mBackground.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/OptionsMenu/bakgrund_optionsmeny.png"));
+	readText();
 }
 
 OptionsMeny::~OptionsMeny(){
@@ -56,6 +57,10 @@ void OptionsMeny::render(){
 		(*i)->render();
 	}
 
+	for(OptionText::iterator i = mOptionText.begin(); i != mOptionText.end(); i++){
+		window->draw((*i));
+	}
+
 }
 
 std::string OptionsMeny::getMusic(){
@@ -76,4 +81,22 @@ void OptionsMeny::saveSettings(){
 	EventManager::getInst().addEvent("goBackToStartFromOptions");
 
 
+}
+
+void OptionsMeny::readText(){
+	tinyxml2::XMLDocument doc;
+
+	doc.LoadFile("Resources/Data/Menu/OptionsMenu/OptionText.xml");
+
+	tinyxml2::XMLElement *elm = doc.FirstChildElement("Text");
+
+	while(elm  != 0){
+		mText.setString(elm->GetText());
+		mText.setPosition(sf::Vector2f(elm->FloatAttribute("x"), elm->FloatAttribute("y")));
+		mText.setFont(FontMaster::sFont);
+		mText.setColor(sf::Color(0,0,0));
+		mText.setCharacterSize(elm->IntAttribute("size"));
+		mOptionText.push_back(mText);
+		elm = elm->NextSiblingElement();
+	}
 }
