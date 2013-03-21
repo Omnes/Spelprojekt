@@ -37,6 +37,7 @@ WorldMap::WorldMap() :
 
 	mCutscenes.push_back("Resources/Data/Cutscenes/Cutscene_2.xml");
 	mCutscenes.push_back("Resources/Data/Cutscenes/Cutscene_3.xml");
+	mCutscenes.push_back("Resources/Data/Cutscenes/Cutscene_ending.xml");
 
 }
 

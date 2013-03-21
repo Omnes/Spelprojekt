@@ -73,6 +73,8 @@ private:
 
 	bool mNewWorld;
 
+	int mWorldMax, mSectionMax;
+
 };
 
 #endif

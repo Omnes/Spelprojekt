@@ -1,0 +1,9 @@
+<Text x="480" y="20" size="42">Inställningar</Text>
+
+<Text x="100" y="155" size="30">Musik</Text>
+<Text x="100" y="255" size="30">Ljud</Text>
+<Text x="100" y="355" size="30">Röster</Text>
+
+<Text x="30" y="470" size="30">Stäng av ljud</Text>
+<Text x="900" y="160" size="30">Fullskärm</Text>
+<Text x="900" y="210" size="30">Hoppa över tutorial</Text>
