@@ -1,37 +1,38 @@
-<Spider unlocked="1" extraUnlocked="1" newFacts="1"/>
 
-<Bullfrog unlocked="1" extraUnlocked="1" newFacts="1"/>
+<Spider unlocked="1" extraUnlocked="1" newFacts="0"/>
 
-<Scorpion unlocked="1" extraUnlocked="1" newFacts="1"/>
+<Bullfrog unlocked="1" extraUnlocked="1" newFacts="0"/>
 
-<Monkey unlocked="1" extraUnlocked="1" newFacts="1"/>
+<Scorpion unlocked="1" extraUnlocked="1" newFacts="0"/>
 
-<Vulture unlocked="0" extraUnlocked="0" newFacts="0"/>
+<Monkey unlocked="1" extraUnlocked="1" newFacts="0"/>
 
-<Snake unlocked="0" extraUnlocked="0" newFacts="0"/>
+<Vulture unlocked="1" extraUnlocked="1" newFacts="0"/>
 
-<Eagle unlocked="0" extraUnlocked="0" newFacts="0"/>
+<Snake unlocked="1" extraUnlocked="1" newFacts="0"/>
 
-<Jaguar unlocked="0" extraUnlocked="0" newFacts="0"/>
+<Eagle unlocked="1" extraUnlocked="1" newFacts="0"/>
 
-<Caiman unlocked="0" extraUnlocked="0" newFacts="0"/>
+<Jaguar unlocked="1" extraUnlocked="1" newFacts="0"/>
 
-<HummingBird unlocked="0" extraUnlocked="0" newFacts="0"/>
+<Caiman unlocked="1" extraUnlocked="1" newFacts="0"/>
 
-<Harpy unlocked="1" extraUnlocked="1" newFacts="1"/>
+<HummingBird unlocked="1" extraUnlocked="1" newFacts="0"/>
 
-<Ozelot unlocked="1" extraUnlocked="1" newFacts="1"/>
+<Harpy unlocked="1" extraUnlocked="1" newFacts="0"/>
 
-<Frog unlocked="1" extraUnlocked="1" newFacts="1"/>
+<Ozelot unlocked="1" extraUnlocked="1" newFacts="0"/>
 
-<KingVulture unlocked="0" extraUnlocked="0" newFacts="0"/>
+<Frog unlocked="1" extraUnlocked="1" newFacts="0"/>
 
-<HummingBird2 unlocked="0" extraUnlocked="0" newFacts="0"/>
+<KingVulture unlocked="1" extraUnlocked="1" newFacts="0"/>
 
-<Snake2 unlocked="0" extraUnlocked="0" newFacts="0"/>
+<HummingBird2 unlocked="1" extraUnlocked="1" newFacts="0"/>
 
-<Amazon unlocked="0" extraUnlocked="0" newFacts="0"/>
+<Snake2 unlocked="1" extraUnlocked="1" newFacts="0"/>
 
-<History unlocked="0" extraUnlocked="0" newFacts="0"/>
+<Amazon unlocked="1" extraUnlocked="1" newFacts="0"/>
 
-<Danger unlocked="0" extraUnlocked="0" newFacts="0"/>
+<History unlocked="1" extraUnlocked="1" newFacts="0"/>
+
+<Danger unlocked="1" extraUnlocked="1" newFacts="0"/>

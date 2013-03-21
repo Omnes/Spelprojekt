@@ -5,8 +5,9 @@
 #include "Checkbox.h"
 #include "ApplyOptionsButton.h"
 #include "OptionSlider.h"
+#include <SFML\Graphics\Text.hpp>
+#include "FontMaster.h"
 
-class ResourceManager;
 
 class OptionsMeny: public States{
 public:
@@ -15,8 +16,8 @@ public:
 	OptionsMeny();
 	~OptionsMeny();
 	void saveSettings();
-
 	std::string getMusic();
+	void readText();
 
 private:
 	std::vector<Checkbox*> mCheckboxes;
@@ -24,13 +25,15 @@ private:
 	typedef std::vector<OptionSlider*> OptionSliders;
 	OptionSliders mOptionSliders;
 
-	//OptionSlider* mOptionSlider;
-
 	ApplyOptionsButton mApplyButton;
 
 	std::string mMusic;
 
 	sf::Sprite mBackground;
+
+	sf::Text mText;
+	typedef std::vector <sf::Text> OptionText;
+	OptionText mOptionText;
 	
 };
 
