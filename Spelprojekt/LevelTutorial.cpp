@@ -10,7 +10,7 @@ LevelTutorial::LevelTutorial()
 	: mStartedTimer(false)
 	, mStep1(1)
 	, mStep2(1)
-	, mS1Played(false){
+{
 	
 		mMusic = "Resources/Sound/Music/Title_Screen_";
 		
@@ -44,7 +44,7 @@ LevelTutorial::LevelTutorial()
 
 		mTimer1.restart();
 		SoundManager::getInst().setMusicVolume(10);
-		mIntroLength = SoundManager::getInst().playVoice("Resources/Sound/Tutorial/Intro.ogg").asSeconds();
+		mIntroLength = SoundManager::getInst().playVoice("Resources/Sound/Tutorial/Step1.wav").asSeconds();
 
 }
 
@@ -55,64 +55,56 @@ LevelTutorial::~LevelTutorial(){
 void LevelTutorial::update(){
 
 	
-
 	sf::RenderWindow* window = WindowManager::getInst().getWindow();
 
 	//När introt spelats 
-	if(mTimer1.getElapsedTime().asSeconds() > mIntroLength){
-	
-		//Spela steg 1
-		if(mS1Played == false){
-			mStep1 = SoundManager::getInst().playVoice("Resources/Sound/Tutorial/Step1.ogg").asSeconds();
-			mS1Played = true;
-		}
-		
-		if(mTimer1.getElapsedTime().asSeconds() > mIntroLength + 3.5){
 
-			mArrow.setPosition(230,300);
+	if(mTimer1.getElapsedTime().asSeconds() > 11){
 
-			if(mTimer1.getElapsedTime().asSeconds() > mIntroLength + 5.0){
+		mArrow.setPosition(230,300);
 
-				mArrow.setPosition(230,515);
+		if(mTimer1.getElapsedTime().asSeconds() > 12){
 
-				if(mTimer1.getElapsedTime().asSeconds() > mIntroLength + 6){
+			mArrow.setPosition(230,515);
+
+			if(mTimer1.getElapsedTime().asSeconds() > 14){
 				
-					mArrow.setRotation(0);
-					mArrow.setPosition(510,140);
+				mArrow.setRotation(0);
+				mArrow.setPosition(510,140);
 
-					if(mTimer1.getElapsedTime().asSeconds() > mIntroLength + 9.5){
+				if(mTimer1.getElapsedTime().asSeconds() > 17){
 						
-						mArrow.setPosition(-500, -500);
+					mArrow.setPosition(-500, -500);
 
-						if(mTimer1.getElapsedTime().asSeconds() > mIntroLength + 13.5){
+					if(mTimer1.getElapsedTime().asSeconds() > 21.5){
 						
-							sf::Color color(0,255,0,255);
-							mSpot.setColor(color);
-						}
+						sf::Color color(0,255,0,255);
+						mSpot.setColor(color);
 					}
 				}
 			}
 		}
+	}
 		
 		//När ljud nr 1 spelats
-		if(mTimer1.getElapsedTime().asSeconds() > mIntroLength + mStep1 && mTaktik->getFreeSpots()){
-			mTaktik->update();
-		}
+	if(mTimer1.getElapsedTime().asSeconds() > mIntroLength && mTaktik->getFreeSpots()){
+		mTaktik->update();
 	}
+
 
 	//Starta ljud nr 2
 	if(mTaktik->getFreeSpots() == false && mStartedTimer == false){
 		mStartedTimer=true;
-		mStep2 = SoundManager::getInst().playVoice("Resources/Sound/Tutorial/Step2.ogg").asSeconds();
+		mStep2 = SoundManager::getInst().playVoice("Resources/Sound/Tutorial/Step2.wav").asSeconds();
 		mTimer2.restart();
 	}
 
-	if(mTimer2.getElapsedTime().asSeconds() > 7 && mStartedTimer == true){
+	if(mTimer2.getElapsedTime().asSeconds() > 9.5 && mStartedTimer == true){
 	
 		mArrow.setRotation(90);
 		mArrow.setPosition(530, 530); 
 
-		if(mTimer2.getElapsedTime().asSeconds() > 9){
+		if(mTimer2.getElapsedTime().asSeconds() > 10.5){
 		
 			mArrow.setPosition(725, 530);
 
@@ -120,42 +112,40 @@ void LevelTutorial::update(){
 		
 				mArrow.setPosition(-500, -500);
 	
-				if(mTimer2.getElapsedTime().asSeconds() > 13.5){
+				if(mTimer2.getElapsedTime().asSeconds() > 15.5){
 
 					mArrow.setPosition(175, 530);
 
-					if(mTimer2.getElapsedTime().asSeconds() > 15){
+					if(mTimer2.getElapsedTime().asSeconds() > 18){
 					
 						mArrow.setPosition(-500, -500);
 
-						if(mTimer2.getElapsedTime().asSeconds() > 17){
+						if(mTimer2.getElapsedTime().asSeconds() > 19.5){
 						
 							mArrow.setPosition(380, 530);
 
-							if(mTimer2.getElapsedTime().asSeconds() > 18){
+							if(mTimer2.getElapsedTime().asSeconds() > 21.5){
 								
 								mArrow.setPosition(-500,-500);
 
-								if(mTimer2.getElapsedTime().asSeconds() > 20){
+								if(mTimer2.getElapsedTime().asSeconds() > 23){
 
 									for(std::vector<FakeAbilityButton*>::iterator i = mAbilityButtons.begin(); i != mAbilityButtons.end(); i++){
 										
 										(*i)->update();
 									}
 
-									if(mTimer2.getElapsedTime().asSeconds() > 34.5){
+									if(mTimer2.getElapsedTime().asSeconds() > 38.5){
 											
 										mArrow.setPosition(1010, 540);
 
-										if(mTimer2.getElapsedTime().asSeconds() > 37){
 
-											mArrow.setPosition(-500, -500);
-
-											if(mTimer2.getElapsedTime().asSeconds() > mStep2){	
+										if(mTimer2.getElapsedTime().asSeconds() > mStep2){	
 											
-												mTaktik->update();
-												SoundManager::getInst().loadSettings();
-											}
+											mArrow.setPosition(-500, -500);
+											mTaktik->update();
+											SoundManager::getInst().loadSettings();
+											
 										}
 									}
 								}
@@ -178,29 +168,29 @@ void LevelTutorial::render(){
 
 	mTaktik->render();
 
-	if(mTimer1.getElapsedTime().asSeconds() > mIntroLength + 2){
+	if(mTimer1.getElapsedTime().asSeconds() > 10){
 	
 		window->draw(mArrow);		
 	}
 
-	if(mTimer1.getElapsedTime().asSeconds() > mIntroLength + 10.5 && mTimer1.getElapsedTime().asSeconds() < mIntroLength + 17){
+	if(mTimer1.getElapsedTime().asSeconds() > 17.5 && mTimer1.getElapsedTime().asSeconds() < 24){
 						
 		window->draw(mSpot);
 	}
 	
-	if(mTimer2.getElapsedTime().asSeconds() > 20){
+	if(mTimer2.getElapsedTime().asSeconds() > 23){
 		
 		for(std::vector<FakeAbilityButton*>::iterator i = mAbilityButtons.begin(); i != mAbilityButtons.end(); i++){
 			(*i)->render();
 		}
 	}
 
-	if(mTimer2.getElapsedTime().asSeconds() > 28.5 && mTimer2.getElapsedTime().asSeconds() < 32 && mStartedTimer == true){
+	if(mTimer2.getElapsedTime().asSeconds() > 33.5 && mTimer2.getElapsedTime().asSeconds() < 36 && mStartedTimer == true){
 
 		window->draw(mSteer);
 	}
 	
-	if(mTimer2.getElapsedTime().asSeconds() > 32 && mTimer2.getElapsedTime().asSeconds() < 34 && mStartedTimer == true){
+	if(mTimer2.getElapsedTime().asSeconds() > 36 && mTimer2.getElapsedTime().asSeconds() < 38 && mStartedTimer == true){
 
 		window->draw(mScroll);
 	}
