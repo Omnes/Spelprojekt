@@ -22,7 +22,7 @@ private:
 	TaktikMeny* mTaktik;
 	sf::Clock mTimer1;
 	sf::Clock mTimer2;
-	bool mStartedTimer, mS1Played;
+	bool mStartedTimer;
 	sf::Sprite mArrow, mSpot, mSteer, mScroll;
 	typedef std::vector <FakeAbilityButton*> AbilityButton;
 	AbilityButton mAbilityButtons;

@@ -29,7 +29,7 @@ WorldMapTutorial::WorldMapTutorial() {
 	
 	SoundManager::getInst().setMusicVolume(10);
 
-	mTutorialDuration = SoundManager::getInst().playVoice("Resources/Sound/Tutorial/Worldmap.ogg").asSeconds();
+	mTutorialDuration = SoundManager::getInst().playVoice("Resources/Sound/Tutorial/Worldmap.wav").asSeconds();
 	mTimer.restart();
 }
 
@@ -53,14 +53,14 @@ WorldMapTutorial::~WorldMapTutorial(){
 
 void WorldMapTutorial::update(){
 
-	if(mTimer.getElapsedTime().asSeconds() > 5){	
+	if(mTimer.getElapsedTime().asSeconds() > 6){	
 
 		mArrow.setPosition(-500, -500);
 
-		if(mTimer.getElapsedTime().asSeconds() > 20){
+		if(mTimer.getElapsedTime().asSeconds() > 18.5){
 
 			mArrow.setRotation(180);
-			mArrow.setPosition(240,145);
+			mArrow.setPosition(345,50);
 		}
 	}
 
@@ -76,11 +76,11 @@ void WorldMapTutorial::render(){
 
 	mWorldMap->render();
 
-	if(mTimer.getElapsedTime().asSeconds() > 3 && mTimer.getElapsedTime().asSeconds() < 23){
+	if(mTimer.getElapsedTime().asSeconds() > 4 && mTimer.getElapsedTime().asSeconds() < 20){
 
 		window->draw(mArrow);
 
-		if(mTimer.getElapsedTime().asSeconds() < 5){
+		if(mTimer.getElapsedTime().asSeconds() < 6){
 		
 			window->draw(mArrow2);
 		}
