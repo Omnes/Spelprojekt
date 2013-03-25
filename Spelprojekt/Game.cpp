@@ -118,12 +118,12 @@ void Game::PollWindowEvents(sf::RenderWindow* window){
 		if(evt.type == sf::Event::Closed){
 			window->close();
 		}
-	/*	if(evt.type == sf::Event::LostFocus){
+		if(evt.type == sf::Event::LostFocus){
 			mInFocus = false;
 		}
 		if(evt.type == sf::Event::GainedFocus){
 			mInFocus = true;
-		}*/
+		}
 		ScrollDetector::setScrollDelta(0);
 		if(evt.type == sf::Event::MouseWheelMoved){
 			ScrollDetector::setScrollDelta(evt.mouseWheel.delta);
