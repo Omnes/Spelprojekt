@@ -6,6 +6,7 @@
 #include "FontMaster.h"
 #include "tinyxml2.h"
 #include "SoundManager.h"
+#include "GlobalButtonTimer.h"
 
 
 AnimalipediaButton::AnimalipediaButton(sf::Vector2f pos, std::string page, std::string title, std::string sound, Animalipedia* wiki) 
@@ -50,7 +51,7 @@ void AnimalipediaButton::update(){
 	
 		mCurrentImage=1;
 
-		if(sf::Mouse::isButtonPressed(sf::Mouse::Left) && mWiki->getInfo() != mInfo ){ 
+		if(sf::Mouse::isButtonPressed(sf::Mouse::Left) && mWiki->getInfo() != mInfo && GlobalButtonTimer::onCoolDown()){ 
 			mCurrentImage=2;
 			SoundManager::getInst().play(mSound);
 			if(mNewInfo){
@@ -61,6 +62,8 @@ void AnimalipediaButton::update(){
 			}
 			mNewInfo = false;
 			mWiki->setInfo(mInfo);
+
+			GlobalButtonTimer::globalRestart();
 		}		
 	}
 

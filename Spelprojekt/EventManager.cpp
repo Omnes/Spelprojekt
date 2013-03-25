@@ -19,6 +19,7 @@
 #include "AddCutscene_2.h"
 #include "AddCutscene_3.h"
 #include "AddCutscene_4.h"
+#include "StartNewGame.h"
 
 
 EventManager::EventManager(){
@@ -43,6 +44,7 @@ EventManager::EventManager(){
 	mEventMap["cutscene_2"] = new AddCutscene_2();
 	mEventMap["cutscene_3"] = new AddCutscene_3();
 	mEventMap["cutscene_ending"] = new AddCutscene_4();
+	mEventMap["startNewGame"] = new StartNewGame();
 
 }
 

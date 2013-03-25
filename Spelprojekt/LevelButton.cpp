@@ -3,6 +3,7 @@
 #include "EventManager.h"
 #include "WindowManager.h"
 #include "LevelManager.h"
+#include "GlobalButtonTimer.h"
 
 LevelButton::LevelButton(sf::Vector2f pos, std::string evt, std::string img, std::string level) 
 	: mPosition(pos)

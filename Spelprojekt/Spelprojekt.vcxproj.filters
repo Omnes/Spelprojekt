@@ -514,5 +514,8 @@
     <ClInclude Include="FactButton.h">
       <Filter>Header Files\Interface</Filter>
     </ClInclude>
+    <ClInclude Include="StartNewGame.h">
+      <Filter>Header Files\Events</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
