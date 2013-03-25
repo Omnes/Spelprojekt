@@ -223,6 +223,7 @@
     <ClInclude Include="Spot.h" />
     <ClInclude Include="StartGameFirstTime.h" />
     <ClInclude Include="StartMeny.h" />
+    <ClInclude Include="StartNewGame.h" />
     <ClInclude Include="StateManager.h" />
     <ClInclude Include="States.h" />
     <ClInclude Include="StaticLayer.h" />

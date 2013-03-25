@@ -20,6 +20,7 @@ MusicLoop::~MusicLoop(){}
 
 void MusicLoop::play(){
 	mMusicTimer.restart();
+	mFirstFile.setVolume(mVolume);
 	mFirstFile.play();
 	mCurrentPlaying = &mFirstFile;
 
