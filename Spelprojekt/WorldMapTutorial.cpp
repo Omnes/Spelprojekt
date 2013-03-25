@@ -27,7 +27,7 @@ WorldMapTutorial::WorldMapTutorial() {
 
 	StateManager::getInst().addState(new AchievementState(1));
 	
-	SoundManager::getInst().setMusicVolume(10);
+	SoundManager::getInst().setMusicVolume(SoundManager::getInst().getCurrentPlaying()->getVolume()/10);
 
 	mTutorialDuration = SoundManager::getInst().playVoice("Resources/Sound/Tutorial/Worldmap.ogg").asSeconds();
 	mTimer.restart();

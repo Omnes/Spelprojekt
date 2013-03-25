@@ -1,12 +1,8 @@
-###########################################################
-			Settings
-###########################################################
-
 <Camera minSpeed="-3" maxSpeed="4" acceleration="0.06"/>
 
-<Sound musicVolume="78" soundVolume="67" voiceVolume="100" muted="0"/>
+<Sound musicVolume="0" soundVolume="0" voiceVolume="0" muted="1"/>
 
-<Window framelimit="6000" vsync="0">
+<Window framelimit="60" vsync="1">
     <Title>Flykten</Title>
 </Window>
 

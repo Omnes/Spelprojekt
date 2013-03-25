@@ -7,7 +7,7 @@
 
 
 
-LevelFinished::LevelFinished() : mButton(sf::Vector2f(1000, 75), "goBackToWorld", "Resources/Menu/PauseMenu/ContinueButton.png", "Resources/Sound/Menu/Menu_forward.wav"){
+LevelFinished::LevelFinished() : mButton(sf::Vector2f(800, 500), "goBackToWorld", "Resources/Menu/PauseMenu/ContinueButton.png", "Resources/Sound/Menu/Menu_forward.wav"){
 	
 	std::vector<std::string> Alive = LevelManager::getInst().getAliveAnimals();
 	std::vector<std::string> Dead = LevelManager::getInst().getDeadAnimals();
@@ -15,7 +15,7 @@ LevelFinished::LevelFinished() : mButton(sf::Vector2f(1000, 75), "goBackToWorld"
 	mDeadVector = loadAnimals(Dead);
 	setPosition();
 
-	mBackground.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/tillfalligwin.png"));
+	mBackground.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/Winscreen/winscreen.png"));
 	mMusic = "Resources/Sound/Music/Title_Screen_";
 
 	mStampIndex = 0;
@@ -81,6 +81,7 @@ std::vector<sf::Sprite*> LevelFinished::loadAnimals(std::vector<std::string> ani
 		sf::Sprite *sprite = new sf::Sprite();
 		sprite->setTexture(*tex);
 		sprite->setTextureRect(sf::IntRect(0,0, tex->getSize().x/elmf->IntAttribute("frames"), tex->getSize().y/2));
+		sprite->setScale(0.75f,0.75f);
 		spriteVector.push_back(sprite);
 	}
 
@@ -89,8 +90,8 @@ std::vector<sf::Sprite*> LevelFinished::loadAnimals(std::vector<std::string> ani
 
 void LevelFinished::setPosition(){
 
-	sf::Vector2f startpos(200,50);
-	float distance = 100;
+	sf::Vector2f startpos(280,300);
+	float distance = 96;
 
 	for(int i = 0; i<mAliveVector.size(); i++){
 
@@ -99,7 +100,7 @@ void LevelFinished::setPosition(){
 
 	for(int i = 0; i<mDeadVector.size(); i++){
 
-		mDeadVector[i]->setPosition(startpos.x + distance * i, startpos.y + 100);
+		mDeadVector[i]->setPosition(startpos.x + distance * i, startpos.y + 128);
 	}
 }
 

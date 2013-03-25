@@ -43,7 +43,8 @@ LevelTutorial::LevelTutorial()
 		mTaktik = new TaktikMeny;
 
 		mTimer1.restart();
-		SoundManager::getInst().setMusicVolume(10);
+		
+		SoundManager::getInst().setMusicVolume(SoundManager::getInst().getCurrentPlaying()->getVolume()/10);
 		mIntroLength = SoundManager::getInst().playVoice("Resources/Sound/Tutorial/Intro.ogg").asSeconds();
 
 }
