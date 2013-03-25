@@ -15,6 +15,9 @@ StartMeny::StartMeny(){
 
 	mButtons.push_back(new Button(sf::Vector2f(1000,50), "addOptions"			,"Resources/Menu/StartMenu/OptionsButton.png"	, "Resources/Sound/Menu/Menu_click.wav"));
 	mButtons.push_back(new Button(sf::Vector2f(270,380), "startGameFirstTime"	,"Resources/Menu/StartMenu/StartButton.png"		, "Resources/Sound/Menu/Menu_click.wav"));
+
+	mButtons.push_back(new Button(sf::Vector2f(10,10), "startNewGame"	,"Resources/Menu/StartMenu/StartButton.png"		, "Resources/Sound/Menu/Menu_click.wav"));
+
 	mButtons.push_back(new Button(sf::Vector2f(270,530), "exitGame"				,"Resources/Menu/StartMenu/ExitButton.png"		, "Resources/Sound/Menu/Menu_click.wav"));
 
 	mMusic = "Resources/Sound/Music/Title_Screen_";

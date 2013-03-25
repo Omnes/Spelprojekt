@@ -6,7 +6,6 @@
 #include <SFML\System\Vector2.hpp>
 #include <SFML\Graphics\RenderWindow.hpp>
 #include <SFML\Window\Mouse.hpp>
-#include "GlobalButtonTimer.h"
 
 #include <string>
 

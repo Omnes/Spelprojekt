@@ -4,6 +4,7 @@
 #include "WindowManager.h"
 #include "Animalipedia.h"
 #include "SoundManager.h"
+#include "GlobalButtonTimer.h"
 
 
 
@@ -41,12 +42,12 @@ void PageButton::update(){
 	
 		mCurrentImage=1;
 
-		if(sf::Mouse::isButtonPressed(sf::Mouse::Left) && mClickCooldown.getElapsedTime().asMilliseconds() > 500){
+		if(sf::Mouse::isButtonPressed(sf::Mouse::Left) && GlobalButtonTimer::onCoolDown()){
 			mClickCooldown.restart();
 			mCurrentImage=2;
 			mWiki->setPage(mWiki->getPage() + mFlipNumber);
 			SoundManager::getInst().play(mSound);
-
+			GlobalButtonTimer::globalRestart();
 		}		
 	}
 
