@@ -8,7 +8,7 @@ FactButton::FactButton(sf::Vector2f pos, std::string evt, std::string img, std::
 	: mPosition(pos)
 	, mEvent(evt)
 	, mCurrentImage(0)
-	, mSmokeSystem("Smoke",110)
+	, mSmokeSystem("SlowSpark",110)
 	, mTimer(0)
 	, mNewFact(false)
 {
@@ -22,7 +22,6 @@ FactButton::FactButton(sf::Vector2f pos, std::string evt, std::string img, std::
 
 	mSmokeSystem.setBlendMode(sf::BlendAdd);
 	mEmitter.setPosition(mPosition);
-
 
 }
 
@@ -55,10 +54,10 @@ void FactButton::update(){
 	}
 	
 	if(mNewFact){
-		mEmitter.burst(mSmokeSystem,sf::FloatRect(0,0,mSprite.getLocalBounds().width + 200,mSprite.getLocalBounds().height + 200),1);
+		mEmitter.burst(mSmokeSystem,sf::FloatRect(0,0,mSprite.getLocalBounds().width,mSprite.getLocalBounds().height),1);
 	}
 
-	if(mTimer > 120){
+	if(mTimer > 90){
 		mNewFact = readFile();
 		mTimer = 0;
 	}
