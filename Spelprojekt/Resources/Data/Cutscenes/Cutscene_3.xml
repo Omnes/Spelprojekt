@@ -20,9 +20,9 @@
 		</Scene>
 
 	</Enviroment>
-	<Enviroment texture = "Resources/Cutscenes/Scene2/scen2.png">
+	<Enviroment texture = "Resources/Cutscenes/Scene2/scen1.png">
 		<Scene duration = "12">
-			<Image texture = "Resources/Cutscenes/Scene2/eye1.png" x = "0" y = "0" fadeIn = "0" fadeOut = "0"/>
+			<Image texture = "Resources/Cutscenes/Scene2/sol2.png" x = "0" y = "0" fadeIn = "0" fadeOut = "0"/>
 			<Voice file = ""/>
 			<Text x = "400" y = "500" duration="5">Sluta bråka! Det här är inte rätt tillfälle!</Text>
 			<Text x = "400" y = "500" duration="3">Lägg dig inte i!</Text>

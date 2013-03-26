@@ -93,7 +93,6 @@
 <Obstacles minDistance="200" maxDistance="900">
 	<Stone 		chance ="365" speedMod="0" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/stone.png</Stone>
 	<Box 		chance ="1124" speedMod="0" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/box.png</Box>
-	<Bees 		chance ="1120" speedMod="0" y="100" numberOfFrames="5" frameTime="200">Resources/Obstacle/bees.png</Bees>
 	<FallenTree 	chance ="481" speedMod="0" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/fallentree.png</FallenTree>
 	<GarbageSwamp 	chance ="786" speedMod="0.5" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/garbageswamp.png</GarbageSwamp>
 	<Oil 		chance ="764" speedMod="0.5" y="352" numberOfFrames="1" frameTime="100">Resources/Obstacle/oil.png</Oil>
