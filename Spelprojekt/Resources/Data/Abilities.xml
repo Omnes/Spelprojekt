@@ -43,7 +43,6 @@
 		<CanRemove>
 			<Obstacle>Stone</Obstacle>
 			<Obstacle>FallenTree</Obstacle>
-			<Obstacle>Bees</Obstacle>
 		</CanRemove>
 		<InfoPicture>Resources/GUI/nature.png</InfoPicture>
 		<Sound onUse = "Resources/Sound/Effekts/Strength_effekt.wav"/>
@@ -58,7 +57,6 @@
 		<CanRemove>
 			<Obstacle>Stone</Obstacle>
 			<Obstacle>FallenTree</Obstacle>
-			<Obstacle>Bees</Obstacle>
 		</CanRemove>
 		<InfoPicture>Resources/GUI/nature.png</InfoPicture>
 		<Sound onUse = "Resources/Sound/Effekts/Strength_effekt.wav"/>
@@ -71,7 +69,6 @@
 		<ParticleEffekt amount="1">Smash</ParticleEffekt>
 		<Stats cooldown="1"/>
 		<CanRemove>
-			<Obstacle>Bees</Obstacle>
 			<Obstacle>Stone</Obstacle>
 			<Obstacle>FallenTree</Obstacle>
 		</CanRemove>
