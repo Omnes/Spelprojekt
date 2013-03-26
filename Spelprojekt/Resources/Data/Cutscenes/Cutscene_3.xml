@@ -1,95 +1,88 @@
 <Cutscene music = "">
 	<Enviroment texture = "">
-		<Scene duration = "18">
+		<Scene duration = "10">
 			<Image texture = "Resources/Cutscenes/Scene2/scen1.png" x = "0" y = "0" fadeIn = "1" fadeOut = "0"/>
-			<Voice file = ""/>
-			<Text x = "400" y = "500" duration="3">Vi måste slå tillbaka!</Text>
-			<Text x = "400" y = "500" duration="5">Det är hopplöst! Vi måste fly!</Text>
-			<Text x = "400" y = "500" duration="3">Du är bara rädd!</Text>
-			<Text x = "400" y = "500" duration="7">Vi måste slå tillbaka mot hotet en gång för alla!</Text>
+			<Voice file = "Resources/Sound/Cutscenes/Scen2/D1.ogg"/>
+			<Text x = "745" y = "305" duration="2">Vi måste slå tillbaka!</Text>
+			<Text x = "75" y = "630" duration="2">Det är hopplöst! Vi måste fly!</Text>
+			<Text x = "745" y = "305" duration="2">Du är bara rädd!</Text>
+			<Text x = "745" y = "305" duration="2">Vi måste slå tillbaka mot hotet</Text>
+			<Text x = "745" y = "305" duration="2">en gång för alla!</Text>
 
 		</Scene>
 
 	</Enviroment>
-	<Enviroment texture = "">
-		<Scene duration = "2">
-			<Image texture = "Resources/Cutscenes/Scene2/ryter.png" x = "0" y = "0" fadeIn = "0" fadeOut = "1"/>
-			<Voice file = "Resources/Sound/Animals/jaguar.wav"/>
-			<Text x = "400" y = "500" duration="2"></Text>
 
-		</Scene>
-
-	</Enviroment>
 	<Enviroment texture = "Resources/Cutscenes/Scene2/scen1.png">
-		<Scene duration = "12">
-			<Image texture = "Resources/Cutscenes/Scene2/sol2.png" x = "0" y = "0" fadeIn = "0" fadeOut = "0"/>
-			<Voice file = ""/>
-			<Text x = "400" y = "500" duration="5">Sluta bråka! Det här är inte rätt tillfälle!</Text>
-			<Text x = "400" y = "500" duration="3">Lägg dig inte i!</Text>
-			<Text x = "400" y = "500" duration="4">Detta angår inte er smådjur!</Text>
+		<Scene duration = "6">
+			<Image texture = "Resources/Cutscenes/Scene2/sol1.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
+			<Voice file = "Resources/Sound/Cutscenes/Scen2/D2.ogg"/>
+			<Text x = "105" y = "320" duration="1">Sluta bråka!</Text> 
+			<Text x = "105" y = "320" duration="2">Det här är inte rätt tillfälle!</Text>
+			<Text x = "745" y = "305" duration="1">Lägg dig inte i!</Text>
+			<Text x = "745" y = "305" duration="2">Detta angår inte er smådjur!</Text>
 
 		</Scene>
 
 	</Enviroment>
-	<Enviroment texture = "Resources/Cutscenes/Scene2/scen3.png">
-		<Scene duration = "2">
-			<Image texture = "Resources/Cutscenes/Scene2/eye2.png" x = "0" y = "0" fadeIn = "0" fadeOut = "1"/>
-			<Voice file = "Resources/Sound/Animals/jaguar.wav"/>
-			<Text x = "400" y = "500" duration="2"></Text>
 
-		</Scene>
-
-	</Enviroment>
-	<Enviroment texture = "Resources/Cutscenes/Scene2/scen2.png">
-		<Scene duration = "18">
-			<Image texture = "Resources/Cutscenes/Scene2/eye1.png" x = "0" y = "0" fadeIn = "0" fadeOut = "1"/>
-			<Voice file = ""/>
-			<Text x = "400" y = "500" duration="3">Sluta Rainha!</Text>
-			<Text x = "400" y = "500" duration="3">Detta angår även dem!</Text>
-			<Text x = "400" y = "500" duration="5">Jag visste inte att du var så blödig, Feroz.</Text>
-			<Text x = "400" y = "500" duration="7">Du satt inte med svansen mellan benen senast ditt hem hotades!</Text>
-
-		</Scene>
-
-	</Enviroment>
-	<Enviroment texture = "Resources/Cutscenes/Scene2/ryter.png">
-		<Scene duration = "2">
-			<Image texture = "Resources/Cutscenes/Scene2/eye2.png" x = "0" y = "0" fadeIn = "0" fadeOut = "1"/>
-			<Voice file = "Resources/Sound/Animals/jaguar.wav"/>
-			<Text x = "400" y = "500" duration="2"></Text>
-
-		</Scene>
-
-	</Enviroment>
-	<Enviroment texture = "Resources/Cutscenes/Scene2/scen2.png">
-		<Scene duration = "17">
-			<Image texture = "Resources/Cutscenes/Scene2/forte.png" x = "0" y = "0" fadeIn = "0" fadeOut = "1"/>
-			<Voice file = ""/>
-			<Text x = "400" y = "500" duration="4">Lägg ner era petitesser!</Text>
-			<Text x = "400" y = "500" duration="5">Det är dags att ni lär er samarbeta.</Text>
-			<Text x = "400" y = "500" duration="8">Vi har ett gemensamt hot som ingen av oss klarar av att stoppa.</Text>
-
-
-		</Scene>
-
-	</Enviroment>
-	<Enviroment texture = "">
-		<Scene duration = "12">
-			<Image texture = "Resources/Cutscenes/Scene2/feroz.png" x = "0" y = "0" fadeIn = "0" fadeOut = "1"/>
-			<Voice file = ""/>
-			<Text x = "400" y = "500" duration="3">Sol har rätt!</Text>
-			<Text x = "400" y = "500" duration="4">Antingen så flyr vi...</Text>
-			<Text x = "400" y = "500" duration="4">...eller så DÖR VI!</Text>
-
-
-		</Scene>
-
-	</Enviroment>
 	<Enviroment texture = "">
 		<Scene duration = "4">
-			<Image texture = "Resources/Cutscenes/Scene2/harpy2.png" x = "0" y = "0" fadeIn = "0" fadeOut = "1"/>
-			<Voice file = ""/>
-			<Text x = "400" y = "500" duration="3">Led vägen då!</Text>
+			<Image texture = "Resources/Cutscenes/Scene2/scen3.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
+			<Voice file = "Resources/Sound/Cutscenes/Scen2/D3.ogg"/>
+			<Text x = "60" y = "645" duration="2">Sluta Rainha!</Text>
+			<Text x = "60" y = "645" duration="2">Detta angår även dem!</Text>
+
+		</Scene>
+		<Scene duration = "8">
+			<Image texture = "Resources/Cutscenes/Scene2/harpy1.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
+			<Voice file = "Resources/Sound/Cutscenes/Scen2/D4.ogg"/>
+			<Text x = "40" y = "590" duration="3">Jag visste inte att du var så blödig, Feroz.</Text>
+			<Text x = "40" y = "590" duration="3">Du satt inte med svansen mellan benen</Text> 
+			<Text x = "40" y = "590" duration="2">förra gången ditt hem hotades!</Text>
+
+		</Scene>
+
+	</Enviroment>
+	<Enviroment texture = "">
+		<Scene duration = "1">
+			<Image texture = "Resources/Cutscenes/Scene2/ryter.png" x = "0" y = "0" fadeIn = "0" fadeOut = "1"/>
+			<Voice file = "Resources/Sound/Animals/growl.ogg"/>
+			<Text x = "400" y = "500" duration="1"></Text>
+
+		</Scene>
+
+	</Enviroment>
+	<Enviroment texture = "Resources/Cutscenes/Scene2/scen2.png">
+		<Scene duration = "9">
+			<Image texture = "Resources/Cutscenes/Scene2/forte.png" x = "0" y = "0" fadeIn = "0" fadeOut = "0"/>
+			<Voice file = "Resources/Sound/Cutscenes/Scen2/D5.ogg"/>
+			<Text x = "40" y = "620" duration="2">Lägg ner era petitesser!</Text>
+			<Text x = "105" y = "320" duration="3">Det är dags att ni lär er samarbeta.</Text>
+			<Text x = "105" y = "320" duration="2">Vi har ett gemensamt hot</Text>
+			<Text x = "105" y = "320" duration="3">som ingen av oss klarar av att stoppa.</Text>
+
+		</Scene>
+
+	</Enviroment>
+	<Enviroment texture = "">
+		<Scene duration = "6">
+			<Image texture = "Resources/Cutscenes/Scene2/feroz.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
+			<Voice file = "Resources/Sound/Cutscenes/Scen2/D6.ogg"/>
+			<Text x = "175" y = "640" duration="2">Sol har rätt!</Text>
+			<Text x = "175" y = "640" duration="2">Vi kan inte göra något.</Text>
+			<Text x = "175" y = "640" duration="1">Antingen så flyr vi...</Text>
+			<Text x = "175" y = "640" duration="1">...eller så DÖR VI!</Text>
+
+
+		</Scene>
+
+	</Enviroment>
+	<Enviroment texture = "">
+		<Scene duration = "2">
+			<Image texture = "Resources/Cutscenes/Scene2/harpy2.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
+			<Voice file = "Resources/Sound/Cutscenes/Scen2/D7.ogg"/>
+			<Text x = "185" y = "40" duration="2">Led vägen!</Text>
 
 
 		</Scene>

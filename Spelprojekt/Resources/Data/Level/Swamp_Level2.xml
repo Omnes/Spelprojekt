@@ -96,7 +96,7 @@
 	<FallenTree 	chance ="481" speedMod="0" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/fallentree.png</FallenTree>
 	<GarbageSwamp 	chance ="786" speedMod="0.5" y="500" numberOfFrames="1" frameTime="100">Resources/Obstacle/garbageswamp.png</GarbageSwamp>
 	<Oil 		chance ="764" speedMod="0.5" y="352" numberOfFrames="1" frameTime="100">Resources/Obstacle/oil.png</Oil>
-	<Smoke 		chance ="533" speedMod="0.5" y="100" numberOfFrames="1" frameTime="100">Resources/Obstacle/smoke.png</Smoke>
+	<Smoke 		chance ="533" speedMod="0" y="100" numberOfFrames="1" frameTime="100">Resources/Obstacle/smoke.png</Smoke>
 	<Trash 		chance ="1142" speedMod="0" y="290" numberOfFrames="1" frameTime="100">Resources/Obstacle/trash.png</Trash>
 
 
