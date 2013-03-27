@@ -20,7 +20,7 @@ public:
 	std::string getMusic();
 
 private:
-
+	sf::Sound mStampSound;
 	Button mButton;
 	std::vector<sf::Sprite*> mAliveVector, mDeadVector, mStampVector;
 	std::string mMusic;

@@ -38,6 +38,7 @@ sf::SoundBuffer* ResourceManager::getSoundBuffer(std::string filePath){
 	if(i == mSoundBufferMap.end()){
 		sf::SoundBuffer* sb = new sf::SoundBuffer;
 		sb->loadFromFile(filePath);
+		std::cout << filePath << " was loaded!" << std::endl;;
 		mSoundBufferMap[filePath] = sb;
 		return sb;
 	}
