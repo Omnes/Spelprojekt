@@ -117,6 +117,7 @@
     <ClCompile Include="LevelButton.cpp" />
     <ClCompile Include="LevelFinished.cpp" />
     <ClCompile Include="LevelManager.cpp" />
+    <ClCompile Include="LoadButton.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MusicLoop.cpp" />
     <ClCompile Include="Obstacle.cpp" />
@@ -127,7 +128,6 @@
     <ClCompile Include="ParticleManager.cpp" />
     <ClCompile Include="ParticlePrototype.cpp" />
     <ClCompile Include="ParticleSystem.cpp" />
-    <ClCompile Include="PauseMeny.cpp" />
     <ClCompile Include="RemoveObstacleButton.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -161,7 +161,6 @@
     <ClInclude Include="AddGameplay.h" />
     <ClInclude Include="AddLevelFinished.h" />
     <ClInclude Include="AddOptions.h" />
-    <ClInclude Include="AddPause.h" />
     <ClInclude Include="AddStartMeny.h" />
     <ClInclude Include="AddTaktik.h" />
     <ClInclude Include="Animal.h" />
@@ -201,6 +200,7 @@
     <ClInclude Include="LevelButton.h" />
     <ClInclude Include="LevelFinished.h" />
     <ClInclude Include="LevelManager.h" />
+    <ClInclude Include="LoadButton.h" />
     <ClInclude Include="MusicLoop.h" />
     <ClInclude Include="Obstacle.h" />
     <ClInclude Include="OptionSlider.h" />
@@ -210,7 +210,6 @@
     <ClInclude Include="ParticleManager.h" />
     <ClInclude Include="ParticlePrototype.h" />
     <ClInclude Include="ParticleSystem.h" />
-    <ClInclude Include="PauseMeny.h" />
     <ClInclude Include="PopState.h" />
     <ClInclude Include="PopStateTwice.h" />
     <ClInclude Include="RemoveObstacleButton.h" />

@@ -2,6 +2,7 @@
 #define STARTMENY
 #include "Button.h"
 #include "States.h"
+#include "LoadButton.h"
 
 class StartMeny: public States{
 public:
@@ -15,6 +16,8 @@ public:
 private:
 	std::vector<Button*> mButtons;
 	std::string mMusic;
+
+	LoadButton *mLoadButton;
 
 	sf::Sprite mBackground;
 	

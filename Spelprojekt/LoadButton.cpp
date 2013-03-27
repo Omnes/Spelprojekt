@@ -1,17 +1,19 @@
-#include "FactButton.h"
+#include "LoadButton.h"
 #include "ResourceManager.h"
 #include "EventManager.h"
 #include "WindowManager.h"
 #include "LevelManager.h"
+#include "GlobalButtonTimer.h"
 
-FactButton::FactButton(sf::Vector2f pos, std::string evt, std::string img, std::string sound) 
+LoadButton::LoadButton(sf::Vector2f pos, std::string evt, std::string img, std::string sound) 
 	: mPosition(pos)
 	, mEvent(evt)
+	, mImage(img)
 	, mCurrentImage(0)
-	, mSmokeSystem("Unlock",110)
-	, mTimer(89)
+	, mActive(false)
+	, mTimer(59)
+	, mTimerMax(60)
 
-	, mNewFact(false)
 {
 
 	mTexture = *(ResourceManager::getInst().getTexture(img));
@@ -19,26 +21,30 @@ FactButton::FactButton(sf::Vector2f pos, std::string evt, std::string img, std::
 	mSprite.setPosition(mPosition);
 	mRectangle = sf::IntRect(0,0, mTexture.getSize().x/4, mTexture.getSize().y); //Rekten ska ha rätt bredd
 	mSprite.setTextureRect(mRectangle);
+}
 
-
-	mSmokeSystem.setBlendMode(sf::BlendAdd);
-	mEmitter.setPosition(mPosition);
+LoadButton::~LoadButton(){
 
 }
 
-FactButton::~FactButton(){
-}
 
-void FactButton::update(){
+void LoadButton::update(){
 
-	mTimer++;
+	
 
 	sf::RenderWindow* window = WindowManager::getInst().getWindow();
 
 	sf::Vector2f mousePosition = WindowManager::getInst().getWindow()->convertCoords(sf::Mouse::getPosition(*WindowManager::getInst().getWindow()),WindowManager::getInst().getWindow()->getDefaultView());
 
-	//mAlive står här. ändra om du behöver
-	if(mSprite.getGlobalBounds().contains(mousePosition)){		
+	//timer
+	mTimer++;
+
+	if(mTimer > mTimerMax){
+		setActive();
+		mTimer = 0;
+	}
+
+	if(mActive && mSprite.getGlobalBounds().contains(mousePosition)){		
 	
 		mCurrentImage=1;
 
@@ -50,44 +56,31 @@ void FactButton::update(){
 
 				GlobalButtonTimer::globalRestart();
 		}		
+	}else if(!mActive){
+		mCurrentImage=3;
 	}else{
-		mCurrentImage = 0;
+		mCurrentImage=0;
 	}
-	
-	if(mNewFact){
-		mEmitter.burst(mSmokeSystem,sf::FloatRect(0,0,mSprite.getLocalBounds().width,mSprite.getLocalBounds().height),1);
-	}
-
-	if(mTimer > 90){
-		mNewFact = readFile();
-		mTimer = 0;
-	}
-
 
 	mRectangle.left = mRectangle.width*mCurrentImage; // kommentera in den här när vi har en lämplig bild
 	mSprite.setTextureRect(mRectangle);
 }
 
-sf::Sprite& FactButton::getSprite(){
+sf::Sprite& LoadButton::getSprite(){
+
 	return mSprite;
 }
 
-bool FactButton::readFile(){
-
-	bool newFact = false;
-
+void LoadButton::setActive(){
 	tinyxml2::XMLDocument doc;
 
-	doc.LoadFile("Resources/Data/Animalipedia/UnlockedFacts.xml");
+	doc.LoadFile("Resources/Data/Save/SavedGame.xml");
 
-	tinyxml2::XMLElement *elm = doc.FirstChildElement();
-
-	while(elm != 0){
-		if(elm->BoolAttribute("newFacts")){
-			newFact = true;
+	if(doc.FirstChildElement("World")){
+		if(doc.FirstChildElement("World")->IntAttribute("Worlds") > 0){
+			mActive = true;
 		}
-		elm = elm->NextSiblingElement();
+	}else{
+		mActive = false;
 	}
-
-	return newFact;
 }

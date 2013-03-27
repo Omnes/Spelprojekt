@@ -35,10 +35,6 @@ void Gameplay::update(){
 
 	window->setView(*WindowManager::getInst().getDefaultView());
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
-		EventManager::getInst().addEvent("addPause");
-	
-	}
 }
 
 void Gameplay::render(){

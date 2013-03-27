@@ -21,13 +21,13 @@
 
 	<Enviroment texture = "Resources/Cutscenes/Ending/plant1.png">		
 		<Scene duration = "1">
-			<Image texture = "Resources/Cutscenes/Ending/plant1.png" x = "0" y = "0" fadeIn = "1" fadeOut = "0"/>
+			<Image texture = "Resources/Cutscenes/Ending/plant1.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
 			<Voice file = ""/>
 			<Text x = "434" y = "648" duration="0"></Text>
 
 		</Scene>
 		<Scene duration = "2">
-			<Image texture = "Resources/Cutscenes/Ending/plant2.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
+			<Image texture = "Resources/Cutscenes/Ending/plant2.png" x = "0" y = "0" fadeIn = "1" fadeOut = "0"/>
 			<Voice file = ""/>
 			<Text x = "434" y = "648" duration="0"></Text>
 

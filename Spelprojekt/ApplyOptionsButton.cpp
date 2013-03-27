@@ -16,6 +16,7 @@ ApplyOptionsButton::ApplyOptionsButton(sf::Vector2f pos,std::string img, std::st
 	mSprite.setTexture(*mTex);
 	mSprite.setPosition(mPosition);
 	mSprite.setTextureRect(sf::IntRect(0,0,mTex->getSize().x/mFrames,mTex->getSize().y));
+	mSprite.setScale(0.8, 0.8);
 	mSound.setBuffer(*ResourceManager::getInst().getSoundBuffer(sound));
 
 }

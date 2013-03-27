@@ -30,6 +30,9 @@ Info::Info(std::string elementName){
 	mLockedText.setColor(sf::Color(0,0,0));
 	mLockedText.setCharacterSize(18);
 
+	mPadlock.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/Animalipedia/lock.png"));
+	mPadlock.setPosition(sf::Vector2f(600,410));
+
 	tinyxml2::XMLDocument docfacts;
 	docfacts.LoadFile("Resources/Data/Animalipedia/UnlockedFacts.xml");
 
