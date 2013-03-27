@@ -8,6 +8,6 @@
 
 <Resolution width="1280" heigth="720" fullscreen="0"/>
 
-<Tutorial play="0"/>
+<Tutorial play="1"/>
 
 <Font filepath="Resources/Fonts/riverave.ttf"/>

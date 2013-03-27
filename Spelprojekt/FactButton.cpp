@@ -9,7 +9,7 @@ FactButton::FactButton(sf::Vector2f pos, std::string evt, std::string img, std::
 	, mEvent(evt)
 	, mCurrentImage(0)
 	, mSmokeSystem("SlowSpark",110)
-	, mTimer(0)
+	, mTimer(89)
 	, mNewFact(false)
 {
 
