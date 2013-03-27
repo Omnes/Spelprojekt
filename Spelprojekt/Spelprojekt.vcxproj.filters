@@ -251,6 +251,9 @@
     <ClCompile Include="FactButton.cpp">
       <Filter>Source Files\Interface</Filter>
     </ClCompile>
+    <ClCompile Include="LoadButton.cpp">
+      <Filter>Header Files\Interface</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EventManager.h">
@@ -516,6 +519,9 @@
     </ClInclude>
     <ClInclude Include="StartNewGame.h">
       <Filter>Header Files\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadButton.h">
+      <Filter>Header Files\Interface</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
