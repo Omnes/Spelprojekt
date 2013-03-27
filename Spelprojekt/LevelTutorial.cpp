@@ -138,7 +138,7 @@ void LevelTutorial::update(){
 
 									if(mTimer2.getElapsedTime().asSeconds() > 38.5){
 											
-										mArrow.setPosition(1010, 540);
+										mArrow.setPosition(1020, 540);
 
 
 										if(mTimer2.getElapsedTime().asSeconds() > mStep2){	

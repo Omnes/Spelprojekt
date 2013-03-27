@@ -17,13 +17,13 @@ LevelFinished::LevelFinished() : mButton(sf::Vector2f(706, 540), "goBackToWorld"
 	setPosition();
 
 	mBackground.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/Winscreen/winscreen.png"));
-	mMusic = "Resources/Sound/Music/Title_Screen_";
+	mMusic = "Resources/Sound/Music/Level_Clear_";
 	mStampSound.setBuffer(*ResourceManager::getInst().getSoundBuffer("Resources/Sound/Menu/stamp.wav"));
 	mStampIndex = 0;
 }
 
 LevelFinished::~LevelFinished(){
-
+	 
 }
 
 void LevelFinished::render(){

@@ -116,7 +116,7 @@
 
 <LevelsYValue air="100" middle="290" ground="500"/>
 
-<Music>Resources/Sound/Level3_</Music>
+<Music>Resources/Sound/Music/Level_3_</Music>
 
 <Gui>Resources/GUI/NattGUI.png</Gui>
 
