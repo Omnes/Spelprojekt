@@ -84,6 +84,8 @@ private:
 
 	sf::Sprite mGui;
 
+	sf::Sound mPlaceAnimal;
+
 };
 
 

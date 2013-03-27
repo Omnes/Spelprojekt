@@ -25,6 +25,8 @@ TaktikMeny::TaktikMeny() :
 	mAnimalSpriteBg.setPosition(530, 0);
 	mAnimalSpriteBg.setScale(1.3,1.3);
 
+	mPlaceAnimal.setBuffer(*ResourceManager::getInst().getSoundBuffer("Resources/Sound/Menu/placeanimal.wav"));
+
 	LevelManager::getInst().preloadBackgrounds();
 
 	readFromFile();
@@ -342,6 +344,8 @@ void TaktikMeny::isNotClicked(){
 					mCurrentDragAnimal->setStandardSpeed(mSpeedVector[i]);
 
 					mCurrentDragAnimal = 0;
+
+					SoundManager::getInst().play(mPlaceAnimal);
 				}
 			}
 		}
