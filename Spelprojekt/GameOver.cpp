@@ -6,12 +6,12 @@
 int GameOver::sRetryCount = 0;
 
 GameOver::GameOver()
-	: mReturnToMain(sf::Vector2f(430,460),"popStateTwice","Resources/Menu/GameOverMenu/MenuButton.png","Resources/Sound/Menu/Menu_click.wav")
+	: mReturnToMain(sf::Vector2f(430,520),"popStateTwice","Resources/Menu/GameOverMenu/MenuButton.png","Resources/Sound/Menu/Menu_click.wav")
 	, mBackground(*ResourceManager::getInst().getTexture("Resources/Menu/GameOverMenu/GameOver.png"))
 	, mRetryLevel(sf::Vector2f(570,360), "retry", "Resources/Menu/GameOverMenu/RetryButton.png", "Resources/Sound/Menu/Menu_click.wav"){
 
 		std::string string;
-		string.push_back((char)'0' + (3-sRetryCount));
+		string.push_back((char)'0' + (2-sRetryCount));
 		string += " försök kvar!";
 		if(sRetryCount == 2){
 			string = "";

@@ -6,6 +6,7 @@
 #include "AnimalPrototype.h"
 
 
+
 TacticMenuButton::TacticMenuButton(sf::Vector2f pos, TaktikMeny* tacticMenu, std::string img, std::string sound) : 
 
 	mPosition(pos),
