@@ -19,7 +19,7 @@ GameOver::GameOver()
 		mRetryText.setString(string);
 		mRetryText.setPosition(sf::Vector2f(520,460));
 		mRetryText.setFont(FontMaster::sFont);
-		mMusic = "Resources/Sound/Music/Title_Screen_";
+		mMusic = "Resources/Sound/Music/Game_Over_";
 
 		
 }
