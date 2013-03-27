@@ -158,9 +158,9 @@ void LevelTutorial::update(){
 		}
 	}
 
-	if(sf::Keyboard::isKeyPressed(sf::Keyboard::F1)){
+	/*if(sf::Keyboard::isKeyPressed(sf::Keyboard::F1)){
 		StateManager::getInst().popState();
-	}
+	}*/
 }
 
 void LevelTutorial::render(){

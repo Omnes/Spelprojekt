@@ -35,9 +35,9 @@ void ActiveLayer::move(float cameraVelocity){
 
 void ActiveLayer::update(){
 
-	if(sf::Keyboard::isKeyPressed(sf::Keyboard::M)){
+	/*if(sf::Keyboard::isKeyPressed(sf::Keyboard::M)){
 		makeMonsterJumpToFinishLineSoBellaWontBitchAboutXML();
-	}
+	}*/
 
 
 

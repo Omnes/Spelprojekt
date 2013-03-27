@@ -66,11 +66,11 @@ void WorldMap::update(){
 		EventManager::getInst().addEvent("popState");
 	}
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::I)){
+	/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::I)){
 		for (std::vector<LevelButton*>::iterator i = mButtonVector.begin(); i != mButtonVector.end(); i++){
 			(*i)->setActive(true);
 		}
-	}
+	}*/
 }
 
 void WorldMap::render(){

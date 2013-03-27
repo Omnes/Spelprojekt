@@ -67,7 +67,7 @@ void Game::run(){
 			//particleManager->render(*window); // denna ska nog ligga i varje states update (tex i activeLayer vid rätt lager)
 
 			window->setView(*windowManager->getDefaultView());
-			drawFPS(window);
+			//drawFPS(window);
 
 			//window->setMouseCursorVisible(false);
 			
