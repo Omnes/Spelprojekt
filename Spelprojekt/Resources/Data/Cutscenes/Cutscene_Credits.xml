@@ -1,0 +1,83 @@
+<Cutscene music = "Level1_">
+	<Enviroment texture = "Resources/Cutscenes/Credits/bak.png">
+		<Scene duration = "3">
+			<Image texture = "Resources/Cutscenes/Credits/sol.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
+			<Voice file = ""/>
+			<Text x = "84" y = "487" duration="0"></Text>
+
+		</Scene>
+		<Scene duration = "3">
+			<Image texture = "Resources/Cutscenes/Credits/feroz.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
+			<Voice file = ""/>
+			<Text x = "84" y = "487" duration="0"></Text>
+
+		</Scene>
+		<Scene duration = "3">
+			<Image texture = "Resources/Cutscenes/Credits/forte.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
+			<Voice file = ""/>
+			<Text x = "84" y = "487" duration="0"></Text>
+
+		</Scene>
+		<Scene duration = "3">
+			<Image texture = "Resources/Cutscenes/Credits/rei.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
+			<Voice file = ""/>
+			<Text x = "84" y = "487" duration="0"></Text>
+
+		</Scene>
+		<Scene duration = "3">
+			<Image texture = "Resources/Cutscenes/Credits/rainah.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
+			<Voice file = ""/>
+			<Text x = "84" y = "487" duration="0"></Text>
+
+		</Scene>
+		<Scene duration = "3">
+			<Image texture = "Resources/Cutscenes/Credits/design.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
+			<Voice file = ""/>
+			<Text x = "84" y = "487" duration="0"></Text>
+
+		</Scene>
+		<Scene duration = "3">
+			<Image texture = "Resources/Cutscenes/Credits/writing.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
+			<Voice file = ""/>
+			<Text x = "84" y = "487" duration="0"></Text>
+
+		</Scene>
+		<Scene duration = "3">
+			<Image texture = "Resources/Cutscenes/Credits/grafik.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
+			<Voice file = ""/>
+			<Text x = "84" y = "487" duration="0"></Text>
+		<Scene duration = "3">
+			<Image texture = "Resources/Cutscenes/Credits/ljud.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
+			<Voice file = ""/>
+			<Text x = "84" y = "487" duration="0"></Text>
+
+		</Scene>
+		<Scene duration = "3">
+			<Image texture = "Resources/Cutscenes/Credits/musik.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
+			<Voice file = ""/>
+			<Text x = "84" y = "487" duration="0"></Text>
+
+		</Scene>
+		<Scene duration = "3">
+			<Image texture = "Resources/Cutscenes/Credits/prog.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
+			<Voice file = ""/>
+			<Text x = "84" y = "487" duration="0"></Text>
+
+		</Scene>
+		<Scene duration = "3">
+			<Image texture = "Resources/Cutscenes/Credits/pl.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
+			<Voice file = ""/>
+			<Text x = "84" y = "487" duration="0"></Text>
+
+		</Scene>
+		<Scene duration = "3">
+			<Image texture = "Resources/Cutscenes/Credits/tack.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
+			<Voice file = ""/>
+			<Text x = "84" y = "487" duration="0"></Text>
+
+		</Scene>
+
+
+	</Enviroment>
+
+</Cutscene>
