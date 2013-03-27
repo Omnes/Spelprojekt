@@ -41,7 +41,14 @@ WorldMap::WorldMap() :
 
 }
 
-WorldMap::~WorldMap(){}
+WorldMap::~WorldMap(){
+	delete mFactButton;
+	while(!mButtonVector.empty()){
+		delete mButtonVector.back();
+		mButtonVector.pop_back();
+	}
+
+}
 
 void WorldMap::update(){
 	
