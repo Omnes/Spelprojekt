@@ -1,14 +1,14 @@
-<Spider unlocked="1" extraUnlocked="1" newFacts="1"/>
+<Spider unlocked="0" extraUnlocked="0" newFacts="0"/>
 
-<Bullfrog unlocked="1" extraUnlocked="1" newFacts="1"/>
+<Bullfrog unlocked="0" extraUnlocked="0" newFacts="0"/>
 
-<Scorpion unlocked="1" extraUnlocked="1" newFacts="1"/>
+<Scorpion unlocked="0" extraUnlocked="0" newFacts="0"/>
 
-<Monkey unlocked="1" extraUnlocked="1" newFacts="1"/>
+<Monkey unlocked="0" extraUnlocked="0" newFacts="0"/>
 
-<Vulture unlocked="1" extraUnlocked="0" newFacts="1"/>
+<Vulture unlocked="0" extraUnlocked="0" newFacts="0"/>
 
-<Snake unlocked="1" extraUnlocked="0" newFacts="1"/>
+<Snake unlocked="0" extraUnlocked="0" newFacts="0"/>
 
 <Eagle unlocked="0" extraUnlocked="0" newFacts="0"/>
 
@@ -16,13 +16,13 @@
 
 <Caiman unlocked="0" extraUnlocked="0" newFacts="0"/>
 
-<HummingBird unlocked="1" extraUnlocked="0" newFacts="1"/>
+<HummingBird unlocked="0" extraUnlocked="0" newFacts="0"/>
 
-<Harpy unlocked="1" extraUnlocked="1" newFacts="1"/>
+<Harpy unlocked="0" extraUnlocked="0" newFacts="0"/>
 
-<Ozelot unlocked="1" extraUnlocked="1" newFacts="1"/>
+<Ozelot unlocked="0" extraUnlocked="0" newFacts="0"/>
 
-<Frog unlocked="1" extraUnlocked="1" newFacts="1"/>
+<Frog unlocked="0" extraUnlocked="0" newFacts="0"/>
 
 <KingVulture unlocked="0" extraUnlocked="0" newFacts="0"/>
 
@@ -35,4 +35,3 @@
 <History unlocked="0" extraUnlocked="0" newFacts="0"/>
 
 <Danger unlocked="0" extraUnlocked="0" newFacts="0"/>
-

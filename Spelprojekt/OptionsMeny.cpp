@@ -4,7 +4,7 @@
 #include "ResourceManager.h"
 
 OptionsMeny::OptionsMeny()
-	: mApplyButton(sf::Vector2f(900,600),"Resources/Menu/knapp.png","Resources/Sound/Menu/Menu_forward.wav",this){
+	: mApplyButton(sf::Vector2f(910,590),"Resources/Menu/GameOverMenu/MenuButton.png","Resources/Sound/Menu/Menu_forward.wav",this){
 	mCheckboxes.push_back(new Checkbox(sf::Vector2f(850,165),"Resolution","fullscreen"));
 	mCheckboxes.push_back(new Checkbox(sf::Vector2f(230,475),"Sound","muted"));
 	mCheckboxes.push_back(new Checkbox(sf::Vector2f(850,215),"Tutorial","play"));
