@@ -251,6 +251,9 @@
     <ClCompile Include="LoadButton.cpp">
       <Filter>Header Files\Interface</Filter>
     </ClCompile>
+    <ClCompile Include="WaitState.cpp">
+      <Filter>Source Files\States</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EventManager.h">
@@ -513,6 +516,15 @@
     </ClInclude>
     <ClInclude Include="LoadButton.h">
       <Filter>Header Files\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="WaitState.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="AddTutorial.h">
+      <Filter>Header Files\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="AddCutscene_5.h">
+      <Filter>Header Files\Events</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

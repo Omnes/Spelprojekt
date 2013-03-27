@@ -5,7 +5,7 @@
 #include <SFML\Window\Keyboard.hpp>
 #include "StateManager.h"
 #include "Cutscene.h"
-
+#include "WaitState.h"
 
 
 WorldMap::WorldMap() : 
@@ -415,6 +415,9 @@ bool WorldMap::getNewWorld(){
 }
 
 void WorldMap::doCutscene(){
+	if(mWorld == mWorldMax){
+		StateManager::getInst().addState(new WaitState("cutscene_credits"));
+	}
 	StateManager::getInst().addState(new Cutscene(mCutscenes[mWorld-1])); //hårdkodade cutscenes ohoy!
 	mNewWorld = false;
 }
