@@ -18,7 +18,9 @@
 #include "AddCutscene_2.h"
 #include "AddCutscene_3.h"
 #include "AddCutscene_4.h"
+#include "AddCutscene_5.h"
 #include "StartNewGame.h"
+#include "AddTutorial.h"
 
 
 EventManager::EventManager(){
@@ -42,7 +44,9 @@ EventManager::EventManager(){
 	mEventMap["cutscene_2"] = new AddCutscene_2();
 	mEventMap["cutscene_3"] = new AddCutscene_3();
 	mEventMap["cutscene_ending"] = new AddCutscene_4();
+	mEventMap["cutscene_credits"] = new AddCutscene_5();
 	mEventMap["startNewGame"] = new StartNewGame();
+	mEventMap["addTutorial"] = new AddTutorial();
 
 }
 
