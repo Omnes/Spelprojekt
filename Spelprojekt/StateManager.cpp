@@ -5,7 +5,6 @@
 #include "OptionsMeny.h"
 #include "Taktikmeny.h"
 #include <iostream>
-#include "PauseMeny.h"
 #include "LevelFinished.h"
 #include "SoundManager.h"
 

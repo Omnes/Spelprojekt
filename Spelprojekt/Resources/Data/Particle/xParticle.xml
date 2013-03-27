@@ -1,11 +1,11 @@
 <Particle>
 	<Name>Kryss</Name>
 	<Texture yframes="1">resources/particle/kryss.png</Texture>
-	<Life min="40" max="40"/>
+	<Life min="20" max="20"/>
 	<Direction min ="0" max="0"/>
-	<Speed min="1" max="2" increase="0"/>
+	<Speed min="0" max="0" increase="0"/>
 	<Rotation min="0" max="0" increaseMin="0" increaseMax="0"/>
-	<Scale min="1" max="2" increase="0"/>
+	<Scale min="1" max="1" increase="0"/>
 	<Color>
 		<Start r="255" g="255" b="255" a="255"/>
 		<End r="255" g="255" b="255" a="255"/>

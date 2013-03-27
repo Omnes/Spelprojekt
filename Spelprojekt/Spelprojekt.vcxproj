@@ -128,7 +128,6 @@
     <ClCompile Include="ParticleManager.cpp" />
     <ClCompile Include="ParticlePrototype.cpp" />
     <ClCompile Include="ParticleSystem.cpp" />
-    <ClCompile Include="PauseMeny.cpp" />
     <ClCompile Include="RemoveObstacleButton.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -162,7 +161,6 @@
     <ClInclude Include="AddGameplay.h" />
     <ClInclude Include="AddLevelFinished.h" />
     <ClInclude Include="AddOptions.h" />
-    <ClInclude Include="AddPause.h" />
     <ClInclude Include="AddStartMeny.h" />
     <ClInclude Include="AddTaktik.h" />
     <ClInclude Include="Animal.h" />
@@ -212,7 +210,6 @@
     <ClInclude Include="ParticleManager.h" />
     <ClInclude Include="ParticlePrototype.h" />
     <ClInclude Include="ParticleSystem.h" />
-    <ClInclude Include="PauseMeny.h" />
     <ClInclude Include="PopState.h" />
     <ClInclude Include="PopStateTwice.h" />
     <ClInclude Include="RemoveObstacleButton.h" />

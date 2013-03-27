@@ -21,7 +21,7 @@ RemoveObstacleButton::RemoveObstacleButton(std::vector<std::string> obstacle,sf:
 	, mEmittAmount(emittAmount)
 	, mSparksOnObstacles("Spark",600)
 	, mMissedAbility("Smoke",300)
-	, mWrongAbility("Crack",3)
+	, mWrongAbility("Kryss",3)
 	, mSoundFX(*ResourceManager::getInst().getSoundBuffer(soundFX))
 	, mSoundWrong(*ResourceManager::getInst().getSoundBuffer("Resources/Sound/Effekts/Strength_effekt.wav")){
 
@@ -58,6 +58,7 @@ void RemoveObstacleButton::killRelativePositionEntity(sf::Vector2f mousePosition
 		std::vector<Entity*>* entityVector = LevelManager::getInst().getActiveLayer()->getEntityVector();
 		//hitta vad vi har musen över och döda den
 		bool didDelete = false;
+		bool didHit = false;
 		for(std::vector<Entity*>::iterator i = entityVector->begin();i != entityVector->end();){
 			sf::FloatRect bounds = (*i)->getSprite()->getGlobalBounds();
 			bool contains = bounds.contains(relativeMousePosition);
@@ -81,11 +82,14 @@ void RemoveObstacleButton::killRelativePositionEntity(sf::Vector2f mousePosition
 				}
 				else{
 					i++;
-					if(id != "Animal" && id != "Fire" && mCooldownSound.getElapsedTime().asSeconds() > 1){
-						mEmitter.setPosition(relativeMousePosition);
-						mEmitter.burst(mWrongAbility, 1);
-						SoundManager::getInst().play(mSoundWrong);
-						mCooldownSound.restart();
+					if(id != "Animal" && id != "Fire"){
+						if(mCooldownSound.getElapsedTime().asSeconds() > 1){
+							mEmitter.setPosition(relativeMousePosition);
+							mEmitter.burst(mWrongAbility, 1);
+							SoundManager::getInst().play(mSoundWrong);
+							mCooldownSound.restart();
+						}
+						didHit = true;
 					}
 				}
 			}
@@ -94,9 +98,9 @@ void RemoveObstacleButton::killRelativePositionEntity(sf::Vector2f mousePosition
 			}
 		}
 
-		if(!didDelete){
+		if(!didDelete && !didHit){
 			mEmitter.setPosition(relativeMousePosition);
-			mEmitter.burst(mMissedAbility,10,10);
+			mEmitter.burst(mMissedAbility,10,1);
 		}
 
 		//setClicked(false);
