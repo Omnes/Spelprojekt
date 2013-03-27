@@ -11,7 +11,7 @@ LoadButton::LoadButton(sf::Vector2f pos, std::string evt, std::string img, std::
 	, mImage(img)
 	, mCurrentImage(0)
 	, mActive(false)
-	, mTimer(0)
+	, mTimer(59)
 	, mTimerMax(60)
 
 {

@@ -14,7 +14,9 @@ WorldMap::WorldMap() :
 	mLevelCount(0),
 	mSection(0),
 	mCount(0),
-	mNewWorld(false)
+	mNewWorld(false),
+	//fult
+	mWorldMax(3)
 {
 
 	readButtons();
@@ -134,15 +136,16 @@ void WorldMap::readSave(){
 void WorldMap::saveToFile(std::string currentLevel){
 	
 	tinyxml2::XMLDocument doc;
-	
-	doc.LoadFile("Resources/Data/Save/SavedGame.xml");
 
+	doc.LoadFile("Resources/Data/Save/SavedGame.xml");
 
 	// sparar vilken värld man är på
 	tinyxml2::XMLElement* world;
 	if(doc.FirstChildElement("World")){
-		world = doc.FirstChildElement("World"); // måste ha stöd gför att skapa filer
-		world->SetAttribute("Worlds", mWorld);
+		if(mWorld < mWorldMax){
+			world = doc.FirstChildElement("World"); // måste ha stöd gför att skapa filer
+			world->SetAttribute("Worlds", mWorld);
+		}
 	}else{
 		world = doc.NewElement("World"); // måste ha stöd gför att skapa filer
 		world->SetAttribute("Worlds", mWorld);
@@ -193,6 +196,7 @@ void WorldMap::saveToFile(std::string currentLevel){
 
 			}
 		}
+			
 
 		//om man har gått vidare till nästa värld. spara vilka världar som har brunnit
 		tinyxml2::XMLElement* burned;																				
@@ -228,6 +232,7 @@ void WorldMap::saveToFile(std::string currentLevel){
 	}
 
 	doc.SaveFile("Resources/Data/Save/SavedGame.xml"); //<------- variabel funkar här
+		
 }
 
 void WorldMap::readButtons(){
