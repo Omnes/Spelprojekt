@@ -7,6 +7,7 @@
 #include "OptionsMeny.h"
 #include "EventManager.h"
 #include "ParticleManager.h"
+#include "Cutscene.h"
 
 
 #include <SFML\Window\Keyboard.hpp>
@@ -20,9 +21,6 @@ StartMeny::StartMeny(){
 
 	mMusic = "Resources/Sound/Music/Title_Screen_";
 	mBackground.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/StartMenu/titlescreen.png"));
-
-
-
 
 }
 
