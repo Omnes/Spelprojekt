@@ -20,7 +20,7 @@ TaktikMeny::TaktikMeny() :
 	mLevelGround(0),
 	mAllSpotsTaken(false)
 {
-	mButton = new TacticMenuButton(sf::Vector2f(950,635), this, "Resources/Menu/TacticMenu/startgameplaybutton.png", "Resources/Sound/Menu/Menu_forward.wav");
+	mButton = new TacticMenuButton(sf::Vector2f(950,610), this, "Resources/Menu/TacticMenu/startgameplaybutton.png", "Resources/Sound/Menu/Menu_forward.wav");
 	mAnimalSpriteBg.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/TacticMenu/taktikdjurbg.png"));
 	mAnimalSpriteBg.setPosition(530, 0);
 	mAnimalSpriteBg.setScale(1.3,1.3);
@@ -78,10 +78,10 @@ void TaktikMeny::update(){
 		(*i)->update();
 	}
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
-		EventManager::getInst().addEvent("popState");
+	//if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
+	//	EventManager::getInst().addEvent("popState");
 
-	}
+	//}
 }
 
 void TaktikMeny::render(){
