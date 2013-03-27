@@ -5,6 +5,7 @@
 #include "LevelTutorial.h"
 #include "WorldMap.h"
 #include <iostream>
+#include "WaitState.h"
 
 class StartNewGame : public Event{
 
@@ -24,11 +25,12 @@ public:
 		docSettings.LoadFile("Resources/Data/Settings.xml");
 
 		if(docSettings.FirstChildElement("Tutorial")->BoolAttribute("play") == false){
-			StateManager::getInst().addState(new LevelTutorial);
-		}
-
-		//StateManager::getInst().addState(new Cutscene("Resources/Data/Cutscenes/Cutscene_intro.xml"));
+			/*StateManager::getInst().addState(new LevelTutorial);*/
+			StateManager::getInst().addState(new WaitState("addTutorial"));
 	
+		}
+		StateManager::getInst().addState(new Cutscene("Resources/Data/Cutscenes/Cutscene_intro.xml"));
+		
 	}
 
 	void saveToFile(){
