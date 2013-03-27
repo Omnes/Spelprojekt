@@ -26,6 +26,8 @@ public:
 		if(docSettings.FirstChildElement("Tutorial")->BoolAttribute("play") == false){
 			StateManager::getInst().addState(new LevelTutorial);
 		}
+
+		//StateManager::getInst().addState(new Cutscene("Resources/Data/Cutscenes/Cutscene_intro.xml"));
 	
 	}
 
