@@ -7,6 +7,8 @@
 </Section>
 
 <Section level="1">
+
+	<Animal>Resources/Data/Animal/frogRed.xml</Animal>
 	
 </Section>
 
@@ -20,7 +22,6 @@
 
 <Section level="3">
 
-	<Animal>Resources/Data/Animal/Vulture.xml</Animal>
 	<Animal>Resources/Data/Animal/HummingBird.xml</Animal>	
 	<Animal>Resources/Data/Animal/Snake.xml</Animal>
 
@@ -28,6 +29,8 @@
 
 
 <Section level="4">
+
+	<Animal>Resources/Data/Animal/Vulture.xml</Animal>
 	
 </Section>
 

@@ -1,0 +1,13 @@
+<Particle>
+	<Name>Unlock</Name>
+	<Texture yframes="2">resources/particle/Spark.png</Texture>
+	<Life min="30" max="90"/>
+	<Direction min ="-50" max="50"/>
+	<Speed min="1" max="2" increase="-0.02"/>
+	<Rotation min="-50" max="359" increaseMin="0" increaseMax="0.05"/>
+	<Scale min="1" max="1" increase="0"/>
+	<Color>
+		<Start r="255" g="255" b="255" a="255"/>
+		<End r="255" g="255" b="255" a="0"/>
+	</Color>
+</Particle>

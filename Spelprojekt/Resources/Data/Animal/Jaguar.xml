@@ -4,7 +4,7 @@
 
 	<Images>Resources/Animals/jaguar.png</Images>
 
-	<Speed air="0" middle="2" ground="1.5"/>
+	<Speed air="0" middle="3" ground="2"/>
 	
 	<AnimalType>meat</AnimalType>
 

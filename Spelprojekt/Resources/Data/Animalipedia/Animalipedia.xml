@@ -22,6 +22,34 @@ Den gömmer sig i sin bohåla i marken under dagen och jagar istället på natten.
 
 </Spider>
 
+<Bat>
+	<Title>Vampyr</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/bat.png</Image>
+	<StandardFact>Vampyrfladdermus
+Desmodus rotundus
+
+Längd: 9cm
+Vingspann: 18cm
+Vikt: 57g
+Ålder: 5år
+Livsstil: Flock
+
+Status: Under bevakning, svagt hotad
+
+
+</StandardFact>
+	<LockedFact>Vampyrfladder musen har fått sin namn eftersom den precis som vampyrer livnär sig genom att 
+suga blod. Men till skillnad från en vampyr så dricker inte vampyrfladdermusen 
+människoblod, den nöjer sig med blod från hästar och boskapsdjur. Trots att de 
+har bättre syn än många andra fladdermöss så kan de inte se i mörker och använde 
+därför sina skrin för att hitta sitt byte, som ett ekolod.
+
+När en vampyrfladdermus äter, äter den oftast så mycket att den knappt orkar flyga 
+och måste därför ligga och vila en stund innan den flyger till sitt bo.
+</LockedFact>
+
+</Bat>
+
 <Frog>
 	<Title>Giftgroda</Title>
 	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/frog.png</Image>
@@ -74,7 +102,7 @@ den ifrån sig ett högt skrik för att skrämma rovdjuret till att släppa dem.
 </Bullfrog>
 
 <Scorpion>
-	<Title>Scorpion</Title>
+	<Title>Skorpion</Title>
 	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/scorpion.png</Image>
 	<StandardFact>Skorpioner
 
@@ -430,11 +458,155 @@ gjorda för att slita kött från sina byten.
 
 
 
+
+<Sol>
+	<Title>Sol</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/sol.png</Image>
+	<StandardFact>Sol
+Ozeloten
+
+Sol är en ung ozelot med väldigt 
+drivande personlighet. Hon vill 
+gärna se saker från den ljusa sidan.
+Det tar emot för Sol att se saker 
+som onda, eller elaka, men även hon 
+vet att ibland kan inte allt vara gott 
+och då måste hon reagera.
+</StandardFact>
+	<LockedFact>När Sol var liten hittades hon av en äldre sengångare som förundrade sig över 
+varför en så liten ozelot var ute på egen hand. Nyfiket följde Sol efter denna 
+främmande sengångare. Då inga föräldrar kunde hittas till det lilla kattdjuret 
+adopterade den äldre sengångaren till slut ozelot ungen och döpte henne till Sol. 
+Denna sengångare var Avô, skogens äldre och visare person.
+
+Redan från en liten ålder var hon välkänd för sig spralliga och pigga personlighet, 
+ivrig att göra rätt. Hon vill se att skogens invånare samarbetar, hellre än att 
+arbeta emot varandra. Ibland kan även hennes mod svika, men hon lägger stor vikt 
+i att alltid i alla fall försöka.
+
+</LockedFact>
+
+</Sol>
+
+<Feroz>
+	<Title>Feroz</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/feroz.png</Image>
+	<StandardFact>Feroz
+Jaguaren
+
+Feroz är en svart jaguar, med endast 
+svaga konturer av artens vanligtvis 
+fläckiga päls. Han har länge levt 
+endast för sig själv och brytt sig 
+endast om sin egen överlevnad.
+</StandardFact>
+	<LockedFact>När Feroz var ung träffade han en annan jaguar, Pérola. Känslor växte fram 
+emellan de båda och det tog inte långt tid innan två små jaguar ungar vandrade i 
+Feroz hälar. För ett tag verkade det som om allt var bra, men för Feroz tänkte 
+lyckan inte vara länge. Jaguarens päls har länge varit populär hos de mänskliga 
+jägarna och det fick Feroz lära sig den hårda vägen. Han återvände till sin 
+familj idag, endast för att hitta ett hem i spillror. Det fanns ingen Pérola där, 
+och spåren efter ungarna var borta. 
+
+Ärrad och bitter vandrar Feroz nu genom Amazonas regnskog, han har än inte lagt 
+sitt uppdrag att skipa rättvisa bland de som förtjänar det.
+</LockedFact>
+
+</Feroz>
+
+<Forte>
+	<Title>Forte</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/forte.png</Image>
+	<StandardFact>Forte
+Oxgrodan
+
+Forte är en kraftig, bastant oxgroda
+som alltid gör sin röst hörd. Han rör 
+sig med en särskild elegans. Han är 
+rationell och vill gärna tänka igenom 
+saker innan han reagerar men det hindrar 
+honom inte från att tycka om att tala. 
+Ibland kanske lite för mycket.
+</StandardFact>
+	<LockedFact>Sedan unga år har goliatspindeln Aranha varit en god vän till Forte. De kan 
+ofta ses tillsammans även nu. Det sägs ibland att de båda var lite galna under 
+sina unga år tillsammans. De hittade gärna på saker som kanske inte förväntades 
+av dom. Men det var inte ofta någon tyckte illa om vad de gjorde. De snarare 
+spred sin glädje och lycka bland de djur som de stötte på.
+
+Forte har inte förändrats mycket under åren. Han hörs fortfarande och hans sånger 
+sprider sig långt ut i Amazonas regnskog. Han glömmer aldrig sin hatt och hans
+ dramatiska, teaterliknande sätt att vara fortsätter vara starkt.
+</LockedFact>
+
+</Forte>
+
+<Rainah>
+	<Title>Rainah</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/rainah.png</Image>
+	<StandardFact>Rainah
+Harpyan
+
+Rainha regerar skyarna och alla djuren
+räds denna harpyja när hon flyger över
+trädens toppar. Rainha har alltid varit 
+van att få som hon vill, då hon var enda
+barnet och alltid blivit bortskämd. För 
+att få sin vilja igenom använder hon sig
+av ord eller sin egen styrka. 
+</StandardFact>
+	<LockedFact>Hon brukar bossa runt smådjur bara för att visa att den är hon som bestämmer, 
+men trots att hon ser ner på de andra djuren skulle hon aldrig låta något hända 
+dem.Rainha har många gånger sett vad människorna gör mot deras hem och flera 
+gånger försökt skrämma bort dem utan att lyckas.
+
+Nu när människans förstörelse hotar att förstöra hela deras hem försöker Rainha 
+få med sig djur för att göra en attack mot människorna.
+</LockedFact>
+
+</Rainah>
+
+<Rei>
+	<Title>Rei Doido</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/rei.png</Image>
+	<StandardFact>Rei Doido
+Kungsboan
+
+Rei är en mycket speciell person. Han har, 
+sedan barnsben, sett sig själv som kung över 
+alla ormar. Då ingen har kunnat stoppa honom 
+för att ta den positionen anser han sig själv 
+också som kung över de andra djuren som lever 
+i Amazonas regnskog. En gyllene krona vilar på 
+hans huvud, som för att visa alla just vem han 
+är och att han skall behandlas därefter.
+</StandardFact>
+	<LockedFact>Denna orms personlighet är mycket stor och han bär på mycket kärlek för sig själv. 
+Hans spegelbild är det absolut vackraste han någonsin har sett. Narcissistisk 
+är det minsta man kan kalla honom. När han talar är det alltid han själv som 
+står i centrum, det är hans skog, dagen är tillägnad honom. Hans undersåtar.
+
+Hans mage är lätt rund, fylld med delikat mat som bara en kung får äta. Han 
+trivs med att spendera sina dagar vilande på marken, med bara några få solstrålar
+ som träffar hans kropp. Eller att bara flyta omkring, lugnt och stilla på 
+vattnet medan han ser på sin vackra spegelbild.
+</LockedFact>
+
+</Rei>
+
+
+
+
+
+
+
 <Amazon>
 	<Title>Amazonas</Title>
 	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/amazon.png</Image>
-	<StandardFact>Amazonas regnskog 
-är världens största regnskog, den täcker 
+	<StandardFact>Amazonas
+
+Amazonas regnskog är världens 
+största regnskog, den täcker 
 ett område som är större än fem 
 miljoner kvadratmeter. Vilket är 
 mer än 12 gånger så stort som 
@@ -453,10 +625,12 @@ den plats i världen där det finns flest olika djurarter.
 <History>
 	<Title>Historia</Title>
 	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/historia.png</Image>
-	<StandardFact>Amazonas regnskog 
-är bland de äldsta skogarna om inte den 
-äldsta som finns i världen, den är 55 
-miljoner år gammal. </StandardFact>
+	<StandardFact>Historia
+
+Amazonas regnskog är bland de äldsta 
+skogarna om inte den äldsta som finns 
+i världen, den är 55 miljoner år gammal. 
+</StandardFact>
 	<LockedFact>Den har under sina levnads år skiftat i storlek. Under istiderna var den oftast 
 väldigt liten, då det inte fanns mycket plats på jorden som var varmt 
 och fuktigt nog för en regnskog, och har varit större än vad den är 
@@ -469,15 +643,17 @@ av Sydamerika.</LockedFact>
 <Danger>
 	<Title>Faror</Title>
 	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/faror.png</Image>
-	<StandardFact>Amazonas regnskog 
-har under de senaste 50 åren krympt
-mycket i storlek både på grund av 
-människor och av naturkatastrofer.
-Det har varit torka flera gånger i 
-Sydamerika, som har fått regnskogen 
-att torka ut och stora partier av 
-skogen av försvunnit då den dött av 
-brist på vatten.</StandardFact>
+	<StandardFact>Faror
+
+Amazonas regnskog har under de 
+senaste 50 åren krympt mycket i 
+storlek både på grund av människor 
+och av naturkatastrofer. Det har 
+varit torka flera gånger i Sydamerika, 
+som har fått regnskogen att torka ut 
+och stora partier av skogen av försvunnit 
+då den dött av brist på vatten.
+</StandardFact>
 	<LockedFact>Jordens klimat har även blivit varmare, vilket har lett till att det inte 
 regnar lika mycket i Amazonas och delar av skogen dör då de inte får tillräckligt 
 med regn. Människor har även huggit ner stora delar av skogen, då de behöver 
@@ -491,11 +667,90 @@ vägen och för att de lever av det som skogen har att ge som föda.
 </Danger>
 
 
-<>
-	<Title></Title>
-	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/.png</Image>
-	<StandardFact></StandardFact>
-	<LockedFact></LockedFact>
+<River>
+	<Title>Floden</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/river.png</Image>
+	<StandardFact>Amazonasfloden
 
-</>
+Flodens längd är hela 7 040 kilometer,
+vilket gör floden längre än Nilen 
+som är 6 857 kilometer!
+Floden börjar i Anderna, från Perus gräns 
+rinner floden österut 3 000 kilometer 
+genom regnskogen och sedan fram till 
+Atlanten. från söder. 
+
+</StandardFact>
+	<LockedFact>Amazonasflodens vattendelare innesluter världens största flodsystem.
+
+Det är möjligt att segla på Amazonasfloden men endast 340 mil är seglingsbara!
+Det finns över 3 500 fiskarter som har sitt habitat i Amazonasfloden. Flera av dessa är 
+omtyckta matfiskar som svart pacu. I floden lever fiskar som ibland blir över 2.5 meter långa 
+och kan väga mellan 150-200 kg! Till de särskilt hotade däggdjursarterna räknas amazonmanat 
+och den rosa delfinen. På Amazonfloden finns flera flytande öar. Dessa består av länkande 
+trädstammar, vattenväxter som tappat kontakten med flodbottnen, rötter och gräs.
+Dessa öar kan bli över 100 meter långa och utgör en självständig biotop.
+
+</LockedFact>
+
+</River>
+
+<People>
+	<Title>Befolkning</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/people.png</Image>
+	<StandardFact>Urbefolkningen
+
+Man vet inte säkert men tror att 
+Indianstammar har levt i Amazonas 
+i ungefär 15000 år. I början av 
+1900 talet fanns det omkring 1 miljon, 
+men idag finns det färre än 200 000.
+</StandardFact>
+	<LockedFact>Urbefolkningen har lärt sig att leva i balans med naturen. 
+Denna befolkning har viktiga kunskaper om örter och växter som kan hjälpa resten 
+av världen. Så när regeringen uppmuntrar multinationella företag att skövla skogen 
+blir det förödande konsekvenser, inte bara för befolkningen. Ifall urbefolkningen 
+skulle försvinna skulle även deras kunskaper om örter och växter göra det.
+
+När de första vita människorna kom till Amazonas bar det på sjukdomar som bland annat 
+influensa och mässlingen. Urbefolkningen hade inget försvar mot dessa främmande 
+sjukdomar och detta är en anledning till varför så många indianer dog när de vita 
+kom till Amerika.
+
+</LockedFact>
+
+</People>
+
+<Växthus>
+	<Title>Miljöproblem</Title>
+	<Image x="840" y="145">Resources/Menu/Animalipedia/Pictures/greenhouse.png</Image>
+	<StandardFact>Växthuseffekten
+
+När solen lyser på jorden så värms 
+jorden upp, men det mesta av värmen 
+försvinner ut i rymden igen. 
+Jorden fungerar ungefär som ett stort 
+växthus.Tack vare glaset så stannar 
+värmen från solstrålarna i växthuset. 
+Det är därifrån växthuseffekten 
+har fått sitt namn.
+</StandardFact>
+	<LockedFact>Om vi inte hade växthuseffekten hade all värme från solen försvunnit ut i 
+rymden och det skulle vara alldeles för kallt på jorden för att man skulle kunna bo här.
+Utsläpp från mänskliga aktiviteter har förstärkt växthuseffekten. De skadliga utsläppen 
+är framförallt koldioxid som uppstår när vi förbränner fossila bränslen som bensin, 
+olja och kol.
+
+I framtiden kan det bli alldeles för varmt. Så varmt att en sommardag i Spanien kan vara 
+på 50 grader och hela 60 grader i Nordafrika! De senaste 50 åren har jordens medelvärme 
+stigit med 0,6 grader och det ser ut som om den fortsätter stiga. Detta leder till en mer
+extrem väderlek med stormar och våldsamt regn. Djur och växter hotas av utrotning.
+
+</LockedFact>
+
+</Växthus>
+
+
+
+
 
