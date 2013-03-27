@@ -13,7 +13,7 @@
 		<Texture>Resources/GUI/innerbeast.png</Texture>
 		<Stats cooldown="3" speedIncrease="2" duration="1"/>
 		<InfoPicture>Resources/GUI/speed.png</InfoPicture>
-		<Sound onUse = ""/>
+		<Sound onUse = "Resources/Sound/Effekts/InnerBeast_effekt.wav"/>
 	</InnerBeast>
 
 
@@ -28,7 +28,6 @@
 			<Obstacle>Oil</Obstacle>
 			<Obstacle>Smoke</Obstacle>
 			<Obstacle>Trash</Obstacle>
-			<Obstacle>Animal</Obstacle>
 		</CanRemove>
 		<InfoPicture>Resources/GUI/manmade.png</InfoPicture>
 		<Sound onUse = "Resources/Sound/Effekts/Unlock_effekt.wav"/>
