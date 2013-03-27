@@ -4,13 +4,13 @@
 
 	<Images>Resources/Animals/frogRed.png</Images>
 
-	<Speed air="0" middle="3" ground="2"/>
+	<Speed air="0" middle="2" ground="3"/>
 	
 	<AnimalType>plant</AnimalType>
 
 	<ImageAttr fTick="100" frames="10"/>
 
-	<Sound>Resources/Sound/Animals/groda.wav</Sound>
+	<Sound>Resources/Sound/Animals/oxgroda.wav</Sound>
 
 
 </Animal>

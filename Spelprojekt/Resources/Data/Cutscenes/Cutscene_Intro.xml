@@ -1,17 +1,17 @@
 <Cutscene music = "Level1_">
 	<Enviroment texture = "">
-		<Scene duration = "10">
+		<Scene duration = "15">
 			<Image texture = "Resources/Cutscenes/Intro/amazon1.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
-			<Voice file = ""/>
+			<Voice file = "Resources/Sound/Cutscenes/Intro/I1.wav"/>
 			<Text x = "84" y = "487" duration="2">Detta är Amazonas regnskog.</Text>
-			<Text x = "84" y = "487" duration="2">Hem till tusentals varelser.</Text> 
-			<Text x = "84" y = "487" duration="3">Här lever vi i en balans med allt omkring oss,</Text>
-			<Text x = "84" y = "487" duration="3">från växter till varelser, likt våra förfäder före oss.</Text>
+			<Text x = "84" y = "487" duration="3">Hem till tusentals varelser.</Text> 
+			<Text x = "84" y = "487" duration="4">Här lever vi i en balans med allt omkring oss,</Text>
+			<Text x = "84" y = "487" duration="6">från växter till varelser, likt våra förfäder före oss.</Text>
 
 		</Scene>
 		<Scene duration = "3">
 			<Image texture = "Resources/Cutscenes/Intro/amazon2.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
-			<Voice file = ""/>
+			<Voice file = "Resources/Sound/Cutscenes/Intro/I2.wav"/>
 			<Text x = "434" y = "648" duration="3">Skogen har varit med om många katastrofer...</Text>
 
 		</Scene>
@@ -21,18 +21,19 @@
 			<Text x = "400" y = "500" duration="0"></Text>
 
 		</Scene>
-		<Scene duration = "2">
+		<Scene duration = "4">
 			<Image texture = "Resources/Cutscenes/Intro/fire.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
-			<Voice file = ""/>
-			<Text x = "60" y = "596" duration="2">Men vi har alltid klarat oss. Tills nu...</Text>
+			<Voice file = "Resources/Sound/Cutscenes/Intro/I3.wav"/>
+			<Text x = "60" y = "596" duration="2">Men vi har alltid klarat oss.</Text> 
+			<Text x = "60" y = "596" duration="2">Tills nu...</Text>
 
 		</Scene>
 		<Scene duration = "8">
 			<Image texture = "Resources/Cutscenes/Intro/man.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
-			<Voice file = ""/>
-			<Text x = "396" y = "487" duration="2">Något har förändrats...</Text>
-			<Text x = "396" y = "487" duration="4">En ny katastrof hotar vårt hem och den balans vi lever i.</Text>
-			<Text x = "396" y = "487" duration="2">Något onaturligt...</Text>
+			<Voice file = "Resources/Sound/Cutscenes/Intro/I4.wav"/>
+			<Text x = "396" y = "487" duration="3">Något har förändrats...</Text>
+			<Text x = "396" y = "487" duration="2">Ett nytt hot närmar sig vårt hem.</Text>
+			<Text x = "396" y = "487" duration="3">Något onaturligt...</Text>
 
 		</Scene>
 		<Scene duration = "2">
@@ -41,10 +42,10 @@
 			<Text x = "400" y = "500" duration="0"></Text>
 
 		</Scene>
-		<Scene duration = "3">
+		<Scene duration = "4">
 			<Image texture = "Resources/Cutscenes/Intro/sol2.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
-			<Voice file = ""/>
-			<Text x = "284" y = "485" duration="3">Det här är vårt hem...</Text>
+			<Voice file = "Resources/Sound/Cutscenes/Intro/I5.wav"/>
+			<Text x = "284" y = "485" duration="4">Det här är vårt hem...</Text>
 
 		</Scene>
 

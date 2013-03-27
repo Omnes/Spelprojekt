@@ -1,5 +1,12 @@
 <Section level="0">
 
+</Section>
+
+<Section level="1">
+
+	<Fact>Scorpion</Fact>
+	<Fact>Frog</Fact>
+	<Fact>Spider</Fact>
 
 	<Fact>Amazon</Fact>
 	<Fact>History</Fact>
@@ -8,21 +15,13 @@
 	<Fact>People</Fact>
 	<Fact>Växthus</Fact>
 
-</Section>
-
-<Section level="1">
-
-	<Fact>Scorpion</Fact>
-	<Fact>frog</Fact>
-	<Fact>Spider</Fact>
-
 	<Fact>Sol</Fact>
 
 	<Fact>Ozelot</Fact>
 
 
 	<ExtraFact>Scorpion</ExtraFact>
-	<ExtraFact>frog</ExtraFact>
+	<ExtraFact>Frog</ExtraFact>
 	<ExtraFact>Spider</ExtraFact>
 	
 </Section>

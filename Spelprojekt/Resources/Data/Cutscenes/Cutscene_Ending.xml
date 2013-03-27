@@ -1,13 +1,18 @@
 <Cutscene music = "Level1_">
 	<Enviroment texture = "">
 		<Scene duration = "2">
-			<Image texture = "Resources/Cutscenes/Ending/end1.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
-			<Voice file = "Resources/Sound/Cutscenes/Ending/T6.ogg"/>
+			<Image texture = "Resources/Cutscenes/Ending/end1.png" x = "0" y = "0" fadeIn = "1" fadeOut = "0"/>
+			<Voice file = ""/>
+			<Text x = "884" y = "294" duration="2"></Text>
+		</Scene>
+		<Scene duration = "2">
+			<Image texture = "Resources/Cutscenes/Ending/end1.png" x = "0" y = "0" fadeIn = "0" fadeOut = "1"/>
+			<Voice file = "Resources/Sound/Cutscenes/Ending/E1.wav"/>
 			<Text x = "884" y = "294" duration="2">Det här var vårt hem.</Text>
 		</Scene>
 		<Scene duration = "3">
 			<Image texture = "Resources/Cutscenes/Ending/end2.png" x = "0" y = "0" fadeIn = "1" fadeOut = "1"/>
-			<Voice file = ""/>
+			<Voice file = "Resources/Sound/Cutscenes/Ending/E2.wav"/>
 			<Text x = "629" y = "294" duration="4">Jag kan bara hoppas att vi hittar ett nytt...</Text> 
 
 		</Scene>
