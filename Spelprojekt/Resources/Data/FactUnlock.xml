@@ -1,74 +1,95 @@
 <Section level="0">
 
-	<Fact>Scorpion</Fact>
-	<Fact>Bullfrog</Fact>
-	<Fact>Spider</Fact>
+
+	<Fact>Amazon</Fact>
+	<Fact>History</Fact>
+	<Fact>Danger</Fact>
+	<Fact>River</Fact>
+	<Fact>People</Fact>
+	<Fact>Växthus</Fact>
 
 </Section>
 
 <Section level="1">
-	
-</Section>
 
-<Section level="2">
-	
-	<Fact>Bat</Fact>
-	<Fact>Monkey</Fact>
-	<Fact>Harpy</Fact>
+	<Fact>Scorpion</Fact>
+	<Fact>frog</Fact>
+	<Fact>Spider</Fact>
+
+	<Fact>Sol</Fact>
+
 	<Fact>Ozelot</Fact>
-	<Fact>Frog</Fact>
-
 
 
 	<ExtraFact>Scorpion</ExtraFact>
-	<ExtraFact>Bullfrog</ExtraFact>
+	<ExtraFact>frog</ExtraFact>
 	<ExtraFact>Spider</ExtraFact>
-
-	<ExtraFact>Bat</ExtraFact>
-	<ExtraFact>Monkey</ExtraFact>
-	<ExtraFact>Harpy</ExtraFact>
-	<ExtraFact>Ozelot</ExtraFact>
-	<ExtraFact>Frog</ExtraFact>
 	
+</Section>
+
+<Section level="2"> 
+	
+	<Fact>Bat</Fact>
+	<Fact>Monkey</Fact>
+
+	<Fact>Forte</Fact>
+	<Fact>Rei</Fact>
+
+	<Fact>Snake</Fact>
+	<Fact>Bullfrog</Fact>
+	
+	<ExtraFact>Sol</ExtraFact>
+	<ExtraFact>Ozelot</ExtraFact>
+
+
+
 </Section>
 
 
 <Section level="3">
 
-	<Fact>Vulture</Fact>
+
 	<Fact>HummingBird</Fact>	
-	<Fact>Snake</Fact>
+	<Fact>Snake2</Fact>
+
+
+	<ExtraFact>Bat</ExtraFact>
+	<ExtraFact>Monkey</ExtraFact>
 
 </Section>
 
 
 <Section level="4">
+
+	<Fact>Vulture</Fact>
+	<Fact>HummingBird2</Fact>
+	<Fact>KingVulture</Fact>
+
+
+	<ExtraFact>HummingBird</ExtraFact>	
+	<ExtraFact>Snake2</ExtraFact>
 	
 </Section>
 
 
-<Section level="5">
+<Section level="5"> 
 
 	<Fact>Caiman</Fact>
-	<Fact>KingVulture</Fact>
-	<Fact>HummingBird2</Fact>
-	<Fact>Snake2</Fact>
-	<Fact>Amazon</Fact>
-	<Fact>History</Fact>
-	<Fact>Danger</Fact>
 
+	<Fact>Feroz</Fact>
+	<Fact>Rainah</Fact>
 
+	<Fact>Harpy</Fact>
+
+	<ExtraFact>Forte</ExtraFact>
+	<ExtraFact>Rei</ExtraFact>
+	<ExtraFact>Snake</ExtraFact>
+	<ExtraFact>Bullfrog</ExtraFact>
 
 	<ExtraFact>Vulture</ExtraFact>
-	<ExtraFact>HummingBird</ExtraFact>	
-	<ExtraFact>Snake</ExtraFact>
-	<ExtraFact>Caiman</ExtraFact>
 	<ExtraFact>KingVulture</ExtraFact>
 	<ExtraFact>HummingBird2</ExtraFact>
-	<ExtraFact>Snake2</ExtraFact>
-	<ExtraFact>Amazon</ExtraFact>
-	<ExtraFact>History</ExtraFact>
-	<ExtraFact>Danger</ExtraFact>
+
 
 </Section>
 
@@ -76,16 +97,30 @@
 
 	<Fact>Eagle</Fact>
 
+	<ExtraFact>Caiman</ExtraFact>
+
 </Section>
 
 <Section level="7">
 
 	<Fact>Jaguar</Fact>
 
+	<ExtraFact>Eagle</ExtraFact>
+
 </Section>
 
 <Section level="8">
 
-	<ExtraFact>Eagle</ExtraFact>
+
 	<ExtraFact>Jaguar</ExtraFact>
+	<ExtraFact>Feroz</ExtraFact>
+	<ExtraFact>Rainah</ExtraFact>
+	<ExtraFact>Harpy</ExtraFact>
+	<ExtraFact>Amazon</ExtraFact>
+	<ExtraFact>History</ExtraFact>
+	<ExtraFact>Danger</ExtraFact>
+	<ExtraFact>River</ExtraFact>
+	<ExtraFact>People</ExtraFact>
+	<ExtraFact>Växthus</ExtraFact>
+
 </Section>
