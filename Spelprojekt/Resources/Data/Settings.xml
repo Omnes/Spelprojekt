@@ -1,6 +1,6 @@
 <Camera minSpeed="-3" maxSpeed="4" acceleration="0.06"/>
 
-<Sound musicVolume="0" soundVolume="100" voiceVolume="100" muted="0"/>
+<Sound musicVolume="100" soundVolume="100" voiceVolume="100" muted="0"/>
 
 <Window framelimit="60" vsync="1">
     <Title>Flykten</Title>
@@ -8,6 +8,6 @@
 
 <Resolution width="1280" heigth="720" fullscreen="0"/>
 
-<Tutorial play="1"/>
+<Tutorial play="0"/>
 
 <Font filepath="Resources/Fonts/riverave.ttf"/>

@@ -1,13 +1,11 @@
 <Section level="0">
 
-	<Fact>Scorpion</Fact>
-	<Fact>Bullfrog</Fact>
-	<Fact>Spider</Fact>
-
 </Section>
 
 <Section level="1">
-	
+	<Fact>Scorpion</Fact>
+	<Fact>Bullfrog</Fact>
+	<Fact>Spider</Fact>	
 </Section>
 
 <Section level="2">

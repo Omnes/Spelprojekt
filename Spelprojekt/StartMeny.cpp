@@ -13,12 +13,10 @@
 
 StartMeny::StartMeny(){
 
-	mButtons.push_back(new Button(sf::Vector2f(1000,50), "addOptions"			,"Resources/Menu/StartMenu/OptionsButton.png"	, "Resources/Sound/Menu/Menu_click.wav"));
-	mButtons.push_back(new Button(sf::Vector2f(270,380), "startNewGame"	,"Resources/Menu/StartMenu/StartButton.png"		, "Resources/Sound/Menu/Menu_click.wav"));
-
-	mLoadButton = new LoadButton( sf::Vector2f(10,10), "startGameFirstTime", "Resources/Menu/StartMenu/LoadButton.png", "Resources/Sound/Menu/Menu_click.wav");
-
-	mButtons.push_back(new Button(sf::Vector2f(270,530), "exitGame"				,"Resources/Menu/StartMenu/ExitButton.png"		, "Resources/Sound/Menu/Menu_click.wav"));
+	mButtons.push_back(new Button(sf::Vector2f(50,620), "addOptions","Resources/Menu/StartMenu/OptionsButton.png"	, "Resources/Sound/Menu/Menu_click.wav"));
+	mButtons.push_back(new Button(sf::Vector2f(830,130), "startNewGame"	,"Resources/Menu/StartMenu/StartButton.png"		, "Resources/Sound/Menu/Menu_click.wav"));
+	mLoadButton = new LoadButton( sf::Vector2f(830,310), "startGameFirstTime", "Resources/Menu/StartMenu/LoadButton.png", "Resources/Sound/Menu/Menu_click.wav");
+	mButtons.push_back(new Button(sf::Vector2f(830,490), "exitGame"	,"Resources/Menu/StartMenu/ExitButton.png"		, "Resources/Sound/Menu/Menu_click.wav"));
 
 	mMusic = "Resources/Sound/Music/Title_Screen_";
 	mBackground.setTexture(*ResourceManager::getInst().getTexture("Resources/Menu/StartMenu/titlescreen.png"));
